@@ -61,7 +61,7 @@ public abstract unsafe partial class Chain
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Load<TChain>(TChain chain)
         where TChain : unmanaged,  IChainStart
-        => LoadAny<TChain>(out var _, chain);
+        => LoadAny<TChain>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain}"/> with 1 items from an existing unmanaged chain,
@@ -76,7 +76,13 @@ public abstract unsafe partial class Chain
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> LoadAny<TChain>(TChain chain)
         where TChain : unmanaged, IChainable
-        => LoadAny<TChain>(out var _, chain);
+    {
+        var size = Chain<TChain>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        return new Chain<TChain>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain}"/> with 1 items from an existing unmanaged chain.
@@ -156,7 +162,7 @@ public abstract unsafe partial class Chain
     public static Chain<TChain, T1> Load<TChain, T1>(TChain chain)
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1>(out var _, chain);
+        => LoadAny<TChain, T1>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
@@ -172,7 +178,30 @@ public abstract unsafe partial class Chain
     public static Chain<TChain, T1> LoadAny<TChain, T1>(TChain chain)
         where TChain : unmanaged, IChainable
         where T1 : unmanaged,  IChainable
-        => LoadAny<TChain, T1>(out var _, chain);
+    {
+        var size = Chain<TChain, T1>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+        return new Chain<TChain, T1>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
@@ -291,7 +320,7 @@ public abstract unsafe partial class Chain
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2>(out var _, chain);
+        => LoadAny<TChain, T1, T2>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2}"/> with 3 items from an existing unmanaged chain,
@@ -308,7 +337,42 @@ public abstract unsafe partial class Chain
         where TChain : unmanaged, IChainable
         where T1 : unmanaged,  IChainable
         where T2 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+        return new Chain<TChain, T1, T2>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2}"/> with 3 items from an existing unmanaged chain.
@@ -457,7 +521,7 @@ public abstract unsafe partial class Chain
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items from an existing unmanaged chain,
@@ -475,7 +539,54 @@ public abstract unsafe partial class Chain
         where T1 : unmanaged,  IChainable
         where T2 : unmanaged,  IChainable
         where T3 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items from an existing unmanaged chain.
@@ -654,7 +765,7 @@ public abstract unsafe partial class Chain
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing unmanaged chain,
@@ -673,7 +784,66 @@ public abstract unsafe partial class Chain
         where T2 : unmanaged,  IChainable
         where T3 : unmanaged,  IChainable
         where T4 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing unmanaged chain.
@@ -882,7 +1052,7 @@ public abstract unsafe partial class Chain
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items from an existing unmanaged chain,
@@ -902,7 +1072,78 @@ public abstract unsafe partial class Chain
         where T3 : unmanaged,  IChainable
         where T4 : unmanaged,  IChainable
         where T5 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items from an existing unmanaged chain.
@@ -1141,7 +1382,7 @@ public abstract unsafe partial class Chain
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items from an existing unmanaged chain,
@@ -1162,7 +1403,90 @@ public abstract unsafe partial class Chain
         where T4 : unmanaged,  IChainable
         where T5 : unmanaged,  IChainable
         where T6 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items from an existing unmanaged chain.
@@ -1431,7 +1755,7 @@ public abstract unsafe partial class Chain
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items from an existing unmanaged chain,
@@ -1453,7 +1777,102 @@ public abstract unsafe partial class Chain
         where T5 : unmanaged,  IChainable
         where T6 : unmanaged,  IChainable
         where T7 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items from an existing unmanaged chain.
@@ -1752,7 +2171,7 @@ public abstract unsafe partial class Chain
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items from an existing unmanaged chain,
@@ -1775,7 +2194,114 @@ public abstract unsafe partial class Chain
         where T6 : unmanaged,  IChainable
         where T7 : unmanaged,  IChainable
         where T8 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items from an existing unmanaged chain.
@@ -2104,7 +2630,7 @@ public abstract unsafe partial class Chain
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items from an existing unmanaged chain,
@@ -2128,7 +2654,126 @@ public abstract unsafe partial class Chain
         where T7 : unmanaged,  IChainable
         where T8 : unmanaged,  IChainable
         where T9 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items from an existing unmanaged chain.
@@ -2487,7 +3132,7 @@ public abstract unsafe partial class Chain
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items from an existing unmanaged chain,
@@ -2512,7 +3157,138 @@ public abstract unsafe partial class Chain
         where T8 : unmanaged,  IChainable
         where T9 : unmanaged,  IChainable
         where T10 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items from an existing unmanaged chain.
@@ -2901,7 +3677,7 @@ public abstract unsafe partial class Chain
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items from an existing unmanaged chain,
@@ -2927,7 +3703,150 @@ public abstract unsafe partial class Chain
         where T9 : unmanaged,  IChainable
         where T10 : unmanaged,  IChainable
         where T11 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset);
+        newPtr = newPtr->PNext;
+
+        T11 item11 = default;
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item11 = Unsafe.AsRef<T11>(existingPtr);
+        }
+        *((T11*)newPtr) = item11;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items from an existing unmanaged chain.
@@ -3346,7 +4265,7 @@ public abstract unsafe partial class Chain
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items from an existing unmanaged chain,
@@ -3373,7 +4292,162 @@ public abstract unsafe partial class Chain
         where T10 : unmanaged,  IChainable
         where T11 : unmanaged,  IChainable
         where T12 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset);
+        newPtr = newPtr->PNext;
+
+        T11 item11 = default;
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item11 = Unsafe.AsRef<T11>(existingPtr);
+        }
+        *((T11*)newPtr) = item11;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset);
+        newPtr = newPtr->PNext;
+
+        T12 item12 = default;
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item12 = Unsafe.AsRef<T12>(existingPtr);
+        }
+        *((T12*)newPtr) = item12;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items from an existing unmanaged chain.
@@ -3822,7 +4896,7 @@ public abstract unsafe partial class Chain
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items from an existing unmanaged chain,
@@ -3850,7 +4924,174 @@ public abstract unsafe partial class Chain
         where T11 : unmanaged,  IChainable
         where T12 : unmanaged,  IChainable
         where T13 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset);
+        newPtr = newPtr->PNext;
+
+        T11 item11 = default;
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item11 = Unsafe.AsRef<T11>(existingPtr);
+        }
+        *((T11*)newPtr) = item11;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset);
+        newPtr = newPtr->PNext;
+
+        T12 item12 = default;
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item12 = Unsafe.AsRef<T12>(existingPtr);
+        }
+        *((T12*)newPtr) = item12;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset);
+        newPtr = newPtr->PNext;
+
+        T13 item13 = default;
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item13 = Unsafe.AsRef<T13>(existingPtr);
+        }
+        *((T13*)newPtr) = item13;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items from an existing unmanaged chain.
@@ -4329,7 +5570,7 @@ public abstract unsafe partial class Chain
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items from an existing unmanaged chain,
@@ -4358,7 +5599,186 @@ public abstract unsafe partial class Chain
         where T12 : unmanaged,  IChainable
         where T13 : unmanaged,  IChainable
         where T14 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset);
+        newPtr = newPtr->PNext;
+
+        T11 item11 = default;
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item11 = Unsafe.AsRef<T11>(existingPtr);
+        }
+        *((T11*)newPtr) = item11;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset);
+        newPtr = newPtr->PNext;
+
+        T12 item12 = default;
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item12 = Unsafe.AsRef<T12>(existingPtr);
+        }
+        *((T12*)newPtr) = item12;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset);
+        newPtr = newPtr->PNext;
+
+        T13 item13 = default;
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item13 = Unsafe.AsRef<T13>(existingPtr);
+        }
+        *((T13*)newPtr) = item13;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset);
+        newPtr = newPtr->PNext;
+
+        T14 item14 = default;
+        expectedStructureType = item14.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item14 = Unsafe.AsRef<T14>(existingPtr);
+        }
+        *((T14*)newPtr) = item14;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items from an existing unmanaged chain.
@@ -4867,7 +6287,7 @@ public abstract unsafe partial class Chain
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
         where T15 : unmanaged, IExtendsChain<TChain>
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out var _, chain);
+        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items from an existing unmanaged chain,
@@ -4897,7 +6317,198 @@ public abstract unsafe partial class Chain
         where T13 : unmanaged,  IChainable
         where T14 : unmanaged,  IChainable
         where T15 : unmanaged,  IChainable
-        => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out var _, chain);
+    {
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset);
+        newPtr = newPtr->PNext;
+
+        T1 item1 = default;
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item1 = Unsafe.AsRef<T1>(existingPtr);
+        }
+        *((T1*)newPtr) = item1;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset);
+        newPtr = newPtr->PNext;
+
+        T2 item2 = default;
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item2 = Unsafe.AsRef<T2>(existingPtr);
+        }
+        *((T2*)newPtr) = item2;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset);
+        newPtr = newPtr->PNext;
+
+        T3 item3 = default;
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item3 = Unsafe.AsRef<T3>(existingPtr);
+        }
+        *((T3*)newPtr) = item3;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset);
+        newPtr = newPtr->PNext;
+
+        T4 item4 = default;
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item4 = Unsafe.AsRef<T4>(existingPtr);
+        }
+        *((T4*)newPtr) = item4;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset);
+        newPtr = newPtr->PNext;
+
+        T5 item5 = default;
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item5 = Unsafe.AsRef<T5>(existingPtr);
+        }
+        *((T5*)newPtr) = item5;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset);
+        newPtr = newPtr->PNext;
+
+        T6 item6 = default;
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item6 = Unsafe.AsRef<T6>(existingPtr);
+        }
+        *((T6*)newPtr) = item6;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset);
+        newPtr = newPtr->PNext;
+
+        T7 item7 = default;
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item7 = Unsafe.AsRef<T7>(existingPtr);
+        }
+        *((T7*)newPtr) = item7;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset);
+        newPtr = newPtr->PNext;
+
+        T8 item8 = default;
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item8 = Unsafe.AsRef<T8>(existingPtr);
+        }
+        *((T8*)newPtr) = item8;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset);
+        newPtr = newPtr->PNext;
+
+        T9 item9 = default;
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item9 = Unsafe.AsRef<T9>(existingPtr);
+        }
+        *((T9*)newPtr) = item9;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset);
+        newPtr = newPtr->PNext;
+
+        T10 item10 = default;
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item10 = Unsafe.AsRef<T10>(existingPtr);
+        }
+        *((T10*)newPtr) = item10;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset);
+        newPtr = newPtr->PNext;
+
+        T11 item11 = default;
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item11 = Unsafe.AsRef<T11>(existingPtr);
+        }
+        *((T11*)newPtr) = item11;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset);
+        newPtr = newPtr->PNext;
+
+        T12 item12 = default;
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item12 = Unsafe.AsRef<T12>(existingPtr);
+        }
+        *((T12*)newPtr) = item12;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset);
+        newPtr = newPtr->PNext;
+
+        T13 item13 = default;
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item13 = Unsafe.AsRef<T13>(existingPtr);
+        }
+        *((T13*)newPtr) = item13;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset);
+        newPtr = newPtr->PNext;
+
+        T14 item14 = default;
+        expectedStructureType = item14.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            item14 = Unsafe.AsRef<T14>(existingPtr);
+        }
+        *((T14*)newPtr) = item14;
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset);
+        newPtr = newPtr->PNext;
+
+        T15 item15 = default;
+        expectedStructureType = item15.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+            item15 = Unsafe.AsRef<T15>(existingPtr);
+        }
+        *((T15*)newPtr) = item15;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items from an existing unmanaged chain.

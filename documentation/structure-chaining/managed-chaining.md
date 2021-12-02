@@ -293,21 +293,21 @@ PhysicalDeviceFeatures2
 // Loads a new managed chain from an unmanaged chain
 using var managedChain =
     Chain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-        PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
-
-// Check we had no loading errors
-Assert.Equal(string.Empty, errors);
+        PhysicalDeviceAccelerationStructureFeaturesKHR>(unmanagedChain);
 
 // Check the flag still set
 Assert.True(managedChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 ```
 
-The full version of the `Load` method returns an output parameter `errors` as its first parameter. The `errors`
-parameter will be `string.Empty` if there are no errors, otherwise each line will contain a separate error for each
-issue found during loading. There is also an overload that accepts a single argument `chain` for when you don't care if
-there are any errors. Either method always succeeds, even if the unmanaged chain doesn't match exactly - for example it
-is shorter or longer than the chain being loaded, or if the managed chain has different structure types in any of the
-positions. Any structure type in the expected position will always be loaded into the new `Chain`.
+There are also versions of the `Load[Any]` methods that return an output parameter `errors` as their first parameter.
+The `errors` parameter will be `string.Empty` if there are no errors, otherwise each line will contain a separate error
+for each issue found during loading. There is also an overload that accepts a single argument `chain` for when you don't
+care if there are any errors (e.g. in `Debug` builds). As these overloads allocate a `StringBuilder` under the hood,
+then they should generally be avoided in production or where performance is more critical.
+
+Either method always succeeds, even if the unmanaged chain doesn't match exactly - for example it is shorter or longer
+than the chain being loaded, or if the managed chain has different structure types in any of the positions. Any
+structure type in the expected position will always be loaded into the new `Chain`.
 
 ```csharp
 var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures

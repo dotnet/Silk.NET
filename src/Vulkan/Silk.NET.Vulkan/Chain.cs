@@ -1,7 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-#pragma warning disable CS0659, CS0660
+#pragma warning disable CS0659, CS0660, CS0661
 using System;
 using System.Collections;
 using System.Collections.Generic;

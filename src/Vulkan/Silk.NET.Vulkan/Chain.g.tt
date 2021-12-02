@@ -182,7 +182,7 @@ public abstract unsafe partial class Chain
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<<#= tList #>> Load<<#= tList #>>(TChain chain)
 <#= constraints #>
-        => LoadAny<<#= tList #>>(out var _, chain);
+        => LoadAny<<#= tList #>>(chain);
 
     /// <summary>
     /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
@@ -197,7 +197,49 @@ public abstract unsafe partial class Chain
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<<#= tList #>> LoadAny<<#= tList #>>(TChain chain)
 <#= constraintsLoose #>
-        => LoadAny<<#= tList #>>(out var _, chain);
+    {
+        var size = Chain<<#= tList #>>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        chain.StructureType();
+        *((TChain*)newHeadPtr) = chain;
+<#
+        if (i > 1)
+        {
+#>
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) newHeadPtr;
+<#
+            for (var j = 1; j < i; j++)
+            {
+#>
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item<#= j #>Offset);
+        newPtr = newPtr->PNext;
+
+        T<#= j #> item<#= j #> = default;
+        <#= j == 1 ? "var " : "" #>expectedStructureType = item<#= j #>.StructureType();
+        if (existingPtr is not null &&
+            existingPtr->SType == expectedStructureType) {
+<#
+                if (j == i - 1)
+                {
+#>
+            if (existingPtr->PNext is not null) {
+                existingPtr->PNext = null;
+            }
+<#
+                } // if (j == i -1)
+#>
+            item<#= j #> = Unsafe.AsRef<T<#= j #>>(existingPtr);
+        }
+        *((T<#= j #>*)newPtr) = item<#= j #>;
+<#
+            } // for (int j = 1; j < i; j++) {
+        } // if (i == 1) {} else {...
+#>
+        return new Chain<<#= tList #>>(newHeadPtr);
+    }
 
     /// <summary>
     /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
