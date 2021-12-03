@@ -46,7 +46,7 @@ makes it much easier, _and safer_, to work with Vulkan Structure Chains. For exa
 as:
 
 ```csharp
-using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+using var features2 = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
     PhysicalDeviceAccelerationStructureFeaturesKHR>();
 vk.GetPhysicalDeviceFeatures2(device, features2);
 ```
