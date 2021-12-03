@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugReportCallbackCreateInfoEXT")]
-    public unsafe partial struct DebugReportCallbackCreateInfoEXT
+    public unsafe partial struct DebugReportCallbackCreateInfoEXT : IExtendsChain<InstanceCreateInfo>
     {
         public DebugReportCallbackCreateInfoEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pUserData")]
         public void* PUserData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DebugReportCallbackCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

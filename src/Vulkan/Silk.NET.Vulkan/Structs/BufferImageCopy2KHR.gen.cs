@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferImageCopy2KHR")]
-    public unsafe partial struct BufferImageCopy2KHR
+    public unsafe partial struct BufferImageCopy2KHR : IChainStart
     {
         public BufferImageCopy2KHR
         (
@@ -112,5 +112,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent3D")]
         [NativeName("Name", "imageExtent")]
         public Extent3D ImageExtent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferImageCopy2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BufferImageCopy2KHR Chain(
+            out BufferImageCopy2KHR capture)
+        {
+            capture = new BufferImageCopy2KHR(StructureType.BufferImageCopy2Khr);
+            return ref capture;
+        }
     }
 }

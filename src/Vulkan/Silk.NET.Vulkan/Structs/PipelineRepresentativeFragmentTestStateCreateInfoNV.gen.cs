@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRepresentativeFragmentTestStateCreateInfoNV")]
-    public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
+    public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineRepresentativeFragmentTestStateCreateInfoNV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "representativeFragmentTestEnable")]
         public Bool32 RepresentativeFragmentTestEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

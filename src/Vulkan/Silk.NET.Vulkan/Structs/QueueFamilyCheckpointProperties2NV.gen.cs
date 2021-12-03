@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyCheckpointProperties2NV")]
-    public unsafe partial struct QueueFamilyCheckpointProperties2NV
+    public unsafe partial struct QueueFamilyCheckpointProperties2NV : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyCheckpointProperties2NV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
         [NativeName("Name", "checkpointExecutionStageMask")]
         public PipelineStageFlags2KHR CheckpointExecutionStageMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueueFamilyCheckpointProperties2NV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

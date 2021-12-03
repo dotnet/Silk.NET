@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShadingRatePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
+    public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceFragmentShadingRatePropertiesKHR
         (
@@ -233,5 +233,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "fragmentShadingRateStrictMultiplyCombiner")]
         public Bool32 FragmentShadingRateStrictMultiplyCombiner;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShadingRatePropertiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

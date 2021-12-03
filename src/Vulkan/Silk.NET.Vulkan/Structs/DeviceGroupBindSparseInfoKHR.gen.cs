@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupBindSparseInfoKHR")]
-    public unsafe partial struct DeviceGroupBindSparseInfoKHR
+    [NativeName("AliasOf", "VkDeviceGroupBindSparseInfo")]
+    public unsafe partial struct DeviceGroupBindSparseInfoKHR : IExtendsChain<BindSparseInfo>
     {
         public DeviceGroupBindSparseInfoKHR
         (
@@ -68,5 +69,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "memoryDeviceIndex")]
         public uint MemoryDeviceIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupBindSparseInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

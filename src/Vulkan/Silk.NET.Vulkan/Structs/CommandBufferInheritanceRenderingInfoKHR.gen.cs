@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceRenderingInfoKHR")]
-    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR
+    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR : IExtendsChain<CommandBufferInheritanceInfo>
     {
         public CommandBufferInheritanceRenderingInfoKHR
         (
@@ -123,5 +123,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlagBits")]
         [NativeName("Name", "rasterizationSamples")]
         public SampleCountFlags RasterizationSamples;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferInheritanceRenderingInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

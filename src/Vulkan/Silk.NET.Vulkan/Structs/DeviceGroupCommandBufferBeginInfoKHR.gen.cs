@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupCommandBufferBeginInfoKHR")]
-    public unsafe partial struct DeviceGroupCommandBufferBeginInfoKHR
+    [NativeName("AliasOf", "VkDeviceGroupCommandBufferBeginInfo")]
+    public unsafe partial struct DeviceGroupCommandBufferBeginInfoKHR : IExtendsChain<CommandBufferBeginInfo>
     {
         public DeviceGroupCommandBufferBeginInfoKHR
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "deviceMask")]
         public uint DeviceMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupCommandBufferBeginInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT
+    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoDecodeH265CapabilitiesEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtensionProperties")]
         [NativeName("Name", "stdExtensionVersion")]
         public ExtensionProperties StdExtensionVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

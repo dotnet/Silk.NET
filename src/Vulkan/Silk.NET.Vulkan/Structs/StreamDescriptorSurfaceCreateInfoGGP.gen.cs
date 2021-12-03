@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStreamDescriptorSurfaceCreateInfoGGP")]
-    public unsafe partial struct StreamDescriptorSurfaceCreateInfoGGP
+    public unsafe partial struct StreamDescriptorSurfaceCreateInfoGGP : IChainable
     {
         public StreamDescriptorSurfaceCreateInfoGGP
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "GgpStreamDescriptor")]
         [NativeName("Name", "streamDescriptor")]
         public nint StreamDescriptor;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.StreamDescriptorSurfaceCreateInfoGgp;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

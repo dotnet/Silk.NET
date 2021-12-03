@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateEntry")]
+    [NativeName("Aliases", "VkDescriptorUpdateTemplateEntryKHR")]
     public unsafe partial struct DescriptorUpdateTemplateEntry
     {
         public DescriptorUpdateTemplateEntry

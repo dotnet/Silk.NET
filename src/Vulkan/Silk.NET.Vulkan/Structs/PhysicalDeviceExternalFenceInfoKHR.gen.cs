@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalFenceInfoKHR")]
-    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR
+    [NativeName("AliasOf", "VkPhysicalDeviceExternalFenceInfo")]
+    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR : IChainable
     {
         public PhysicalDeviceExternalFenceInfoKHR
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalFenceHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalFenceHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalFenceInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

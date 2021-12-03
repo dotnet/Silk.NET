@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescription2KHR")]
-    public unsafe partial struct SubpassDescription2KHR
+    [NativeName("AliasOf", "VkSubpassDescription2")]
+    public unsafe partial struct SubpassDescription2KHR : IChainStart
     {
         public SubpassDescription2KHR
         (
@@ -167,5 +168,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pPreserveAttachments")]
         public uint* PPreserveAttachments;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubpassDescription2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SubpassDescription2KHR Chain(
+            out SubpassDescription2KHR capture)
+        {
+            capture = new SubpassDescription2KHR(StructureType.SubpassDescription2);
+            return ref capture;
+        }
     }
 }

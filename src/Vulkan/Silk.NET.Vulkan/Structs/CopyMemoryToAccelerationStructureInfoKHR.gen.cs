@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyMemoryToAccelerationStructureInfoKHR")]
-    public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR
+    public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR : IChainable
     {
         public CopyMemoryToAccelerationStructureInfoKHR
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCopyAccelerationStructureModeKHR")]
         [NativeName("Name", "mode")]
         public CopyAccelerationStructureModeKHR Mode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyMemoryToAccelerationStructureInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoCodingControlInfoKHR")]
-    public unsafe partial struct VideoCodingControlInfoKHR
+    public unsafe partial struct VideoCodingControlInfoKHR : IChainStart
     {
         public VideoCodingControlInfoKHR
         (
@@ -57,5 +57,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoCodingControlFlagsKHR")]
         [NativeName("Name", "flags")]
         public VideoCodingControlFlagsKHR Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoCodingControlInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoCodingControlInfoKHR Chain(
+            out VideoCodingControlInfoKHR capture)
+        {
+            capture = new VideoCodingControlInfoKHR(StructureType.VideoCodingControlInfoKhr);
+            return ref capture;
+        }
     }
 }

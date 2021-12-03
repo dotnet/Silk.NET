@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConformanceVersion")]
+    [NativeName("Aliases", "VkConformanceVersionKHR")]
     public unsafe partial struct ConformanceVersion
     {
         public ConformanceVersion

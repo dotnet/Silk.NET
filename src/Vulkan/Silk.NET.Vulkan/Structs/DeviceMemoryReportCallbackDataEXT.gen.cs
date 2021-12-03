@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryReportCallbackDataEXT")]
-    public unsafe partial struct DeviceMemoryReportCallbackDataEXT
+    public unsafe partial struct DeviceMemoryReportCallbackDataEXT : IChainable
     {
         public DeviceMemoryReportCallbackDataEXT
         (
@@ -123,5 +123,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "heapIndex")]
         public uint HeapIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceMemoryReportCallbackDataExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

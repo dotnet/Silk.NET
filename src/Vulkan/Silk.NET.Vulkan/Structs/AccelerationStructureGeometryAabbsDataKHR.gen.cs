@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureGeometryAabbsDataKHR")]
-    public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
+    public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR : IChainable
     {
         public AccelerationStructureGeometryAabbsDataKHR
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "stride")]
         public ulong Stride;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureGeometryAabbsDataKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }
