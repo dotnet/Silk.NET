@@ -16,7 +16,7 @@ With the release of Silk.NET 2.11 we've enhanced the usability of `Silk.NET.Vulk
 points, specifically building the [Singly Linked Lists](https://en.wikipedia.org/wiki/Linked_list) (or chains) of
 structures that are frequently used to pass information to, and from, the API.
 
-Up to now, it was not unusual to have to write quite a lot of unsafe code to work with the Vulkan API. For example, to
+Up until now, it was not unusual to have to write quite a lot of unsafe code to work with the Vulkan API. For example, to
 query device features you would need to create a chain of empty structures to be populated by the API:
 
 ```csharp
@@ -35,14 +35,14 @@ var features2 = new PhysicalDeviceFeatures2
 vk.GetPhysicalDeviceFeatures2(device, &features2);
 ```
 
-Not only is this quite a bit of boiler plate (and it gets worse when you actually want to pass data to the API), but its
+Not only is this quite a bit of boiler plate (and it gets worse when you actually want to pass data to the API), it is
 really easy for developers, who are not always comfortable with `unsafe` code, memory management and pointers, to
 introduce subtle bugs by passing in pointers to structures they have previously generated and are now residing on the
 .NET heap. Such structures can be moved by the Garbage Collector at the most unexpected times!
 
 Thanks to Structure Chaining, we now have 2 new ways to write the above code. The most
 useful [Managed Chaining](https://github.com/dotnet/Silk.NET/blob/main/documentation/structure-chaining/managed-chaining.md),
-makes it much easier, and safer, to work with Vulkan Structure Chains. For example, the above code can now be written
+makes it much easier, _and safer_, to work with Vulkan Structure Chains. For example, the above code can now be written
 as:
 
 ```csharp
@@ -51,8 +51,8 @@ using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptor
 vk.GetPhysicalDeviceFeatures2(device, features2);
 ```
 
-Not only do the new `Chain` classes manage the lifetime of the structures for you, they can be safely stored on the
-heap, like any object. They efficiently handle the `SType` and `PNext` fields, ensuring they are always correct. It is
+The new `Chain` classes manage the lifetime of the structures for you and they can be safely stored on the
+heap, like any object. They also efficiently handle the `SType` and `PNext` fields, ensuring they are always correct. It is
 also easy to modify and manipulate the chains. What is less obvious from the above example is that we are now able to
 validate that `PhysicalDeviceFeatures2` can be used as the _start_ of a chain, and that
 both `PhysicalDeviceDescriptorIndexingFeatures` and `PhysicalDeviceAccelerationStructureFeaturesKHR` are valid
