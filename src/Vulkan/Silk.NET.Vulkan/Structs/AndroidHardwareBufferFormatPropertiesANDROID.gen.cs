@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidHardwareBufferFormatPropertiesANDROID")]
-    public unsafe partial struct AndroidHardwareBufferFormatPropertiesANDROID
+    public unsafe partial struct AndroidHardwareBufferFormatPropertiesANDROID : IExtendsChain<AndroidHardwareBufferPropertiesANDROID>
     {
         public AndroidHardwareBufferFormatPropertiesANDROID
         (
@@ -134,5 +134,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkChromaLocation")]
         [NativeName("Name", "suggestedYChromaOffset")]
         public ChromaLocation SuggestedYChromaOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AndroidHardwareBufferFormatPropertiesAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

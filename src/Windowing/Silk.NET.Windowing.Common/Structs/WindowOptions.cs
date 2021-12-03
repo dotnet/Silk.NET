@@ -41,6 +41,7 @@ namespace Silk.NET.Windowing
             PreferredStencilBufferBits = opts.PreferredStencilBufferBits;
             PreferredBitDepth = opts.PreferredBitDepth;
             Samples = opts.Samples;
+            WindowClass = null;
         }
 
         /// <inheritdoc />
@@ -100,6 +101,9 @@ namespace Silk.NET.Windowing
         /// <inheritdoc />
         public IGLContext? SharedContext { get; }
 
+        /// <inheritdoc />
+        public string? WindowClass { get; set; }
+
         /// <summary>
         /// Creates a new WindowOptions struct.
         /// </summary>
@@ -123,7 +127,8 @@ namespace Silk.NET.Windowing
             bool transparentFramebuffer = false,
             bool isEventDriven = false,
             IGLContext? sharedContext = null,
-            int? samples = null
+            int? samples = null,
+            string? windowClass = null
         )
         {
             IsVisible = isVisible;
@@ -146,6 +151,7 @@ namespace Silk.NET.Windowing
             PreferredStencilBufferBits = preferredStencilBufferBits;
             PreferredBitDepth = preferredBitDepth;
             Samples = samples;
+            WindowClass = windowClass;
         }
 
         static WindowOptions()

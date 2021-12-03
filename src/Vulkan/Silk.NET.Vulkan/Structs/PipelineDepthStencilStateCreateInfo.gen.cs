@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDepthStencilStateCreateInfo")]
-    public unsafe partial struct PipelineDepthStencilStateCreateInfo
+    public unsafe partial struct PipelineDepthStencilStateCreateInfo : IChainable
     {
         public PipelineDepthStencilStateCreateInfo
         (
@@ -156,5 +156,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "maxDepthBounds")]
         public float MaxDepthBounds;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineDepthStencilStateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

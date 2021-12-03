@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryZirconHandleInfoFUCHSIA")]
-    public unsafe partial struct ImportMemoryZirconHandleInfoFUCHSIA
+    public unsafe partial struct ImportMemoryZirconHandleInfoFUCHSIA : IExtendsChain<MemoryAllocateInfo>
     {
         public ImportMemoryZirconHandleInfoFUCHSIA
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "zx_handle_t")]
         [NativeName("Name", "handle")]
         public nint Handle;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImportMemoryZirconHandleInfoFuchsia;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

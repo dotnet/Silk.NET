@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMetalSurfaceCreateInfoEXT")]
-    public unsafe partial struct MetalSurfaceCreateInfoEXT
+    public unsafe partial struct MetalSurfaceCreateInfoEXT : IChainable
     {
         public MetalSurfaceCreateInfoEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "CAMetalLayer")]
         [NativeName("Name", "pLayer")]
         public nint* PLayer;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MetalSurfaceCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

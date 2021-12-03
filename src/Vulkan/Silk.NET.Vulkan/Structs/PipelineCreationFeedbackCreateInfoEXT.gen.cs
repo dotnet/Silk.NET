@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
-    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT
+    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoNV>, IExtendsChain<RayTracingPipelineCreateInfoKHR>
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
         [NativeName("Name", "pPipelineStageCreationFeedbacks")]
         public PipelineCreationFeedbackEXT* PPipelineStageCreationFeedbacks;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineCreationFeedbackCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

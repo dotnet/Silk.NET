@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSwapchainCreateInfoKHR")]
-    public unsafe partial struct ImageSwapchainCreateInfoKHR
+    public unsafe partial struct ImageSwapchainCreateInfoKHR : IExtendsChain<ImageCreateInfo>
     {
         public ImageSwapchainCreateInfoKHR
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSwapchainKHR")]
         [NativeName("Name", "swapchain")]
         public SwapchainKHR Swapchain;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageSwapchainCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

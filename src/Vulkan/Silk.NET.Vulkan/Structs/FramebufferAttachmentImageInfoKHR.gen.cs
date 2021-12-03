@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferAttachmentImageInfoKHR")]
-    public unsafe partial struct FramebufferAttachmentImageInfoKHR
+    [NativeName("AliasOf", "VkFramebufferAttachmentImageInfo")]
+    public unsafe partial struct FramebufferAttachmentImageInfoKHR : IChainable
     {
         public FramebufferAttachmentImageInfoKHR
         (
@@ -123,5 +124,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "pViewFormats")]
         public Format* PViewFormats;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.FramebufferAttachmentImageInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

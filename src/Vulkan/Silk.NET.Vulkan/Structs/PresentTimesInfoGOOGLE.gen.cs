@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentTimesInfoGOOGLE")]
-    public unsafe partial struct PresentTimesInfoGOOGLE
+    public unsafe partial struct PresentTimesInfoGOOGLE : IExtendsChain<PresentInfoKHR>
     {
         public PresentTimesInfoGOOGLE
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPresentTimeGOOGLE")]
         [NativeName("Name", "pTimes")]
         public PresentTimeGOOGLE* PTimes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PresentTimesInfoGoogle;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkResolveImageInfo2KHR")]
-    public unsafe partial struct ResolveImageInfo2KHR
+    public unsafe partial struct ResolveImageInfo2KHR : IChainable
     {
         public ResolveImageInfo2KHR
         (
@@ -112,5 +112,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageResolve2KHR")]
         [NativeName("Name", "pRegions")]
         public ImageResolve2KHR* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ResolveImageInfo2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

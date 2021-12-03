@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlInfoKHR
+    public unsafe partial struct VideoEncodeRateControlInfoKHR : IExtendsChain<VideoCodingControlInfoKHR>
     {
         public VideoEncodeRateControlInfoKHR
         (
@@ -123,5 +123,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "virtualBufferSizeInMs")]
         public uint VirtualBufferSizeInMs;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeRateControlInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

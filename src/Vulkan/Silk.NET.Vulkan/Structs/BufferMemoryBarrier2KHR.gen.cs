@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryBarrier2KHR")]
-    public unsafe partial struct BufferMemoryBarrier2KHR
+    public unsafe partial struct BufferMemoryBarrier2KHR : IChainable
     {
         public BufferMemoryBarrier2KHR
         (
@@ -145,5 +145,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "size")]
         public ulong Size;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferMemoryBarrier2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

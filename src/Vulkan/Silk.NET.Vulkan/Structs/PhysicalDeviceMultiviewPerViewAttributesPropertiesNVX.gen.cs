@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX")]
-    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "perViewPositionAllComponents")]
         public Bool32 PerViewPositionAllComponents;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

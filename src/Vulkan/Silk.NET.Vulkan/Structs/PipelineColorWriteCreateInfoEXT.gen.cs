@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorWriteCreateInfoEXT")]
-    public unsafe partial struct PipelineColorWriteCreateInfoEXT
+    public unsafe partial struct PipelineColorWriteCreateInfoEXT : IExtendsChain<PipelineColorBlendStateCreateInfo>
     {
         public PipelineColorWriteCreateInfoEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "pColorWriteEnables")]
         public Bool32* PColorWriteEnables;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineColorWriteCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

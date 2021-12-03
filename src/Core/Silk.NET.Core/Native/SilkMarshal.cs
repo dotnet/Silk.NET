@@ -526,6 +526,11 @@ namespace Silk.NET.Core.Native
         {
             var span = new Span<byte>((void*) ptr, int.MaxValue);
             span = span.Slice(0, span.IndexOf(default(byte)));
+            if (span.Length == 0)
+            {
+                return string.Empty;
+            }
+
             fixed (byte* bytes = span)
             {
                 return Encoding.UTF8.GetString(bytes, span.Length);
