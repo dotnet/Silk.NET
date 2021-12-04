@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PipelineDepthStencilStateCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            PipelineDepthStencilStateCreateFlags? flags = null,
             Bool32? depthTestEnable = null,
             Bool32? depthWriteEnable = null,
             CompareOp? depthCompareOp = null,
@@ -110,7 +110,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPipelineDepthStencilStateCreateFlags")]
         [NativeName("Type.Name", "VkPipelineDepthStencilStateCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public PipelineDepthStencilStateCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]

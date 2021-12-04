@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PipelineColorBlendStateCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            PipelineColorBlendStateCreateFlags? flags = null,
             Bool32? logicOpEnable = null,
             LogicOp? logicOp = null,
             uint? attachmentCount = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPipelineColorBlendStateCreateFlags")]
         [NativeName("Type.Name", "VkPipelineColorBlendStateCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public PipelineColorBlendStateCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
