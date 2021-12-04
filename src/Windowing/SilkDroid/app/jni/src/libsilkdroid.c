@@ -13,10 +13,15 @@
 #include <SDL.h>
 
 void sdSetMain(SdMainFunc main) {
-	CurrentMain = main;
+    CurrentMain = main;
 }
 
 // int SDL_main(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
-	CurrentMain();
+    if (CurrentMain == NULL) {
+        return -1;
+    }
+
+    CurrentMain();
+    return 0;
 }

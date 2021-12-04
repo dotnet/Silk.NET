@@ -16,7 +16,7 @@ partial class Build
             (
                 () =>
                 {
-                    var project = Solution.GetProject("Silk.NET.BuildTools");
+                    var project = OriginalSolution.GetProject("Silk.NET.BuildTools");
                     if (project == default)
                     {
                         Logger.Error("Couldn't find BuildTools in the solution file.");

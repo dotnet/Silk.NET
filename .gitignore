@@ -472,6 +472,7 @@ src/**/build/
 
 # Silk.NET Build System
 *.gen.sln
+*.gen.txt
 
 # Silk.NET Website Generation Output
 docs/
