@@ -10,7 +10,7 @@ using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.SignClient;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
-using static Nuke.Common.Tools.SignClient.SignClientTasks;
+using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
@@ -51,19 +51,47 @@ partial class Build
                     (
                         outputs, (current, pkg) => current.Concat
                         (
-                            SignClientSign
+                            // TODO this doesn't work for some reason
+                            //    > C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\tool\SignClient.exe sign \
+                            // --config C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\config.json \
+                            // --input C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\output_packages\Silk.NET.2.11.0.nupkg \
+                            // --baseDirectory C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\output_packages \
+                            // --fileList C:\Users\perks\Documents\_Silk.NET\Silk.NET\build\codesigning\filelist.txt \
+                            // --secret [hidden] \
+                            // --user *** \
+                            // --name Silk.NET \
+                            // --description Silk.NET \
+                            // --descriptionUrl https://github.com/dotnet/Silk.NET
+                            // @ C:\Users\perks\Documents\_Silk.NET\Silk.NET
+                            // Error output:
+                            // --name parameter is required
+                            // SignClientSign
+                            // (
+                            //     s => s.SetProcessToolPath(execPath)
+                            //         .SetBaseDirectory(PackageDirectory)
+                            //         .SetInput(pkg)
+                            //         .SetConfig(basePath / "config.json")
+                            //         .SetFileList(basePath / "filelist.txt")
+                            //         .SetUsername(SignUsername)
+                            //         .SetSecret(SignPassword)
+                            //         .SetName("Silk.NET")
+                            //         .SetDescription("Silk.NET")
+                            //         .SetDescriptionUrl("https://github.com/dotnet/Silk.NET")
+                            // )
+                            StartProcess
                             (
-                                s => s.SetProcessToolPath(execPath)
-                                    .SetBaseDirectory(PackageDirectory)
-                                    .SetInput(pkg)
-                                    .SetConfig(basePath / "config.json")
-                                    .SetFileList(basePath / "filelist.txt")
-                                    .SetUsername(SignUsername)
-                                    .SetSecret(SignPassword)
-                                    .SetName("Silk.NET")
-                                    .SetDescription("Silk.NET")
-                                    .SetDescriptionUrl("https://github.com/dotnet/Silk.NET")
-                            )
+                                execPath,
+                                "sign " +
+                                $"--baseDirectory {PackageDirectory} " +
+                                $"--input \"{pkg}\" " +
+                                $"--config \"{basePath / "config.json"}\" " +
+                                $"--filelist \"{basePath / "filelist.txt"}\" " +
+                                $"--user \"{SignUsername}\" " +
+                                $"--secret \"{SignPassword}\" " +
+                                "--name \"Silk.NET\" " +
+                                "--description \"Silk.NET\" " +
+                                "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+                            ).AssertZeroExitCode().Output
                         )
                     );
                 }
