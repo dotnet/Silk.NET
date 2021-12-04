@@ -32,7 +32,8 @@ namespace Silk.NET.Vulkan
             VideoPictureResourceKHR? srcPictureResource = null,
             VideoReferenceSlotKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null
+            VideoReferenceSlotKHR* pReferenceSlots = null,
+            uint? precedingExternallyEncodedBytes = null
         ) : this()
         {
             if (sType is not null)
@@ -93,6 +94,11 @@ namespace Silk.NET.Vulkan
             if (pReferenceSlots is not null)
             {
                 PReferenceSlots = pReferenceSlots;
+            }
+
+            if (precedingExternallyEncodedBytes is not null)
+            {
+                PrecedingExternallyEncodedBytes = precedingExternallyEncodedBytes.Value;
             }
         }
 
@@ -156,6 +162,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
         [NativeName("Name", "pReferenceSlots")]
         public VideoReferenceSlotKHR* PReferenceSlots;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "precedingExternallyEncodedBytes")]
+        public uint PrecedingExternallyEncodedBytes;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

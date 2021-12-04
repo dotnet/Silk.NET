@@ -165,5 +165,6 @@
     "LONG_PTR": "nint",
     "_screen_window": "void",
     "_screen_context": "void",
-    "int16_t": "short"
+    "int16_t": "short",
+    "cl_properties": "ulong"
 }

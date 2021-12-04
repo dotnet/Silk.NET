@@ -417,6 +417,15 @@
                     "cl_semaphore_payload_khr": "cl_ulong",
                     "cl_external_semaphore_handle_type_khr": "cl_uint",
                     "cl_external_memory_handle_type_khr": "cl_uint",
+                    "cl_device_command_buffer_capabilities_khr": "cl_bitfield",
+                    "cl_sync_point_khr": "cl_uint",
+                    "cl_command_buffer_info_khr": "cl_uint",
+                    "cl_command_buffer_state_khr": "cl_uint",
+                    "cl_command_buffer_properties_khr": "cl_properties",
+                    "cl_command_buffer_flags_khr": "cl_bitfield",
+                    "cl_ndrange_kernel_command_properties_khr": "cl_properties",
+                    "cl_mutable_command_khr": "intptr_t",
+                    "cl_command_buffer_khr": "intptr_t"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
