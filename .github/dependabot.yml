@@ -5,4 +5,4 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
-  ignore: []
+    day: thursday

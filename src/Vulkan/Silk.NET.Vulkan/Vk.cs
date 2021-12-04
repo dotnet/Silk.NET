@@ -26,8 +26,24 @@ namespace Silk.NET.Vulkan
         public Device? CurrentDevice
         {
             get => _currentDevice;
-            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => CreateVTable()));
+            set
+            {
+                // if _currentDevice is null, chances are the user is telling us that they've made a device and want to
+                // use it for loading, rather than *just* using the instance. given the function pointers are the same
+                // for instance functions with or without a device, we should reuse the instance VTable rather than have
+                // to reload all those functions again. 
+                var createNew = _currentDevice is not null;
+                SwapVTable
+                (
+                    _vTables.GetOrAdd
+                    (
+                        (_currentInstance, _currentDevice = value),
+                        _ => createNew ? CreateVTable() : CurrentVTable.Clone()
+                    )
+                );
+            }
         }
+
         public static Version32 Version10 => new Version32(1, 0, 0);
         public static Version32 Version11 => new Version32(1, 1, 0);
         public static Version32 Version12 => new Version32(1, 2, 0);
@@ -128,10 +144,10 @@ namespace Silk.NET.Vulkan
         private HashSet<string> _cachedInstanceExtensions;
 
         // Contains strings in form of '<IntPtr>|<Extension name>' for each extension and '<IntPtr>' to indicate an extension has been loaded.
-        private readonly HashSet<string> _cachedDeviceExtensions = new HashSet<string>();
-        private readonly ReaderWriterLockSlim _cachedDeviceExtensionsLock = new ReaderWriterLockSlim();
+        private HashSet<string> _cachedDeviceExtensions = new HashSet<string>();
+        private ReaderWriterLockSlim _cachedDeviceExtensionsLock = new ReaderWriterLockSlim();
 
-        private readonly ConcurrentDictionary<Instance, PhysicalDevice[]> _cachedPhyscialDevices = new ConcurrentDictionary<Instance, PhysicalDevice[]>();
+        private ConcurrentDictionary<Instance, PhysicalDevice[]> _cachedPhyscialDevices = new ConcurrentDictionary<Instance, PhysicalDevice[]>();
 
         /// <summary>
         /// Checks whether the given instance extension is available.
@@ -289,6 +305,26 @@ namespace Silk.NET.Vulkan
                 }
                 return physicalDevices;
             });
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Vk"/> object that reuses the instance functions already collected by this
+        /// instance for the given instance-device combination.
+        /// </summary>
+        /// <param name="instance">The instance to use for the created object.</param>
+        /// <param name="device">The device to use for the created object.</param>
+        /// <returns>The object.</returns>
+        public Vk CloneWith(Instance instance, Device device)
+        {
+            var ret = GetApi();
+            ret._vTables = _vTables;
+            ret._cachedDeviceExtensionsLock = _cachedDeviceExtensionsLock;
+            ret._cachedDeviceExtensions = _cachedDeviceExtensions;
+            ret._cachedInstanceExtensions = _cachedInstanceExtensions;
+            ret._cachedPhyscialDevices = _cachedPhyscialDevices;
+            ret.CurrentInstance = instance;
+            ret.CurrentDevice = device;
+            return ret;
         }
 
         /// <summary>
