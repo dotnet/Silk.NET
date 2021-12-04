@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrGraphicsBindingVulkanKHR")]
+    [NativeName("Aliases", "XrGraphicsBindingVulkan2KHR")]
     public unsafe partial struct GraphicsBindingVulkanKHR
     {
         public GraphicsBindingVulkanKHR

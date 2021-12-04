@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlInfoKHR : IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeRateControlInfoKHR : IChainStart, IExtendsChain<VideoCodingControlInfoKHR>
     {
         public VideoEncodeRateControlInfoKHR
         (
@@ -25,11 +25,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             VideoEncodeRateControlFlagsKHR? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlMode = null,
-            uint? averageBitrate = null,
-            ushort? peakToAverageBitrateRatio = null,
-            ushort? frameRateNumerator = null,
-            ushort? frameRateDenominator = null,
-            uint? virtualBufferSizeInMs = null
+            byte? layerCount = null,
+            VideoEncodeRateControlLayerInfoKHR* pLayerConfigs = null
         ) : this()
         {
             if (sType is not null)
@@ -52,29 +49,14 @@ namespace Silk.NET.Vulkan
                 RateControlMode = rateControlMode.Value;
             }
 
-            if (averageBitrate is not null)
+            if (layerCount is not null)
             {
-                AverageBitrate = averageBitrate.Value;
+                LayerCount = layerCount.Value;
             }
 
-            if (peakToAverageBitrateRatio is not null)
+            if (pLayerConfigs is not null)
             {
-                PeakToAverageBitrateRatio = peakToAverageBitrateRatio.Value;
-            }
-
-            if (frameRateNumerator is not null)
-            {
-                FrameRateNumerator = frameRateNumerator.Value;
-            }
-
-            if (frameRateDenominator is not null)
-            {
-                FrameRateDenominator = frameRateDenominator.Value;
-            }
-
-            if (virtualBufferSizeInMs is not null)
-            {
-                VirtualBufferSizeInMs = virtualBufferSizeInMs.Value;
+                PLayerConfigs = pLayerConfigs;
             }
         }
 
@@ -99,30 +81,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "rateControlMode")]
         public VideoEncodeRateControlModeFlagsKHR RateControlMode;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "averageBitrate")]
-        public uint AverageBitrate;
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "layerCount")]
+        public byte LayerCount;
 /// <summary></summary>
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "peakToAverageBitrateRatio")]
-        public ushort PeakToAverageBitrateRatio;
-/// <summary></summary>
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "frameRateNumerator")]
-        public ushort FrameRateNumerator;
-/// <summary></summary>
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "frameRateDenominator")]
-        public ushort FrameRateDenominator;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "virtualBufferSizeInMs")]
-        public uint VirtualBufferSizeInMs;
+        [NativeName("Type", "VkVideoEncodeRateControlLayerInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoEncodeRateControlLayerInfoKHR")]
+        [NativeName("Name", "pLayerConfigs")]
+        public VideoEncodeRateControlLayerInfoKHR* PLayerConfigs;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
@@ -135,6 +102,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoEncodeRateControlInfoKHR Chain(
+            out VideoEncodeRateControlInfoKHR capture)
+        {
+            capture = new VideoEncodeRateControlInfoKHR(StructureType.VideoEncodeRateControlInfoKhr);
+            return ref capture;
         }
     }
 }
