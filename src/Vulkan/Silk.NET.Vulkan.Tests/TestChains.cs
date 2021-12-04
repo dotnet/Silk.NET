@@ -314,8 +314,9 @@ public class TestChains
         Assert.Equal(2, errorsArray.Length);
         Assert.Equal
         (
-            "The unmanaged chain has a structure type PhysicalDeviceFeatures2 at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr",
-            errorsArray[0]
+            "The unmanaged chain has a structure type PhysicalDeviceFeatures2 at position 2; expected PhysicalDeviceAccelerationStructureFeatures",
+            // PATCH: Due to the way ToString() interacts with enum aliases, the structure types may end in Khr, so removing. 
+            errorsArray[0].Replace("Khr", "")
         );
         Assert.Equal
         (
