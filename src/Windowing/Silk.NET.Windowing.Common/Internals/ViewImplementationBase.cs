@@ -135,7 +135,17 @@ namespace Silk.NET.Windowing.Internals
             set => _updatePeriod = value <= double.Epsilon ? 0 : 1 / value;
         }
 
-        public bool ShouldSwapAutomatically => _optionsCache.ShouldSwapAutomatically /* TODO set? */;
+        public bool IsContextControlDisabled
+        {
+            get => _optionsCache.IsContextControlDisabled;
+            set => _optionsCache.IsContextControlDisabled = value;
+        }
+
+        public bool ShouldSwapAutomatically
+        {
+            get => _optionsCache.ShouldSwapAutomatically;
+            set => _optionsCache.ShouldSwapAutomatically = value;
+        }
 
         // Cache controls for derived classes
         protected VideoMode CachedVideoMode
@@ -159,12 +169,12 @@ namespace Silk.NET.Windowing.Internals
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
             if ((delta >= _renderPeriod) || VSync)
             {
-                if (!(GLContext is null) && !GLContext.IsCurrent)
+                if (!IsContextControlDisabled && !(GLContext is null) && !GLContext.IsCurrent)
                 {
                     GLContext.MakeCurrent();
                 }
 
-                if (_swapIntervalChanged)
+                if (!IsContextControlDisabled && _swapIntervalChanged)
                 {
                     GLContext?.SwapInterval(VSync ? 1 : 0);
                     _swapIntervalChanged = false;
@@ -174,7 +184,7 @@ namespace Silk.NET.Windowing.Internals
                 _renderStopwatch.Restart();
                 Render?.Invoke(delta);
 
-                if (ShouldSwapAutomatically)
+                if (!IsContextControlDisabled && ShouldSwapAutomatically)
                 {
                     GLContext?.SwapBuffers();
                 }

@@ -42,6 +42,7 @@ namespace Silk.NET.Windowing
             PreferredBitDepth = opts.PreferredBitDepth;
             Samples = opts.Samples;
             WindowClass = null;
+            IsContextControlDisabled = opts.IsContextControlDisabled;
         }
 
         /// <inheritdoc />
@@ -52,6 +53,9 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public bool IsEventDriven { get; set; }
+
+        /// <inheritdoc />
+        public bool IsContextControlDisabled { get; set; }
 
         /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
@@ -128,7 +132,8 @@ namespace Silk.NET.Windowing
             bool isEventDriven = false,
             IGLContext? sharedContext = null,
             int? samples = null,
-            string? windowClass = null
+            string? windowClass = null,
+            bool isContextControlDisabled = false
         )
         {
             IsVisible = isVisible;
@@ -152,6 +157,7 @@ namespace Silk.NET.Windowing
             PreferredBitDepth = preferredBitDepth;
             Samples = samples;
             WindowClass = windowClass;
+            IsContextControlDisabled = isContextControlDisabled;
         }
 
         static WindowOptions()
