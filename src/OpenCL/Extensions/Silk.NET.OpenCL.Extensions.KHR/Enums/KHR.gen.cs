@@ -12,6 +12,48 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "GLenum")]
     public enum KHR : int
     {
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        DeviceCommandBufferCapabilitiesKhr = 0x12A9,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
+        DeviceCommandBufferRequiredQueuePropertiesKhr = 0x12AA,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR")]
+        CommandBufferCapabilityKernelPrintfKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR")]
+        CommandBufferCapabilityDeviceSideEnqueueKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
+        CommandBufferCapabilitySimultaneousUseKhr = 0x4,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
+        CommandBufferCapabilityOutOfOrderKhr = 0x8,
+        [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
+        CommandBufferFlagsKhr = 0x1293,
+        [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
+        CommandBufferSimultaneousUseKhr = 0x1,
+        [NativeName("Name", "CL_INVALID_COMMAND_BUFFER_KHR")]
+        InvalidCommandBufferKhr = unchecked((int)0xFFFFFFFFFFFFFB8E),
+        [NativeName("Name", "CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
+        InvalidSyncPointWaitListKhr = unchecked((int)0xFFFFFFFFFFFFFB8D),
+        [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
+        IncompatibleCommandQueueKhr = unchecked((int)0xFFFFFFFFFFFFFB8C),
+        [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
+        CommandBufferQueuesKhr = 0x1294,
+        [NativeName("Name", "CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
+        CommandBufferNumQueuesKhr = 0x1295,
+        [NativeName("Name", "CL_COMMAND_BUFFER_REFERENCE_COUNT_KHR")]
+        CommandBufferReferenceCountKhr = 0x1296,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_KHR")]
+        CommandBufferStateKhr = 0x1297,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
+        CommandBufferPropertiesArrayKhr = 0x1298,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
+        CommandBufferStateRecordingKhr = 0x0,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
+        CommandBufferStateExecutableKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
+        CommandBufferStatePendingKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
+        CommandBufferStateInvalidKhr = 0x3,
+        [NativeName("Name", "CL_COMMAND_COMMAND_BUFFER_KHR")]
+        CommandCommandBufferKhr = 0x12A8,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]

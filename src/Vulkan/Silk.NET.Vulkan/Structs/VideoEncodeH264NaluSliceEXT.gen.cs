@@ -28,10 +28,7 @@ namespace Silk.NET.Vulkan
             byte? refFinalList0EntryCount = null,
             VideoEncodeH264DpbSlotInfoEXT* pRefFinalList0Entries = null,
             byte? refFinalList1EntryCount = null,
-            VideoEncodeH264DpbSlotInfoEXT* pRefFinalList1Entries = null,
-            uint? precedingNaluBytes = null,
-            byte? minQp = null,
-            byte? maxQp = null
+            VideoEncodeH264DpbSlotInfoEXT* pRefFinalList1Entries = null
         ) : this()
         {
             if (sType is not null)
@@ -72,21 +69,6 @@ namespace Silk.NET.Vulkan
             if (pRefFinalList1Entries is not null)
             {
                 PRefFinalList1Entries = pRefFinalList1Entries;
-            }
-
-            if (precedingNaluBytes is not null)
-            {
-                PrecedingNaluBytes = precedingNaluBytes.Value;
-            }
-
-            if (minQp is not null)
-            {
-                MinQp = minQp.Value;
-            }
-
-            if (maxQp is not null)
-            {
-                MaxQp = maxQp.Value;
             }
         }
 
@@ -130,21 +112,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
         [NativeName("Name", "pRefFinalList1Entries")]
         public VideoEncodeH264DpbSlotInfoEXT* PRefFinalList1Entries;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "precedingNaluBytes")]
-        public uint PrecedingNaluBytes;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "minQp")]
-        public byte MinQp;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxQp")]
-        public byte MaxQp;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

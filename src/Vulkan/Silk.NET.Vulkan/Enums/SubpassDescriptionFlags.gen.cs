@@ -21,5 +21,11 @@ namespace Silk.NET.Vulkan
         SubpassDescriptionFragmentRegionBitQCom = 4,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
         SubpassDescriptionShaderResolveBitQCom = 8,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
+        SubpassDescriptionRasterizationOrderAttachmentColorAccessBitArm = 16,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]
+        SubpassDescriptionRasterizationOrderAttachmentDepthAccessBitArm = 32,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM")]
+        SubpassDescriptionRasterizationOrderAttachmentStencilAccessBitArm = 64,
     }
 }

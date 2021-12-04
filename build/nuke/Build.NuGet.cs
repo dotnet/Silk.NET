@@ -25,7 +25,7 @@ partial class Build
 
     Target PushToNuGet => CommonTarget
     (
-        x => x.DependsOn(CanCodeSign ? new[] { Pack } : new[] { Pack, SignPackages })
+        x => x.DependsOn(CanCodeSign ? new[] { Pack, SignPackages } : new[] { Pack })
             .Executes(PushPackages)
     );
 
