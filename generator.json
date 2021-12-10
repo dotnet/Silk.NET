@@ -486,7 +486,7 @@
                 "win-x64": "vulkan-1.dll",
                 "win-x86": "vulkan-1.dll",
                 "osx-x64": "libMoltenVK.dylib",
-                "android": "libvulkan.so.1",
+                "android": "libvulkan.so",
                 "iOS": "__Internal",
                 "className": "VulkanLibraryNameContainer"
             },
