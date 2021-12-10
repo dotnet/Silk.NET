@@ -277,7 +277,8 @@ namespace Silk.NET.Core.Loader
         {
             var allRiDs = new List<string>();
 
-            if (ctx is not null) // prevent null reference exception on net6.0-android where DependencyContext.Default is null
+            // prevent null reference exception on net6.0-android where DependencyContext.Default is null
+            if (ctx is not null)
             {
                 allRiDs.Add(currentRid);
                 if (!AddFallbacks(allRiDs, currentRid, ctx.RuntimeGraph))
