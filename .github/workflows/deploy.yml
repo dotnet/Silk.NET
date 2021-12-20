@@ -44,7 +44,7 @@ jobs:
         if-no-files-found: warn
         retention-days: 1
     - name: Push to NuGet
-      run: nuke PushToNuGet --skip Clean Restore Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }} --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+      run: nuke SignPackages PushToNuGet --skip Clean Restore Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }} --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
     - name: Upload Signed Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
