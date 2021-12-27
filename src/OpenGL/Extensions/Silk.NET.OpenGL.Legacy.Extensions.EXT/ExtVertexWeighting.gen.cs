@@ -20,19 +20,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtVertexWeighting : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_vertex_weighting";
-        [NativeApi(EntryPoint = "glVertexWeightfEXT")]
+        [NativeApi(EntryPoint = "glVertexWeightfEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexWeight([Flow(FlowDirection.In)] float weight);
 
-        [NativeApi(EntryPoint = "glVertexWeightfvEXT")]
+        [NativeApi(EntryPoint = "glVertexWeightfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] float* weight);
 
-        [NativeApi(EntryPoint = "glVertexWeightfvEXT")]
+        [NativeApi(EntryPoint = "glVertexWeightfvEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] in float weight);
 
-        [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexWeightPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexWeightPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         public ExtVertexWeighting(INativeContext ctx)

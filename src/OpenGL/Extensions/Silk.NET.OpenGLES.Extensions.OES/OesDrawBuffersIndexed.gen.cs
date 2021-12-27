@@ -20,148 +20,148 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesDrawBuffersIndexed : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_draw_buffers_indexed";
-        [NativeApi(EntryPoint = "glBlendEquationiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES modeRGB, [Flow(FlowDirection.In)] OES modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] OES modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFunciOES")]
+        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES src, [Flow(FlowDirection.In)] OES dst);
 
-        [NativeApi(EntryPoint = "glBlendFunciOES")]
+        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES src, [Flow(FlowDirection.In)] BlendingFactor dst);
 
-        [NativeApi(EntryPoint = "glBlendFunciOES")]
+        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] OES dst);
 
-        [NativeApi(EntryPoint = "glBlendFunciOES")]
+        [NativeApi(EntryPoint = "glBlendFunciOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateiOES", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] bool a);
 
-        [NativeApi(EntryPoint = "glColorMaskiOES")]
+        [NativeApi(EntryPoint = "glColorMaskiOES", Convention = CallingConvention.Winapi)]
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Boolean r, [Flow(FlowDirection.In)] Boolean g, [Flow(FlowDirection.In)] Boolean b, [Flow(FlowDirection.In)] Boolean a);
 
-        [NativeApi(EntryPoint = "glDisableiOES")]
+        [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
         public partial void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glDisableiOES")]
+        [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
         public partial void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEnableiOES")]
+        [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
         public partial void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEnableiOES")]
+        [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
         public partial void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glIsEnablediOES")]
+        [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glIsEnablediOES")]
+        [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
         public OesDrawBuffersIndexed(INativeContext ctx)

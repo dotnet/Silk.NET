@@ -35,6 +35,8 @@ namespace Silk.NET.Vulkan
         ImageAspectMemoryPlane2BitExt = 512,
         [NativeName("Name", "VK_IMAGE_ASPECT_MEMORY_PLANE_3_BIT_EXT")]
         ImageAspectMemoryPlane3BitExt = 1024,
+        [NativeName("Name", "VK_IMAGE_ASPECT_NONE_KHR")]
+        ImageAspectNoneKhr = 0,
         [NativeName("Name", "VK_IMAGE_ASPECT_PLANE_0_BIT")]
         ImageAspectPlane0Bit = 16,
         [NativeName("Name", "VK_IMAGE_ASPECT_PLANE_1_BIT")]

@@ -20,76 +20,76 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtMultiDrawArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_multi_draw_arrays";
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsEXT")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount);
 
         public unsafe void MultiDrawArrays([Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)

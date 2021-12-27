@@ -21,35 +21,35 @@ namespace Silk.NET.Vulkan.Extensions.MVK
     {
         public const string ExtensionName = "VK_MVK_macos_surface";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MacOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MacOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MacOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
+        [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK", Convention = CallingConvention.Winapi)]
         public partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MacOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         public MvkMacosSurface(INativeContext ctx)

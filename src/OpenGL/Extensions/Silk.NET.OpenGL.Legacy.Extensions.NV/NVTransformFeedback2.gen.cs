@@ -20,49 +20,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVTransformFeedback2 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_transform_feedback2";
-        [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glBindTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void BindTransformFeedback([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glBindTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void BindTransformFeedback([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
-        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
 
-        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] TransformFeedback* ids);
 
-        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in TransformFeedback ids);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
-        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
 
-        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] TransformFeedback* ids);
 
-        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
+        [NativeApi(EntryPoint = "glGenTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out TransformFeedback ids);
 
-        [NativeApi(EntryPoint = "glIsTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glIsTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial bool IsTransformFeedback([Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glPauseTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glPauseTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void PauseTransformFeedback();
 
-        [NativeApi(EntryPoint = "glResumeTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glResumeTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void ResumeTransformFeedback();
 
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)

@@ -20,148 +20,148 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesTextureBorderClamp : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_texture_border_clamp";
-        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glGetTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
 
-        [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
+        [NativeApi(EntryPoint = "glSamplerParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint param);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glTexParameterIuivOES")]
+        [NativeApi(EntryPoint = "glTexParameterIuivOES", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
         public OesTextureBorderClamp(INativeContext ctx)

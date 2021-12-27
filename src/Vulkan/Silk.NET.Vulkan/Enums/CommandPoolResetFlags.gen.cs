@@ -15,5 +15,7 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT")]
         CommandPoolResetReleaseResourcesBit = 1,
+        [NativeName("Name", "VK_COMMAND_POOL_RESET_RESERVED_1_BIT_COREAVI")]
+        CommandPoolResetReserved1BitCoreavi = 2,
     }
 }

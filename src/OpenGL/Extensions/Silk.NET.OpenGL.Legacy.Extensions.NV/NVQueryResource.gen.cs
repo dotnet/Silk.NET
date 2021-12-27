@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVQueryResource : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_query_resource";
-        [NativeApi(EntryPoint = "glQueryResourceNV")]
+        [NativeApi(EntryPoint = "glQueryResourceNV", Convention = CallingConvention.Winapi)]
         public unsafe partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* buffer);
 
-        [NativeApi(EntryPoint = "glQueryResourceNV")]
+        [NativeApi(EntryPoint = "glQueryResourceNV", Convention = CallingConvention.Winapi)]
         public partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int buffer);
 
         public unsafe int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)

@@ -52,7 +52,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -63,7 +74,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -75,7 +97,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -89,7 +122,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -117,7 +161,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -126,7 +181,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Device** ppDevicePtr = &ppDevice)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+            #endif
             }
         }
 
@@ -135,7 +201,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -146,7 +223,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -158,7 +246,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -172,7 +271,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -185,7 +295,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -199,7 +320,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -214,7 +346,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -231,7 +374,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -243,7 +397,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -254,7 +419,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -266,7 +442,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -280,7 +467,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -291,7 +489,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -302,7 +511,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -314,7 +534,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -328,7 +559,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -339,7 +581,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBuffer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBuffer);
+            }
+            #endif
             return ret;
         }
 
@@ -350,7 +603,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppBufferPtr = &ppBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSize, ppBufferPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -362,7 +626,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pBufferSizePtr = &pBufferSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -376,7 +651,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppBufferPtr = &ppBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoder, Type, pBufferSizePtr, ppBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -389,7 +675,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -403,7 +700,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppBufferPtr = &ppBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSize, ppBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -418,7 +726,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pBufferSizePtr = &pBufferSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -435,7 +754,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void** ppBufferPtr = &ppBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, uint*, void**, int>)LpVtbl[7])(@this, pDecoderPtr, Type, pBufferSizePtr, ppBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -447,7 +777,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoder, Type);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoder, Type);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoder, Type);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoder, Type);
+            }
+            #endif
             return ret;
         }
 
@@ -458,7 +799,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoderPtr, Type);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoderPtr, Type);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoderPtr, Type);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderBufferType, int>)LpVtbl[8])(@this, pDecoderPtr, Type);
+                }
+            #endif
             }
             return ret;
         }
@@ -468,7 +820,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKey);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKey);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKey);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKey);
+            }
+            #endif
             return ret;
         }
 
@@ -479,7 +842,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pContentKeyPtr = &pContentKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -491,7 +865,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey);
+                }
+            #endif
             }
             return ret;
         }
@@ -505,7 +890,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -518,7 +914,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey);
+                }
+            #endif
             }
             return ret;
         }
@@ -532,7 +939,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -547,7 +965,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -564,7 +993,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -576,7 +1016,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoder);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoder);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoder);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoder);
+            }
+            #endif
             return ret;
         }
 
@@ -587,7 +1038,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoderPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoderPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoderPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, int>)LpVtbl[10])(@this, pDecoderPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -597,7 +1059,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -608,7 +1081,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoDecoderBufferDesc* pBufferDescPtr = &pBufferDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -620,7 +1104,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+                }
+            #endif
             }
             return ret;
         }
@@ -634,7 +1129,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderBufferDesc* pBufferDescPtr = &pBufferDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc*, int>)LpVtbl[11])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -645,7 +1151,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionData);
+            }
+            #endif
             return ret;
         }
 
@@ -656,7 +1173,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoDecoderExtension* pExtensionDataPtr = &pExtensionData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoder, pExtensionDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -668,7 +1196,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionData);
+                }
+            #endif
             }
             return ret;
         }
@@ -682,7 +1221,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderExtension* pExtensionDataPtr = &pExtensionData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoDecoderExtension*, int>)LpVtbl[12])(@this, pDecoderPtr, pExtensionDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -692,7 +1242,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -701,7 +1262,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -711,7 +1283,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+                }
+            #endif
             }
         }
 
@@ -723,7 +1306,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -732,7 +1326,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int YCbCr, VideoColor* pColor)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -741,7 +1346,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoColor* pColorPtr = &pColor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
+                }
+            #endif
             }
         }
 
@@ -751,7 +1367,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
+                }
+            #endif
             }
         }
 
@@ -763,7 +1390,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoColor* pColorPtr = &pColor)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -772,7 +1410,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -781,7 +1430,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -791,7 +1451,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -803,7 +1474,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[15])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -812,7 +1494,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputAlphaFillMode(ID3D11VideoProcessor* pVideoProcessor, VideoProcessorAlphaFillMode AlphaFillMode, uint StreamIndex)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessor, AlphaFillMode, StreamIndex);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessor, AlphaFillMode, StreamIndex);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessor, AlphaFillMode, StreamIndex);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessor, AlphaFillMode, StreamIndex);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -821,7 +1514,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessorPtr, AlphaFillMode, StreamIndex);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessorPtr, AlphaFillMode, StreamIndex);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessorPtr, AlphaFillMode, StreamIndex);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode, uint, void>)LpVtbl[16])(@this, pVideoProcessorPtr, AlphaFillMode, StreamIndex);
+                }
+            #endif
             }
         }
 
@@ -829,7 +1533,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Vector2D<int> Size)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -838,7 +1553,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<int>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+                }
+            #endif
             }
         }
 
@@ -846,7 +1572,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, int Enable)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessor, Enable);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessor, Enable);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessor, Enable);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessor, Enable);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -855,7 +1592,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
+                }
+            #endif
             }
         }
 
@@ -864,7 +1612,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -875,7 +1634,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -887,7 +1657,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -901,7 +1682,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -914,7 +1706,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -928,7 +1731,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -943,7 +1757,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -960,7 +1785,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -971,7 +1807,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -980,7 +1827,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -990,7 +1848,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* EnabledPtr = &Enabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+                }
+            #endif
             }
         }
 
@@ -1002,7 +1871,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1013,7 +1893,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+                }
+            #endif
             }
         }
 
@@ -1025,7 +1916,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1038,7 +1940,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* EnabledPtr = &Enabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+                    }
+            #endif
                 }
             }
         }
@@ -1053,7 +1966,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1063,7 +1987,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int* pYCbCr, VideoColor* pColor)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColor);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColor);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColor);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColor);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1072,7 +2007,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoColor* pColorPtr = &pColor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColorPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColorPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCr, pColorPtr);
+                }
+            #endif
             }
         }
 
@@ -1082,7 +2028,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pYCbCrPtr = &pYCbCr)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColor);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColor);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColor);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColor);
+                }
+            #endif
             }
         }
 
@@ -1094,7 +2051,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoColor* pColorPtr = &pColor)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColorPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColorPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessor, pYCbCrPtr, pColorPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1105,7 +2073,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColor);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColor);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColor);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColor);
+                }
+            #endif
             }
         }
 
@@ -1117,7 +2096,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoColor* pColorPtr = &pColor)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColorPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColorPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCr, pColorPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1130,7 +2120,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pYCbCrPtr = &pYCbCr)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColor);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColor);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColor);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColor);
+                    }
+            #endif
                 }
             }
         }
@@ -1145,7 +2146,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoColor* pColorPtr = &pColor)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColorPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColorPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColorPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, VideoColor*, void>)LpVtbl[21])(@this, pVideoProcessorPtr, pYCbCrPtr, pColorPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1155,7 +2167,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1164,7 +2187,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -1174,7 +2208,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -1186,7 +2231,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)LpVtbl[22])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1195,7 +2251,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputAlphaFillMode(ID3D11VideoProcessor* pVideoProcessor, VideoProcessorAlphaFillMode* pAlphaFillMode, uint* pStreamIndex)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndex);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndex);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndex);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndex);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1204,7 +2271,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pStreamIndexPtr = &pStreamIndex)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndexPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndexPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndexPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillMode, pStreamIndexPtr);
+                }
+            #endif
             }
         }
 
@@ -1214,7 +2292,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorAlphaFillMode* pAlphaFillModePtr = &pAlphaFillMode)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndex);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndex);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndex);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndex);
+                }
+            #endif
             }
         }
 
@@ -1226,7 +2315,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pStreamIndexPtr = &pStreamIndex)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndexPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndexPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndexPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessor, pAlphaFillModePtr, pStreamIndexPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1237,7 +2337,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndex);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndex);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndex);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndex);
+                }
+            #endif
             }
         }
 
@@ -1249,7 +2360,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pStreamIndexPtr = &pStreamIndex)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndexPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndexPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndexPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillMode, pStreamIndexPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1262,7 +2384,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorAlphaFillMode* pAlphaFillModePtr = &pAlphaFillMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndex);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndex);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndex);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndex);
+                    }
+            #endif
                 }
             }
         }
@@ -1277,7 +2410,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pStreamIndexPtr = &pStreamIndex)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndexPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndexPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndexPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorAlphaFillMode*, uint*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pAlphaFillModePtr, pStreamIndexPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1287,7 +2431,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2D<int>* pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1296,7 +2451,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<int>* pSizePtr = &pSize)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+                }
+            #endif
             }
         }
 
@@ -1306,7 +2472,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+                }
+            #endif
             }
         }
 
@@ -1318,7 +2495,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Vector2D<int>* pSizePtr = &pSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1329,7 +2517,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+                }
+            #endif
             }
         }
 
@@ -1341,7 +2540,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Vector2D<int>* pSizePtr = &pSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1354,7 +2564,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+                    }
+            #endif
                 }
             }
         }
@@ -1369,7 +2590,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Maths.Vector2D<int>* pSizePtr = &pSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<int>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1379,7 +2611,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputStereoMode(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabled);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabled);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabled);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabled);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1388,7 +2631,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabledPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabledPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabledPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessor, pEnabledPtr);
+                }
+            #endif
             }
         }
 
@@ -1398,7 +2652,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabled);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabled);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabled);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabled);
+                }
+            #endif
             }
         }
 
@@ -1410,7 +2675,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabledPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabledPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabledPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[25])(@this, pVideoProcessorPtr, pEnabledPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1420,7 +2696,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -1431,7 +2718,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -1443,7 +2741,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -1457,7 +2766,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1470,7 +2790,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -1484,7 +2815,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1499,7 +2841,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1516,7 +2869,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1527,7 +2891,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamFrameFormat(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoFrameFormat FrameFormat)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessor, StreamIndex, FrameFormat);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessor, StreamIndex, FrameFormat);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessor, StreamIndex, FrameFormat);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessor, StreamIndex, FrameFormat);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1536,7 +2911,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessorPtr, StreamIndex, FrameFormat);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessorPtr, StreamIndex, FrameFormat);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessorPtr, StreamIndex, FrameFormat);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat, void>)LpVtbl[27])(@this, pVideoProcessorPtr, StreamIndex, FrameFormat);
+                }
+            #endif
             }
         }
 
@@ -1544,7 +2930,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1553,7 +2950,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -1563,7 +2971,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -1575,7 +2994,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[28])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1584,7 +3014,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1593,7 +3034,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+                }
+            #endif
             }
         }
 
@@ -1603,7 +3055,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+                }
+            #endif
             }
         }
 
@@ -1615,7 +3078,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1624,7 +3098,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1633,7 +3118,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -1643,7 +3139,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                }
+            #endif
             }
         }
 
@@ -1655,7 +3162,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1664,7 +3182,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1673,7 +3202,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -1683,7 +3223,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                }
+            #endif
             }
         }
 
@@ -1695,7 +3246,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1704,7 +3266,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, float Alpha)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1713,7 +3286,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, void>)LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
+                }
+            #endif
             }
         }
 
@@ -1721,7 +3305,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1730,7 +3325,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pEntriesPtr = &pEntries)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+                }
+            #endif
             }
         }
 
@@ -1740,7 +3346,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+                }
+            #endif
             }
         }
 
@@ -1752,7 +3369,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pEntriesPtr = &pEntries)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[33])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1761,7 +3389,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1770,7 +3409,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                }
+            #endif
             }
         }
 
@@ -1780,7 +3430,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                }
+            #endif
             }
         }
 
@@ -1792,7 +3453,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1803,7 +3475,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+            #endif
             }
         }
 
@@ -1815,7 +3498,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -1828,7 +3522,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+            #endif
                 }
             }
         }
@@ -1843,7 +3548,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1853,7 +3569,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, float Lower, float Upper)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1862,7 +3589,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, float, float, void>)LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
+                }
+            #endif
             }
         }
 
@@ -1870,7 +3608,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, VideoProcessorStereoFormat Format, int LeftViewFrame0, int BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1879,7 +3628,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorStereoFormat, int, int, VideoProcessorStereoFlipMode, int, void>)LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -1887,7 +3647,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1896,7 +3667,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, void>)LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
+                }
+            #endif
             }
         }
 
@@ -1904,7 +3686,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, int Enable, int Level)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -1913,7 +3706,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int, int, void>)LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
+                }
+            #endif
             }
         }
 
@@ -1922,7 +3726,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -1933,7 +3748,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -1945,7 +3771,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -1959,7 +3796,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1972,7 +3820,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -1986,7 +3845,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -2001,7 +3871,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -2018,7 +3899,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2029,7 +3921,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamFrameFormat(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoFrameFormat* pFrameFormat)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormat);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormat);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormat);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormat);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2038,7 +3941,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoFrameFormat* pFrameFormatPtr = &pFrameFormat)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormatPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormatPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormatPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessor, StreamIndex, pFrameFormatPtr);
+                }
+            #endif
             }
         }
 
@@ -2048,7 +3962,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormat);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormat);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormat);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormat);
+                }
+            #endif
             }
         }
 
@@ -2060,7 +3985,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoFrameFormat* pFrameFormatPtr = &pFrameFormat)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormatPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormatPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormatPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoFrameFormat*, void>)LpVtbl[40])(@this, pVideoProcessorPtr, StreamIndex, pFrameFormatPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2069,7 +4005,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2078,7 +4025,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -2088,7 +4046,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -2100,7 +4069,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)LpVtbl[41])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2109,7 +4089,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate* pOutputRate, int* pRepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2118,7 +4109,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+                }
+            #endif
             }
         }
 
@@ -2128,7 +4130,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pRepeatFramePtr = &pRepeatFrame)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+                }
+            #endif
             }
         }
 
@@ -2140,7 +4153,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2151,7 +4175,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorOutputRate* pOutputRatePtr = &pOutputRate)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+                }
+            #endif
             }
         }
 
@@ -2163,7 +4198,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2176,7 +4222,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRepeatFramePtr = &pRepeatFrame)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+                    }
+            #endif
                 }
             }
         }
@@ -2191,7 +4248,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessor, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2203,7 +4271,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRate);
+                }
+            #endif
             }
         }
 
@@ -2215,7 +4294,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFrame, pCustomRatePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2228,7 +4318,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRepeatFramePtr = &pRepeatFrame)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRate);
+                    }
+            #endif
                 }
             }
         }
@@ -2243,7 +4344,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRate, pRepeatFramePtr, pCustomRatePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2257,7 +4369,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorOutputRate* pOutputRatePtr = &pOutputRate)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRate);
+                    }
+            #endif
                 }
             }
         }
@@ -2272,7 +4395,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFrame, pCustomRatePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2288,7 +4422,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRepeatFramePtr = &pRepeatFrame)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRate);
+                        }
+            #endif
                     }
                 }
             }
@@ -2306,7 +4451,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate*, int*, Silk.NET.DXGI.Rational*, void>)LpVtbl[42])(@this, pVideoProcessorPtr, StreamIndex, pOutputRatePtr, pRepeatFramePtr, pCustomRatePtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -2317,7 +4473,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2326,7 +4493,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -2336,7 +4514,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                }
+            #endif
             }
         }
 
@@ -2348,7 +4537,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2359,7 +4559,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                }
+            #endif
             }
         }
 
@@ -2371,7 +4582,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2384,7 +4606,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    }
+            #endif
                 }
             }
         }
@@ -2399,7 +4632,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2409,7 +4653,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2418,7 +4673,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                }
+            #endif
             }
         }
 
@@ -2428,7 +4694,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                }
+            #endif
             }
         }
 
@@ -2440,7 +4717,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2451,7 +4739,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                }
+            #endif
             }
         }
 
@@ -2463,7 +4762,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2476,7 +4786,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                    }
+            #endif
                 }
             }
         }
@@ -2491,7 +4812,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2501,7 +4833,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamAlpha(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, float* pAlpha)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlpha);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlpha);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlpha);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlpha);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2510,7 +4853,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pAlphaPtr = &pAlpha)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlphaPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlphaPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlphaPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabled, pAlphaPtr);
+                }
+            #endif
             }
         }
 
@@ -2520,7 +4874,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlpha);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlpha);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlpha);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlpha);
+                }
+            #endif
             }
         }
 
@@ -2532,7 +4897,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pAlphaPtr = &pAlpha)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlphaPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlphaPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlphaPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pAlphaPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2543,7 +4919,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlpha);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlpha);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlpha);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlpha);
+                }
+            #endif
             }
         }
 
@@ -2555,7 +4942,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pAlphaPtr = &pAlpha)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlphaPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlphaPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlphaPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pAlphaPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2568,7 +4966,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlpha);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlpha);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlpha);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlpha);
+                    }
+            #endif
                 }
             }
         }
@@ -2583,7 +4992,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* pAlphaPtr = &pAlpha)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlphaPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlphaPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlphaPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, void>)LpVtbl[45])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pAlphaPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2593,7 +5013,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2602,7 +5033,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pEntriesPtr = &pEntries)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessor, StreamIndex, Count, pEntriesPtr);
+                }
+            #endif
             }
         }
 
@@ -2612,7 +5054,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntries);
+                }
+            #endif
             }
         }
 
@@ -2624,7 +5077,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pEntriesPtr = &pEntries)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)LpVtbl[46])(@this, pVideoProcessorPtr, StreamIndex, Count, pEntriesPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2633,7 +5097,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2642,7 +5117,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                }
+            #endif
             }
         }
 
@@ -2652,7 +5138,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                }
+            #endif
             }
         }
 
@@ -2664,7 +5161,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2675,7 +5183,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+            #endif
             }
         }
 
@@ -2687,7 +5206,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2700,7 +5230,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+            #endif
                 }
             }
         }
@@ -2715,7 +5256,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2727,7 +5279,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatio);
+                }
+            #endif
             }
         }
 
@@ -2739,7 +5302,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2752,7 +5326,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                    }
+            #endif
                 }
             }
         }
@@ -2767,7 +5352,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2781,7 +5377,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatio);
+                    }
+            #endif
                 }
             }
         }
@@ -2796,7 +5403,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2812,7 +5430,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                        }
+            #endif
                     }
                 }
             }
@@ -2830,7 +5459,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)LpVtbl[47])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -2841,7 +5481,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamLumaKey(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, float* pLower, float* pUpper)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpper);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -2850,7 +5501,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pUpperPtr = &pUpper)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpperPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpperPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLower, pUpperPtr);
+                }
+            #endif
             }
         }
 
@@ -2860,7 +5522,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pLowerPtr = &pLower)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpper);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpper);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpper);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpper);
+                }
+            #endif
             }
         }
 
@@ -2872,7 +5545,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pUpperPtr = &pUpper)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2883,7 +5567,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpper);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpper);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpper);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpper);
+                }
+            #endif
             }
         }
 
@@ -2895,7 +5590,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pUpperPtr = &pUpper)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2908,7 +5614,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pLowerPtr = &pLower)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+                    }
+            #endif
                 }
             }
         }
@@ -2923,7 +5640,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* pUpperPtr = &pUpper)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2935,7 +5663,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpper);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpper);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpper);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpper);
+                }
+            #endif
             }
         }
 
@@ -2947,7 +5686,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pUpperPtr = &pUpper)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpperPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpperPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLower, pUpperPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -2960,7 +5710,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (float* pLowerPtr = &pLower)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpper);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpper);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpper);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpper);
+                    }
+            #endif
                 }
             }
         }
@@ -2975,7 +5736,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* pUpperPtr = &pUpper)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pLowerPtr, pUpperPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -2989,7 +5761,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpper);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpper);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpper);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpper);
+                    }
+            #endif
                 }
             }
         }
@@ -3004,7 +5787,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* pUpperPtr = &pUpper)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLower, pUpperPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3020,7 +5814,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* pLowerPtr = &pLower)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpper);
+                        }
+            #endif
                     }
                 }
             }
@@ -3038,7 +5843,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (float* pUpperPtr = &pUpper)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, float*, float*, void>)LpVtbl[48])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pLowerPtr, pUpperPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3049,7 +5865,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamStereoFormat(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorStereoFormat* pFormat, int* pLeftViewFrame0, int* pBaseViewFrame0, VideoProcessorStereoFlipMode* pFlipMode, int* MonoOffset)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -3058,7 +5885,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* MonoOffsetPtr = &MonoOffset)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                }
+            #endif
             }
         }
 
@@ -3068,7 +5906,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -3080,7 +5929,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -3091,7 +5951,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -3103,7 +5974,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -3116,7 +5998,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3131,7 +6024,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3143,7 +6047,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -3155,7 +6070,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -3168,7 +6094,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3183,7 +6120,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3197,7 +6145,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3212,7 +6171,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3228,7 +6198,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3246,7 +6227,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3259,7 +6251,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorStereoFormat* pFormatPtr = &pFormat)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -3271,7 +6274,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -3284,7 +6298,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3299,7 +6324,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3313,7 +6349,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3328,7 +6375,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3344,7 +6402,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3362,7 +6431,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3377,7 +6457,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3392,7 +6483,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3408,7 +6510,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3426,7 +6539,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3443,7 +6567,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3461,7 +6596,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3480,7 +6626,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3501,7 +6658,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -3515,7 +6683,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnablePtr = &pEnable)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -3527,7 +6706,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -3540,7 +6730,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3555,7 +6756,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3569,7 +6781,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3584,7 +6807,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3600,7 +6834,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3618,7 +6863,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3633,7 +6889,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3648,7 +6915,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3664,7 +6942,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3682,7 +6971,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3699,7 +6999,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3717,7 +7028,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3736,7 +7058,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3757,7 +7090,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -3773,7 +7117,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFormat* pFormatPtr = &pFormat)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -3788,7 +7143,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -3804,7 +7170,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3822,7 +7199,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3839,7 +7227,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3857,7 +7256,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3876,7 +7286,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3897,7 +7318,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -3915,7 +7347,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -3933,7 +7376,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3952,7 +7406,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -3973,7 +7438,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -3993,7 +7469,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4014,7 +7501,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4036,7 +7534,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4060,7 +7569,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -4075,7 +7595,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                }
+            #endif
             }
         }
 
@@ -4087,7 +7618,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* MonoOffsetPtr = &MonoOffset)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -4100,7 +7642,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -4115,7 +7668,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -4129,7 +7693,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -4144,7 +7719,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -4160,7 +7746,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4178,7 +7775,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4193,7 +7801,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -4208,7 +7827,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -4224,7 +7854,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4242,7 +7883,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4259,7 +7911,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4277,7 +7940,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4296,7 +7970,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4317,7 +8002,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4333,7 +8029,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStereoFormat* pFormatPtr = &pFormat)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -4348,7 +8055,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -4364,7 +8082,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4382,7 +8111,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4399,7 +8139,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4417,7 +8168,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4436,7 +8198,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4457,7 +8230,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4475,7 +8259,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4493,7 +8288,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4512,7 +8318,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4533,7 +8350,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4553,7 +8381,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4574,7 +8413,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4596,7 +8446,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4620,7 +8481,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -4637,7 +8509,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnablePtr = &pEnable)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                    }
+            #endif
                 }
             }
         }
@@ -4652,7 +8535,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* MonoOffsetPtr = &MonoOffset)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -4668,7 +8562,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4686,7 +8591,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4703,7 +8619,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4721,7 +8648,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4740,7 +8678,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4761,7 +8710,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4779,7 +8739,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4797,7 +8768,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4816,7 +8798,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4837,7 +8830,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4857,7 +8861,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4878,7 +8893,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4900,7 +8926,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -4924,7 +8961,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormat, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -4943,7 +8991,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStereoFormat* pFormatPtr = &pFormat)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffset);
+                        }
+            #endif
                     }
                 }
             }
@@ -4961,7 +9020,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* MonoOffsetPtr = &MonoOffset)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -4980,7 +9050,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -5001,7 +9082,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5021,7 +9113,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -5042,7 +9145,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5064,7 +9178,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5088,7 +9213,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -5109,7 +9245,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pLeftViewFrame0Ptr = &pLeftViewFrame0)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffset);
+                            }
+            #endif
                         }
                     }
                 }
@@ -5130,7 +9277,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* MonoOffsetPtr = &MonoOffset)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipMode, MonoOffsetPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5152,7 +9310,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5176,7 +9345,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0, pFlipModePtr, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -5199,7 +9379,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pBaseViewFrame0Ptr = &pBaseViewFrame0)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffset);
+                                }
+            #endif
                             }
                         }
                     }
@@ -5223,7 +9414,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* MonoOffsetPtr = &MonoOffset)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipMode, MonoOffsetPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -5248,7 +9450,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (VideoProcessorStereoFlipMode* pFlipModePtr = &pFlipMode)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffset);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -5275,7 +9488,18 @@ namespace Silk.NET.Direct3D11
                                 {
                                     fixed (int* MonoOffsetPtr = &MonoOffset)
                                     {
-                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #if NET5_0_OR_GREATER
+                                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+            #else
+                                        if (SilkMarshal.IsWinapiStdcall)
+                                        {
+                                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                        }
+                                        else
+                                        {
+                                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorStereoFormat*, int*, int*, VideoProcessorStereoFlipMode*, int*, void>)LpVtbl[49])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFormatPtr, pLeftViewFrame0Ptr, pBaseViewFrame0Ptr, pFlipModePtr, MonoOffsetPtr);
+                                        }
+            #endif
                                     }
                                 }
                             }
@@ -5289,7 +9513,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamAutoProcessingMode(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabled);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabled);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabled);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabled);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -5298,7 +9533,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabledPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabledPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabledPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessor, StreamIndex, pEnabledPtr);
+                }
+            #endif
             }
         }
 
@@ -5308,7 +9554,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabled);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabled);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabled);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabled);
+                }
+            #endif
             }
         }
 
@@ -5320,7 +9577,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, void>)LpVtbl[50])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5329,7 +9597,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamFilter(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, int* pEnabled, int* pLevel)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevel);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -5338,7 +9617,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pLevelPtr = &pLevel)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevelPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevelPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevelPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabled, pLevelPtr);
+                }
+            #endif
             }
         }
 
@@ -5348,7 +9638,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevel);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevel);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevel);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevel);
+                }
+            #endif
             }
         }
 
@@ -5360,7 +9661,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pLevelPtr = &pLevel)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessor, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5371,7 +9683,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevel);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevel);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevel);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevel);
+                }
+            #endif
             }
         }
 
@@ -5383,7 +9706,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pLevelPtr = &pLevel)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevelPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevelPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevelPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabled, pLevelPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5396,7 +9730,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevel);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevel);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevel);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevel);
+                    }
+            #endif
                 }
             }
         }
@@ -5411,7 +9756,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pLevelPtr = &pLevel)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, int*, int*, void>)LpVtbl[51])(@this, pVideoProcessorPtr, StreamIndex, Filter, pEnabledPtr, pLevelPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5422,7 +9778,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -5433,7 +9800,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -5445,7 +9823,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -5459,7 +9848,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5472,7 +9872,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -5486,7 +9897,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5501,7 +9923,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5518,7 +9951,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5530,7 +9974,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreams);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreams);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreams);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreams);
+            }
+            #endif
             return ret;
         }
 
@@ -5541,7 +9996,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorStream* pStreamsPtr = &pStreams)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreamsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreamsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreamsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pView, OutputFrame, StreamCount, pStreamsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -5553,7 +10019,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessorOutputView* pViewPtr = &pView)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreams);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreams);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreams);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreams);
+                }
+            #endif
             }
             return ret;
         }
@@ -5567,7 +10044,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStream* pStreamsPtr = &pStreams)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessor, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5580,7 +10068,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreams);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreams);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreams);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreams);
+                }
+            #endif
             }
             return ret;
         }
@@ -5594,7 +10093,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStream* pStreamsPtr = &pStreams)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreamsPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreamsPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreamsPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pView, OutputFrame, StreamCount, pStreamsPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5609,7 +10119,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorOutputView* pViewPtr = &pView)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreams);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreams);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreams);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreams);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5626,7 +10147,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorStream* pStreamsPtr = &pStreams)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, VideoProcessorStream*, int>)LpVtbl[53])(@this, pVideoProcessorPtr, pViewPtr, OutputFrame, StreamCount, pStreamsPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5638,7 +10170,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -5649,7 +10192,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -5661,7 +10215,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -5675,7 +10240,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -5685,7 +10261,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void EncryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIV);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIV);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIV);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -5694,7 +10281,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pIVPtr = &pIV)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                }
+            #endif
             }
         }
 
@@ -5704,7 +10302,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5716,7 +10325,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5727,7 +10347,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5739,7 +10370,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5752,7 +10394,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -5767,7 +10420,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5779,7 +10443,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5791,7 +10466,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5804,7 +10490,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -5819,7 +10516,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5833,7 +10541,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -5848,7 +10567,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5864,7 +10594,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -5882,7 +10623,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -5893,7 +10645,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -5902,7 +10665,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pIVPtr = &pIV)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                }
+            #endif
             }
         }
 
@@ -5912,7 +10686,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pContentKeyPtr = &pContentKey)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5924,7 +10709,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5935,7 +10731,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5947,7 +10754,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -5960,7 +10778,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -5975,7 +10804,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -5987,7 +10827,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -5999,7 +10850,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -6012,7 +10874,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6027,7 +10900,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6041,7 +10925,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6056,7 +10951,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6072,7 +10978,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6090,7 +11007,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6103,7 +11031,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -6115,7 +11054,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -6128,7 +11078,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6143,7 +11104,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6157,7 +11129,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6172,7 +11155,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6188,7 +11182,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6206,7 +11211,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6221,7 +11237,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6236,7 +11263,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6252,7 +11290,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6270,7 +11319,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6287,7 +11347,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6305,7 +11376,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6324,7 +11406,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6345,7 +11438,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6359,7 +11463,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                }
+            #endif
             }
         }
 
@@ -6371,7 +11486,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -6384,7 +11510,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6399,7 +11536,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6413,7 +11561,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6428,7 +11587,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6444,7 +11614,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6462,7 +11643,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6477,7 +11669,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6492,7 +11695,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6508,7 +11722,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6526,7 +11751,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6543,7 +11779,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6561,7 +11808,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6580,7 +11838,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6601,7 +11870,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6617,7 +11897,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                    }
+            #endif
                 }
             }
         }
@@ -6632,7 +11923,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -6648,7 +11950,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6666,7 +11979,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6683,7 +12007,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6701,7 +12036,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6720,7 +12066,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6741,7 +12098,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6759,7 +12127,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
+                        }
+            #endif
                     }
                 }
             }
@@ -6777,7 +12156,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6796,7 +12186,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6817,7 +12218,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6837,7 +12249,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIV);
+                            }
+            #endif
                         }
                     }
                 }
@@ -6858,7 +12281,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6880,7 +12314,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (void* pContentKeyPtr = &pContentKey)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #if NET5_0_OR_GREATER
+                                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                                }
+                                else
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                                }
+            #endif
                             }
                         }
                     }
@@ -6904,7 +12349,18 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (void* pIVPtr = &pIV)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #if NET5_0_OR_GREATER
+                                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+            #else
+                                    if (SilkMarshal.IsWinapiStdcall)
+                                    {
+                                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                    }
+                                    else
+                                    {
+                                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                    }
+            #endif
                                 }
                             }
                         }
@@ -6917,7 +12373,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void StartSessionKeyRefresh(ID3D11CryptoSession* pCryptoSession, uint RandomNumberSize, void* pRandomNumber)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumber);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumber);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumber);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumber);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -6926,7 +12393,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pRandomNumberPtr = &pRandomNumber)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
+                }
+            #endif
             }
         }
 
@@ -6936,7 +12414,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumber);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumber);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumber);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumber);
+                }
+            #endif
             }
         }
 
@@ -6948,7 +12437,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pRandomNumberPtr = &pRandomNumber)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -6957,7 +12457,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void FinishSessionKeyRefresh(ID3D11CryptoSession* pCryptoSession)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSession);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSession);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSession);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSession);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -6966,7 +12477,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSessionPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSessionPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSessionPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, void>)LpVtbl[58])(@this, pCryptoSessionPtr);
+                }
+            #endif
             }
         }
 
@@ -6975,7 +12497,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKey);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKey);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKey);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKey);
+            }
+            #endif
             return ret;
         }
 
@@ -6986,7 +12519,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pReadbackKeyPtr = &pReadbackKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -6998,7 +12542,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKey);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKey);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKey);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKey);
+                }
+            #endif
             }
             return ret;
         }
@@ -7012,7 +12567,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pReadbackKeyPtr = &pReadbackKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7023,7 +12589,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -7034,7 +12611,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7046,7 +12634,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -7060,7 +12659,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7071,7 +12681,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutput);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutput);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutput);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutput);
+            }
+            #endif
             return ret;
         }
 
@@ -7082,7 +12703,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pOutputPtr = &pOutput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7094,7 +12726,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pInputPtr = &pInput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
+                }
+            #endif
             }
             return ret;
         }
@@ -7108,7 +12751,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7121,7 +12775,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutput);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutput);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutput);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutput);
+                }
+            #endif
             }
             return ret;
         }
@@ -7135,7 +12800,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7150,7 +12826,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pInputPtr = &pInput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7167,7 +12854,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pOutputPtr = &pOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -7179,7 +12877,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutput);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutput);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutput);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutput);
+            }
+            #endif
             return ret;
         }
 
@@ -7190,7 +12899,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutputPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutputPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInput, pOutputPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7202,7 +12922,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pInputPtr = &pInput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
+                }
+            #endif
             }
             return ret;
         }
@@ -7216,7 +12947,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7229,7 +12971,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutput);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutput);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutput);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutput);
+                }
+            #endif
             }
             return ret;
         }
@@ -7243,7 +12996,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutputPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutputPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInput, pOutputPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7258,7 +13022,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pInputPtr = &pInput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7275,7 +13050,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -7286,7 +13072,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, VideoProcessorRotation Rotation)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7295,7 +13092,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, VideoProcessorRotation, void>)LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
+                }
+            #endif
             }
         }
 
@@ -7303,7 +13111,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamRotation(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, VideoProcessorRotation* pRotation)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotation);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotation);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotation);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotation);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7312,7 +13131,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorRotation* pRotationPtr = &pRotation)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotationPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotationPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotationPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnable, pRotationPtr);
+                }
+            #endif
             }
         }
 
@@ -7322,7 +13152,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnablePtr = &pEnable)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotation);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotation);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotation);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotation);
+                }
+            #endif
             }
         }
 
@@ -7334,7 +13175,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorRotation* pRotationPtr = &pRotation)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotationPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotationPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotationPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pRotationPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7345,7 +13197,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotation);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotation);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotation);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotation);
+                }
+            #endif
             }
         }
 
@@ -7357,7 +13220,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorRotation* pRotationPtr = &pRotation)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotationPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotationPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotationPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pRotationPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7370,7 +13244,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnablePtr = &pEnable)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotation);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotation);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotation);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotation);
+                    }
+            #endif
                 }
             }
         }
@@ -7385,7 +13270,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorRotation* pRotationPtr = &pRotation)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotationPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotationPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotationPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, VideoProcessorRotation*, void>)LpVtbl[64])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pRotationPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -7396,7 +13292,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -7407,7 +13314,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoDecoderBufferDesc1* pBufferDescPtr = &pBufferDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7419,7 +13337,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+                }
+            #endif
             }
             return ret;
         }
@@ -7433,7 +13362,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderBufferDesc1* pBufferDescPtr = &pBufferDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7444,7 +13384,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            }
+            #endif
             return ret;
         }
 
@@ -7455,7 +13406,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7467,7 +13429,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                }
+            #endif
             }
             return ret;
         }
@@ -7481,7 +13454,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7494,7 +13478,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+                }
+            #endif
             }
             return ret;
         }
@@ -7508,7 +13503,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7523,7 +13529,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7540,7 +13557,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -7552,7 +13580,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatus);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatus);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatus);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatus);
+            }
+            #endif
             return ret;
         }
 
@@ -7563,7 +13602,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (CryptoSessionStatus* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatusPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatusPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatusPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatusPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7575,7 +13625,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatus);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatus);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatus);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatus);
+                }
+            #endif
             }
             return ret;
         }
@@ -7589,7 +13650,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (CryptoSessionStatus* pStatusPtr = &pStatus)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatusPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatusPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatusPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatusPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7600,7 +13672,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            }
+            #endif
             return ret;
         }
 
@@ -7611,7 +13694,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -7623,7 +13717,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -7637,7 +13742,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7648,7 +13764,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -7659,7 +13786,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -7671,7 +13809,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDesc);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDesc);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDesc);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDesc);
+                }
+            #endif
             }
             return ret;
         }
@@ -7685,7 +13834,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDescPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDescPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDescPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDescPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -7695,7 +13855,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputColorSpace1(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.ColorSpaceType ColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessor, ColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessor, ColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessor, ColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessor, ColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7704,7 +13875,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessorPtr, ColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessorPtr, ColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessorPtr, ColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessorPtr, ColorSpace);
+                }
+            #endif
             }
         }
 
@@ -7712,7 +13894,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, int ShaderUsage)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7721,7 +13914,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+                }
+            #endif
             }
         }
 
@@ -7729,7 +13933,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputColorSpace1(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7738,7 +13953,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -7748,7 +13974,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -7760,7 +13997,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7769,7 +14017,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, int* pShaderUsage)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsage);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsage);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsage);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsage);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7778,7 +14037,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pShaderUsagePtr = &pShaderUsage)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsagePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsagePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsagePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsagePtr);
+                }
+            #endif
             }
         }
 
@@ -7788,7 +14058,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsage);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsage);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsage);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsage);
+                }
+            #endif
             }
         }
 
@@ -7800,7 +14081,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pShaderUsagePtr = &pShaderUsage)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsagePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsagePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsagePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsagePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7809,7 +14101,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamColorSpace1(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType ColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessor, StreamIndex, ColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessor, StreamIndex, ColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessor, StreamIndex, ColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessor, StreamIndex, ColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7818,7 +14121,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessorPtr, StreamIndex, ColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessorPtr, StreamIndex, ColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessorPtr, StreamIndex, ColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessorPtr, StreamIndex, ColorSpace);
+                }
+            #endif
             }
         }
 
@@ -7826,7 +14140,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, int FlipHorizontal, int FlipVertical)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7835,7 +14160,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+                }
+            #endif
             }
         }
 
@@ -7843,7 +14179,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamColorSpace1(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7852,7 +14199,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+                }
+            #endif
             }
         }
 
@@ -7862,7 +14220,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+                }
+            #endif
             }
         }
 
@@ -7874,7 +14243,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7883,7 +14263,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, int* pFlipHorizontal, int* pFlipVertical)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -7892,7 +14283,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pFlipVerticalPtr = &pFlipVertical)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+                }
+            #endif
             }
         }
 
@@ -7902,7 +14304,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+                }
+            #endif
             }
         }
 
@@ -7914,7 +14327,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pFlipVerticalPtr = &pFlipVertical)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7925,7 +14349,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnablePtr = &pEnable)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+                }
+            #endif
             }
         }
 
@@ -7937,7 +14372,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pFlipVerticalPtr = &pFlipVertical)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -7950,7 +14396,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                    }
+            #endif
                 }
             }
         }
@@ -7965,7 +14422,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pFlipVerticalPtr = &pFlipVertical)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -7977,7 +14445,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+                }
+            #endif
             }
         }
 
@@ -7989,7 +14468,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pFlipVerticalPtr = &pFlipVertical)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -8002,7 +14492,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+                    }
+            #endif
                 }
             }
         }
@@ -8017,7 +14518,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pFlipVerticalPtr = &pFlipVertical)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -8031,7 +14543,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pEnablePtr = &pEnable)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+                    }
+            #endif
                 }
             }
         }
@@ -8046,7 +14569,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pFlipVerticalPtr = &pFlipVertical)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -8062,7 +14596,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+            #if NET5_0_OR_GREATER
+                        ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                        }
+                        else
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                        }
+            #endif
                     }
                 }
             }
@@ -8080,7 +14625,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pFlipVerticalPtr = &pFlipVertical)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #if NET5_0_OR_GREATER
+                            ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                            }
+                            else
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -8092,7 +14648,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            }
+            #endif
             return ret;
         }
 
@@ -8103,7 +14670,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -8115,7 +14693,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+                }
+            #endif
             }
             return ret;
         }
@@ -8129,7 +14718,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -8142,7 +14742,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+                }
+            #endif
             }
             return ret;
         }
@@ -8156,7 +14767,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -8171,7 +14793,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -8188,7 +14821,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                        }
+            #endif
                     }
                 }
             }

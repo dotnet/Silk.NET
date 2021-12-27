@@ -20,67 +20,67 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtVertexArray : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_vertex_array";
-        [NativeApi(EntryPoint = "glArrayElementEXT")]
+        [NativeApi(EntryPoint = "glArrayElementEXT", Convention = CallingConvention.Winapi)]
         public partial void ArrayElement([Flow(FlowDirection.In)] int i);
 
-        [NativeApi(EntryPoint = "glColorPointerEXT")]
+        [NativeApi(EntryPoint = "glColorPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glColorPointerEXT")]
+        [NativeApi(EntryPoint = "glColorPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArrays([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawArraysEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
+        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] bool* pointer);
 
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
+        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] in bool pointer);
 
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
+        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] Boolean* pointer);
 
-        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
+        [NativeApi(EntryPoint = "glEdgeFlagPointerEXT", Convention = CallingConvention.Winapi)]
         public partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] in Boolean pointer);
 
-        [NativeApi(EntryPoint = "glGetPointervEXT")]
+        [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
-        [NativeApi(EntryPoint = "glGetPointervEXT")]
+        [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
-        [NativeApi(EntryPoint = "glGetPointervEXT")]
+        [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
-        [NativeApi(EntryPoint = "glGetPointervEXT")]
+        [NativeApi(EntryPoint = "glGetPointervEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
-        [NativeApi(EntryPoint = "glIndexPointerEXT")]
+        [NativeApi(EntryPoint = "glIndexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glIndexPointerEXT")]
+        [NativeApi(EntryPoint = "glIndexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glNormalPointerEXT")]
+        [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glNormalPointerEXT")]
+        [NativeApi(EntryPoint = "glNormalPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
+        [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
+        [NativeApi(EntryPoint = "glTexCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glVertexPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glVertexPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
 
         public unsafe void* GetPointer([Flow(FlowDirection.In)] EXT pname)

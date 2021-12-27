@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtClipControl : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_clip_control";
-        [NativeApi(EntryPoint = "glClipControlEXT")]
+        [NativeApi(EntryPoint = "glClipControlEXT", Convention = CallingConvention.Winapi)]
         public partial void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
 
         public ExtClipControl(INativeContext ctx)

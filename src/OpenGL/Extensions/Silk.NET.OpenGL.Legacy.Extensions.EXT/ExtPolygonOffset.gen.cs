@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtPolygonOffset : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_polygon_offset";
-        [NativeApi(EntryPoint = "glPolygonOffsetEXT")]
+        [NativeApi(EntryPoint = "glPolygonOffsetEXT", Convention = CallingConvention.Winapi)]
         public partial void PolygonOffset([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float bias);
 
         public ExtPolygonOffset(INativeContext ctx)

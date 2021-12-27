@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVCoverageSample : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_coverage_sample";
-        [NativeApi(EntryPoint = "glCoverageMaskNV")]
+        [NativeApi(EntryPoint = "glCoverageMaskNV", Convention = CallingConvention.Winapi)]
         public partial void CoverageMask([Flow(FlowDirection.In)] bool mask);
 
-        [NativeApi(EntryPoint = "glCoverageMaskNV")]
+        [NativeApi(EntryPoint = "glCoverageMaskNV", Convention = CallingConvention.Winapi)]
         public partial void CoverageMask([Flow(FlowDirection.In)] Boolean mask);
 
-        [NativeApi(EntryPoint = "glCoverageOperationNV")]
+        [NativeApi(EntryPoint = "glCoverageOperationNV", Convention = CallingConvention.Winapi)]
         public partial void CoverageOperation([Flow(FlowDirection.In)] NV operation);
 
         public NVCoverageSample(INativeContext ctx)

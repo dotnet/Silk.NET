@@ -20,382 +20,382 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbShaderObjects : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_objects";
-        [NativeApi(EntryPoint = "glAttachObjectARB")]
+        [NativeApi(EntryPoint = "glAttachObjectARB", Convention = CallingConvention.Winapi)]
         public partial void AttachObject([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint obj);
 
-        [NativeApi(EntryPoint = "glCompileShaderARB")]
+        [NativeApi(EntryPoint = "glCompileShaderARB", Convention = CallingConvention.Winapi)]
         public partial void CompileShader([Flow(FlowDirection.In)] uint shaderObj);
 
-        [NativeApi(EntryPoint = "glCreateProgramObjectARB")]
+        [NativeApi(EntryPoint = "glCreateProgramObjectARB", Convention = CallingConvention.Winapi)]
         public partial uint CreateProgramObject();
 
-        [NativeApi(EntryPoint = "glCreateShaderObjectARB")]
+        [NativeApi(EntryPoint = "glCreateShaderObjectARB", Convention = CallingConvention.Winapi)]
         public partial uint CreateShaderObject([Flow(FlowDirection.In)] ARB shaderType);
 
-        [NativeApi(EntryPoint = "glCreateShaderObjectARB")]
+        [NativeApi(EntryPoint = "glCreateShaderObjectARB", Convention = CallingConvention.Winapi)]
         public partial uint CreateShaderObject([Flow(FlowDirection.In)] ShaderType shaderType);
 
-        [NativeApi(EntryPoint = "glDeleteObjectARB")]
+        [NativeApi(EntryPoint = "glDeleteObjectARB", Convention = CallingConvention.Winapi)]
         public partial void DeleteObject([Flow(FlowDirection.In)] uint obj);
 
-        [NativeApi(EntryPoint = "glDetachObjectARB")]
+        [NativeApi(EntryPoint = "glDetachObjectARB", Convention = CallingConvention.Winapi)]
         public partial void DetachObject([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint attachedObj);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveUniformARB")]
+        [NativeApi(EntryPoint = "glGetActiveUniformARB", Convention = CallingConvention.Winapi)]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetAttachedObjectsARB")]
+        [NativeApi(EntryPoint = "glGetAttachedObjectsARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* obj);
 
-        [NativeApi(EntryPoint = "glGetAttachedObjectsARB")]
+        [NativeApi(EntryPoint = "glGetAttachedObjectsARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out uint obj);
 
-        [NativeApi(EntryPoint = "glGetAttachedObjectsARB")]
+        [NativeApi(EntryPoint = "glGetAttachedObjectsARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* obj);
 
-        [NativeApi(EntryPoint = "glGetAttachedObjectsARB")]
+        [NativeApi(EntryPoint = "glGetAttachedObjectsARB", Convention = CallingConvention.Winapi)]
         public partial void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] out uint obj);
 
-        [NativeApi(EntryPoint = "glGetHandleARB")]
+        [NativeApi(EntryPoint = "glGetHandleARB", Convention = CallingConvention.Winapi)]
         public partial uint GetHandle([Flow(FlowDirection.In)] ARB pname);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* infoLog);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte infoLog);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string infoLog);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* infoLog);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte infoLog);
 
-        [NativeApi(EntryPoint = "glGetInfoLogARB")]
+        [NativeApi(EntryPoint = "glGetInfoLogARB", Convention = CallingConvention.Winapi)]
         public partial void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string infoLog);
 
-        [NativeApi(EntryPoint = "glGetObjectParameterfvARB")]
+        [NativeApi(EntryPoint = "glGetObjectParameterfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectParameter([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetObjectParameterfvARB")]
+        [NativeApi(EntryPoint = "glGetObjectParameterfvARB", Convention = CallingConvention.Winapi)]
         public partial void GetObjectParameter([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetObjectParameterivARB")]
+        [NativeApi(EntryPoint = "glGetObjectParameterivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectParameter([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetObjectParameterivARB")]
+        [NativeApi(EntryPoint = "glGetObjectParameterivARB", Convention = CallingConvention.Winapi)]
         public partial void GetObjectParameter([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* source);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte source);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* source);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] out byte source);
 
-        [NativeApi(EntryPoint = "glGetShaderSourceARB")]
+        [NativeApi(EntryPoint = "glGetShaderSourceARB", Convention = CallingConvention.Winapi)]
         public partial void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source);
 
-        [NativeApi(EntryPoint = "glGetUniformfvARB")]
+        [NativeApi(EntryPoint = "glGetUniformfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformfvARB")]
+        [NativeApi(EntryPoint = "glGetUniformfvARB", Convention = CallingConvention.Winapi)]
         public partial void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetUniformivARB")]
+        [NativeApi(EntryPoint = "glGetUniformivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformivARB")]
+        [NativeApi(EntryPoint = "glGetUniformivARB", Convention = CallingConvention.Winapi)]
         public partial void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetUniformLocationARB")]
+        [NativeApi(EntryPoint = "glGetUniformLocationARB", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetUniformLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetUniformLocationARB")]
+        [NativeApi(EntryPoint = "glGetUniformLocationARB", Convention = CallingConvention.Winapi)]
         public partial int GetUniformLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetUniformLocationARB")]
+        [NativeApi(EntryPoint = "glGetUniformLocationARB", Convention = CallingConvention.Winapi)]
         public partial int GetUniformLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glLinkProgramARB")]
+        [NativeApi(EntryPoint = "glLinkProgramARB", Convention = CallingConvention.Winapi)]
         public partial void LinkProgram([Flow(FlowDirection.In)] uint programObj);
 
-        [NativeApi(EntryPoint = "glShaderSourceARB")]
+        [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
-        [NativeApi(EntryPoint = "glShaderSourceARB")]
+        [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
 
-        [NativeApi(EntryPoint = "glShaderSourceARB")]
+        [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
-        [NativeApi(EntryPoint = "glShaderSourceARB")]
+        [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
 
-        [NativeApi(EntryPoint = "glUniform1fARB")]
+        [NativeApi(EntryPoint = "glUniform1fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
 
-        [NativeApi(EntryPoint = "glUniform1iARB")]
+        [NativeApi(EntryPoint = "glUniform1iARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
 
-        [NativeApi(EntryPoint = "glUniform1fvARB")]
+        [NativeApi(EntryPoint = "glUniform1fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniform1fvARB")]
+        [NativeApi(EntryPoint = "glUniform1fvARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniform1ivARB")]
+        [NativeApi(EntryPoint = "glUniform1ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
-        [NativeApi(EntryPoint = "glUniform1ivARB")]
+        [NativeApi(EntryPoint = "glUniform1ivARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int value);
 
-        [NativeApi(EntryPoint = "glUniform2fARB")]
+        [NativeApi(EntryPoint = "glUniform2fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1);
 
-        [NativeApi(EntryPoint = "glUniform2iARB")]
+        [NativeApi(EntryPoint = "glUniform2iARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
 
-        [NativeApi(EntryPoint = "glUniform2fvARB")]
+        [NativeApi(EntryPoint = "glUniform2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniform2fvARB")]
+        [NativeApi(EntryPoint = "glUniform2fvARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniform2ivARB")]
+        [NativeApi(EntryPoint = "glUniform2ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
-        [NativeApi(EntryPoint = "glUniform2ivARB")]
+        [NativeApi(EntryPoint = "glUniform2ivARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int value);
 
-        [NativeApi(EntryPoint = "glUniform3fARB")]
+        [NativeApi(EntryPoint = "glUniform3fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
 
-        [NativeApi(EntryPoint = "glUniform3iARB")]
+        [NativeApi(EntryPoint = "glUniform3iARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
 
-        [NativeApi(EntryPoint = "glUniform3fvARB")]
+        [NativeApi(EntryPoint = "glUniform3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniform3fvARB")]
+        [NativeApi(EntryPoint = "glUniform3fvARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniform3ivARB")]
+        [NativeApi(EntryPoint = "glUniform3ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
-        [NativeApi(EntryPoint = "glUniform3ivARB")]
+        [NativeApi(EntryPoint = "glUniform3ivARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int value);
 
-        [NativeApi(EntryPoint = "glUniform4fARB")]
+        [NativeApi(EntryPoint = "glUniform4fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3);
 
-        [NativeApi(EntryPoint = "glUniform4iARB")]
+        [NativeApi(EntryPoint = "glUniform4iARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
 
-        [NativeApi(EntryPoint = "glUniform4fvARB")]
+        [NativeApi(EntryPoint = "glUniform4fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniform4fvARB")]
+        [NativeApi(EntryPoint = "glUniform4fvARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniform4ivARB")]
+        [NativeApi(EntryPoint = "glUniform4ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
-        [NativeApi(EntryPoint = "glUniform4ivARB")]
+        [NativeApi(EntryPoint = "glUniform4ivARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
-        [NativeApi(EntryPoint = "glUseProgramObjectARB")]
+        [NativeApi(EntryPoint = "glUseProgramObjectARB", Convention = CallingConvention.Winapi)]
         public partial void UseProgramObject([Flow(FlowDirection.In)] uint programObj);
 
-        [NativeApi(EntryPoint = "glValidateProgramARB")]
+        [NativeApi(EntryPoint = "glValidateProgramARB", Convention = CallingConvention.Winapi)]
         public partial void ValidateProgram([Flow(FlowDirection.In)] uint programObj);
 
         public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)

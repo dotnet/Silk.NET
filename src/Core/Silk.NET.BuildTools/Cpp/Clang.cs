@@ -1934,8 +1934,8 @@ namespace Silk.NET.BuildTools.Cpp
                 //case CXCallingConv.CXCallingConv_Unexposed: break;
                 default:
                 {
-                    Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to Cdecl.");
-                    return CallingConvention.Cdecl;
+                    Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to Winapi.");
+                    return CallingConvention.Winapi;
                 }
             }
         }

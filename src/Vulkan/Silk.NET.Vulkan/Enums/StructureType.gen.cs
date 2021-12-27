@@ -192,6 +192,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceVideoFormatInfoKhr = 1000023014,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_FORMAT_PROPERTIES_KHR")]
         VideoFormatPropertiesKhr = 1000023015,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_QUEUE_FAMILY_QUERY_RESULT_STATUS_PROPERTIES_2_KHR")]
+        QueueFamilyQueryResultStatusProperties2Khr = 1000023016,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_INFO_KHR")]
         VideoDecodeInfoKhr = 1000024000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_IMAGE_CREATE_INFO_NV")]
@@ -1256,6 +1258,14 @@ namespace Silk.NET.Vulkan
         DeviceBufferMemoryRequirementsKhr = 1000413002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
         DeviceImageMemoryRequirementsKhr = 1000413003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
+        PhysicalDeviceFragmentDensityMapOffsetFeaturesQCom = 1000425000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
+        PhysicalDeviceFragmentDensityMapOffsetPropertiesQCom = 1000425001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_QCOM")]
+        SubpassFragmentDensityMapOffsetEndInfoQCom = 1000425002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV")]
+        PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

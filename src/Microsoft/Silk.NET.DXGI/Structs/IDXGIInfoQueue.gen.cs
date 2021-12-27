@@ -46,7 +46,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, int>)LpVtbl[3])(@this, Producer, MessageCountLimit);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, int>)LpVtbl[3])(@this, Producer, MessageCountLimit);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, int>)LpVtbl[3])(@this, Producer, MessageCountLimit);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, int>)LpVtbl[3])(@this, Producer, MessageCountLimit);
+            }
+            #endif
             return ret;
         }
 
@@ -120,7 +175,18 @@ namespace Silk.NET.DXGI
         public readonly void ClearStoredMessages(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[4])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)LpVtbl[4])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[4])(@this, Producer);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[4])(@this, Producer);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -128,7 +194,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
+            }
+            #endif
             return ret;
         }
 
@@ -139,7 +216,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -151,7 +239,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueMessage* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
+                }
+            #endif
             }
             return ret;
         }
@@ -165,7 +264,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -176,7 +286,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[6])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[6])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[6])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[6])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -185,7 +306,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[7])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[7])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[7])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[7])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -194,7 +326,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[8])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[8])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[8])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[8])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -203,7 +346,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[9])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[9])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[9])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[9])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -212,7 +366,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[10])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[10])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[10])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[10])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -221,7 +386,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[11])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[11])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[11])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[11])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -230,7 +406,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilter);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilter);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilter);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilter);
+            }
+            #endif
             return ret;
         }
 
@@ -241,7 +428,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilterPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilterPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilterPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilterPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -251,7 +449,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
+            }
+            #endif
             return ret;
         }
 
@@ -262,7 +471,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -274,7 +494,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
+                }
+            #endif
             }
             return ret;
         }
@@ -288,7 +519,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -298,7 +540,18 @@ namespace Silk.NET.DXGI
         public readonly void ClearStorageFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[14])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)LpVtbl[14])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[14])(@this, Producer);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[14])(@this, Producer);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -306,7 +559,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[15])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[15])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[15])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[15])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -315,7 +579,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[16])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[16])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[16])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[16])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -324,7 +599,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[17])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[17])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[17])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[17])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -333,7 +619,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilter);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilter);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilter);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilter);
+            }
+            #endif
             return ret;
         }
 
@@ -344,7 +641,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilterPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilterPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilterPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilterPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -353,7 +661,18 @@ namespace Silk.NET.DXGI
         public readonly void PopStorageFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[19])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)LpVtbl[19])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[19])(@this, Producer);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[19])(@this, Producer);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -361,7 +680,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[20])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, uint>)LpVtbl[20])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[20])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[20])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -370,7 +700,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilter);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilter);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilter);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilter);
+            }
+            #endif
             return ret;
         }
 
@@ -381,7 +722,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilterPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilterPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilterPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilterPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -391,7 +743,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
+            }
+            #endif
             return ret;
         }
 
@@ -402,7 +765,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -414,7 +788,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
+                }
+            #endif
             }
             return ret;
         }
@@ -428,7 +813,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -438,7 +834,18 @@ namespace Silk.NET.DXGI
         public readonly void ClearRetrievalFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[23])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)LpVtbl[23])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[23])(@this, Producer);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[23])(@this, Producer);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -446,7 +853,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[24])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[24])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[24])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[24])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -455,7 +873,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[25])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[25])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[25])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[25])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -464,7 +893,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[26])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[26])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[26])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[26])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -473,7 +913,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilter);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilter);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilter);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilter);
+            }
+            #endif
             return ret;
         }
 
@@ -484,7 +935,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilterPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilterPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilterPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilterPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -493,7 +955,18 @@ namespace Silk.NET.DXGI
         public readonly void PopRetrievalFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[28])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)LpVtbl[28])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[28])(@this, Producer);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, void>)LpVtbl[28])(@this, Producer);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -501,7 +974,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[29])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, uint>)LpVtbl[29])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[29])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[29])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 
@@ -510,7 +994,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            }
+            #endif
             return ret;
         }
 
@@ -521,7 +1016,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (byte* pDescriptionPtr = &pDescription)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -532,7 +1038,18 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
+            }
+            #endif
             SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
@@ -542,7 +1059,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescription);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescription);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescription);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescription);
+            }
+            #endif
             return ret;
         }
 
@@ -553,7 +1081,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (byte* pDescriptionPtr = &pDescription)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -564,7 +1103,18 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            }
+            #endif
             SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
@@ -574,7 +1124,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)LpVtbl[32])(@this, Producer, Category, bEnable);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)LpVtbl[32])(@this, Producer, Category, bEnable);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)LpVtbl[32])(@this, Producer, Category, bEnable);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)LpVtbl[32])(@this, Producer, Category, bEnable);
+            }
+            #endif
             return ret;
         }
 
@@ -583,7 +1144,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)LpVtbl[33])(@this, Producer, Severity, bEnable);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)LpVtbl[33])(@this, Producer, Severity, bEnable);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)LpVtbl[33])(@this, Producer, Severity, bEnable);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)LpVtbl[33])(@this, Producer, Severity, bEnable);
+            }
+            #endif
             return ret;
         }
 
@@ -592,7 +1164,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, int, int>)LpVtbl[34])(@this, Producer, ID, bEnable);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int, int, int>)LpVtbl[34])(@this, Producer, ID, bEnable);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int, int>)LpVtbl[34])(@this, Producer, ID, bEnable);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, int, int>)LpVtbl[34])(@this, Producer, ID, bEnable);
+            }
+            #endif
             return ret;
         }
 
@@ -601,7 +1184,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)LpVtbl[35])(@this, Producer, Category);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)LpVtbl[35])(@this, Producer, Category);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)LpVtbl[35])(@this, Producer, Category);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)LpVtbl[35])(@this, Producer, Category);
+            }
+            #endif
             return ret;
         }
 
@@ -610,7 +1204,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)LpVtbl[36])(@this, Producer, Severity);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)LpVtbl[36])(@this, Producer, Severity);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)LpVtbl[36])(@this, Producer, Severity);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)LpVtbl[36])(@this, Producer, Severity);
+            }
+            #endif
             return ret;
         }
 
@@ -619,7 +1224,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, int>)LpVtbl[37])(@this, Producer, ID);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int, int>)LpVtbl[37])(@this, Producer, ID);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int>)LpVtbl[37])(@this, Producer, ID);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, int>)LpVtbl[37])(@this, Producer, ID);
+            }
+            #endif
             return ret;
         }
 
@@ -627,7 +1243,18 @@ namespace Silk.NET.DXGI
         public readonly void SetMuteDebugOutput(Guid Producer, int bMute)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, void>)LpVtbl[38])(@this, Producer, bMute);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int, void>)LpVtbl[38])(@this, Producer, bMute);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, void>)LpVtbl[38])(@this, Producer, bMute);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int, void>)LpVtbl[38])(@this, Producer, bMute);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -635,7 +1262,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[39])(@this, Producer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)LpVtbl[39])(@this, Producer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[39])(@this, Producer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, int>)LpVtbl[39])(@this, Producer);
+            }
+            #endif
             return ret;
         }
 

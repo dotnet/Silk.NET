@@ -21,111 +21,111 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_pipeline_executable_properties";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
-        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
+        [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
         public KhrPipelineExecutableProperties(INativeContext ctx)

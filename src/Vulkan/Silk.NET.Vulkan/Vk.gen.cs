@@ -105,2339 +105,2339 @@ namespace Silk.NET.Vulkan
         public const ulong WholeSize = unchecked((ulong) (~0ul));
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassBeginInfo pSubpassBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassBeginInfo pSubpassBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCount")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCount", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndexedIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirectCount")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndirectCount", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass2", Convention = CallingConvention.Winapi)]
         public partial void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassEndInfo pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassEndInfo pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassBeginInfo pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2", Convention = CallingConvention.Winapi)]
         public partial void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassBeginInfo pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] in SubpassEndInfo pSubpassEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass2", Convention = CallingConvention.Winapi)]
         public partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress", Convention = CallingConvention.Winapi)]
         public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress", Convention = CallingConvention.Winapi)]
         public partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress", Convention = CallingConvention.Winapi)]
         public partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceMemoryOpaqueCaptureAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue", Convention = CallingConvention.Winapi)]
         public partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pValue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetQueryPool")]
+        [NativeApi(EntryPoint = "vkResetQueryPool", Convention = CallingConvention.Winapi)]
         public partial void ResetQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSignalSemaphore")]
+        [NativeApi(EntryPoint = "vkSignalSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSignalSemaphore")]
+        [NativeApi(EntryPoint = "vkSignalSemaphore", Convention = CallingConvention.Winapi)]
         public partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreSignalInfo pSignalInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitSemaphores")]
+        [NativeApi(EntryPoint = "vkWaitSemaphores", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitSemaphores")]
+        [NativeApi(EntryPoint = "vkWaitSemaphores", Convention = CallingConvention.Winapi)]
         public partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
+        [NativeApi(EntryPoint = "vkBindBufferMemory2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
+        [NativeApi(EntryPoint = "vkBindBufferMemory2", Convention = CallingConvention.Winapi)]
         public partial Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] in BindBufferMemoryInfo pBindInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindImageMemory2")]
+        [NativeApi(EntryPoint = "vkBindImageMemory2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindImageMemory2")]
+        [NativeApi(EntryPoint = "vkBindImageMemory2", Convention = CallingConvention.Winapi)]
         public partial Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] in BindImageMemoryInfo pBindInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatchBase")]
+        [NativeApi(EntryPoint = "vkCmdDispatchBase", Convention = CallingConvention.Winapi)]
         public partial void CmdDispatchBase([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint baseGroupX, [Count(Count = 0)] uint baseGroupY, [Count(Count = 0)] uint baseGroupZ, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDeviceMask")]
+        [NativeApi(EntryPoint = "vkCmdSetDeviceMask", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDeviceMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint deviceMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
         public partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
         public partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceVersion([Count(Count = 0)] uint* pApiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceVersion([Count(Count = 0)] ref uint pApiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups", Convention = CallingConvention.Winapi)]
         public partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Parameter = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
         public partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] PeerMemoryFeatureFlags* pPeerMemoryFeatures);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out PeerMemoryFeatureFlags pPeerMemoryFeatures);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out Queue pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceQueueInfo2 pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceQueueInfo2 pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out Queue pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public partial void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalSemaphoreProperties pExternalSemaphoreProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalSemaphoreInfo pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalSemaphoreInfo pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalSemaphoreProperties pExternalSemaphoreProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures2* pFeatures);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pFeatures = new(StructureType.PhysicalDeviceFeatures2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceFeatures2 pFeatures);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties2* pFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] out FormatProperties2 pFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageFormatProperties2 pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceImageFormatInfo2 pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceImageFormatInfo2 pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageFormatProperties2 pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties2* pMemoryProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryProperties = new(StructureType.PhysicalDeviceMemoryProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceMemoryProperties2 pMemoryProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties2* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PhysicalDeviceProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceProperties2 pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties2 pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties2 pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkTrimCommandPool")]
+        [NativeApi(EntryPoint = "vkTrimCommandPool", Convention = CallingConvention.Winapi)]
         public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
         public partial void UpdateDescriptorSetWithTemplate<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
+        [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
+        [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] out CommandBuffer pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
+        [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandBufferAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
+        [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandBufferAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] out CommandBuffer pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] DescriptorSet* pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] out DescriptorSet pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] DescriptorSet* pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
         public partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] out DescriptorSet pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceMemory pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceMemory pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryAllocateInfo pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryAllocateInfo pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceMemory pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryAllocateInfo pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateMemory")]
+        [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
         public partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryAllocateInfo pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceMemory pMemory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBeginCommandBuffer")]
+        [NativeApi(EntryPoint = "vkBeginCommandBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BeginCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferBeginInfo* pBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBeginCommandBuffer")]
+        [NativeApi(EntryPoint = "vkBeginCommandBuffer", Convention = CallingConvention.Winapi)]
         public partial Result BeginCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CommandBufferBeginInfo pBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindBufferMemory")]
+        [NativeApi(EntryPoint = "vkBindBufferMemory", Convention = CallingConvention.Winapi)]
         public partial Result BindBufferMemory([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong memoryOffset);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBindImageMemory")]
+        [NativeApi(EntryPoint = "vkBindImageMemory", Convention = CallingConvention.Winapi)]
         public partial Result BindImageMemory([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong memoryOffset);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginQuery")]
+        [NativeApi(EntryPoint = "vkCmdBeginQuery", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginQuery([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query, [Count(Count = 0)] QueryControlFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(FlowDirection.In)] uint* pDynamicOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(FlowDirection.In)] in uint pDynamicOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] in DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(FlowDirection.In)] uint* pDynamicOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
         public partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] in DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(FlowDirection.In)] in uint pDynamicOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer")]
+        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdBindIndexBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] IndexType indexType);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindPipeline")]
+        [NativeApi(EntryPoint = "vkCmdBindPipeline", Convention = CallingConvention.Winapi)]
         public partial void CmdBindPipeline([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] Pipeline pipeline);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
         public partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage")]
+        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] ImageBlit* pRegions, [Count(Count = 0)] Filter filter);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage")]
+        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
         public partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in ImageBlit pRegions, [Count(Count = 0)] Filter filter);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments")]
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(FlowDirection.In)] ClearRect* pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments")]
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(FlowDirection.In)] in ClearRect pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments")]
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] in ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(FlowDirection.In)] ClearRect* pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments")]
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
         public partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] in ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(FlowDirection.In)] in ClearRect pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage")]
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage")]
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] in ImageSubresourceRange pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage")]
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] in ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage")]
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
         public partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] in ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] in ImageSubresourceRange pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] in ImageSubresourceRange pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] in ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
         public partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] in ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(FlowDirection.In)] in ImageSubresourceRange pRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer")]
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] BufferCopy* pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer")]
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in BufferCopy pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage")]
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyBufferToImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage")]
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyBufferToImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in BufferImageCopy pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage")]
+        [NativeApi(EntryPoint = "vkCmdCopyImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] ImageCopy* pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage")]
+        [NativeApi(EntryPoint = "vkCmdCopyImage", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in ImageCopy pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer")]
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyImageToBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer")]
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyImageToBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in BufferImageCopy pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyQueryPoolResults")]
+        [NativeApi(EntryPoint = "vkCmdCopyQueryPoolResults", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyQueryPoolResults([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatch")]
+        [NativeApi(EntryPoint = "vkCmdDispatch", Convention = CallingConvention.Winapi)]
         public partial void CmdDispatch([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatchIndirect")]
+        [NativeApi(EntryPoint = "vkCmdDispatchIndirect", Convention = CallingConvention.Winapi)]
         public partial void CmdDispatchIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDraw")]
+        [NativeApi(EntryPoint = "vkCmdDraw", Convention = CallingConvention.Winapi)]
         public partial void CmdDraw([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstVertex, [Count(Count = 0)] uint firstInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexed")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndexed", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint indexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstIndex, [Count(Count = 0)] int vertexOffset, [Count(Count = 0)] uint firstInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirect")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirect", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndexedIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirect")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndirect", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndQuery")]
+        [NativeApi(EntryPoint = "vkCmdEndQuery", Convention = CallingConvention.Winapi)]
         public partial void CmdEndQuery([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass")]
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass", Convention = CallingConvention.Winapi)]
         public partial void CmdEndRenderPass([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdExecuteCommands")]
+        [NativeApi(EntryPoint = "vkCmdExecuteCommands", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdExecuteCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint commandBufferCount, [Count(Parameter = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdExecuteCommands")]
+        [NativeApi(EntryPoint = "vkCmdExecuteCommands", Convention = CallingConvention.Winapi)]
         public partial void CmdExecuteCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint commandBufferCount, [Count(Parameter = "commandBufferCount"), Flow(FlowDirection.In)] in CommandBuffer pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdFillBuffer")]
+        [NativeApi(EntryPoint = "vkCmdFillBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdFillBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint data);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass")]
+        [NativeApi(EntryPoint = "vkCmdNextSubpass", Convention = CallingConvention.Winapi)]
         public partial void CmdNextSubpass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
         public partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushConstants")]
+        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] void* pValues);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushConstants")]
+        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
         public partial void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] ref T0 pValues) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResetEvent")]
+        [NativeApi(EntryPoint = "vkCmdResetEvent", Convention = CallingConvention.Winapi)]
         public partial void CmdResetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResetQueryPool")]
+        [NativeApi(EntryPoint = "vkCmdResetQueryPool", Convention = CallingConvention.Winapi)]
         public partial void CmdResetQueryPool([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage")]
+        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] ImageResolve* pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage")]
+        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
         public partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(FlowDirection.In)] in ImageResolve pRegions);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetBlendConstants")]
+        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(FlowDirection.In)] float* blendConstants);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetBlendConstants")]
+        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
         public partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(FlowDirection.In)] in float blendConstants);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBias")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthBias", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthBias([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float depthBiasConstantFactor, [Count(Count = 0)] float depthBiasClamp, [Count(Count = 0)] float depthBiasSlopeFactor);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBounds")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthBounds", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthBounds([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float minDepthBounds, [Count(Count = 0)] float maxDepthBounds);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetEvent")]
+        [NativeApi(EntryPoint = "vkCmdSetEvent", Convention = CallingConvention.Winapi)]
         public partial void CmdSetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetLineWidth")]
+        [NativeApi(EntryPoint = "vkCmdSetLineWidth", Convention = CallingConvention.Winapi)]
         public partial void CmdSetLineWidth([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float lineWidth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissor")]
+        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] Rect2D* pScissors);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissor")]
+        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
         public partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] in Rect2D pScissors);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilCompareMask")]
+        [NativeApi(EntryPoint = "vkCmdSetStencilCompareMask", Convention = CallingConvention.Winapi)]
         public partial void CmdSetStencilCompareMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint compareMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilReference")]
+        [NativeApi(EntryPoint = "vkCmdSetStencilReference", Convention = CallingConvention.Winapi)]
         public partial void CmdSetStencilReference([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint reference);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilWriteMask")]
+        [NativeApi(EntryPoint = "vkCmdSetStencilWriteMask", Convention = CallingConvention.Winapi)]
         public partial void CmdSetStencilWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint writeMask);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewport")]
+        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] Viewport* pViewports);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewport")]
+        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
         public partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in Viewport pViewports);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdUpdateBuffer")]
+        [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdUpdateBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdUpdateBuffer")]
+        [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents")]
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
         public partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(FlowDirection.In)] in MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] in BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] in ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWriteTimestamp")]
+        [NativeApi(EntryPoint = "vkCmdWriteTimestamp", Convention = CallingConvention.Winapi)]
         public partial void CmdWriteTimestamp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags pipelineStage, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Buffer pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Buffer pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Buffer pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBuffer")]
+        [NativeApi(EntryPoint = "vkCreateBuffer", Convention = CallingConvention.Winapi)]
         public partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Buffer pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView")]
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
         public partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CommandPool pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CommandPool pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CommandPool pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCommandPool")]
+        [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CommandPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CommandPool pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines")]
+        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
         public partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorPool pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorPool pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorPool pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
         public partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorPool pDescriptorPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice")]
+        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
         public partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Event pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Event pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Event pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent")]
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
         public partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Event pEvent);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Fence pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Fence pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Fence pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFence")]
+        [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Fence pFence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Framebuffer pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Framebuffer pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Framebuffer pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer")]
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
         public partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Framebuffer pFramebuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
+        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
         public partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Image pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Image pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Image pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImage")]
+        [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
         public partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Image pImage);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageView pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateImageView")]
+        [NativeApi(EntryPoint = "vkCreateImageView", Convention = CallingConvention.Winapi)]
         public partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageView pView);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateInstance")]
+        [NativeApi(EntryPoint = "vkCreateInstance", Convention = CallingConvention.Winapi)]
         public partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineCache pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineCache pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineCache pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache")]
+        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
         public partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineCache pPipelineCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineLayout pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineLayout pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineLayout pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
         public partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PipelineLayout pPipelineLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out QueryPool pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out QueryPool pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in QueryPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in QueryPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out QueryPool pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in QueryPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateQueryPool")]
+        [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in QueryPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out QueryPool pQueryPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass")]
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
         public partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Sampler pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Sampler pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Sampler pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler")]
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
         public partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Sampler pSampler);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Semaphore pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Semaphore pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Semaphore pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSemaphore")]
+        [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
         public partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Semaphore pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModule pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModule pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModule pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule")]
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
         public partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModule pShaderModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBuffer")]
+        [NativeApi(EntryPoint = "vkDestroyBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBuffer")]
+        [NativeApi(EntryPoint = "vkDestroyBuffer", Convention = CallingConvention.Winapi)]
         public partial void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferView")]
+        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferView")]
+        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
         public partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCommandPool")]
+        [NativeApi(EntryPoint = "vkDestroyCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCommandPool")]
+        [NativeApi(EntryPoint = "vkDestroyCommandPool", Convention = CallingConvention.Winapi)]
         public partial void DestroyCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorPool")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorPool")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
         public partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout")]
+        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
         public partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDevice")]
+        [NativeApi(EntryPoint = "vkDestroyDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDevice")]
+        [NativeApi(EntryPoint = "vkDestroyDevice", Convention = CallingConvention.Winapi)]
         public partial void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyEvent")]
+        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyEvent")]
+        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
         public partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFence")]
+        [NativeApi(EntryPoint = "vkDestroyFence", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFence")]
+        [NativeApi(EntryPoint = "vkDestroyFence", Convention = CallingConvention.Winapi)]
         public partial void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFramebuffer")]
+        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFramebuffer")]
+        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
         public partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyImage")]
+        [NativeApi(EntryPoint = "vkDestroyImage", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyImage([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyImage")]
+        [NativeApi(EntryPoint = "vkDestroyImage", Convention = CallingConvention.Winapi)]
         public partial void DestroyImage([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyImageView")]
+        [NativeApi(EntryPoint = "vkDestroyImageView", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyImageView([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyImageView")]
+        [NativeApi(EntryPoint = "vkDestroyImageView", Convention = CallingConvention.Winapi)]
         public partial void DestroyImageView([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyInstance")]
+        [NativeApi(EntryPoint = "vkDestroyInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyInstance")]
+        [NativeApi(EntryPoint = "vkDestroyInstance", Convention = CallingConvention.Winapi)]
         public partial void DestroyInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipeline")]
+        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipeline")]
+        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
         public partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineCache")]
+        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineCache")]
+        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
         public partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineLayout")]
+        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineLayout")]
+        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
         public partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyQueryPool")]
+        [NativeApi(EntryPoint = "vkDestroyQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyQueryPool")]
+        [NativeApi(EntryPoint = "vkDestroyQueryPool", Convention = CallingConvention.Winapi)]
         public partial void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyRenderPass")]
+        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyRenderPass")]
+        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
         public partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySampler")]
+        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySampler")]
+        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
         public partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySemaphore")]
+        [NativeApi(EntryPoint = "vkDestroySemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySemaphore")]
+        [NativeApi(EntryPoint = "vkDestroySemaphore", Convention = CallingConvention.Winapi)]
         public partial void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyShaderModule")]
+        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyShaderModule")]
+        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
         public partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDeviceWaitIdle")]
+        [NativeApi(EntryPoint = "vkDeviceWaitIdle", Convention = CallingConvention.Winapi)]
         public partial Result DeviceWaitIdle([Count(Count = 0)] Device device);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEndCommandBuffer")]
+        [NativeApi(EntryPoint = "vkEndCommandBuffer", Convention = CallingConvention.Winapi)]
         public partial Result EndCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceLayerProperties([Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceLayerProperties([Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceLayerProperties([Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
+        [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceLayerProperties([Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceCount, [Count(Parameter = "pPhysicalDeviceCount")] PhysicalDevice* pPhysicalDevices);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceCount, [Count(Parameter = "pPhysicalDeviceCount")] ref PhysicalDevice pPhysicalDevices);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceCount, [Count(Parameter = "pPhysicalDeviceCount")] PhysicalDevice* pPhysicalDevices);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices", Convention = CallingConvention.Winapi)]
         public partial Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceCount, [Count(Parameter = "pPhysicalDeviceCount")] ref PhysicalDevice pPhysicalDevices);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges")]
+        [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges", Convention = CallingConvention.Winapi)]
         public unsafe partial Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Parameter = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges")]
+        [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges", Convention = CallingConvention.Winapi)]
         public partial Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Parameter = "memoryRangeCount"), Flow(FlowDirection.In)] in MappedMemoryRange pMemoryRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeCommandBuffers")]
+        [NativeApi(EntryPoint = "vkFreeCommandBuffers", Convention = CallingConvention.Winapi)]
         public unsafe partial void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint commandBufferCount, [Count(Parameter = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeCommandBuffers")]
+        [NativeApi(EntryPoint = "vkFreeCommandBuffers", Convention = CallingConvention.Winapi)]
         public partial void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint commandBufferCount, [Count(Parameter = "commandBufferCount"), Flow(FlowDirection.In)] in CommandBuffer pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeDescriptorSets")]
+        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeDescriptorSets")]
+        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
         public partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(FlowDirection.In)] in DescriptorSet pDescriptorSets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeMemory")]
+        [NativeApi(EntryPoint = "vkFreeMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial void FreeMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeMemory")]
+        [NativeApi(EntryPoint = "vkFreeMemory", Convention = CallingConvention.Winapi)]
         public partial void FreeMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
         public partial void GetBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceMemoryCommitment([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pCommittedMemoryInBytes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment")]
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceMemoryCommitment([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pCommittedMemoryInBytes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetDeviceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetDeviceProcAddr", Convention = CallingConvention.Winapi)]
         public partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetDeviceProcAddr", Convention = CallingConvention.Winapi)]
         public partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue")]
+        [NativeApi(EntryPoint = "vkGetDeviceQueue", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out Queue pQueue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetEventStatus")]
+        [NativeApi(EntryPoint = "vkGetEventStatus", Convention = CallingConvention.Winapi)]
         public partial Result GetEventStatus([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceStatus")]
+        [NativeApi(EntryPoint = "vkGetFenceStatus", Convention = CallingConvention.Winapi)]
         public partial Result GetFenceStatus([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements", Convention = CallingConvention.Winapi)]
         public partial void GetImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements* pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
         public partial void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements pSparseMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource* pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] SubresourceLayout* pLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource* pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] out SubresourceLayout pLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSubresource pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] SubresourceLayout* pLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout", Convention = CallingConvention.Winapi)]
         public partial void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSubresource pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] out SubresourceLayout pLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "vkGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pName);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceFeatures([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures* pFeatures);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceFeatures([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceFeatures pFeatures);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties* pFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] out FormatProperties pFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties* pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageFormatProperties pImageFormatProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceMemoryProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties* pMemoryProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceMemoryProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceMemoryProperties pMemoryProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties* pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties* pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties pQueueFamilyProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties* pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
         public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
+        [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
+        [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
         public partial Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity")]
+        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.Out)] Extent2D* pGranularity);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity")]
+        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
         public partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges")]
+        [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges", Convention = CallingConvention.Winapi)]
         public unsafe partial Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Parameter = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges")]
+        [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges", Convention = CallingConvention.Winapi)]
         public partial Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Parameter = "memoryRangeCount"), Flow(FlowDirection.In)] in MappedMemoryRange pMemoryRanges);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMapMemory")]
+        [NativeApi(EntryPoint = "vkMapMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMapMemory")]
+        [NativeApi(EntryPoint = "vkMapMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] ref void* ppData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergePipelineCaches")]
+        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
         public unsafe partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] PipelineCache* pSrcCaches);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergePipelineCaches")]
+        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
         public partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] in PipelineCache pSrcCaches);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueBindSparse")]
+        [NativeApi(EntryPoint = "vkQueueBindSparse", Convention = CallingConvention.Winapi)]
         public unsafe partial Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] BindSparseInfo* pBindInfo, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueBindSparse")]
+        [NativeApi(EntryPoint = "vkQueueBindSparse", Convention = CallingConvention.Winapi)]
         public partial Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] in BindSparseInfo pBindInfo, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueSubmit")]
+        [NativeApi(EntryPoint = "vkQueueSubmit", Convention = CallingConvention.Winapi)]
         public unsafe partial Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] SubmitInfo* pSubmits, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueSubmit")]
+        [NativeApi(EntryPoint = "vkQueueSubmit", Convention = CallingConvention.Winapi)]
         public partial Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] in SubmitInfo pSubmits, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueWaitIdle")]
+        [NativeApi(EntryPoint = "vkQueueWaitIdle", Convention = CallingConvention.Winapi)]
         public partial Result QueueWaitIdle([Count(Count = 0)] Queue queue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetCommandBuffer")]
+        [NativeApi(EntryPoint = "vkResetCommandBuffer", Convention = CallingConvention.Winapi)]
         public partial Result ResetCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CommandBufferResetFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetCommandPool")]
+        [NativeApi(EntryPoint = "vkResetCommandPool", Convention = CallingConvention.Winapi)]
         public partial Result ResetCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] CommandPoolResetFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetDescriptorPool")]
+        [NativeApi(EntryPoint = "vkResetDescriptorPool", Convention = CallingConvention.Winapi)]
         public partial Result ResetDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetEvent")]
+        [NativeApi(EntryPoint = "vkResetEvent", Convention = CallingConvention.Winapi)]
         public partial Result ResetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetFences")]
+        [NativeApi(EntryPoint = "vkResetFences", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetFences")]
+        [NativeApi(EntryPoint = "vkResetFences", Convention = CallingConvention.Winapi)]
         public partial Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(FlowDirection.In)] in Fence pFences);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetEvent")]
+        [NativeApi(EntryPoint = "vkSetEvent", Convention = CallingConvention.Winapi)]
         public partial Result SetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUnmapMemory")]
+        [NativeApi(EntryPoint = "vkUnmapMemory", Convention = CallingConvention.Winapi)]
         public partial void UnmapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(FlowDirection.In)] CopyDescriptorSet* pDescriptorCopies);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(FlowDirection.In)] in CopyDescriptorSet pDescriptorCopies);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSets", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] in WriteDescriptorSet pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(FlowDirection.In)] CopyDescriptorSet* pDescriptorCopies);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSets", Convention = CallingConvention.Winapi)]
         public partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] in WriteDescriptorSet pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(FlowDirection.In)] in CopyDescriptorSet pDescriptorCopies);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitForFences")]
+        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitForFences")]
+        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
         public partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(FlowDirection.In)] in Fence pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>

@@ -20,37 +20,37 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbVertexAttribBinding : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_attrib_binding";
-        [NativeApi(EntryPoint = "glBindVertexBuffer")]
+        [NativeApi(EntryPoint = "glBindVertexBuffer", Convention = CallingConvention.Winapi)]
         public partial void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glVertexAttribBinding")]
+        [NativeApi(EntryPoint = "glVertexAttribBinding", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribBinding([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] uint bindingindex);
 
-        [NativeApi(EntryPoint = "glVertexAttribFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribIFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribIFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribIFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribIFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribLFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribLFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexAttribLFormat")]
+        [NativeApi(EntryPoint = "glVertexAttribLFormat", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint relativeoffset);
 
-        [NativeApi(EntryPoint = "glVertexBindingDivisor")]
+        [NativeApi(EntryPoint = "glVertexBindingDivisor", Convention = CallingConvention.Winapi)]
         public partial void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor);
 
         public ArbVertexAttribBinding(INativeContext ctx)

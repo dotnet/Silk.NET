@@ -45,8 +45,8 @@ namespace Silk.NET.Vulkan
         ImageCreateReserved16BitAmd = 65536,
         [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_394_BIT_EXT")]
         ImageCreateReserved394BitExt = 131072,
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_426_BIT_QCOM")]
-        ImageCreateReserved426BitQCom = 32768,
+        [NativeName("Name", "VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
+        ImageCreateFragmentDensityMapOffsetBitQCom = 32768,
         [NativeName("Name", "VK_IMAGE_CREATE_ALIAS_BIT")]
         ImageCreateAliasBit = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT")]

@@ -20,34 +20,34 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public unsafe partial class IntelAccelerator : NativeExtension<CL>
     {
         public const string ExtensionName = "INTEL_accelerator";
-        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateAccelerator([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateAccelerator([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateAccelerator<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public partial nint CreateAccelerator<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL", Convention = CallingConvention.Winapi)]
         public partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clReleaseAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clReleaseAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public partial int ReleaseAccelerator([Flow(FlowDirection.In)] nint accelerator);
 
-        [NativeApi(EntryPoint = "clRetainAcceleratorINTEL")]
+        [NativeApi(EntryPoint = "clRetainAcceleratorINTEL", Convention = CallingConvention.Winapi)]
         public partial int RetainAccelerator([Flow(FlowDirection.In)] nint accelerator);
 
         public IntelAccelerator(INativeContext ctx)

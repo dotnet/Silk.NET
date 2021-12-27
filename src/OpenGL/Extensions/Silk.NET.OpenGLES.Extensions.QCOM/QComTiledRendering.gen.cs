@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComTiledRendering : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_tiled_rendering";
-        [NativeApi(EntryPoint = "glEndTilingQCOM")]
+        [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
 
-        [NativeApi(EntryPoint = "glEndTilingQCOM")]
+        [NativeApi(EntryPoint = "glEndTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void EndTiling([Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
 
-        [NativeApi(EntryPoint = "glStartTilingQCOM")]
+        [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
 
-        [NativeApi(EntryPoint = "glStartTilingQCOM")]
+        [NativeApi(EntryPoint = "glStartTilingQCOM", Convention = CallingConvention.Winapi)]
         public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
 
         public QComTiledRendering(INativeContext ctx)
