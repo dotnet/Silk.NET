@@ -17,7 +17,7 @@ namespace Silk.NET.Input
         IReadOnlyList<Key> SupportedKeys { get; }
         
         /// <summary>
-        /// The text currently in the clipboard
+        /// The text currently in the clipboard.
         /// </summary>
         string ClipboardText { get; set; }
 
