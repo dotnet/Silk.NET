@@ -159,6 +159,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extension
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.VIV", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.VIV\Silk.NET.OpenGLES.Extensions.VIV.csproj", "{8D534FE1-6113-457A-97DD-FD42782580A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ImGui\Silk.NET.OpenGLES.Extensions.ImGui.csproj", "{FA08CA81-6F27-4D82-989E-99EFDD7B0244}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0651C5EF-50AA-4598-8D9C-8F210ADD8490}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Glfw", "src\Input\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj", "{3908DEF6-7403-49F5-B8EC-5B3B12C325D4}"
@@ -2833,6 +2835,18 @@ Global
 		{225BA79C-36FE-421A-85E4-D15F8B61869B}.Release|x64.Build.0 = Release|Any CPU
 		{225BA79C-36FE-421A-85E4-D15F8B61869B}.Release|x86.ActiveCfg = Release|Any CPU
 		{225BA79C-36FE-421A-85E4-D15F8B61869B}.Release|x86.Build.0 = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|x64.ActiveCfg = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|x64.Build.0 = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|x86.ActiveCfg = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Debug|x86.Build.0 = Debug|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|Any CPU.Build.0 = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|x64.ActiveCfg = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|x64.Build.0 = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|x86.ActiveCfg = Release|Any CPU
+        {FA08CA81-6F27-4D82-989E-99EFDD7B0244}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
