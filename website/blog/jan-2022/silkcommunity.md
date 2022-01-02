@@ -43,7 +43,12 @@ TODO
 
 ## SilkyNvg
 
-TODO
+SilkyNvg is a C#-ified port of Mikko Memononen's popular vector graphics C library NanoVG. It tries to remain close to the original API while also adapting to fit in better with C# code (e.g. the interface is completely safe).
+It is built to have easily interchangeable rendering pipelines (including your own custom renderers), with OpenGL and Vulkan renderers built with Silk.NET provided out-of-the-box.
+
+SilkyNvg exists because the NanoVG library is likely the best vector-graphics API currently available, yet it's use outside of C/C++ has generally been difficult with ports mostly depending on bindings and providing your own native DLLs. Instead, SilkyNvg is written purely in C# using .NET 5 to enable simple cross-platform use (no extra native dependencies!).
+
+Checkout SilkyNvg here: [https://github.com/SilkCommunity/SilkyNvg](https://github.com/SilkCommunity/SilkyNvg)
 
 ## Get your project involved!
 
