@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTextureLODGatherFormatPropertiesAMD")]
-    public unsafe partial struct TextureLODGatherFormatPropertiesAMD
+    public unsafe partial struct TextureLODGatherFormatPropertiesAMD : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
         public TextureLODGatherFormatPropertiesAMD
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "supportsTextureGatherLODBiasAMD")]
         public Bool32 SupportsTextureGatherLodbiasAmd;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.TextureLodGatherFormatPropertiesAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

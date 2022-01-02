@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSparseImageFormatInfo2KHR")]
-    public unsafe partial struct PhysicalDeviceSparseImageFormatInfo2KHR
+    [NativeName("AliasOf", "VkPhysicalDeviceSparseImageFormatInfo2")]
+    public unsafe partial struct PhysicalDeviceSparseImageFormatInfo2KHR : IChainable
     {
         public PhysicalDeviceSparseImageFormatInfo2KHR
         (
@@ -101,5 +102,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageTiling")]
         [NativeName("Name", "tiling")]
         public ImageTiling Tiling;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSparseImageFormatInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

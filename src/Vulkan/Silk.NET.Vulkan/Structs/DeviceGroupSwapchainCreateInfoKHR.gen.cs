@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupSwapchainCreateInfoKHR")]
-    public unsafe partial struct DeviceGroupSwapchainCreateInfoKHR
+    public unsafe partial struct DeviceGroupSwapchainCreateInfoKHR : IExtendsChain<SwapchainCreateInfoKHR>
     {
         public DeviceGroupSwapchainCreateInfoKHR
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagsKHR")]
         [NativeName("Name", "modes")]
         public DeviceGroupPresentModeFlagsKHR Modes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupSwapchainCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

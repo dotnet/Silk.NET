@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreWaitInfoKHR")]
-    public unsafe partial struct SemaphoreWaitInfoKHR
+    [NativeName("AliasOf", "VkSemaphoreWaitInfo")]
+    public unsafe partial struct SemaphoreWaitInfoKHR : IChainable
     {
         public SemaphoreWaitInfoKHR
         (
@@ -90,5 +91,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "pValues")]
         public ulong* PValues;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SemaphoreWaitInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

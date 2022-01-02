@@ -3,10 +3,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing
 {
@@ -19,12 +19,27 @@ namespace Silk.NET.Windowing
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
+        private const string FallbackWindowClass = "Silk.NET";
 
         private static List<Type> _platformsKeys = new List<Type>();
         private static List<IWindowPlatform> _platformsValues = new List<IWindowPlatform>();
 
         private static bool _initializedFirstPartyPlatforms = false;
-        
+
+        internal static string DefaultWindowClass { get; }
+
+        static Window()
+        {
+            var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
+            if (defaultWindowClassName is not null)
+            {
+                DefaultWindowClass = Path.GetFileNameWithoutExtension(defaultWindowClassName);
+                return;
+            }
+
+            DefaultWindowClass = Assembly.GetEntryAssembly()?.GetName()?.Name ?? FallbackWindowClass;
+        }
+
         public static IReadOnlyCollection<IWindowPlatform> Platforms
         {
             get

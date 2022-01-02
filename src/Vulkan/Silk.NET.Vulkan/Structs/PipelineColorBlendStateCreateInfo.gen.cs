@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendStateCreateInfo")]
-    public unsafe partial struct PipelineColorBlendStateCreateInfo
+    public unsafe partial struct PipelineColorBlendStateCreateInfo : IChainStart
     {
         public PipelineColorBlendStateCreateInfo
         (
             StructureType? sType = StructureType.PipelineColorBlendStateCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            PipelineColorBlendStateCreateFlags? flags = null,
             Bool32? logicOpEnable = null,
             LogicOp? logicOp = null,
             uint? attachmentCount = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPipelineColorBlendStateCreateFlags")]
         [NativeName("Type.Name", "VkPipelineColorBlendStateCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public PipelineColorBlendStateCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
@@ -106,5 +106,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "blendConstants")]
         public fixed float BlendConstants[4];
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineColorBlendStateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PipelineColorBlendStateCreateInfo Chain(
+            out PipelineColorBlendStateCreateInfo capture)
+        {
+            capture = new PipelineColorBlendStateCreateInfo(StructureType.PipelineColorBlendStateCreateInfo);
+            return ref capture;
+        }
     }
 }

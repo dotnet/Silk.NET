@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidSurfaceCreateInfoKHR")]
-    public unsafe partial struct AndroidSurfaceCreateInfoKHR
+    public unsafe partial struct AndroidSurfaceCreateInfoKHR : IChainable
     {
         public AndroidSurfaceCreateInfoKHR
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "ANativeWindow")]
         [NativeName("Name", "window")]
         public nint* Window;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AndroidSurfaceCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

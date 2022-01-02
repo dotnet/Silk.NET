@@ -72,18 +72,18 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 Prerequisites
 - **Must**: .NET 6 SDK
 - **Should**: Android (w/ AOT), iOS, and MAUI .NET 6 workloads (use `dotnet workload install android android-aot ios maui` to install them)
-- **Should**: Android SDK version 30 with NDK tools installed
+- **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
 - **Could**: Visual Studio 2019 Community version 16.10 or later
 
 Instructions
 - Clone the repository (recursively)
-- Run build.sh, build.cmd, build.ps1, or `nuke compile`. By default all packages targeting .NET Core, Standard, or .NET 6 are built. To build our older Xamarin iOS and Android packages, add the `--feature-sets legacy-ios legacy-android` arguments.
+- Run build.sh, build.cmd, build.ps1, or `nuke compile`.
 - Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
 
 There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
 
-The older Xamarin projects will not build properly without being configured to use Desktop MSBuild (i.e. the MSBuild shipped with Visual Studio). As a result, you will ideally need to be on Windows and have Visual Studio 2019 Community (v16.10 or greater) installed with .NET Core and Xamarin workloads. If you don't have this (i.e. because you're on Linux or Mac), you won't be able to build the older Xamarin packages.
+Note: Some .NET 6 workloads are only supported on Windows and macOS today.
 
 <h1 align="center">Contributing</h1>
 
@@ -94,6 +94,20 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
+
+The Silk.NET solution is **very large**. As such, to generate a solution that only has the projects you care about for your contribution, use the following command:
+`nuke sln --projects project1 project2...`. `<projects>` can be substitued for:
+- A name of an individual project. The Silk.NET prefix can be omitted provided there is no matching subfolder.
+- A name of a subfolder in the repo root, `src/`, or `examples/CSharp`
+
+Example: `nuke sln --projects opengl silk.net.vulkan core.win32extras "opengl tutorials" build`. This:
+- matches `opengl` to `src/OpenGL`
+- matches `silk.net.vulkan` to `src/Vulkan/Silk.NET.Vulkan`
+- matches `core.win32extras` to `src/Core/Silk.NET.Core.Win32Extras`
+- matches `"opengl tutorials"` to `examples/CSharp/OpenGL Tutorials`
+- matches `build` to `build/`
+
+The generated solution is: `Silk.NET.gen.sln`
 
 <!-- End exclude from NuGet readme. -->
 

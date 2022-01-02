@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryHostPointerInfoEXT")]
-    public unsafe partial struct ImportMemoryHostPointerInfoEXT
+    public unsafe partial struct ImportMemoryHostPointerInfoEXT : IExtendsChain<MemoryAllocateInfo>
     {
         public ImportMemoryHostPointerInfoEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pHostPointer")]
         public void* PHostPointer;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImportMemoryHostPointerInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

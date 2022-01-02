@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
-    public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
+    public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT : IExtendsChain<PipelineColorBlendStateCreateInfo>
     {
         public PipelineColorBlendAdvancedStateCreateInfoEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBlendOverlapEXT")]
         [NativeName("Name", "blendOverlap")]
         public BlendOverlapEXT BlendOverlap;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineColorBlendAdvancedStateCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

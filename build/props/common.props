@@ -5,16 +5,25 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET .NET Conf 2021 Update
+            Silk.NET December 2021 Update
             
-            - Fixes issues with 2.10 (compiled against .NET 6 RC1) not working correctly in projects using the .NET 6 Release SDK.
+            - Add a high-level C# wrapper over Vulkan Structure Chains (thanks @thargy).
+            - Add a WindowClass option in Windowing for setting the X11 class name (thanks @Pydacor)
+            - Add a IsContextControlDisabled option in Windowing to disable automatically making OpenGL contexts current
+            - Add support for cloning Vk objects to allow reuse of their function tables independently
+            - Update to latest OpenCL specifications
+            - Update to latest OpenGL and OpenGLES specifications
+            - Update to Vulkan 1.2.210
+            - Fix string marshalling regression which resulted in multiple string-overloaded functions throwing
+            - Fix multiple input-related problems when using the SDL backend of our Windowing abstractions
+            - Discontinued support for Legacy Xamarin (exclusively supporting .NET 6 mobile from now on)
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.10.1</VersionPrefix>
+        <VersionPrefix>2.11</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

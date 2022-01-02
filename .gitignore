@@ -471,7 +471,8 @@ src/**/build/
 # End of https://www.toptal.com/developers/gitignore/api/android,java,gradle
 
 # Silk.NET Build System
-build/sln
+*.gen.sln
+*.gen.txt
 
 # Silk.NET Website Generation Output
 docs/
