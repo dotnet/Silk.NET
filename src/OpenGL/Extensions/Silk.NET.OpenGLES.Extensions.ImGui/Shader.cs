@@ -120,7 +120,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             if (success == 0)
             {
                 string info = _gl.GetProgramInfoLog(program);
-                Debug.WriteLine($"GL.LinkProgram had info log:\n{info}");
+                throw new Exception($"GL.LinkProgram had info log:\n{info}");
             }
 
             foreach (var shader in shaders)
@@ -144,7 +144,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             if (success == 0)
             {
                 string info = _gl.GetShaderInfoLog(shader);
-                Debug.WriteLine($"GL.CompileShader for shader [{type}] had info log:\n{info}");
+                throw new Exception($"GL.CompileShader for shader [{type}] had info log:\n{info}");
             }
             
             return shader;

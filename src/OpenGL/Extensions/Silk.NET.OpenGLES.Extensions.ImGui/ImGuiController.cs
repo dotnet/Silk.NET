@@ -471,6 +471,8 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArray);
 
             string vertexSource = @"#version 300 es
+        precision highp float;
+            
         layout (location = 0) in vec2 Position;
         layout (location = 1) in vec2 UV;
         layout (location = 2) in vec4 Color;
@@ -481,11 +483,13 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         {
             Frag_UV = UV;
             Frag_Color = Color;
-            gl_Position = ProjMtx * vec4(Position.xy,0,1);
+            gl_Position = ProjMtx * vec4(Position.xy,0.0,1.0);
         }";
 
 
             string fragmentSource = @"#version 300 es
+        precision highp float;
+        
         in vec2 Frag_UV;
         in vec4 Frag_Color;
         uniform sampler2D Texture;
