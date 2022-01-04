@@ -123,7 +123,10 @@ partial class Build
                     Git("checkout HEAD build/", SwiftShaderBuildPath / "..");
                     StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=MinSizeRel", SwiftShaderBuildPath)
                         .AssertZeroExitCode();
-                    StartProcess("cmake", "--build . --parallel --config Release", SwiftShaderBuildPath)
+                    var nonGitHubActionsArgs = string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
+                        ? " --parallel"
+                        : string.Empty;
+                    StartProcess("cmake", $"--build .{nonGitHubActionsArgs} --config Release", SwiftShaderBuildPath)
                         .AssertWaitForExit(); // might fail... as long as the output exists we're happy
                     var fname = sysName switch
                     {

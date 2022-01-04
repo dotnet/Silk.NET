@@ -7,3 +7,6 @@
 [submodule "build/submodules/SwiftShader"]
 	path = build/submodules/SwiftShader
 	url = https://github.com/google/swiftshader
+[submodule "build/submodules/ANGLE"]
+	path = build/submodules/ANGLE
+	url = https://chromium.googlesource.com/angle/angle
