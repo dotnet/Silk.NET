@@ -22,6 +22,8 @@ jobs:
     runs-on: ${{ matrix.env.os }}
     steps:
       - uses: actions/checkout@v1
+        with:
+          submodules: 'recursive'
       - name: Cache .tmp, ~/.nuget/packages
         uses: actions/cache@v2
         with:
