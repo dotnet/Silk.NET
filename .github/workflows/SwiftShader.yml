@@ -1,8 +1,6 @@
 name: SwiftShader
 on:
   push:
-    branches:
-      - "*"
     paths:
       - build/submodules/SwiftShader
       - .github/workflows/SwiftShader.yml  # temporary for dev
