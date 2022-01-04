@@ -13,7 +13,7 @@ jobs:
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
-              apt-get install -y libx11-xcb-dev 
+              sudo apt-get install -y libx11-xcb-dev 
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd
