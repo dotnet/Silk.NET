@@ -9,7 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="HtmlAgilityPack" Version="1.11.36" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.11.0" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.0.1" />
       <PackageReference Include="Statiq.App" Version="1.0.0-beta.48" />
       <PackageReference Include="Statiq.Feeds" Version="1.0.0-beta.48" />
       <PackageReference Include="Statiq.Markdown" Version="1.0.0-beta.48" />
