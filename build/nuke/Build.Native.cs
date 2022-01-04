@@ -17,7 +17,9 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.Git;
 using Octokit;
 using Octokit.Internal;
+using static Nuke.Common.IO.CompressionTasks;
 using static Nuke.Common.IO.FileSystemTasks;
+using static Nuke.Common.IO.HttpTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
@@ -80,9 +82,7 @@ partial class Build
                         CopyDirectoryRecursively(from, to, DirectoryExistsPolicy.Merge, FileExistsPolicy.Overwrite);
                     }
 
-                    var envVars = Environment.GetEnvironmentVariables()
-                        .Cast<DictionaryEntry>()
-                        .ToDictionary(x => (string) x.Key, x => (string) x.Value);
+                    var envVars = CreateEnvVarDictionary();
                     envVars["ANDROID_HOME"] = AndroidHome;
 
                     foreach (var ndk in Directory.GetDirectories((AbsolutePath) AndroidHome / "ndk")
@@ -91,9 +91,7 @@ partial class Build
                         envVars["ANDROID_NDK_HOME"] = ndk;
                     }
 
-                    using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                        ? StartProcess("bash", "-c \"./gradlew build\"", silkDroid, envVars)
-                        : StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid, envVars);
+                    using var process = StartShell($".{Path.PathSeparator}gradlew build", silkDroid, envVars);
                     process.AssertZeroExitCode();
                     var ret = process.Output;
                     CopyFile
@@ -157,47 +155,129 @@ partial class Build
                         CopyFile(outputPath / icd, runtimes / "osx-x64" / "native" / icd);
                     }
 
-                    var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
-                    var curBranch = GitCurrentBranch(RootDirectory);
-                    if (GitHubActions.Instance.GitHubRepository == "dotnet/Silk.NET" &&
-                        !string.IsNullOrWhiteSpace(pushableToken) &&
-                        curBranch != "HEAD" &&
-                        !string.IsNullOrWhiteSpace(curBranch))
-                    {
-                        // it's assumed that the pushable token was used to checkout the repo
-                        Git("fetch --all", RootDirectory);
-                        Git("add src/Native", RootDirectory);
-                        Logger.Info("Checking for existing branch...");
-                        var newBranch = $"ci/{curBranch}/swiftshader_bins";
-                        var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
-                            .AssertWaitForExit()
-                            .ExitCode == 0;
-                        if (!exists)
-                        {
-                            Git($"checkout -b \"{newBranch}\"");
-                        }
-
-                        var curCommit = GitCurrentCommit(RootDirectory);
-                        Git($"commit -m \"New binaries for SwiftShader on {sysName}\"");
-                        if (GitCurrentCommit(RootDirectory) != curCommit)
-                        {
-                            Git($"push --set-upstream origin \"{newBranch}\"");
-                            if (!exists)
-                            {
-                                var github = new GitHubClient
-                                (
-                                    new ProductHeaderValue("Silk.NET-CI"),
-                                    new InMemoryCredentialStore(new Credentials(pushableToken))
-                                );
-
-                                var pr = github.PullRequest.Create
-                                        ("dotnet", "Silk.NET", new("Update SwiftShader binaries", newBranch, curBranch))
-                                    .GetAwaiter()
-                                    .GetResult();
-                            }
-                        }
-                    }
+                    PrUpdatedNativeBinary("SwiftShader");
                 }
             )
     );
+
+    AbsolutePath AnglePath => RootDirectory / "build" / "submodules" / "ANGLE";
+    Target Angle => CommonTarget
+    (
+        x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    var @out = AnglePath / "out" / "Release";
+                    EnsureCleanDirectory(@out);
+                    var zip = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                    var unzip = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                    HttpDownloadFile("https://storage.googleapis.com/chrome-infra/depot_tools.zip", zip);
+                    UncompressZip(zip, unzip);
+                    AddToPath(unzip);
+                    if (OperatingSystem.IsWindows())
+                    {
+                        Environment.SetEnvironmentVariable("DEPOT_TOOLS_WIN_TOOLCHAIN", "0");
+                    }
+
+                    InheritedShell("python scripts/bootstrap.py", AnglePath).AssertZeroExitCode();
+                    InheritedShell("gclient sync", AnglePath).AssertZeroExitCode();
+                    if (OperatingSystem.IsLinux())
+                    {
+                        InheritedShell("./build/install-build-deps.sh", AnglePath).AssertZeroExitCode();
+                    }
+
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.OpenGLES.ANGLE.Native" / "runtimes";
+                    if (OperatingSystem.IsWindows())
+                    {
+                        InheritedShell
+                        (
+                            "gn gen out/Release " +
+                            "--args='is_component_build=false target_cpu=\"\"x86\"\" is_debug=false'",
+                            AnglePath
+                        ).AssertZeroExitCode();
+                        InheritedShell($"autoninja -C \"{@out}\"", AnglePath).AssertZeroExitCode();
+                        CopyAll
+                        (
+                            // libANGLE might not exist, this is fine
+                            @out.GlobFiles("libGLESv2.dll", "libEGL.dll", "libANGLE.dll"),
+                            runtimes / "win-x64" / "native"
+                        );
+                        CopyAll
+                        (
+                            @out.GlobFiles("libGLESv2.dll", "libEGL.dll", "libANGLE.dll"),
+                            runtimes / "win-x86" / "native"
+                        );
+                    }
+                    else
+                    {
+                        InheritedShell
+                        (
+                            $"gn gen \"{@out}\" " +
+                            "--args=\"is_component_build=false is_debug=false\"",
+                            AnglePath
+                        ).AssertZeroExitCode();
+                        InheritedShell($"autoninja -C \"{@out}\"", AnglePath).AssertZeroExitCode();
+                        CopyAll
+                        (
+                            @out.GlobFiles
+                            (
+                                "libGLESv2.so", "libEGL.so", "libANGLE.so",
+                                "libGLESv2.dylib", "libEGL.dylib", "libANGLE.dylib"
+                            ),
+                            runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
+                        );
+                    }
+
+                    PrUpdatedNativeBinary("ANGLE");
+                }
+            )
+    );
+    
+    void PrUpdatedNativeBinary(string name)
+    {
+        var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
+        var curBranch = GitCurrentBranch(RootDirectory);
+        if (GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
+            !string.IsNullOrWhiteSpace(pushableToken) &&
+            curBranch != "HEAD" &&
+            !string.IsNullOrWhiteSpace(curBranch))
+        {
+            // it's assumed that the pushable token was used to checkout the repo
+            Git("fetch --all", RootDirectory);
+            Git("add src/Native", RootDirectory);
+            var newBranch = $"ci/{curBranch}/{name.ToLower()}_bins";
+            var curCommit = GitCurrentCommit(RootDirectory);
+            Git($"commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\"");
+            if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
+            {
+                Logger.Info("Checking for existing branch...");
+                var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
+                    .AssertWaitForExit()
+                    .ExitCode == 0;
+                if (!exists)
+                {
+                    Logger.Info("None found, creating a new one...");
+                    Git($"checkout -b \"{newBranch}\"");
+                }
+
+                Git($"merge -s theirs \"{curBranch}\"");
+                Git($"push --set-upstream origin \"{newBranch}\"");
+                if (!exists)
+                {
+                    var github = new GitHubClient
+                    (
+                        new ProductHeaderValue("Silk.NET-CI"),
+                        new InMemoryCredentialStore(new Credentials(pushableToken))
+                    );
+
+                    var pr = github.PullRequest.Create
+                            ("dotnet", "Silk.NET", new($"Update {name} binaries", newBranch, curBranch))
+                        .GetAwaiter()
+                        .GetResult();
+                }
+            }
+        }
+    }
 }
