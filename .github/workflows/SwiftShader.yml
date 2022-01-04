@@ -18,8 +18,8 @@ jobs:
           - os: macos-latest
             name: Darwin
             nuke_invoke: ./build.sh
-    name: ${{ matrix.name }} Build
-    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.env.name }} Build
+    runs-on: ${{ matrix.env.os }}
     steps:
       - uses: actions/checkout@v1
       - name: Cache .nuke/temp, ~/.nuget/packages
@@ -30,6 +30,6 @@ jobs:
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
       - name: Build SwiftShader
-        run: ${{ matrix.nuke_invoke }} SwiftShader
+        run: ${{ matrix.env.nuke_invoke }} SwiftShader
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
