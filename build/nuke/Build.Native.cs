@@ -23,15 +23,6 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-[GitHubActions
-(
-    "SwiftShader", GitHubActionsImage.UbuntuLatest, GitHubActionsImage.WindowsLatest, GitHubActionsImage.MacOsLatest,
-    ImportSecrets = new[] { "PUSHABLE_GITHUB_TOKEN" },
-    OnPushIncludePaths = new[] { "build/submodules/SwiftShader" },
-    InvokedTargets = new[] { nameof(SwiftShader) },
-    AutoGenerate = true,
-    PublishArtifacts = true
-)]
 partial class Build
 {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
