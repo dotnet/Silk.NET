@@ -161,11 +161,7 @@ partial class Build
                         curBranch != "HEAD" &&
                         !string.IsNullOrWhiteSpace(curBranch))
                     {
-                        Git
-                        (
-                            $"remote set-url origin https://silkdotnet:{pushableToken}@github.com/dotnet/Silk.NET",
-                            RootDirectory
-                        );
+                        // it's assumed that the pushable token was used to checkout the repo
                         Git("fetch --all", RootDirectory);
                         Git("add src/Native", RootDirectory);
                         Logger.Info("Checking for existing branch...");
