@@ -22,11 +22,11 @@ jobs:
     runs-on: ${{ matrix.env.os }}
     steps:
       - uses: actions/checkout@v1
-      - name: Cache .nuke/temp, ~/.nuget/packages
+      - name: Cache .tmp, ~/.nuget/packages
         uses: actions/cache@v2
         with:
           path: |
-            .nuke/temp
+            .tmp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
       - name: Build SwiftShader
