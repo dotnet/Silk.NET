@@ -42,6 +42,10 @@ jobs:
             .tmp
             ~/.nuget/packages
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
       - name: Build SwiftShader
         run: ${{ matrix.env.nuke_invoke }} SwiftShader
         env:
