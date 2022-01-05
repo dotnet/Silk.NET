@@ -270,7 +270,7 @@ partial class Build
                     Git($"checkout -b \"{newBranch}\"");
                 }
 
-                Git($"merge -X theirs \"{curBranch}\"");
+                Git($"merge -X theirs \"{curBranch}\" --allow-unrelated-histories");
                 Git($"push --set-upstream origin \"{newBranch}\"");
                 if (!exists)
                 {
