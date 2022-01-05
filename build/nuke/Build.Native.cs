@@ -175,6 +175,11 @@ partial class Build
                     var unzip = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
                     HttpDownloadFile("https://storage.googleapis.com/chrome-infra/depot_tools.zip", zip);
                     UncompressZip(zip, unzip);
+                    if (OperatingSystem.IsLinux() || OperatingSystem.IsMacOS())
+                    {
+                        InheritedShell($"chmod -R 777 \"{unzip}\"");
+                    }
+                    
                     AddToPath(unzip);
                     if (OperatingSystem.IsWindows())
                     {
