@@ -283,6 +283,8 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref framebufferSizeElements[0]) = FramebufferSize;
                 var framebufferSize = new Vector<int>(framebufferSizeElements);
                 Span<int> sizeElements = stackalloc int[Vector<int>.Count];
+                // HACK: Avoid divide by zero errors
+                sizeElements[2..].Fill(1);
                 Unsafe.As<int, Vector2D<int>>(ref sizeElements[0]) = Size;
                 var size = new Vector<int>(sizeElements);
                 Span<int> pointElements = stackalloc int[Vector<int>.Count];
@@ -295,6 +297,11 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref a[0]) = FramebufferSize;
                 Unsafe.As<int, Vector2D<int>>(ref a[c]) = Size;
                 Unsafe.As<int, Vector2D<int>>(ref a[c * 2]) = point;
+                
+                // HACK: Avoid divide by zero errors
+                for (var i = c + 2; i < c * 2; i++)
+                    a[i] = 1;
+
                 var framebufferSize = new Vector<int>(a, 0);
                 var size = new Vector<int>(a, c);
                 var thePoint = new Vector<int>(a, c * 2);
