@@ -250,6 +250,8 @@ partial class Build
             var newBranch = $"ci/{curBranch}/{name.ToLower()}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             Git($"commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\"");
+            // ensure there are no other changes
+            Git("checkout HEAD", RootDirectory);
             if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
             {
                 Logger.Info("Checking for existing branch...");
