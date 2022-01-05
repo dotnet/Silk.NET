@@ -190,7 +190,7 @@ partial class Build
                     InheritedShell("gclient sync", AnglePath).AssertZeroExitCode();
                     if (OperatingSystem.IsLinux())
                     {
-                        InheritedShell("./build/install-build-deps.sh", AnglePath).AssertZeroExitCode();
+                        InheritedShell("sudo ./build/install-build-deps.sh", AnglePath).AssertZeroExitCode();
                     }
 
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.OpenGLES.ANGLE.Native" / "runtimes";
