@@ -10,3 +10,6 @@
 [submodule "build/submodules/ANGLE"]
 	path = build/submodules/ANGLE
 	url = https://chromium.googlesource.com/angle/angle
+[submodule "build/submodules/Vulkan-Loader"]
+	path = build/submodules/Vulkan-Loader
+	url = https://github.com/KhronosGroup/Vulkan-Loader

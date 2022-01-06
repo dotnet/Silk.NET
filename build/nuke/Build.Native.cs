@@ -106,6 +106,7 @@ partial class Build
     );
 
     AbsolutePath SwiftShaderBuildPath => RootDirectory / "build" / "submodules" / "SwiftShader" / "build";
+
     Target SwiftShader => CommonTarget
     (
         x => x.Before(Compile)
@@ -119,7 +120,7 @@ partial class Build
                         OperatingSystem.IsMacOS() ? "Darwin" : throw new PlatformNotSupportedException();
                     DeleteDirectory(SwiftShaderBuildPath);
                     Git("checkout HEAD build/", SwiftShaderBuildPath / "..");
-                    StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=MinSizeRel", SwiftShaderBuildPath)
+                    StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=Release", SwiftShaderBuildPath)
                         .AssertZeroExitCode();
                     var nonGitHubActionsArgs = string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
                         ? " --parallel"
@@ -141,22 +142,22 @@ partial class Build
                     {
                         CopyFile
                         (
-                            outputPath / fname, runtimes / "win-x64" / "native" / fname, 
+                            outputPath / fname, runtimes / "win-x64" / "native" / fname,
                             FileExistsPolicy.Overwrite
                         ); // we'll use WOW64
                         CopyFile
                         (
-                            outputPath / fname, runtimes / "win-x86" / "native" / fname, 
+                            outputPath / fname, runtimes / "win-x86" / "native" / fname,
                             FileExistsPolicy.Overwrite
                         );
                         CopyFile
                         (
-                            outputPath / icd, runtimes / "win-x64" / "native" / icd, 
+                            outputPath / icd, runtimes / "win-x64" / "native" / icd,
                             FileExistsPolicy.Overwrite
                         );
                         CopyFile
                         (
-                            outputPath / icd, runtimes / "win-x86" / "native" / icd, 
+                            outputPath / icd, runtimes / "win-x86" / "native" / icd,
                             FileExistsPolicy.Overwrite
                         );
                     }
@@ -164,12 +165,12 @@ partial class Build
                     {
                         CopyFile
                         (
-                            outputPath / fname, runtimes / "linux-x64" / "native" / fname, 
+                            outputPath / fname, runtimes / "linux-x64" / "native" / fname,
                             FileExistsPolicy.Overwrite
                         );
                         CopyFile
                         (
-                            outputPath / icd, runtimes / "linux-x64" / "native" / icd, 
+                            outputPath / icd, runtimes / "linux-x64" / "native" / icd,
                             FileExistsPolicy.Overwrite
                         );
                     }
@@ -177,12 +178,12 @@ partial class Build
                     {
                         CopyFile
                         (
-                            outputPath / fname, runtimes / "osx-x64" / "native" / fname, 
+                            outputPath / fname, runtimes / "osx-x64" / "native" / fname,
                             FileExistsPolicy.Overwrite
                         );
                         CopyFile
                         (
-                            outputPath / icd, runtimes / "osx-x64" / "native" / icd, 
+                            outputPath / icd, runtimes / "osx-x64" / "native" / icd,
                             FileExistsPolicy.Overwrite
                         );
                     }
@@ -193,6 +194,7 @@ partial class Build
     );
 
     AbsolutePath AnglePath => RootDirectory / "build" / "submodules" / "ANGLE";
+
     Target Angle => CommonTarget
     (
         x => x.Before(Compile)
@@ -211,7 +213,7 @@ partial class Build
                     {
                         InheritedShell($"chmod -R 777 \"{unzip}\"");
                     }
-                    
+
                     AddToPath(unzip);
                     if (OperatingSystem.IsWindows())
                     {
@@ -229,11 +231,12 @@ partial class Build
                     if (OperatingSystem.IsWindows())
                     {
                         InheritedShell
-                        (
-                            "gn gen out/Release " +
-                            "--args='is_component_build=false target_cpu=\"\"x86\"\" is_debug=false'",
-                            AnglePath
-                        ).AssertZeroExitCode();
+                            (
+                                "gn gen out/Release " +
+                                "--args='is_component_build=false target_cpu=\"\"x86\"\" is_debug=false'",
+                                AnglePath
+                            )
+                            .AssertZeroExitCode();
                         InheritedShell($"autoninja -C \"{@out}\"", AnglePath).AssertZeroExitCode();
                         CopyAll
                         (
@@ -250,11 +253,12 @@ partial class Build
                     else
                     {
                         InheritedShell
-                        (
-                            $"gn gen \"{@out}\" " +
-                            "--args=\"is_component_build=false is_debug=false\"",
-                            AnglePath
-                        ).AssertZeroExitCode();
+                            (
+                                $"gn gen \"{@out}\" " +
+                                "--args=\"is_component_build=false is_debug=false\"",
+                                AnglePath
+                            )
+                            .AssertZeroExitCode();
                         InheritedShell($"autoninja -C \"{@out}\"", AnglePath).AssertZeroExitCode();
                         CopyAll
                         (
@@ -271,7 +275,46 @@ partial class Build
                 }
             )
     );
-    
+
+    AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
+    Target VulkanLoader => CommonTarget
+    (
+        x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    var @out = VulkanLoaderPath / "build";
+                    EnsureCleanDirectory(@out);
+                    var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
+                    InheritedShell
+                    (
+                        $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
+                        VulkanLoaderPath
+                    ).AssertZeroExitCode();
+                    InheritedShell("cmake --build build --config Release", VulkanLoaderPath)
+                        .AssertZeroExitCode();
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
+                    if (OperatingSystem.IsWindows())
+                    {
+                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
+                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
+                    }
+                    else
+                    {
+                        CopyAll
+                        (
+                            @out.GlobFiles("loader/Release/libvulkan.so.1", "loader/Release/libvulkan.1.dylib"),
+                            runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
+                        );
+                    }
+
+                    PrUpdatedNativeBinary("Vulkan Loader");
+                }
+            )
+    );
+
     void PrUpdatedNativeBinary(string name)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
@@ -279,12 +322,15 @@ partial class Build
         if (GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
             !string.IsNullOrWhiteSpace(pushableToken) &&
             curBranch != "HEAD" &&
-            !string.IsNullOrWhiteSpace(curBranch))
+            !string.IsNullOrWhiteSpace(curBranch) &&
+            !curBranch.StartsWith("ci/", StringComparison.OrdinalIgnoreCase) && // ignore other CI branches
+            !curBranch.StartsWith("main", StringComparison.OrdinalIgnoreCase) && // submodule updates are done in PRs...
+            !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
             Git("fetch --all", RootDirectory);
             Git("add src/Native", RootDirectory);
-            var newBranch = $"ci/{curBranch}/{name.ToLower()}_bins";
+            var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             Git($"commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\"");
             // ensure there are no other changes
