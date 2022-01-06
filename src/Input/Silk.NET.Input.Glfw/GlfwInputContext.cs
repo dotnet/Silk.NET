@@ -7,6 +7,7 @@ using Silk.NET.GLFW;
 using Silk.NET.Input.Internals;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
+using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Input.Glfw
 {
@@ -17,7 +18,6 @@ namespace Silk.NET.Input.Glfw
         private readonly GlfwKeyboard[] _keyboards = new GlfwKeyboard[1];
         private readonly GlfwMouse[] _mice = new GlfwMouse[1];
         private readonly IGlfwSubscriber[] _subscribers = new IGlfwSubscriber[2];
-        private Action<double> _update;
         private IView _window;
 
         public unsafe GlfwInputContext(IView window)
@@ -50,30 +50,48 @@ namespace Silk.NET.Input.Glfw
             Mice = _mice;
 
             GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
-            window.Update += _update = _ =>
+            if (window is ViewImplementationBase view)
             {
-                foreach (var updatable in _mice)
-                {
-                    updatable.Update();
-                }
-
-                foreach (var updatable in _gamepads)
-                {
-                    updatable.Update();
-                }
-
-                foreach (var updatable in _joysticks)
-                {
-                    updatable.Update();
-                }
-            };
+                view.ProcessEvents += ProcessEvents;
+            }
+            else
+            {
+                window.Update += Update;
+            }
 
             _window = window;
         }
 
+        private void Update(double delta) => ProcessEvents();
+        private void ProcessEvents()
+        {
+            foreach (var updatable in _mice)
+            {
+                updatable.Update();
+            }
+
+            foreach (var updatable in _gamepads)
+            {
+                updatable.Update();
+            }
+
+            foreach (var updatable in _joysticks)
+            {
+                updatable.Update();
+            }
+        }
+
         public unsafe void Dispose()
         {
-            _window.Update -= _update;
+            if (_window is ViewImplementationBase view)
+            {
+                view.ProcessEvents += ProcessEvents;
+            }
+            else
+            {
+                _window.Update += Update;
+            }
+
             GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
             foreach (var gamepad in _gamepads)
             {
