@@ -12,6 +12,7 @@ on:
 jobs:
   Build:
     strategy: 
+      fail-fast: false
       matrix:
         env:
           - os: ubuntu-latest
