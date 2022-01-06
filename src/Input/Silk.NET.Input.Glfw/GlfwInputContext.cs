@@ -85,11 +85,11 @@ namespace Silk.NET.Input.Glfw
         {
             if (_window is ViewImplementationBase view)
             {
-                view.ProcessEvents += ProcessEvents;
+                view.ProcessEvents -= ProcessEvents;
             }
             else
             {
-                _window.Update += Update;
+                _window.Update -= Update;
             }
 
             GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
