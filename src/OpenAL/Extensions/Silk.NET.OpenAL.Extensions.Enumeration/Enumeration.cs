@@ -27,6 +27,7 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
         public unsafe partial string GetString(Device* device, GetEnumerationContextString param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetString")]
         public unsafe partial byte* GetStringList(Device* device, GetEnumerationContextStringList param);
 
         /// <inheritdoc cref="GetString(Device*, GetEnumerationContextString)" />
