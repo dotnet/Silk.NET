@@ -83,6 +83,7 @@ namespace Silk.NET.Windowing.Internals
         public event Action? Load;
         public event Action<double>? Update;
         public event Action<double>? Render;
+        internal event Action? ProcessEvents;
 
         // Lifetime controls
         public void Initialize()
@@ -271,6 +272,12 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Misc implementations
+        void IView.DoEvents()
+        {
+            DoEvents();
+            ProcessEvents?.Invoke();
+        }
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         public Vector2D<int> PointToFramebuffer(Vector2D<int> point)
         {
