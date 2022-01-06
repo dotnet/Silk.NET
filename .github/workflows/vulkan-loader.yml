@@ -51,6 +51,6 @@ jobs:
         with:
           dotnet-version: 6.0.100
       - name: Build Vulkan Loader
-        run: ${{ matrix.env.nuke_invoke }} Vulkan Loader
+        run: ${{ matrix.env.nuke_invoke }} VulkanLoader
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
