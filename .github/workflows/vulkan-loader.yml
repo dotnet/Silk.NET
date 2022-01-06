@@ -1,4 +1,4 @@
-name: ANGLE
+name: Vulkan Loader
 on:
   push:
     paths:
