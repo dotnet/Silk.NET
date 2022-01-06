@@ -4,7 +4,6 @@ on:
     paths:
       - build/submodules/ANGLE
       - build/nuke/Build.Native.cs
-      - .github/workflows/angle.yml  # temporary for dev
     branches-ignore:
         - "ci/*"
         - "develop/*"
