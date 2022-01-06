@@ -4,7 +4,6 @@ on:
     paths:
       - build/submodules/Vulkan-Loader
       - build/nuke/Build.Native.cs
-      - .github/workflows/vulkan-loader.yml  # temporary for dev
     branches-ignore:
         - "ci/*"
         - "develop/*"
