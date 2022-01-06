@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG")]
     public enum SwapChainFlag : int
     {

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_COPP_TVProtectionStandard")]
     public enum COPPTVProtectionStandard : int
     {

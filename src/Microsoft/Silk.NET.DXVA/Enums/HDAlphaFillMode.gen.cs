@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_DXVAHD_ALPHA_FILL_MODE")]
     public enum HDAlphaFillMode : int
     {

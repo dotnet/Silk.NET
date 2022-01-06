@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "DXGI_MODE_SCANLINE_ORDER")]
     public enum ModeScanlineOrder : int
     {

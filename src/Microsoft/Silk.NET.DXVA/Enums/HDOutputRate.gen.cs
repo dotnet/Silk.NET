@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_DXVAHD_OUTPUT_RATE")]
     public enum HDOutputRate : int
     {

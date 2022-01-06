@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_D3D_SHADER_VARIABLE_FLAGS")]
     public enum D3DShaderVariableFlags : int
     {

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_READ_DIRECTORY_NOTIFY_INFORMATION_CLASS")]
     public enum ReadDirectoryNotifyInformationClass : int
     {

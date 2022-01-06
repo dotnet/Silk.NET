@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "D3D_TESSELLATOR_DOMAIN")]
     public enum D3DTessellatorDomain : int
     {

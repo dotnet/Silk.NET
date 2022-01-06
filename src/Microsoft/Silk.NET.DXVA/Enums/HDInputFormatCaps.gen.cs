@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_DXVAHD_INPUT_FORMAT_CAPS")]
     public enum HDInputFormatCaps : int
     {

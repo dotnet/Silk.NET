@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_ETW_PMC_COUNTER_OWNER_TYPE")]
     public enum EtwPmcCounterOwnerType : int
     {

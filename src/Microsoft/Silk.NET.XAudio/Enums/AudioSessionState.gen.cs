@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.XAudio
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_AudioSessionState")]
     public enum AudioSessionState : int
     {

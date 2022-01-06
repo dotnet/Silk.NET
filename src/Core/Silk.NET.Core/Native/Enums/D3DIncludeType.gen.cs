@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "_D3D_INCLUDE_TYPE")]
     public enum D3DIncludeType : int
     {
