@@ -274,8 +274,8 @@ namespace Silk.NET.Windowing.Internals
         // Misc implementations
         void IView.DoEvents()
         {
-            ProcessEvents?.Invoke();
             DoEvents();
+            ProcessEvents?.Invoke();
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]

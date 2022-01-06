@@ -19,7 +19,7 @@
             pre-update, as I feel like that'd just be an arms race) so I made the ProcessEvents event internal for
             now -->
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>Silk.NET.Input.Glfw</_Parameter1>
+            <_Parameter1>Silk.NET.Input.Common</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
 

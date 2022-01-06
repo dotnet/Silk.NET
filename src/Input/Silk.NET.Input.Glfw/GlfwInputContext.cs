@@ -11,20 +11,19 @@ using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Input.Glfw
 {
-    internal class GlfwInputContext : IInputContext
+    internal class GlfwInputContext : InputContextImplementationBase
     {
         private readonly GlfwGamepad[] _gamepads = new GlfwGamepad[16];
         private readonly GlfwJoystick[] _joysticks = new GlfwJoystick[16];
         private readonly GlfwKeyboard[] _keyboards = new GlfwKeyboard[1];
         private readonly GlfwMouse[] _mice = new GlfwMouse[1];
         private readonly IGlfwSubscriber[] _subscribers = new IGlfwSubscriber[2];
-        private IView _window;
 
-        public unsafe GlfwInputContext(IView window)
+        public unsafe GlfwInputContext(IView window) : base(window)
         {
             void OnConnectionChanged(IInputDevice a, bool b) => ConnectionChanged?.Invoke(a, b);
 
-            if (!(window is GlfwWindow))
+            if (window is not GlfwWindow)
             {
                 throw new ArgumentNullException
                     (nameof(window), "Attempted to create input context for null or non-GLFW window.");
@@ -50,20 +49,9 @@ namespace Silk.NET.Input.Glfw
             Mice = _mice;
 
             GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
-            if (window is ViewImplementationBase view)
-            {
-                view.ProcessEvents += ProcessEvents;
-            }
-            else
-            {
-                window.Update += Update;
-            }
-
-            _window = window;
         }
 
-        private void Update(double delta) => ProcessEvents();
-        private void ProcessEvents()
+        public override void ProcessEvents()
         {
             foreach (var updatable in _mice)
             {
@@ -81,17 +69,8 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
-        public unsafe void Dispose()
+        public override unsafe void CoreDispose()
         {
-            if (_window is ViewImplementationBase view)
-            {
-                view.ProcessEvents -= ProcessEvents;
-            }
-            else
-            {
-                _window.Update -= Update;
-            }
-
             GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
             foreach (var gamepad in _gamepads)
             {
@@ -109,12 +88,12 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
-        public nint Handle { get; }
-        public IReadOnlyList<IGamepad> Gamepads { get; }
-        public IReadOnlyList<IJoystick> Joysticks { get; }
-        public IReadOnlyList<IKeyboard> Keyboards { get; }
-        public IReadOnlyList<IMouse> Mice { get; }
-        public IReadOnlyList<IInputDevice> OtherDevices { get; } = new IInputDevice[0];
-        public event Action<IInputDevice, bool>? ConnectionChanged;
+        public sealed override nint Handle { get; }
+        public override IReadOnlyList<IGamepad> Gamepads { get; }
+        public override IReadOnlyList<IJoystick> Joysticks { get; }
+        public override IReadOnlyList<IKeyboard> Keyboards { get; }
+        public override IReadOnlyList<IMouse> Mice { get; }
+        public override IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>();
+        public override event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }
