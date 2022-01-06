@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [Flags]
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L92_C9")]
     [NativeName("Name", "SDL_ArrayOrder")]
     public enum ArrayOrder : int
