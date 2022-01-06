@@ -305,7 +305,7 @@ partial class Build
                     {
                         CopyAll
                         (
-                            @out.GlobFiles("loader/Release/libvulkan.so.1", "loader/Release/libvulkan.1.dylib"),
+                            @out.GlobFiles("loader/Release/libvulkan.so", "loader/Release/libvulkan.dylib"),
                             runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
                         );
                     }

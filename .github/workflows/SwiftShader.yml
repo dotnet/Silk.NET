@@ -5,6 +5,10 @@ on:
       - build/submodules/SwiftShader
       - .github/workflows/SwiftShader.yml  # temporary for dev
       - build/nuke/Build.Native.cs
+    branches-ignore:
+      - "ci/*"
+      - "develop/*"
+      - "main"
 jobs:
   Build:
     strategy: 
