@@ -15,7 +15,7 @@ jobs:
             nuke_invoke: ./build.sh
             extras: |
               sudo apt-get remove php7.4-common 
-              sudo apt-get install -y libx11-xcb-dev libapache2-mod-php7.4 libwayland-dev
+              sudo apt-get install -y libx11-xcb-dev libapache2-mod-php7.4 libwayland-dev libx11-dev
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd
