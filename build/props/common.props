@@ -34,8 +34,8 @@
         <DebugType>portable</DebugType>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
-        <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.66" PrivateAssets="All"/>
-        <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="0.1.66" PrivateAssets="All"/>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
+        <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" PrivateAssets="All"/>
     </ItemGroup>
     <!-- Nuget Icon - done as a target so it doesn't appear in the IDE -->
     <Target Name="SilkAddIcon" Condition="'$(SilkIconExempt)' == ''">
