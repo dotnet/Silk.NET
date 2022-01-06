@@ -10,7 +10,8 @@ namespace Silk.NET.OpenAL.Tests;
 
 public class GetStringListTests
 {
-    [Fact]
+    // the tests in here don't work in CI because CI doesn't have the stuff OpenAL Soft needs.
+    [RunnableInDebugOnly]
     public unsafe void GetEnumerateAllContextStringList()
     {
         using var alc = ALContext.GetApi(true);
@@ -27,7 +28,7 @@ public class GetStringListTests
         Assert.True(alc.CloseDevice(dev));
     }
 
-    [Fact]
+    [RunnableInDebugOnly]
     public unsafe void GetCaptureContextStringList()
     {
         using var alc = ALContext.GetApi(true);
@@ -44,7 +45,7 @@ public class GetStringListTests
         Assert.True(alc.CloseDevice(dev));
     }
 
-    [Fact]
+    [RunnableInDebugOnly]
     public unsafe void GetEnumerationContextStringList()
     {
         using var alc = ALContext.GetApi(true);
