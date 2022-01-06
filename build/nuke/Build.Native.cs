@@ -303,14 +303,9 @@ partial class Build
                     }
                     else
                     {
-                        foreach (var temp in @out.GlobFiles("**/*"))
-                        {
-                            Console.WriteLine(temp);
-                        }
-                        
                         CopyAll
                         (
-                            @out.GlobFiles("loader/Release/libvulkan*.so*", "loader/Release/libvulkan*.dylib*"),
+                            @out.GlobFiles("loader/libvulkan.so", "loader/libvulkan.dylib"),
                             runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
                         );
                     }
