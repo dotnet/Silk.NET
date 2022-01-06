@@ -2,14 +2,20 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.Build.Locator;
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
+using Nuke.Common.Tooling;
+using Nuke.Common.Utilities;
+using static Nuke.Common.IO.FileSystemTasks;
+using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
@@ -28,6 +34,36 @@ partial class Build
         }
 
         return idx;
+    }
+
+    Dictionary<string, string> CreateEnvVarDictionary()
+        => Environment.GetEnvironmentVariables()
+            .Cast<DictionaryEntry>()
+            .ToDictionary(x => (string) x.Key, x => (string) x.Value);
+
+    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null)
+        => OperatingSystem.IsWindows()
+            ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary())
+            : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary());
+
+    void AddToPath(string dir)
+    {
+        var pathVar = Environment.GetEnvironmentVariables()
+            .Cast<DictionaryEntry>()
+            .First(x => ((string) x.Key).Equals("PATH", StringComparison.OrdinalIgnoreCase));
+        Environment.SetEnvironmentVariable
+        (
+            (string) pathVar.Key,
+            (string) pathVar.Value + (OperatingSystem.IsWindows() ? $";{dir}" : $":{dir}")
+        );
+    }
+
+    static void CopyAll(IEnumerable<AbsolutePath> paths, AbsolutePath dir)
+    {
+        foreach (var path in paths)
+        {
+            CopyFile(path, dir / Path.GetFileName(path), FileExistsPolicy.Overwrite);
+        }
     }
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
