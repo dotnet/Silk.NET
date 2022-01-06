@@ -62,7 +62,7 @@ partial class Build
     {
         foreach (var path in paths)
         {
-            CopyFile(path, dir / Path.GetFileName(path));
+            CopyFile(path, dir / Path.GetFileName(path), FileExistsPolicy.Overwrite);
         }
     }
 

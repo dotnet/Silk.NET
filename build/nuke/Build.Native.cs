@@ -139,20 +139,52 @@ partial class Build
                     const string icd = "vk_swiftshader_icd.json";
                     if (OperatingSystem.IsWindows())
                     {
-                        CopyFile(outputPath / fname, runtimes / "win-x64" / "native" / fname); // we'll use WOW64
-                        CopyFile(outputPath / fname, runtimes / "win-x86" / "native" / fname);
-                        CopyFile(outputPath / icd, runtimes / "win-x64" / "native" / icd);
-                        CopyFile(outputPath / icd, runtimes / "win-x86" / "native" / icd);
+                        CopyFile
+                        (
+                            outputPath / fname, runtimes / "win-x64" / "native" / fname, 
+                            FileExistsPolicy.Overwrite
+                        ); // we'll use WOW64
+                        CopyFile
+                        (
+                            outputPath / fname, runtimes / "win-x86" / "native" / fname, 
+                            FileExistsPolicy.Overwrite
+                        );
+                        CopyFile
+                        (
+                            outputPath / icd, runtimes / "win-x64" / "native" / icd, 
+                            FileExistsPolicy.Overwrite
+                        );
+                        CopyFile
+                        (
+                            outputPath / icd, runtimes / "win-x86" / "native" / icd, 
+                            FileExistsPolicy.Overwrite
+                        );
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        CopyFile(outputPath / fname, runtimes / "linux-x64" / "native" / fname);
-                        CopyFile(outputPath / icd, runtimes / "linux-x64" / "native" / icd);
+                        CopyFile
+                        (
+                            outputPath / fname, runtimes / "linux-x64" / "native" / fname, 
+                            FileExistsPolicy.Overwrite
+                        );
+                        CopyFile
+                        (
+                            outputPath / icd, runtimes / "linux-x64" / "native" / icd, 
+                            FileExistsPolicy.Overwrite
+                        );
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        CopyFile(outputPath / fname, runtimes / "osx-x64" / "native" / fname);
-                        CopyFile(outputPath / icd, runtimes / "osx-x64" / "native" / icd);
+                        CopyFile
+                        (
+                            outputPath / fname, runtimes / "osx-x64" / "native" / fname, 
+                            FileExistsPolicy.Overwrite
+                        );
+                        CopyFile
+                        (
+                            outputPath / icd, runtimes / "osx-x64" / "native" / icd, 
+                            FileExistsPolicy.Overwrite
+                        );
                     }
 
                     PrUpdatedNativeBinary("SwiftShader");
