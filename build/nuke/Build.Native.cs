@@ -329,10 +329,19 @@ partial class Build
         {
             // it's assumed that the pushable token was used to checkout the repo
             Git("fetch --all", RootDirectory);
+            Git("pull");
             Git("add src/Native", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
-            Git($"commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\"");
+            var commitCmd = InheritedShell
+            (
+                $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
+            ).AssertWaitForExit();
+            if (!commitCmd.Output.Any(x => x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
+            {
+                commitCmd.AssertZeroExitCode();
+            }
+
             // ensure there are no other changes
             Git("checkout HEAD .nuke/", RootDirectory);
             Git("reset --hard", RootDirectory);
