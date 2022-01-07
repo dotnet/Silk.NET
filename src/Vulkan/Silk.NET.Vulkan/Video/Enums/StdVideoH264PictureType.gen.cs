@@ -9,17 +9,20 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [Flags]
     [NativeName("Name", "StdVideoH264PictureType")]
     public enum StdVideoH264PictureType : int
     {
-        [NativeName("Name", "std_video_h264_picture_type_i")]
-        StdVideoH264PictureTypeI = 0x0,
-        [NativeName("Name", "std_video_h264_picture_type_p")]
-        StdVideoH264PictureTypeP = 0x1,
-        [NativeName("Name", "std_video_h264_picture_type_b")]
-        StdVideoH264PictureTypeB = 0x2,
-        [NativeName("Name", "std_video_h264_picture_type_invalid")]
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_P")]
+        StdVideoH264PictureTypeP = 0x0,
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_B")]
+        StdVideoH264PictureTypeB = 0x1,
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_I")]
+        StdVideoH264PictureTypeI = 0x2,
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_IDR")]
+        StdVideoH264PictureTypeIdr = 0x5,
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_INVALID")]
         StdVideoH264PictureTypeInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_PICTURE_TYPE_MAX_ENUM")]
+        StdVideoH264PictureTypeMaxEnum = 0x7FFFFFFF,
     }
 }

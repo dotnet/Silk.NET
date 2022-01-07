@@ -10,16 +10,18 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan.Video
 {
     [Flags]
-    [NativeName("Name", "StdVideoH264WeightedBiPredIdc")]
-    public enum StdVideoH264WeightedBiPredIdc : int
+    [NativeName("Name", "StdVideoH264WeightedBipredIdc")]
+    public enum StdVideoH264WeightedBipredIdc : int
     {
-        [NativeName("Name", "std_video_h264_default_weighted_b_slices_prediction_idc")]
-        StdVideoH264DefaultWeightedBSlicesPredictionIdc = 0x0,
-        [NativeName("Name", "std_video_h264_explicit_weighted_b_slices_prediction_idc")]
-        StdVideoH264ExplicitWeightedBSlicesPredictionIdc = 0x1,
-        [NativeName("Name", "std_video_h264_implicit_weighted_b_slices_prediction_idc")]
-        StdVideoH264ImplicitWeightedBSlicesPredictionIdc = 0x2,
-        [NativeName("Name", "std_video_h264_invalid_weighted_b_slices_prediction_idc")]
-        StdVideoH264InvalidWeightedBSlicesPredictionIdc = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_DEFAULT")]
+        StdVideoH264WeightedBipredIdcDefault = 0x0,
+        [NativeName("Name", "STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_EXPLICIT")]
+        StdVideoH264WeightedBipredIdcExplicit = 0x1,
+        [NativeName("Name", "STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_IMPLICIT")]
+        StdVideoH264WeightedBipredIdcImplicit = 0x2,
+        [NativeName("Name", "STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_INVALID")]
+        StdVideoH264WeightedBipredIdcInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_MAX_ENUM")]
+        StdVideoH264WeightedBipredIdcMaxEnum = 0x7FFFFFFF,
     }
 }

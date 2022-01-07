@@ -41,6 +41,7 @@ namespace Silk.NET.Vulkan.Video
             uint? frameCropTopOffset = null,
             uint? frameCropBottomOffset = null,
             StdVideoH264SpsFlags? flags = null,
+            int* pOffsetForRefFrame = null,
             StdVideoH264ScalingLists* pScalingLists = null,
             StdVideoH264SequenceParameterSetVui* pSequenceParameterSetVui = null
         ) : this()
@@ -143,6 +144,11 @@ namespace Silk.NET.Vulkan.Video
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (pOffsetForRefFrame is not null)
+            {
+                POffsetForRefFrame = pOffsetForRefFrame;
             }
 
             if (pScalingLists is not null)
@@ -256,10 +262,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "StdVideoH264SpsFlags")]
         [NativeName("Name", "flags")]
         public StdVideoH264SpsFlags Flags;
-        [NativeName("Type", "int32_t [255]")]
-        [NativeName("Type.Name", "int32_t [255]")]
-        [NativeName("Name", "offset_for_ref_frame")]
-        public fixed int OffsetForRefFrame[255];
+
+        [NativeName("Type", "int32_t *")]
+        [NativeName("Type.Name", "int32_t *")]
+        [NativeName("Name", "pOffsetForRefFrame")]
+        public int* POffsetForRefFrame;
 
         [NativeName("Type", "StdVideoH264ScalingLists *")]
         [NativeName("Type.Name", "StdVideoH264ScalingLists *")]
