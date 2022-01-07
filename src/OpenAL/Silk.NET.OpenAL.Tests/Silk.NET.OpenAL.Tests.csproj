@@ -26,6 +26,11 @@
         <ProjectReference Include="../**/*.csproj" />
         <ProjectReference Remove="$(MSBuildThisFile)" />
         <ProjectReference Include="../../Core/Silk.NET.Core/Silk.NET.Core.csproj" />
+        <None Include="../../Native/Silk.NET.OpenAL.Soft.Native/**/*.so" CopyToOutputDirectory="Always" />
+        <None Include="../../Native/Silk.NET.OpenAL.Soft.Native/**/*.dylib" CopyToOutputDirectory="Always" />
+        <None Include="../../Native/Silk.NET.OpenAL.Soft.Native/**/*.dll" CopyToOutputDirectory="Always" />
+        <None Remove="../../Native/Silk.NET.OpenAL.Soft.Native/bin/**/*.dll" />
+        <None Remove="../../Native/Silk.NET.OpenAL.Soft.Native/obj/**/*.dll" />
     </ItemGroup>
 
 </Project>
