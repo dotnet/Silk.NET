@@ -13,13 +13,15 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264DisableDeblockingFilterIdc")]
     public enum StdVideoH264DisableDeblockingFilterIdc : int
     {
-        [NativeName("Name", "std_video_h264_disable_deblocking_filter_idc_disabled")]
+        [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_DISABLED")]
         StdVideoH264DisableDeblockingFilterIdcDisabled = 0x0,
-        [NativeName("Name", "std_video_h264_disable_deblocking_filter_idc_enabled")]
+        [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_ENABLED")]
         StdVideoH264DisableDeblockingFilterIdcEnabled = 0x1,
-        [NativeName("Name", "std_video_h264_disable_deblocking_filter_idc_partial")]
+        [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_PARTIAL")]
         StdVideoH264DisableDeblockingFilterIdcPartial = 0x2,
-        [NativeName("Name", "std_video_h264_disable_deblocking_filter_idc_invalid")]
+        [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_INVALID")]
         StdVideoH264DisableDeblockingFilterIdcInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_MAX_ENUM")]
+        StdVideoH264DisableDeblockingFilterIdcMaxEnum = 0x7FFFFFFF,
     }
 }

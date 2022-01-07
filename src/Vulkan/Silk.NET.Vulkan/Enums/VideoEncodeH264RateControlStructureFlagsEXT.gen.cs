@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkVideoEncodeH264RateControlStructureFlagsEXT")]
     public enum VideoEncodeH264RateControlStructureFlagsEXT : int
     {

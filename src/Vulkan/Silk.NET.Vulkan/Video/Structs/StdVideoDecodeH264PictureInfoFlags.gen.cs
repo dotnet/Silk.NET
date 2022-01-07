@@ -23,6 +23,7 @@ namespace Silk.NET.Vulkan.Video
         (
             uint? fieldPicFlag = null,
             uint? isIntra = null,
+            uint? idrPicFlag = null,
             uint? bottomFieldFlag = null,
             uint? isReference = null,
             uint? complementaryFieldPair = null
@@ -36,6 +37,11 @@ namespace Silk.NET.Vulkan.Video
             if (isIntra is not null)
             {
                 IsIntra = isIntra.Value;
+            }
+
+            if (idrPicFlag is not null)
+            {
+                IdrPicFlag = idrPicFlag.Value;
             }
 
             if (bottomFieldFlag is not null)
@@ -73,7 +79,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint BottomFieldFlag
+        public uint IdrPicFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
@@ -81,7 +87,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        public uint IsReference
+        public uint BottomFieldFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 3) & 0x1u);
@@ -89,12 +95,20 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        public uint ComplementaryFieldPair
+        public uint IsReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
+
+        public uint ComplementaryFieldPair
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
         }
     }
 }

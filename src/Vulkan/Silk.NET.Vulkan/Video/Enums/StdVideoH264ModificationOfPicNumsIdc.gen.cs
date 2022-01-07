@@ -9,19 +9,20 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [Flags]
     [NativeName("Name", "StdVideoH264ModificationOfPicNumsIdc")]
     public enum StdVideoH264ModificationOfPicNumsIdc : int
     {
-        [NativeName("Name", "std_video_h264_modification_of_pic_nums_idc_short_term_subtract")]
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_SHORT_TERM_SUBTRACT")]
         StdVideoH264ModificationOfPicNumsIdcShortTermSubtract = 0x0,
-        [NativeName("Name", "std_video_h264_modification_of_pic_nums_idc_short_term_add")]
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_SHORT_TERM_ADD")]
         StdVideoH264ModificationOfPicNumsIdcShortTermAdd = 0x1,
-        [NativeName("Name", "std_video_h264_modification_of_pic_nums_idc_long_term")]
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_LONG_TERM")]
         StdVideoH264ModificationOfPicNumsIdcLongTerm = 0x2,
-        [NativeName("Name", "std_video_h264_modification_of_pic_nums_idc_end")]
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_END")]
         StdVideoH264ModificationOfPicNumsIdcEnd = 0x3,
-        [NativeName("Name", "std_video_h264_modification_of_pic_nums_idc_invalid")]
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_INVALID")]
         StdVideoH264ModificationOfPicNumsIdcInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_MAX_ENUM")]
+        StdVideoH264ModificationOfPicNumsIdcMaxEnum = 0x7FFFFFFF,
     }
 }

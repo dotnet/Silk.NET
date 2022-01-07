@@ -13,13 +13,15 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264SliceType")]
     public enum StdVideoH264SliceType : int
     {
-        [NativeName("Name", "std_video_h264_slice_type_i")]
-        StdVideoH264SliceTypeI = 0x0,
-        [NativeName("Name", "std_video_h264_slice_type_p")]
-        StdVideoH264SliceTypeP = 0x1,
-        [NativeName("Name", "std_video_h264_slice_type_b")]
-        StdVideoH264SliceTypeB = 0x2,
-        [NativeName("Name", "std_video_h264_slice_type_invalid")]
+        [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_P")]
+        StdVideoH264SliceTypeP = 0x0,
+        [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_B")]
+        StdVideoH264SliceTypeB = 0x1,
+        [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_I")]
+        StdVideoH264SliceTypeI = 0x2,
+        [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_INVALID")]
         StdVideoH264SliceTypeInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_SLICE_TYPE_MAX_ENUM")]
+        StdVideoH264SliceTypeMaxEnum = 0x7FFFFFFF,
     }
 }

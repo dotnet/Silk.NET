@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkFormatFeatureFlags2KHR")]
     public enum FormatFeatureFlags2KHR : long
     {

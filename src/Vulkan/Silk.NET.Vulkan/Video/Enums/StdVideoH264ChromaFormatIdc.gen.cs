@@ -9,17 +9,20 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [Flags]
     [NativeName("Name", "StdVideoH264ChromaFormatIdc")]
     public enum StdVideoH264ChromaFormatIdc : int
     {
-        [NativeName("Name", "std_video_h264_chroma_format_idc_monochrome")]
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_MONOCHROME")]
         StdVideoH264ChromaFormatIdcMonochrome = 0x0,
-        [NativeName("Name", "std_video_h264_chroma_format_idc_420")]
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_420")]
         StdVideoH264ChromaFormatIdc420 = 0x1,
-        [NativeName("Name", "std_video_h264_chroma_format_idc_422")]
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_422")]
         StdVideoH264ChromaFormatIdc422 = 0x2,
-        [NativeName("Name", "std_video_h264_chroma_format_idc_444")]
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_444")]
         StdVideoH264ChromaFormatIdc444 = 0x3,
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_INVALID")]
+        StdVideoH264ChromaFormatIdcInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_CHROMA_FORMAT_IDC_MAX_ENUM")]
+        StdVideoH264ChromaFormatIdcMaxEnum = 0x7FFFFFFF,
     }
 }
