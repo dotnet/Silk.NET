@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkExternalMemoryHandleTypeFlagsKHR")]
     public enum ExternalMemoryHandleTypeFlagsKHR : int
     {
