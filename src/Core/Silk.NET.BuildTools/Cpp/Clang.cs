@@ -7,12 +7,12 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
 using Humanizer;
-
 using Microsoft.Extensions.FileSystemGlobbing;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -47,6 +47,12 @@ namespace Silk.NET.BuildTools.Cpp
             "ULONGLONG",
             "LONG_PTR"
         };
+
+        public static bool IsProbablyABitmask(Enum @enum)
+            => @enum.Tokens.Count > 1 && // there is more than one token
+               // at least approx 50% of the tokens have only one bit set
+               @enum.Tokens.Count(x => BitOperations.PopCount(ulong.Parse(x.Value[2..], NumberStyles.HexNumber)) == 1)
+               >= MathF.Floor(@enum.Tokens.Count / 2f);
 
         public static bool ShouldVisit(Cursor cursor, BindTask task, bool nullTolerant = false)
         {
@@ -152,7 +158,8 @@ namespace Silk.NET.BuildTools.Cpp
                 CXTranslationUnit_Flags
                     .CXTranslationUnit_VisitImplicitAttributes; // Implicit attributes should be visited
             translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_DetailedPreprocessingRecord;
-            ReadOnlySpan<CXUnsavedFile> unsavedFiles = stackalloc CXUnsavedFile[] {CXUnsavedFile.Create(fileName, str)};
+            ReadOnlySpan<CXUnsavedFile> unsavedFiles = stackalloc CXUnsavedFile[]
+                { CXUnsavedFile.Create(fileName, str) };
             var cxTranslationUnit = CXTranslationUnit.Parse
                 (index, fileName, task.ClangOpts.ClangArgs, unsavedFiles, translationFlags);
             using var originalTranslationUnit = TranslationUnit.GetOrCreate(cxTranslationUnit);
@@ -226,12 +233,12 @@ namespace Silk.NET.BuildTools.Cpp
                 // we need a core project even if we're not using it
                 profile.Projects["Core"] = new() { IsRoot = true, Namespace = task.Namespace };
             }
-            
+
             var @class = new Class
             {
                 ClassName = className,
                 Constants = constants,
-                NativeApis = {[fileName] = new NativeApiSet {Name = "I" + className, Functions = functions}}
+                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + className, Functions = functions } }
             };
             project.Structs = structs;
             project.Enums = enums;
@@ -288,7 +295,7 @@ namespace Silk.NET.BuildTools.Cpp
                             Name = "Pfn" + name,
                             NativeName = "Pfn" + GetFunctionPointerWrapperName(type),
                             Fields = type.FunctionPointerSignature.Parameters.Select
-                                    ((x, i) => new Field {Name = $"Arg{i}", NativeName = $"arg{i}", Type = x.Type})
+                                    ((x, i) => new Field { Name = $"Arg{i}", NativeName = $"arg{i}", Type = x.Type })
                                 .Concat
                                 (
                                     new[]
@@ -396,7 +403,7 @@ namespace Silk.NET.BuildTools.Cpp
 
                             decl.Location.GetExpansionLocation(out CXFile expansionFile, out _, out _, out _);
                             if (!traversals.Contains
-                                (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
+                                    (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                             {
                                 continue;
                             }
@@ -501,7 +508,7 @@ namespace Silk.NET.BuildTools.Cpp
 
                 var uuidAttr = uuidAttrs.First();
                 var uuidAttrText = GetSourceRangeContents(recordDecl.TranslationUnit.Handle, uuidAttr.Extent);
-                var uuidText = uuidAttrText.Split(new char[] {'"'}, StringSplitOptions.RemoveEmptyEntries)[1];
+                var uuidText = uuidAttrText.Split(new char[] { '"' }, StringSplitOptions.RemoveEmptyEntries)[1];
 
                 if (!Guid.TryParse(uuidText, out uuid))
                 {
@@ -545,7 +552,7 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         renamed = true;
                     }
-                    
+
                     if (renamed)
                     {
                         constituent.Attributes.Add
@@ -576,7 +583,8 @@ namespace Silk.NET.BuildTools.Cpp
                     var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
                     if (structSpec is not null)
                     {
-                        RenameAnonymousSuchThatItHasAnActuallySaneName(in task, structSpec, anonName, name, tdDecl.Name);
+                        RenameAnonymousSuchThatItHasAnActuallySaneName
+                            (in task, structSpec, anonName, name, tdDecl.Name);
                     }
                 }
             }
@@ -657,7 +665,7 @@ namespace Silk.NET.BuildTools.Cpp
                 FlowDirection ignoreFlow = default;
                 success = true;
                 count = null;
-                Type ret = new Type {Name = "void", IndirectionLevels = 1};
+                Type ret = new Type { Name = "void", IndirectionLevels = 1 };
 
                 if (type is ArrayType arrayType)
                 {
@@ -684,32 +692,32 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         case CXTypeKind.CXType_Void:
                         {
-                            ret = new Type {Name = "void"};
+                            ret = new Type { Name = "void" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Bool:
                         {
-                            ret = new Type {Name = "bool"};
+                            ret = new Type { Name = "bool" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Char_U:
                         case CXTypeKind.CXType_UChar:
                         {
-                            ret = new Type {Name = "byte"};
+                            ret = new Type { Name = "byte" };
                             break;
                         }
 
                         case CXTypeKind.CXType_UShort:
                         {
-                            ret = new Type {Name = "ushort"};
+                            ret = new Type { Name = "ushort" };
                             break;
                         }
 
                         case CXTypeKind.CXType_UInt:
                         {
-                            ret = new Type {Name = "uint"};
+                            ret = new Type { Name = "uint" };
                             break;
                         }
 
@@ -720,32 +728,32 @@ namespace Silk.NET.BuildTools.Cpp
 
                         case CXTypeKind.CXType_ULongLong:
                         {
-                            ret = new Type {Name = "ulong"};
+                            ret = new Type { Name = "ulong" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Char_S:
                         case CXTypeKind.CXType_SChar:
                         {
-                            ret = new Type {Name = "byte"};
+                            ret = new Type { Name = "byte" };
                             break;
                         }
 
                         case CXTypeKind.CXType_WChar:
                         {
-                            ret = new Type {Name = "char"};
+                            ret = new Type { Name = "char" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Short:
                         {
-                            ret = new Type {Name = "short"};
+                            ret = new Type { Name = "short" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Int:
                         {
-                            ret = new Type {Name = "int"};
+                            ret = new Type { Name = "int" };
                             break;
                         }
 
@@ -756,19 +764,19 @@ namespace Silk.NET.BuildTools.Cpp
 
                         case CXTypeKind.CXType_LongLong:
                         {
-                            ret = new Type {Name = "long"};
+                            ret = new Type { Name = "long" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Float:
                         {
-                            ret = new Type {Name = "float"};
+                            ret = new Type { Name = "float" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Double:
                         {
-                            ret = new Type {Name = "double"};
+                            ret = new Type { Name = "double" };
                             break;
                         }
 
@@ -795,7 +803,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = elaboratedType.NamedType.AsString};
+                        ret = new Type { Name = elaboratedType.NamedType.AsString };
                     }
                 }
                 else if (type is FunctionType functionType)
@@ -827,7 +835,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = "nint"};
+                        ret = new Type { Name = "nint" };
                     }
                 }
                 else if (type is PointerType pointerType)
@@ -844,7 +852,7 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     if (tagType.Decl.Handle.IsAnonymous)
                     {
-                        ret = new Type {Name = GetAnonymousName(tagType.Decl, tagType.KindSpelling)};
+                        ret = new Type { Name = GetAnonymousName(tagType.Decl, tagType.KindSpelling) };
                     }
                     else if (tagType.Handle.IsConstQualified)
                     {
@@ -857,7 +865,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = tagType.Decl.Name};
+                        ret = new Type { Name = tagType.Decl.Name };
                     }
                 }
                 else if (type is TypedefType typedefType)
@@ -866,16 +874,16 @@ namespace Silk.NET.BuildTools.Cpp
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
                     if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name) || _primitives.Contains
-                        (typedefType.Decl.Name))
+                            (typedefType.Decl.Name))
                     {
-                        ret = new Type {Name = typedefType.Decl.Name};
+                        ret = new Type { Name = typedefType.Decl.Name };
                     }
                     else
                     {
                         ret = GetType(typedefType.Decl.UnderlyingType, out _, ref flow, out var getTypeSuccess);
                         if (!getTypeSuccess)
                         {
-                            ret = new Type {Name = typedefType.Decl.Name};
+                            ret = new Type { Name = typedefType.Decl.Name };
                         }
                         else if (ret.FunctionPointerSignature is not null)
                         {
@@ -926,7 +934,7 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         continue; // why is this even a thing oml
                     }
-                    
+
                     switch (decl)
                     {
                         case FieldDecl field:
@@ -953,7 +961,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         new Attribute
                                         {
                                             Name = "FieldOffset",
-                                            Arguments = new List<string> {field.Handle.OffsetOfField.ToString()}
+                                            Arguments = new List<string> { field.Handle.OffsetOfField.ToString() }
                                         }
                                     }
                                     : new List<Attribute>(),
@@ -976,7 +984,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 Name = Naming.TranslateLite
                                     (Naming.TrimName(name, task), task.FunctionPrefix),
                                 NativeName = $"anonymous{nestedRecordFieldCount}",
-                                Type = new Type {Name = nestedName, OriginalName = nestedName},
+                                Type = new Type { Name = nestedName, OriginalName = nestedName },
                                 NativeType = nestedRecordDecl.Spelling.Replace("\\", "\\\\"),
                                 Attributes = recordDecl.IsUnion
                                     ? new List<Attribute>
@@ -984,7 +992,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         new Attribute
                                         {
                                             Name = "FieldOffset",
-                                            Arguments = new List<string> {"0"}
+                                            Arguments = new List<string> { "0" }
                                         }
                                     }
                                     : new List<Attribute>()
@@ -996,7 +1004,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 {
                                     Name = "BuildToolsIntrinsic",
                                     Arguments = new List<string>
-                                        {"$FUSECPP", nestedName}
+                                        { "$FUSECPP", nestedName }
                                 }
                             );
 
@@ -1149,29 +1157,33 @@ namespace Silk.NET.BuildTools.Cpp
 
                         string name = null;
                         task.RenamedNativeNames.TryGetValue(nativeName, out name);
-                        enums.Add
-                        (
-                            new Enum
-                            {
-                                Name = name ?? Naming.TranslateVariable
-                                    (Naming.TrimName(nativeName, task), task.FunctionPrefix),
-                                NativeName = nativeName,
-                                ClangMetadata = new[] {enumDecl.Location.ToString()},
-                                Tokens = enumDecl.Enumerators.Where
-                                        (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
-                                    .Select
-                                    (
-                                        x => new Token
-                                        {
-                                            Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
-                                            NativeName = x.Name,
-                                            Value = "0x" + x.InitVal.ToString("X")
-                                        }
-                                    )
-                                    .ToList(),
-                                EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
-                            }
-                        );
+                        var @enum = new Enum
+                        {
+                            Name = name ?? Naming.TranslateVariable
+                                (Naming.TrimName(nativeName, task), task.FunctionPrefix),
+                            NativeName = nativeName,
+                            ClangMetadata = new[] { enumDecl.Location.ToString() },
+                            Tokens = enumDecl.Enumerators.Where
+                                    (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
+                                .Select
+                                (
+                                    x => new Token
+                                    {
+                                        Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
+                                        NativeName = x.Name,
+                                        Value = "0x" + x.InitVal.ToString("X")
+                                    }
+                                )
+                                .ToList(),
+                            EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
+                        };
+
+                        if (IsProbablyABitmask(@enum))
+                        {
+                            @enum.Attributes.Add(new() { Name = "Flags" });
+                        }
+                        
+                        enums.Add(@enum);
                         break;
                     }
 
@@ -1228,7 +1240,7 @@ namespace Silk.NET.BuildTools.Cpp
                             var structLayoutAttr = new Attribute
                             {
                                 Name = "StructLayout",
-                                Arguments = new List<string> {"LayoutKind.Explicit"}
+                                Arguments = new List<string> { "LayoutKind.Explicit" }
                             };
 
                             if (alignment < maxAlignm)
@@ -1245,14 +1257,14 @@ namespace Silk.NET.BuildTools.Cpp
                                 new Attribute
                                 {
                                     Name = "StructLayout",
-                                    Arguments = new List<string> {"LayoutKind.Sequential", $"Pack = {alignment}"}
+                                    Arguments = new List<string> { "LayoutKind.Sequential", $"Pack = {alignment}" }
                                 }
                             );
                         }
 
                         if (TryGetUuid(recordDecl, out var uuid))
                         {
-                            attrs.Add(new Attribute {Name = "Guid", Arguments = new List<string> {$"\"{uuid}\""}});
+                            attrs.Add(new Attribute { Name = "Guid", Arguments = new List<string> { $"\"{uuid}\"" } });
                         }
 
                         Struct @struct;
@@ -1263,7 +1275,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 Name = name ?? Naming.TranslateVariable
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
-                                ClangMetadata = new[] {recordDecl.Location.ToString()},
+                                ClangMetadata = new[] { recordDecl.Location.ToString() },
                                 Fields = ConvertAll(recordDecl, name).ToList(),
                                 Attributes = attrs
                             }
@@ -1446,7 +1458,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 (
                                     new()
                                     {
-                                        Name = name, Type = new() {Name = "string"}, ExtensionName = "Core",
+                                        Name = name, Type = new() { Name = "string" }, ExtensionName = "Core",
                                         NativeName = nativeName,
                                         Value = $"\"{stringLiteral.String.Replace("\\", "\\\\").Replace("\n", "\\n")}\""
                                     }
@@ -1770,13 +1782,13 @@ namespace Silk.NET.BuildTools.Cpp
 
                 if (NeedsReturnFixup(cxxMethodDecl))
                 {
-                    fun.Attributes.Add(new(){Name = "BuildToolsIntrinsic", Arguments = new (){"$CPPRETFIXUP"}});
+                    fun.Attributes.Add(new() { Name = "BuildToolsIntrinsic", Arguments = new() { "$CPPRETFIXUP" } });
                 }
 
                 @struct.Vtbl.Add(fun);
                 vtblIndex += 1;
             }
-            
+
             bool NeedsReturnFixup(CXXMethodDecl cxxMethodDecl)
             {
                 Debug.Assert(cxxMethodDecl != null);
@@ -1859,7 +1871,7 @@ namespace Silk.NET.BuildTools.Cpp
                 (
                     new Field
                     {
-                        Name = "LpVtbl", Type = new Type {Name = "void", IndirectionLevels = 2}, NativeName = "lpVtbl"
+                        Name = "LpVtbl", Type = new Type { Name = "void", IndirectionLevels = 2 }, NativeName = "lpVtbl"
                     }
                 );
                 OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);

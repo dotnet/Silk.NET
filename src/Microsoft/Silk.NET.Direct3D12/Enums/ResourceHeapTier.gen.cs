@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_RESOURCE_HEAP_TIER")]
     public enum ResourceHeapTier : int
     {

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.Sdl
@@ -23,6 +22,11 @@ namespace Silk.NET.Input.Sdl
 
         public IReadOnlyList<Key> SupportedKeys { get; } =
             _keyMap.Values.Where(static x => x != Key.Unknown).Distinct().ToArray();
+        public string ClipboardText
+        {
+            get => _ctx.Sdl.GetClipboardTextS();
+            set => _ctx.Sdl.SetClipboardText(value);
+        }
         public bool IsKeyPressed(Key key) => _keysDown.Contains(key);
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;

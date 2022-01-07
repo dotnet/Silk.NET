@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG")]
     public enum OverlaySupportFlag : int
     {

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "_DXVAHD_PROCESSOR_CAPS")]
     public enum HDProcessorCaps : int
     {
