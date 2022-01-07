@@ -20,58 +20,58 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbGeometryShader4 : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_geometry_shader4";
-        [NativeApi(EntryPoint = "glFramebufferTextureARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glProgramParameteriARB")]
+        [NativeApi(EntryPoint = "glProgramParameteriARB", Convention = CallingConvention.Winapi)]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glProgramParameteriARB")]
+        [NativeApi(EntryPoint = "glProgramParameteriARB", Convention = CallingConvention.Winapi)]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 
         public ArbGeometryShader4(INativeContext ctx)

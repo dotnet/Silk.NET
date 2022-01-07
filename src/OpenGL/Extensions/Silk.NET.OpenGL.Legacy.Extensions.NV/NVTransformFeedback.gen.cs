@@ -20,151 +20,151 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVTransformFeedback : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_transform_feedback";
-        [NativeApi(EntryPoint = "glActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void ActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glBeginTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glBeginTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void BeginTransformFeedback([Flow(FlowDirection.In)] NV primitiveMode);
 
-        [NativeApi(EntryPoint = "glBeginTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glBeginTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void BeginTransformFeedback([Flow(FlowDirection.In)] PrimitiveType primitiveMode);
 
-        [NativeApi(EntryPoint = "glBindBufferBaseNV")]
+        [NativeApi(EntryPoint = "glBindBufferBaseNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferBase([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glBindBufferBaseNV")]
+        [NativeApi(EntryPoint = "glBindBufferBaseNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glBindBufferOffsetNV")]
+        [NativeApi(EntryPoint = "glBindBufferOffsetNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferOffset([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset);
 
-        [NativeApi(EntryPoint = "glBindBufferOffsetNV")]
+        [NativeApi(EntryPoint = "glBindBufferOffsetNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferOffset([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset);
 
-        [NativeApi(EntryPoint = "glBindBufferRangeNV")]
+        [NativeApi(EntryPoint = "glBindBufferRangeNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glBindBufferRangeNV")]
+        [NativeApi(EntryPoint = "glBindBufferRangeNV", Convention = CallingConvention.Winapi)]
         public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glEndTransformFeedbackNV")]
+        [NativeApi(EntryPoint = "glEndTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void EndTransformFeedback();
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
+        [NativeApi(EntryPoint = "glGetActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingNV")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] int* location);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingNV")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out int location);
 
-        [NativeApi(EntryPoint = "glGetVaryingLocationNV")]
+        [NativeApi(EntryPoint = "glGetVaryingLocationNV", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetVaryingLocationNV")]
+        [NativeApi(EntryPoint = "glGetVaryingLocationNV", Convention = CallingConvention.Winapi)]
         public partial int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetVaryingLocationNV")]
+        [NativeApi(EntryPoint = "glGetVaryingLocationNV", Convention = CallingConvention.Winapi)]
         public partial int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackAttrib([Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* attribs, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV", Convention = CallingConvention.Winapi)]
         public partial void TransformFeedbackAttrib([Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int attribs, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackStreamAttrib([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* attribs, [Flow(FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] int* bufstreams, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackStreamAttrib([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* attribs, [Flow(FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] in int bufstreams, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackStreamAttrib([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int attribs, [Flow(FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] int* bufstreams, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
         public partial void TransformFeedbackStreamAttrib([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int attribs, [Flow(FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] in int bufstreams, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* locations, [Flow(FlowDirection.In)] NV bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV")]
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int locations, [Flow(FlowDirection.In)] NV bufferMode);
 
         public unsafe void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)

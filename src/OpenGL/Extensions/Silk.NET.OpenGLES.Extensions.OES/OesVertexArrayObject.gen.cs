@@ -20,34 +20,34 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_vertex_array_object";
-        [NativeApi(EntryPoint = "glBindVertexArrayOES")]
+        [NativeApi(EntryPoint = "glBindVertexArrayOES", Convention = CallingConvention.Winapi)]
         public partial void BindVertexArray([Flow(FlowDirection.In)] uint array);
 
-        [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
+        [NativeApi(EntryPoint = "glDeleteVertexArraysOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
-        [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
+        [NativeApi(EntryPoint = "glDeleteVertexArraysOES", Convention = CallingConvention.Winapi)]
         public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint arrays);
 
-        [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
+        [NativeApi(EntryPoint = "glDeleteVertexArraysOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] VertexArray* arrays);
 
-        [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
+        [NativeApi(EntryPoint = "glDeleteVertexArraysOES", Convention = CallingConvention.Winapi)]
         public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in VertexArray arrays);
 
-        [NativeApi(EntryPoint = "glGenVertexArraysOES")]
+        [NativeApi(EntryPoint = "glGenVertexArraysOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
-        [NativeApi(EntryPoint = "glGenVertexArraysOES")]
+        [NativeApi(EntryPoint = "glGenVertexArraysOES", Convention = CallingConvention.Winapi)]
         public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint arrays);
 
-        [NativeApi(EntryPoint = "glGenVertexArraysOES")]
+        [NativeApi(EntryPoint = "glGenVertexArraysOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] VertexArray* arrays);
 
-        [NativeApi(EntryPoint = "glGenVertexArraysOES")]
+        [NativeApi(EntryPoint = "glGenVertexArraysOES", Convention = CallingConvention.Winapi)]
         public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out VertexArray arrays);
 
-        [NativeApi(EntryPoint = "glIsVertexArrayOES")]
+        [NativeApi(EntryPoint = "glIsVertexArrayOES", Convention = CallingConvention.Winapi)]
         public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)

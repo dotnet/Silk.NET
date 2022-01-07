@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sample_shading";
-        [NativeApi(EntryPoint = "glMinSampleShadingARB")]
+        [NativeApi(EntryPoint = "glMinSampleShadingARB", Convention = CallingConvention.Winapi)]
         public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
 
         public ArbSampleShading(INativeContext ctx)

@@ -21,21 +21,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_external_fence_capabilities";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
 
         public KhrExternalFenceCapabilities(INativeContext ctx)

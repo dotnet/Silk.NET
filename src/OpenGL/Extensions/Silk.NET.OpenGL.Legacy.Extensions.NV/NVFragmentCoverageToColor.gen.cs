@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fragment_coverage_to_color";
-        [NativeApi(EntryPoint = "glFragmentCoverageColorNV")]
+        [NativeApi(EntryPoint = "glFragmentCoverageColorNV", Convention = CallingConvention.Winapi)]
         public partial void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
 
         public NVFragmentCoverageToColor(INativeContext ctx)

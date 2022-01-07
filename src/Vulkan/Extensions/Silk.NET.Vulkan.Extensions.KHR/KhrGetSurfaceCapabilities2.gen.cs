@@ -21,57 +21,57 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_get_surface_capabilities2";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilities2KHR pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilities2KHR pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
         public KhrGetSurfaceCapabilities2(INativeContext ctx)

@@ -145,102 +145,102 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, ref HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, ref HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, ref HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxvahd.h")]
-        [NativeApi(EntryPoint = "DXVAHD_CreateDevice")]
+        [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, ref HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1967, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9")]
+        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateDirect3DDeviceManager9(uint* pResetToken, IDirect3DDeviceManager9** ppDeviceManager);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1967, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9")]
+        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateDirect3DDeviceManager9(uint* pResetToken, ref IDirect3DDeviceManager9* ppDeviceManager);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1967, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9")]
+        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateDirect3DDeviceManager9(ref uint pResetToken, IDirect3DDeviceManager9** ppDeviceManager);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1967, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9")]
+        [NativeApi(EntryPoint = "DXVA2CreateDirect3DDeviceManager9", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateDirect3DDeviceManager9(ref uint pResetToken, ref IDirect3DDeviceManager9* ppDeviceManager);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(Silk.NET.Direct3D9.IDirect3DDevice9* pDD, Guid* riid, void** ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(Silk.NET.Direct3D9.IDirect3DDevice9* pDD, Guid* riid, ref void* ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(Silk.NET.Direct3D9.IDirect3DDevice9* pDD, ref Guid riid, void** ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(Silk.NET.Direct3D9.IDirect3DDevice9* pDD, ref Guid riid, ref void* ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(ref Silk.NET.Direct3D9.IDirect3DDevice9 pDD, Guid* riid, void** ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(ref Silk.NET.Direct3D9.IDirect3DDevice9 pDD, Guid* riid, ref void* ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(ref Silk.NET.Direct3D9.IDirect3DDevice9 pDD, ref Guid riid, void** ppService);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1971, Column 8 in D:/Windows Kits/10/Include/10.0.22000.0/um\\dxva2api.h")]
-        [NativeApi(EntryPoint = "DXVA2CreateVideoService")]
+        [NativeApi(EntryPoint = "DXVA2CreateVideoService", Convention = CallingConvention.Winapi)]
         public unsafe partial int DXVA2CreateVideoService(ref Silk.NET.Direct3D9.IDirect3DDevice9 pDD, ref Guid riid, ref void* ppService);
 
 

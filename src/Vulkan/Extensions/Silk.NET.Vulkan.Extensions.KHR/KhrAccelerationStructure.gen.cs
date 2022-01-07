@@ -21,271 +21,271 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_acceleration_structure";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BuildAccelerationStructures([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructures([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructuresIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBuildAccelerationStructuresIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in ulong pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyAccelerationStructureToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdCopyMemoryToAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCopyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial Result CopyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
+        [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyAccelerationStructureToMemoryInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
+        [NativeApi(EntryPoint = "vkCopyAccelerationStructureToMemoryKHR", Convention = CallingConvention.Winapi)]
         public partial Result CopyAccelerationStructureToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyAccelerationStructureToMemoryInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] CopyMemoryToAccelerationStructureInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCopyMemoryToAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial Result CopyMemoryToAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(FlowDirection.In)] in CopyMemoryToAccelerationStructureInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureKHR* pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkCreateAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureKHR pAccelerationStructure);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR")]
+        [NativeApi(EntryPoint = "vkDestroyAccelerationStructureKHR", Convention = CallingConvention.Winapi)]
         public partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR", Convention = CallingConvention.Winapi)]
         public partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureDeviceAddressInfoKHR* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
+        [NativeApi(EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR", Convention = CallingConvention.Winapi)]
         public partial ulong GetAccelerationStructureDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureDeviceAddressInfoKHR pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WriteAccelerationStructuresProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkWriteAccelerationStructuresPropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial Result WriteAccelerationStructuresProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] in AccelerationStructureKHR pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>

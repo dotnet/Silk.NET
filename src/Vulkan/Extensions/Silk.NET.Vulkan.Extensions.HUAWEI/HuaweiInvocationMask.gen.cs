@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.HUAWEI
     {
         public const string ExtensionName = "VK_HUAWEI_invocation_mask";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindInvocationMaskHUAWEI")]
+        [NativeApi(EntryPoint = "vkCmdBindInvocationMaskHUAWEI", Convention = CallingConvention.Winapi)]
         public partial void CmdBindInvocationMaskHuawei([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ImageView imageView, [Count(Count = 0)] ImageLayout imageLayout);
 
         public HuaweiInvocationMask(INativeContext ctx)

@@ -20,25 +20,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVExplicitMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_explicit_multisample";
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] float* val);
 
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] out float val);
 
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] float* val);
 
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] out float val);
 
-        [NativeApi(EntryPoint = "glSampleMaskIndexedNV")]
+        [NativeApi(EntryPoint = "glSampleMaskIndexedNV", Convention = CallingConvention.Winapi)]
         public partial void SampleMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint mask);
 
-        [NativeApi(EntryPoint = "glTexRenderbufferNV")]
+        [NativeApi(EntryPoint = "glTexRenderbufferNV", Convention = CallingConvention.Winapi)]
         public partial void TexRenderbuffer([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glTexRenderbufferNV")]
+        [NativeApi(EntryPoint = "glTexRenderbufferNV", Convention = CallingConvention.Winapi)]
         public partial void TexRenderbuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint renderbuffer);
 
         public NVExplicitMultisample(INativeContext ctx)

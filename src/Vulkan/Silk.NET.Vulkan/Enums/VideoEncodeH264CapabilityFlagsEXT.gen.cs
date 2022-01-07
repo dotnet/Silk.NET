@@ -35,7 +35,5 @@ namespace Silk.NET.Vulkan
         VideoEncodeH264CapabilityMultipleSlicePerFrameBitExt = 512,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_EVENLY_DISTRIBUTED_SLICE_SIZE_BIT_EXT")]
         VideoEncodeH264CapabilityEvenlyDistributedSliceSizeBitExt = 1024,
-        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_OPTIONAL_RC_EXTENSION_STRUCT_BIT_EXT")]
-        VideoEncodeH264CapabilityOptionalRCExtensionStructBitExt = 2048,
     }
 }

@@ -81,5 +81,15 @@ namespace Silk.NET.Vulkan
         FormatFeature2VideoEncodeInputBitKhr = 134217728,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR")]
         FormatFeature2VideoEncodeDpbBitKhr = 268435456,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_LINEAR_COLOR_ATTACHMENT_BIT_NV")]
+        FormatFeature2LinearColorAttachmentBitNV = 274877906944,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_34_BIT_QCOM")]
+        FormatFeature2Reserved34BitQCom = 17179869184,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_35_BIT_QCOM")]
+        FormatFeature2Reserved35BitQCom = 34359738368,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_36_BIT_QCOM")]
+        FormatFeature2Reserved36BitQCom = 68719476736,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_37_BIT_QCOM")]
+        FormatFeature2Reserved37BitQCom = 137438953472,
     }
 }

@@ -21,23 +21,23 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_color_space";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ref ColorSpaceFB colorSpaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] ref uint colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] ref uint colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ref ColorSpaceFB colorSpaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetColorSpaceFB")]
+        [NativeApi(EntryPoint = "xrSetColorSpaceFB", Convention = CallingConvention.Winapi)]
         public partial Result SetColorSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0)] ColorSpaceFB colorspace);
 
         /// <summary>To be documented.</summary>

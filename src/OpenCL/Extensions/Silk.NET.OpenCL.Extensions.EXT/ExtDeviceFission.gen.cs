@@ -20,34 +20,34 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     public unsafe partial class ExtDeviceFission : NativeExtension<CL>
     {
         public const string ExtensionName = "EXT_device_fission";
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
-        [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
-        [NativeApi(EntryPoint = "clReleaseDeviceEXT")]
+        [NativeApi(EntryPoint = "clReleaseDeviceEXT", Convention = CallingConvention.Winapi)]
         public partial int ReleaseDevice([Flow(FlowDirection.In)] nint device);
 
-        [NativeApi(EntryPoint = "clRetainDeviceEXT")]
+        [NativeApi(EntryPoint = "clRetainDeviceEXT", Convention = CallingConvention.Winapi)]
         public partial int RetainDevice([Flow(FlowDirection.In)] nint device);
 
         public ExtDeviceFission(INativeContext ctx)

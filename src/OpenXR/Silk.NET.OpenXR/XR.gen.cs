@@ -72,807 +72,807 @@ namespace Silk.NET.OpenXR
         public const uint True = unchecked((uint) 1);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAcquireSwapchainImage")]
+        [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainImageAcquireInfo* acquireInfo, [Count(Count = 0)] uint* index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAcquireSwapchainImage")]
+        [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainImageAcquireInfo* acquireInfo, [Count(Count = 0)] ref uint index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAcquireSwapchainImage")]
+        [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] uint* index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAcquireSwapchainImage")]
+        [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
         public partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] ref uint index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrApplyHapticFeedback")]
+        [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] HapticBaseHeader* hapticFeedback);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrApplyHapticFeedback")]
+        [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] in HapticBaseHeader hapticFeedback);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrApplyHapticFeedback")]
+        [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] HapticBaseHeader* hapticFeedback);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrApplyHapticFeedback")]
+        [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
         public partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(FlowDirection.In)] in HapticBaseHeader hapticFeedback);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAttachSessionActionSets")]
+        [NativeApi(EntryPoint = "xrAttachSessionActionSets", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AttachSessionActionSets([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SessionActionSetsAttachInfo* attachInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrAttachSessionActionSets")]
+        [NativeApi(EntryPoint = "xrAttachSessionActionSets", Convention = CallingConvention.Winapi)]
         public partial Result AttachSessionActionSets([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SessionActionSetsAttachInfo attachInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrBeginFrame")]
+        [NativeApi(EntryPoint = "xrBeginFrame", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BeginFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FrameBeginInfo* frameBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrBeginFrame")]
+        [NativeApi(EntryPoint = "xrBeginFrame", Convention = CallingConvention.Winapi)]
         public partial Result BeginFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in FrameBeginInfo frameBeginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrBeginSession")]
+        [NativeApi(EntryPoint = "xrBeginSession", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BeginSession([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SessionBeginInfo* beginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrBeginSession")]
+        [NativeApi(EntryPoint = "xrBeginSession", Convention = CallingConvention.Winapi)]
         public partial Result BeginSession([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SessionBeginInfo beginInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateAction")]
+        [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] ActionCreateInfo* createInfo, [Count(Count = 0)] Action* action);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateAction")]
+        [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] ActionCreateInfo* createInfo, [Count(Count = 0)] ref Action action);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateAction")]
+        [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] in ActionCreateInfo createInfo, [Count(Count = 0)] Action* action);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateAction")]
+        [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
         public partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(FlowDirection.In)] in ActionCreateInfo createInfo, [Count(Count = 0)] ref Action action);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSet")]
+        [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ActionSetCreateInfo* createInfo, [Count(Count = 0)] ActionSet* actionSet);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSet")]
+        [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ActionSetCreateInfo* createInfo, [Count(Count = 0)] ref ActionSet actionSet);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSet")]
+        [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ActionSetCreateInfo createInfo, [Count(Count = 0)] ActionSet* actionSet);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSet")]
+        [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
         public partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ActionSetCreateInfo createInfo, [Count(Count = 0)] ref ActionSet actionSet);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSpace")]
+        [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionSpaceCreateInfo* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSpace")]
+        [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionSpaceCreateInfo* createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSpace")]
+        [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateActionSpace")]
+        [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
         public partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        [NativeApi(EntryPoint = "xrCreateInstance")]
+        [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        [NativeApi(EntryPoint = "xrCreateInstance")]
+        [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        [NativeApi(EntryPoint = "xrCreateInstance")]
+        [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo createInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
-        [NativeApi(EntryPoint = "xrCreateInstance")]
+        [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
         public partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo createInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateReferenceSpace")]
+        [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReferenceSpaceCreateInfo* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateReferenceSpace")]
+        [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReferenceSpaceCreateInfo* createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateReferenceSpace")]
+        [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateReferenceSpace")]
+        [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
         public partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSession")]
+        [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SessionCreateInfo* createInfo, [Count(Count = 0)] Session* session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSession")]
+        [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SessionCreateInfo* createInfo, [Count(Count = 0)] ref Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSession")]
+        [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in SessionCreateInfo createInfo, [Count(Count = 0)] Session* session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSession")]
+        [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
         public partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in SessionCreateInfo createInfo, [Count(Count = 0)] ref Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchain")]
+        [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* createInfo, [Count(Count = 0)] Swapchain* swapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchain")]
+        [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* createInfo, [Count(Count = 0)] ref Swapchain swapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchain")]
+        [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo createInfo, [Count(Count = 0)] Swapchain* swapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchain")]
+        [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
         public partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo createInfo, [Count(Count = 0)] ref Swapchain swapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroyAction")]
+        [NativeApi(EntryPoint = "xrDestroyAction", Convention = CallingConvention.Winapi)]
         public partial Result DestroyAction([Count(Count = 0)] Action action);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroyActionSet")]
+        [NativeApi(EntryPoint = "xrDestroyActionSet", Convention = CallingConvention.Winapi)]
         public partial Result DestroyActionSet([Count(Count = 0)] ActionSet actionSet);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroyInstance")]
+        [NativeApi(EntryPoint = "xrDestroyInstance", Convention = CallingConvention.Winapi)]
         public partial Result DestroyInstance([Count(Count = 0)] Instance instance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroySession")]
+        [NativeApi(EntryPoint = "xrDestroySession", Convention = CallingConvention.Winapi)]
         public partial Result DestroySession([Count(Count = 0)] Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroySpace")]
+        [NativeApi(EntryPoint = "xrDestroySpace", Convention = CallingConvention.Winapi)]
         public partial Result DestroySpace([Count(Count = 0)] Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroySwapchain")]
+        [NativeApi(EntryPoint = "xrDestroySwapchain", Convention = CallingConvention.Winapi)]
         public partial Result DestroySwapchain([Count(Count = 0)] Swapchain swapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEndFrame")]
+        [NativeApi(EntryPoint = "xrEndFrame", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EndFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FrameEndInfo* frameEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEndFrame")]
+        [NativeApi(EntryPoint = "xrEndFrame", Convention = CallingConvention.Winapi)]
         public partial Result EndFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in FrameEndInfo frameEndInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEndSession")]
+        [NativeApi(EntryPoint = "xrEndSession", Convention = CallingConvention.Winapi)]
         public partial Result EndSession([Count(Count = 0)] Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateApiLayerProperties([Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ApiLayerProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateApiLayerProperties([Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ApiLayerProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateApiLayerProperties([Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ApiLayerProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateApiLayerProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateApiLayerProperties([Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ApiLayerProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction")]
+        [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes")]
+        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateEnvironmentBlendModes([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] uint* environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] EnvironmentBlendMode* environmentBlendModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes")]
+        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateEnvironmentBlendModes([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] uint* environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] ref EnvironmentBlendMode environmentBlendModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes")]
+        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateEnvironmentBlendModes([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] ref uint environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] EnvironmentBlendMode* environmentBlendModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes")]
+        [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateEnvironmentBlendModes([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] ref uint environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] ref EnvironmentBlendMode environmentBlendModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
+        [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces")]
+        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReferenceSpaces([Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] uint* spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] ReferenceSpaceType* spaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces")]
+        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReferenceSpaces([Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] uint* spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] ref ReferenceSpaceType spaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces")]
+        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReferenceSpaces([Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] ref uint spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] ReferenceSpaceType* spaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces")]
+        [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateReferenceSpaces([Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] ref uint spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] ref ReferenceSpaceType spaces);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainFormats([Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] uint* formatCountOutput, [Count(Parameter = "formatCapacityInput")] long* formats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainFormats([Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] uint* formatCountOutput, [Count(Parameter = "formatCapacityInput")] ref long formats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainFormats([Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] ref uint formatCountOutput, [Count(Parameter = "formatCapacityInput")] long* formats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainFormats", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateSwapchainFormats([Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] ref uint formatCountOutput, [Count(Parameter = "formatCapacityInput")] ref long formats);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainImages([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] uint* imageCountOutput, [Count(Parameter = "imageCapacityInput")] SwapchainImageBaseHeader* images);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainImages([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] uint* imageCountOutput, [Count(Parameter = "imageCapacityInput")] ref SwapchainImageBaseHeader images);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateSwapchainImages([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] ref uint imageCountOutput, [Count(Parameter = "imageCapacityInput")] SwapchainImageBaseHeader* images);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages")]
+        [NativeApi(EntryPoint = "xrEnumerateSwapchainImages", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateSwapchainImages([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] ref uint imageCountOutput, [Count(Parameter = "imageCapacityInput")] ref SwapchainImageBaseHeader images);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfiguration([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] uint* viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] ViewConfigurationType* viewConfigurationTypes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfiguration([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] uint* viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] ref ViewConfigurationType viewConfigurationTypes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfiguration([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] ref uint viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] ViewConfigurationType* viewConfigurationTypes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurations", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateViewConfiguration([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] ref uint viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] ref ViewConfigurationType viewConfigurationTypes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfigurationView([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ViewConfigurationView* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfigurationView([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref ViewConfigurationView views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViewConfigurationView([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ViewConfigurationView* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews")]
+        [NativeApi(EntryPoint = "xrEnumerateViewConfigurationViews", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateViewConfigurationView([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref ViewConfigurationView views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateBoolean")]
+        [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ActionStateBoolean* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateBoolean")]
+        [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ref ActionStateBoolean state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateBoolean")]
+        [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateBoolean* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateBoolean")]
+        [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
         public partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateBoolean state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateFloat")]
+        [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ActionStateFloat* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateFloat")]
+        [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ref ActionStateFloat state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateFloat")]
+        [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateFloat* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateFloat")]
+        [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
         public partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateFloat state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStatePose")]
+        [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ActionStatePose* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStatePose")]
+        [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ref ActionStatePose state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStatePose")]
+        [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStatePose* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStatePose")]
+        [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
         public partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStatePose state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateVector2f")]
+        [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ActionStateVector2f* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateVector2f")]
+        [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionStateGetInfo* getInfo, [Count(Count = 0)] ref ActionStateVector2f state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateVector2f")]
+        [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateVector2f* state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetActionStateVector2f")]
+        [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
         public partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateVector2f state);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetCurrentInteractionProfile")]
+        [NativeApi(EntryPoint = "xrGetCurrentInteractionProfile", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetCurrentInteractionProfile([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelUserPath, [Count(Count = 0)] InteractionProfileState* interactionProfile);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetCurrentInteractionProfile")]
+        [NativeApi(EntryPoint = "xrGetCurrentInteractionProfile", Convention = CallingConvention.Winapi)]
         public partial Result GetCurrentInteractionProfile([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelUserPath, [Count(Count = 0)] ref InteractionProfileState interactionProfile);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
+        [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
         public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
+        [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
         public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProperties")]
+        [NativeApi(EntryPoint = "xrGetInstanceProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetInstanceProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] InstanceProperties* instanceProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetInstanceProperties")]
+        [NativeApi(EntryPoint = "xrGetInstanceProperties", Convention = CallingConvention.Winapi)]
         public partial Result GetInstanceProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref InstanceProperties instanceProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetReferenceSpaceBoundsRect")]
+        [NativeApi(EntryPoint = "xrGetReferenceSpaceBoundsRect", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetReferenceSpaceBoundsRect([Count(Count = 0)] Session session, [Count(Count = 0)] ReferenceSpaceType referenceSpaceType, [Count(Count = 0)] Extent2Df* bounds);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetReferenceSpaceBoundsRect")]
+        [NativeApi(EntryPoint = "xrGetReferenceSpaceBoundsRect", Convention = CallingConvention.Winapi)]
         public partial Result GetReferenceSpaceBoundsRect([Count(Count = 0)] Session session, [Count(Count = 0)] ReferenceSpaceType referenceSpaceType, [Count(Count = 0)] ref Extent2Df bounds);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystem")]
+        [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SystemGetInfo* getInfo, [Count(Count = 0)] ulong* systemId);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystem")]
+        [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] SystemGetInfo* getInfo, [Count(Count = 0)] ref ulong systemId);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystem")]
+        [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in SystemGetInfo getInfo, [Count(Count = 0)] ulong* systemId);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystem")]
+        [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
         public partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in SystemGetInfo getInfo, [Count(Count = 0)] ref ulong systemId);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystemProperties")]
+        [NativeApi(EntryPoint = "xrGetSystemProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSystemProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] SystemProperties* properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSystemProperties")]
+        [NativeApi(EntryPoint = "xrGetSystemProperties", Convention = CallingConvention.Winapi)]
         public partial Result GetSystemProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref SystemProperties properties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetViewConfigurationProperties")]
+        [NativeApi(EntryPoint = "xrGetViewConfigurationProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetViewConfigurationProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] ViewConfigurationProperties* configurationProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetViewConfigurationProperties")]
+        [NativeApi(EntryPoint = "xrGetViewConfigurationProperties", Convention = CallingConvention.Winapi)]
         public partial Result GetViewConfigurationProperties([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] ref ViewConfigurationProperties configurationProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateSpace")]
+        [NativeApi(EntryPoint = "xrLocateSpace", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateSpace([Count(Count = 0)] Space space, [Count(Count = 0)] Space baseSpace, [Count(Count = 0)] long time, [Count(Count = 0)] SpaceLocation* location);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateSpace")]
+        [NativeApi(EntryPoint = "xrLocateSpace", Convention = CallingConvention.Winapi)]
         public partial Result LocateSpace([Count(Count = 0)] Space space, [Count(Count = 0)] Space baseSpace, [Count(Count = 0)] long time, [Count(Count = 0)] ref SpaceLocation location);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrLocateViews")]
+        [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
         public partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPathToString")]
+        [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
         public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPollEvent")]
+        [NativeApi(EntryPoint = "xrPollEvent", Convention = CallingConvention.Winapi)]
         public unsafe partial Result PollEvent([Count(Count = 0)] Instance instance, [Count(Count = 0)] EventDataBuffer* eventData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrPollEvent")]
+        [NativeApi(EntryPoint = "xrPollEvent", Convention = CallingConvention.Winapi)]
         public partial Result PollEvent([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref EventDataBuffer eventData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrReleaseSwapchainImage")]
+        [NativeApi(EntryPoint = "xrReleaseSwapchainImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ReleaseSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainImageReleaseInfo* releaseInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrReleaseSwapchainImage")]
+        [NativeApi(EntryPoint = "xrReleaseSwapchainImage", Convention = CallingConvention.Winapi)]
         public partial Result ReleaseSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainImageReleaseInfo releaseInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRequestExitSession")]
+        [NativeApi(EntryPoint = "xrRequestExitSession", Convention = CallingConvention.Winapi)]
         public partial Result RequestExitSession([Count(Count = 0)] Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrResultToString")]
+        [NativeApi(EntryPoint = "xrResultToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Computed = "XR_MAX_RESULT_STRING_SIZE")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrResultToString")]
+        [NativeApi(EntryPoint = "xrResultToString", Convention = CallingConvention.Winapi)]
         public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Computed = "XR_MAX_RESULT_STRING_SIZE")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrResultToString")]
+        [NativeApi(EntryPoint = "xrResultToString", Convention = CallingConvention.Winapi)]
         public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStopHapticFeedback")]
+        [NativeApi(EntryPoint = "xrStopHapticFeedback", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StopHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HapticActionInfo* hapticActionInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStopHapticFeedback")]
+        [NativeApi(EntryPoint = "xrStopHapticFeedback", Convention = CallingConvention.Winapi)]
         public partial Result StopHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HapticActionInfo hapticActionInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pathString, [Count(Count = 0)] ref ulong path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte pathString, [Count(Count = 0)] ref ulong path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStringToPath")]
+        [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
         public partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] ref ulong path);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStructureTypeToString")]
+        [NativeApi(EntryPoint = "xrStructureTypeToString", Convention = CallingConvention.Winapi)]
         public unsafe partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Computed = "XR_MAX_STRUCTURE_NAME_SIZE")] byte* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStructureTypeToString")]
+        [NativeApi(EntryPoint = "xrStructureTypeToString", Convention = CallingConvention.Winapi)]
         public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Computed = "XR_MAX_STRUCTURE_NAME_SIZE")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrStructureTypeToString")]
+        [NativeApi(EntryPoint = "xrStructureTypeToString", Convention = CallingConvention.Winapi)]
         public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings")]
+        [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SuggestInteractionProfileBinding([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] InteractionProfileSuggestedBinding* suggestedBindings);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings")]
+        [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings", Convention = CallingConvention.Winapi)]
         public partial Result SuggestInteractionProfileBinding([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in InteractionProfileSuggestedBinding suggestedBindings);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSyncActions")]
+        [NativeApi(EntryPoint = "xrSyncActions", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SyncAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ActionsSyncInfo* syncInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSyncActions")]
+        [NativeApi(EntryPoint = "xrSyncActions", Convention = CallingConvention.Winapi)]
         public partial Result SyncAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionsSyncInfo syncInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitFrame")]
+        [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FrameWaitInfo* frameWaitInfo, [Count(Count = 0)] FrameState* frameState);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitFrame")]
+        [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] FrameWaitInfo* frameWaitInfo, [Count(Count = 0)] ref FrameState frameState);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitFrame")]
+        [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in FrameWaitInfo frameWaitInfo, [Count(Count = 0)] FrameState* frameState);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitFrame")]
+        [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
         public partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in FrameWaitInfo frameWaitInfo, [Count(Count = 0)] ref FrameState frameState);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitSwapchainImage")]
+        [NativeApi(EntryPoint = "xrWaitSwapchainImage", Convention = CallingConvention.Winapi)]
         public unsafe partial Result WaitSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainImageWaitInfo* waitInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrWaitSwapchainImage")]
+        [NativeApi(EntryPoint = "xrWaitSwapchainImage", Convention = CallingConvention.Winapi)]
         public partial Result WaitSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainImageWaitInfo waitInfo);
 
         /// <summary>To be documented.</summary>

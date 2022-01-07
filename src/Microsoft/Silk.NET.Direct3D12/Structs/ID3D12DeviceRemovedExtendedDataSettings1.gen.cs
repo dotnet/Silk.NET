@@ -49,7 +49,18 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -60,7 +71,18 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -72,7 +94,18 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -86,7 +119,18 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -114,28 +158,72 @@ namespace Silk.NET.Direct3D12
         public readonly void SetAutoBreadcrumbsEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetPageFaultEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetWatsonDumpEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetBreadcrumbContextEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[6])(@this, Enablement);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[6])(@this, Enablement);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[6])(@this, Enablement);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[6])(@this, Enablement);
+            }
+            #endif
         }
 
     }

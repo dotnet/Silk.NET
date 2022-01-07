@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtDepthBoundsTest : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_depth_bounds_test";
-        [NativeApi(EntryPoint = "glDepthBoundsEXT")]
+        [NativeApi(EntryPoint = "glDepthBoundsEXT", Convention = CallingConvention.Winapi)]
         public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
 
         public ExtDepthBoundsTest(INativeContext ctx)

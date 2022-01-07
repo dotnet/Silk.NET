@@ -20,67 +20,67 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbViewportArray : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_viewport_array";
-        [NativeApi(EntryPoint = "glDepthRangeArrayv")]
+        [NativeApi(EntryPoint = "glDepthRangeArrayv", Convention = CallingConvention.Winapi)]
         public unsafe partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glDepthRangeArrayv")]
+        [NativeApi(EntryPoint = "glDepthRangeArrayv", Convention = CallingConvention.Winapi)]
         public partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glDepthRangeIndexed")]
+        [NativeApi(EntryPoint = "glDepthRangeIndexed", Convention = CallingConvention.Winapi)]
         public partial void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
 
-        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        [NativeApi(EntryPoint = "glGetDoublei_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
 
-        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        [NativeApi(EntryPoint = "glGetDoublei_v", Convention = CallingConvention.Winapi)]
         public partial void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
 
-        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        [NativeApi(EntryPoint = "glGetDoublei_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
 
-        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        [NativeApi(EntryPoint = "glGetDoublei_v", Convention = CallingConvention.Winapi)]
         public partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
 
-        [NativeApi(EntryPoint = "glGetFloati_v")]
+        [NativeApi(EntryPoint = "glGetFloati_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
-        [NativeApi(EntryPoint = "glGetFloati_v")]
+        [NativeApi(EntryPoint = "glGetFloati_v", Convention = CallingConvention.Winapi)]
         public partial void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
-        [NativeApi(EntryPoint = "glGetFloati_v")]
+        [NativeApi(EntryPoint = "glGetFloati_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
-        [NativeApi(EntryPoint = "glGetFloati_v")]
+        [NativeApi(EntryPoint = "glGetFloati_v", Convention = CallingConvention.Winapi)]
         public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
-        [NativeApi(EntryPoint = "glScissorArrayv")]
+        [NativeApi(EntryPoint = "glScissorArrayv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorArrayv")]
+        [NativeApi(EntryPoint = "glScissorArrayv", Convention = CallingConvention.Winapi)]
         public partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glScissorIndexed")]
+        [NativeApi(EntryPoint = "glScissorIndexed", Convention = CallingConvention.Winapi)]
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glScissorIndexedv")]
+        [NativeApi(EntryPoint = "glScissorIndexedv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorIndexedv")]
+        [NativeApi(EntryPoint = "glScissorIndexedv", Convention = CallingConvention.Winapi)]
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glViewportArrayv")]
+        [NativeApi(EntryPoint = "glViewportArrayv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glViewportArrayv")]
+        [NativeApi(EntryPoint = "glViewportArrayv", Convention = CallingConvention.Winapi)]
         public partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glViewportIndexedf")]
+        [NativeApi(EntryPoint = "glViewportIndexedf", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
 
-        [NativeApi(EntryPoint = "glViewportIndexedfv")]
+        [NativeApi(EntryPoint = "glViewportIndexedfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glViewportIndexedfv")]
+        [NativeApi(EntryPoint = "glViewportIndexedfv", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
         public ArbViewportArray(INativeContext ctx)

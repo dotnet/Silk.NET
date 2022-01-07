@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtFogCoord : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_fog_coord";
-        [NativeApi(EntryPoint = "glFogCoordfEXT")]
+        [NativeApi(EntryPoint = "glFogCoordfEXT", Convention = CallingConvention.Winapi)]
         public partial void FogCoord([Flow(FlowDirection.In)] float coord);
 
-        [NativeApi(EntryPoint = "glFogCoordfvEXT")]
+        [NativeApi(EntryPoint = "glFogCoordfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
 
-        [NativeApi(EntryPoint = "glFogCoordfvEXT")]
+        [NativeApi(EntryPoint = "glFogCoordfvEXT", Convention = CallingConvention.Winapi)]
         public partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] in float coord);
 
-        [NativeApi(EntryPoint = "glFogCoorddEXT")]
+        [NativeApi(EntryPoint = "glFogCoorddEXT", Convention = CallingConvention.Winapi)]
         public partial void FogCoord([Flow(FlowDirection.In)] double coord);
 
-        [NativeApi(EntryPoint = "glFogCoorddvEXT")]
+        [NativeApi(EntryPoint = "glFogCoorddvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
 
-        [NativeApi(EntryPoint = "glFogCoorddvEXT")]
+        [NativeApi(EntryPoint = "glFogCoorddvEXT", Convention = CallingConvention.Winapi)]
         public partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] in double coord);
 
-        [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
+        [NativeApi(EntryPoint = "glFogCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
+        [NativeApi(EntryPoint = "glFogCoordPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         public ExtFogCoord(INativeContext ctx)

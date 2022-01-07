@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVPixelDataRange : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_pixel_data_range";
-        [NativeApi(EntryPoint = "glFlushPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glFlushPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public partial void FlushPixelDataRange([Flow(FlowDirection.In)] NV target);
 
-        [NativeApi(EntryPoint = "glFlushPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glFlushPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public partial void FlushPixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target);
 
-        [NativeApi(EntryPoint = "glPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void PixelDataRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public partial void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void PixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glPixelDataRangeNV")]
+        [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public partial void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public unsafe void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged

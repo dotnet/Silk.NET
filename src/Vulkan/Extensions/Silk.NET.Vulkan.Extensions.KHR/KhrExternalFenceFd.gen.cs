@@ -21,27 +21,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_external_fence_fd";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkImportFenceFdKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportFenceFdInfoKHR* pImportFenceFdInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportFenceFdKHR")]
+        [NativeApi(EntryPoint = "vkImportFenceFdKHR", Convention = CallingConvention.Winapi)]
         public partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImportFenceFdInfoKHR pImportFenceFdInfo);
 
         public KhrExternalFenceFd(INativeContext ctx)

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbInstancedArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_instanced_arrays";
-        [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
+        [NativeApi(EntryPoint = "glVertexAttribDivisorARB", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 
         public ArbInstancedArrays(INativeContext ctx)

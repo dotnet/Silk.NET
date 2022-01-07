@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVRegisterCombiners2 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_register_combiners2";
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetCombinerStageParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetCombinerStageParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetCombinerStageParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         public NVRegisterCombiners2(INativeContext ctx)

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtFramebufferBlit : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_framebuffer_blit";
-        [NativeApi(EntryPoint = "glBlitFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBlitFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] EXT filter);
 
-        [NativeApi(EntryPoint = "glBlitFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBlitFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] BlitFramebufferFilter filter);
 
-        [NativeApi(EntryPoint = "glBlitFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBlitFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] ClearBufferMask mask, [Flow(FlowDirection.In)] EXT filter);
 
-        [NativeApi(EntryPoint = "glBlitFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBlitFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] ClearBufferMask mask, [Flow(FlowDirection.In)] BlitFramebufferFilter filter);
 
         public ExtFramebufferBlit(INativeContext ctx)
