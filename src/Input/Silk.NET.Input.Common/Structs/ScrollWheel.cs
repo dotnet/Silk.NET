@@ -11,7 +11,7 @@ namespace Silk.NET.Input
     /// <summary>
     /// Represents a scroll wheel.
     /// </summary>
-    public readonly struct ScrollWheel : IEquatable<ScrollWheel>
+    public struct ScrollWheel : IEquatable<ScrollWheel>
     {
         /// <summary>
         /// The X position of the scroll wheel.
@@ -36,18 +36,18 @@ namespace Silk.NET.Input
 
         /// <summary>Returns a String representing this <see cref="ScrollWheel"/> instance.</summary>
         /// <returns>The string representation.</returns>
-        public override string ToString() => ToString("G", CultureInfo.CurrentCulture);
+        public override readonly string ToString() => ToString("G", CultureInfo.CurrentCulture);
 
         /// <summary>Returns a String representing this <see cref="ScrollWheel"/> instance, using the specified format to format individual elements.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <returns>The string representation.</returns>
-        public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
+        public readonly string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
 
         /// <summary>Returns a String representing this <see cref="ScrollWheel"/> instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>
         /// <returns>The string representation.</returns>
-        public string ToString(string? format, IFormatProvider? formatProvider)
+        public readonly string ToString(string? format, IFormatProvider? formatProvider)
         {
             StringBuilder sb = new();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
