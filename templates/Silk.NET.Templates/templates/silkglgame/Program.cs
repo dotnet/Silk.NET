@@ -2,8 +2,11 @@ using Silk.NET.Windowing;
 using Silk.NET.Input;
 using Silk.NET.OpenGL;
 
-WindowOptions windowOptions = WindowOptions.Default;
-windowOptions.Title = "My Silk.NET Window";
+WindowOptions windowOptions = WindowOptions.Default with {
+    Title = "My Silk.NET Window",
+	API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
+};
+
 using IWindow window = Window.Create(windowOptions);
 IInputContext inputContext = null!;
 GL gl = null!;
@@ -13,6 +16,7 @@ window.Load += () =>
     // ran on first startup - use this event to initialize stuff.
     gl = window.CreateOpenGL();
 	inputContext = window.CreateInput();
+	gl.Viewport(window.FramebufferSize);
 };
 
 window.Update += deltaSeconds => 
@@ -27,7 +31,7 @@ window.Render += deltaSeconds =>
 
 window.FramebufferResize += newSize =>
 {
-    // ran when the window is resized - usually used to update the viewport and, in 3D apps, view matrices.
+    // ran when the window framebuffer is resized - usually used to update the viewport and, in 3D apps, view matrices.
     gl.Viewport(newSize);
 };
 

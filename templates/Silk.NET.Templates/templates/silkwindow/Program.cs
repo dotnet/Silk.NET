@@ -1,7 +1,9 @@
 using Silk.NET.Windowing;
 
-WindowOptions windowOptions = WindowOptions.Default;
-windowOptions.Title = "My Silk.NET Window";
+WindowOptions windowOptions = WindowOptions.Default with {
+    Title = "My Silk.NET Window"
+};
+
 using IWindow window = Window.Create(windowOptions);
 
 window.Load += () =>
@@ -21,7 +23,7 @@ window.Render += deltaSeconds =>
 
 window.FramebufferResize += newSize =>
 {
-    // ran when the window is resized - usually used to update the viewport and, in 3D apps, view matrices.
+    // ran when the window framebuffer is resized - usually used to update the viewport and, in 3D apps, view matrices.
 };
 
 window.Closing += () =>

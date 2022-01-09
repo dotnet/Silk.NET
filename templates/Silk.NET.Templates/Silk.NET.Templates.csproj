@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
     <PackageId>Silk.NET.Templates</PackageId>
@@ -18,7 +19,6 @@
 
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
-    <Compile Remove="**\*" />
   </ItemGroup>
 
 </Project>
