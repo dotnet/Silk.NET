@@ -129,7 +129,7 @@ namespace Silk.NET.Windowing
                 throw new NotSupportedException
                 (
                     "The currently bound window platform(s) (" +
-                    string.Join(' ', Platforms.Select(x => x.GetType().Name + " (" + (x.IsApplicable ? "" "not ") + "applicable)")) +
+                    string.Join(' ', Platforms.Select(x => x.GetType().Name + " (" + (x.IsApplicable ? "" : "not ") + "applicable)")) +
                     ") only support views, " +
                     "instead of windows. Use the view APIs instead."
                 );
