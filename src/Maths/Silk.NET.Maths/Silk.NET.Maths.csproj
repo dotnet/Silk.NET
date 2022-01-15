@@ -29,11 +29,6 @@
     <ItemGroup Condition="'$(TargetFramework)' != 'net5.0'">
       <PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
     </ItemGroup>
-
-    <ItemGroup>
-        <AdditionalFiles Include="PublicAPI.Shipped.txt" />
-        <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
-    </ItemGroup>
     
     <ItemGroup>
         <Compile Update="Scalar.As.cs">
