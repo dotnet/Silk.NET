@@ -15,6 +15,11 @@ namespace Silk.NET.Input
         /// The keys this keyboard has available.
         /// </summary>
         IReadOnlyList<Key> SupportedKeys { get; }
+        
+        /// <summary>
+        /// The text currently in the clipboard.
+        /// </summary>
+        string ClipboardText { get; set; }
 
         /// <summary>
         /// Checks if a specific key is pressed.

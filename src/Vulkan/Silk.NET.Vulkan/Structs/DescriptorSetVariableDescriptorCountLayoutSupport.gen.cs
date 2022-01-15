@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountLayoutSupport")]
-    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport
+    [NativeName("Aliases", "VkDescriptorSetVariableDescriptorCountLayoutSupportEXT")]
+    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport : IExtendsChain<DescriptorSetLayoutSupport>, IExtendsChain<DescriptorSetLayoutSupportKHR>
     {
         public DescriptorSetVariableDescriptorCountLayoutSupport
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxVariableDescriptorCount")]
         public uint MaxVariableDescriptorCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

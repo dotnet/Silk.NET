@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdFramebufferMultisampleAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_framebuffer_multisample_advanced";
-        [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void NamedRenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] AMD internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glNamedRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void NamedRenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] AMD internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] AMD internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAdvancedAMD", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisampleAdvance([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint storageSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         public AmdFramebufferMultisampleAdvanced(INativeContext ctx)

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainCounterCreateInfoEXT")]
-    public unsafe partial struct SwapchainCounterCreateInfoEXT
+    public unsafe partial struct SwapchainCounterCreateInfoEXT : IExtendsChain<SwapchainCreateInfoKHR>
     {
         public SwapchainCounterCreateInfoEXT
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceCounterFlagsEXT")]
         [NativeName("Name", "surfaceCounters")]
         public SurfaceCounterFlagsEXT SurfaceCounters;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SwapchainCounterCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

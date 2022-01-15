@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtGpuProgramParameters : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_gpu_program_parameters";
-        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramEnvParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT")]
+        [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
         public unsafe void ProgramEnvParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)

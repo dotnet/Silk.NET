@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryBarrier2KHR")]
-    public unsafe partial struct ImageMemoryBarrier2KHR
+    public unsafe partial struct ImageMemoryBarrier2KHR : IChainStart
     {
         public ImageMemoryBarrier2KHR
         (
@@ -156,5 +156,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageSubresourceRange")]
         [NativeName("Name", "subresourceRange")]
         public ImageSubresourceRange SubresourceRange;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageMemoryBarrier2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ImageMemoryBarrier2KHR Chain(
+            out ImageMemoryBarrier2KHR capture)
+        {
+            capture = new ImageMemoryBarrier2KHR(StructureType.ImageMemoryBarrier2Khr);
+            return ref capture;
+        }
     }
 }

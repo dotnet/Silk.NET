@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewUsageCreateInfo")]
-    public unsafe partial struct ImageViewUsageCreateInfo
+    [NativeName("Aliases", "VkImageViewUsageCreateInfoKHR")]
+    public unsafe partial struct ImageViewUsageCreateInfo : IExtendsChain<ImageViewCreateInfo>
     {
         public ImageViewUsageCreateInfo
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageUsageFlags")]
         [NativeName("Name", "usage")]
         public ImageUsageFlags Usage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageViewUsageCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

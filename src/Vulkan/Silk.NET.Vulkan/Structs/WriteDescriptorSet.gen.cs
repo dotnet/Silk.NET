@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSet")]
-    public unsafe partial struct WriteDescriptorSet
+    public unsafe partial struct WriteDescriptorSet : IChainStart
     {
         public WriteDescriptorSet
         (
@@ -134,5 +134,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferView")]
         [NativeName("Name", "pTexelBufferView")]
         public BufferView* PTexelBufferView;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.WriteDescriptorSet;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref WriteDescriptorSet Chain(
+            out WriteDescriptorSet capture)
+        {
+            capture = new WriteDescriptorSet(StructureType.WriteDescriptorSet);
+            return ref capture;
+        }
     }
 }

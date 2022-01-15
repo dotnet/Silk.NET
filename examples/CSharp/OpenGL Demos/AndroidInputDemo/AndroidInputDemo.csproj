@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifiers>android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="shader.frag" />
+    <None Remove="shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="shader.frag">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+    <AndroidAsset Include="shader.vert">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+    <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+  </ItemGroup>
+</Project>

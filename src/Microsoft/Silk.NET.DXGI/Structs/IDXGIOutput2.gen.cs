@@ -55,7 +55,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -66,7 +77,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -78,7 +100,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -92,7 +125,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -121,7 +165,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -132,7 +187,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -144,7 +210,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -158,7 +235,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -169,7 +257,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            }
+            #endif
             return ret;
         }
 
@@ -180,7 +279,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -192,7 +302,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                }
+            #endif
             }
             return ret;
         }
@@ -206,7 +327,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -217,7 +349,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -228,7 +371,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -240,7 +394,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -254,7 +419,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -267,7 +443,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -281,7 +468,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -296,7 +494,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -313,7 +522,18 @@ namespace Silk.NET.DXGI
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -325,7 +545,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            }
+            #endif
             return ret;
         }
 
@@ -336,7 +567,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppParentPtr = &ppParent)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -348,7 +590,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
+                }
+            #endif
             }
             return ret;
         }
@@ -362,7 +615,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppParentPtr = &ppParent)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -373,7 +637,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -384,7 +659,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (OutputDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, OutputDesc*, int>)LpVtbl[7])(@this, pDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -394,7 +680,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -405,7 +702,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -417,7 +725,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pNumModesPtr = &pNumModes)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+                }
+            #endif
             }
             return ret;
         }
@@ -431,7 +750,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (ModeDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc*, int>)LpVtbl[8])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -442,7 +772,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -453,7 +794,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -465,7 +817,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                }
+            #endif
             }
             return ret;
         }
@@ -479,7 +842,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -492,7 +866,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                }
+            #endif
             }
             return ret;
         }
@@ -506,7 +891,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -521,7 +917,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -538,7 +945,18 @@ namespace Silk.NET.DXGI
                 {
                     fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -559,7 +977,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
+            }
+            #endif
             return ret;
         }
 
@@ -570,7 +999,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
+                }
+            #endif
             }
             return ret;
         }
@@ -587,7 +1027,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCaps);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCaps);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCaps);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCaps);
+            }
+            #endif
             return ret;
         }
 
@@ -598,7 +1049,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (GammaControlCapabilities* pGammaCapsPtr = &pGammaCaps)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCapsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCapsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCapsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControlCapabilities*, int>)LpVtbl[13])(@this, pGammaCapsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -608,7 +1070,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArray);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArray);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArray);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArray);
+            }
+            #endif
             return ret;
         }
 
@@ -619,7 +1092,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (GammaControl* pArrayPtr = &pArray)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArrayPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArrayPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArrayPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[14])(@this, pArrayPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -629,7 +1113,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArray);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArray);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArray);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArray);
+            }
+            #endif
             return ret;
         }
 
@@ -640,7 +1135,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (GammaControl* pArrayPtr = &pArray)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArrayPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArrayPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArrayPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, GammaControl*, int>)LpVtbl[15])(@this, pArrayPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -650,7 +1156,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurface);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurface);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurface);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurface);
+            }
+            #endif
             return ret;
         }
 
@@ -661,7 +1178,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurfacePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurfacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurfacePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[16])(@this, pScanoutSurfacePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -671,7 +1199,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestination);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestination);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestination);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestination);
+            }
+            #endif
             return ret;
         }
 
@@ -682,7 +1221,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (IDXGISurface* pDestinationPtr = &pDestination)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestinationPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestinationPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestinationPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGISurface*, int>)LpVtbl[17])(@this, pDestinationPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -692,7 +1242,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStats);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStats);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStats);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStats);
+            }
+            #endif
             return ret;
         }
 
@@ -703,7 +1264,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (FrameStatistics* pStatsPtr = &pStats)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStatsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStatsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStatsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, FrameStatistics*, int>)LpVtbl[18])(@this, pStatsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -713,7 +1285,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -724,7 +1307,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc1* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -736,7 +1330,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pNumModesPtr = &pNumModes)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+                }
+            #endif
             }
             return ret;
         }
@@ -750,7 +1355,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (ModeDesc1* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -761,7 +1377,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -772,7 +1399,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -784,7 +1422,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                }
+            #endif
             }
             return ret;
         }
@@ -798,7 +1447,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -811,7 +1471,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                }
+            #endif
             }
             return ret;
         }
@@ -825,7 +1496,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -840,7 +1522,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -857,7 +1550,18 @@ namespace Silk.NET.DXGI
                 {
                     fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -869,7 +1573,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestination);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestination);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestination);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestination);
+            }
+            #endif
             return ret;
         }
 
@@ -880,7 +1595,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (IDXGIResource* pDestinationPtr = &pDestination)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestinationPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestinationPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestinationPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestinationPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -890,7 +1616,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+            }
+            #endif
             return ret;
         }
 
@@ -901,7 +1638,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -913,7 +1661,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+                }
+            #endif
             }
             return ret;
         }
@@ -927,7 +1686,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+                    }
+            #endif
                 }
             }
             return ret;

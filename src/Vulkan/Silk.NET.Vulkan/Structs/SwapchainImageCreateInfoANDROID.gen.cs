@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainImageCreateInfoANDROID")]
-    public unsafe partial struct SwapchainImageCreateInfoANDROID
+    public unsafe partial struct SwapchainImageCreateInfoANDROID : IChainable
     {
         public SwapchainImageCreateInfoANDROID
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSwapchainImageUsageFlagsANDROID")]
         [NativeName("Name", "usage")]
         public SwapchainImageUsageFlagsANDROID Usage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SwapchainImageCreateInfoAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Video
             uint? vuiNumUnitsInTick = null,
             uint? vuiTimeScale = null,
             uint? vuiNumTicksPocDiffOneMinus1 = null,
-            StdVideoH265HrdParameters* hrdParameters = null,
+            StdVideoH265HrdParameters* pHrdParameters = null,
             ushort? minSpatialSegmentationIdc = null,
             byte? maxBytesPerPicDenom = null,
             byte? maxBitsPerMinCuDenom = null,
@@ -126,9 +126,9 @@ namespace Silk.NET.Vulkan.Video
                 VuiNumTicksPocDiffOneMinus1 = vuiNumTicksPocDiffOneMinus1.Value;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters;
+                PHrdParameters = pHrdParameters;
             }
 
             if (minSpatialSegmentationIdc is not null)
@@ -245,8 +245,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "StdVideoH265HrdParameters *")]
         [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH265HrdParameters* HrdParameters;
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH265HrdParameters* PHrdParameters;
 
         [NativeName("Type", "uint16_t")]
         [NativeName("Type.Name", "uint16_t")]

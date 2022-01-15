@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureGeometryMotionTrianglesDataNV")]
-    public unsafe partial struct AccelerationStructureGeometryMotionTrianglesDataNV
+    public unsafe partial struct AccelerationStructureGeometryMotionTrianglesDataNV : IExtendsChain<AccelerationStructureGeometryTrianglesDataKHR>
     {
         public AccelerationStructureGeometryMotionTrianglesDataNV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceOrHostAddressConstKHR")]
         [NativeName("Name", "vertexData")]
         public DeviceOrHostAddressConstKHR VertexData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureGeometryMotionTrianglesDataNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

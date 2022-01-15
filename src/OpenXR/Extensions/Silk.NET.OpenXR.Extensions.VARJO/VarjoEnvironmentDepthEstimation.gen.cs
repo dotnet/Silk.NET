@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.VARJO
     {
         public const string ExtensionName = "XR_VARJO_environment_depth_estimation";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetEnvironmentDepthEstimationVARJO")]
+        [NativeApi(EntryPoint = "xrSetEnvironmentDepthEstimationVARJO", Convention = CallingConvention.Winapi)]
         public partial Result SetEnvironmentDepthEstimationVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] uint enabled);
 
         public VarjoEnvironmentDepthEstimation(INativeContext ctx)

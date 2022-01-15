@@ -134,7 +134,7 @@ namespace Silk.NET.Core.Native
                 return BStrToMemory(Marshal.StringToBSTR(input), input.Length);
             }
             
-            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input));
+            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input, encoding));
             StringIntoSpan(input, memory.AsSpan<byte>(), encoding);
             return memory;
         }
@@ -526,6 +526,11 @@ namespace Silk.NET.Core.Native
         {
             var span = new Span<byte>((void*) ptr, int.MaxValue);
             span = span.Slice(0, span.IndexOf(default(byte)));
+            if (span.Length == 0)
+            {
+                return string.Empty;
+            }
+
             fixed (byte* bytes = span)
             {
                 return Encoding.UTF8.GetString(bytes, span.Length);

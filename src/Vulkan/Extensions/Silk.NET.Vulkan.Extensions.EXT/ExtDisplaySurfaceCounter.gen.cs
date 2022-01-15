@@ -21,12 +21,12 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_display_surface_counter";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2EXT* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Ext);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilities2EXT pSurfaceCapabilities);
 
         public ExtDisplaySurfaceCounter(INativeContext ctx)

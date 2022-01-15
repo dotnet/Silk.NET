@@ -20,253 +20,253 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVHalfFloat : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_half_float";
-        [NativeApi(EntryPoint = "glColor3hNV")]
+        [NativeApi(EntryPoint = "glColor3hNV", Convention = CallingConvention.Winapi)]
         public partial void Color3h([Flow(FlowDirection.In)] System.Half red, [Flow(FlowDirection.In)] System.Half green, [Flow(FlowDirection.In)] System.Half blue);
 
-        [NativeApi(EntryPoint = "glColor3hvNV")]
+        [NativeApi(EntryPoint = "glColor3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Color3h([Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glColor3hvNV")]
+        [NativeApi(EntryPoint = "glColor3hvNV", Convention = CallingConvention.Winapi)]
         public partial void Color3h([Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glColor4hNV")]
+        [NativeApi(EntryPoint = "glColor4hNV", Convention = CallingConvention.Winapi)]
         public partial void Color4h([Flow(FlowDirection.In)] System.Half red, [Flow(FlowDirection.In)] System.Half green, [Flow(FlowDirection.In)] System.Half blue, [Flow(FlowDirection.In)] System.Half alpha);
 
-        [NativeApi(EntryPoint = "glColor4hvNV")]
+        [NativeApi(EntryPoint = "glColor4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Color4h([Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glColor4hvNV")]
+        [NativeApi(EntryPoint = "glColor4hvNV", Convention = CallingConvention.Winapi)]
         public partial void Color4h([Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glFogCoordhNV")]
+        [NativeApi(EntryPoint = "glFogCoordhNV", Convention = CallingConvention.Winapi)]
         public partial void FogCoordh([Flow(FlowDirection.In)] System.Half fog);
 
-        [NativeApi(EntryPoint = "glFogCoordhvNV")]
+        [NativeApi(EntryPoint = "glFogCoordhvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void FogCoordh([Count(Count = 1), Flow(FlowDirection.In)] System.Half* fog);
 
-        [NativeApi(EntryPoint = "glFogCoordhvNV")]
+        [NativeApi(EntryPoint = "glFogCoordhvNV", Convention = CallingConvention.Winapi)]
         public partial void FogCoordh([Count(Count = 1), Flow(FlowDirection.In)] in System.Half fog);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1h([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] System.Half s);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1h([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] System.Half s);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord1h([Flow(FlowDirection.In)] NV target, [Count(Count = 1), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1h([Flow(FlowDirection.In)] NV target, [Count(Count = 1), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord1h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2h([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2h([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord2h([Flow(FlowDirection.In)] NV target, [Count(Count = 2), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2h([Flow(FlowDirection.In)] NV target, [Count(Count = 2), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord2h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3h([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3h([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord3h([Flow(FlowDirection.In)] NV target, [Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3h([Flow(FlowDirection.In)] NV target, [Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord3h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4h([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r, [Flow(FlowDirection.In)] System.Half q);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4h([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r, [Flow(FlowDirection.In)] System.Half q);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord4h([Flow(FlowDirection.In)] NV target, [Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4h([Flow(FlowDirection.In)] NV target, [Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord4h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4h([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glNormal3hNV")]
+        [NativeApi(EntryPoint = "glNormal3hNV", Convention = CallingConvention.Winapi)]
         public partial void Normal3h([Flow(FlowDirection.In)] System.Half nx, [Flow(FlowDirection.In)] System.Half ny, [Flow(FlowDirection.In)] System.Half nz);
 
-        [NativeApi(EntryPoint = "glNormal3hvNV")]
+        [NativeApi(EntryPoint = "glNormal3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Normal3h([Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glNormal3hvNV")]
+        [NativeApi(EntryPoint = "glNormal3hvNV", Convention = CallingConvention.Winapi)]
         public partial void Normal3h([Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glSecondaryColor3hNV")]
+        [NativeApi(EntryPoint = "glSecondaryColor3hNV", Convention = CallingConvention.Winapi)]
         public partial void SecondaryColor3h([Flow(FlowDirection.In)] System.Half red, [Flow(FlowDirection.In)] System.Half green, [Flow(FlowDirection.In)] System.Half blue);
 
-        [NativeApi(EntryPoint = "glSecondaryColor3hvNV")]
+        [NativeApi(EntryPoint = "glSecondaryColor3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void SecondaryColor3h([Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glSecondaryColor3hvNV")]
+        [NativeApi(EntryPoint = "glSecondaryColor3hvNV", Convention = CallingConvention.Winapi)]
         public partial void SecondaryColor3h([Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glTexCoord1hNV")]
+        [NativeApi(EntryPoint = "glTexCoord1hNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord1h([Flow(FlowDirection.In)] System.Half s);
 
-        [NativeApi(EntryPoint = "glTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord1h([Count(Count = 1), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glTexCoord1hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord1hvNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord1h([Count(Count = 1), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glTexCoord2hNV")]
+        [NativeApi(EntryPoint = "glTexCoord2hNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord2h([Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t);
 
-        [NativeApi(EntryPoint = "glTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord2h([Count(Count = 2), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glTexCoord2hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord2hvNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord2h([Count(Count = 2), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glTexCoord3hNV")]
+        [NativeApi(EntryPoint = "glTexCoord3hNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord3h([Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r);
 
-        [NativeApi(EntryPoint = "glTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord3h([Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glTexCoord3hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord3hvNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord3h([Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glTexCoord4hNV")]
+        [NativeApi(EntryPoint = "glTexCoord4hNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord4h([Flow(FlowDirection.In)] System.Half s, [Flow(FlowDirection.In)] System.Half t, [Flow(FlowDirection.In)] System.Half r, [Flow(FlowDirection.In)] System.Half q);
 
-        [NativeApi(EntryPoint = "glTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord4h([Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glTexCoord4hvNV")]
+        [NativeApi(EntryPoint = "glTexCoord4hvNV", Convention = CallingConvention.Winapi)]
         public partial void TexCoord4h([Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertex2hNV")]
+        [NativeApi(EntryPoint = "glVertex2hNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex2h([Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y);
 
-        [NativeApi(EntryPoint = "glVertex2hvNV")]
+        [NativeApi(EntryPoint = "glVertex2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex2h([Count(Count = 2), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertex2hvNV")]
+        [NativeApi(EntryPoint = "glVertex2hvNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex2h([Count(Count = 2), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertex3hNV")]
+        [NativeApi(EntryPoint = "glVertex3hNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex3h([Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y, [Flow(FlowDirection.In)] System.Half z);
 
-        [NativeApi(EntryPoint = "glVertex3hvNV")]
+        [NativeApi(EntryPoint = "glVertex3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex3h([Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertex3hvNV")]
+        [NativeApi(EntryPoint = "glVertex3hvNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex3h([Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertex4hNV")]
+        [NativeApi(EntryPoint = "glVertex4hNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex4h([Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y, [Flow(FlowDirection.In)] System.Half z, [Flow(FlowDirection.In)] System.Half w);
 
-        [NativeApi(EntryPoint = "glVertex4hvNV")]
+        [NativeApi(EntryPoint = "glVertex4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex4h([Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertex4hvNV")]
+        [NativeApi(EntryPoint = "glVertex4hvNV", Convention = CallingConvention.Winapi)]
         public partial void Vertex4h([Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib1hNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib1hNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib1h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] System.Half x);
 
-        [NativeApi(EntryPoint = "glVertexAttrib1hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib1hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttrib1h([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib1hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib1hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib1h([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib2hNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib2hNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib2h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y);
 
-        [NativeApi(EntryPoint = "glVertexAttrib2hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttrib2h([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib2hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib2hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib2h([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib3hNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib3hNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib3h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y, [Flow(FlowDirection.In)] System.Half z);
 
-        [NativeApi(EntryPoint = "glVertexAttrib3hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttrib3h([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib3hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib3hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib3h([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib4hNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib4hNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib4h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] System.Half x, [Flow(FlowDirection.In)] System.Half y, [Flow(FlowDirection.In)] System.Half z, [Flow(FlowDirection.In)] System.Half w);
 
-        [NativeApi(EntryPoint = "glVertexAttrib4hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttrib4h([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttrib4hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttrib4hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttrib4h([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs1hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs1hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribs1h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs1hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs1hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribs1h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs2hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs2hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribs2h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs2hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs2hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribs2h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs3hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs3hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribs3h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs3hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs3hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribs3h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs4hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs4hvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribs4h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] System.Half* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribs4hvNV")]
+        [NativeApi(EntryPoint = "glVertexAttribs4hvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribs4h([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in System.Half v);
 
-        [NativeApi(EntryPoint = "glVertexWeighthNV")]
+        [NativeApi(EntryPoint = "glVertexWeighthNV", Convention = CallingConvention.Winapi)]
         public partial void VertexWeighth([Flow(FlowDirection.In)] System.Half weight);
 
-        [NativeApi(EntryPoint = "glVertexWeighthvNV")]
+        [NativeApi(EntryPoint = "glVertexWeighthvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexWeighth([Count(Count = 1), Flow(FlowDirection.In)] System.Half* weight);
 
-        [NativeApi(EntryPoint = "glVertexWeighthvNV")]
+        [NativeApi(EntryPoint = "glVertexWeighthvNV", Convention = CallingConvention.Winapi)]
         public partial void VertexWeighth([Count(Count = 1), Flow(FlowDirection.In)] in System.Half weight);
 
         public unsafe void VertexAttribs1h([Flow(FlowDirection.In)] uint index, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<System.Half> v)

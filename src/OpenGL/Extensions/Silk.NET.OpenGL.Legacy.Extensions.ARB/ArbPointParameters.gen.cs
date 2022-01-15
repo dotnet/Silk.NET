@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbPointParameters : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_point_parameters";
-        [NativeApi(EntryPoint = "glPointParameterfARB")]
+        [NativeApi(EntryPoint = "glPointParameterfARB", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPointParameterfARB")]
+        [NativeApi(EntryPoint = "glPointParameterfARB", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPointParameterfvARB")]
+        [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvARB")]
+        [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvARB")]
+        [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvARB")]
+        [NativeApi(EntryPoint = "glPointParameterfvARB", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         public ArbPointParameters(INativeContext ctx)

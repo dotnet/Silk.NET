@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDepthStencilResolveProperties")]
-    public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
+    [NativeName("Aliases", "VkPhysicalDeviceDepthStencilResolvePropertiesKHR")]
+    public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceDepthStencilResolveProperties
         (
@@ -90,5 +91,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "independentResolve")]
         public Bool32 IndependentResolve;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDepthStencilResolveProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

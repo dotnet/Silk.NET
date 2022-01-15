@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbClipControl : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_clip_control";
-        [NativeApi(EntryPoint = "glClipControl")]
+        [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
         public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ARB depth);
 
-        [NativeApi(EntryPoint = "glClipControl")]
+        [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
         public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
 
-        [NativeApi(EntryPoint = "glClipControl")]
+        [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
         public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ARB depth);
 
-        [NativeApi(EntryPoint = "glClipControl")]
+        [NativeApi(EntryPoint = "glClipControl", Convention = CallingConvention.Winapi)]
         public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
 
         public ArbClipControl(INativeContext ctx)

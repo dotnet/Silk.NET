@@ -21,28 +21,28 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
     {
         public const string ExtensionName = "VK_FUCHSIA_external_memory";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMemoryZirconHandlePropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryZirconHandlePropertiesFUCHSIA* pMemoryZirconHandleProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryZirconHandleProperties = new(StructureType.MemoryZirconHandlePropertiesFuchsia);")]
-        [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result GetMemoryZirconHandlePropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryZirconHandlePropertiesFUCHSIA pMemoryZirconHandleProperties);
 
         public FuchsiaExternalMemory(INativeContext ctx)

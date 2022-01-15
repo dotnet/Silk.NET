@@ -20,52 +20,52 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     public unsafe partial class ImgGenerateMipmap : NativeExtension<CL>
     {
         public const string ExtensionName = "IMG_generate_mipmap";
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] nuint* array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] nuint* mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [NativeApi(EntryPoint = "clEnqueueGenerateMipmapIMG", Convention = CallingConvention.Winapi)]
         public partial int EnqueueGenerateMipmap([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] IMG mipmap_filter_mode, [Flow(FlowDirection.In)] in nuint array_region, [Flow(FlowDirection.In)] in nuint mip_region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
         public ImgGenerateMipmap(INativeContext ctx)

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubpassShadingPropertiesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI
+    public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceSubpassShadingPropertiesHUAWEI
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxSubpassShadingWorkgroupSizeAspectRatio")]
         public uint MaxSubpassShadingWorkgroupSizeAspectRatio;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSubpassShadingPropertiesHuawei;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

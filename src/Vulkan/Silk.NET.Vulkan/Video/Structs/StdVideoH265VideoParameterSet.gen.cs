@@ -27,7 +27,7 @@ namespace Silk.NET.Vulkan.Video
             uint? vpsTimeScale = null,
             uint? vpsNumTicksPocDiffOneMinus1 = null,
             StdVideoH265DecPicBufMgr* pDecPicBufMgr = null,
-            StdVideoH265HrdParameters* hrdParameters = null,
+            StdVideoH265HrdParameters* pHrdParameters = null,
             StdVideoH265VpsFlags? flags = null
         ) : this()
         {
@@ -61,9 +61,9 @@ namespace Silk.NET.Vulkan.Video
                 PDecPicBufMgr = pDecPicBufMgr;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters;
+                PHrdParameters = pHrdParameters;
             }
 
             if (flags is not null)
@@ -105,8 +105,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "StdVideoH265HrdParameters *")]
         [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH265HrdParameters* HrdParameters;
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH265HrdParameters* PHrdParameters;
 
         [NativeName("Type", "StdVideoH265VpsFlags")]
         [NativeName("Type.Name", "StdVideoH265VpsFlags")]

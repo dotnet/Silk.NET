@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalFenceProperties")]
-    public unsafe partial struct ExternalFenceProperties
+    [NativeName("Aliases", "VkExternalFencePropertiesKHR")]
+    public unsafe partial struct ExternalFenceProperties : IChainable
     {
         public ExternalFenceProperties
         (
@@ -79,5 +80,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalFenceFeatureFlags")]
         [NativeName("Name", "externalFenceFeatures")]
         public ExternalFenceFeatureFlags ExternalFenceFeatures;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalFenceProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

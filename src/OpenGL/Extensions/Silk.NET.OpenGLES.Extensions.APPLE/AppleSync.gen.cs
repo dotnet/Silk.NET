@@ -20,70 +20,70 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
     public unsafe partial class AppleSync : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_sync";
-        [NativeApi(EntryPoint = "glClientWaitSyncAPPLE")]
+        [NativeApi(EntryPoint = "glClientWaitSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial APPLE ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glClientWaitSyncAPPLE")]
+        [NativeApi(EntryPoint = "glClientWaitSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial APPLE ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncObjectMask flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glDeleteSyncAPPLE")]
+        [NativeApi(EntryPoint = "glDeleteSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial void DeleteSync([Flow(FlowDirection.In)] nint sync);
 
-        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] APPLE condition, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] APPLE condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
-        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
-        [NativeApi(EntryPoint = "glGetInteger64vAPPLE")]
+        [NativeApi(EntryPoint = "glGetInteger64vAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInteger64vAPPLE")]
+        [NativeApi(EntryPoint = "glGetInteger64vAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GetInteger64([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInteger64vAPPLE")]
+        [NativeApi(EntryPoint = "glGetInteger64vAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInteger64vAPPLE")]
+        [NativeApi(EntryPoint = "glGetInteger64vAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSyncivAPPLE")]
+        [NativeApi(EntryPoint = "glGetSyncivAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glIsSyncAPPLE")]
+        [NativeApi(EntryPoint = "glIsSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool IsSync([Flow(FlowDirection.In)] nint sync);
 
-        [NativeApi(EntryPoint = "glWaitSyncAPPLE")]
+        [NativeApi(EntryPoint = "glWaitSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glWaitSyncAPPLE")]
+        [NativeApi(EntryPoint = "glWaitSyncAPPLE", Convention = CallingConvention.Winapi)]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncBehaviorFlags flags, [Flow(FlowDirection.In)] ulong timeout);
 
         public unsafe long GetInteger64([Flow(FlowDirection.In)] APPLE pname)

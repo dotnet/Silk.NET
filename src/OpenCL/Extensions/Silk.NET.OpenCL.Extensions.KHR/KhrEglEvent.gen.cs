@@ -20,10 +20,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrEglEvent : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_egl_event";
-        [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
+        [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateEventFromEglsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint display, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
+        [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR", Convention = CallingConvention.Winapi)]
         public partial nint CreateEventFromEglsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint display, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrEglEvent(INativeContext ctx)

@@ -49,7 +49,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -60,7 +71,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -72,7 +94,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -86,7 +119,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -114,7 +158,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -123,7 +178,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Device** ppDevicePtr = &ppDevice)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+            #endif
             }
         }
 
@@ -132,7 +198,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -143,7 +220,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -155,7 +243,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -169,7 +268,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -182,7 +292,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -196,7 +317,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -211,7 +343,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -228,7 +371,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -240,7 +394,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -251,7 +416,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -263,7 +439,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -277,7 +464,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -288,7 +486,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -299,7 +508,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -311,7 +531,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -325,7 +556,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -335,7 +577,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetCryptoType(Guid* pCryptoType)
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoType);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoType);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoType);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoType);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -344,7 +597,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoTypePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoTypePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoTypePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoTypePtr);
+                }
+            #endif
             }
         }
 
@@ -352,7 +616,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDecoderProfile(Guid* pDecoderProfile)
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfile);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfile);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfile);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfile);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -361,7 +636,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfilePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfilePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfilePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfilePtr);
+                }
+            #endif
             }
         }
 
@@ -370,7 +656,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSize);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSize);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSize);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSize);
+            }
+            #endif
             return ret;
         }
 
@@ -381,7 +678,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pCertificateSizePtr = &pCertificateSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSizePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSizePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSizePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSizePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -391,7 +699,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificate);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificate);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificate);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificate);
+            }
+            #endif
             return ret;
         }
 
@@ -402,7 +721,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pCertificatePtr = &pCertificate)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -413,7 +743,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pCertificatePtr = (byte*) SilkMarshal.StringToPtr(pCertificate, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            }
+            #endif
             SilkMarshal.Free((nint)pCertificatePtr);
             return ret;
         }
@@ -422,7 +763,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetCryptoSessionHandle(void** pCryptoSessionHandle)
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandle);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandle);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandle);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandle);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -431,7 +783,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void** pCryptoSessionHandlePtr = &pCryptoSessionHandle)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandlePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandlePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandlePtr);
+                }
+            #endif
             }
         }
 

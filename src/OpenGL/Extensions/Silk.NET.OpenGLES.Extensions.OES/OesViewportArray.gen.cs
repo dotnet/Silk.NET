@@ -20,73 +20,73 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesViewportArray : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_viewport_array";
-        [NativeApi(EntryPoint = "glDepthRangeArrayfvOES")]
+        [NativeApi(EntryPoint = "glDepthRangeArrayfvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glDepthRangeArrayfvOES")]
+        [NativeApi(EntryPoint = "glDepthRangeArrayfvOES", Convention = CallingConvention.Winapi)]
         public partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glDepthRangeIndexedfOES")]
+        [NativeApi(EntryPoint = "glDepthRangeIndexedfOES", Convention = CallingConvention.Winapi)]
         public partial void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
-        [NativeApi(EntryPoint = "glDisableiOES")]
+        [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
         public partial void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glDisableiOES")]
+        [NativeApi(EntryPoint = "glDisableiOES", Convention = CallingConvention.Winapi)]
         public partial void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEnableiOES")]
+        [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
         public partial void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEnableiOES")]
+        [NativeApi(EntryPoint = "glEnableiOES", Convention = CallingConvention.Winapi)]
         public partial void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        [NativeApi(EntryPoint = "glGetFloati_vOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
-        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        [NativeApi(EntryPoint = "glGetFloati_vOES", Convention = CallingConvention.Winapi)]
         public partial void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
-        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        [NativeApi(EntryPoint = "glGetFloati_vOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
-        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        [NativeApi(EntryPoint = "glGetFloati_vOES", Convention = CallingConvention.Winapi)]
         public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
-        [NativeApi(EntryPoint = "glIsEnablediOES")]
+        [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glIsEnablediOES")]
+        [NativeApi(EntryPoint = "glIsEnablediOES", Convention = CallingConvention.Winapi)]
         public partial bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glScissorArrayvOES")]
+        [NativeApi(EntryPoint = "glScissorArrayvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorArrayvOES")]
+        [NativeApi(EntryPoint = "glScissorArrayvOES", Convention = CallingConvention.Winapi)]
         public partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glScissorIndexedOES")]
+        [NativeApi(EntryPoint = "glScissorIndexedOES", Convention = CallingConvention.Winapi)]
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glScissorIndexedvOES")]
+        [NativeApi(EntryPoint = "glScissorIndexedvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glScissorIndexedvOES")]
+        [NativeApi(EntryPoint = "glScissorIndexedvOES", Convention = CallingConvention.Winapi)]
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glViewportArrayvOES")]
+        [NativeApi(EntryPoint = "glViewportArrayvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glViewportArrayvOES")]
+        [NativeApi(EntryPoint = "glViewportArrayvOES", Convention = CallingConvention.Winapi)]
         public partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glViewportIndexedfOES")]
+        [NativeApi(EntryPoint = "glViewportIndexedfOES", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
 
-        [NativeApi(EntryPoint = "glViewportIndexedfvOES")]
+        [NativeApi(EntryPoint = "glViewportIndexedfvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glViewportIndexedfvOES")]
+        [NativeApi(EntryPoint = "glViewportIndexedfvOES", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
         public OesViewportArray(INativeContext ctx)

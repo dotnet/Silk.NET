@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeInfoKHR")]
-    public unsafe partial struct VideoEncodeInfoKHR
+    public unsafe partial struct VideoEncodeInfoKHR : IChainStart
     {
         public VideoEncodeInfoKHR
         (
@@ -32,7 +32,8 @@ namespace Silk.NET.Vulkan
             VideoPictureResourceKHR? srcPictureResource = null,
             VideoReferenceSlotKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null
+            VideoReferenceSlotKHR* pReferenceSlots = null,
+            uint? precedingExternallyEncodedBytes = null
         ) : this()
         {
             if (sType is not null)
@@ -93,6 +94,11 @@ namespace Silk.NET.Vulkan
             if (pReferenceSlots is not null)
             {
                 PReferenceSlots = pReferenceSlots;
+            }
+
+            if (precedingExternallyEncodedBytes is not null)
+            {
+                PrecedingExternallyEncodedBytes = precedingExternallyEncodedBytes.Value;
             }
         }
 
@@ -156,5 +162,35 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
         [NativeName("Name", "pReferenceSlots")]
         public VideoReferenceSlotKHR* PReferenceSlots;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "precedingExternallyEncodedBytes")]
+        public uint PrecedingExternallyEncodedBytes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoEncodeInfoKHR Chain(
+            out VideoEncodeInfoKHR capture)
+        {
+            capture = new VideoEncodeInfoKHR(StructureType.VideoEncodeInfoKhr);
+            return ref capture;
+        }
     }
 }

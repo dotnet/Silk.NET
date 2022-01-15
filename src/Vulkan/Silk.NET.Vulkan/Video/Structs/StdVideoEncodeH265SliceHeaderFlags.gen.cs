@@ -35,6 +35,7 @@ namespace Silk.NET.Vulkan.Video
             uint? collocatedFromL0Flag = null,
             uint? sliceLoopFilterAcrossSlicesEnabledFlag = null,
             uint? bLastSliceInPic = null,
+            uint? reservedBits = null,
             ushort? lumaWeightL0Flag = null,
             ushort? chromaWeightL0Flag = null,
             ushort? lumaWeightL1Flag = null,
@@ -109,6 +110,11 @@ namespace Silk.NET.Vulkan.Video
             if (bLastSliceInPic is not null)
             {
                 BLastSliceInPic = bLastSliceInPic.Value;
+            }
+
+            if (reservedBits is not null)
+            {
+                ReservedBits = reservedBits.Value;
             }
 
             if (lumaWeightL0Flag is not null)
@@ -245,6 +251,14 @@ namespace Silk.NET.Vulkan.Video
             get => (uint)((_bitfield1 >> 13) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
+        }
+
+        public uint ReservedBits
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 14) & 0x3FFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFu << 14)) | (uint)(((uint)(value) & 0x3FFFFu) << 14));
         }
 
         [NativeName("Type", "uint16_t")]

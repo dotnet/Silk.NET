@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264VclFrameInfoEXT")]
-    public unsafe partial struct VideoEncodeH264VclFrameInfoEXT
+    public unsafe partial struct VideoEncodeH264VclFrameInfoEXT : IExtendsChain<VideoEncodeInfoKHR>
     {
         public VideoEncodeH264VclFrameInfoEXT
         (
@@ -123,5 +123,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
         [NativeName("Name", "pCurrentPictureInfo")]
         public VideoEncodeH264DpbSlotInfoEXT* PCurrentPictureInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264VclFrameInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }
