@@ -19,8 +19,9 @@ jobs:
               name: Checkout PR
               if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name == 'pull_request_target' }}
               with:
-                  ref: "refs/pull/${{ github.event.number }}/merge"
+                  repository: ${{ github.event.pull_request.head.repo.full_name }}
                   path: inbound_pr
+                  ref: ${{ github.event.pull_request.head.ref }}
             - uses: actions/checkout@v2
               name: Checkout branch
               if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request_target' }}
