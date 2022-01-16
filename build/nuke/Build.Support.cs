@@ -19,7 +19,7 @@ using Octokit.Internal;
 
 partial class Build
 {
-    static readonly Regex PrRegex = new("refs\\/remotes\\/pull\\/([0-9]+).*", RegexOptions.Compiled);
+    static readonly Regex PrRegex = new("refs\\/pull\\/([0-9]+).*", RegexOptions.Compiled);
 
     /// Support plugins are available for:
     ///   - JetBrains ReSharper        https://nuke.build/resharper
