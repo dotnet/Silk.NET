@@ -19,9 +19,6 @@ jobs:
                   token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
                   ref: "refs/pull/${{ github.event.number }}/merge"
                   path: inbound_pr
-            - name: Add workloads for restore
-              run: |
-                  dotnet workload install android
             - name: Checkout submodules, configure git
               run: |
                   git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
@@ -38,6 +35,9 @@ jobs:
               uses: actions/setup-dotnet@v1
               with:
                   dotnet-version: 6.0.100
+            - name: Add workloads for restore
+              run: |
+                  dotnet workload install android
             - name: Ensure Public API Declared
               run: ./build.sh EnsureApiDeclared
               env:
