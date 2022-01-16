@@ -102,7 +102,7 @@ partial class Build
         }
 
         var prMatch = PrRegex.Match(@ref);
-        if (!prMatch.Success || prMatch.Groups.Count >= 2)
+        if (!prMatch.Success || prMatch.Groups.Count < 2)
         {
             Logger.Info($"Couldn't match {@ref} to a PR, skipping writing a comment.");
             return;
