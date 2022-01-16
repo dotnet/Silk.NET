@@ -17,7 +17,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 partial class Build
 {
     const string FormatDeclCmd =
-        "format analyzers Silk.NET.sln --diagnostics=RS0016 --severity=error -v=diag --include-generated";
+        "format analyzers {0} --diagnostics=RS0016 --severity=error -v=diag --include-generated";
 
     Target ShipApi => CommonTarget
     (
@@ -63,7 +63,7 @@ partial class Build
         )
     );
 
-    Target DeclareApi => CommonTarget(x => x.Executes(() => DotNet(FormatDeclCmd)));
+    Target DeclareApi => CommonTarget(x => x.Executes(() => DotNet(string.Format(FormatDeclCmd, "Silk.NET.sln"))));
 
     Target EnsureApiDeclared => CommonTarget
     (
@@ -73,7 +73,24 @@ partial class Build
             {
                 try
                 {
-                    DotNet($"{FormatDeclCmd} --verify-no-changes");
+                    var cmd = string.Format
+                    (
+                        FormatDeclCmd,
+                        GitHubActions.Instance.GitHubRef?.Contains("/pull/") ?? false
+                            ? "inbound_pr/Silk.NET.sln"
+                            : "Silk.NET.sln"
+                    );
+
+                    // I have no trust of incoming code, so let's take the github token away from them before they think
+                    // about adding dodgy MSBuild targets that could swipe it
+                    var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
+                    EnvironmentInfo.SetVariable("GITHUB_TOKEN", string.Empty);
+                    
+                    // run the format command
+                    DotNet($"{cmd} --verify-no-changes");
+                    
+                    // add our github token back
+                    EnvironmentInfo.SetVariable("GITHUB_TOKEN", githubToken);
                     await AddOrUpdatePrComment("public_api", "public_api_declared", true);
                 }
                 catch (ProcessException)

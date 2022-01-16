@@ -7,11 +7,9 @@ on:
         tags:
             - "*"
     pull_request_target:
-        paths-ignore:
-            - .github/**/*.yml
-            - build/**/*.cs
 permissions:
     issues: write
+    pull-requests: write
 jobs:
     Check:
         runs-on: ubuntu-latest
@@ -19,7 +17,8 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
-                  ref: "refs/pull/${{ github.event.number }}/merge"  # TODO fix this as it's insecure!
+                  ref: "refs/pull/${{ github.event.number }}/merge"
+                  path: inbound_pr
             - name: Checkout submodules, configure git
               run: |
                   git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
