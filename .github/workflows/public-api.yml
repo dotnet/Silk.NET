@@ -32,6 +32,8 @@ jobs:
                   dotnet-version: 6.0.100
             - name: Ensure Public API Declared
               run: ./build.sh EnsureApiDeclared
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     Ship:
         if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name == 'create' }}
         runs-on: ubuntu-latest
