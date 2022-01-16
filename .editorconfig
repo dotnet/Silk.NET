@@ -37,6 +37,10 @@ csharp_style_inlined_variable_declaration = true:hint
 dotnet_sort_system_directives_first = true
 dotnet_public_api_analyzer.require_api_files = true
 dotnet_diagnostic.RS0016.severity = error
+dotnet_diagnostic.RS0017.severity = error
+
+# we should care more about this one day
+dotnet_diagnostic.RS0041.severity = warn:hint
 
 # public api warnings silk.net doesn't care about
 dotnet_diagnostic.RS0026.severity = none  # Don't add multiple public overloads with optional parameters
