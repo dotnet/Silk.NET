@@ -15,10 +15,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+              name: Checkout PR
               with:
-                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
                   ref: "refs/pull/${{ github.event.number }}/merge"
                   path: inbound_pr
+                  if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name == 'pull_request_target' }}
+            - uses: actions/checkout@v2
+              name: Checkout branch
+              with:
+                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+                  path: inbound_pr
+                  if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request_target' }}
             - name: Checkout submodules, configure git
               run: |
                   git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
