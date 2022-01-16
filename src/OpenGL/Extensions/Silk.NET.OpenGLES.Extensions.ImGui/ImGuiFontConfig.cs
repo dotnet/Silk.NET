@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Silk.NET.OpenGLES.Extensions.ImGui 
+namespace Silk.NET.OpenGLES.Extensions.ImGui
 {
     public readonly struct ImGuiFontConfig
     {
