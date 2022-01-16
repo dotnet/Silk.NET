@@ -1,0 +1,71 @@
+name: Public API
+on:
+    push:
+        branches:
+            - "*"
+    create:
+        tags:
+            - "*"
+    pull_request_target:
+permissions:
+    issues: write
+    pull-requests: write
+jobs:
+    Check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+                  ref: "refs/pull/${{ github.event.number }}/merge"
+                  path: inbound_pr
+            - name: Add workloads for restore
+              run: |
+                  dotnet workload install android
+            - name: Checkout submodules, configure git
+              run: |
+                  git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
+                  git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+                  git config --local user.name "The Silk.NET Automaton" 
+            - name: Cache .tmp, ~/.nuget/packages
+              uses: actions/cache@v2
+              with:
+                  path: |
+                      .tmp
+                      ~/.nuget/packages
+                  key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+            - name: Setup .NET 6.0
+              uses: actions/setup-dotnet@v1
+              with:
+                  dotnet-version: 6.0.100
+            - name: Ensure Public API Declared
+              run: ./build.sh EnsureApiDeclared
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    Ship:
+        if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name == 'create' }}
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
+            - name: Checkout submodules, configure git
+              run: |
+                  git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
+                  git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+                  git config --local user.name "The Silk.NET Automaton" 
+            - name: Cache .tmp, ~/.nuget/packages
+              uses: actions/cache@v2
+              with:
+                  path: |
+                      .tmp
+                      ~/.nuget/packages
+                  key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
+            - name: Setup .NET 6.0
+              uses: actions/setup-dotnet@v1
+              with:
+                  dotnet-version: 6.0.100
+            - name: Ship Public API
+              run: ./build.sh ShipApi
+              env:
+                  PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}

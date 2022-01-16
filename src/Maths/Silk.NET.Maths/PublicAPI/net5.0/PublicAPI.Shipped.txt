@@ -58,6 +58,7 @@ override Silk.NET.Maths.Vector4D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Vector4D<T>.GetHashCode() -> int
 override Silk.NET.Maths.Vector4D<T>.ToString() -> string!
 Silk.NET.Maths.Box2D<T>
+Silk.NET.Maths.Box2D<T>.As<TOther>() -> Silk.NET.Maths.Box2D<TOther>
 Silk.NET.Maths.Box2D<T>.Box2D() -> void
 Silk.NET.Maths.Box2D<T>.Box2D(Silk.NET.Maths.Vector2D<T> min, Silk.NET.Maths.Vector2D<T> max) -> void
 Silk.NET.Maths.Box2D<T>.Box2D(Silk.NET.Maths.Vector2D<T> min, T maxX, T maxY) -> void
@@ -70,11 +71,13 @@ Silk.NET.Maths.Box2D<T>.Equals(Silk.NET.Maths.Box2D<T> other) -> bool
 Silk.NET.Maths.Box2D<T>.GetDistanceToNearestEdge(Silk.NET.Maths.Vector2D<T> point) -> T
 Silk.NET.Maths.Box2D<T>.GetInflated(Silk.NET.Maths.Vector2D<T> point) -> Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.GetScaled(Silk.NET.Maths.Vector2D<T> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
+Silk.NET.Maths.Box2D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.Max -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box2D<T>.Min -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box2D<T>.Size.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box3D<T>
+Silk.NET.Maths.Box3D<T>.As<TOther>() -> Silk.NET.Maths.Box3D<TOther>
 Silk.NET.Maths.Box3D<T>.Box3D() -> void
 Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, Silk.NET.Maths.Vector3D<T> max) -> void
 Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, T maxX, T maxY, T maxZ) -> void
@@ -87,11 +90,13 @@ Silk.NET.Maths.Box3D<T>.Equals(Silk.NET.Maths.Box3D<T> other) -> bool
 Silk.NET.Maths.Box3D<T>.GetDistanceToNearestEdge(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Box3D<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.GetScaled(Silk.NET.Maths.Vector3D<T> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
+Silk.NET.Maths.Box3D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.Max -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Box3D<T>.Min -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Box3D<T>.Size.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Circle<T>
+Silk.NET.Maths.Circle<T>.As<TOther>() -> Silk.NET.Maths.Circle<TOther>
 Silk.NET.Maths.Circle<T>.Center -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Circle<T>.Circle() -> void
 Silk.NET.Maths.Circle<T>.Circle(Silk.NET.Maths.Vector2D<T> center, T radius) -> void
@@ -108,6 +113,7 @@ Silk.NET.Maths.Circle<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> S
 Silk.NET.Maths.Circle<T>.Radius -> T
 Silk.NET.Maths.Circle<T>.SquaredRadius.get -> T
 Silk.NET.Maths.Cube<T>
+Silk.NET.Maths.Cube<T>.As<TOther>() -> Silk.NET.Maths.Cube<TOther>
 Silk.NET.Maths.Cube<T>.Center.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Cube<T>.Contains(Silk.NET.Maths.Cube<T> other) -> bool
 Silk.NET.Maths.Cube<T>.Contains(Silk.NET.Maths.Vector3D<T> point) -> bool
@@ -120,6 +126,7 @@ Silk.NET.Maths.Cube<T>.Equals(Silk.NET.Maths.Cube<T> other) -> bool
 Silk.NET.Maths.Cube<T>.GetDistanceToNearestEdge(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Cube<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.NET.Maths.Cube<T>
 Silk.NET.Maths.Cube<T>.GetScaled(Silk.NET.Maths.Vector3D<T> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Cube<T>
+Silk.NET.Maths.Cube<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Cube<T>
 Silk.NET.Maths.Cube<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> Silk.NET.Maths.Cube<T>
 Silk.NET.Maths.Cube<T>.HalfSize.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Cube<T>.Max.get -> Silk.NET.Maths.Vector3D<T>
@@ -127,6 +134,7 @@ Silk.NET.Maths.Cube<T>.Origin -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Cube<T>.Size -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix2X2
 Silk.NET.Maths.Matrix2X2<T>
+Silk.NET.Maths.Matrix2X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X2<TOther>
 Silk.NET.Maths.Matrix2X2<T>.Column1.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X2<T>.Column2.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X2<T>.Equals(Silk.NET.Maths.Matrix2X2<T> other) -> bool
@@ -154,6 +162,7 @@ Silk.NET.Maths.Matrix2X2<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix2X2<T>.this[int x].get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X3
 Silk.NET.Maths.Matrix2X3<T>
+Silk.NET.Maths.Matrix2X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X3<TOther>
 Silk.NET.Maths.Matrix2X3<T>.Column1.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X3<T>.Column2.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X3<T>.Column3.get -> Silk.NET.Maths.Vector2D<T>
@@ -185,6 +194,7 @@ Silk.NET.Maths.Matrix2X3<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix2X3<T>.this[int x].get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix2X4
 Silk.NET.Maths.Matrix2X4<T>
+Silk.NET.Maths.Matrix2X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X4<TOther>
 Silk.NET.Maths.Matrix2X4<T>.Column1.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X4<T>.Column2.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix2X4<T>.Column3.get -> Silk.NET.Maths.Vector2D<T>
@@ -221,6 +231,7 @@ Silk.NET.Maths.Matrix2X4<T>.this[int x, int j].get -> T
 Silk.NET.Maths.Matrix2X4<T>.this[int x].get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix3X2
 Silk.NET.Maths.Matrix3X2<T>
+Silk.NET.Maths.Matrix3X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X2<TOther>
 Silk.NET.Maths.Matrix3X2<T>.Column1.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X2<T>.Column2.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X2<T>.Equals(Silk.NET.Maths.Matrix3X2<T> other) -> bool
@@ -253,6 +264,7 @@ Silk.NET.Maths.Matrix3X2<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix3X2<T>.this[int x].get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix3X3
 Silk.NET.Maths.Matrix3X3<T>
+Silk.NET.Maths.Matrix3X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X3<TOther>
 Silk.NET.Maths.Matrix3X3<T>.Column1.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X3<T>.Column2.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X3<T>.Column3.get -> Silk.NET.Maths.Vector3D<T>
@@ -294,6 +306,7 @@ Silk.NET.Maths.Matrix3X3<T>.this[int x, int i].get -> T
 Silk.NET.Maths.Matrix3X3<T>.this[int x].get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X4
 Silk.NET.Maths.Matrix3X4<T>
+Silk.NET.Maths.Matrix3X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X4<TOther>
 Silk.NET.Maths.Matrix3X4<T>.Column1.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X4<T>.Column2.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix3X4<T>.Column3.get -> Silk.NET.Maths.Vector3D<T>
@@ -340,6 +353,7 @@ Silk.NET.Maths.Matrix3X4<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix3X4<T>.this[int x].get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X2
 Silk.NET.Maths.Matrix4X2<T>
+Silk.NET.Maths.Matrix4X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X2<TOther>
 Silk.NET.Maths.Matrix4X2<T>.Column1.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X2<T>.Column2.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X2<T>.Equals(Silk.NET.Maths.Matrix4X2<T> other) -> bool
@@ -376,6 +390,7 @@ Silk.NET.Maths.Matrix4X2<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix4X2<T>.this[int x].get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Matrix4X3
 Silk.NET.Maths.Matrix4X3<T>
+Silk.NET.Maths.Matrix4X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X3<TOther>
 Silk.NET.Maths.Matrix4X3<T>.Column1.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X3<T>.Column2.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X3<T>.Column3.get -> Silk.NET.Maths.Vector4D<T>
@@ -423,6 +438,7 @@ Silk.NET.Maths.Matrix4X3<T>.this[int x, int i].get -> T
 Silk.NET.Maths.Matrix4X3<T>.this[int x].get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Matrix4X4
 Silk.NET.Maths.Matrix4X4<T>
+Silk.NET.Maths.Matrix4X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X4<TOther>
 Silk.NET.Maths.Matrix4X4<T>.Column1.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X4<T>.Column2.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X4<T>.Column3.get -> Silk.NET.Maths.Vector4D<T>
@@ -479,6 +495,7 @@ Silk.NET.Maths.Matrix4X4<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix4X4<T>.this[int x].get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Plane
 Silk.NET.Maths.Plane<T>
+Silk.NET.Maths.Plane<T>.As<TOther>() -> Silk.NET.Maths.Plane<TOther>
 Silk.NET.Maths.Plane<T>.Distance -> T
 Silk.NET.Maths.Plane<T>.Equals(Silk.NET.Maths.Plane<T> other) -> bool
 Silk.NET.Maths.Plane<T>.Normal -> Silk.NET.Maths.Vector3D<T>
@@ -487,6 +504,7 @@ Silk.NET.Maths.Plane<T>.Plane(Silk.NET.Maths.Vector3D<T> normal, T distance) -> 
 Silk.NET.Maths.Plane<T>.Plane(Silk.NET.Maths.Vector4D<T> value) -> void
 Silk.NET.Maths.Plane<T>.Plane(T x, T y, T z, T distance) -> void
 Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.As<TOther>() -> Silk.NET.Maths.Quaternion<TOther>
 Silk.NET.Maths.Quaternion<T>.Equals(Silk.NET.Maths.Quaternion<T> other) -> bool
 Silk.NET.Maths.Quaternion<T>.IsIdentity.get -> bool
 Silk.NET.Maths.Quaternion<T>.Length() -> T
@@ -499,6 +517,7 @@ Silk.NET.Maths.Quaternion<T>.X -> T
 Silk.NET.Maths.Quaternion<T>.Y -> T
 Silk.NET.Maths.Quaternion<T>.Z -> T
 Silk.NET.Maths.Ray2D<T>
+Silk.NET.Maths.Ray2D<T>.As<TOther>() -> Silk.NET.Maths.Ray2D<TOther>
 Silk.NET.Maths.Ray2D<T>.Direction -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Ray2D<T>.Equals(Silk.NET.Maths.Ray2D<T> other) -> bool
 Silk.NET.Maths.Ray2D<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector2D<T>
@@ -509,6 +528,7 @@ Silk.NET.Maths.Ray2D<T>.Ray2D(Silk.NET.Maths.Vector2D<T> origin, T directionX, T
 Silk.NET.Maths.Ray2D<T>.Ray2D(T originX, T originY, Silk.NET.Maths.Vector2D<T> direction) -> void
 Silk.NET.Maths.Ray2D<T>.Ray2D(T originX, T originY, T directionX, T directionY) -> void
 Silk.NET.Maths.Ray3D<T>
+Silk.NET.Maths.Ray3D<T>.As<TOther>() -> Silk.NET.Maths.Ray3D<TOther>
 Silk.NET.Maths.Ray3D<T>.Direction -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Equals(Silk.NET.Maths.Ray3D<T> other) -> bool
 Silk.NET.Maths.Ray3D<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector3D<T>
@@ -520,6 +540,7 @@ Silk.NET.Maths.Ray3D<T>.Ray3D(T originX, T originY, T originZ, Silk.NET.Maths.Ve
 Silk.NET.Maths.Ray3D<T>.Ray3D(T originX, T originY, T originZ, T directionX, T directionY, T directionZ) -> void
 Silk.NET.Maths.Rectangle
 Silk.NET.Maths.Rectangle<T>
+Silk.NET.Maths.Rectangle<T>.As<TOther>() -> Silk.NET.Maths.Rectangle<TOther>
 Silk.NET.Maths.Rectangle<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rectangle<T>.Contains(Silk.NET.Maths.Rectangle<T> other) -> bool
 Silk.NET.Maths.Rectangle<T>.Contains(Silk.NET.Maths.Vector2D<T> point) -> bool
@@ -527,6 +548,7 @@ Silk.NET.Maths.Rectangle<T>.Equals(Silk.NET.Maths.Rectangle<T> other) -> bool
 Silk.NET.Maths.Rectangle<T>.GetDistanceToNearestEdge(Silk.NET.Maths.Vector2D<T> point) -> T
 Silk.NET.Maths.Rectangle<T>.GetInflated(Silk.NET.Maths.Vector2D<T> point) -> Silk.NET.Maths.Rectangle<T>
 Silk.NET.Maths.Rectangle<T>.GetScaled(Silk.NET.Maths.Vector2D<T> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rectangle<T>
+Silk.NET.Maths.Rectangle<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rectangle<T>
 Silk.NET.Maths.Rectangle<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> Silk.NET.Maths.Rectangle<T>
 Silk.NET.Maths.Rectangle<T>.HalfSize.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rectangle<T>.Max.get -> Silk.NET.Maths.Vector2D<T>
@@ -540,6 +562,7 @@ Silk.NET.Maths.Rectangle<T>.Size -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Scalar
 Silk.NET.Maths.Scalar<T>
 Silk.NET.Maths.Sphere<T>
+Silk.NET.Maths.Sphere<T>.As<TOther>() -> Silk.NET.Maths.Sphere<TOther>
 Silk.NET.Maths.Sphere<T>.Center -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Sphere<T>.Contains(Silk.NET.Maths.Sphere<T> other) -> bool
 Silk.NET.Maths.Sphere<T>.Contains(Silk.NET.Maths.Vector3D<T> point) -> bool
@@ -557,6 +580,7 @@ Silk.NET.Maths.Sphere<T>.SquaredRadius.get -> T
 Silk.NET.Maths.SystemNumericsExtensions
 Silk.NET.Maths.Vector2D
 Silk.NET.Maths.Vector2D<T>
+Silk.NET.Maths.Vector2D<T>.As<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
 Silk.NET.Maths.Vector2D<T>.CopyTo(T[]? array) -> void
 Silk.NET.Maths.Vector2D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector2D<T>.Equals(Silk.NET.Maths.Vector2D<T> other) -> bool
@@ -572,6 +596,7 @@ Silk.NET.Maths.Vector2D<T>.X -> T
 Silk.NET.Maths.Vector2D<T>.Y -> T
 Silk.NET.Maths.Vector3D
 Silk.NET.Maths.Vector3D<T>
+Silk.NET.Maths.Vector3D<T>.As<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
 Silk.NET.Maths.Vector3D<T>.CopyTo(T[]? array) -> void
 Silk.NET.Maths.Vector3D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector3D<T>.Equals(Silk.NET.Maths.Vector3D<T> other) -> bool
@@ -589,6 +614,7 @@ Silk.NET.Maths.Vector3D<T>.Y -> T
 Silk.NET.Maths.Vector3D<T>.Z -> T
 Silk.NET.Maths.Vector4D
 Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Vector4D<T>.As<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
 Silk.NET.Maths.Vector4D<T>.CopyTo(T[]? array) -> void
 Silk.NET.Maths.Vector4D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector4D<T>.Equals(Silk.NET.Maths.Vector4D<T> other) -> bool
@@ -606,6 +632,7 @@ Silk.NET.Maths.Vector4D<T>.W -> T
 Silk.NET.Maths.Vector4D<T>.X -> T
 Silk.NET.Maths.Vector4D<T>.Y -> T
 Silk.NET.Maths.Vector4D<T>.Z -> T
+static readonly Silk.NET.Maths.Scalar<T>.DegreesPerRadian -> T
 static readonly Silk.NET.Maths.Scalar<T>.E -> T
 static readonly Silk.NET.Maths.Scalar<T>.Epsilon -> T
 static readonly Silk.NET.Maths.Scalar<T>.MaxValue -> T
@@ -618,6 +645,7 @@ static readonly Silk.NET.Maths.Scalar<T>.One -> T
 static readonly Silk.NET.Maths.Scalar<T>.Pi -> T
 static readonly Silk.NET.Maths.Scalar<T>.PiOver2 -> T
 static readonly Silk.NET.Maths.Scalar<T>.PositiveInfinity -> T
+static readonly Silk.NET.Maths.Scalar<T>.RadiansPerDegree -> T
 static readonly Silk.NET.Maths.Scalar<T>.Tau -> T
 static readonly Silk.NET.Maths.Scalar<T>.Two -> T
 static readonly Silk.NET.Maths.Scalar<T>.Zero -> T
@@ -1058,6 +1086,7 @@ static Silk.NET.Maths.Scalar.Abs<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Acos<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Acosh<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Add<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.And<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.As<TFrom, TTo>(TFrom val) -> TTo
 static Silk.NET.Maths.Scalar.Asin<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Asinh<T>(T x) -> T
@@ -1068,6 +1097,7 @@ static Silk.NET.Maths.Scalar.Cbrt<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Ceiling<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Cos<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Cosh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.DegreesToRadians<T>(T degrees) -> T
 static Silk.NET.Maths.Scalar.Divide<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Equal<T>(T left, T right) -> bool
 static Silk.NET.Maths.Scalar.Exp<T>(T x) -> T
@@ -1093,13 +1123,20 @@ static Silk.NET.Maths.Scalar.Max<T>(T x, T y) -> T
 static Silk.NET.Maths.Scalar.Min<T>(T x, T y) -> T
 static Silk.NET.Maths.Scalar.Multiply<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Negate<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Not<T>(T value) -> T
 static Silk.NET.Maths.Scalar.NotEqual<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.Or<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Pow<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.RadiansToDegrees<T>(T radians) -> T
 static Silk.NET.Maths.Scalar.Reciprocal<T>(T x) -> T
+static Silk.NET.Maths.Scalar.RotateLeft<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.RotateRight<T>(T value, int offset) -> T
 static Silk.NET.Maths.Scalar.Round<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Round<T>(T x, int digits) -> T
 static Silk.NET.Maths.Scalar.Round<T>(T x, int digits, System.MidpointRounding mode) -> T
 static Silk.NET.Maths.Scalar.Round<T>(T x, System.MidpointRounding mode) -> T
+static Silk.NET.Maths.Scalar.ShiftLeft<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.ShiftRight<T>(T value, int offset) -> T
 static Silk.NET.Maths.Scalar.Sign<T>(T x) -> int
 static Silk.NET.Maths.Scalar.Sin<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Sinh<T>(T x) -> T
@@ -1108,6 +1145,7 @@ static Silk.NET.Maths.Scalar.Subtract<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Tan<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Tanh<T>(T x) -> T
 static Silk.NET.Maths.Scalar.Truncate<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Xor<T>(T left, T right) -> T
 static Silk.NET.Maths.Sphere<T>.operator !=(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.Sphere<T>.operator ==(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(System.Numerics.Vector4 value) -> Silk.NET.Maths.Vector4D<float>
@@ -1288,33 +1326,3 @@ static Silk.NET.Maths.Vector4D<T>.UnitX.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitY.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitZ.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.Zero.get -> Silk.NET.Maths.Vector4D<T>
-Silk.NET.Maths.Box2D<T>.As<TOther>() -> Silk.NET.Maths.Box2D<TOther>
-Silk.NET.Maths.Box3D<T>.As<TOther>() -> Silk.NET.Maths.Box3D<TOther>
-Silk.NET.Maths.Circle<T>.As<TOther>() -> Silk.NET.Maths.Circle<TOther>
-Silk.NET.Maths.Cube<T>.As<TOther>() -> Silk.NET.Maths.Cube<TOther>
-Silk.NET.Maths.Matrix2X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X2<TOther>
-Silk.NET.Maths.Matrix2X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X3<TOther>
-Silk.NET.Maths.Matrix2X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X4<TOther>
-Silk.NET.Maths.Matrix3X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X2<TOther>
-Silk.NET.Maths.Matrix3X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X3<TOther>
-Silk.NET.Maths.Matrix3X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X4<TOther>
-Silk.NET.Maths.Matrix4X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X2<TOther>
-Silk.NET.Maths.Matrix4X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X3<TOther>
-Silk.NET.Maths.Matrix4X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X4<TOther>
-Silk.NET.Maths.Plane<T>.As<TOther>() -> Silk.NET.Maths.Plane<TOther>
-Silk.NET.Maths.Quaternion<T>.As<TOther>() -> Silk.NET.Maths.Quaternion<TOther>
-Silk.NET.Maths.Ray2D<T>.As<TOther>() -> Silk.NET.Maths.Ray2D<TOther>
-Silk.NET.Maths.Ray3D<T>.As<TOther>() -> Silk.NET.Maths.Ray3D<TOther>
-Silk.NET.Maths.Rectangle<T>.As<TOther>() -> Silk.NET.Maths.Rectangle<TOther>
-Silk.NET.Maths.Sphere<T>.As<TOther>() -> Silk.NET.Maths.Sphere<TOther>
-Silk.NET.Maths.Vector2D<T>.As<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
-Silk.NET.Maths.Vector3D<T>.As<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
-Silk.NET.Maths.Vector4D<T>.As<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
-Silk.NET.Maths.Box2D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
-Silk.NET.Maths.Box3D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
-Silk.NET.Maths.Rectangle<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rectangle<T>
-Silk.NET.Maths.Cube<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Cube<T>
-static Silk.NET.Maths.Scalar.DegreesToRadians<T>(T degrees) -> T
-static Silk.NET.Maths.Scalar.RadiansToDegrees<T>(T radians) -> T
-static readonly Silk.NET.Maths.Scalar<T>.RadiansPerDegree -> T
-static readonly Silk.NET.Maths.Scalar<T>.DegreesPerRadian -> T

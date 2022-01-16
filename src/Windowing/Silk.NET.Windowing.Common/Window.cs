@@ -61,7 +61,7 @@ namespace Silk.NET.Windowing
 
             _initializedFirstPartyPlatforms = !shouldLoad;
         }
-        
+
         private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             // Try add the first-party backends
@@ -289,6 +289,6 @@ namespace Silk.NET.Windowing
         /// <typeparam name="T">The type of the window platform to get.</typeparam>
         /// <returns>The instance of the window platform type or <c>default</c></returns>
         public static T? GetOrDefault<T>() where T : class, IWindowPlatform
-            => _platformsKeys.Contains(typeof(T)) ? (T)_platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
+            => _platformsKeys.Contains(typeof(T)) ? (T) _platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
     }
 }

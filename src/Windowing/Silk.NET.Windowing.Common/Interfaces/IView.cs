@@ -1,7 +1,5 @@
-// This file is part of Silk.NET.
-//
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
 using Silk.NET.Core.Contexts;
@@ -37,7 +35,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Determines if the window is initialized.
         /// </summary>
-        bool IsInitialized {  get; }
+        bool IsInitialized { get; }
 
         /// <summary>
         /// Raised when the window is resized.
