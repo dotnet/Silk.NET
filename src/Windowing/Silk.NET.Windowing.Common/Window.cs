@@ -318,4 +318,4 @@ namespace Silk.NET.Windowing
         public static T? GetOrDefault<T>() where T : class, IWindowPlatform
             => _platformsKeys.Contains(typeof(T)) ? (T)_platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
     }
-} 
+}
