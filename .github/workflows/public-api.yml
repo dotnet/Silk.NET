@@ -7,6 +7,11 @@ on:
         tags:
             - "*"
     pull_request:
+        paths-ignore:
+            - .github/**/*.yml
+            - build/**/*.cs
+permissions:
+    issues: write
 jobs:
     Check:
         runs-on: ubuntu-latest
