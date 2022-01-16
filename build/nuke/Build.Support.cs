@@ -19,7 +19,7 @@ using Octokit.Internal;
 
 partial class Build
 {
-    static readonly Regex PrRegex = new("refs\\/pull\\/([0-9]+).*", RegexOptions.Compiled);
+    static readonly Regex PrRegex = new("refs\\/remotes\\/pull\\/([0-9]+).*", RegexOptions.Compiled);
 
     /// Support plugins are available for:
     ///   - JetBrains ReSharper        https://nuke.build/resharper
@@ -86,31 +86,31 @@ partial class Build
     );
 
     async Task AddOrUpdatePrComment(string type, string file, bool editOnly = false, params KeyValuePair<string, string>[] subs)
-    {
+    {;
         var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
         if (string.IsNullOrWhiteSpace(githubToken))
         {
-            Logger.Trace("GitHub token not found, skipping writing a comment.");
+            Logger.Info("GitHub token not found, skipping writing a comment.");
             return;
         }
         
         var @ref = GitHubActions.Instance.GitHubRef;
         if (string.IsNullOrWhiteSpace(@ref))
         {
-            Logger.Trace("Not running in GitHub Actions, skipping writing a comment.");
+            Logger.Info("Not running in GitHub Actions, skipping writing a comment.");
             return;
         }
 
         var prMatch = PrRegex.Match(@ref);
         if (!prMatch.Success || prMatch.Groups.Count >= 2)
         {
-            Logger.Trace($"Couldn't match {@ref} to a PR, skipping writing a comment.");
+            Logger.Info($"Couldn't match {@ref} to a PR, skipping writing a comment.");
             return;
         }
 
         if (!int.TryParse(prMatch.Groups[1].Value, out var pr))
         {
-            Logger.Trace($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
+            Logger.Info($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
             return;
         }
         
@@ -121,10 +121,10 @@ partial class Build
         );
 
         var existingComment = (await github.Issue.Comment.GetAllForIssue("dotnet", "Silk.NET", pr))
-            .FirstOrDefault(x => x.Body.Contains($"`{type}`"));
+            .FirstOrDefault(x => x.Body.Contains($"`{type}`") && x.User.Name == "github-actions[bot]");
         if (existingComment is null && editOnly)
         {
-            Logger.Trace("Edit only mode is on and no existing comment found, skipping writing a comment.");
+            Logger.Info("Edit only mode is on and no existing comment found, skipping writing a comment.");
             return;
         }
 
@@ -141,10 +141,12 @@ partial class Build
 
         if (existingComment is not null)
         {
+            Logger.Info("Updated the comment on the PR.");
             await github.Issue.Comment.Update("dotnet", "Silk.NET", existingComment.Id, commentText);
         }
         else
         {
+            Logger.Info("Added a comment to the PR.");
             await github.Issue.Comment.Create("dotnet", "Silk.NET", pr, commentText);
         }
     }
