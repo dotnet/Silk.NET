@@ -4,7 +4,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Nuke.Common;
 using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.IO;
@@ -17,7 +16,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
 {
-    const string FormatDeclCmd = "format analyzers Silk.NET.sln --diagnostics=RS0016 --severity=error -v=diag --include-generated";
+    const string FormatDeclCmd =
+        "format analyzers Silk.NET.sln --diagnostics=RS0016 --severity=error -v=diag --include-generated";
 
     Target ShipApi => CommonTarget
     (
@@ -64,7 +64,26 @@ partial class Build
     );
 
     Target DeclareApi => CommonTarget(x => x.Executes(() => DotNet(FormatDeclCmd)));
-    Target EnsureApiDeclared => CommonTarget(x => x.Executes(() => DotNet($"{FormatDeclCmd} --verify-no-changes")));
+
+    Target EnsureApiDeclared => CommonTarget
+    (
+        x => x.Executes
+        (
+            async () =>
+            {
+                try
+                {
+                    DotNet($"{FormatDeclCmd} --verify-no-changes");
+                    await AddOrUpdatePrComment("public_api", "public_api_declared", true);
+                }
+                catch (ProcessException)
+                {
+                    await AddOrUpdatePrComment("public_api", "public_api_not_declared");
+                    throw;
+                }
+            }
+        )
+    );
 
     void MakePr()
     {
