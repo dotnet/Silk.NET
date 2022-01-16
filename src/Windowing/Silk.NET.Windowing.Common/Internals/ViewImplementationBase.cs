@@ -277,7 +277,7 @@ namespace Silk.NET.Windowing.Internals
             DoEvents();
             ProcessEvents?.Invoke();
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         public Vector2D<int> PointToFramebuffer(Vector2D<int> point)
         {
@@ -304,7 +304,7 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref a[0]) = FramebufferSize;
                 Unsafe.As<int, Vector2D<int>>(ref a[c]) = Size;
                 Unsafe.As<int, Vector2D<int>>(ref a[c * 2]) = point;
-                
+
                 // HACK: Avoid divide by zero errors
                 for (var i = c + 2; i < c * 2; i++)
                     a[i] = 1;
@@ -325,7 +325,7 @@ namespace Silk.NET.Windowing.Internals
                 Y = point.Y * (fSize.Y / aSize.Y)
             };
         }
-        
+
         public virtual void Dispose()
         {
             Reset();

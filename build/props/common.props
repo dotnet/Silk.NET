@@ -1,5 +1,12 @@
 <!--suppress CheckTagEmptyBody -->
-<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme">
+<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkCreatePublicApi">
+    <!-- Presets for metapackages and native packages -->
+    <PropertyGroup Condition="'$(SilkMetapackage)' == 'true' or '$(SilkNativePackage)' == 'true'">
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+        <SilkPublicApiExempt>true</SilkPublicApiExempt>
+    </PropertyGroup>
+    <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
@@ -88,5 +95,26 @@
         <ItemGroup>
             <None Include="$(SilkReadmePath)" Pack="true" PackagePath="\" />
         </ItemGroup>
+    </Target>
+    <!-- Public API Analyzer -->
+    <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true'">
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true' and '$(TargetFramework)' != ''">
+        <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
+        <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
+    </ItemGroup>
+    <Target Name="SilkCreatePublicApi" Condition="'$(SilkPublicApiExempt)' != 'true' and '$(TargetFramework)' != ''">
+        <ItemGroup>
+            <SilkNewPublicAPILines Include="#nullable enable" />
+        </ItemGroup>
+        <MakeDir Directories="PublicAPI" Condition="!Exists('PublicAPI')" />
+        <MakeDir Directories="PublicAPI/$(TargetFramework)" Condition="!Exists('PublicAPI/$(TargetFramework)')" />
+        <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt"
+                          Lines="@(SilkNewPublicAPILines)"
+                          Condition="!Exists('PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt')" />
+        <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt"
+                          Lines="@(SilkNewPublicAPILines)"
+                          Condition="!Exists('PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt')" />
     </Target>
 </Project>
