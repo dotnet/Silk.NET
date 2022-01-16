@@ -15,6 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+            - uses: actions/checkout@v2
               name: Checkout PR
               if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name == 'pull_request_target' }}
               with:
@@ -24,13 +25,11 @@ jobs:
               name: Checkout branch
               if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request_target' }}
               with:
-                  token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
                   path: inbound_pr
             - name: Checkout submodules, configure git
               run: |
+                  cd inbound_pr
                   git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
-                  git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
-                  git config --local user.name "The Silk.NET Automaton" 
             - name: Cache .tmp, ~/.nuget/packages
               uses: actions/cache@v2
               with:
