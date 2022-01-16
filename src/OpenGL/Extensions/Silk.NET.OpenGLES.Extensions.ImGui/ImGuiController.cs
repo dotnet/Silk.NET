@@ -245,12 +245,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             _gl.Disable(GLEnum.DepthTest);
             _gl.Disable(GLEnum.StencilTest);
             _gl.Enable(GLEnum.ScissorTest);
-            // This seems to have been added in OpenGL3.1 which i think means it isnt in GLES3.0
-            // _gl.Disable(GLEnum.PrimitiveRestart);
-            // Theres no such thing as non-fill in GLES
-            // _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
-            // _gl.CullFace(GLEnum.FrontAndBack);
-            
 
             float L = drawDataPtr.DisplayPos.X;
             float R = drawDataPtr.DisplayPos.X + drawDataPtr.DisplaySize.X;
@@ -308,10 +302,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArrayObject);
 
-            // No PolygonMode
-            // Span<int> lastPolygonMode = stackalloc int[2];
-            // _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
-
             Span<int> lastScissorBox = stackalloc int[4];
             _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
 
@@ -329,9 +319,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             bool lastEnableDepthTest = _gl.IsEnabled(GLEnum.DepthTest);
             bool lastEnableStencilTest = _gl.IsEnabled(GLEnum.StencilTest);
             bool lastEnableScissorTest = _gl.IsEnabled(GLEnum.ScissorTest);
-
-            // No primitive restart
-            // bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
 
             SetupRenderState(drawDataPtr, framebufferWidth, framebufferHeight);
 
@@ -445,20 +432,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             {
                 _gl.Disable(GLEnum.ScissorTest);
             }
-
-            // I dont think there is PrimitiveRestart in GLES
-            // if (lastEnablePrimitiveRestart)
-            // {
-            //     _gl.Enable(GLEnum.PrimitiveRestart);
-            // }
-            // else
-            // {
-            //     _gl.Disable(GLEnum.PrimitiveRestart);
-            // }
-
-            // No polygonmode in GLES
-            // _gl.PolygonMode(GLEnum.FrontAndBack, (GLEnum) lastPolygonMode[0]);
-
+            
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 

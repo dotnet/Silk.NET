@@ -11,9 +11,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
 
     class Texture : IDisposable
     {
-        public const SizedInternalFormat Srgb8Alpha8 = (SizedInternalFormat)GLEnum.Srgb8Alpha8;
-        public const SizedInternalFormat Rgb32F = (SizedInternalFormat)GLEnum.Rgb32f;
-
         public const GLEnum MaxTextureMaxAnisotropy = (GLEnum)0x84FF;
 
         public static float? MaxAniso;
@@ -22,7 +19,6 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
         public readonly uint GlTexture;
         public readonly uint Width, Height;
         public readonly uint MipmapLevels;
-        public readonly SizedInternalFormat InternalFormat;
 
         public unsafe Texture(GL gl, int width, int height, IntPtr data, bool generateMipmaps = false, bool srgb = false)
         {
@@ -30,16 +26,13 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             MaxAniso ??= gl.GetFloat(MaxTextureMaxAnisotropy);
             Width = (uint) width;
             Height = (uint) height;
-            InternalFormat = srgb ? Srgb8Alpha8 : SizedInternalFormat.Rgba8;
             MipmapLevels = (uint) (generateMipmaps == false ? 1 : (int)Math.Floor(Math.Log(Math.Max(Width, Height), 2)));
 
             GlTexture = _gl.GenTexture();
             Bind();
 
-            _gl.TexStorage2D(GLEnum.Texture2D, MipmapLevels, InternalFormat, Width, Height);
-            _gl.TexSubImage2D(GLEnum.Texture2D, 0, 0, 0, Width, Height, PixelFormat.Bgra, PixelType.UnsignedByte, (void*) data);
+            _gl.TexImage2D(GLEnum.Texture2D, 0, InternalFormat.Rgba8, Width, Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, (void*)data);
 
-                
             if (generateMipmaps) _gl.GenerateMipmap(GLEnum.Texture2D);
 
             SetWrap(TextureCoordinate.S, TextureWrapMode.Repeat);
