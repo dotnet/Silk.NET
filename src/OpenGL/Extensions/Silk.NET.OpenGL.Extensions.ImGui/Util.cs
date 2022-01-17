@@ -1,6 +1,10 @@
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
+#if GLES
+using Silk.NET.OpenGLES;
+#elif GL
+using Silk.NET.OpenGL;
+#endif
 
 namespace Silk.NET.OpenGL.Extensions.ImGui
 {
@@ -21,5 +25,5 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                 Debug.Print($"{title}: {error}");
             }
         }
-     }
+    }
 }

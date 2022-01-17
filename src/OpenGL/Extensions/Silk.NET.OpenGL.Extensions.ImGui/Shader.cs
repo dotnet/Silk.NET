@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+#if GLES
+using Silk.NET.OpenGLES;
+#elif GL
+using Silk.NET.OpenGL;
+#endif
 
 namespace Silk.NET.OpenGL.Extensions.ImGui
 {

@@ -1,4 +1,9 @@
 using System;
+#if GLES
+using Silk.NET.OpenGLES;
+#elif GL
+using Silk.NET.OpenGL;
+#endif
 
 namespace Silk.NET.OpenGL.Extensions.ImGui
 {
@@ -36,11 +41,21 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             GlTexture = _gl.GenTexture();
             Bind();
 
+            #if GLES
+            PixelFormat pxFormat = PixelFormat.Rgba;
+            #elif GL
+            PixelFormat pxFormat = PixelFormat.Bgra;
+            #endif
+            
             _gl.TexStorage2D(GLEnum.Texture2D, MipmapLevels, InternalFormat, Width, Height);
-            _gl.TexSubImage2D(GLEnum.Texture2D, 0, 0, 0, Width, Height, PixelFormat.Bgra, PixelType.UnsignedByte, (void*) data);
+            _gl.TexSubImage2D(GLEnum.Texture2D, 0, 0, 0, Width, Height, pxFormat, PixelType.UnsignedByte, (void*) data);
 
-            if (generateMipmaps) _gl.GenerateTextureMipmap(GlTexture);
-
+            if (generateMipmaps)
+            #if GLES
+                _gl.GenerateMipmap(GLEnum.Texture2D);
+            #elif GL
+                _gl.GenerateTextureMipmap(GlTexture);
+            #endif
             SetWrap(TextureCoordinate.S, TextureWrapMode.Repeat);
             SetWrap(TextureCoordinate.T, TextureWrapMode.Repeat);
 
