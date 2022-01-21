@@ -420,6 +420,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandReleaseDX9ObjectsIntel = 0x402B,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         EglYuvPlaneIntel = 0x4107,
+        [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
+        QueueThreadLocalExecEnableIntel = unchecked((int)0x80000000),
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
         MemChannelIntel = 0x4213,
         [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
@@ -476,8 +478,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         DeviceSimultaneousInteropsIntel = 0x4104,
         [NativeName("Name", "CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
         DeviceNumSimultaneousInteropsIntel = 0x4105,
-        [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
-        QueueThreadLocalExecEnableIntel = unchecked((int)0x80000000),
         [NativeName("Name", "CL_DEVICE_HOST_MEM_CAPABILITIES_INTEL")]
         DeviceHostMemCapabilitiesIntel = 0x4190,
         [NativeName("Name", "CL_DEVICE_DEVICE_MEM_CAPABILITIES_INTEL")]
@@ -500,6 +500,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         MemAllocFlagsIntel = 0x4195,
         [NativeName("Name", "CL_MEM_ALLOC_WRITE_COMBINED_INTEL")]
         MemAllocWriteCombinedIntel = 0x1,
+        [NativeName("Name", "CL_MEM_ALLOC_INITIAL_PLACEMENT_DEVICE_INTEL")]
+        MemAllocInitialPlacementDeviceIntel = 0x2,
+        [NativeName("Name", "CL_MEM_ALLOC_INITIAL_PLACEMENT_HOST_INTEL")]
+        MemAllocInitialPlacementHostIntel = 0x4,
         [NativeName("Name", "CL_MEM_ALLOC_TYPE_INTEL")]
         MemAllocTypeIntel = 0x419A,
         [NativeName("Name", "CL_MEM_ALLOC_BASE_PTR_INTEL")]

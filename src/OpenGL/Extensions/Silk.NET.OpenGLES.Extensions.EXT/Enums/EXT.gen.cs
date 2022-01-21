@@ -256,6 +256,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         OneMinusConstantAlpha = 0x8004,
         [NativeName("Name", "GL_SRC_ALPHA_SATURATE")]
         SrcAlphaSaturate = 0x308,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]
+        SurfaceCompressionExt = 0x96C0,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
+        SurfaceCompressionFixedRateNoneExt = 0x96C1,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
+        SurfaceCompressionFixedRateDefaultExt = 0x96C2,
         [NativeName("Name", "GL_GEOMETRY_SHADER_EXT")]
         GeometryShaderExt = 0x8DD9,
         [NativeName("Name", "GL_GEOMETRY_SHADER_BIT_EXT")]
@@ -824,6 +830,32 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         R32fExt = 0x822E,
         [NativeName("Name", "GL_RG32F_EXT")]
         RG32fExt = 0x8230,
+        [NativeName("Name", "GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+        NumSurfaceCompressionFixedRatesExt = 0x8F6E,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
+        SurfaceCompressionFixedRate1BpcExt = 0x96C4,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
+        SurfaceCompressionFixedRate2BpcExt = 0x96C5,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
+        SurfaceCompressionFixedRate3BpcExt = 0x96C6,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
+        SurfaceCompressionFixedRate4BpcExt = 0x96C7,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
+        SurfaceCompressionFixedRate5BpcExt = 0x96C8,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
+        SurfaceCompressionFixedRate6BpcExt = 0x96C9,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
+        SurfaceCompressionFixedRate7BpcExt = 0x96CA,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
+        SurfaceCompressionFixedRate8BpcExt = 0x96CB,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
+        SurfaceCompressionFixedRate9BpcExt = 0x96CC,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
+        SurfaceCompressionFixedRate10BpcExt = 0x96CD,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
+        SurfaceCompressionFixedRate11BpcExt = 0x96CE,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
+        SurfaceCompressionFixedRate12BpcExt = 0x96CF,
         [NativeName("Name", "GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
         UnsignedInt2101010RevExt = 0x8368,
         [NativeName("Name", "GL_TEXTURE_VIEW_MIN_LEVEL_EXT")]

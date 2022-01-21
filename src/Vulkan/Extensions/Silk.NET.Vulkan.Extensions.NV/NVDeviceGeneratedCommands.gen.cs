@@ -21,81 +21,81 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_device_generated_commands";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindPipelineShaderGroupNV")]
+        [NativeApi(EntryPoint = "vkCmdBindPipelineShaderGroupNV", Convention = CallingConvention.Winapi)]
         public partial void CmdBindPipelineShaderGroup([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint groupIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
+        [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
+        [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV", Convention = CallingConvention.Winapi)]
         public partial void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(FlowDirection.In)] in GeneratedCommandsInfoNV pGeneratedCommandsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
+        [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
+        [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV", Convention = CallingConvention.Winapi)]
         public partial void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in GeneratedCommandsInfoNV pGeneratedCommandsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out IndirectCommandsLayoutNV pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out IndirectCommandsLayoutNV pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in IndirectCommandsLayoutCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in IndirectCommandsLayoutCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out IndirectCommandsLayoutNV pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in IndirectCommandsLayoutCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in IndirectCommandsLayoutCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out IndirectCommandsLayoutNV pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutNV indirectCommandsLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV")]
+        [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV", Convention = CallingConvention.Winapi)]
         public partial void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutNV indirectCommandsLayout, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
+        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
+        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
+        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in GeneratedCommandsMemoryRequirementsInfoNV pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
+        [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
         public partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in GeneratedCommandsMemoryRequirementsInfoNV pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         public NVDeviceGeneratedCommands(INativeContext ctx)

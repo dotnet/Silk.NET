@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderIntegerDotProductPropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceShaderIntegerDotProductPropertiesKHR
+    public unsafe partial struct PhysicalDeviceShaderIntegerDotProductPropertiesKHR : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceShaderIntegerDotProductPropertiesKHR
         (
@@ -376,5 +376,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated")]
         public Bool32 IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderIntegerDotProductPropertiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

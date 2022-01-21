@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdFramebufferSamplePositions : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_framebuffer_sample_positions";
-        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferSamplePositions([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] float* values);
 
-        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public partial void FramebufferSamplePositions([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] in float values);
 
-        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferSamplePositions([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] float* values);
 
-        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public partial void FramebufferSamplePositions([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] in float values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] float* values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out float values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] float* values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out float values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] float* values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out float values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] float* values);
 
-        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out float values);
 
-        [NativeApi(EntryPoint = "glGetNamedFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetNamedFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] float* values);
 
-        [NativeApi(EntryPoint = "glGetNamedFramebufferParameterfvAMD")]
+        [NativeApi(EntryPoint = "glGetNamedFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] out float values);
 
-        [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedFramebufferSamplePositions([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] float* values);
 
-        [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD")]
+        [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public partial void NamedFramebufferSamplePositions([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] in float values);
 
         public AmdFramebufferSamplePositions(INativeContext ctx)

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesTextureView : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_texture_view";
-        [NativeApi(EntryPoint = "glTextureViewOES")]
+        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureViewOES")]
+        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureViewOES")]
+        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
-        [NativeApi(EntryPoint = "glTextureViewOES")]
+        [NativeApi(EntryPoint = "glTextureViewOES", Convention = CallingConvention.Winapi)]
         public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         public OesTextureView(INativeContext ctx)

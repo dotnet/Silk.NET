@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtStencilClearTag : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_clear_tag";
-        [NativeApi(EntryPoint = "glStencilClearTagEXT")]
+        [NativeApi(EntryPoint = "glStencilClearTagEXT", Convention = CallingConvention.Winapi)]
         public partial void StencilClearTag([Flow(FlowDirection.In)] uint stencilTagBits, [Flow(FlowDirection.In)] uint stencilClearTag);
 
         public ExtStencilClearTag(INativeContext ctx)

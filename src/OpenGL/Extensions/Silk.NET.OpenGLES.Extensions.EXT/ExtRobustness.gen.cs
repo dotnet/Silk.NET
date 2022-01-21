@@ -20,43 +20,43 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtRobustness : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_robustness";
-        [NativeApi(EntryPoint = "glGetGraphicsResetStatusEXT")]
+        [NativeApi(EntryPoint = "glGetGraphicsResetStatusEXT", Convention = CallingConvention.Winapi)]
         public partial EXT GetGraphicsResetStatus();
 
-        [NativeApi(EntryPoint = "glGetnUniformfvEXT")]
+        [NativeApi(EntryPoint = "glGetnUniformfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformfvEXT")]
+        [NativeApi(EntryPoint = "glGetnUniformfvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformivEXT")]
+        [NativeApi(EntryPoint = "glGetnUniformivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformivEXT")]
+        [NativeApi(EntryPoint = "glGetnUniformivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsEXT")]
+        [NativeApi(EntryPoint = "glReadnPixelsEXT", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)

@@ -20,58 +20,58 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVGeometryProgram4 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_geometry_program4";
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] NV face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] NV face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] NV face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] NV face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        [NativeApi(EntryPoint = "glProgramVertexLimitNV")]
+        [NativeApi(EntryPoint = "glProgramVertexLimitNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramVertexLimit([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] int limit);
 
-        [NativeApi(EntryPoint = "glProgramVertexLimitNV")]
+        [NativeApi(EntryPoint = "glProgramVertexLimitNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramVertexLimit([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] int limit);
 
         public NVGeometryProgram4(INativeContext ctx)

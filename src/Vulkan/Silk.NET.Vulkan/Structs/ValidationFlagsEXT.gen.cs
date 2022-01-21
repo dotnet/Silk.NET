@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationFlagsEXT")]
-    public unsafe partial struct ValidationFlagsEXT
+    public unsafe partial struct ValidationFlagsEXT : IExtendsChain<InstanceCreateInfo>
     {
         public ValidationFlagsEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkValidationCheckEXT")]
         [NativeName("Name", "pDisabledValidationChecks")]
         public ValidationCheckEXT* PDisabledValidationChecks;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ValidationFlagsExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSharedPresentSurfaceCapabilitiesKHR")]
-    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
+    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR : IExtendsChain<SurfaceCapabilities2KHR>
     {
         public SharedPresentSurfaceCapabilitiesKHR
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageUsageFlags")]
         [NativeName("Name", "sharedPresentSupportedUsageFlags")]
         public ImageUsageFlags SharedPresentSupportedUsageFlags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SharedPresentSurfaceCapabilitiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

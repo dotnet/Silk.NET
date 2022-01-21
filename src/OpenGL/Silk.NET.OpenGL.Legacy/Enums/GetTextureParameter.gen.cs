@@ -122,5 +122,7 @@ namespace Silk.NET.OpenGL.Legacy
         TextureMaxClampRSgix = 0x836B,
         [NativeName("Name", "GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
         TextureUnnormalizedCoordinatesArm = 0x8F6A,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]
+        SurfaceCompressionExt = 0x96C0,
     }
 }

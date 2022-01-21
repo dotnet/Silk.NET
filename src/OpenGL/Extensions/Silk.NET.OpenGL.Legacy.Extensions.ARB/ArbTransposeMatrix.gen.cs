@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbTransposeMatrix : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_transpose_matrix";
-        [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB")]
+        [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
-        [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB")]
+        [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB", Convention = CallingConvention.Winapi)]
         public partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] in float m);
 
-        [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB")]
+        [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
-        [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB")]
+        [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB", Convention = CallingConvention.Winapi)]
         public partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] in double m);
 
-        [NativeApi(EntryPoint = "glMultTransposeMatrixfARB")]
+        [NativeApi(EntryPoint = "glMultTransposeMatrixfARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
-        [NativeApi(EntryPoint = "glMultTransposeMatrixfARB")]
+        [NativeApi(EntryPoint = "glMultTransposeMatrixfARB", Convention = CallingConvention.Winapi)]
         public partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] in float m);
 
-        [NativeApi(EntryPoint = "glMultTransposeMatrixdARB")]
+        [NativeApi(EntryPoint = "glMultTransposeMatrixdARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
-        [NativeApi(EntryPoint = "glMultTransposeMatrixdARB")]
+        [NativeApi(EntryPoint = "glMultTransposeMatrixdARB", Convention = CallingConvention.Winapi)]
         public partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] in double m);
 
         public ArbTransposeMatrix(INativeContext ctx)

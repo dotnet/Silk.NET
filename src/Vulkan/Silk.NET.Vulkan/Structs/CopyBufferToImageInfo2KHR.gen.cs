@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyBufferToImageInfo2KHR")]
-    public unsafe partial struct CopyBufferToImageInfo2KHR
+    public unsafe partial struct CopyBufferToImageInfo2KHR : IChainable
     {
         public CopyBufferToImageInfo2KHR
         (
@@ -101,5 +101,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferImageCopy2KHR")]
         [NativeName("Name", "pRegions")]
         public BufferImageCopy2KHR* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyBufferToImageInfo2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -18,6 +18,9 @@ namespace Silk.NET.Windowing
         public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
+        public bool IsContextControlDisabled { get; set; }
+
+        /// <inheritdoc />
         Vector2D<int> IViewProperties.Size
             => throw new InvalidOperationException("Can't get the size of a non-existent view.");
 
@@ -63,7 +66,8 @@ namespace Silk.NET.Windowing
             int? preferredStencilBufferBits = null,
             Vector4D<int>? preferredBitDepth = null,
             bool isEventDriven = false,
-            int? samples = null
+            int? samples = null,
+            bool isContextControlDisabled = false
         )
         {
             FramesPerSecond = framesPerSecond;
@@ -77,6 +81,7 @@ namespace Silk.NET.Windowing
             IsEventDriven = isEventDriven;
             VSync = isVSync;
             Samples = samples;
+            IsContextControlDisabled = isContextControlDisabled;
         }
 
         /// <summary>
@@ -96,6 +101,7 @@ namespace Silk.NET.Windowing
             IsEventDriven = opts.IsEventDriven;
             VSync = opts.VSync;
             Samples = opts.Samples;
+            IsContextControlDisabled = opts.IsContextControlDisabled;
         }
 
         /// <summary>

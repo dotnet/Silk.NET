@@ -46,7 +46,18 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.XAudio
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.XAudio
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.XAudio
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -111,7 +155,18 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetProcessingQuantum(uint* quantumNumerator, uint* quantumDenominator)
         {
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominator);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominator);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominator);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominator);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -120,7 +175,18 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* quantumDenominatorPtr = &quantumDenominator)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominatorPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominatorPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominatorPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominatorPtr);
+                }
+            #endif
             }
         }
 
@@ -130,7 +196,18 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* quantumNumeratorPtr = &quantumNumerator)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominator);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominator);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominator);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominator);
+                }
+            #endif
             }
         }
 
@@ -142,7 +219,18 @@ namespace Silk.NET.XAudio
             {
                 fixed (uint* quantumDenominatorPtr = &quantumDenominator)
                 {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominatorPtr);
+            #if NET5_0_OR_GREATER
+                    ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominatorPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominatorPtr);
+                    }
+                    else
+                    {
+                        ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominatorPtr);
+                    }
+            #endif
                 }
             }
         }
@@ -151,7 +239,18 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetProcessor(uint* processor)
         {
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processor);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processor);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processor);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processor);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -160,7 +259,18 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* processorPtr = &processor)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processorPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processorPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processorPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processorPtr);
+                }
+            #endif
             }
         }
 

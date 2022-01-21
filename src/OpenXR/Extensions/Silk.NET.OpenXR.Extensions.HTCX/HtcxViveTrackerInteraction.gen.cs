@@ -21,19 +21,19 @@ namespace Silk.NET.OpenXR.Extensions.HTCX
     {
         public const string ExtensionName = "XR_HTCX_vive_tracker_interaction";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX")]
+        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViveTrackerPathsHtcx([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] ViveTrackerPathsHTCX* paths);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX")]
+        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViveTrackerPathsHtcx([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] ref ViveTrackerPathsHTCX paths);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX")]
+        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateViveTrackerPathsHtcx([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] ref uint pathCountOutput, [Count(Parameter = "pathCapacityInput")] ViveTrackerPathsHTCX* paths);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX")]
+        [NativeApi(EntryPoint = "xrEnumerateViveTrackerPathsHTCX", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateViveTrackerPathsHtcx([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint pathCapacityInput, [Count(Count = 0)] ref uint pathCountOutput, [Count(Parameter = "pathCapacityInput")] ref ViveTrackerPathsHTCX paths);
 
         /// <summary>To be documented.</summary>

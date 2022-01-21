@@ -22,6 +22,11 @@ namespace Silk.NET.Input.Glfw
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
         public IReadOnlyList<Key> SupportedKeys { get; } = _keys;
+        public unsafe string ClipboardText
+        {
+            get => GlfwProvider.GLFW.Value.GetClipboardString(_handle);
+            set => GlfwProvider.GLFW.Value.SetClipboardString(_handle, value);
+        }
 
         public unsafe bool IsKeyPressed
             (Key key) => GlfwProvider.GLFW.Value.GetKey(_handle, ConvertKey(key)) == (int) InputAction.Press;

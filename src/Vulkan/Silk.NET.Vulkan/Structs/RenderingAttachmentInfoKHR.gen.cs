@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingAttachmentInfoKHR")]
-    public unsafe partial struct RenderingAttachmentInfoKHR
+    public unsafe partial struct RenderingAttachmentInfoKHR : IChainable
     {
         public RenderingAttachmentInfoKHR
         (
@@ -134,5 +134,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkClearValue")]
         [NativeName("Name", "clearValue")]
         public ClearValue ClearValue;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderingAttachmentInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

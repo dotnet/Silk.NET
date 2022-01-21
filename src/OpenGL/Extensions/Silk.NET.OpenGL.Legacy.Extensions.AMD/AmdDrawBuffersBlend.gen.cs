@@ -20,73 +20,73 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdDrawBuffersBlend : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_draw_buffers_blend";
-        [NativeApi(EntryPoint = "glBlendEquationIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD modeRGB, [Flow(FlowDirection.In)] AMD modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] AMD modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendEquationSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendEquationSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD src, [Flow(FlowDirection.In)] AMD dst);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] AMD srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] AMD dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] AMD srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] AMD dstAlpha);
 
-        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD")]
+        [NativeApi(EntryPoint = "glBlendFuncSeparateIndexedAMD", Convention = CallingConvention.Winapi)]
         public partial void BlendFuncSeparateIndexed([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
         public AmdDrawBuffersBlend(INativeContext ctx)

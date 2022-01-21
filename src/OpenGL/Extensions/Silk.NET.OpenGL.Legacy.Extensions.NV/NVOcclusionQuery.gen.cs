@@ -20,49 +20,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVOcclusionQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_occlusion_query";
-        [NativeApi(EntryPoint = "glBeginOcclusionQueryNV")]
+        [NativeApi(EntryPoint = "glBeginOcclusionQueryNV", Convention = CallingConvention.Winapi)]
         public partial void BeginOcclusionQuery([Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV")]
+        [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
-        [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV")]
+        [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
         public partial void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
 
-        [NativeApi(EntryPoint = "glEndOcclusionQueryNV")]
+        [NativeApi(EntryPoint = "glEndOcclusionQueryNV", Convention = CallingConvention.Winapi)]
         public partial void EndOcclusionQuery();
 
-        [NativeApi(EntryPoint = "glGenOcclusionQueriesNV")]
+        [NativeApi(EntryPoint = "glGenOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
-        [NativeApi(EntryPoint = "glGenOcclusionQueriesNV")]
+        [NativeApi(EntryPoint = "glGenOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
         public partial void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
         public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryivNV", Convention = CallingConvention.Winapi)]
         public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
+        [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glIsOcclusionQueryNV")]
+        [NativeApi(EntryPoint = "glIsOcclusionQueryNV", Convention = CallingConvention.Winapi)]
         public partial bool IsOcclusionQuery([Flow(FlowDirection.In)] uint id);
 
         public unsafe void DeleteOcclusionQuery([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)

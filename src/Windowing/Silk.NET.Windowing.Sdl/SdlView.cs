@@ -93,7 +93,6 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-
         // Methods
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
         protected override INativeWindow GetNativeWindow() => new SdlNativeWindow(Sdl, SdlWindow);

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.KHR
     public unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_blend_equation_advanced";
-        [NativeApi(EntryPoint = "glBlendBarrierKHR")]
+        [NativeApi(EntryPoint = "glBlendBarrierKHR", Convention = CallingConvention.Winapi)]
         public partial void BlendBarrier();
 
         public KhrBlendEquationAdvanced(INativeContext ctx)

@@ -50,6 +50,24 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         AffinityDomainNumaExt = 0x10,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT")]
         AffinityDomainNextFissionableExt = 0x100,
+        [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_LOAD_STORE_EXT")]
+        DeviceGlobalFPAtomicLoadStoreExt = 0x1,
+        [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_ADD_EXT")]
+        DeviceGlobalFPAtomicAddExt = 0x2,
+        [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_MIN_MAX_EXT")]
+        DeviceGlobalFPAtomicMinMaxExt = 0x4,
+        [NativeName("Name", "CL_DEVICE_LOCAL_FP_ATOMIC_LOAD_STORE_EXT")]
+        DeviceLocalFPAtomicLoadStoreExt = 0x10000,
+        [NativeName("Name", "CL_DEVICE_LOCAL_FP_ATOMIC_ADD_EXT")]
+        DeviceLocalFPAtomicAddExt = 0x20000,
+        [NativeName("Name", "CL_DEVICE_LOCAL_FP_ATOMIC_MIN_MAX_EXT")]
+        DeviceLocalFPAtomicMinMaxExt = 0x40000,
+        [NativeName("Name", "CL_DEVICE_SINGLE_FP_ATOMIC_CAPABILITIES_EXT")]
+        DeviceSingleFPAtomicCapabilitiesExt = 0x4231,
+        [NativeName("Name", "CL_DEVICE_DOUBLE_FP_ATOMIC_CAPABILITIES_EXT")]
+        DeviceDoubleFPAtomicCapabilitiesExt = 0x4232,
+        [NativeName("Name", "CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
+        DeviceHalfFPAtomicCapabilitiesExt = 0x4233,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
         MigrateMemObjectHostExt = 0x1,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]

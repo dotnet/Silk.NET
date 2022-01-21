@@ -22,7 +22,7 @@
     </ItemGroup>
     
     <!-- Android -->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-        <Compile Include="..\TriangleDroid\MainActivity.cs" />
+    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android'">
+        <Compile Remove="\MainActivity.cs" />
     </ItemGroup>
 </Project>

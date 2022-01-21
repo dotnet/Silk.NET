@@ -52,7 +52,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -63,7 +74,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -75,7 +97,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -89,7 +122,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -117,7 +161,18 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -126,7 +181,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Device** ppDevicePtr = &ppDevice)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+            #endif
             }
         }
 
@@ -135,7 +201,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -146,7 +223,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -158,7 +246,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -172,7 +271,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -185,7 +295,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -199,7 +320,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -214,7 +346,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -231,7 +374,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -243,7 +397,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -254,7 +419,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -266,7 +442,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -280,7 +467,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -291,7 +489,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            }
+            #endif
             return ret;
         }
 
@@ -302,7 +511,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -314,7 +534,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                }
+            #endif
             }
             return ret;
         }
@@ -328,7 +559,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -339,7 +581,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -350,7 +603,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorContentDesc* pContentDescPtr = &pContentDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -360,7 +624,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
+            }
+            #endif
             return ret;
         }
 
@@ -371,7 +646,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pFlagsPtr = &pFlags)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -381,7 +667,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
+            }
+            #endif
             return ret;
         }
 
@@ -392,7 +689,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorCaps* pCapsPtr = &pCaps)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -402,7 +710,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
+            }
+            #endif
             return ret;
         }
 
@@ -413,7 +732,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorRateConversionCaps* pCapsPtr = &pCaps)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -423,7 +753,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
+            }
+            #endif
             return ret;
         }
 
@@ -434,7 +775,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorCustomRate* pRatePtr = &pRate)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -444,7 +796,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
+            }
+            #endif
             return ret;
         }
 
@@ -455,7 +818,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (VideoProcessorFilterRange* pRangePtr = &pRange)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -465,7 +839,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+            }
+            #endif
             return ret;
         }
 
@@ -476,7 +861,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (int* pSupportedPtr = &pSupported)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);
+                }
+            #endif
             }
             return ret;
         }

@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     public unsafe partial class SgisDetailTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_detail_texture";
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
 
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
 
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
         public unsafe void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)

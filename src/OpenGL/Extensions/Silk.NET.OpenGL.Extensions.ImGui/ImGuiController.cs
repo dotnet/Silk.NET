@@ -38,31 +38,39 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         /// <summary>
         /// Constructs a new ImGuiController.
         /// </summary>
-        public ImGuiController(GL gl, IView view, IInputContext input)
+        public ImGuiController(GL gl, IView view, IInputContext input) : this(gl, view, input, null, null)
         {
-            Init(gl, view, input);
-
-            var io = ImGuiNET.ImGui.GetIO();
-            io.Fonts.AddFontDefault();
-            io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
-
-            CreateDeviceResources();
-            SetKeyMappings();
-
-            SetPerFrameImGuiData(1f / 60f);
-
-            BeginFrame();
         }
 
         /// <summary>
         /// Constructs a new ImGuiController with font configuration.
         /// </summary>
-        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig)
+        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig) : this(gl, view, input, imGuiFontConfig, null)
+        {
+        }
+        
+        /// <summary>
+        /// Constructs a new ImGuiController with an onConfigureIO Action.
+        /// </summary>
+        public ImGuiController(GL gl, IView view, IInputContext input, Action onConfigureIO) : this(gl, view, input, null, onConfigureIO)
+        {
+        }
+        
+        /// <summary>
+        /// Constructs a new ImGuiController with font configuration and onConfigure Action.
+        /// </summary>
+        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig? imGuiFontConfig = null, Action onConfigureIO = null)
         {
             Init(gl, view, input);
 
             var io = ImGuiNET.ImGui.GetIO();
-            io.Fonts.AddFontFromFileTTF(imGuiFontConfig.FontPath, imGuiFontConfig.FontSize);
+            if (imGuiFontConfig is not null)
+            {
+                io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize);
+            }
+
+            onConfigureIO?.Invoke();
+
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
             CreateDeviceResources();

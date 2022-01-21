@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImagelessFramebufferFeatures")]
-    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeatures
+    [NativeName("Aliases", "VkPhysicalDeviceImagelessFramebufferFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceImagelessFramebufferFeatures
         (
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "imagelessFramebuffer")]
         public Bool32 ImagelessFramebuffer;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImagelessFramebufferFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

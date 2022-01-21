@@ -276,14 +276,19 @@ namespace Silk.NET.Core.Loader
         private List<string> GetAllRuntimeIds(string currentRid, DependencyContext ctx)
         {
             var allRiDs = new List<string>();
-            allRiDs.Add(currentRid);
-            if (!AddFallbacks(allRiDs, currentRid, ctx.RuntimeGraph))
+
+            // prevent null reference exception on net6.0-android where DependencyContext.Default is null
+            if (ctx is not null)
             {
-                var guessedFallbackRid = GuessFallbackRid(currentRid);
-                if (guessedFallbackRid != null)
+                allRiDs.Add(currentRid);
+                if (!AddFallbacks(allRiDs, currentRid, ctx.RuntimeGraph))
                 {
-                    allRiDs.Add(guessedFallbackRid);
-                    AddFallbacks(allRiDs, guessedFallbackRid, ctx.RuntimeGraph);
+                    var guessedFallbackRid = GuessFallbackRid(currentRid);
+                    if (guessedFallbackRid != null)
+                    {
+                        allRiDs.Add(guessedFallbackRid);
+                        AddFallbacks(allRiDs, guessedFallbackRid, ctx.RuntimeGraph);
+                    }
                 }
             }
 

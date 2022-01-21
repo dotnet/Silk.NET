@@ -21,19 +21,19 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
     {
         public const string ExtensionName = "XR_MSFT_composition_layer_reprojection";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
 
         /// <summary>To be documented.</summary>

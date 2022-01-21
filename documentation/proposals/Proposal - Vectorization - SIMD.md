@@ -100,7 +100,7 @@ static Silk.NET.Maths.Simd128.Pow<T>(Vector128<T> x, Vector128<T> y) -> Vector12
 static Silk.NET.Maths.Simd128.Reciprocal<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Round<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Round<T>(Vector128<T> x, System.MidpointRounding mode) -> Vector128<T>
-static Silk.NET.Maths.Simd128.Sign<T>(Vector128<T> x) -> Vector128<int>
+static Silk.NET.Maths.Simd128.Sign<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Sin<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Sinh<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Sqrt<T>(Vector128<T> x) -> Vector128<T>
@@ -187,7 +187,7 @@ static Silk.NET.Maths.Simd64.Pow<T>(Vector64<T> x, Vector64<T> y) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Reciprocal<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Round<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Round<T>(Vector64<T> x, System.MidpointRounding mode) -> Vector64<T>
-static Silk.NET.Maths.Simd64.Sign<T>(Vector64<T> x) -> Vector64<int>
+static Silk.NET.Maths.Simd64.Sign<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Sin<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Sinh<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Sqrt<T>(Vector64<T> x) -> Vector64<T>
@@ -274,7 +274,7 @@ static Silk.NET.Maths.Simd256.Pow<T>(Vector256<T> x, T y) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Reciprocal<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Round<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Round<T>(Vector256<T> x, System.MidpointRounding mode) -> Vector256<T>
-static Silk.NET.Maths.Simd256.Sign<T>(Vector256<T> x) -> Vector256<int>
+static Silk.NET.Maths.Simd256.Sign<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Sin<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Sinh<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Sqrt<T>(Vector256<T> x) -> Vector256<T>

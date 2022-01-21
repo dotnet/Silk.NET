@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoCapabilitiesKHR")]
-    public unsafe partial struct VideoCapabilitiesKHR
+    public unsafe partial struct VideoCapabilitiesKHR : IChainStart
     {
         public VideoCapabilitiesKHR
         (
@@ -134,5 +134,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoCapabilitiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoCapabilitiesKHR Chain(
+            out VideoCapabilitiesKHR capture)
+        {
+            capture = new VideoCapabilitiesKHR(StructureType.VideoCapabilitiesKhr);
+            return ref capture;
+        }
     }
 }

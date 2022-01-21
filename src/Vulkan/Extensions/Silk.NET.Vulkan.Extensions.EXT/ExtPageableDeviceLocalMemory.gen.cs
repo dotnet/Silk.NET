@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_pageable_device_local_memory";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetDeviceMemoryPriorityEXT")]
+        [NativeApi(EntryPoint = "vkSetDeviceMemoryPriorityEXT", Convention = CallingConvention.Winapi)]
         public partial void SetDeviceMemoryPriority([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] float priority);
 
         public ExtPageableDeviceLocalMemory(INativeContext ctx)

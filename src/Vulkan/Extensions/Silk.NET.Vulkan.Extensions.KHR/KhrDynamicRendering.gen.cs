@@ -21,15 +21,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_dynamic_rendering";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderingKHR")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderingKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderingInfoKHR* pRenderingInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderingKHR")]
+        [NativeApi(EntryPoint = "vkCmdBeginRenderingKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in RenderingInfoKHR pRenderingInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderingKHR")]
+        [NativeApi(EntryPoint = "vkCmdEndRenderingKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdEndRendering([Count(Count = 0)] CommandBuffer commandBuffer);
 
         public KhrDynamicRendering(INativeContext ctx)

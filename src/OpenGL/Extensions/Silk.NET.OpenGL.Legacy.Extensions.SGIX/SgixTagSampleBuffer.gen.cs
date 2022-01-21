@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_tag_sample_buffer";
-        [NativeApi(EntryPoint = "glTagSampleBufferSGIX")]
+        [NativeApi(EntryPoint = "glTagSampleBufferSGIX", Convention = CallingConvention.Winapi)]
         public partial void TagSampleBuffer();
 
         public SgixTagSampleBuffer(INativeContext ctx)
