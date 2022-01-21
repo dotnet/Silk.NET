@@ -13,7 +13,12 @@ using Silk.NET.OpenGL;
 #endif
 using Silk.NET.Windowing;
 
+
+#if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
+#elif GLES
+namespace Silk.NET.OpenGLES.Extensions.ImGui
+#endif
 {
     public class ImGuiController : IDisposable
     {

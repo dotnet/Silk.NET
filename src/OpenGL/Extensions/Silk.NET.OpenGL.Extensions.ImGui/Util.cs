@@ -6,7 +6,11 @@ using Silk.NET.OpenGLES;
 using Silk.NET.OpenGL;
 #endif
 
+#if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
+#elif GLES
+namespace Silk.NET.OpenGLES.Extensions.ImGui
+#endif
 {
     static class Util
     {

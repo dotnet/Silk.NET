@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DefineConstants>TRACE,GLES</DefineConstants>
+        <DefineConstants>$(DefineConstants);GLES</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DefineConstants>TRACE,GLES</DefineConstants>
+        <DefineConstants>$(DefineConstants);GLES</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
