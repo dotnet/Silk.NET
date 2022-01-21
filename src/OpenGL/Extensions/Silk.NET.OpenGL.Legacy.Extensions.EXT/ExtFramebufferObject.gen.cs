@@ -20,262 +20,262 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtFramebufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_framebuffer_object";
-        [NativeApi(EntryPoint = "glBindFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBindFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFramebuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint framebuffer);
 
-        [NativeApi(EntryPoint = "glBindFramebufferEXT")]
+        [NativeApi(EntryPoint = "glBindFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint framebuffer);
 
-        [NativeApi(EntryPoint = "glBindRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glBindRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BindRenderbuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glBindRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glBindRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void BindRenderbuffer([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glCheckFramebufferStatusEXT")]
+        [NativeApi(EntryPoint = "glCheckFramebufferStatusEXT", Convention = CallingConvention.Winapi)]
         public partial EXT CheckFramebufferStatus([Flow(FlowDirection.In)] EXT target);
 
-        [NativeApi(EntryPoint = "glCheckFramebufferStatusEXT")]
+        [NativeApi(EntryPoint = "glCheckFramebufferStatusEXT", Convention = CallingConvention.Winapi)]
         public partial EXT CheckFramebufferStatus([Flow(FlowDirection.In)] FramebufferTarget target);
 
-        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers);
 
-        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint framebuffers);
 
-        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Framebuffer* framebuffers);
 
-        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Framebuffer framebuffers);
 
-        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* renderbuffers);
 
-        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint renderbuffers);
 
-        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Renderbuffer* renderbuffers);
 
-        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Renderbuffer renderbuffers);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture1DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture1D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture2DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTexture3DEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture3D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int zoffset);
 
-        [NativeApi(EntryPoint = "glGenerateMipmapEXT")]
+        [NativeApi(EntryPoint = "glGenerateMipmapEXT", Convention = CallingConvention.Winapi)]
         public partial void GenerateMipmap([Flow(FlowDirection.In)] EXT target);
 
-        [NativeApi(EntryPoint = "glGenerateMipmapEXT")]
+        [NativeApi(EntryPoint = "glGenerateMipmapEXT", Convention = CallingConvention.Winapi)]
         public partial void GenerateMipmap([Flow(FlowDirection.In)] TextureTarget target);
 
-        [NativeApi(EntryPoint = "glGenFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glGenFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
 
-        [NativeApi(EntryPoint = "glGenFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glGenFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint framebuffers);
 
-        [NativeApi(EntryPoint = "glGenFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glGenFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Framebuffer* framebuffers);
 
-        [NativeApi(EntryPoint = "glGenFramebuffersEXT")]
+        [NativeApi(EntryPoint = "glGenFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Framebuffer framebuffers);
 
-        [NativeApi(EntryPoint = "glGenRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glGenRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
 
-        [NativeApi(EntryPoint = "glGenRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glGenRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint renderbuffers);
 
-        [NativeApi(EntryPoint = "glGenRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glGenRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Renderbuffer* renderbuffers);
 
-        [NativeApi(EntryPoint = "glGenRenderbuffersEXT")]
+        [NativeApi(EntryPoint = "glGenRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Renderbuffer renderbuffers);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetRenderbufferParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glIsFramebufferEXT")]
+        [NativeApi(EntryPoint = "glIsFramebufferEXT", Convention = CallingConvention.Winapi)]
         public partial bool IsFramebuffer([Flow(FlowDirection.In)] uint framebuffer);
 
-        [NativeApi(EntryPoint = "glIsRenderbufferEXT")]
+        [NativeApi(EntryPoint = "glIsRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial bool IsRenderbuffer([Flow(FlowDirection.In)] uint renderbuffer);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageEXT")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageEXT")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageEXT")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageEXT")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         public unsafe void DeleteFramebuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint framebuffers)

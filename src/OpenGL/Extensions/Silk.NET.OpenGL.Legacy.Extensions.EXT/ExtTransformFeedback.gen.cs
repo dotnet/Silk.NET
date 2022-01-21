@@ -20,181 +20,181 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtTransformFeedback : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_transform_feedback";
-        [NativeApi(EntryPoint = "glBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "glBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void BeginTransformFeedback([Flow(FlowDirection.In)] EXT primitiveMode);
 
-        [NativeApi(EntryPoint = "glBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "glBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void BeginTransformFeedback([Flow(FlowDirection.In)] PrimitiveType primitiveMode);
 
-        [NativeApi(EntryPoint = "glBindBufferBaseEXT")]
+        [NativeApi(EntryPoint = "glBindBufferBaseEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferBase([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glBindBufferBaseEXT")]
+        [NativeApi(EntryPoint = "glBindBufferBaseEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glBindBufferOffsetEXT")]
+        [NativeApi(EntryPoint = "glBindBufferOffsetEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferOffset([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset);
 
-        [NativeApi(EntryPoint = "glBindBufferOffsetEXT")]
+        [NativeApi(EntryPoint = "glBindBufferOffsetEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferOffset([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset);
 
-        [NativeApi(EntryPoint = "glBindBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glBindBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glBindBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glBindBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glEndTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "glEndTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void EndTransformFeedback();
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out EXT type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT")]
+        [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingEXT", Convention = CallingConvention.Winapi)]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string name);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT")]
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] EXT bufferMode);
 
-        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT")]
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* varyings, [Flow(FlowDirection.In)] EXT bufferMode);
 
         public unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)

@@ -20,25 +20,25 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_framebuffer_mixed_samples";
-        [NativeApi(EntryPoint = "glCoverageModulationNV")]
+        [NativeApi(EntryPoint = "glCoverageModulationNV", Convention = CallingConvention.Winapi)]
         public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
 
-        [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
+        [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
+        [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
+        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
 
-        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
+        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out float v);
 
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)

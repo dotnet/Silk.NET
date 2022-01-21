@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan.Extensions.AMD
     {
         public const string ExtensionName = "VK_AMD_shader_info";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetShaderInfo([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] nuint* pInfoSize, [Count(Parameter = "pInfoSize")] void* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetShaderInfo<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] nuint* pInfoSize, [Count(Parameter = "pInfoSize")] ref T0 pInfo) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetShaderInfo([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] ref nuint pInfoSize, [Count(Parameter = "pInfoSize")] void* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD", Convention = CallingConvention.Winapi)]
         public partial Result GetShaderInfo<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] ref nuint pInfoSize, [Count(Parameter = "pInfoSize")] ref T0 pInfo) where T0 : unmanaged;
 
         public AmdShaderInfo(INativeContext ctx)

@@ -21,11 +21,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_hand_tracking_mesh";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetHandMeshFB")]
+        [NativeApi(EntryPoint = "xrGetHandMeshFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] HandTrackingMeshFB* mesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetHandMeshFB")]
+        [NativeApi(EntryPoint = "xrGetHandMeshFB", Convention = CallingConvention.Winapi)]
         public partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] ref HandTrackingMeshFB mesh);
 
         public FBHandTrackingMesh(INativeContext ctx)

@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtCompiledVertexArray : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_compiled_vertex_array";
-        [NativeApi(EntryPoint = "glLockArraysEXT")]
+        [NativeApi(EntryPoint = "glLockArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void LockArrays([Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glUnlockArraysEXT")]
+        [NativeApi(EntryPoint = "glUnlockArraysEXT", Convention = CallingConvention.Winapi)]
         public partial void UnlockArrays();
 
         public ExtCompiledVertexArray(INativeContext ctx)

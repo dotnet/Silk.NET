@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_video_encode_queue";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
+        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] VideoEncodeInfoKHR* pEncodeInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
+        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in VideoEncodeInfoKHR pEncodeInfo);
 
         public KhrVideoEncodeQueue(INativeContext ctx)

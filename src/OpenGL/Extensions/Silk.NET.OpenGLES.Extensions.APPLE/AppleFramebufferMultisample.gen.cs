@@ -20,19 +20,19 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
     public unsafe partial class AppleFramebufferMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_framebuffer_multisample";
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] APPLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] APPLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE", Convention = CallingConvention.Winapi)]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
+        [NativeApi(EntryPoint = "glResolveMultisampleFramebufferAPPLE", Convention = CallingConvention.Winapi)]
         public partial void ResolveMultisampleFramebuffer();
 
         public AppleFramebufferMultisample(INativeContext ctx)

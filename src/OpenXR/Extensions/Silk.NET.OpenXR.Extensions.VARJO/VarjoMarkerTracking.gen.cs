@@ -21,39 +21,39 @@ namespace Silk.NET.OpenXR.Extensions.VARJO
     {
         public const string ExtensionName = "XR_VARJO_marker_tracking";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO")]
+        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO")]
+        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] MarkerSpaceCreateInfoVARJO* createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO")]
+        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO")]
+        [NativeApi(EntryPoint = "xrCreateMarkerSpaceVARJO", Convention = CallingConvention.Winapi)]
         public partial Result CreateMarkerSpaceVarjo([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in MarkerSpaceCreateInfoVARJO createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetMarkerSizeVARJO")]
+        [NativeApi(EntryPoint = "xrGetMarkerSizeVARJO", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetMarkerSizeVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] Extent2Df* size);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetMarkerSizeVARJO")]
+        [NativeApi(EntryPoint = "xrGetMarkerSizeVARJO", Convention = CallingConvention.Winapi)]
         public partial Result GetMarkerSizeVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] ref Extent2Df size);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetMarkerTrackingPredictionVARJO")]
+        [NativeApi(EntryPoint = "xrSetMarkerTrackingPredictionVARJO", Convention = CallingConvention.Winapi)]
         public partial Result SetMarkerTrackingPredictionVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] uint enabled);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetMarkerTrackingTimeoutVARJO")]
+        [NativeApi(EntryPoint = "xrSetMarkerTrackingTimeoutVARJO", Convention = CallingConvention.Winapi)]
         public partial Result SetMarkerTrackingTimeoutVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] ulong markerId, [Count(Count = 0)] long timeout);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetMarkerTrackingVARJO")]
+        [NativeApi(EntryPoint = "xrSetMarkerTrackingVARJO", Convention = CallingConvention.Winapi)]
         public partial Result SetMarkerTrackingVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] uint enabled);
 
         public VarjoMarkerTracking(INativeContext ctx)

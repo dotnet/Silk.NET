@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[3])(@this, uSrcSlot, uDstSlot, cbDstOffset);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[3])(@this, uSrcSlot, uDstSlot, cbDstOffset);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[3])(@this, uSrcSlot, uDstSlot, cbDstOffset);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[3])(@this, uSrcSlot, uDstSlot, cbDstOffset);
+            }
+            #endif
             return ret;
         }
 
@@ -121,7 +176,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pName, uDstSlot, cbDstOffset);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pName, uDstSlot, cbDstOffset);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pName, uDstSlot, cbDstOffset);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pName, uDstSlot, cbDstOffset);
+            }
+            #endif
             return ret;
         }
 
@@ -132,7 +198,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pNamePtr = &pName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+                }
+            #endif
             }
             return ret;
         }
@@ -143,7 +220,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
+            }
+            #endif
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
@@ -153,7 +241,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[5])(@this, uSrcSlot, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[5])(@this, uSrcSlot, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[5])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[5])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -162,7 +261,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pName, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pName, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pName, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pName, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -173,7 +283,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pNamePtr = &pName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -184,7 +305,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            #endif
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
@@ -194,7 +326,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[7])(@this, uSrcSlot, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[7])(@this, uSrcSlot, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[7])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[7])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -203,7 +346,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pName, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pName, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pName, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pName, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -214,7 +368,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pNamePtr = &pName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -225,7 +390,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            #endif
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
@@ -235,7 +411,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[9])(@this, uSrcSlot, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[9])(@this, uSrcSlot, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[9])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[9])(@this, uSrcSlot, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -244,7 +431,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pName, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pName, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pName, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pName, uDstSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -255,7 +453,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pNamePtr = &pName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -266,7 +475,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
+            }
+            #endif
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
@@ -276,7 +496,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[11])(@this, uSrcSrvSlot, uDstUavSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[11])(@this, uSrcSrvSlot, uDstUavSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[11])(@this, uSrcSrvSlot, uDstUavSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, uint, uint, uint, int>)LpVtbl[11])(@this, uSrcSrvSlot, uDstUavSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -285,7 +516,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvName, uDstUavSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvName, uDstUavSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvName, uDstUavSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvName, uDstUavSlot, uCount);
+            }
+            #endif
             return ret;
         }
 
@@ -296,7 +538,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pSrvNamePtr = &pSrvName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+                }
+            #endif
             }
             return ret;
         }
@@ -307,7 +560,18 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pSrvNamePtr = (byte*) SilkMarshal.StringToPtr(pSrvName, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
+            }
+            #endif
             SilkMarshal.Free((nint)pSrvNamePtr);
             return ret;
         }

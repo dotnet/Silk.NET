@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_blend_equation_advanced";
-        [NativeApi(EntryPoint = "glBlendBarrierNV")]
+        [NativeApi(EntryPoint = "glBlendBarrierNV", Convention = CallingConvention.Winapi)]
         public partial void BlendBarrier();
 
-        [NativeApi(EntryPoint = "glBlendParameteriNV")]
+        [NativeApi(EntryPoint = "glBlendParameteriNV", Convention = CallingConvention.Winapi)]
         public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 
         public NVBlendEquationAdvanced(INativeContext ctx)

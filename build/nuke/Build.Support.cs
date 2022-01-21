@@ -4,15 +4,23 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Microsoft.Build.Locator;
 using Nuke.Common;
+using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
+using Octokit;
+using Octokit.Internal;
 
 partial class Build
 {
+    static readonly Regex PrRegex = new("refs\\/pull\\/([0-9]+).*", RegexOptions.Compiled);
+
     /// Support plugins are available for:
     ///   - JetBrains ReSharper        https://nuke.build/resharper
     ///   - JetBrains Rider            https://nuke.build/rider
@@ -30,10 +38,10 @@ partial class Build
         return idx;
     }
 
-    [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
+    [Nuke.Common.Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly string Configuration = IsLocalBuild ? "Debug" : "Release";
 
-    [Parameter("Extra properties passed to MSBuild commands")]
+    [Nuke.Common.Parameter("Extra properties passed to MSBuild commands")]
     readonly string[] MsbuildProperties = Array.Empty<string>();
 
     [Solution] readonly Solution OriginalSolution;
@@ -76,4 +84,70 @@ partial class Build
             return actualTarget is null ? def : actualTarget(def);
         }
     );
+
+    async Task AddOrUpdatePrComment(string type, string file, bool editOnly = false, params KeyValuePair<string, string>[] subs)
+    {;
+        var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
+        if (string.IsNullOrWhiteSpace(githubToken))
+        {
+            Logger.Info("GitHub token not found, skipping writing a comment.");
+            return;
+        }
+        
+        var @ref = GitHubActions.Instance.GitHubRef;
+        if (string.IsNullOrWhiteSpace(@ref))
+        {
+            Logger.Info("Not running in GitHub Actions, skipping writing a comment.");
+            return;
+        }
+
+        var prMatch = PrRegex.Match(@ref);
+        if (!prMatch.Success || prMatch.Groups.Count < 2)
+        {
+            Logger.Info($"Couldn't match {@ref} to a PR, skipping writing a comment.");
+            return;
+        }
+
+        if (!int.TryParse(prMatch.Groups[1].Value, out var pr))
+        {
+            Logger.Info($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
+            return;
+        }
+        
+        var github = new GitHubClient
+        (
+            new ProductHeaderValue("Silk.NET-CI"),
+            new InMemoryCredentialStore(new Credentials(githubToken))
+        );
+
+        var existingComment = (await github.Issue.Comment.GetAllForIssue("dotnet", "Silk.NET", pr))
+            .FirstOrDefault(x => x.Body.Contains($"`{type}`") && x.User.Name == "github-actions[bot]");
+        if (existingComment is null && editOnly)
+        {
+            Logger.Info("Edit only mode is on and no existing comment found, skipping writing a comment.");
+            return;
+        }
+
+        var commentDir = RootDirectory / "build" / "comments";
+        var commentText = await File.ReadAllTextAsync(commentDir / $"{file}.md") +
+                          await File.ReadAllTextAsync(commentDir / "footer.md");
+        foreach (var (key, value) in subs)
+        {
+            commentText = commentText.Replace($"{{{key}}}", value);
+        }
+        
+        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance.GitHubRunNumber)
+            .Replace("{typeId}", type);
+
+        if (existingComment is not null)
+        {
+            Logger.Info("Updated the comment on the PR.");
+            await github.Issue.Comment.Update("dotnet", "Silk.NET", existingComment.Id, commentText);
+        }
+        else
+        {
+            Logger.Info("Added a comment to the PR.");
+            await github.Issue.Comment.Create("dotnet", "Silk.NET", pr, commentText);
+        }
+    }
 }

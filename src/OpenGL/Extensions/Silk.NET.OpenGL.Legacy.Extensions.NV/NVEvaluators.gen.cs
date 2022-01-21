@@ -20,256 +20,256 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVEvaluators : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_evaluators";
-        [NativeApi(EntryPoint = "glEvalMapsNV")]
+        [NativeApi(EntryPoint = "glEvalMapsNV", Convention = CallingConvention.Winapi)]
         public partial void EvalMap([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glEvalMapsNV")]
+        [NativeApi(EntryPoint = "glEvalMapsNV", Convention = CallingConvention.Winapi)]
         public partial void EvalMap([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] EvalMapsModeNV mode);
 
-        [NativeApi(EntryPoint = "glEvalMapsNV")]
+        [NativeApi(EntryPoint = "glEvalMapsNV", Convention = CallingConvention.Winapi)]
         public partial void EvalMap([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glEvalMapsNV")]
+        [NativeApi(EntryPoint = "glEvalMapsNV", Convention = CallingConvention.Winapi)]
         public partial void EvalMap([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] EvalMapsModeNV mode);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapAttribParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapAttribParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapAttribParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] void* points);
 
-        [NativeApi(EntryPoint = "glGetMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glGetMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target"), Flow(FlowDirection.Out)] out T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterivNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
 
-        [NativeApi(EntryPoint = "glMapControlPointsNV")]
+        [NativeApi(EntryPoint = "glMapControlPointsNV", Convention = CallingConvention.Winapi)]
         public partial void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] Boolean packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] in T0 points) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterivNV")]
+        [NativeApi(EntryPoint = "glMapParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glMapParameterfvNV")]
+        [NativeApi(EntryPoint = "glMapParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] in float @params);
 
         public NVEvaluators(INativeContext ctx)

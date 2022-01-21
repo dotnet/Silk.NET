@@ -134,7 +134,7 @@ namespace Silk.NET.Core.Native
                 return BStrToMemory(Marshal.StringToBSTR(input), input.Length);
             }
             
-            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input));
+            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input, encoding));
             StringIntoSpan(input, memory.AsSpan<byte>(), encoding);
             return memory;
         }

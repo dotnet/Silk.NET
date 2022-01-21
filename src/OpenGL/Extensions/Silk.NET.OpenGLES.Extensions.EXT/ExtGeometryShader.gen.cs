@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtGeometryShader : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_geometry_shader";
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
+        [NativeApi(EntryPoint = "glFramebufferTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         public ExtGeometryShader(INativeContext ctx)

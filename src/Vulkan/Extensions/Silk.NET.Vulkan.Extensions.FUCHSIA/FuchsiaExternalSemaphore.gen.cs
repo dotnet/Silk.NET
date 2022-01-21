@@ -21,27 +21,27 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
     {
         public const string ExtensionName = "VK_FUCHSIA_external_semaphore";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetZirconHandleInfoFUCHSIA* pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ImportSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportSemaphoreZirconHandleInfoFUCHSIA* pImportSemaphoreZirconHandleInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA")]
+        [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result ImportSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImportSemaphoreZirconHandleInfoFUCHSIA pImportSemaphoreZirconHandleInfo);
 
         public FuchsiaExternalSemaphore(INativeContext ctx)

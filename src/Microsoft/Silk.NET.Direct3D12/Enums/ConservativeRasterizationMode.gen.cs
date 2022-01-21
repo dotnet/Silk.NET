@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_CONSERVATIVE_RASTERIZATION_MODE")]
     public enum ConservativeRasterizationMode : int
     {

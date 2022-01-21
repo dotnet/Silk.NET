@@ -140,10 +140,10 @@ namespace Silk.NET.Vulkan.Video
         
         [NativeName("Type", "StdVideoH265SubLayerHrdParameters *[7]")]
         [NativeName("Type.Name", "StdVideoH265SubLayerHrdParameters *[7]")]
-        [NativeName("Name", "SubLayerHrdParametersNal")]
-        public SubLayerHrdParametersNalBuffer SubLayerHrdParametersNal;
+        [NativeName("Name", "pSubLayerHrdParametersNal")]
+        public PSubLayerHrdParametersNalBuffer PSubLayerHrdParametersNal;
 
-        public struct SubLayerHrdParametersNalBuffer
+        public struct PSubLayerHrdParametersNalBuffer
         {
             public StdVideoH265SubLayerHrdParameters* Element0;
             public StdVideoH265SubLayerHrdParameters* Element1;
@@ -172,10 +172,10 @@ namespace Silk.NET.Vulkan.Video
         
         [NativeName("Type", "StdVideoH265SubLayerHrdParameters *[7]")]
         [NativeName("Type.Name", "StdVideoH265SubLayerHrdParameters *[7]")]
-        [NativeName("Name", "SubLayerHrdParametersVcl")]
-        public SubLayerHrdParametersVclBuffer SubLayerHrdParametersVcl;
+        [NativeName("Name", "pSubLayerHrdParametersVcl")]
+        public PSubLayerHrdParametersVclBuffer PSubLayerHrdParametersVcl;
 
-        public struct SubLayerHrdParametersVclBuffer
+        public struct PSubLayerHrdParametersVclBuffer
         {
             public StdVideoH265SubLayerHrdParameters* Element0;
             public StdVideoH265SubLayerHrdParameters* Element1;

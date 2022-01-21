@@ -20,1321 +20,1321 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrCommandBuffer : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_command_buffer";
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR")]
+        [NativeApi(EntryPoint = "clCommandBarrierWithWaitListKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandBarrierWithWaitList([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandCopyBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferRectKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandCopyBufferRect([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint src_row_pitch, [Flow(FlowDirection.In)] nuint src_slice_pitch, [Flow(FlowDirection.In)] nuint dst_row_pitch, [Flow(FlowDirection.In)] nuint dst_slice_pitch, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyBufferToImageKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandCopyBufferToImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_buffer, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint src_offset, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandCopyImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_image, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint dst_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] nuint* src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandCopyImageToBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandCopyImageToBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint src_image, [Flow(FlowDirection.In)] nint dst_buffer, [Flow(FlowDirection.In)] in nuint src_origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] nuint dst_offset, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillBufferKHR")]
+        [NativeApi(EntryPoint = "clCommandFillBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandFillBuffer<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in T0 pattern, [Flow(FlowDirection.In)] nuint pattern_size, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] nuint* origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] nuint* region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandFillImageKHR")]
+        [NativeApi(EntryPoint = "clCommandFillImageKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandFillImage<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in T0 fill_color, [Flow(FlowDirection.In)] in nuint origin, [Flow(FlowDirection.In)] in nuint region, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] nuint* global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] nuint* global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] nuint* local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] uint* sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] uint* sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] nint* mutable_handle);
 
-        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR")]
+        [NativeApi(EntryPoint = "clCommandNDRangeKernelKHR", Convention = CallingConvention.Winapi)]
         public partial int CommandNdrangeKernel([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] in nuint global_work_offset, [Flow(FlowDirection.In)] in nuint global_work_size, [Flow(FlowDirection.In)] in nuint local_work_size, [Flow(FlowDirection.In)] uint num_sync_points_in_wait_list, [Flow(FlowDirection.In)] in uint sync_point_wait_list, [Flow(FlowDirection.Out)] out uint sync_point, [Flow(FlowDirection.Out)] out nint mutable_handle);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] nint* queues, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] nint* queues, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] nint* queues, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] nint* queues, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] in nint queues, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] in nint queues, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] in nint queues, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public partial nint CreateCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.In)] in nint queues, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] nint* queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] nint* queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] nint* queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] nint* queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] out nint queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] out nint queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] out nint queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clEnqueueCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int EnqueueCommandBuffer([Flow(FlowDirection.In)] uint num_queues, [Flow(FlowDirection.Out)] out nint queues, [Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clFinalizeCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clFinalizeCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int FinalizeCommandBuffer([Flow(FlowDirection.In)] nint command_buffer);
 
-        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR")]
+        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetCommandBufferInfo([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR")]
+        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetCommandBufferInfo([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
-        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR")]
+        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetCommandBufferInfo<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR")]
+        [NativeApi(EntryPoint = "clGetCommandBufferInfoKHR", Convention = CallingConvention.Winapi)]
         public partial int GetCommandBufferInfo<T0>([Flow(FlowDirection.In)] nint command_buffer, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clReleaseCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clReleaseCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int ReleaseCommandBuffer([Flow(FlowDirection.In)] nint command_buffer);
 
-        [NativeApi(EntryPoint = "clRetainCommandBufferKHR")]
+        [NativeApi(EntryPoint = "clRetainCommandBufferKHR", Convention = CallingConvention.Winapi)]
         public partial int RetainCommandBuffer([Flow(FlowDirection.In)] nint command_buffer);
 
         public KhrCommandBuffer(INativeContext ctx)
