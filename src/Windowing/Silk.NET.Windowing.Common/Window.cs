@@ -28,6 +28,25 @@ namespace Silk.NET.Windowing
 
         internal static string DefaultWindowClass { get; }
 
+        private static string PlatformsStr
+        {
+            get
+            {
+                var thePlatforms = string.Join
+                (
+                    ", ",
+                    Platforms.Select
+                    (
+                        x => x.GetType().Name + (x.IsViewOnly ? " - view only" :
+                            !x.IsApplicable ? " - not applicable" : string.Empty)
+                    )
+                );
+                return Platforms.Count == 0
+                    ? "(none registered) "
+                    : $"({thePlatforms}) ";
+            }
+        }
+
         static Window()
         {
             var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
@@ -72,7 +91,8 @@ namespace Silk.NET.Windowing
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
-            "https://docs.ultz.co.uk/silk.net/windowing/troubleshooting.html"
+            PlatformsStr +
+            "https://dotnet.github.io/Silk.NET/docs/hlu/troubleshooting.html"
         );
 
         /// <summary>
@@ -96,6 +116,8 @@ namespace Silk.NET.Windowing
         /// Gets whether this platform only supports window views. If false, this means that you may use desktop
         /// functionality with your applications.
         /// </summary>
+        // NOTE: Making this a scalar boolean was a mistake, as there's no good way to say "well there's no platforms so
+        // I don't know what to tell you". Next time a blue moon rolls around this should be a bool?.
         public static bool IsViewOnly
         {
             get
@@ -124,11 +146,16 @@ namespace Silk.NET.Windowing
                 throw NoPlatformException;
             }
 
+            if (!Platforms.Any(x => x.IsApplicable))
+            {
+                throw NoPlatformException;
+            }
+
             if (IsViewOnly)
             {
                 throw new NotSupportedException
                 (
-                    "The currently bound window platform(s) only support views, " +
+                    $"The currently bound window platform(s) {PlatformsStr}only support views, " +
                     "instead of windows. Use the view APIs instead."
                 );
             }
