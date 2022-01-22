@@ -79,7 +79,6 @@ Prerequisites
 
 Instructions
 - Clone the repository (recursively)
-- Install Nuke using `dotnet tool install Nuke.GlobalTool --global` if you haven't already.
 - Run build.sh, build.cmd, build.ps1, or `nuke compile`.
 - Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
 
