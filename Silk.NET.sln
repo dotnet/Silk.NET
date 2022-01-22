@@ -480,6 +480,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonAsciiWindow", "src\Lab\Experiments\NonAsciiWindow\NonAsciiWindow.csproj", "{2517B906-4B93-4B5F-8D18-AFB2BAB26121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ImGui\Silk.NET.OpenGLES.Extensions.ImGui.csproj", "{62513482-8713-4568-9086-247FE554B4E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2889,6 +2891,18 @@ Global
 		{2517B906-4B93-4B5F-8D18-AFB2BAB26121}.Release|x64.Build.0 = Release|Any CPU
 		{2517B906-4B93-4B5F-8D18-AFB2BAB26121}.Release|x86.ActiveCfg = Release|Any CPU
 		{2517B906-4B93-4B5F-8D18-AFB2BAB26121}.Release|x86.Build.0 = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|x64.Build.0 = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Debug|x86.Build.0 = Debug|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|x64.ActiveCfg = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|x64.Build.0 = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{62513482-8713-4568-9086-247FE554B4E4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3121,6 +3135,7 @@ Global
 		{2B4B5BF6-180E-4867-A4D1-664E522FC778} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{88142694-C095-4F56-B11D-9C8FC5EFC529} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{2517B906-4B93-4B5F-8D18-AFB2BAB26121} = {39B598E9-44BA-4A61-A1BB-7C543734DBA6}
+		{62513482-8713-4568-9086-247FE554B4E4} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}

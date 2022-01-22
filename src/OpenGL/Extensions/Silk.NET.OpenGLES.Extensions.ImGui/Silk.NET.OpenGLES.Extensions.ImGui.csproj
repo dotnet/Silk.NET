@@ -7,19 +7,23 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <DefineConstants>$(DefineConstants);GL</DefineConstants>
+        <DefineConstants>$(DefineConstants);GLES</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <DefineConstants>$(DefineConstants);GL</DefineConstants>
+        <DefineConstants>$(DefineConstants);GLES</DefineConstants>
     </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\Silk.NET.OpenGL.Extensions.ImGui\*.cs" />
+    </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\Input\Extensions\Silk.NET.Input.Extensions\Silk.NET.Input.Extensions.csproj" />
         <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
-        <ProjectReference Include="..\..\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+        <ProjectReference Include="..\..\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
-        <PackageReference Include="ImGui.NET" Version="1.86.0" />
+        <PackageReference Include="ImGui.NET" Version="1.78.0" />
     </ItemGroup>
 
     <Import Project="..\..\..\..\build\props\common.props" />
