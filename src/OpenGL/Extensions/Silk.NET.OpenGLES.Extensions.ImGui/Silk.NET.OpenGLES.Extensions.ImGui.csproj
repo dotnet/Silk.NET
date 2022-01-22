@@ -15,6 +15,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="..\Silk.NET.OpenGL.Extensions.ImGui\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
         <ProjectReference Include="..\..\..\Input\Extensions\Silk.NET.Input.Extensions\Silk.NET.Input.Extensions.csproj" />
         <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
         <ProjectReference Include="..\..\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
