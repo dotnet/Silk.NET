@@ -71,6 +71,7 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 Prerequisites
 - **Must**: .NET 6 SDK
+- **Should**: Nuke (build system)
 - **Should**: Android (w/ AOT), iOS, and MAUI .NET 6 workloads (use `dotnet workload install android android-aot ios maui` to install them)
 - **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
@@ -78,6 +79,7 @@ Prerequisites
 
 Instructions
 - Clone the repository (recursively)
+- Install Nuke using `dotnet tool install Nuke.GlobalTool --global`
 - Run build.sh, build.cmd, build.ps1, or `nuke compile`.
 - Use the DLLs. To get nupkgs you can use with NuGet instead, use `nuke pack`.
 
