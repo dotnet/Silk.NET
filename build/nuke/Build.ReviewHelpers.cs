@@ -12,10 +12,10 @@ partial class Build
     // ReSharper disable once RedundantEmptyObjectOrCollectionInitializer
     readonly HashSet<string> AllowedExclusions = new()
     {
-		"templates/Silk.NET.Templates/templates/silkwindow/silkwindow.csproj",
-		"templates/Silk.NET.Templates/templates/silkglwindow/silkglwindow.csproj",
-		"templates/Silk.NET.Templates/templates/silkglgame/silkglgame.csproj",
-		"templates/Silk.NET.Templates/templates/silkgltriangle/silkgltriangle.csproj"
+		"silkwindow",
+		"silkglwindow",
+		"silkglgame",
+		"silkgltriangle"
     };
 
     Target ValidateSolution => CommonTarget
@@ -24,7 +24,7 @@ partial class Build
         (
             () =>
             {
-                var files = RootDirectory.GlobFiles("**/*.csproj").ToArray();
+                var files = RootDirectory.GlobFiles("**\\*.csproj").ToArray();
                 Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
                 var missedOut = new List<string>();
                 foreach (var file in files)
