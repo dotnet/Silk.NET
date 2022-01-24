@@ -3,11 +3,9 @@
   <PropertyGroup>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
-    <PackageId>Silk.NET.Templates</PackageId>
-    <Title>Silk.NET Project Templates</Title>
-    <Authors>.NET Foundation and Contributors</Authors>
-    <Description>A package with template projects for Silk.NET.</Description>
+    <SilkDescription>A package with template projects for Silk.NET.</SilkDescription>
+    <SilkExtendedDescription>This is a quick and easy way to get started with Silk.NET. First, install the templates using `dotnet new --install Silk.NET.Templates`, and then create a project using these templates:%0a- **OpenGL (with a triangle)**: `dotnet new opengltriangle`%0a**OpenGL (blank)**: `dotnet new opengl`%0a- **Blank Window**: `dotnet new silkwindow`</SilkExtendedDescription>
+    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
 
     <TargetFramework>netstandard2.0</TargetFramework>
 
@@ -21,4 +19,6 @@
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
   </ItemGroup>
 
+  <Import Project="../../build/props/common.props"/>
+  
 </Project>
