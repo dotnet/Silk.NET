@@ -12,6 +12,10 @@ partial class Build
     // ReSharper disable once RedundantEmptyObjectOrCollectionInitializer
     readonly HashSet<string> AllowedExclusions = new()
     {
+		"templates/Silk.NET.Templates/templates/silkwindow/silkwindow.csproj",
+		"templates/Silk.NET.Templates/templates/silkglwindow/silkglwindow.csproj",
+		"templates/Silk.NET.Templates/templates/silkglgame/silkglgame.csproj",
+		"templates/Silk.NET.Templates/templates/silkgltriangle/silkgltriangle.csproj"
     };
 
     Target ValidateSolution => CommonTarget
