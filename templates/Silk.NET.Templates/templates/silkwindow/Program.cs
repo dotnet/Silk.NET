@@ -18,7 +18,7 @@ window.Update += deltaSeconds =>
 
 window.Render += deltaSeconds =>
 {
-    // ran every frame but after update - use this event to draw,.
+    // ran every frame but after update - use this event to draw.
 };
 
 window.FramebufferResize += newSize =>
