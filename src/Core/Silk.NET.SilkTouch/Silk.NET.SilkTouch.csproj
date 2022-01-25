@@ -6,6 +6,7 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SilkEnableSourceLink>false</SilkEnableSourceLink>
     <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+    <Configurations>Debug;Release;DebugAnalyzer</Configurations>
   </PropertyGroup>
 
     <PropertyGroup>

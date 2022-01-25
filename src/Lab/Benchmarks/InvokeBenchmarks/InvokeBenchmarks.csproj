@@ -5,6 +5,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>9</LangVersion>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
 
     <ItemGroup>

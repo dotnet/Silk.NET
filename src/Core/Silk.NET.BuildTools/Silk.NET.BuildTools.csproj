@@ -10,6 +10,7 @@
 
         <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
         <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
 
     <ItemGroup>

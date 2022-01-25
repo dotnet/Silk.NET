@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <SilkNativePackage>true</SilkNativePackage>
+    <Configurations>Debug;Release;DebugAnalyzer</Configurations>
   </PropertyGroup>
 
   <Import Project="..\..\..\build\props\common.props" />

@@ -5,6 +5,7 @@
     <OutputType>Exe</OutputType>
     <RuntimeIdentifiers>android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;DebugAnalyzer</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="shader.frag" />

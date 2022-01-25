@@ -6,6 +6,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <RootNamespace>Silk.NET.Windowing</RootNamespace>
         <Nullable>enable</Nullable>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
 
     <ItemGroup>

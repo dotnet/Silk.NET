@@ -4,6 +4,7 @@
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;DebugAnalyzer</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="shader.frag" />

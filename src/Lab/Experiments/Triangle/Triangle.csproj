@@ -6,6 +6,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
 
     <ItemGroup>

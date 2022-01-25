@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>preview</LangVersion>
+		<Configurations>Debug;Release;DebugAnalyzer</Configurations>
   </PropertyGroup>
 
 	<ItemGroup>

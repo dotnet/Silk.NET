@@ -6,6 +6,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
         <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
     
     <ItemGroup>

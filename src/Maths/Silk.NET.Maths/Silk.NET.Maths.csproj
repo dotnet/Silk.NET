@@ -13,6 +13,7 @@
         <DefineConstants Condition="'$(TargetFramework)' == 'net5.0'">$(DefineConstants);POH;AdvSIMD</DefineConstants>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
 
     <ItemGroup>

@@ -4,6 +4,7 @@
         <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
     
     <ItemGroup>
