@@ -19,6 +19,6 @@
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
   </ItemGroup>
 
-  <Import Project="../../build/props/common.props"/>
+  <Import Project="..\..\..\build\props\common.props"/>
   
 </Project>
