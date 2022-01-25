@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -318,13 +318,6 @@ namespace Silk.NET.SilkTouch
                     )
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
             );
-
-            var p = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "silktouch.lock");
-            if (!File.Exists(p))
-            {
-                File.WriteAllText(p, "");
-                Debugger.Launch();
-            }
 
             vTableMembers.Add
             (

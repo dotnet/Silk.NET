@@ -30,6 +30,15 @@ namespace Silk.NET.SilkTouch
 
         public void Execute(GeneratorExecutionContext context)
         {
+#if DEBUGANALYZER
+            var p = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "silktouch.lock");
+            if (!File.Exists(p))
+            {
+                File.WriteAllText(p, "");
+                Debugger.Launch();
+            }
+#endif
+
             if (!context.Compilation.ReferencedAssemblyNames.Any
                 (ai => ai.Name.Equals("Silk.NET.Core", StringComparison.OrdinalIgnoreCase)))
             {
@@ -157,11 +166,11 @@ namespace Silk.NET.SilkTouch
             
             bool compactFileFormat;
 
-            #if DEBUG
+#if DEBUG
             compactFileFormat = true;
-            #else
+#else
             compactFileFormat = false;
-            #endif
+#endif
             
             if (sourceContext.AnalyzerConfigOptions.GetOptions
                     (classDeclarations.First().Item1.SyntaxTree)
