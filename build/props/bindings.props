@@ -5,6 +5,7 @@
     </ItemGroup>
     <PropertyGroup>
         <SilkPublicApiExempt>true</SilkPublicApiExempt>
+        <Configurations>Debug;Release;DebugAnalyzer</Configurations>
     </PropertyGroup>
     <Import Project="common.props" />
 </Project>
