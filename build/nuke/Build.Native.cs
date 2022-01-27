@@ -99,4 +99,41 @@ partial class Build
                 }
             )
     );
+
+    AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
+    Target GLFW => CommonTarget
+    (
+        x => x.Before(Compile)
+            .Executes
+            (
+                () =>
+                {
+                    var @out = GLFWPath / "build";
+                    EnsureCleanDirectory(@out);
+                    var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
+                    InheritedShell
+                    (
+                        $"cmake -S . -B build/ -D BUILD_SHARED_EXAMPLES=OFF -DCMAKE_BUILD_TYPE=Release{abi}",
+                        GLFWPath
+                    ).AssertZeroExitCode();
+                    InheritedShell("cmake --build build --config Release", GLFWPath)
+                        .AssertZeroExitCode();
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
+                    if (OperatingSystem.IsWindows())
+                    {
+                        CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x64" / "native");
+                        CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x86" / "native");
+                    }
+                    else
+                    {
+                        CopyAll
+                        (
+                            @out.GlobFiles("libglfw.so.3", "libglfw.3.dylib"),
+                            runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
+                        );
+                    }
+                }
+            )
+    );
+
 }

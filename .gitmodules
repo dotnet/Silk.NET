@@ -4,3 +4,6 @@
 [submodule "build/submodules/Vulkan-Headers"]
 	path = build/submodules/Vulkan-Headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers
+[submodule "build/submodules/GLFW"]
+	path = build/submodules/GLFW
+	url = https://github.com/glfw/glfw.git
