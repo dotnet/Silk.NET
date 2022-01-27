@@ -113,10 +113,10 @@ partial class Build
                     var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
                     InheritedShell
                     (
-                        $"cmake -S . -B build/ -D BUILD_SHARED_EXAMPLES=OFF -DCMAKE_BUILD_TYPE=Release{abi}",
+                        $"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release{abi}",
                         GLFWPath
                     ).AssertZeroExitCode();
-                    InheritedShell("cmake --build build --config Release", GLFWPath)
+                    InheritedShell("cmake --build build", GLFWPath)
                         .AssertZeroExitCode();
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
