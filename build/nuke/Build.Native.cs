@@ -115,18 +115,18 @@ partial class Build
                     {
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A X64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x64" / "native");
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
                         
                         EnsureCleanDirectory(@out);
                         
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A Win32", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x86" / "native");
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
                     }
                     else if (OperatingSystem.IsLinux())
                     {
@@ -134,7 +134,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell("cmake --build build", GLFWPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("libglfw.so"), runtimes / "linux-x64" / "native");
+                        CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
@@ -143,7 +143,7 @@ partial class Build
                         InheritedShell("cmake --build build", GLFWPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("libglfw.so"), runtimes / "linux-x86" / "native");
+                        CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x86" / "native");
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
