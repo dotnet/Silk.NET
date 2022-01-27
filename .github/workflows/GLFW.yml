@@ -1,9 +1,6 @@
 name: glfw
 on:
   push:
-    paths:
-      - build/submodules/GLFW
-      - build/nuke/Build.Native.cs
     branches-ignore:
       - "ci/*"
       - "develop/*"
