@@ -130,7 +130,7 @@ partial class Build
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A -m64", GLFWPath)
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
                             .AssertZeroExitCode();
                         InheritedShell("cmake --build build", GLFWPath)
                             .AssertZeroExitCode();
@@ -138,7 +138,7 @@ partial class Build
 
                         EnsureCleanDirectory(@out);
                         
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A -m32", GLFWPath)
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_SYSTEM_PROCESSOR=i368", GLFWPath)
                             .AssertZeroExitCode();
                         InheritedShell("cmake --build build", GLFWPath)
                             .AssertZeroExitCode();
