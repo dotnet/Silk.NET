@@ -110,28 +110,60 @@ partial class Build
                 {
                     var @out = GLFWPath / "build";
                     EnsureCleanDirectory(@out);
-                    var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
-                    InheritedShell
-                    (
-                        $"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release{abi}",
-                        GLFWPath
-                    ).AssertZeroExitCode();
-                    InheritedShell("cmake --build build", GLFWPath)
-                        .AssertZeroExitCode();
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
+                    var runtimes = GLFWPath / "compiled"; // testing
                     if (OperatingSystem.IsWindows())
                     {
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A X64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x64" / "native");
+                        
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A Win32", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
+                        
                         CopyAll(@out.GlobFiles("Release/glfw3.dll"), runtimes / "win-x86" / "native");
                     }
-                    else
+                    else if (OperatingSystem.IsLinux())
                     {
-                        CopyAll
-                        (
-                            @out.GlobFiles("libglfw.so.3", "libglfw.3.dylib"),
-                            runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
-                        );
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A -m64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("libglfw.so"), runtimes / "linux-x64" / "native");
+
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A -m32", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
+                        
+                        CopyAll(@out.GlobFiles("libglfw.so"), runtimes / "linux-x86" / "native");
                     }
+                    else if (OperatingSystem.IsMacOS())
+                    {
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
+
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell("cmake --build build", GLFWPath)
+                            .AssertZeroExitCode();
+                        
+                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
+                    }
+                    
+                    //var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                 }
             )
     );
