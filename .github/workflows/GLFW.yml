@@ -41,3 +41,6 @@ jobs:
           dotnet-version: 6.0.100
       - name: Build GLFW
         run: ${{ matrix.env.nuke_invoke }} glfw
+      - uses: actions/upload-artifact@v2
+        with:
+          path: build/submodules/GLFW/build/src
