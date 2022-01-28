@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -110,7 +110,7 @@ partial class Build
                 {
                     var @out = GLFWPath / "build";
                     EnsureCleanDirectory(@out);
-                    var runtimes = GLFWPath / "compiled"; // testing
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A X64", GLFWPath)
@@ -132,7 +132,7 @@ partial class Build
                     {
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
 
@@ -140,7 +140,7 @@ partial class Build
                         
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_SYSTEM_PROCESSOR=i368", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
                         
                         CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x86" / "native");
@@ -149,7 +149,7 @@ partial class Build
                     {
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
 
@@ -157,13 +157,11 @@ partial class Build
                         
                         InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build", GLFWPath)
+                        InheritedShell("cmake --build build --config Release", GLFWPath)
                             .AssertZeroExitCode();
                         
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
                     }
-                    
-                    //var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                 }
             )
     );
