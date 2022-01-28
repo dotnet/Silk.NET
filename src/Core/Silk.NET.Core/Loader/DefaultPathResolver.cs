@@ -42,10 +42,16 @@ namespace Silk.NET.Core.Loader
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
             }
-            
-            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
-            if (AppContext.BaseDirectory != Process.GetCurrentProcess().MainModule?.FileName &&
-                mainModFname is not null)
+
+            string mainModFname = null;
+            try
+            {
+                mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+            }
+            catch
+            { /* Target doesn't support Process.GetCurrentProcess for some reason */}
+
+            if (mainModFname is not null && AppContext.BaseDirectory != Process.GetCurrentProcess().MainModule?.FileName)
             {
                 mainModFname = Path.GetDirectoryName(mainModFname);
                 if (mainModFname is not null)

@@ -29,6 +29,6 @@ namespace Silk.NET.GLFW
         public override string Windows86 => "glfw3.dll";
 
         /// <inheritdoc />
-        public override string Browser => "glfw3.wasm";
+        public override string Browser => "glfw3-wasm";
     }
 }

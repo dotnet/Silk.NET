@@ -16,6 +16,11 @@ namespace Silk.NET.GLFW
     /// Provides access to the GLFW API.
     /// </summary>
     //public partial class Glfw : NativeAPI, IGlfw
+    
+#if WASM_SUPPORT
+    [PInvokeOverride(1, "glfw3-wasm")]
+#endif
+    
     [NativeApi(Prefix = "glfw")]
     public partial class Glfw : NativeAPI
     {

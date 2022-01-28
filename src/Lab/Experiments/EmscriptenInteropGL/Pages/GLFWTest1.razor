@@ -3,6 +3,7 @@
 @using Silk.NET.Core.Native
 @using Silk.NET.GLFW
 @using System.Runtime.CompilerServices
+@using System.Diagnostics
 <h3>OpenGLTest1</h3>
 
 @code {
@@ -12,6 +13,7 @@
 
     protected override unsafe void OnInitialized()
     {
+        Console.WriteLine("Getting API");
         var glfw = Glfw.GetApi();
         Console.WriteLine("Setting error callback");
         glfw.SetErrorCallback((delegate* unmanaged[Cdecl]<int, void*, void>)&ErrorCallback);

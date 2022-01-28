@@ -17,7 +17,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
         /// <inheritdoc />
         public TypeDeclarationSyntax Type(OverrideContext ctx)
         {
-            var canUseCorrectCallConv = ctx.IsNet5OrGreater;
+            var canUseCorrectCallConv = false;
             static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members, bool canUseCorrectCallConv)
             {
                 members.Add(NativeContextOverrideHelper.GetProcAddress);
@@ -68,7 +68,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 );
             }
 
-            MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint, bool callConvCorrection = false)
+            MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint, bool callConvCorrection)
             {
                 var ret = MethodDeclaration
                 (
@@ -269,7 +269,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
 
             var v = ctx.EntryPoints.Distinct(new NameComparer()).ToArray();
             var members = new List<MemberDeclarationSyntax>();
-            members.AddRange(v.Select(x => GetMethodFromEntrypoint(x)));
+            members.AddRange(v.Select(x => GetMethodFromEntrypoint(x, false)));
             if (!canUseCorrectCallConv)
             {
                 members.AddRange(v.Select(x => GetMethodFromEntrypoint(x, true)));
