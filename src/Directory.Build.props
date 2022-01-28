@@ -18,6 +18,11 @@
         <SilkDocumentationDir>$(MSBuildThisFileDirectory)../documentation</SilkDocumentationDir>
         <SilkTestsDir>$(MSBuildThisFileDirectory)../documentation</SilkTestsDir>
     </PropertyGroup>
+    <!-- Compiler Options -->
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <SilkDocumentationWarningsAsErrors>CS1591;CS1573</SilkDocumentationWarningsAsErrors>
+    </PropertyGroup>
     <!-- NuGet -->
     <PropertyGroup>
         <PackageIcon>logo.png</PackageIcon>
