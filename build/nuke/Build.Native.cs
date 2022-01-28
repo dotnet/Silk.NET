@@ -109,55 +109,57 @@ partial class Build
                 () =>
                 {
                     var @out = GLFWPath / "build";
+                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
+                    var build = "cmake --build build --config Release";
                     EnsureCleanDirectory(@out);
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A X64", GLFWPath)
+                        InheritedShell($"{prepare} -A X64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
                         
                         EnsureCleanDirectory(@out);
                         
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -A Win32", GLFWPath)
+                        InheritedShell($"{prepare} -A Win32", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
                     }
                     else if (OperatingSystem.IsLinux())
                     {
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
+                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_SYSTEM_PROCESSOR=i368", GLFWPath)
+                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=i368", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         
                         CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x86" / "native");
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
-                        InheritedShell($"cmake -S . -B build -D BUILD_SHARED_LIBS=ON -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
                             .AssertZeroExitCode();
-                        InheritedShell("cmake --build build --config Release", GLFWPath)
+                        InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
