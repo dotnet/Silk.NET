@@ -1,4 +1,4 @@
-name: glfw
+name: GLFW
 on:
   push:
     branches-ignore:

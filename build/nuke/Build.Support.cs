@@ -17,10 +17,10 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Utilities;
-using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.Tooling.ProcessTasks;
 using Octokit;
 using Octokit.Internal;
+using static Nuke.Common.IO.FileSystemTasks;
+using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {

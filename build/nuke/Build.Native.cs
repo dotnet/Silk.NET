@@ -137,15 +137,6 @@ partial class Build
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
-
-                        EnsureCleanDirectory(@out);
-                        
-                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=i368", GLFWPath)
-                            .AssertZeroExitCode();
-                        InheritedShell(build, GLFWPath)
-                            .AssertZeroExitCode();
-                        
-                        CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x86" / "native");
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
