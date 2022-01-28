@@ -1,0 +1,43 @@
+name: GLFW
+on:
+  push:
+    branches-ignore:
+      - "ci/*"
+      - "develop/*"
+      - "main"
+jobs:
+  Build:
+    strategy: 
+      fail-fast: false
+      matrix:
+        env:
+          - os: ubuntu-latest
+            name: Linux
+            nuke_invoke: ./build.sh
+            extras: |
+              sudo apt-get install -y xorg-dev 
+          - os: windows-latest
+            name: Windows
+            nuke_invoke: ./build.cmd
+            extras: ""
+          - os: macos-latest
+            name: Darwin
+            nuke_invoke: ./build.sh
+            extras: ""
+    name: ${{ matrix.env.name }} Build
+    runs-on: ${{ matrix.env.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        run: |
+          git -c submodule.third_party/git-hooks.update=none submodule update --init --recursive
+      - name: Extra prerequisites
+        run: |
+          echo running extras
+          ${{ matrix.env.extras }}
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100
+      - name: Build GLFW
+        run: ${{ matrix.env.nuke_invoke }} glfw
