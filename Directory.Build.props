@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+		<!-- See https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions -->
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+	</PropertyGroup>
+</Project>
