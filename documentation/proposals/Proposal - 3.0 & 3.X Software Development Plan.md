@@ -156,7 +156,7 @@ All other folders will contain documentation targeted at users for using specifi
 
 Silk.NET has been proven to excel at binding to OpenGL with games and applications such as [Project Hedra](https://projecthedra.com), a game made by @maxilevi; and [a clone of The Settlers](https://github.com/Pyrdacor/Freeserf.Net) made by @Pyrdacor.
 
-One thing we want to place an emphasis on is our commitment to actually keeping Silk.NET up-to-date. The schedule will be that on the **first Friday of the month**: The working group will evaluate recent changes with the Silk.NET codebase and related upstream resources. If the working group warrants that a patch fix is needed, a patch will be pushed to NuGet on this day.
+One thing we want to place an emphasis on is our commitment to actually keeping Silk.NET up-to-date. The schedule will be that on the **first Friday of the month** the bindings will be regenerated and a patch released containing all the changes since the last patch.
 
 We have a lot of bindings by now and the libraries we bind to change all the time. As such, monthly updates are critical to ensure our bindings are regenerated and are as up-to-date as possible. Bugfixes found over the month will be swept up in these monthly updates.
 
