@@ -25,6 +25,30 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 
 Please note that text marked **INFORMATIVE TEXT** does not form part of this proposal's requirements or proposed API, and is merely text to help the reader understand our intentions. Informative text is not well-defined, and may not reflect the actual implementation.
 
+Note that the parties in this proposal are:
+- **developer**: The developer using Silk.NET.
+- **end user**: The user using an application using Silk.NET, and by extension the user inputting data into the application via Silk.NET.
+
+Cases where the **user** word is used without the **end** prefix can be assumed to be referring to the **developer** rather than the **end user**.
+
+# Usage Examples
+```cs
+INativeWindow someWindow = null!;
+var inputContext = someWindow.CreateInput();
+inputContext.Gamepads.ThumbstickMove += @event =>
+{
+    Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.OldValue} to {@event.NewValue}");
+};
+var isButtonDown = inputContext.Gamepads.Any(gamepadState => gamepadState.Buttons[JoystickButton.A]);
+```
+```cs
+INativeWindow someWindow = null!;
+var inputContext = new InputContext();
+inputContext.Backends.Add(someWindow.CreateInputBackend());
+// in future:
+// inputContext.Backends.Add(new OpenXRInputBackend(...));
+```
+
 # Reference Implementation
 
 Similar to Windowing 3.0, a reference implementation will be included in the main `Silk.NET.Input` package which uses the same API or family of APIs as Windowing's reference implementation. This will be exposed by the `InputWindowExtensions` class.
@@ -580,7 +604,7 @@ This is exactly as in 2.X.
 
 `GamepadState` is defined as follows:
 ```cs
-public readonly struct GamepadState
+public struct GamepadState
 {
     public IGamepad Device { get; init; }
     public JoystickButtonState Buttons { get; init; }
@@ -589,6 +613,12 @@ public readonly struct GamepadState
     public IReadOnlyList<IMotor> VibrationMotors { get; } // forwards to forwards Device.VibrationMotors for ease of use
 }
 ```
+
+`GamepadState` reuses a lot of the joystick API types, which are defined later in this proposal.
+
+`Thumbsticks` contain the two thumbsticks on this gamepad. The X and Y values within this list range from -1 to 1: -1 being leftmost, and 1 being rightmost.
+
+`Triggers` contains the two triggers on thsi gamepad. The values within this list range from 0 to 1: 0 being unpressed, and 1 being fully pressed.
 
 Note the use of the `DualReadOnlyList` type. This is basically just:
 ```cs
@@ -601,3 +631,40 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 
 This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
 
+# Joystick Input
+
+This is the polyglot interface for any other human input device that roughly meets the description of being "joystick".
+
+```cs
+public interface IJoystick : IInputDevice
+{
+    JoystickState State { get; }
+}
+```
+```cs
+public struct JoystickState
+{
+    public IJoystick Device { get; init; }
+    public InputReadOnlyList<float> Axes { get; init; }
+    public JoystickButtonState Buttons { get; init; }
+    public InputReadOnlyList<Vector2> Hats { get; init; }
+}
+```
+
+This is pretty closely modeled as in 2.X: `Axes` containing the individual axes that can be represented by this joystick, `Buttons` containing the buttons which can be pressed, and `Hats` containing the hats.
+
+**INFORMATIVE TEXT:** The only difference is `Hats` is now a `Vector2` instead of a `Position2D`. It is still intended that the X and Y values are only ever `0` or `1`, but this is not a requirement for more exotic backends.
+
+`JoystickButtonState` is defined as follows:
+```cs
+public struct JoystickButtonState
+{
+    public bool this[JoystickButton btn] { get; }
+    public JoystickButtonReadOnlyList Down { get; init; }
+    public JoystickButtonReadOnlyList Up { get; }
+}
+```
+
+The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
+
+`Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
