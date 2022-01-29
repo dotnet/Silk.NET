@@ -33,7 +33,7 @@ Cases where the **user** word is used without the **end** prefix can be assumed 
 
 # Usage Examples
 ```cs
-INativeWindow someWindow = null!;
+INativeWindowSource someWindow = null!;
 var inputContext = someWindow.CreateInput();
 inputContext.Gamepads.ThumbstickMove += @event =>
 {
@@ -42,7 +42,7 @@ inputContext.Gamepads.ThumbstickMove += @event =>
 var isButtonDown = inputContext.Gamepads.Any(gamepadState => gamepadState.Buttons[JoystickButton.A]);
 ```
 ```cs
-INativeWindow someWindow = null!;
+INativeWindowSource someWindow = null!;
 var inputContext = new InputContext();
 inputContext.Backends.Add(someWindow.CreateInputBackend());
 // in future:
