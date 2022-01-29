@@ -21,17 +21,16 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
 - Allow Silk.NET's rich abstractions to be integrated into other frameworks rather than being completely standalone.
     - WPF, WinForms, MAUI, Avalonia (tenet: usability) 
 - Rewrite windowing to be more portable and facilitate true write-once-run-everywhere.
-    - For more information, see [the Windowing 3.0 proposal](Proposal - Windowing 3.0.md). (tenet: portability)
+    - For more information, see [the Windowing 3.0 proposal](Proposal%20-%20Windowing%203.0.md). (tenet: portability)
 - Remove the bulk of our bindings generation code in favour of more mature alternatives
-    - For more information, see [the SilkTouch 3.0 proposal](Proposal - Generation of Library Sources and PInvoke Mechanisms.md). (tenet: maintainability)
+    - For more information, see [the SilkTouch 3.0 proposal](Proposal%20-%20Generation%20of%20Library%20Sources%20and%20PInvoke%20Mechanisms.md). (tenet: maintainability)
 - Accelerate our maths library using SIMD hardware intrinsics
-    - For more information, see [the Vectorization SIMD proposal](Proposal - Vectorization - SIMD.md). (tenet: performance)
-- Enhance our input library to add more functionality and future-proof it against future functionality additions.
-    - For more information, see [the Enhanced Input Events proposal](Proposal - Enhanced Input Events.md). (tenet: maintainability)
-- Refactor our input library to work in multiple scenarios and environments
-    - For more information, see [the Multi-Backend Input proposal](Proposal - Multi-Backend Input.md). (tenet: usability)
+    - For more information, see [the Vectorization SIMD proposal](Proposal%20-%20Vectorization%20-%20SIMD.md). (tenet: performance)
+- Redesign our input library to work in multiple scenarios and environments, as well as be less prone to breaking changes.
+    - For more information, see [the Multi-Backend Input proposal](Proposal%20-%20Multi-Backend%20Input.md). (tenet: usability)
 
 Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past 2 years of the project's development.
+
 ## Development Roadmap
 
 Note that this development roadmap does not take into account unit tests, only functional tests such as experiments. The team should of course strive to add as many tests as possible where possible.
