@@ -551,3 +551,53 @@ public enum KeyName
 The `KeyName` enum is exactly the same as the `Key` enum in 2.X. The integral values of each enumerant, not included here, must match the en-US scancode for that key. A backend must match a scancode to a `KeyName` as if it were an en-US scancode, as this is the keyboard layout from which these key names were derived.
 
 The Silk.NET team wishes to reserve the right to remove any key names which do not have a matching en-US scancode. This is because the above enum is just copied and pasted from 2.X, and has not been cross-referenced with the keyboard layout at this time.
+
+# Gamepad Input
+
+```cs
+public interface IGamepad : IInputDevice
+{
+    GamepadState State { get; }
+    IReadOnlyList<IMotor> VibrationMotors { get; }
+}
+```
+
+`State` is the device state as defined earlier.
+
+`VibrationMotors` enumerates the vibration motors on the device. The values within `IMotor` do not change according to end user input, as such they are not encapsulated in the `State`, following the same principles as `ICursorConfiguration`.
+
+`IMotor` is defined as follows:
+```cs
+public interface IMotor
+{
+    float Speed { get; set; }
+}
+```
+
+This is exactly as in 2.X.
+
+**INFORMATIVE TEXT:** It is possible that, should integration with DualSense controllers be implemented, that more properties are added to `IMotor` than just `Speed`.
+
+`GamepadState` is defined as follows:
+```cs
+public readonly struct GamepadState
+{
+    public IGamepad Device { get; init; }
+    public JoystickButtonState Buttons { get; init; }
+    public DualReadOnlyList<Vector2> Thumbsticks { get; init; }
+    public DualReadOnlyList<float> Triggers { get; init; }
+    public IReadOnlyList<IMotor> VibrationMotors { get; } // forwards to forwards Device.VibrationMotors for ease of use
+}
+```
+
+Note the use of the `DualReadOnlyList` type. This is basically just:
+```cs
+public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
+{
+    public readonly T E0;
+    public readonly T E1;
+}
+```
+
+This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
+
