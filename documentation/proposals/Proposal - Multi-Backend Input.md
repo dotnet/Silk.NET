@@ -660,8 +660,8 @@ This is pretty closely modeled as in 2.X: `Axes` containing the individual axes 
 public struct JoystickButtonState
 {
     public bool this[JoystickButton btn] { get; }
-    public JoystickButtonReadOnlyList Down { get; init; }
-    public JoystickButtonReadOnlyList Up { get; }
+    public InputReadOnlyList<JoystickButton> Down { get; init; }
+    public InputReadOnlyList<JoystickButton> Up { get; }
 }
 ```
 
