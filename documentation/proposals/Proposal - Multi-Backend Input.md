@@ -230,12 +230,12 @@ public interface IMouse : IInputDevice
 The device state returned by `State` fills out the following structure:
 
 ```cs
-public readonly struct MouseState
+public struct MouseState
 {
     public IMouse Device { get; init; }
     public MouseButtonState Buttons { get; init; }
     public ICursorConfiguration Cursor { get; } // forwards to Device.Cursor
-    public Vector2 Position { get; set; } // all sets after the first sets forward to Device.SetPosition
+    public Vector2 Position { get; set; } // all sets after the first set forward to Device.SetPosition
     public Vector2 WheelPosition { get; init; }
 }
 ```
@@ -360,3 +360,194 @@ public enum CursorFlags
 }
 ```
 
+# Keyboard Input
+
+Once again, the interface is very simple.
+
+```cs
+public interface IKeyboard : IInputDevice
+{
+    KeyboardState State { get; }
+    void BeginInput();
+    void EndInput();
+    void SetClipboardText(string? clipboard);
+}
+```
+
+`State` is the device state as defined earlier.
+
+`BeginInput` starts recording textual input, bringing up the on-screen keyboard on platforms where this is needed (i.e. mobile). Unlike 2.0, this is now required given that textual input is now on a full-string basis rather than a per-char basis, and we don't want to record textual input unless the user asks us to.
+
+For instance, instead of a `KeyChar` event being raised every time a character is pressed or repeated, a `TextInput` event is raised as the string is being built alleviating the need for developers to build the string themselves, given that the primary use of this event is for GUI input.
+
+`SetClipboardText` allows setting the text on the user's clipboard so they can paste information from your application in others.
+
+`KeyboardState` is defined as follows:
+
+```cs
+public struct KeyboardState
+{
+    public IKeyboard Device { get; init; }
+    public string? ClipboardText { get; set; } // all sets after the first set forward to Device.SetClipboardText
+    public string? Text { get; init; }
+    public KeyState Keys { get; init; }
+}
+```
+
+For ease-of-use, all APIs on `Device` (other than state) are accessible via the state struct, as indicated in the comments in the API snippet.
+
+```cs
+public readonly struct KeyState
+{
+    public bool this[KeyName btn] { get; }
+    public bool this[int scancode] { get; }
+    public InputReadOnlyList<Key> Down { get; init; }
+    public InputReadOnlyList<Key> Up { get; }
+}
+```
+
+The indexer returns `true` if a particular key is pressed, false otherwise. If the developer wishes to enumerate the key state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
+
+`Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set. Scancode-only keys will not be present in `Up`.
+
+Note because not all keys are named, and because some developers may prefer to use scancodes instead, a `Key` struct is used instead of just having the list be a list of key names.
+
+```cs
+public readonly record struct Key(KeyName Name, int Scancode);
+```
+
+`KeyName` will be `Unknown` for scancode-only, unnamed keys.
+
+## Enums
+
+```cs
+public enum KeyName
+{
+    Unknown,
+    Space,
+    Apostrophe /* ' */,
+    Comma /* , */,
+    Minus /* - */,
+    Period /* . */,
+    Slash /* / */,
+    Number0,
+    D0,
+    Number1,
+    Number2,
+    Number3,
+    Number4,
+    Number5,
+    Number6,
+    Number7,
+    Number8,
+    Number9,
+    Semicolon /* ; */,
+    Equal /* = */,
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+    LeftBracket /* [ */,
+    BackSlash /* \ */,
+    RightBracket /* ] */,
+    GraveAccent /* ` */,
+    World1 /* non-US #1 */,
+    World2 /* non-US #2 */,
+    Escape,
+    Enter,
+    Tab,
+    Backspace,
+    Insert,
+    Delete,
+    Right,
+    Left,
+    Down,
+    Up,
+    PageUp,
+    PageDown,
+    Home,
+    End,
+    CapsLock,
+    ScrollLock,
+    NumLock,
+    PrintScreen,
+    Pause,
+    F1,
+    F2,
+    F3,
+    F4,
+    F5,
+    F6,
+    F7,
+    F8,
+    F9,
+    F10,
+    F11,
+    F12,
+    F13,
+    F14,
+    F15,
+    F16,
+    F17,
+    F18,
+    F19,
+    F20,
+    F21,
+    F22,
+    F23,
+    F24,
+    F25,
+    Keypad0,
+    Keypad1,
+    Keypad2,
+    Keypad3,
+    Keypad4,
+    Keypad5,
+    Keypad6,
+    Keypad7,
+    Keypad8,
+    Keypad9,
+    KeypadDecimal,
+    KeypadDivide,
+    KeypadMultiply,
+    KeypadSubtract,
+    KeypadAdd,
+    KeypadEnter,
+    KeypadEqual,
+    ShiftLeft,
+    ControlLeft,
+    AltLeft,
+    SuperLeft,
+    ShiftRight,
+    ControlRight,
+    AltRight,
+    SuperRight,
+    Menu
+}
+```
+
+The `KeyName` enum is exactly the same as the `Key` enum in 2.X. The integral values of each enumerant, not included here, must match the en-US scancode for that key. A backend must match a scancode to a `KeyName` as if it were an en-US scancode, as this is the keyboard layout from which these key names were derived.
+
+The Silk.NET team wishes to reserve the right to remove any key names which do not have a matching en-US scancode. This is because the above enum is just copied and pasted from 2.X, and has not been cross-referenced with the keyboard layout at this time.
