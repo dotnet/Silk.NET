@@ -668,3 +668,26 @@ public struct JoystickButtonState
 The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
 
 `Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
+
+`JoystickButton` is defined as follows:
+```cs
+public enum JoystickButton
+{
+    Unknown,
+    A,
+    B,
+    X,
+    Y,
+    LeftBumper,
+    RightBumper,
+    Back,
+    Start,
+    Home,
+    LeftStick,
+    RightStick,
+    DPadUp,
+    DPadRight,
+    DPadDown,
+    DPadLeft
+}
+```
