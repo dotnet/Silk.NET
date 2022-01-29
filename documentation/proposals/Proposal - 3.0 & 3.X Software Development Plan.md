@@ -47,7 +47,7 @@ Before we can do anything, we need to get our brand new generators up and runnin
 - No development on Maths for this preview.
 - Exclusive support for .NET 6
 
-3.0 Preview 1 is not a production-ready preview and is very experimental. This preview should aim to release in early September.
+3.0 Preview 1 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 2
 
@@ -58,7 +58,7 @@ Now that we've got an initial preview out to show what our aims are, we can star
 - Android support has been restored for Windowing and Input, and have received initial testing on this platform.
 - No development on Maths for this preview.
 
-3.0 Preview 2 is not a production-ready preview and is very experimental. This preview should aim to release in late September.
+3.0 Preview 2 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 3
 
@@ -69,7 +69,7 @@ By this preview, the groundwork has been established for 3.0 and we should ensur
 - iOS support has been added for Windowing and Input, and have received initial testing on this platform.
 - If time permits, a start has been made on the SIMD APIs in Maths. No work has been done on integrating it into the other Maths types.
 
-3.0 Preview 3 is not a production-ready preview and is very experimental. This preview should aim to release in early October.
+3.0 Preview 3 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 4
 
@@ -79,7 +79,7 @@ This is the first "production-ready" preview and we want users to start integrat
 - SIMD APIs in Maths have been complete, and work has started to integrate them into the other Maths types in the most common cases.
 - Ample work has been done to migrate 2.0 code to 3.0 code to evaluate differences in public API, fixing them where we deem necessary.
 
-3.0 Preview 4 is a production-ready preview and users are encouraged to start integrating this preview into their code. This preview should aim to release in late October.
+3.0 Preview 4 is a production-ready preview and users are encouraged to start integrating this preview into their code.
 
 ### 3.0 Preview 5
 
@@ -87,7 +87,7 @@ This is the last preview and is primarily a bugfix release. All breaking changes
 - Bugfixes from 3.0 Preview 4
 - A windowing integration for MAUI has been developed and has at least basic OpenGL(ES) support in a state that is as high-performance and as smoothed-out as possible.
 - If time permits, a windowing integration for Avalonia has been developed and has at least basic OpenGL(ES) support. If there is not enough time, this can be pushed to 3.X.
-- SIMD APIs should be integrated into Maths in as many common cases as possible. Ongoing performance improvements may be done in 3.X. This preview should aim to release in early November.
+- SIMD APIs should be integrated into Maths in as many common cases as possible. Ongoing performance improvements may be done in 3.X.
 
 ## Problems identified in past development
 
