@@ -134,7 +134,7 @@ public delegate void ToggleAction(bool newValue);
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface ISurface : IDisposable
+    public interface ISurface : IWindowHandlesSource, IDisposable
     {
         /// <summary>
         /// Determines whether the surface is being destroyed by the platform.
@@ -150,11 +150,6 @@ namespace Silk.NET.Windowing
         /// Elapsed time in seconds since the Run method last started.
         /// </summary>
         double Time { get; }
-
-        /// <summary>
-        /// Gets the native platform the surface is running on.
-        /// </summary>
-        INativePlatform Native { get; }
 
         /// <summary>
         /// The size of the surface's inner framebuffer. May differ from the surface size.
