@@ -26,7 +26,8 @@ wrapper {
     distributionUrl = "https://cache-redirector.jetbrains.com/services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
-version = ext.PluginVersion
+def project = new XmlParser().parse("${rootDir}/../../build/props/common.props")
+version = project.PropertyGroup.find { it.findAll { prop -> prop.name() == "VersionPrefix" }.size() == 1 }.VersionPrefix.text()
 
 sourceSets {
     main {
@@ -96,7 +97,6 @@ buildPlugin {
         arguments << "/t:Pack"
         arguments << "/p:PackageOutputPath=${rootDir}/output"
         arguments << "/p:PackageReleaseNotes=${changeNotes}"
-        arguments << "/p:PackageVersion=${version}"
         exec {
             executable setBuildTool.executable
             args arguments
@@ -121,9 +121,6 @@ runIde {
     // Rider's backend doesn't support dynamic plugins. It might be possible to work with auto-reload of the frontend
     // part of a plugin, but there are dangers about keeping plugins in sync
     autoReloadPlugins = false
-
-    // gradle-intellij-plugin will download the default version of the JBR for the snapshot. Update if required
-    // jbrVersion = "jbr_jcef-11_0_6b765.40" // https://confluence.jetbrains.com/display/JBR/Release+notes
 }
 
 rdgen {
@@ -186,18 +183,5 @@ prepareSandbox {
             def file = file(f)
             if (!file.exists()) throw new RuntimeException("File ${file} does not exist")
         })
-    }
-}
-
-publishPlugin {
-    dependsOn buildPlugin
-    token = "${PublishToken}"
-
-    doLast {
-        exec {
-            executable "dotnet"
-            args "nuget","push","output/${DotnetPluginId}.${version}.nupkg","--api-key","${PublishToken}","--source","https://plugins.jetbrains.com"
-            workingDir rootDir
-        }
     }
 }
