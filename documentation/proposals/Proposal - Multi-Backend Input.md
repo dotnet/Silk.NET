@@ -17,7 +17,7 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
     - Should the Silk.NET team design more APIs for more devices (for example VR hands using OpenXR) in the future, this can be added in a non-breaking way.
     - All input devices instead of exposing properties only expose a single `State` property, with additional properties and/or methods for writable state (i.e. vibration motors, mouse position). This also addresses comments from the Working Group on previous iterations of this proposal, where the Working Group expressed interest in the state being immutable and trivially capturable.
     - Ensuring the input API is accessible and easy to use (e.g. this is why later in the proposal we have made properties on the state structures that just forward to the underlying device object)
-    - Addressing APIs that the userbase frequently had issues/distaste with. For example, events are no longer on each individual 
+    - Addressing APIs that the userbase frequently had issues/distaste with. For example, events are no longer on each individual device, rather they are aggregated in a list and accessed from a single entry-point.
 - This proposal aims to keep the look and feel of the Input APIs intended for general consumption similar to that of 2.0.
 - This proposal incorporates/supersedes the Enhanced Input Events proposal.
 - This proposal assumes knowledge of the Windowing 3.0 proposal.
@@ -105,6 +105,12 @@ public interface IInputBackend
 
 `Update` will update the state of all devices contained within this input backend. The value of the `State` properties on each device must not change until this method is called. This is a departure from 1.0's and 2.0's model of updating state as soon as new information is available, which has resulted in lots of inconsistencies in the past.
 
+The onus is on the user to coordinate using this type across threads, as the input context is not thread safe. In addition, certain backends may have (unavoidable) restrictions on what thread `IInputBackend.Update` can be called on - the user is responsible for respecting these threading rules as well.
+
+Threading rules for the reference implementation (if any) will be explicitly documented, and guidance for using this type safely against any first-party implementations will be included in the XML and user documentation.
+
+**INFORMATIVE TEXT:** For example, it is illegal for GLFW functions to be called anywhere except the thread `glfwInit` was called on, and it is illegal on some operating systems (such as macOS) for `glfwInit` to be called anywhere except the thread that called `main`.
+
 All of the `Devices` and `Update`s are aggregated and coordinated by a central input context object.
 
 ```cs
@@ -115,7 +121,7 @@ public partial class InputContext
     public Gamepads Gamepads { get; }
     public Joysticks Joysticks { get; }
     public IReadOnlyList<IInputDevice> Devices { get; }
-    public List<IInputBackend> Backends { get; }
+    public IList<IInputBackend> Backends { get; }
     public void Update();
 }
 ```
@@ -130,7 +136,7 @@ By virtue of the `State` properties not updating until `IInputBackend.Update` is
 
 After the lists have been updated, the `Update` method compares the old state and the new state for that device and raises events accordingly. If there is no old state available for a device, the `ConnectionChanged` event (read on!) within each of the custom lists is called with a value of `true` signifying that a device has connected. Likewise, if there is no new state available for a device we have old state for, the `ConnectionChanged` event will be called with a value of `false` signifying that a device has been disconnected.
 
-`Backends` is a mutable list of input backends. Changes to this list do not take effect until `Update` is called again. The `ConnectionChanged` rules above will still be respected e.g. when you remove a backend, all of its devices will have a disconnected event raised for them.
+`Backends` is a mutable list of input backends. Until `Update` is called again, no device lists, state, etc on the context will be updated. The `ConnectionChanged` rules above will still be respected e.g. when you remove a backend, all of its devices will have a disconnected event raised for them.
 
 `Devices` contains all devices reported by all backends, including devices that do not necessarily fit into one of our more specialized wrapper lists. This means that if a backend has a device type we do not recognise, it will be accessible via this list.
 
@@ -141,7 +147,7 @@ These are relatively simple, though note that we explicitly implement the `IRead
 The actual type of the custom enumerator at this time the Silk.NET team would like to leave implementation defined, but with the following requirements:
 - The `Next` method must return a `ref readonly` type.
 - The type can be used as an operand in a `foreach` loop
-- While it may not necessarily implement `IEnumerator<T>`, it must implement the surface API as if it does where `T` is a `ref readonly` type (which is forbidden in the language today).  
+- This type is an enumerator type that returns a `ref readonly T` as defined by the C# language rules.
 
 The Silk.NET team does **not** wish to reserve the right to breaking changes for custom enumerator types, so once this type has been defined by the implementation it will remain the same type throughout the entirety of 3.X's service life. 
 
@@ -254,7 +260,7 @@ public interface IMouse : IInputDevice
 The device state returned by `State` fills out the following structure:
 
 ```cs
-public struct MouseState
+public readonly struct MouseState
 {
     public IMouse Device { get; init; }
     public MouseButtonState Buttons { get; init; }
@@ -268,7 +274,7 @@ For ease-of-use, all APIs on `Device` (other than state) are accessible via the 
 
 `MouseButtonState` is defined as:
 ```cs
-public struct MouseButtonState
+public readonly struct MouseButtonState
 {
     public bool this[MouseButton btn] { get; }
     public InputReadOnlyList<MouseButton> Down { get; init; }
@@ -409,7 +415,7 @@ For instance, instead of a `KeyChar` event being raised every time a character i
 `KeyboardState` is defined as follows:
 
 ```cs
-public struct KeyboardState
+public readonly struct KeyboardState
 {
     public IKeyboard Device { get; init; }
     public string? ClipboardText { get; set; } // all sets after the first set forward to Device.SetClipboardText
@@ -447,7 +453,7 @@ public readonly record struct Key(KeyName Name, int Scancode);
 ```cs
 public enum KeyName
 {
-    Unknown,
+    Unknown = 0,
     Space,
     Apostrophe /* ' */,
     Comma /* , */,
@@ -497,8 +503,6 @@ public enum KeyName
     BackSlash /* \ */,
     RightBracket /* ] */,
     GraveAccent /* ` */,
-    World1 /* non-US #1 */,
-    World2 /* non-US #2 */,
     Escape,
     Enter,
     Tab,
