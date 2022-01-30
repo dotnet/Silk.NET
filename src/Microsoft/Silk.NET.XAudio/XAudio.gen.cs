@@ -261,13 +261,13 @@ namespace Silk.NET.XAudio
         public const int LogStreaming = unchecked((int) 0x1000);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1271, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
+        [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateWithVersionInfo(IXAudio2** ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1271, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
+        [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateWithVersionInfo(ref IXAudio2* ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
 

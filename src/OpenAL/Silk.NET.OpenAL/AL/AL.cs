@@ -3,7 +3,6 @@
 
 using System;
 using System.Numerics;
-using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
@@ -21,7 +20,7 @@ namespace Silk.NET.OpenAL
         private SearchPathContainer? _searchPaths;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(INativeContext ctx)
+        public AL(INativeContext ctx)
             : base(ctx)
         {
         }
@@ -351,10 +350,30 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
+        /// Attempts to load a native OpenAL extension of type <typeparamref name="T" />.
+        /// </summary>
+        /// <param name="ext">The loaded extension.</param>
+        /// <typeparam name="T">Type of <see cref="NativeExtension{T}" /> to load.</typeparam>
+        /// <returns><c>true</c> if the extension was loaded, otherwise <c>false</c>.</returns>
+        public bool TryGetExtension<T>(out T ext)
+            where T : NativeExtension<AL>
+        {
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T) Activator.CreateInstance(typeof(T), Context)
+                : null;
+            return ext is not null;
+        }
+
+        /// <summary>
         /// Gets an instance of the API of an extension to the API.
         /// </summary>
         /// <typeparam name="TExtension">The extension type.</typeparam>
         /// <returns>The extension.</returns>
+        [Obsolete
+        (
+            "This method has been deprecated and will be removed in Silk.NET 3.0. " +
+            "Please use TryGetExtension instead."
+        )]
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {

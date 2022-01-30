@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryInfoKHR")]
-    public unsafe partial struct BindBufferMemoryInfoKHR
+    [NativeName("AliasOf", "VkBindBufferMemoryInfo")]
+    public unsafe partial struct BindBufferMemoryInfoKHR : IChainStart
     {
         public BindBufferMemoryInfoKHR
         (
@@ -79,5 +80,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "memoryOffset")]
         public ulong MemoryOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindBufferMemoryInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BindBufferMemoryInfoKHR Chain(
+            out BindBufferMemoryInfoKHR capture)
+        {
+            capture = new BindBufferMemoryInfoKHR(StructureType.BindBufferMemoryInfo);
+            return ref capture;
+        }
     }
 }

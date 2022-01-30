@@ -20,139 +20,139 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
     public unsafe partial class OesByteCoordinates : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_byte_coordinates";
-        [NativeApi(EntryPoint = "glMultiTexCoord1bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] OES texture, [Flow(FlowDirection.In)] sbyte s);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] sbyte s);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] OES texture, [Count(Count = 1), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] OES texture, [Count(Count = 1), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 1), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 1), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] OES texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] OES texture, [Count(Count = 2), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] OES texture, [Count(Count = 2), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 2), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 2), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] OES texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] OES texture, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] OES texture, [Count(Count = 3), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 3), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] OES texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r, [Flow(FlowDirection.In)] sbyte q);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r, [Flow(FlowDirection.In)] sbyte q);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] OES texture, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] OES texture, [Count(Count = 4), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glMultiTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit texture, [Count(Count = 4), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glTexCoord1bOES")]
+        [NativeApi(EntryPoint = "glTexCoord1bOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord1([Flow(FlowDirection.In)] sbyte s);
 
-        [NativeApi(EntryPoint = "glTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glTexCoord1bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord1bvOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glTexCoord2bOES")]
+        [NativeApi(EntryPoint = "glTexCoord2bOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord2([Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t);
 
-        [NativeApi(EntryPoint = "glTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glTexCoord2bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord2bvOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glTexCoord3bOES")]
+        [NativeApi(EntryPoint = "glTexCoord3bOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord3([Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r);
 
-        [NativeApi(EntryPoint = "glTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glTexCoord3bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord3bvOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glTexCoord4bOES")]
+        [NativeApi(EntryPoint = "glTexCoord4bOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord4([Flow(FlowDirection.In)] sbyte s, [Flow(FlowDirection.In)] sbyte t, [Flow(FlowDirection.In)] sbyte r, [Flow(FlowDirection.In)] sbyte q);
 
-        [NativeApi(EntryPoint = "glTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glTexCoord4bvOES")]
+        [NativeApi(EntryPoint = "glTexCoord4bvOES", Convention = CallingConvention.Winapi)]
         public partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glVertex2bOES")]
+        [NativeApi(EntryPoint = "glVertex2bOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex2([Flow(FlowDirection.In)] sbyte x, [Flow(FlowDirection.In)] sbyte y);
 
-        [NativeApi(EntryPoint = "glVertex2bvOES")]
+        [NativeApi(EntryPoint = "glVertex2bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glVertex2bvOES")]
+        [NativeApi(EntryPoint = "glVertex2bvOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glVertex3bOES")]
+        [NativeApi(EntryPoint = "glVertex3bOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex3([Flow(FlowDirection.In)] sbyte x, [Flow(FlowDirection.In)] sbyte y, [Flow(FlowDirection.In)] sbyte z);
 
-        [NativeApi(EntryPoint = "glVertex3bvOES")]
+        [NativeApi(EntryPoint = "glVertex3bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glVertex3bvOES")]
+        [NativeApi(EntryPoint = "glVertex3bvOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] in sbyte coords);
 
-        [NativeApi(EntryPoint = "glVertex4bOES")]
+        [NativeApi(EntryPoint = "glVertex4bOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex4([Flow(FlowDirection.In)] sbyte x, [Flow(FlowDirection.In)] sbyte y, [Flow(FlowDirection.In)] sbyte z, [Flow(FlowDirection.In)] sbyte w);
 
-        [NativeApi(EntryPoint = "glVertex4bvOES")]
+        [NativeApi(EntryPoint = "glVertex4bvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] sbyte* coords);
 
-        [NativeApi(EntryPoint = "glVertex4bvOES")]
+        [NativeApi(EntryPoint = "glVertex4bvOES", Convention = CallingConvention.Winapi)]
         public partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] in sbyte coords);
 
         public OesByteCoordinates(INativeContext ctx)

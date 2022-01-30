@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     public unsafe partial class AppleVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_vertex_array_range";
-        [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
+        [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
-        [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
+        [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
+        [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE", Convention = CallingConvention.Winapi)]
         public partial void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
+        [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE", Convention = CallingConvention.Winapi)]
         public partial void VertexArrayParameter([Flow(FlowDirection.In)] VertexArrayPNameAPPLE pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
+        [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
-        [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
+        [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE", Convention = CallingConvention.Winapi)]
         public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
 
         public unsafe void FlushVertexArrayRange<T0>([Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged

@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassCreateInfo2KHR")]
-    public unsafe partial struct RenderPassCreateInfo2KHR
+    [NativeName("AliasOf", "VkRenderPassCreateInfo2")]
+    public unsafe partial struct RenderPassCreateInfo2KHR : IChainStart
     {
         public RenderPassCreateInfo2KHR
         (
@@ -145,5 +146,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pCorrelatedViewMasks")]
         public uint* PCorrelatedViewMasks;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassCreateInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref RenderPassCreateInfo2KHR Chain(
+            out RenderPassCreateInfo2KHR capture)
+        {
+            capture = new RenderPassCreateInfo2KHR(StructureType.RenderPassCreateInfo2);
+            return ref capture;
+        }
     }
 }

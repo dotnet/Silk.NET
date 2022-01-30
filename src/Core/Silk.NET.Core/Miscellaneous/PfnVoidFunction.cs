@@ -3,7 +3,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Core
 {
-    public readonly unsafe struct PfnVoidFunction
+    public readonly unsafe struct PfnVoidFunction : IDisposable
     {
         private readonly void* _handle;
 
@@ -16,6 +16,7 @@ namespace Silk.NET.Core
             (Delegate func) => _handle = (delegate* unmanaged[Cdecl]<void>) SilkMarshal.DelegateToPtr
             (func);
 
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
         public static implicit operator delegate* unmanaged[Cdecl]<void>
             (PfnVoidFunction pfn) => pfn.Handle;
 

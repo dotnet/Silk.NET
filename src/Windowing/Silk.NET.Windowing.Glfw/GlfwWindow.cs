@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -36,6 +36,7 @@ namespace Silk.NET.Windowing.Glfw
         private Vector2D<int> _nonFullscreenSize;
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
+        private string _windowClass;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -246,7 +247,13 @@ namespace Silk.NET.Windowing.Glfw
 
         protected override bool IsClosingSettable
         {
-            set => _glfw.SetWindowShouldClose(_glfwWindow, value);
+            set
+            {
+                if (_glfwWindow != null)
+                {
+                    _glfw.SetWindowShouldClose(_glfwWindow, value);
+                }
+            }
         }
 
         protected override Vector2D<int> SizeSettable
@@ -282,6 +289,10 @@ namespace Silk.NET.Windowing.Glfw
                     _glfw.WindowHint(WindowHintBool.Resizable, false);
                     break;
             }
+
+            // Set window class.
+            _windowClass = opts.WindowClass ?? Window.DefaultWindowClass;
+            _glfw.WindowHintString((int)WindowHintString.X11ClassName, _windowClass);
 
             // Set window API.
             switch (opts.API.API)
@@ -333,6 +344,9 @@ namespace Silk.NET.Windowing.Glfw
 
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
+
+            // Set multisample samples
+            _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
 
             var share = SharedContext;
 
@@ -409,6 +423,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
         public override IGLContext? SharedContext { get; }
+        public override string? WindowClass => _windowClass;
 
 
         public override IMonitor? Monitor

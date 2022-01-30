@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            #endif
             return ret;
         }
 
@@ -123,7 +178,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -135,7 +201,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -149,7 +226,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -162,7 +250,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -176,7 +275,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -191,7 +301,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -208,7 +329,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -216,58 +348,102 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             return ret;
         }
 
@@ -278,7 +454,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -292,7 +479,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -307,7 +505,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -324,7 +533,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -340,7 +560,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -357,7 +588,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -375,7 +617,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+            #endif
                     }
                 }
             }
@@ -395,7 +648,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -404,258 +668,434 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            #endif
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -666,7 +1106,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -680,7 +1131,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -695,7 +1157,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -712,7 +1185,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -728,7 +1212,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -745,7 +1240,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -763,7 +1269,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+            #endif
                     }
                 }
             }
@@ -783,7 +1300,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -792,69 +1320,113 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -868,7 +1440,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -885,7 +1468,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -903,7 +1497,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+            #endif
                     }
                 }
             }
@@ -923,7 +1528,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -942,7 +1558,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (byte* pTargetNamePtr = &pTargetName)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                        }
+            #endif
                     }
                 }
             }
@@ -962,7 +1589,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -983,7 +1621,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                            }
+            #endif
                         }
                     }
                 }
@@ -1006,7 +1655,18 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                                }
+                                else
+                                {
+                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -1016,7 +1676,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1024,16 +1684,27 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
                 {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1041,19 +1712,30 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
                 {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+            #endif
                     }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1061,19 +1743,30 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
                 {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+            #endif
                     }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1081,240 +1774,383 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
                 {
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
                 fixed (byte* pTargetNamePtr = &pTargetName)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                     {
                         fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                            }
+            #endif
                         }
                     }
                 }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
+                }
+            #endif
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPStr);
+            var pTargetNamePtr = (byte*) SilkMarshal.StringToPtr(pTargetName, NativeStringEncoding.LPStr);
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
                 {
                     fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetNamePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1324,7 +2160,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMI);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMI);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMI);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMI);
+            }
+            #endif
             return ret;
         }
 
@@ -1335,7 +2182,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11ModuleInstance* pLibraryMIPtr = &pLibraryMI)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMIPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMIPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMIPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMIPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -1345,7 +2203,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, uint, uint, int>)LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11Linker*, uint, uint, int>)LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint, uint, int>)LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, uint, uint, int>)LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
+            }
+            #endif
             return ret;
         }
 

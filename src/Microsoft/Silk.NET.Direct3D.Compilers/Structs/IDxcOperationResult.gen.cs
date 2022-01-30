@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatus);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatus);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatus);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatus);
+            }
+            #endif
             return ret;
         }
 
@@ -123,49 +178,104 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (int* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
+                }
+            #endif
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(IDxcBlob** pResult)
+        public readonly unsafe int GetResult(IDxcBlob** ppResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResult);
+            }
+            #endif
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(ref IDxcBlob* pResult)
+        public readonly unsafe int GetResult(ref IDxcBlob* ppResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlob** pResultPtr = &pResult)
+            fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** pErrors)
+        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** ppErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrors);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrors);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrors);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrors);
+            }
+            #endif
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* pErrors)
+        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* ppErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlobEncoding** pErrorsPtr = &pErrors)
+            fixed (IDxcBlobEncoding** ppErrorsPtr = &ppErrors)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrorsPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrorsPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrorsPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrorsPtr);
+                }
+            #endif
             }
             return ret;
         }

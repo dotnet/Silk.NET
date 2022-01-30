@@ -1,7 +1,6 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
@@ -11,7 +10,9 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
-using Point = System.Drawing.Point;
+
+// We can't import System because System has a type called nint on iOS and Mac Catalyst.
+// As such, throughout this file System is fully qualified.
 
 // ReSharper disable BitwiseOperatorOnEnumWithoutFlags
 
@@ -47,10 +48,10 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         // Events
-        public override event Action<Vector2D<int>>? Resize;
-        public override event Action<Vector2D<int>>? FramebufferResize;
-        public override event Action? Closing;
-        public override event Action<bool>? FocusChanged;
+        public override event System.Action<Vector2D<int>>? Resize;
+        public override event System.Action<Vector2D<int>>? FramebufferResize;
+        public override event System.Action? Closing;
+        public override event System.Action<bool>? FocusChanged;
 
         // Properties
         protected override IGLContext? CoreGLContext => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
@@ -92,7 +93,6 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-
         // Methods
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
         protected override INativeWindow GetNativeWindow() => new SdlNativeWindow(Sdl, SdlWindow);
@@ -113,10 +113,13 @@ namespace Silk.NET.Windowing.Sdl
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
-
             if (additionalFlags is null)
             {
-                flags |= WindowFlags.WindowResizable;
+                flags |= _platform.IsViewOnly switch
+                {
+                    true => WindowFlags.WindowBorderless | WindowFlags.WindowFullscreen,
+                    false => WindowFlags.WindowResizable
+                };
             }
             else
             {
@@ -145,6 +148,34 @@ namespace Silk.NET.Windowing.Sdl
 
             IsClosingVal = false;
 
+            // Set window GL attributes
+            Sdl.GLSetAttribute(GLattr.GLDepthSize,
+                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1
+                        ? 24 : opts.PreferredDepthBufferBits.Value);
+
+            Sdl.GLSetAttribute(GLattr.GLStencilSize,
+                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1
+                        ? 8 : opts.PreferredStencilBufferBits.Value);
+
+            Sdl.GLSetAttribute(GLattr.GLRedSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1
+                        ? 8 : opts.PreferredBitDepth.Value.X);
+
+            Sdl.GLSetAttribute(GLattr.GLGreenSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1
+                        ? 8 : opts.PreferredBitDepth.Value.Y);
+
+            Sdl.GLSetAttribute(GLattr.GLBlueSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1
+                        ? 8 : opts.PreferredBitDepth.Value.Z);
+
+            Sdl.GLSetAttribute(GLattr.GLAlphaSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1
+                        ? 8 : opts.PreferredBitDepth.Value.W);
+
+            Sdl.GLSetAttribute(GLattr.GLMultisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1);
+            Sdl.GLSetAttribute(GLattr.GLMultisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value);
+
             // Create window
             SdlWindow = Sdl.CreateWindow
             (
@@ -159,7 +190,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 Sdl.ThrowError();
             }
-            
+
             sharedContext?.MakeCurrent();
             (CoreGLContext as SdlContext)?.Create
             (
@@ -173,46 +204,10 @@ namespace Silk.NET.Windowing.Sdl
                         {
                             ContextProfile.Core => GLprofile.GLContextProfileCore,
                             ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
-                            _ => throw new ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
+                            _ => throw new System.ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
                         })
                 ),
                 (GLattr.GLContextFlags, (int) opts.API.Flags),
-                (
-                    GLattr.GLDepthSize,
-                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1 
-                        ? 16
-                        : opts.PreferredDepthBufferBits.Value
-                ),
-                (
-                    GLattr.GLStencilSize,
-                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1 
-                        ? 0
-                        : opts.PreferredStencilBufferBits.Value
-                ),
-                (
-                    GLattr.GLRedSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1 
-                        ? 8
-                        : opts.PreferredBitDepth.Value.X
-                ),
-                (
-                    GLattr.GLGreenSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1 
-                        ? 8
-                        : opts.PreferredBitDepth.Value.Y
-                ),
-                (
-                    GLattr.GLBlueSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1 
-                        ? 8
-                        : opts.PreferredBitDepth.Value.Z
-                ),
-                (
-                    GLattr.GLAlphaSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1 
-                        ? 8
-                        : opts.PreferredBitDepth.Value.W
-                ),
                 (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1)
             );
             if (SdlWindow == null)

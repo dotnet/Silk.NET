@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComMotionEstimation : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_motion_estimation";
-        [NativeApi(EntryPoint = "glTexEstimateMotionQCOM")]
+        [NativeApi(EntryPoint = "glTexEstimateMotionQCOM", Convention = CallingConvention.Winapi)]
         public partial void TexEstimateMotion([Flow(FlowDirection.In)] uint @ref, [Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint output);
 
-        [NativeApi(EntryPoint = "glTexEstimateMotionRegionsQCOM")]
+        [NativeApi(EntryPoint = "glTexEstimateMotionRegionsQCOM", Convention = CallingConvention.Winapi)]
         public partial void TexEstimateMotionRegion([Flow(FlowDirection.In)] uint @ref, [Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] uint mask);
 
         public QComMotionEstimation(INativeContext ctx)

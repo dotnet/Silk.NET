@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineVertexInputStateCreateInfo")]
-    public unsafe partial struct PipelineVertexInputStateCreateInfo
+    public unsafe partial struct PipelineVertexInputStateCreateInfo : IChainStart
     {
         public PipelineVertexInputStateCreateInfo
         (
@@ -101,5 +101,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVertexInputAttributeDescription")]
         [NativeName("Name", "pVertexAttributeDescriptions")]
         public VertexInputAttributeDescription* PVertexAttributeDescriptions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineVertexInputStateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PipelineVertexInputStateCreateInfo Chain(
+            out PipelineVertexInputStateCreateInfo capture)
+        {
+            capture = new PipelineVertexInputStateCreateInfo(StructureType.PipelineVertexInputStateCreateInfo);
+            return ref capture;
+        }
     }
 }

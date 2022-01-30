@@ -1,11 +1,15 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.NameGenerator;
 
 namespace Silk.NET.SilkTouch
 {
@@ -18,35 +22,33 @@ namespace Silk.NET.SilkTouch
 
             var constructorStatements = new List<StatementSyntax>();
 
-            if (!preloadVTable)
-            {
-                vTableMembers.Add
+            vTableMembers.Add
+            (
+                FieldDeclaration
                 (
-                    FieldDeclaration
+                    List<AttributeListSyntax>(),
+                    TokenList(Token(SyntaxKind.PrivateKeyword)),
+                    VariableDeclaration
                     (
-                        List<AttributeListSyntax>(),
-                        TokenList(Token(SyntaxKind.PrivateKeyword)),
-                        VariableDeclaration
-                        (
-                            IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
-                            SingletonSeparatedList(VariableDeclarator("_ctx"))
-                        )
+                        IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
+                        SingletonSeparatedList(VariableDeclarator("_ctx"))
                     )
-                );
+                )
+            );
 
-                constructorStatements.Add
+            constructorStatements.Add
+            (
+                ExpressionStatement
                 (
-                    ExpressionStatement
+                    AssignmentExpression
                     (
-                        AssignmentExpression
-                        (
-                            SyntaxKind.SimpleAssignmentExpression, IdentifierName("_ctx"),
-                            IdentifierName("ctx")
-                        )
+                        SyntaxKind.SimpleAssignmentExpression, IdentifierName("_ctx"),
+                        IdentifierName("ctx")
                     )
-                );
-            }
-            else
+                )
+            );
+
+            if (preloadVTable)
             {
                 constructorStatements.AddRange
                 (
@@ -58,7 +60,7 @@ namespace Silk.NET.SilkTouch
                                 AssignmentExpression
                                 (
                                     SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName($"_{entryPoint}"),
+                                    IdentifierSilk($"_{entryPoint}"),
                                     InvocationExpression
                                     (
                                         MemberAccessExpression
@@ -90,7 +92,7 @@ namespace Silk.NET.SilkTouch
 
             vTableMembers.Add
             (
-                ConstructorDeclaration("GeneratedVTable")
+                ConstructorDeclaration(Name("GeneratedVTable"))
                     .WithModifiers(TokenList(Token(SyntaxKind.InternalKeyword)))
                     .WithParameterList
                     (
@@ -114,8 +116,7 @@ namespace Silk.NET.SilkTouch
             List<VariableDeclaratorSyntax> slotVars = new List<VariableDeclaratorSyntax>();
             foreach (var entrypoint in entryPoints.Distinct())
             {
-                var name = $"_{entrypoint}";
-                slotVars.Add(VariableDeclarator(name));
+                slotVars.Add(VariableDeclarator(Name($"_{entrypoint}")));
             }
 
             vTableMembers.Add
@@ -207,7 +208,7 @@ namespace Silk.NET.SilkTouch
                                             (
                                                 ConstantPattern
                                                     (LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(s))),
-                                                IdentifierName(FirstLetterToUpper(s))
+                                                IdentifierSilk(s)
                                             )
                                         )
                                         .Append
@@ -248,8 +249,7 @@ namespace Silk.NET.SilkTouch
             (
                 entryPoints.Distinct().Select
                 (
-                    s => PropertyDeclaration
-                            (IdentifierName("nint"), FirstLetterToUpper(s))
+                    s => PropertyDeclaration(IdentifierName("nint"), Name(s))
                         .WithExpressionBody
                         (
                             ArrowExpressionClause
@@ -258,14 +258,14 @@ namespace Silk.NET.SilkTouch
                                 (
                                     BinaryExpression
                                     (
-                                        SyntaxKind.NotEqualsExpression, IdentifierName("_" + s),
+                                        SyntaxKind.NotEqualsExpression, IdentifierSilk("_" + s),
                                         DefaultExpression(IdentifierName("nint"))
-                                    ), IdentifierName("_" + s),
+                                    ), IdentifierSilk("_" + s),
                                     ParenthesizedExpression
                                     (
                                         AssignmentExpression
                                         (
-                                            SyntaxKind.SimpleAssignmentExpression, IdentifierName("_" + s),
+                                            SyntaxKind.SimpleAssignmentExpression, IdentifierSilk("_" + s),
                                             InvocationExpression
                                             (
                                                 IdentifierName("_ctx.GetProcAddress"),
@@ -308,12 +308,88 @@ namespace Silk.NET.SilkTouch
                                         AssignmentExpression
                                         (
                                             SyntaxKind.SimpleAssignmentExpression,
-                                            IdentifierName($"_{x}"),
+                                            IdentifierSilk($"_{x}"),
                                             DefaultExpression
                                                 (IdentifierName("nint"))
                                         )
                                     )
                                 )
+                        )
+                    )
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+            );
+
+            var p = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "silktouch.lock");
+            if (!File.Exists(p))
+            {
+                File.WriteAllText(p, "");
+                Debugger.Launch();
+            }
+
+            vTableMembers.Add
+            (
+                MethodDeclaration(IdentifierName("IVTable"), Identifier("Clone"))
+                    .WithParameterList(ParameterList(SeparatedList<ParameterSyntax>()))
+                    .WithBody
+                    (
+                        Block
+                        (
+                            LocalDeclarationStatement
+                            (
+                                VariableDeclaration
+                                (
+                                    IdentifierName
+                                    (
+                                        Identifier
+                                        (
+                                            TriviaList(),
+                                            SyntaxKind.VarKeyword,
+                                            "var",
+                                            "var",
+                                            TriviaList()
+                                        )
+                                    ),
+                                    SingletonSeparatedList
+                                    (
+                                        VariableDeclarator(Identifier("ret"))
+                                            .WithInitializer
+                                            (
+                                                EqualsValueClause
+                                                (
+                                                    ObjectCreationExpression(IdentifierName(generatedVTableName))
+                                                        .WithArgumentList
+                                                        (
+                                                            ArgumentList
+                                                            (
+                                                                SingletonSeparatedList(Argument(IdentifierName("_ctx")))
+                                                            )
+                                                        )
+                                                )
+                                            )
+                                    )
+                                )
+                            ),
+                            Block
+                            (
+                                entryPoints.Select
+                                (
+                                    entryPoint => ExpressionStatement
+                                    (
+                                        AssignmentExpression
+                                        (
+                                            SyntaxKind.SimpleAssignmentExpression,
+                                            MemberAccessExpression
+                                            (
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("ret"),
+                                                IdentifierSilk($"_{entryPoint}")
+                                            ),
+                                            IdentifierSilk($"_{entryPoint}")
+                                        )
+                                    )
+                                )
+                            ),
+                            ReturnStatement(IdentifierName("ret"))
                         )
                     )
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
@@ -343,11 +419,6 @@ namespace Silk.NET.SilkTouch
                     )
                 ), List<TypeParameterConstraintClauseSyntax>(), List(vTableMembers)
             );
-        }
-
-        private static string FirstLetterToUpper(string s)
-        {
-            return s.First().ToString().ToUpper() + s.Substring(1);
         }
     }
 }

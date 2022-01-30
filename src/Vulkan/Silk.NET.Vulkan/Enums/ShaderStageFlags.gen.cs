@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkShaderStageFlags")]
     public enum ShaderStageFlags : int
     {
@@ -57,5 +57,7 @@ namespace Silk.NET.Vulkan
         ShaderStageTaskBitNV = 64,
         [NativeName("Name", "VK_SHADER_STAGE_MESH_BIT_NV")]
         ShaderStageMeshBitNV = 128,
+        [NativeName("Name", "VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
+        ShaderStageSubpassShadingBitHuawei = 16384,
     }
 }

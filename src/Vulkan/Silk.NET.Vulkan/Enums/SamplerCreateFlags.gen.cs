@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSamplerCreateFlags")]
     public enum SamplerCreateFlags : int
     {
@@ -17,5 +17,11 @@ namespace Silk.NET.Vulkan
         SamplerCreateSubsampledBitExt = 1,
         [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT")]
         SamplerCreateSubsampledCoarseReconstructionBitExt = 2,
+        [NativeName("Name", "VK_SAMPLER_CREATE_RESERVED_3_BIT_AMD")]
+        SamplerCreateReserved3BitAmd = 8,
+        [NativeName("Name", "VK_SAMPLER_CREATE_RESERVED_2_BIT_EXT")]
+        SamplerCreateReserved2BitExt = 4,
+        [NativeName("Name", "VK_SAMPLER_CREATE_IMAGE_PROCESSING_BIT_QCOM")]
+        SamplerCreateImageProcessingBitQCom = 16,
     }
 }

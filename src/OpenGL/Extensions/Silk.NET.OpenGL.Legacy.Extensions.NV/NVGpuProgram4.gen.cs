@@ -20,172 +20,172 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVGpuProgram4 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_gpu_program4";
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramEnvParameterIuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramEnvParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV")]
+        [NativeApi(EntryPoint = "glGetProgramLocalParameterIuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramLocalParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4iNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4iNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4iNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4iNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uiNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uiNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uiNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uiNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramEnvParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4iNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4iNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4iNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4iNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uiNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uiNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uiNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uiNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParameterI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParameterI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4ivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
-        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV")]
+        [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
         public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)

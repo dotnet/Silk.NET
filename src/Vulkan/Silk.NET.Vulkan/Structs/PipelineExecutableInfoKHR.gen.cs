@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineExecutableInfoKHR")]
-    public unsafe partial struct PipelineExecutableInfoKHR
+    public unsafe partial struct PipelineExecutableInfoKHR : IChainable
     {
         public PipelineExecutableInfoKHR
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "executableIndex")]
         public uint ExecutableIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineExecutableInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

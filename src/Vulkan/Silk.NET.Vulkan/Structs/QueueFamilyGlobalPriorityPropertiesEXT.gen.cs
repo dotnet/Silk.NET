@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyGlobalPriorityPropertiesEXT")]
-    public unsafe partial struct QueueFamilyGlobalPriorityPropertiesEXT
+    public unsafe partial struct QueueFamilyGlobalPriorityPropertiesEXT : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyGlobalPriorityPropertiesEXT
         (
@@ -97,11 +97,24 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<QueueGlobalPriorityEXT> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 16);
 #endif
         }
 
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueueFamilyGlobalPriorityPropertiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

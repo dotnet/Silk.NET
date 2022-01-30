@@ -47,6 +47,7 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnLogStreamCallback(delegate* unmanaged[Cdecl]<byte*, byte*, void> ptr) => new PfnLogStreamCallback(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void LogStreamCallback(byte* arg0, byte* arg1);
 }
 

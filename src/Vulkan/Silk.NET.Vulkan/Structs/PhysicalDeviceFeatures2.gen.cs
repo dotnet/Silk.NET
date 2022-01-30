@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFeatures2")]
-    public unsafe partial struct PhysicalDeviceFeatures2
+    [NativeName("Aliases", "VkPhysicalDeviceFeatures2KHR")]
+    public unsafe partial struct PhysicalDeviceFeatures2 : IChainStart, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceFeatures2
         (
@@ -57,5 +58,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPhysicalDeviceFeatures")]
         [NativeName("Name", "features")]
         public PhysicalDeviceFeatures Features;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFeatures2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PhysicalDeviceFeatures2 Chain(
+            out PhysicalDeviceFeatures2 capture)
+        {
+            capture = new PhysicalDeviceFeatures2(StructureType.PhysicalDeviceFeatures2);
+            return ref capture;
+        }
     }
 }

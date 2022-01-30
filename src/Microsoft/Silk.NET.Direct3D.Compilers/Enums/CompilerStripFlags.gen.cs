@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [Flags]
     [NativeName("Name", "D3DCOMPILER_STRIP_FLAGS")]
     public enum CompilerStripFlags : int
     {

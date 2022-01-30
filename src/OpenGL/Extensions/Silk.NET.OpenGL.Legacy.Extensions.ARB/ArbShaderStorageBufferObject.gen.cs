@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbShaderStorageBufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_storage_buffer_object";
-        [NativeApi(EntryPoint = "glShaderStorageBlockBinding")]
+        [NativeApi(EntryPoint = "glShaderStorageBlockBinding", Convention = CallingConvention.Winapi)]
         public partial void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
 
         public ArbShaderStorageBufferObject(INativeContext ctx)

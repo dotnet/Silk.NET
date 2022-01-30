@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264ProfileEXT")]
-    public unsafe partial struct VideoEncodeH264ProfileEXT
+    public unsafe partial struct VideoEncodeH264ProfileEXT : IExtendsChain<VideoProfileKHR>, IExtendsChain<QueryPoolCreateInfo>, IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2KHR>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<BufferCreateInfo>
     {
         public VideoEncodeH264ProfileEXT
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
         [NativeName("Name", "stdProfileIdc")]
         public Video.StdVideoH264ProfileIdc StdProfileIdc;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264ProfileExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

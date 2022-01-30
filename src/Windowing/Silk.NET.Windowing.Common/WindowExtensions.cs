@@ -51,6 +51,9 @@ namespace Silk.NET.Windowing
                     if (!view.IsClosing)
                     {
                         view.DoUpdate();
+                    }
+                    if (!view.IsClosing)
+                    {
                         view.DoRender();
                     }
                 }
@@ -107,7 +110,7 @@ namespace Silk.NET.Windowing
 #if NETSTANDARD2_1
             (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
 #else
-            (new[] {icon});
+            (new[] { icon });
 #endif
     }
 }

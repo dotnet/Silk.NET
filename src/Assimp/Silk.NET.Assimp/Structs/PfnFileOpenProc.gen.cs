@@ -47,6 +47,7 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnFileOpenProc(delegate* unmanaged[Cdecl]<FileIO*, byte*, byte*, File*> ptr) => new PfnFileOpenProc(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate File* FileOpenProc(FileIO* arg0, byte* arg1, byte* arg2);
 }
 

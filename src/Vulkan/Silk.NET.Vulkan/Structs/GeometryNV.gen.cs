@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryNV")]
-    public unsafe partial struct GeometryNV
+    public unsafe partial struct GeometryNV : IChainable
     {
         public GeometryNV
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkGeometryFlagsKHR")]
         [NativeName("Name", "flags")]
         public GeometryFlagsKHR Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.GeometryNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

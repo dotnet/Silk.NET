@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnWindowsMessageHook(delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void> ptr) => new PfnWindowsMessageHook(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void WindowsMessageHook(void* arg0, void* arg1, uint arg2, ulong arg3, long arg4);
 }
 

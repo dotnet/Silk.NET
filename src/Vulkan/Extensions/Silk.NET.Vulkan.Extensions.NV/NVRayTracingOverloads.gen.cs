@@ -150,6 +150,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetAccelerationStructureMemoryRequirements(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2KHR> pMemoryRequirements)
         {
             // SpanOverloader
@@ -164,6 +165,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetAccelerationStructureMemoryRequirements(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureMemoryRequirementsInfoNV> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2KHR> pMemoryRequirements)
         {
             // SpanOverloader

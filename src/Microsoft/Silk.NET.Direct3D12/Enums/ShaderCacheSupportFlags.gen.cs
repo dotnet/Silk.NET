@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_FLAGS")]
     public enum ShaderCacheSupportFlags : int
     {
@@ -22,5 +23,11 @@ namespace Silk.NET.Direct3D12
         ShaderCacheSupportAutomaticInprocCache = 0x4,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_AUTOMATIC_DISK_CACHE")]
         ShaderCacheSupportAutomaticDiskCache = 0x8,
+        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_DRIVER_MANAGED_CACHE")]
+        ShaderCacheSupportDriverManagedCache = 0x10,
+        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_CONTROL_CLEAR")]
+        ShaderCacheSupportShaderControlClear = 0x20,
+        [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SHADER_SESSION_DELETE")]
+        ShaderCacheSupportShaderSessionDelete = 0x40,
     }
 }

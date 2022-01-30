@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoEncodeH264CapabilitiesEXT
+    public unsafe partial struct VideoEncodeH264CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
     {
         public VideoEncodeH264CapabilitiesEXT
         (
             StructureType? sType = StructureType.VideoEncodeH264CapabilitiesExt,
             void* pNext = null,
-            VideoEncodeH264CapabilitiesFlagsEXT? flags = null,
+            VideoEncodeH264CapabilityFlagsEXT? flags = null,
             VideoEncodeH264InputModeFlagsEXT? inputModeFlags = null,
             VideoEncodeH264OutputModeFlagsEXT? outputModeFlags = null,
             Extent2D? minPictureSizeInMbs = null,
@@ -113,10 +113,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264CapabilitiesFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264CapabilitiesFlagsEXT")]
+        [NativeName("Type", "VkVideoEncodeH264CapabilityFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH264CapabilityFlagsEXT")]
         [NativeName("Name", "flags")]
-        public VideoEncodeH264CapabilitiesFlagsEXT Flags;
+        public VideoEncodeH264CapabilityFlagsEXT Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
         [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
@@ -167,5 +167,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtensionProperties")]
         [NativeName("Name", "stdExtensionVersion")]
         public ExtensionProperties StdExtensionVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoEncodeH264CapabilitiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

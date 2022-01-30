@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
@@ -10,10 +11,11 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Exposes the public API of the OpenAL Soft Deferred Updates extension.
     /// </summary>
     [NativeApi(Prefix = "al")]
+    [Extension("AL_SOFT_deferred_updates")]
     public partial class DeferredUpdates : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected DeferredUpdates(INativeContext ctx)
+        public DeferredUpdates(INativeContext ctx)
             : base(ctx)
         {
         }

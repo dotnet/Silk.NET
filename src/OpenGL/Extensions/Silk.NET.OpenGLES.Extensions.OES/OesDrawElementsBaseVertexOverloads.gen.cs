@@ -88,145 +88,145 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             thisApi.DrawRangeElementsBaseVertex(mode, start, end, count, type, in indices.GetPinnableReference(), basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] OES mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] OES type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this OesDrawElementsBaseVertex thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());

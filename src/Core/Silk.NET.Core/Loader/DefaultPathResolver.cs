@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -34,12 +35,32 @@ namespace Silk.NET.Core.Loader
             if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
             {
                 yield return Path.Combine(AppContext.BaseDirectory, name);
+                if (TryLocateNativeAssetInRuntimesFolder(name, AppContext.BaseDirectory, out var result))
+                {
+                    yield return result;
+                }
             }
 
             if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath))
             {
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
+            }
+            
+            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+            if (AppContext.BaseDirectory != Process.GetCurrentProcess().MainModule?.FileName &&
+                mainModFname is not null)
+            {
+                mainModFname = Path.GetDirectoryName(mainModFname);
+                if (mainModFname is not null)
+                {
+                    yield return Path.Combine(mainModFname, name);
+                }
+
+                if (TryLocateNativeAssetInRuntimesFolder(name, mainModFname, out var result))
+                {
+                    yield return result;
+                }
             }
 
             if (!noLinuxTraverse)
@@ -114,19 +135,7 @@ namespace Silk.NET.Core.Loader
                 }
 
                 var currentRid = RuntimeEnvironment.GetRuntimeIdentifier();
-                var allRiDs = new List<string>();
-                allRiDs.Add(currentRid);
-                if (!AddFallbacks(allRiDs, currentRid, defaultContext.RuntimeGraph))
-                {
-                    var guessedFallbackRid = GuessFallbackRid(currentRid);
-                    if (guessedFallbackRid != null)
-                    {
-                        allRiDs.Add(guessedFallbackRid);
-                        AddFallbacks(allRiDs, guessedFallbackRid, defaultContext.RuntimeGraph);
-                    }
-                }
-
-                foreach (var rid in allRiDs)
+                foreach (var rid in GetAllRuntimeIds(currentRid, defaultContext))
                     foreach (var runtimeLib in defaultContext.RuntimeLibraries)
                         foreach (var nativeAsset in runtimeLib.GetRuntimeNativeAssets(defaultContext, rid))
                         {
@@ -164,6 +173,40 @@ namespace Silk.NET.Core.Loader
             }
         }
 
+        private bool TryLocateNativeAssetInRuntimesFolder(string name, string baseFolder, out string result)
+        {
+            static bool Check(string name, string ridFolder, out string result)
+            {
+                var theoreticalFName = Path.Combine(ridFolder, name);
+                if (File.Exists(theoreticalFName))
+                {
+                    result = theoreticalFName;
+                    return true;
+                }
+
+                result = null;
+                return false;
+            }
+
+            foreach (var rid in GetAllRuntimeIds(RuntimeEnvironment.GetRuntimeIdentifier(), DependencyContext.Default))
+            {
+                if (Check(name, Path.Combine(baseFolder, "runtimes", rid, "native", name), out result))
+                {
+                    return true;
+                }
+            }
+
+            result = null;
+            return false;
+        }
+
+        // from: https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json
+        private static readonly string[] _linuxRiDs =
+        {
+            "alpine", "android", "arch", "centos", "debian", "exherbo", "fedora", "freebsd", "gentoo", "linux",
+            "opensuse", "rhel", "sles", "tizen"
+        };
+
         private string GuessFallbackRid(string actualRuntimeIdentifier)
         {
             if (actualRuntimeIdentifier == "osx.10.13-x64")
@@ -171,9 +214,20 @@ namespace Silk.NET.Core.Loader
                 return "osx.10.12-x64";
             }
 
-            if (actualRuntimeIdentifier.StartsWith("osx"))
+            var split = actualRuntimeIdentifier.Split('-');
+            if (split[0] != "osx" && split[0].StartsWith("osx"))
             {
-                return "osx-x64";
+                return $"osx-{string.Join("-", split.Skip(1))}".TrimEnd('-');
+            }
+
+            if (split[0] != "win" && split[0].StartsWith("win"))
+            {
+                return $"win-{string.Join("-", split.Skip(1))}".TrimEnd('-');
+            }
+
+            if (split[0] != "linux" && _linuxRiDs.Any(x => split[0].StartsWith(x)))
+            {
+                return $"linux-{string.Join("-", split.Skip(1))}".TrimEnd('-');
             }
 
             return null;
@@ -188,6 +242,16 @@ namespace Silk.NET.Core.Loader
                     fallbacks.AddRange(fb.Fallbacks);
                     return true;
                 }
+            }
+
+            while (rid is not null)
+            {
+                if (!fallbacks.Contains(rid))
+                {
+                    fallbacks.Add(rid);
+                }
+
+                rid = GuessFallbackRid(rid);
             }
 
             return false;
@@ -207,6 +271,28 @@ namespace Silk.NET.Core.Loader
             }
 
             return Environment.GetEnvironmentVariable("HOME");
+        }
+
+        private List<string> GetAllRuntimeIds(string currentRid, DependencyContext ctx)
+        {
+            var allRiDs = new List<string>();
+
+            // prevent null reference exception on net6.0-android where DependencyContext.Default is null
+            if (ctx is not null)
+            {
+                allRiDs.Add(currentRid);
+                if (!AddFallbacks(allRiDs, currentRid, ctx.RuntimeGraph))
+                {
+                    var guessedFallbackRid = GuessFallbackRid(currentRid);
+                    if (guessedFallbackRid != null)
+                    {
+                        allRiDs.Add(guessedFallbackRid);
+                        AddFallbacks(allRiDs, guessedFallbackRid, ctx.RuntimeGraph);
+                    }
+                }
+            }
+
+            return allRiDs;
         }
     }
 }

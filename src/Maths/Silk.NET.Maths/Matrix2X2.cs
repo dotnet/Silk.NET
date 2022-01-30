@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -5,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    /// <summary>A structure encapsulating a 2x2 matrix.</summary>
     [Serializable]
     [DataContract]
     public struct Matrix2X2<T> : IEquatable<Matrix2X2<T>>
@@ -105,29 +108,29 @@ namespace Silk.NET.Maths
             }
         }
 
-        /// <summary>Constructs a Matrix2X2 from the given components.</summary>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given components.</summary>
         public Matrix2X2(T m11, T m12, T m21, T m22)
         {
             Row1 = new(m11, m12);
             Row2 = new(m21, m22);
         }
 
-        /// <summary>Constructs a Matrix2X2 from the given rows.</summary>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given rows.</summary>
         public Matrix2X2(Vector2D<T> row1, Vector2D<T> row2)
         {
             Row1 = row1;
             Row2 = row2;
         }
 
-        /// <summary>Constructs a Matrix2X2 from the given Matrix3X2.</summary>
-        /// <param name="value">The source Matrix3X2.</param>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
         public Matrix2X2(Matrix3X2<T> value)
         {
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix2X2 from the given Matrix4x3.</summary>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given Matrix4x3.</summary>
         /// <param name="value">The source Matrix4x3.</param>
         public Matrix2X2(Matrix4X3<T> value)
         {
@@ -135,24 +138,24 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix2X2 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X4{T}"/>.</param>
         public Matrix2X2(Matrix3X4<T> value)
         {
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix2X4{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix2X4{T}"/>.</param>
         public Matrix2X2(Matrix2X4<T> value)
         {
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix4X2{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix2X2(Matrix4X2<T> value)
         {
             Row1 = new(value.M11, value.M12);

@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtMemoryObjectFd : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_memory_object_fd";
-        [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryFdEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
 
-        [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryFdEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
 
         public ExtMemoryObjectFd(INativeContext ctx)

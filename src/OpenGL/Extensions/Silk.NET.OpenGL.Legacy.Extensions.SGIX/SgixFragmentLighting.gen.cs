@@ -20,298 +20,298 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixFragmentLighting : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_fragment_lighting";
-        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX mode);
 
-        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
-        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX mode);
 
-        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
-        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX", Convention = CallingConvention.Winapi)]
         public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glLightEnviSGIX")]
+        [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
         public partial void LightEnv([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glLightEnviSGIX")]
+        [NativeApi(EntryPoint = "glLightEnviSGIX", Convention = CallingConvention.Winapi)]
         public partial void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] int param);
 
         public SgixFragmentLighting(INativeContext ctx)

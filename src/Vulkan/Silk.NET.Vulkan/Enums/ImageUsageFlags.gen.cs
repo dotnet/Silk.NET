@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkImageUsageFlags")]
     public enum ImageUsageFlags : int
     {
@@ -51,5 +51,13 @@ namespace Silk.NET.Vulkan
         ImageUsageVideoEncodeSrcBitKhr = 16384,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
         ImageUsageVideoEncodeDpbBitKhr = 32768,
+        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_19_BIT_EXT")]
+        ImageUsageReserved19BitExt = 524288,
+        [NativeName("Name", "VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
+        ImageUsageInvocationMaskBitHuawei = 262144,
+        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_20_BIT_QCOM")]
+        ImageUsageReserved20BitQCom = 1048576,
+        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_21_BIT_QCOM")]
+        ImageUsageReserved21BitQCom = 2097152,
     }
 }

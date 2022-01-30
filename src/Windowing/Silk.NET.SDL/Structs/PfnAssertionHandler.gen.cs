@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnAssertionHandler(delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState> ptr) => new PfnAssertionHandler(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate AssertState AssertionHandler(AssertData* arg0, void* arg1);
 }
 

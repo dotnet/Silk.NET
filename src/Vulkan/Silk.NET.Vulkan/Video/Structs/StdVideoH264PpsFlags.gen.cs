@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Video
             uint? weightedPredFlag = null,
             uint? picOrderPresentFlag = null,
             uint? entropyCodingModeFlag = null,
-            uint? scalingMatrixPresentFlag = null
+            uint? picScalingMatrixPresentFlag = null
         ) : this()
         {
             if (transform8x8ModeFlag is not null)
@@ -72,9 +72,9 @@ namespace Silk.NET.Vulkan.Video
                 EntropyCodingModeFlag = entropyCodingModeFlag.Value;
             }
 
-            if (scalingMatrixPresentFlag is not null)
+            if (picScalingMatrixPresentFlag is not null)
             {
-                ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
+                PicScalingMatrixPresentFlag = picScalingMatrixPresentFlag.Value;
             }
         }
 
@@ -145,7 +145,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
         }
 
-        public uint ScalingMatrixPresentFlag
+        public uint PicScalingMatrixPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 8) & 0x1u);

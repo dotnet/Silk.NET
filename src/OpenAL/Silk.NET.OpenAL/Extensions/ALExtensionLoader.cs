@@ -11,6 +11,11 @@ namespace Silk.NET.OpenAL.Extensions
     /// <summary>
     /// A loader for OpenAL extensions.
     /// </summary>
+    [Obsolete
+    (
+        "This class is deprecated and will be removed in Silk.NET 3.0. "+
+        "Please use the TryGetExtension method on ALContext."
+    )]
     public static class ALExtensionLoader
     {
         /// <summary>

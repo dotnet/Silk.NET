@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbProvokingVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_provoking_vertex";
-        [NativeApi(EntryPoint = "glProvokingVertex")]
+        [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
         public partial void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
 
-        [NativeApi(EntryPoint = "glProvokingVertex")]
+        [NativeApi(EntryPoint = "glProvokingVertex", Convention = CallingConvention.Winapi)]
         public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
 
         public ArbProvokingVertex(INativeContext ctx)

@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassEndInfoKHR")]
-    public unsafe partial struct SubpassEndInfoKHR
+    [NativeName("AliasOf", "VkSubpassEndInfo")]
+    public unsafe partial struct SubpassEndInfoKHR : IChainStart
     {
         public SubpassEndInfoKHR
         (
@@ -46,5 +47,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubpassEndInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SubpassEndInfoKHR Chain(
+            out SubpassEndInfoKHR capture)
+        {
+            capture = new SubpassEndInfoKHR(StructureType.SubpassEndInfo);
+            return ref capture;
+        }
     }
 }

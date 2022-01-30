@@ -1,0 +1,169 @@
+#nullable enable
+readonly Silk.NET.SilkTouch.EntryPoint.CallingConvention -> System.Runtime.InteropServices.CallingConvention
+readonly Silk.NET.SilkTouch.EntryPoint.LoadTypes -> Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax![]!
+readonly Silk.NET.SilkTouch.EntryPoint.Name -> string!
+readonly Silk.NET.SilkTouch.EntryPoint.SourceSymbol -> Microsoft.CodeAnalysis.IMethodSymbol!
+Silk.NET.Core.Attributes.InjectAttribute
+Silk.NET.Core.Attributes.InjectAttribute.InjectAttribute(Silk.NET.Core.Attributes.SilkTouchStage silkTouchStage, string! code) -> void
+Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.Begin = 1 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.End = 6 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.None = 0 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.PostInit = 2 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.PostLoad = 5 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.PostPin = 3 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.SilkTouchStage.PreLoad = 4 -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.Core.Attributes.UnmanagedTypeAttribute
+Silk.NET.Core.Attributes.UnmanagedTypeAttribute.UnmanagedTypeAttribute(Silk.NET.Core.Native.UnmanagedType unmanagedType) -> void
+Silk.NET.Core.Native.NativeApiAttribute
+Silk.NET.Core.Native.NativeApiAttribute.Convention.get -> System.Runtime.InteropServices.CallingConvention
+Silk.NET.Core.Native.NativeApiAttribute.Convention.set -> void
+Silk.NET.Core.Native.NativeApiAttribute.EntryPoint.get -> string!
+Silk.NET.Core.Native.NativeApiAttribute.EntryPoint.set -> void
+Silk.NET.Core.Native.NativeApiAttribute.NativeApiAttribute() -> void
+Silk.NET.Core.Native.NativeApiAttribute.Prefix.get -> string!
+Silk.NET.Core.Native.NativeApiAttribute.Prefix.set -> void
+Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.AnsiBStr = 35 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.Bool = 2 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.BStr = 19 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.Default = 0 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.I1 = 3 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.I2 = 5 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.I4 = 7 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.I8 = 9 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.LPStr = 20 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.LPTStr = 22 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.LPUTF8Str = 48 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.LPWStr = 21 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.R4 = 11 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.R8 = 12 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.SysInt = 31 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.SysUInt = 32 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.U1 = 4 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.U2 = 6 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.U4 = 8 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.U8 = 10 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.Core.Native.UnmanagedType.VariantBool = 37 -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.SilkTouch.EntryPoint
+Silk.NET.SilkTouch.EntryPoint.EntryPoint() -> void
+Silk.NET.SilkTouch.EntryPoint.EntryPoint(string! name, System.Runtime.InteropServices.CallingConvention callingConvention, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax![]! loadTypes, Microsoft.CodeAnalysis.IMethodSymbol! sourceSymbol) -> void
+Silk.NET.SilkTouch.IMarshalContext
+Silk.NET.SilkTouch.IMarshalContext.AddSideEffect(System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! expression) -> void
+Silk.NET.SilkTouch.IMarshalContext.AddSideEffectToStage(Silk.NET.Core.Attributes.SilkTouchStage silkTouchStage, System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! expression) -> void
+Silk.NET.SilkTouch.IMarshalContext.AllocateGcSlot() -> int
+Silk.NET.SilkTouch.IMarshalContext.BeginBlock(System.Func<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!, Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! applyBlock) -> void
+Silk.NET.SilkTouch.IMarshalContext.Compilation.get -> Microsoft.CodeAnalysis.Compilation!
+Silk.NET.SilkTouch.IMarshalContext.CurrentResultType.get -> Microsoft.CodeAnalysis.ITypeSymbol?
+Silk.NET.SilkTouch.IMarshalContext.CurrentResultType.set -> void
+Silk.NET.SilkTouch.IMarshalContext.CurrentStage.get -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.SilkTouch.IMarshalContext.DeclareExtraRef(int id, int amount = 1) -> void
+Silk.NET.SilkTouch.IMarshalContext.DeclareSpecialVariableNoInlining(Microsoft.CodeAnalysis.ITypeSymbol! symbol, bool declare) -> (int, string!)
+Silk.NET.SilkTouch.IMarshalContext.DeclareVariable(Microsoft.CodeAnalysis.ITypeSymbol! type, bool allowInlining = true) -> int
+Silk.NET.SilkTouch.IMarshalContext.LoadTypes.get -> Microsoft.CodeAnalysis.ITypeSymbol![]!
+Silk.NET.SilkTouch.IMarshalContext.MethodSymbol.get -> Microsoft.CodeAnalysis.IMethodSymbol!
+Silk.NET.SilkTouch.IMarshalContext.ParameterMarshalOptions.get -> Silk.NET.SilkTouch.MarshalOptions?[]!
+Silk.NET.SilkTouch.IMarshalContext.ParameterVariables.get -> int[]!
+Silk.NET.SilkTouch.IMarshalContext.ResolveAllLoadParameters() -> System.Collections.Generic.IEnumerable<System.Lazy<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>!>!
+Silk.NET.SilkTouch.IMarshalContext.ResolveVariable(int id, bool ignoreRef = false) -> System.Lazy<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>!
+Silk.NET.SilkTouch.IMarshalContext.ResultVariable.get -> int?
+Silk.NET.SilkTouch.IMarshalContext.ResultVariable.set -> void
+Silk.NET.SilkTouch.IMarshalContext.ReturnLoadType.get -> Microsoft.CodeAnalysis.ITypeSymbol!
+Silk.NET.SilkTouch.IMarshalContext.ReturnMarshalOptions.get -> Silk.NET.SilkTouch.MarshalOptions?
+Silk.NET.SilkTouch.IMarshalContext.ReturnsVoid.get -> bool
+Silk.NET.SilkTouch.IMarshalContext.SetParameterToVariable(int parameter, int variable) -> void
+Silk.NET.SilkTouch.IMarshalContext.SetVariable(int id, System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>! expressionFunc) -> void
+Silk.NET.SilkTouch.IMarshalContext.ShouldPinParameter.get -> bool[]!
+Silk.NET.SilkTouch.IMarshalContext.TransitionTo(Silk.NET.Core.Attributes.SilkTouchStage stage) -> void
+Silk.NET.SilkTouch.IMarshalContext.TryGetAttribute(int index, string! typeFullName, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.IMarshalContext.TryGetAttribute(int index, System.Type! type, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.IMarshalContext.TryGetAttribute<T>(int index, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.INativeContextOverride
+Silk.NET.SilkTouch.INativeContextOverride.Type(Silk.NET.SilkTouch.OverrideContext ctx) -> Microsoft.CodeAnalysis.CSharp.Syntax.TypeDeclarationSyntax!
+Silk.NET.SilkTouch.MarshalBuilder
+Silk.NET.SilkTouch.MarshalBuilder.Clone() -> Silk.NET.SilkTouch.MarshalBuilder!
+Silk.NET.SilkTouch.MarshalBuilder.MarshalBuilder() -> void
+Silk.NET.SilkTouch.MarshalBuilder.Run(Silk.NET.SilkTouch.MarshalContext! context) -> void
+Silk.NET.SilkTouch.MarshalBuilder.Use(Silk.NET.SilkTouch.Middleware! middleware) -> Silk.NET.SilkTouch.MarshalBuilder!
+Silk.NET.SilkTouch.MarshalContext
+Silk.NET.SilkTouch.MarshalContext.AddSideEffect(System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! expression) -> void
+Silk.NET.SilkTouch.MarshalContext.AddSideEffectToStage(Silk.NET.Core.Attributes.SilkTouchStage silkTouchStage, System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! expression) -> void
+Silk.NET.SilkTouch.MarshalContext.AllocateGcSlot() -> int
+Silk.NET.SilkTouch.MarshalContext.AppendTrivia(Microsoft.CodeAnalysis.SyntaxTrivia trivia) -> void
+Silk.NET.SilkTouch.MarshalContext.BeginBlock(System.Func<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!, Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax!>! applyBlock) -> void
+Silk.NET.SilkTouch.MarshalContext.BuildFinalBlock() -> Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax!
+Silk.NET.SilkTouch.MarshalContext.Compilation.get -> Microsoft.CodeAnalysis.Compilation!
+Silk.NET.SilkTouch.MarshalContext.CurrentResultType.get -> Microsoft.CodeAnalysis.ITypeSymbol?
+Silk.NET.SilkTouch.MarshalContext.CurrentResultType.set -> void
+Silk.NET.SilkTouch.MarshalContext.CurrentStage.get -> Silk.NET.Core.Attributes.SilkTouchStage
+Silk.NET.SilkTouch.MarshalContext.DeclareExtraRef(int id, int amount = 1) -> void
+Silk.NET.SilkTouch.MarshalContext.DeclareSpecialVariableNoInlining(Microsoft.CodeAnalysis.ITypeSymbol! symbol, bool declare) -> (int, string!)
+Silk.NET.SilkTouch.MarshalContext.DeclareVariable(Microsoft.CodeAnalysis.ITypeSymbol! type, bool allowInlining = true) -> int
+Silk.NET.SilkTouch.MarshalContext.GCCount.get -> int
+Silk.NET.SilkTouch.MarshalContext.LoadTypes.get -> Microsoft.CodeAnalysis.ITypeSymbol![]!
+Silk.NET.SilkTouch.MarshalContext.MarshalContext(Microsoft.CodeAnalysis.Compilation! compilation, Microsoft.CodeAnalysis.IMethodSymbol! methodSymbol) -> void
+Silk.NET.SilkTouch.MarshalContext.MethodSymbol.get -> Microsoft.CodeAnalysis.IMethodSymbol!
+Silk.NET.SilkTouch.MarshalContext.ParameterMarshalOptions.get -> Silk.NET.SilkTouch.MarshalOptions?[]!
+Silk.NET.SilkTouch.MarshalContext.ParameterVariables.get -> int[]!
+Silk.NET.SilkTouch.MarshalContext.ResolveAllLoadParameters() -> System.Collections.Generic.IEnumerable<System.Lazy<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>!>!
+Silk.NET.SilkTouch.MarshalContext.ResolveVariable(int id, bool ignoreRef = false) -> System.Lazy<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>!
+Silk.NET.SilkTouch.MarshalContext.ResultVariable.get -> int?
+Silk.NET.SilkTouch.MarshalContext.ResultVariable.set -> void
+Silk.NET.SilkTouch.MarshalContext.ReturnLoadType.get -> Microsoft.CodeAnalysis.ITypeSymbol!
+Silk.NET.SilkTouch.MarshalContext.ReturnMarshalOptions.get -> Silk.NET.SilkTouch.MarshalOptions?
+Silk.NET.SilkTouch.MarshalContext.ReturnsVoid.get -> bool
+Silk.NET.SilkTouch.MarshalContext.SetParameterToVariable(int parameter, int variable) -> void
+Silk.NET.SilkTouch.MarshalContext.SetVariable(int id, System.Func<Silk.NET.SilkTouch.IMarshalContext!, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax!>! expressionFunc) -> void
+Silk.NET.SilkTouch.MarshalContext.ShouldPinParameter.get -> bool[]!
+Silk.NET.SilkTouch.MarshalContext.TransitionTo(Silk.NET.Core.Attributes.SilkTouchStage stage) -> void
+Silk.NET.SilkTouch.MarshalContext.TryGetAttribute(int index, string! typeFullName, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.MarshalContext.TryGetAttribute(int index, System.Type! type, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.MarshalContext.TryGetAttribute<T>(int index, out Microsoft.CodeAnalysis.AttributeData? attributeData) -> bool
+Silk.NET.SilkTouch.MarshalOptions
+Silk.NET.SilkTouch.MarshalOptions.MarshalOptions(Silk.NET.Core.Native.UnmanagedType unmanagedType) -> void
+Silk.NET.SilkTouch.MarshalOptions.UnmanagedType.get -> Silk.NET.Core.Native.UnmanagedType
+Silk.NET.SilkTouch.Middleware
+Silk.NET.SilkTouch.Middlewares
+Silk.NET.SilkTouch.NameGenerator
+Silk.NET.SilkTouch.NativeApiGenerator
+Silk.NET.SilkTouch.NativeApiGenerator.Execute(Microsoft.CodeAnalysis.GeneratorExecutionContext context) -> void
+Silk.NET.SilkTouch.NativeApiGenerator.Initialize(Microsoft.CodeAnalysis.GeneratorInitializationContext context) -> void
+Silk.NET.SilkTouch.NativeApiGenerator.NativeApiGenerator() -> void
+Silk.NET.SilkTouch.NativeApiGenerator.SyntaxReceiver
+Silk.NET.SilkTouch.NativeApiGenerator.SyntaxReceiver.ClassDeclarations -> System.Collections.Generic.List<(Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax!, Microsoft.CodeAnalysis.SemanticModel!)>!
+Silk.NET.SilkTouch.NativeApiGenerator.SyntaxReceiver.OnVisitSyntaxNode(Microsoft.CodeAnalysis.GeneratorSyntaxContext context) -> void
+Silk.NET.SilkTouch.NativeApiGenerator.SyntaxReceiver.SyntaxReceiver() -> void
+Silk.NET.SilkTouch.NativeContextOverrideHelper
+Silk.NET.SilkTouch.NativeContextOverrides.NameComparer
+Silk.NET.SilkTouch.NativeContextOverrides.NameComparer.Equals(Silk.NET.SilkTouch.EntryPoint x, Silk.NET.SilkTouch.EntryPoint y) -> bool
+Silk.NET.SilkTouch.NativeContextOverrides.NameComparer.GetHashCode(Silk.NET.SilkTouch.EntryPoint obj) -> int
+Silk.NET.SilkTouch.NativeContextOverrides.NameComparer.NameComparer() -> void
+Silk.NET.SilkTouch.NativeContextOverrides.PInvokeNativeContextOverride
+Silk.NET.SilkTouch.NativeContextOverrides.PInvokeNativeContextOverride.PInvokeNativeContextOverride() -> void
+Silk.NET.SilkTouch.NativeContextOverrides.PInvokeNativeContextOverride.Type(Silk.NET.SilkTouch.OverrideContext ctx) -> Microsoft.CodeAnalysis.CSharp.Syntax.TypeDeclarationSyntax!
+Silk.NET.SilkTouch.OverrideContext
+Silk.NET.SilkTouch.OverrideContext.EntryPoints.get -> Silk.NET.SilkTouch.EntryPoint[]!
+Silk.NET.SilkTouch.OverrideContext.IsNet5OrGreater.get -> bool
+Silk.NET.SilkTouch.OverrideContext.Library.get -> string!
+Silk.NET.SilkTouch.OverrideContext.Name.get -> string!
+Silk.NET.SilkTouch.OverrideContext.OverrideContext() -> void
+Silk.NET.SilkTouch.OverrideContext.OverrideContext(string! name, string! lib, Silk.NET.SilkTouch.EntryPoint[]! entrypoints, bool isNet5OrGreater) -> void
+Silk.NET.SilkTouch.PinMode
+Silk.NET.SilkTouch.PinMode.Persist = 0 -> Silk.NET.SilkTouch.PinMode
+Silk.NET.SilkTouch.PinMode.UntilNextCall = 1 -> Silk.NET.SilkTouch.PinMode
+static Silk.NET.Core.Native.NativeApiAttribute.GetCallingConvention(Silk.NET.Core.Native.NativeApiAttribute! attr, Silk.NET.Core.Native.NativeApiAttribute! parent) -> System.Runtime.InteropServices.CallingConvention
+static Silk.NET.Core.Native.NativeApiAttribute.GetEntryPoint(Silk.NET.Core.Native.NativeApiAttribute! attr, Silk.NET.Core.Native.NativeApiAttribute! parent, string! method) -> string!
+static Silk.NET.SilkTouch.Middlewares.BoolMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.DelegateMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.GenericPointerMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.InjectMiddleware(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.ParameterInitMiddleware(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.PinMiddleware(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.PinObjectMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.SpanMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.Middlewares.StringMarshaller(ref Silk.NET.SilkTouch.IMarshalContext! ctx, System.Action! next) -> void
+static Silk.NET.SilkTouch.NameGenerator.IdentifierSilk(string! hint) -> Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax!
+static Silk.NET.SilkTouch.NameGenerator.Name(string! suggestion) -> string!
+static Silk.NET.SilkTouch.NativeContextOverrideHelper.GetProcAddress.get -> Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax!
+static Silk.NET.SilkTouch.NativeContextOverrideHelper.HelperMethods.get -> System.Lazy<(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax! GetProcAddress, Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax! TryGetProcAddress)>!
+static Silk.NET.SilkTouch.NativeContextOverrideHelper.TryGetProcAddress.get -> Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax!

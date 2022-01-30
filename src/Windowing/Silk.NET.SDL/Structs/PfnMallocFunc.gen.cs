@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnMallocFunc(delegate* unmanaged[Cdecl]<nuint, void*> ptr) => new PfnMallocFunc(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void* MallocFunc(nuint arg0);
 }
 

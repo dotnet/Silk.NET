@@ -94,7 +94,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.Color4ubVertex2(in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void Color4ubVertex2(this SunVertex thisApi, [Flow(FlowDirection.In)] string c, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void Color4ubVertex2(this SunVertex thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.Color4ubVertex2(c, in v.GetPinnableReference());
@@ -118,7 +118,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.Color4ubVertex3(in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void Color4ubVertex3(this SunVertex thisApi, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void Color4ubVertex3(this SunVertex thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.Color4ubVertex3(c, in v.GetPinnableReference());
@@ -292,7 +292,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiColor4ubVertex3(rc, in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ReplacementCodeuiColor4ubVertex3(rc, c, in v.GetPinnableReference());
@@ -322,13 +322,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
         {
             // SpanOverloader
             thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, v);
         }
 
-        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, in v.GetPinnableReference());
@@ -862,7 +862,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.TexCoord2fColor4ubVertex3(tc, in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.TexCoord2fColor4ubVertex3(tc, c, in v.GetPinnableReference());
@@ -892,13 +892,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.TexCoord2fColor4ubVertex3(in tc.GetPinnableReference(), in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
         {
             // SpanOverloader
             thisApi.TexCoord2fColor4ubVertex3(in tc.GetPinnableReference(), c, v);
         }
 
-        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void TexCoord2fColor4ubVertex3(this SunVertex thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.TexCoord2fColor4ubVertex3(in tc.GetPinnableReference(), c, in v.GetPinnableReference());

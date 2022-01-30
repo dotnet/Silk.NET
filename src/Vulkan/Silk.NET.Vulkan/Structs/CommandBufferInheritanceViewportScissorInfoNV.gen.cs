@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceViewportScissorInfoNV")]
-    public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
+    public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV : IExtendsChain<CommandBufferInheritanceInfo>
     {
         public CommandBufferInheritanceViewportScissorInfoNV
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkViewport")]
         [NativeName("Name", "pViewportDepths")]
         public Viewport* PViewportDepths;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferInheritanceViewportScissorInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -20,31 +20,31 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVMemoryAttachment : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_memory_attachment";
-        [NativeApi(EntryPoint = "glBufferAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void BufferAttachMemory([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glBufferAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void BufferAttachMemory([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMemoryObjectDetachedResources([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectDetachedResourcesuivNV", Convention = CallingConvention.Winapi)]
         public partial void GetMemoryObjectDetachedResources([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glNamedBufferAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glNamedBufferAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferAttachMemory([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glResetMemoryObjectParameterNV")]
+        [NativeApi(EntryPoint = "glResetMemoryObjectParameterNV", Convention = CallingConvention.Winapi)]
         public partial void ResetMemoryObjectParameter([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname);
 
-        [NativeApi(EntryPoint = "glTexAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glTexAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TexAttachMemory([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glTexAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TexAttachMemory([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureAttachMemoryNV")]
+        [NativeApi(EntryPoint = "glTextureAttachMemoryNV", Convention = CallingConvention.Winapi)]
         public partial void TextureAttachMemory([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
         public NVMemoryAttachment(INativeContext ctx)

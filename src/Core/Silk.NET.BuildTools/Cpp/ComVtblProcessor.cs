@@ -119,31 +119,14 @@ namespace Silk.NET.BuildTools.Cpp
                 var parameter = function.Parameters[i];
                 if (parameter.Type.Name == "string")
                 {
-                    // assume ansi
-                    if (parameter.Type.IsIn)
+                    var nativeStringEncoding = parameter.Type.MapNativeString();
+                    sb.Append($"var {parameter.Name}Ptr = (byte*) SilkMarshal.StringToPtr({parameter.Name}, ");
+                    sb.AppendLine($"{nativeStringEncoding});");
+                    if (parameter.Type.IsIn || parameter.Type.IsByRef)
                     {
-                        sb.AppendLine
-                            ($"var {parameter.Name}PtrInit = (byte*) Marshal.StringToHGlobalAnsi({parameter.Name});");
-                        sb.AppendLine($"var {parameter.Name}Ptr = &{parameter.Name}PtrInit;");
+                        sb.AppendLine($"var {parameter.Name}Pp = &{parameter.Name}Ptr;");
                         parameterInvocations.Add
-                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Ptr"));
-                        epilogue.Add(() => sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}PtrInit);"));
-                    }
-                    else if (parameter.Type.IsByRef)
-                    {
-                        sb.AppendLine
-                            ($"var {parameter.Name}PtrInit = (byte*) Marshal.StringToHGlobalAnsi({parameter.Name});");
-                        sb.AppendLine($"var {parameter.Name}Ptr = &{parameter.Name}PtrInit;");
-                        parameterInvocations.Add
-                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Ptr"));
-                        epilogue.Add
-                        (
-                            () =>
-                            {
-                                sb.AppendLine($"{parameter.Name} = Marshal.PtrToStringAnsi(*{parameter.Name}Ptr);");
-                                sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}PtrInit);");
-                            }
-                        );
+                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Pp"));
                     }
                     else if (parameter.Type.IsOut)
                     {
@@ -154,15 +137,25 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        sb.AppendLine
-                            ($"var {parameter.Name}Ptr = (byte*) Marshal.StringToHGlobalAnsi({parameter.Name});");
                         parameterInvocations.Add
-                            ((new Type {Name = "byte", IndirectionLevels = 1}, $"{parameter.Name}Ptr"));
-                        epilogue.Add
                         (
-                            () => { sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}Ptr);"); }
+                            (new Type {Name = "byte", IndirectionLevels = 1}, $"{parameter.Name}Ptr")
                         );
                     }
+
+                    epilogue.Add
+                    (
+                        () =>
+                        {
+                            if (parameter.Type.IsByRef)
+                            {
+                                sb.Append($"{parameter.Name} = SilkMarshal.PtrToString(*{parameter.Name}Pp, ");
+                                sb.AppendLine($"{nativeStringEncoding});");
+                            }
+
+                            sb.AppendLine($"SilkMarshal.Free((nint){parameter.Name}Ptr);");
+                        }
+                    );
                 }
                 else if (parameter.Type.IsIn || parameter.Type.IsOut || parameter.Type.IsByRef)
                 {
@@ -171,6 +164,7 @@ namespace Silk.NET.BuildTools.Cpp
                         .WithIsIn(false)
                         .WithIsOut(false)
                         .WithIndirectionLevel(parameter.Type.IndirectionLevels + 1)
+                        .WithName(parameter.Type.IsGenericTypeParameterReference ? "void" : parameter.Type.Name)
                         .Build();
                     sb.AppendLine
                     (
@@ -194,23 +188,14 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            if (function.ReturnType.ToString() != "void")
-            {
-                sb.Append(ind + "ret = ");
-            }
-            else
-            {
-                sb.Append(ind);
-            }
-
             var conv = function.Convention switch
             {
-                CallingConvention.Winapi => throw new NotImplementedException(),
+                CallingConvention.Winapi => string.Empty,
                 CallingConvention.Cdecl => "Cdecl",
                 CallingConvention.StdCall => "Stdcall",
                 CallingConvention.ThisCall => "Thiscall",
                 CallingConvention.FastCall => "Fastcall",
-                _ => "Cdecl"
+                _ => string.Empty
             };
 
             var fnPtrSig = string.Join(", ", parameterInvocations.Select(x => x.Type.ToString()));
@@ -220,9 +205,27 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             fnPtrSig += function.ReturnType;
-            sb.Append($"((delegate* unmanaged[{conv}]<{fnPtrSig}>)");
-            sb.Append($"LpVtbl[{index}])");
-            sb.AppendLine("(" + string.Join(", ", parameterInvocations.Select(x => x.Parameter)) + ");");
+            var fnPtrPre = function.ReturnType.ToString() != "void" ? $"{ind}ret = " : ind;
+            var fnPtrInv = $"LpVtbl[{index}])({string.Join(", ", parameterInvocations.Select(x => x.Parameter))});";
+            if (conv == string.Empty)
+            {
+                sb.AppendLine("#if NET5_0_OR_GREATER");
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine("#else");
+                sb.AppendLine($"{ind}if (SilkMarshal.IsWinapiStdcall)");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Stdcall]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine($"{ind}else");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Cdecl]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine("#endif");
+            }
+            else
+            {
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged[{conv}]<{fnPtrSig}>){fnPtrInv}");
+            }
 
             for (var i = epilogue.Count - 1; i >= 0; i--)
             {

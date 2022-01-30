@@ -20,109 +20,109 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbES2Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES2_compatibility";
-        [NativeApi(EntryPoint = "glClearDepthf")]
+        [NativeApi(EntryPoint = "glClearDepthf", Convention = CallingConvention.Winapi)]
         public partial void ClearDepth([Flow(FlowDirection.In)] float d);
 
-        [NativeApi(EntryPoint = "glDepthRangef")]
+        [NativeApi(EntryPoint = "glDepthRangef", Convention = CallingConvention.Winapi)]
         public partial void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
-        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
+        [NativeApi(EntryPoint = "glGetShaderPrecisionFormat", Convention = CallingConvention.Winapi)]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] out int range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
-        [NativeApi(EntryPoint = "glReleaseShaderCompiler")]
+        [NativeApi(EntryPoint = "glReleaseShaderCompiler", Convention = CallingConvention.Winapi)]
         public partial void ReleaseShaderCompiler();
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
-        [NativeApi(EntryPoint = "glShaderBinary")]
+        [NativeApi(EntryPoint = "glShaderBinary", Convention = CallingConvention.Winapi)]
         public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Shader shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         public unsafe void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged

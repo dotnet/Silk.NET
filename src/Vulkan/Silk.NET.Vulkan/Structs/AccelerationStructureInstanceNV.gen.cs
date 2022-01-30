@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureInstanceNV")]
+    [NativeName("AliasOf", "VkAccelerationStructureInstanceKHR")]
     public unsafe partial struct AccelerationStructureInstanceNV
     {
         public AccelerationStructureInstanceNV

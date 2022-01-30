@@ -30,8 +30,8 @@ namespace Silk.NET.Vulkan.Video
             byte? matrixCoefficients = null,
             uint? numUnitsInTick = null,
             uint? timeScale = null,
-            StdVideoH264HrdParameters? hrdParameters = null,
-            byte? numReorderFrames = null,
+            StdVideoH264HrdParameters* pHrdParameters = null,
+            byte? maxNumReorderFrames = null,
             byte? maxDecFrameBuffering = null,
             StdVideoH264SpsVuiFlags? flags = null
         ) : this()
@@ -81,14 +81,14 @@ namespace Silk.NET.Vulkan.Video
                 TimeScale = timeScale.Value;
             }
 
-            if (hrdParameters is not null)
+            if (pHrdParameters is not null)
             {
-                HrdParameters = hrdParameters.Value;
+                PHrdParameters = pHrdParameters;
             }
 
-            if (numReorderFrames is not null)
+            if (maxNumReorderFrames is not null)
             {
-                NumReorderFrames = numReorderFrames.Value;
+                MaxNumReorderFrames = maxNumReorderFrames.Value;
             }
 
             if (maxDecFrameBuffering is not null)
@@ -148,15 +148,15 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "time_scale")]
         public uint TimeScale;
 
-        [NativeName("Type", "StdVideoH264HrdParameters")]
-        [NativeName("Type.Name", "StdVideoH264HrdParameters")]
-        [NativeName("Name", "hrd_parameters")]
-        public StdVideoH264HrdParameters HrdParameters;
+        [NativeName("Type", "StdVideoH264HrdParameters *")]
+        [NativeName("Type.Name", "StdVideoH264HrdParameters *")]
+        [NativeName("Name", "pHrdParameters")]
+        public StdVideoH264HrdParameters* PHrdParameters;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_reorder_frames")]
-        public byte NumReorderFrames;
+        [NativeName("Name", "max_num_reorder_frames")]
+        public byte MaxNumReorderFrames;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]

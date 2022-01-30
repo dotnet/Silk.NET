@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_RESOURCE_MISC_FLAG")]
     public enum ResourceMiscFlag : int
     {
@@ -46,5 +47,9 @@ namespace Silk.NET.Direct3D11
         ResourceMiscTiled = 0x40000,
         [NativeName("Name", "D3D11_RESOURCE_MISC_HW_PROTECTED")]
         ResourceMiscHWProtected = 0x80000,
+        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE")]
+        ResourceMiscSharedDisplayable = 0x100000,
+        [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER")]
+        ResourceMiscSharedExclusiveWriter = 0x200000,
     }
 }

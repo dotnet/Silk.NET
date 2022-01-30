@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkBufferUsageFlags")]
     public enum BufferUsageFlags : int
     {
@@ -59,6 +59,10 @@ namespace Silk.NET.Vulkan
         BufferUsageVideoEncodeDstBitKhr = 32768,
         [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
         BufferUsageVideoEncodeSrcBitKhr = 65536,
+        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_21_BIT_AMD")]
+        BufferUsageReserved21BitAmd = 2097152,
+        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_22_BIT_AMD")]
+        BufferUsageReserved22BitAmd = 4194304,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
         BufferUsageShaderDeviceAddressBit = 131072,
     }

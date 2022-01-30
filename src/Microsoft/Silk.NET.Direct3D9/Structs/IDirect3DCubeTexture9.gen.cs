@@ -33,136 +33,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DCubeTexture9
         (
-            char* name = null,
-            uint? width = null,
-            uint? height = null,
-            uint? levels = null,
-            uint? usage = null,
-            Format? format = null,
-            Pool? pool = null,
-            uint? priority = null,
-            uint? lOD = null,
-            Texturefiltertype? filterType = null,
-            uint? lockCount = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
-
-            if (levels is not null)
-            {
-                Levels = levels.Value;
-            }
-
-            if (usage is not null)
-            {
-                Usage = usage.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (pool is not null)
-            {
-                Pool = pool.Value;
-            }
-
-            if (priority is not null)
-            {
-                Priority = priority.Value;
-            }
-
-            if (lOD is not null)
-            {
-                LOD = lOD.Value;
-            }
-
-            if (filterType is not null)
-            {
-                FilterType = filterType.Value;
-            }
-
-            if (lockCount is not null)
-            {
-                LockCount = lockCount.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "Name")]
-        public char* Name;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Width")]
-        public uint Width;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Height")]
-        public uint Height;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Levels")]
-        public uint Levels;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Usage")]
-        public uint Usage;
-
-        [NativeName("Type", "D3DFORMAT")]
-        [NativeName("Type.Name", "D3DFORMAT")]
-        [NativeName("Name", "Format")]
-        public Format Format;
-
-        [NativeName("Type", "D3DPOOL")]
-        [NativeName("Type.Name", "D3DPOOL")]
-        [NativeName("Name", "Pool")]
-        public Pool Pool;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Priority")]
-        public uint Priority;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "LOD")]
-        public uint LOD;
-
-        [NativeName("Type", "D3DTEXTUREFILTERTYPE")]
-        [NativeName("Type.Name", "D3DTEXTUREFILTERTYPE")]
-        [NativeName("Name", "FilterType")]
-        public Texturefiltertype FilterType;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "LockCount")]
-        public uint LockCount;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -173,7 +52,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -184,7 +74,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -196,7 +97,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -210,7 +122,18 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -239,7 +162,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -250,7 +184,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -260,7 +205,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            }
+            #endif
             return ret;
         }
 
@@ -269,9 +225,20 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+                }
+            #endif
             }
             return ret;
         }
@@ -283,7 +250,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+                }
+            #endif
             }
             return ret;
         }
@@ -295,9 +273,20 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -308,7 +297,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfData);
+            }
+            #endif
             return ret;
         }
 
@@ -319,7 +319,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pSizeOfDataPtr = &pSizeOfData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -329,9 +340,20 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+                }
+            #endif
             }
             return ret;
         }
@@ -341,11 +363,22 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -358,7 +391,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
+                }
+            #endif
             }
             return ret;
         }
@@ -372,7 +416,18 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -385,9 +440,20 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -400,11 +466,22 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
                     fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -416,7 +493,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguid);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguid);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguid);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguid);
+            }
+            #endif
             return ret;
         }
 
@@ -427,7 +515,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguidPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguidPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguidPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Guid*, int>)LpVtbl[6])(@this, refguidPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -437,7 +536,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[7])(@this, PriorityNew);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[7])(@this, PriorityNew);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[7])(@this, PriorityNew);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[7])(@this, PriorityNew);
+            }
+            #endif
             return ret;
         }
 
@@ -471,7 +581,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            }
+            #endif
             return ret;
         }
 
@@ -498,7 +619,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            }
+            #endif
             return ret;
         }
 
@@ -523,7 +655,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDesc);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDesc);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDesc);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDesc);
+            }
+            #endif
             return ret;
         }
 
@@ -534,7 +677,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDescPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDescPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDescPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDescPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -544,7 +698,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurface);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurface);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurface);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurface);
+            }
+            #endif
             return ret;
         }
 
@@ -555,7 +720,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9** ppCubeMapSurfacePtr = &ppCubeMapSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurfacePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurfacePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurfacePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, FaceType, Level, ppCubeMapSurfacePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -565,7 +741,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+            }
+            #endif
             return ret;
         }
 
@@ -576,7 +763,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+                }
+            #endif
             }
             return ret;
         }
@@ -588,7 +786,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+                }
+            #endif
             }
             return ret;
         }
@@ -602,7 +811,18 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -613,7 +833,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, int>)LpVtbl[20])(@this, FaceType, Level);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, uint, int>)LpVtbl[20])(@this, FaceType, Level);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, uint, int>)LpVtbl[20])(@this, FaceType, Level);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, int>)LpVtbl[20])(@this, FaceType, Level);
+            }
+            #endif
             return ret;
         }
 
@@ -622,7 +853,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
+            }
+            #endif
             return ret;
         }
 
@@ -633,7 +875,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+                }
+            #endif
             }
             return ret;
         }

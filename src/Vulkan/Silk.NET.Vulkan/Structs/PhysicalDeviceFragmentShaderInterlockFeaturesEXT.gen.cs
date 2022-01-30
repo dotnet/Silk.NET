@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
+    public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceFragmentShaderInterlockFeaturesEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "fragmentShaderShadingRateInterlock")]
         public Bool32 FragmentShaderShadingRateInterlock;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShaderInterlockFeaturesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

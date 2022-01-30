@@ -20,76 +20,76 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVShaderBufferLoad : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_shader_buffer_load";
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        [NativeApi(EntryPoint = "glGetIntegerui64vNV")]
+        [NativeApi(EntryPoint = "glGetIntegerui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger([Flow(FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
 
-        [NativeApi(EntryPoint = "glGetIntegerui64vNV")]
+        [NativeApi(EntryPoint = "glGetIntegerui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetInteger([Flow(FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result);
 
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
+        [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        [NativeApi(EntryPoint = "glGetUniformui64vNV")]
+        [NativeApi(EntryPoint = "glGetUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] ulong* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformui64vNV")]
+        [NativeApi(EntryPoint = "glGetUniformui64vNV", Convention = CallingConvention.Winapi)]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out ulong @params);
 
-        [NativeApi(EntryPoint = "glIsBufferResidentNV")]
+        [NativeApi(EntryPoint = "glIsBufferResidentNV", Convention = CallingConvention.Winapi)]
         public partial bool IsBufferResident([Flow(FlowDirection.In)] NV target);
 
-        [NativeApi(EntryPoint = "glIsNamedBufferResidentNV")]
+        [NativeApi(EntryPoint = "glIsNamedBufferResidentNV", Convention = CallingConvention.Winapi)]
         public partial bool IsNamedBufferResident([Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glMakeBufferNonResidentNV")]
+        [NativeApi(EntryPoint = "glMakeBufferNonResidentNV", Convention = CallingConvention.Winapi)]
         public partial void MakeBufferNonResident([Flow(FlowDirection.In)] NV target);
 
-        [NativeApi(EntryPoint = "glMakeBufferResidentNV")]
+        [NativeApi(EntryPoint = "glMakeBufferResidentNV", Convention = CallingConvention.Winapi)]
         public partial void MakeBufferResident([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV access);
 
-        [NativeApi(EntryPoint = "glMakeNamedBufferNonResidentNV")]
+        [NativeApi(EntryPoint = "glMakeNamedBufferNonResidentNV", Convention = CallingConvention.Winapi)]
         public partial void MakeNamedBufferNonResident([Flow(FlowDirection.In)] uint buffer);
 
-        [NativeApi(EntryPoint = "glMakeNamedBufferResidentNV")]
+        [NativeApi(EntryPoint = "glMakeNamedBufferResidentNV", Convention = CallingConvention.Winapi)]
         public partial void MakeNamedBufferResident([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV access);
 
-        [NativeApi(EntryPoint = "glProgramUniformui64NV")]
+        [NativeApi(EntryPoint = "glProgramUniformui64NV", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
-        [NativeApi(EntryPoint = "glProgramUniformui64vNV")]
+        [NativeApi(EntryPoint = "glProgramUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
 
-        [NativeApi(EntryPoint = "glProgramUniformui64vNV")]
+        [NativeApi(EntryPoint = "glProgramUniformui64vNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
 
-        [NativeApi(EntryPoint = "glUniformui64NV")]
+        [NativeApi(EntryPoint = "glUniformui64NV", Convention = CallingConvention.Winapi)]
         public partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
-        [NativeApi(EntryPoint = "glUniformui64vNV")]
+        [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
 
-        [NativeApi(EntryPoint = "glUniformui64vNV")]
+        [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
         public partial void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
 
         public unsafe ulong GetInteger([Flow(FlowDirection.In)] NV value)

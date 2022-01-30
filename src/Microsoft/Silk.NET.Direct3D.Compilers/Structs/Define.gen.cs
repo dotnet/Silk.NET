@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "DxcDefine")]
     public unsafe partial struct Define
     {

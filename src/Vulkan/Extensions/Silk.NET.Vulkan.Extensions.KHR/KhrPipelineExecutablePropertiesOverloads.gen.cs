@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrPipelineExecutablePropertiesOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
         public static unsafe Result GetPipelineExecutableInternalRepresentation(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
         public static unsafe Result GetPipelineExecutableInternalRepresentation(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] Span<uint> pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations)
         {
             // SpanOverloader
@@ -45,6 +47,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
         public static unsafe Result GetPipelineExecutableInternalRepresentation(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineExecutableInfoKHR> pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations)
         {
             // SpanOverloader
@@ -59,6 +62,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pInternalRepresentations = new(StructureType.PipelineExecutableInternalRepresentationKhr);")]
         public static unsafe Result GetPipelineExecutableInternalRepresentation(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineExecutableInfoKHR> pExecutableInfo, [Count(Count = 0)] Span<uint> pInternalRepresentationCount, [Count(Parameter = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations)
         {
             // SpanOverloader
@@ -66,6 +70,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
         public static unsafe Result GetPipelineExecutableProperties(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] Span<PipelineExecutablePropertiesKHR> pProperties)
         {
             // SpanOverloader
@@ -80,6 +85,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
         public static unsafe Result GetPipelineExecutableProperties(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] Span<uint> pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] Span<PipelineExecutablePropertiesKHR> pProperties)
         {
             // SpanOverloader
@@ -94,6 +100,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
         public static unsafe Result GetPipelineExecutableProperties(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineInfoKHR> pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] Span<PipelineExecutablePropertiesKHR> pProperties)
         {
             // SpanOverloader
@@ -108,6 +115,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PipelineExecutablePropertiesKhr);")]
         public static unsafe Result GetPipelineExecutableProperties(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineInfoKHR> pPipelineInfo, [Count(Count = 0)] Span<uint> pExecutableCount, [Count(Parameter = "pExecutableCount"), Flow(FlowDirection.Out)] Span<PipelineExecutablePropertiesKHR> pProperties)
         {
             // SpanOverloader
@@ -115,6 +123,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
         public static unsafe Result GetPipelineExecutableStatistic(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableStatisticKHR> pStatistics)
         {
             // SpanOverloader
@@ -129,6 +138,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
         public static unsafe Result GetPipelineExecutableStatistic(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] Span<uint> pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableStatisticKHR> pStatistics)
         {
             // SpanOverloader
@@ -143,6 +153,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
         public static unsafe Result GetPipelineExecutableStatistic(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineExecutableInfoKHR> pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableStatisticKHR> pStatistics)
         {
             // SpanOverloader
@@ -157,6 +168,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pStatistics = new(StructureType.PipelineExecutableStatisticKhr);")]
         public static unsafe Result GetPipelineExecutableStatistic(this KhrPipelineExecutableProperties thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PipelineExecutableInfoKHR> pExecutableInfo, [Count(Count = 0)] Span<uint> pStatisticCount, [Count(Parameter = "pStatisticCount"), Flow(FlowDirection.Out)] Span<PipelineExecutableStatisticKHR> pStatistics)
         {
             // SpanOverloader

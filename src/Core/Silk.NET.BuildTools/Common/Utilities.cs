@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ClangSharp.Interop;
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
@@ -22,8 +22,7 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets a list of keywords in the C# language.
         /// </summary>
-        [NotNull]
-        public static List<string> CSharpKeywords => new List<string>
+        public static readonly HashSet<string> CSharpKeywords = new HashSet<string>
         {
             "abstract",
             "event",
@@ -152,7 +151,6 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="arrayDimensions">The dimension.</param>
         /// <returns>The string.</returns>
-        [NotNull]
         public static string GetArrayDimensionString(int arrayDimensions)
         {
             if (arrayDimensions == 0)
@@ -418,6 +416,30 @@ namespace Silk.NET.BuildTools.Common
             Accessibility.Internal => "internal" + (s ? " " : string.Empty),
             Accessibility.Private => "private" + (s ? " " : string.Empty),
             _ => string.Empty
+        };
+
+        public static bool ConstitutesVulkanOutOverload(this string name) => name.StartsWith
+            ("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
+            ("vkGet");
+
+        public static string MapNativeString(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "NativeStringEncoding.BStr",
+            "LPSTR" or "LPCSTR" => "NativeStringEncoding.LPStr",
+            "LPTSTR" or "LPCTSTR" => "NativeStringEncoding.LPTStr",
+            "LPUTF8STR" => "NativeStringEncoding.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "NativeStringEncoding.LPWStr",
+            _ => "NativeStringEncoding.UTF8"
+        };
+
+        public static string MapUnmanagedType(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "Silk.NET.Core.Native.UnmanagedType.BStr",
+            "LPSTR" or "LPCSTR" => "Silk.NET.Core.Native.UnmanagedType.LPStr",
+            "LPTSTR" or "LPCTSTR" => "Silk.NET.Core.Native.UnmanagedType.LPTStr",
+            "LPUTF8STR" => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "Silk.NET.Core.Native.UnmanagedType.LPWStr",
+            _ => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str"
         };
     }
 }

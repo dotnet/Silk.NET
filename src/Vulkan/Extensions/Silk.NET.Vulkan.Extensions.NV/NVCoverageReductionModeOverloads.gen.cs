@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVCoverageReductionModeOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCombinations = new(StructureType.FramebufferMixedSamplesCombinationNV);")]
         public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCombinations = new(StructureType.FramebufferMixedSamplesCombinationNV);")]
         public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
         {
             // SpanOverloader

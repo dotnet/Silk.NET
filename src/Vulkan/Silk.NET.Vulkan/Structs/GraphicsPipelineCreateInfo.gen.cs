@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGraphicsPipelineCreateInfo")]
-    public unsafe partial struct GraphicsPipelineCreateInfo
+    public unsafe partial struct GraphicsPipelineCreateInfo : IChainStart
     {
         public GraphicsPipelineCreateInfo
         (
@@ -233,5 +233,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int32_t")]
         [NativeName("Name", "basePipelineIndex")]
         public int BasePipelineIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.GraphicsPipelineCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref GraphicsPipelineCreateInfo Chain(
+            out GraphicsPipelineCreateInfo capture)
+        {
+            capture = new GraphicsPipelineCreateInfo(StructureType.GraphicsPipelineCreateInfo);
+            return ref capture;
+        }
     }
 }

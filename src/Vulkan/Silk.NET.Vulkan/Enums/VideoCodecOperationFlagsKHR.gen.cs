@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkVideoCodecOperationFlagsKHR")]
     public enum VideoCodecOperationFlagsKHR : int
     {
@@ -17,6 +17,8 @@ namespace Silk.NET.Vulkan
         VideoCodecOperationInvalidBitKhr = 0,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_EXT")]
         VideoCodecOperationEncodeH264BitExt = 65536,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_EXT")]
+        VideoCodecOperationEncodeH265BitExt = 131072,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_EXT")]
         VideoCodecOperationDecodeH264BitExt = 1,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_EXT")]

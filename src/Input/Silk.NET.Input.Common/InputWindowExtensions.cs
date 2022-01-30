@@ -53,12 +53,20 @@ namespace Silk.NET.Input
         /// </summary>
         /// <param name="view">The view to create an input context for.</param>
         /// <returns>The new input context.</returns>
+        /// <exception cref="InvalidOperationException">
+        /// Couldn't create input context as the view was not initialized. This occurs when you try to create an InputContext without initializing the view first.
+        /// </exception>
         /// <exception cref="NotSupportedException">
         /// Couldn't find a suitable input platform for this view. This occurs when you've created a window/view using
         /// a window platform, but haven't installed
         /// </exception>
         public static IInputContext CreateInput(this IView view)
         {
+            if (!view.IsInitialized)
+            {
+                throw new InvalidOperationException("Couldn't create input context as the view was not initialized.");
+            }
+
             foreach (var inputPlatform in Platforms)
             {
                 if (inputPlatform.IsApplicable(view))

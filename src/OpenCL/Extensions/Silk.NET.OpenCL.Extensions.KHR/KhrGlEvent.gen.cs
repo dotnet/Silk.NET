@@ -20,10 +20,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrGlEvent : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_gl_event";
-        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
+        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
+        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR", Convention = CallingConvention.Winapi)]
         public partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrGlEvent(INativeContext ctx)

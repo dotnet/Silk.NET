@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPipelineStageFlags2KHR")]
     public enum PipelineStageFlags2KHR : long
     {
@@ -93,5 +93,11 @@ namespace Silk.NET.Vulkan
         PipelineStage2TaskShaderBitNV = 524288,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_MESH_SHADER_BIT_NV")]
         PipelineStage2MeshShaderBitNV = 1048576,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_SUBPASS_SHADING_BIT_HUAWEI")]
+        PipelineStage2SubpassShadingBitHuawei = 549755813888,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_INVOCATION_MASK_BIT_HUAWEI")]
+        PipelineStage2InvocationMaskBitHuawei = 1099511627776,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_387_BIT_KHR")]
+        PipelineStage2Reserved387BitKhr = 268435456,
     }
 }

@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -123,7 +178,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -133,7 +199,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -144,7 +221,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -154,7 +242,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
+            }
+            #endif
             return ret;
         }
 
@@ -165,7 +264,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -175,7 +285,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -186,7 +307,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -196,7 +328,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -207,7 +350,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }

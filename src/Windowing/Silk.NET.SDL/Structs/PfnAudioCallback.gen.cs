@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnAudioCallback(delegate* unmanaged[Cdecl]<void*, byte*, int, void> ptr) => new PfnAudioCallback(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void AudioCallback(void* arg0, byte* arg1, int arg2);
 }
 

@@ -39,7 +39,18 @@ namespace Silk.NET.XAudio
         public readonly void OnVoiceProcessingPassStart(uint BytesRequired)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, uint, void>)LpVtbl[0])(@this, BytesRequired);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, uint, void>)LpVtbl[0])(@this, BytesRequired);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, uint, void>)LpVtbl[0])(@this, BytesRequired);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, uint, void>)LpVtbl[0])(@this, BytesRequired);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
@@ -60,16 +71,38 @@ namespace Silk.NET.XAudio
         public readonly unsafe void OnBufferStart(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContext);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContext);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContext);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContext);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnBufferStart<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[3])(@this, pBufferContextPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContextPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContextPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContextPtr);
+                }
+            #endif
             }
         }
 
@@ -77,16 +110,38 @@ namespace Silk.NET.XAudio
         public readonly unsafe void OnBufferEnd(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContext);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContext);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContext);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContext);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnBufferEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[4])(@this, pBufferContextPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContextPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContextPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContextPtr);
+                }
+            #endif
             }
         }
 
@@ -94,16 +149,38 @@ namespace Silk.NET.XAudio
         public readonly unsafe void OnLoopEnd(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContext);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContext);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContext);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContext);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnLoopEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[5])(@this, pBufferContextPtr);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContextPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContextPtr);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContextPtr);
+                }
+            #endif
             }
         }
 
@@ -111,16 +188,38 @@ namespace Silk.NET.XAudio
         public readonly unsafe void OnVoiceError(void* pBufferContext, int Error)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContext, Error);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContext, Error);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContext, Error);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContext, Error);
+            }
+            #endif
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnVoiceError<T0>(ref T0 pBufferContext, int Error) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
+            #if NET5_0_OR_GREATER
+                ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
+                }
+                else
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
+                }
+            #endif
             }
         }
 

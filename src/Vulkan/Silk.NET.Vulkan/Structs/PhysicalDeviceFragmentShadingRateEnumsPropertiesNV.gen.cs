@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
+    public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlagBits")]
         [NativeName("Name", "maxFragmentShadingRateInvocationCount")]
         public SampleCountFlags MaxFragmentShadingRateInvocationCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShadingRateEnumsPropertiesNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

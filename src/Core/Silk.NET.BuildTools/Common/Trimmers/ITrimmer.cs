@@ -1,7 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using JetBrains.Annotations;
+using System.Diagnostics.Contracts;
 
 namespace Silk.NET.BuildTools.Common.Trimmers
 {
@@ -16,15 +16,14 @@ namespace Silk.NET.BuildTools.Common.Trimmers
         /// </summary>
         /// <param name="trimmable">The type to check.</param>
         /// <returns>true if the name trimmer is relevant; otherwise, false.</returns>
-        bool IsRelevant([NotNull] TTrimmable trimmable);
+        bool IsRelevant(TTrimmable trimmable);
 
         /// <summary>
         /// Trims the given type.
         /// </summary>
         /// <param name="trimmable">The type to trim.</param>
         /// <param name="prefix">The prefix.</param>
-        [NotNull]
         [Pure]
-        TTrimmable Trim([NotNull] TTrimmable trimmable, string prefix);
+        TTrimmable Trim(TTrimmable trimmable, string prefix);
     }
 }

@@ -57,8 +57,8 @@ namespace Silk.NET.SDL
         public int Axis;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
+        [NativeName("Type", "struct (unnamed struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
         [NativeName("Name", "hat")]
         public GameControllerHatValue Hat;
     }

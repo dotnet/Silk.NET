@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyCommandTransformInfoQCOM")]
-    public unsafe partial struct CopyCommandTransformInfoQCOM
+    public unsafe partial struct CopyCommandTransformInfoQCOM : IExtendsChain<BufferImageCopy2KHR>, IExtendsChain<ImageBlit2KHR>
     {
         public CopyCommandTransformInfoQCOM
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceTransformFlagBitsKHR")]
         [NativeName("Name", "transform")]
         public SurfaceTransformFlagsKHR Transform;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyCommandTransformInfoQCom;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

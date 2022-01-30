@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPipelineCreateFlags")]
     public enum PipelineCreateFlags : int
     {
@@ -19,10 +19,14 @@ namespace Silk.NET.Vulkan
         PipelineCreateAllowDerivativesBit = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_DERIVATIVE_BIT")]
         PipelineCreateDerivativeBit = 4,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_21_BIT_AMD")]
-        PipelineCreateReserved21BitAmd = 2097152,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_22_BIT_AMD")]
-        PipelineCreateReserved22BitAmd = 4194304,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineCreateRenderingFragmentShadingRateAttachmentBitKhr = 2097152,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineRasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        PipelineCreateRenderingFragmentDensityMapAttachmentBitExt = 4194304,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        PipelineRasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreateViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_KHR")]
@@ -59,8 +63,8 @@ namespace Silk.NET.Vulkan
         PipelineCreateReserved23BitAmd = 8388608,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_10_BIT_AMD")]
         PipelineCreateReserved10BitAmd = 1024,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_20_NV")]
-        PipelineCreateReservedBit20NV = 1048576,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
+        PipelineCreateRayTracingAllowMotionBitNV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

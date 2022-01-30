@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLib);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLib);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLib);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLib);
+            }
+            #endif
             return ret;
         }
 
@@ -123,7 +178,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pLibPtr = &pLib)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLibPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLibPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLibPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLibPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -135,7 +201,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char* pLibNamePtr = &pLibName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+                }
+            #endif
             }
             return ret;
         }
@@ -149,34 +226,67 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlob* pLibPtr = &pLib)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+                    }
+            #endif
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterLibrary(string pLibName, IDxcBlob* pLib)
+        public readonly unsafe int RegisterLibrary([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, IDxcBlob* pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pLibNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pLibName);
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
-            Marshal.FreeHGlobal((nint)pLibNamePtr);
+            var pLibNamePtr = (byte*) SilkMarshal.StringToPtr(pLibName, NativeStringEncoding.LPWStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
+            }
+            #endif
+            SilkMarshal.Free((nint)pLibNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterLibrary(string pLibName, ref IDxcBlob pLib)
+        public readonly int RegisterLibrary([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, ref IDxcBlob pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pLibNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pLibName);
+            var pLibNamePtr = (byte*) SilkMarshal.StringToPtr(pLibName, NativeStringEncoding.LPWStr);
             fixed (IDxcBlob* pLibPtr = &pLib)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pLibNamePtr);
+            SilkMarshal.Free((nint)pLibNamePtr);
             return ret;
         }
 
@@ -185,7 +295,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -196,7 +317,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -208,7 +340,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -222,7 +365,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -235,7 +389,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** pLibNamesPtr = &pLibNames)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -249,7 +414,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -264,7 +440,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -281,7 +468,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -295,7 +493,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -309,7 +518,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -324,7 +544,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -341,7 +572,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -357,7 +599,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -374,7 +627,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -392,7 +656,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
             }
@@ -412,7 +687,18 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -421,126 +707,214 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            #endif
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -551,7 +925,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -565,7 +950,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -580,7 +976,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -597,7 +1004,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -613,7 +1031,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -630,7 +1059,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -648,7 +1088,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
             }
@@ -668,7 +1119,18 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -685,7 +1147,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -702,7 +1175,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -720,7 +1204,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
             }
@@ -740,7 +1235,18 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -759,7 +1265,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (char** pLibNamesPtr = &pLibNames)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
             }
@@ -779,7 +1296,18 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -800,7 +1328,18 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (char** pArgumentsPtr = &pArguments)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                            }
+            #endif
                         }
                     }
                 }
@@ -823,7 +1362,18 @@ namespace Silk.NET.Direct3D.Compilers
                         {
                             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                                ret = ((delegate* unmanaged<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                                if (SilkMarshal.IsWinapiStdcall)
+                                {
+                                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                                }
+                                else
+                                {
+                                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                                }
+            #endif
                             }
                         }
                     }
@@ -833,408 +1383,661 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            #endif
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
                 {
                     fixed (char** pArgumentsPtr = &pArguments)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -1243,152 +2046,251 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                            }
+            #endif
                         }
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
-            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+            #endif
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
-            var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
+            var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+            var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
-            Marshal.FreeHGlobal((nint)pEntryNamePtr);
+            SilkMarshal.Free((nint)pTargetProfilePtr);
+            SilkMarshal.Free((nint)pEntryNamePtr);
             return ret;
         }
 

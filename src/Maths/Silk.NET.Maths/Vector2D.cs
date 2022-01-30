@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -103,12 +106,12 @@ namespace Silk.NET.Maths
             array[index + 1] = Y;
         }
 
-        /// <summary>Returns a boolean indicating whether the given Vector2D is equal to this Vector2D instance.</summary>
-        /// <param name="other">The Vector2D to compare this instance to.</param>
-        /// <returns>True if the other Vector2D is equal to this instance; False otherwise.</returns>
+        /// <summary>Returns a boolean indicating whether the given <see cref="Vector2D{T}"/> is equal to this <see cref="Vector2D{T}"/> instance.</summary>
+        /// <param name="other">The <see cref="Vector2D{T}"/> to compare this instance to.</param>
+        /// <returns>True if the other <see cref="Vector2D{T}"/> is equal to this instance; False otherwise.</returns>
         public readonly bool Equals(Vector2D<T> other) => this == other;
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector2D instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector2D{T}"/> instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Vector2D; False otherwise.</returns>
         [MethodImpl((MethodImplOptions) 768)]
@@ -210,16 +213,16 @@ namespace Silk.NET.Maths
         [MethodImpl((MethodImplOptions) 768)]
         public static Vector2D<T> operator -(Vector2D<T> value) => Zero - value;
 
-        /// <summary>Returns a String representing this Vector2D instance.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector2D{T}"/> instance.</summary>
         /// <returns>The string representation.</returns>
         public override readonly string ToString() => ToString("G", CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector2D instance, using the specified format to format individual elements.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector2D{T}"/> instance, using the specified format to format individual elements.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <returns>The string representation.</returns>
         public readonly string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector2D instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector2D{T}"/> instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>
         /// <returns>The string representation.</returns>

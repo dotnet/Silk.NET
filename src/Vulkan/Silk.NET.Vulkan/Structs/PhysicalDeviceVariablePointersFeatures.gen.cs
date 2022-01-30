@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVariablePointersFeatures")]
-    public unsafe partial struct PhysicalDeviceVariablePointersFeatures
+    [NativeName("Aliases", "VkPhysicalDeviceVariablePointersFeaturesKHR, VkPhysicalDeviceVariablePointerFeaturesKHR, VkPhysicalDeviceVariablePointerFeatures")]
+    public unsafe partial struct PhysicalDeviceVariablePointersFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceVariablePointersFeatures
         (
@@ -68,5 +69,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "variablePointers")]
         public Bool32 VariablePointers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVariablePointersFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkNativeBufferANDROID")]
-    public unsafe partial struct NativeBufferANDROID
+    public unsafe partial struct NativeBufferANDROID : IChainable
     {
         public NativeBufferANDROID
         (
@@ -101,5 +101,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkNativeBufferUsage2ANDROID")]
         [NativeName("Name", "usage2")]
         public NativeBufferUsage2ANDROID Usage2;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.NativeBufferAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

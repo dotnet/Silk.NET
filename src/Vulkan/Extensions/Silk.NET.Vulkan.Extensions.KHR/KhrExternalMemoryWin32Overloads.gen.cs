@@ -38,6 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryWin32HandleProperties = new(StructureType.MemoryWin32HandlePropertiesKhr);")]
         public static unsafe Result GetMemoryWin32HandleProperties(this KhrExternalMemoryWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint handle, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryWin32HandlePropertiesKHR> pMemoryWin32HandleProperties)
         {
             // SpanOverloader

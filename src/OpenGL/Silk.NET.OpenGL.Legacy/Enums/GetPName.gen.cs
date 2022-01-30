@@ -872,12 +872,22 @@ namespace Silk.NET.OpenGL.Legacy
         TextureCompressionHint = 0x84EF,
         [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE")]
         TextureBindingRectangle = 0x84F6,
+        [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE_ARB")]
+        TextureBindingRectangleArb = 0x84F6,
+        [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE_NV")]
+        TextureBindingRectangleNV = 0x84F6,
         [NativeName("Name", "GL_MAX_RECTANGLE_TEXTURE_SIZE")]
         MaxRectangleTextureSize = 0x84F8,
         [NativeName("Name", "GL_MAX_TEXTURE_LOD_BIAS")]
         MaxTextureLodBias = 0x84FD,
         [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP")]
         TextureBindingCubeMap = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_ARB")]
+        TextureBindingCubeMapArb = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_EXT")]
+        TextureBindingCubeMapExt = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+        TextureBindingCubeMapOes = 0x8514,
         [NativeName("Name", "GL_MAX_CUBE_MAP_TEXTURE_SIZE")]
         MaxCubeMapTextureSize = 0x851C,
         [NativeName("Name", "GL_PACK_SUBSAMPLE_RATE_SGIX")]
@@ -1008,6 +1018,12 @@ namespace Silk.NET.OpenGL.Legacy
         RenderbufferBinding = 0x8CA7,
         [NativeName("Name", "GL_READ_FRAMEBUFFER_BINDING")]
         ReadFramebufferBinding = 0x8CAA,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS")]
+        MaxColorAttachments = 0x8CDF,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS_EXT")]
+        MaxColorAttachmentsExt = 0x8CDF,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS_NV")]
+        MaxColorAttachmentsNV = 0x8CDF,
         [NativeName("Name", "GL_MAX_ELEMENT_INDEX")]
         MaxElementIndex = 0x8D6B,
         [NativeName("Name", "GL_MAX_GEOMETRY_UNIFORM_COMPONENTS")]
@@ -1034,6 +1050,10 @@ namespace Silk.NET.OpenGL.Legacy
         MaxTessControlUniformBlocks = 0x8E89,
         [NativeName("Name", "GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS")]
         MaxTessEvaluationUniformBlocks = 0x8E8A,
+        [NativeName("Name", "GL_FETCH_PER_SAMPLE_ARM")]
+        FetchPerSampleArm = 0x8F65,
+        [NativeName("Name", "GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
+        FragmentShaderFramebufferFetchMrtArm = 0x8F66,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_INDEX")]
         PrimitiveRestartIndex = 0x8F9E,
         [NativeName("Name", "GL_MIN_MAP_BUFFER_ALIGNMENT")]

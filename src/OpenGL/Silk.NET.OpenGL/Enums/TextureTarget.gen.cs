@@ -42,6 +42,10 @@ namespace Silk.NET.OpenGL
         ProxyTexture4DSgis = 0x8135,
         [NativeName("Name", "GL_TEXTURE_RECTANGLE")]
         TextureRectangle = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_ARB")]
+        TextureRectangleArb = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_NV")]
+        TextureRectangleNV = 0x84F5,
         [NativeName("Name", "GL_PROXY_TEXTURE_RECTANGLE")]
         ProxyTextureRectangle = 0x84F7,
         [NativeName("Name", "GL_PROXY_TEXTURE_RECTANGLE_ARB")]
@@ -50,6 +54,12 @@ namespace Silk.NET.OpenGL
         ProxyTextureRectangleNV = 0x84F7,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP")]
         TextureCubeMap = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARB")]
+        TextureCubeMapArb = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_EXT")]
+        TextureCubeMapExt = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_OES")]
+        TextureCubeMapOes = 0x8513,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_POSITIVE_X")]
         TextureCubeMapPositiveX = 0x8515,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_NEGATIVE_X")]
@@ -82,6 +92,8 @@ namespace Silk.NET.OpenGL
         ProxyTexture2DArrayExt = 0x8C1B,
         [NativeName("Name", "GL_TEXTURE_BUFFER")]
         TextureBuffer = 0x8C2A,
+        [NativeName("Name", "GL_RENDERBUFFER")]
+        Renderbuffer = 0x8D41,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARRAY")]
         TextureCubeMapArray = 0x9009,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARRAY_ARB")]

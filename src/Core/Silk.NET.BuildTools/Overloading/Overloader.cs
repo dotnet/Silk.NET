@@ -40,8 +40,23 @@ namespace Silk.NET.BuildTools.Overloading
             new ImplicitCountSpanOverloader()
         };
 
+        private static IEnumerable<T> Filter<T>
+        (
+            this IEnumerable<T> elements,
+            Function function,
+            Dictionary<string, string[]>? overloadExcludedFunctions
+        ) => elements.Where
+        (
+            x => !(overloadExcludedFunctions?.TryGetValue(x.GetType().Name, out var v) ?? false) ||
+                 !v.Contains(function.NativeName)
+        );
 
-        public static IEnumerable<Function> GetWithVariants(IEnumerable<Function> functions, Project core)
+        public static IEnumerable<Function> GetWithVariants
+        (
+            IEnumerable<Function> functions,
+            Project core,
+            Dictionary<string, string[]>? overloadExcludedFunctions
+        )
         {
             var enumerable = functions;
             foreach (var overloaders in ParameterOverloaders)
@@ -51,7 +66,8 @@ namespace Silk.NET.BuildTools.Overloading
 
             foreach (var overload in enumerable)
             {
-                foreach (var final in SimpleReturnOverloader.GetWithOverloads(overload, core, ReturnOverloaders))
+                foreach (var final in SimpleReturnOverloader.GetWithOverloads
+                    (overload, core, ReturnOverloaders.Filter(overload, overloadExcludedFunctions)))
                 {
                     yield return final;
                 }
@@ -61,7 +77,8 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 foreach (var function in functions)
                 {
-                    foreach (var overload in SimpleParameterOverloader.GetWithOverloads(function, core, overloaders))
+                    foreach (var overload in SimpleParameterOverloader.GetWithOverloads
+                        (function, core, overloaders.Filter(function, overloadExcludedFunctions)))
                     {
                         yield return overload;
                     }
@@ -69,7 +86,12 @@ namespace Silk.NET.BuildTools.Overloading
             }
         }
 
-        public static IEnumerable<ImplementedFunction> GetOverloads(IEnumerable<Function> allFunctions, Project core)
+        public static IEnumerable<ImplementedFunction> GetOverloads
+        (
+            IEnumerable<Function> allFunctions,
+            Project core,
+            Dictionary<string, string[]>? overloadExcludedFunctions
+        )
         {
             return Get().RemoveDuplicates(CheckDuplicate);
 
@@ -81,7 +103,7 @@ namespace Silk.NET.BuildTools.Overloading
                 foreach (var function in allFunctions)
                 {
                     foreach (var overload in ComplexFunctionOverloader.GetOverloads
-                        (function, core, FunctionOverloaders))
+                        (function, core, FunctionOverloaders.Filter(function, overloadExcludedFunctions)))
                     {
                         yield return overload;
                     }

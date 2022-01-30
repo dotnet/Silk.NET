@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.Serialization;
 
@@ -24,7 +27,7 @@ namespace Silk.NET.Maths
         public Vector2D<T> Size;
 
         /// <summary>
-        /// Constructs a Rectangle from an origin and an size
+        /// Constructs a Rectangle from an origin and a size
         /// </summary>
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="size">The size of the rect.</param>
@@ -32,6 +35,40 @@ namespace Silk.NET.Maths
         {
             Origin = origin;
             Size = size;
+        }
+
+        /// <summary>
+        /// Constructs a Rectangle from an origin and components of a size
+        /// </summary>
+        /// <param name="origin">The origin of the rect.</param>
+        /// <param name="sizeX">The X component of the size of the rect.</param>
+        /// <param name="sizeY">The Y component of the size of the rect.</param>
+        public Rectangle(Vector2D<T> origin, T sizeX, T sizeY)
+            : this(origin, new Vector2D<T>(sizeX, sizeY))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Rectangle from components of an origin and a size
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the rect.</param>
+        /// <param name="originY">The Y component of the origin of the rect.</param>
+        /// <param name="size">The size of the rect.</param>
+        public Rectangle(T originX, T originY, Vector2D<T> size)
+            : this(new Vector2D<T>(originX, originY), size)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Rectangle from components of an origin and components of a size
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the rect.</param>
+        /// <param name="originY">The Y component of the origin of the rect.</param>
+        /// <param name="sizeX">The X component of the size of the rect.</param>
+        /// <param name="sizeY">The Y component of the size of the rect.</param>
+        public Rectangle(T originX, T originY, T sizeX, T sizeY)
+            : this(new Vector2D<T>(originX, originY), new Vector2D<T>(sizeX, sizeY))
+        {
         }
 
         /// <summary>

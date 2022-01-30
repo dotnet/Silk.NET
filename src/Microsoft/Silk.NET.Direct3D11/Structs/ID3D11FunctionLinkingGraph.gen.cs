@@ -46,7 +46,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
+            }
+            #endif
             return ret;
         }
 
@@ -123,7 +178,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -135,7 +201,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
+                }
+            #endif
             }
             return ret;
         }
@@ -149,7 +226,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -160,7 +248,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
+            }
+            #endif
             return ret;
         }
 
@@ -171,7 +270,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode** ppInputNodePtr = &ppInputNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -183,7 +293,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ParameterDesc* pInputParametersPtr = &pInputParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
+                }
+            #endif
             }
             return ret;
         }
@@ -197,7 +318,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode** ppInputNodePtr = &ppInputNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -208,7 +340,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
+            }
+            #endif
             return ret;
         }
 
@@ -219,7 +362,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode** ppOutputNodePtr = &ppOutputNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -231,7 +385,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ParameterDesc* pOutputParametersPtr = &pOutputParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
+                }
+            #endif
             }
             return ret;
         }
@@ -245,7 +410,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode** ppOutputNodePtr = &ppOutputNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -256,7 +432,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            }
+            #endif
             return ret;
         }
 
@@ -267,7 +454,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -279,7 +477,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pFunctionNamePtr = &pFunctionName)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+            #endif
             }
             return ret;
         }
@@ -293,34 +502,67 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+            #endif
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            }
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
             fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             return ret;
         }
 
@@ -331,7 +573,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                }
+            #endif
             }
             return ret;
         }
@@ -345,7 +598,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -360,7 +624,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -377,7 +652,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -385,32 +671,54 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                }
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -422,7 +730,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+                }
+            #endif
             }
             return ret;
         }
@@ -436,7 +755,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -451,7 +781,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -468,7 +809,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -476,32 +828,54 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -515,7 +889,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -532,7 +917,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -550,7 +946,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (byte* pFunctionNamePtr = &pFunctionName)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                        }
+            #endif
                     }
                 }
             }
@@ -570,7 +977,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -579,7 +997,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -587,16 +1005,27 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -604,202 +1033,345 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+            #endif
                     }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            }
+            #endif
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+            #endif
+            }
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
+            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+            #endif
+                }
+            }
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            }
+            else
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
             {
-                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                }
+                else
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
                 }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
-            }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        }
+            #endif
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                }
+            #endif
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pModuleInstanceNamespacePtr = (byte*) SilkMarshal.StringToPtr(pModuleInstanceNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            var pFunctionNamePtr = (byte*) SilkMarshal.StringToPtr(pFunctionName, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            SilkMarshal.Free((nint)pFunctionNamePtr);
             }
-            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
+            SilkMarshal.Free((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -808,7 +1380,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
+            }
+            #endif
             return ret;
         }
 
@@ -819,7 +1402,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+                }
+            #endif
             }
             return ret;
         }
@@ -831,7 +1425,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
+                }
+            #endif
             }
             return ret;
         }
@@ -845,7 +1450,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -856,7 +1472,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            #endif
             return ret;
         }
 
@@ -867,19 +1494,41 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
             return ret;
         }
 
@@ -890,7 +1539,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                }
+            #endif
             }
             return ret;
         }
@@ -904,22 +1564,44 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -931,7 +1613,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+            #endif
             }
             return ret;
         }
@@ -945,22 +1638,44 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
             {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -974,7 +1689,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -991,7 +1717,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -999,7 +1736,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1007,96 +1744,173 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            #endif
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
             fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+            {
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
+            }
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            }
+            else
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
             }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                }
+            #endif
             }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
                 }
             }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
             fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
             {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
             }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1107,7 +1921,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+            #endif
             }
             return ret;
         }
@@ -1121,22 +1946,44 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -1150,7 +1997,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1167,7 +2025,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1175,7 +2044,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1183,9 +2052,20 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
@@ -1200,7 +2080,18 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -1217,7 +2108,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                        }
+            #endif
                     }
                 }
             }
@@ -1225,7 +2127,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1233,9 +2135,20 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
@@ -1252,7 +2165,18 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                        }
+            #endif
                     }
                 }
             }
@@ -1272,7 +2196,18 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                            if (SilkMarshal.IsWinapiStdcall)
+                            {
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                            }
+                            else
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                            }
+            #endif
                         }
                     }
                 }
@@ -1281,7 +2216,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1291,9 +2226,20 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                     {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
                     }
                 }
             }
@@ -1301,104 +2247,170 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                }
+            #endif
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+                {
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
+                }
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+                else
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
                 }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-            {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    }
+            #endif
                 }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        }
+            #endif
                     }
                 }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDstSwizzle)
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
             {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pSrcSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pSrcSwizzle, NativeStringEncoding.LPStr);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            var pDstSwizzlePtr = (byte*) SilkMarshal.StringToPtr(pDstSwizzle, NativeStringEncoding.LPStr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+            #endif
+            SilkMarshal.Free((nint)pDstSwizzlePtr);
                 }
-            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
+            SilkMarshal.Free((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1408,7 +2420,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
+            }
+            #endif
             return ret;
         }
 
@@ -1419,7 +2442,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -1429,7 +2463,18 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
+            }
+            #endif
             return ret;
         }
 
@@ -1440,7 +2485,18 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppBufferPtr = &ppBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
+                }
+            #endif
             }
             return ret;
         }

@@ -12,7 +12,14 @@ namespace InputTest
 {
     public class Program
     {
-        private static void Main()
+#if !NET6_0
+        // Exclude the entry point if we're running in .NET 6, as this file is
+        // compiled into the TriangleNET6 project too which has its own
+        // entrypoint.
+        private static void Main() => Run();
+#endif
+
+        private static void Run()
         {
             //Window.PrioritizeSdl();
             

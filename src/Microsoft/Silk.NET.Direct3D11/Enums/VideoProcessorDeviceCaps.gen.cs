@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_DEVICE_CAPS")]
     public enum VideoProcessorDeviceCaps : int
     {

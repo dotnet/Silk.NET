@@ -4,23 +4,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.NameGenerator;
 
 namespace Silk.NET.SilkTouch.NativeContextOverrides
 {
     public sealed class PInvokeNativeContextOverride : INativeContextOverride
     {
         /// <inheritdoc />
-        public TypeDeclarationSyntax Type(string name, string lib, EntryPoint[] entrypoints)
+        public TypeDeclarationSyntax Type(OverrideContext ctx)
         {
-            static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members)
+            var canUseCorrectCallConv = ctx.IsNet5OrGreater;
+            static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members, bool canUseCorrectCallConv)
             {
                 members.Add(NativeContextOverrideHelper.GetProcAddress);
                 members.Add(NativeContextOverrideHelper.TryGetProcAddress);
-                
                 return Block
                 (
                     ReturnStatement
@@ -41,16 +43,21 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                             QualifiedName(IdentifierName("System"), IdentifierName("IntPtr")),
                                             CastExpression
                                             (
-                                                FunctionPointerType
-                                                (
-                                                    FunctionPointerCallingConvention(Token(SyntaxKind.ManagedKeyword)),
-                                                    FunctionPointerParameterList
-                                                        (SeparatedList(e.LoadTypes.Select(FunctionPointerParameter)))
-                                                ),
+                                                canUseCorrectCallConv
+                                                    ? e.LoadTypes.GetFuncPtrType(e.CallingConvention)
+                                                    : e.LoadTypes.GetFuncPtrType(null),
                                                 ParenthesizedExpression
                                                 (
                                                     PrefixUnaryExpression
-                                                        (SyntaxKind.AddressOfExpression, IdentifierName($"I_{e.Name}"))
+                                                    (
+                                                        SyntaxKind.AddressOfExpression,
+                                                        IdentifierSilk
+                                                        (
+                                                            canUseCorrectCallConv 
+                                                                ? $"S_{e.Name}"
+                                                                : $"I_{e.Name}"
+                                                        )
+                                                    )
                                                 )
                                             )
                                         )
@@ -62,23 +69,94 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 );
             }
 
-            MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint)
-                => MethodDeclaration(entrypoint.LoadTypes.Last(), Identifier($"I_{entrypoint.Name}"))
-                    .WithAttributeLists
+            MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint, bool callConvCorrection = false)
+            {
+                var ret = MethodDeclaration
+                (
+                    entrypoint.LoadTypes.Last(),
+                    Identifier(Name(callConvCorrection ? $"S_{entrypoint.Name}" : $"I_{entrypoint.Name}"))
+                )
+                .WithAttributeLists
+                (
+                    SingletonList
                     (
-                        SingletonList
+                        AttributeList
                         (
-                            AttributeList
+                            SingletonSeparatedList
                             (
-                                SingletonSeparatedList
-                                (
-                                    Attribute
+                                callConvCorrection
+                                    ? Attribute
                                         (
                                             QualifiedName
                                             (
                                                 QualifiedName
                                                 (
-                                                    QualifiedName(IdentifierName("System"), IdentifierName("Runtime")),
+                                                    QualifiedName
+                                                        (IdentifierName("System"), IdentifierName("Runtime")),
+                                                    IdentifierName("InteropServices")
+                                                ), IdentifierName("UnmanagedCallersOnly")
+                                            )
+                                        )
+                                        .WithArgumentList
+                                        (
+                                            AttributeArgumentList
+                                            (
+                                                SeparatedList<AttributeArgumentSyntax>
+                                                (
+                                                    entrypoint.CallingConvention == CallingConvention.Winapi
+                                                        ? Array.Empty<SyntaxNodeOrToken>()
+                                                        : new SyntaxNodeOrToken[]
+                                                        {
+                                                            AttributeArgument
+                                                                (
+                                                                    ImplicitArrayCreationExpression
+                                                                    (
+                                                                        InitializerExpression
+                                                                        (
+                                                                            SyntaxKind.ArrayInitializerExpression,
+                                                                            SingletonSeparatedList<ExpressionSyntax>
+                                                                            (
+                                                                                TypeOfExpression
+                                                                                (
+                                                                                    QualifiedName
+                                                                                    (
+                                                                                        QualifiedName
+                                                                                        (
+                                                                                            QualifiedName
+                                                                                            (
+                                                                                                IdentifierName
+                                                                                                    ("System"),
+                                                                                                IdentifierName
+                                                                                                    ("Runtime")
+                                                                                            ),
+                                                                                            IdentifierName
+                                                                                                ("CompilerServices")
+                                                                                        ),
+                                                                                        IdentifierName
+                                                                                        (
+                                                                                            "CallConv" +
+                                                                                            entrypoint.CallingConvention
+                                                                                                .GetCallingConvention()
+                                                                                        )
+                                                                                    )
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                )
+                                                                .WithNameEquals(NameEquals(IdentifierName("CallConvs")))
+                                                        }
+                                                )
+                                            )
+                                        )
+                                    : Attribute
+                                        (
+                                            QualifiedName
+                                            (
+                                                QualifiedName
+                                                (
+                                                    QualifiedName
+                                                        (IdentifierName("System"), IdentifierName("Runtime")),
                                                     IdentifierName("InteropServices")
                                                 ), IdentifierName("DllImport")
                                             )
@@ -94,7 +172,10 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                                         AttributeArgument
                                                         (
                                                             LiteralExpression
-                                                                (SyntaxKind.StringLiteralExpression, Literal(lib))
+                                                            (
+                                                                SyntaxKind.StringLiteralExpression,
+                                                                Literal(ctx.Library)
+                                                            )
                                                         ),
                                                         Token(SyntaxKind.CommaToken),
                                                         AttributeArgument
@@ -105,7 +186,8 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                                                     Literal(entrypoint.Name)
                                                                 )
                                                             )
-                                                            .WithNameEquals(NameEquals(IdentifierName("EntryPoint"))),
+                                                            .WithNameEquals
+                                                                (NameEquals(IdentifierName("EntryPoint"))),
                                                         Token(SyntaxKind.CommaToken),
                                                         AttributeArgument
                                                             (
@@ -135,35 +217,67 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                                 )
                                             )
                                         )
+                            )
+                        )
+                    )
+                )
+                .WithModifiers
+                (
+                    callConvCorrection
+                        ? TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword))
+                        : TokenList
+                        (
+                            Token(SyntaxKind.PrivateKeyword),
+                            Token(SyntaxKind.StaticKeyword),
+                            Token(SyntaxKind.ExternKeyword)
+                        )
+                )
+                .WithParameterList
+                (
+                    ParameterList
+                    (
+                        SeparatedList
+                        (
+                            entrypoint.LoadTypes.Take
+                                    (entrypoint.LoadTypes.Length - 1)
+                                .Select((x, i) => Parameter(default, default, x, Identifier($"p{i}"), default))
+                        )
+                    )
+                );
+
+                if (callConvCorrection)
+                {
+                    ret = ret.WithExpressionBody
+                    (
+                        ArrowExpressionClause
+                        (
+                            InvocationExpression
+                            (
+                                IdentifierSilk($"I_{entrypoint.Name}"),
+                                ArgumentList
+                                (
+                                    SeparatedList
+                                    (
+                                        entrypoint.LoadTypes.Take(entrypoint.LoadTypes.Length - 1)
+                                            .Select((_, i) => Argument(IdentifierName($"p{i}")))
+                                    )
                                 )
                             )
                         )
-                    )
-                    .WithModifiers
-                    (
-                        TokenList
-                        (
-                            Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword),
-                            Token(SyntaxKind.ExternKeyword)
-                        )
-                    )
-                    .WithParameterList
-                    (
-                        ParameterList
-                        (
-                            SeparatedList
-                            (
-                                entrypoint.LoadTypes.Take
-                                        (entrypoint.LoadTypes.Length - 1)
-                                    .Select((x, i) => Parameter(default, default, x, Identifier($"p_{i}"), default))
-                            )
-                        )
-                    )
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+                    );
+                }
 
-            var v = entrypoints.Distinct(new NameComparer()).ToArray();
+                return ret.WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            }
+
+            var v = ctx.EntryPoints.Distinct(new NameComparer()).ToArray();
             var members = new List<MemberDeclarationSyntax>();
-            members.AddRange(v.Select(GetMethodFromEntrypoint));
+            members.AddRange(v.Select(x => GetMethodFromEntrypoint(x)));
+            if (canUseCorrectCallConv)
+            {
+                members.AddRange(v.Select(x => GetMethodFromEntrypoint(x, true)));
+            }
+
             members.Add
             (
                 MethodDeclaration(IdentifierName("IntPtr"), Identifier("CoreGetProcAddress"))
@@ -197,7 +311,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                             )
                         )
                     )
-                    .WithBody(GetSlotSwitch(v, members))
+                    .WithBody(GetSlotSwitch(v, members, canUseCorrectCallConv))
             );
             members.Add
             (
@@ -206,7 +320,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                     .WithBody(Block())
             );
-            return ClassDeclaration(name)
+            return ClassDeclaration(ctx.Name)
                 .WithBaseList
                 (
                     BaseList

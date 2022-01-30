@@ -94,19 +94,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.SpecializeShader(shader, in pEntryPoint.GetPinnableReference(), numSpecializationConstants, in pConstantIndex.GetPinnableReference(), in pConstantValue.GetPinnableReference());
         }
 
-        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
+        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, in pConstantValue.GetPinnableReference());
         }
 
-        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue)
+        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, in pConstantIndex.GetPinnableReference(), pConstantValue);
         }
 
-        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
+        public static unsafe void SpecializeShader(this GL thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, in pConstantIndex.GetPinnableReference(), in pConstantValue.GetPinnableReference());
@@ -250,7 +250,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTextureSubImage1D(texture, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage1D(texture, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
@@ -262,7 +262,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
@@ -274,7 +274,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
@@ -7702,7 +7702,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, in label.GetPinnableReference());
         }
 
-        public static unsafe void ObjectPtrLabel<T0>(this GL thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged
+        public static unsafe void ObjectPtrLabel<T0>(this GL thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, label);
@@ -8474,18 +8474,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.VertexAttribL4(index, in v.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribLPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribLPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
         }
 
         public static unsafe void ViewportArray(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
@@ -9598,145 +9586,145 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, count, type, in indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, indices, drawcount, in basevertex.GetPinnableReference());
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, basevertex);
         }
 
-        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
+        public static unsafe void MultiDrawElementsBaseVertex(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> basevertex)
         {
             // SpanOverloader
             thisApi.MultiDrawElementsBaseVertex(mode, in count.GetPinnableReference(), type, in indices, drawcount, in basevertex.GetPinnableReference());
@@ -10616,18 +10604,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribIPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribIPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
         }
 
         public static unsafe void UniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
@@ -11716,30 +11692,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.VertexAttrib4N(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11922,99 +11874,85 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.FogCoord(in coord.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void FogCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void FogCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), drawcount);
         }
 
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, drawcount);
         }
 
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), drawcount);
         }
 
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), drawcount);
         }
 
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, drawcount);
         }
 
-        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, drawcount);
         }
 
-        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
+        public static unsafe void MultiDrawElements(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, drawcount);
@@ -12098,20 +12036,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.SecondaryColor3(in v.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void SecondaryColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void SecondaryColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.4")]
@@ -12248,7 +12172,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage1D(target, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage1D(target, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
@@ -12260,7 +12184,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage1D(target, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage1D(target, level, xoffset, width, format, imageSize, in data.GetPinnableReference());
@@ -12272,7 +12196,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
@@ -12284,7 +12208,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, in data.GetPinnableReference());
@@ -12296,7 +12220,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
@@ -12308,7 +12232,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void CompressedTexSubImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in data.GetPinnableReference());
@@ -12830,20 +12754,6 @@ namespace Silk.NET.OpenGL.Legacy
             return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void ColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void ColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void DeleteTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
         {
             // SpanOverloader
@@ -12880,13 +12790,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DrawElements(mode, count, type, in indices.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void EdgeFlagPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.EdgeFlagPointer(stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
         {
             // SpanOverloader
@@ -12904,48 +12807,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.Index(in c.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void IndexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.IndexPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void IndexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.IndexPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void InterleavedArrays<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.InterleavedArrays(format, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void InterleavedArrays<T0>(this GL thisApi, [Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.InterleavedArrays(format, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void NormalPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.NormalPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void NormalPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.NormalPointer(type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.1")]
@@ -12988,20 +12849,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.PrioritizeTextures(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void TexCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TexCoordPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void TexCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TexCoordPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -13098,20 +12945,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void VertexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void VertexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]

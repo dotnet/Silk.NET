@@ -132,23 +132,23 @@ namespace Silk.NET.XAudio
         public const int FXReverbDefaultDisableLateField = unchecked((int) 0x0);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 68, Column 18 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2fx.h")]
-        [NativeApi(EntryPoint = "CreateAudioVolumeMeter")]
+        [NativeName("Src", "Line 68, Column 18 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2fx.h")]
+        [NativeApi(EntryPoint = "CreateAudioVolumeMeter", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateAudioVolumeMeter(Silk.NET.Core.Native.IUnknown** ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 68, Column 18 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2fx.h")]
-        [NativeApi(EntryPoint = "CreateAudioVolumeMeter")]
+        [NativeName("Src", "Line 68, Column 18 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2fx.h")]
+        [NativeApi(EntryPoint = "CreateAudioVolumeMeter", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateAudioVolumeMeter(ref Silk.NET.Core.Native.IUnknown* ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 69, Column 18 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2fx.h")]
-        [NativeApi(EntryPoint = "CreateAudioReverb")]
+        [NativeName("Src", "Line 69, Column 18 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2fx.h")]
+        [NativeApi(EntryPoint = "CreateAudioReverb", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateAudioReverb(Silk.NET.Core.Native.IUnknown** ppApo);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 69, Column 18 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2fx.h")]
-        [NativeApi(EntryPoint = "CreateAudioReverb")]
+        [NativeName("Src", "Line 69, Column 18 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2fx.h")]
+        [NativeApi(EntryPoint = "CreateAudioReverb", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateAudioReverb(ref Silk.NET.Core.Native.IUnknown* ppApo);
 
 

@@ -262,7 +262,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -274,7 +274,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -286,7 +286,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -298,7 +298,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage1D(texunit, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -310,7 +310,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -322,7 +322,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -334,7 +334,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -346,7 +346,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage2D(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -358,7 +358,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -370,7 +370,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -382,7 +382,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -394,7 +394,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedMultiTexSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedMultiTexSubImage3D(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -478,7 +478,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -490,7 +490,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage1D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage1D(texture, target, level, xoffset, width, format, imageSize, in bits.GetPinnableReference());
@@ -502,7 +502,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -514,7 +514,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage2D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage2D(texture, target, level, xoffset, yoffset, width, height, format, imageSize, in bits.GetPinnableReference());
@@ -526,7 +526,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -538,7 +538,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
         }
 
-        public static unsafe void CompressedTextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
+        public static unsafe void CompressedTextureSubImage3D<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] InternalFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] ReadOnlySpan<T0> bits) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CompressedTextureSubImage3D(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, in bits.GetPinnableReference());
@@ -1784,30 +1784,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // SpanOverloader
             thisApi.MatrixMultTranspose(mode, in m.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
         }
 
         public static unsafe void MultiTexEnv(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)

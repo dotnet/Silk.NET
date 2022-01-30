@@ -27,26 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DPixelShader9
         (
-            uint? version = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (version is not null)
-            {
-                Version = version.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Version")]
-        public uint Version;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -57,7 +46,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -68,7 +68,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -80,7 +91,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -94,7 +116,18 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -123,7 +156,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -134,7 +178,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -144,7 +199,18 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfData);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfData);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfData);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfData);
+            }
+            #endif
             return ret;
         }
 
@@ -155,7 +221,18 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pSizeOfDataPtr = &pSizeOfData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfDataPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfDataPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfDataPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -165,9 +242,20 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+                }
+            #endif
             }
             return ret;
         }
@@ -177,11 +265,22 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                    }
+            #endif
                 }
             }
             return ret;

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_RESOURCE_STATES")]
     public enum ResourceStates : int
     {
@@ -48,6 +49,8 @@ namespace Silk.NET.Direct3D12
         ResourceStateShadingRateSource = 0x1000000,
         [NativeName("Name", "D3D12_RESOURCE_STATE_GENERIC_READ")]
         ResourceStateGenericRead = 0xAC3,
+        [NativeName("Name", "D3D12_RESOURCE_STATE_ALL_SHADER_RESOURCE")]
+        ResourceStateAllShaderResource = 0xC0,
         [NativeName("Name", "D3D12_RESOURCE_STATE_PRESENT")]
         ResourceStatePresent = 0x0,
         [NativeName("Name", "D3D12_RESOURCE_STATE_PREDICATION")]

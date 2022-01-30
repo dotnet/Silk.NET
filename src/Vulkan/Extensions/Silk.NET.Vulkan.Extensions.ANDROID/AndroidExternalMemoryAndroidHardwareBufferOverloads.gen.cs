@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
     public static class AndroidExternalMemoryAndroidHardwareBufferOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.AndroidHardwareBufferPropertiesAndroid);")]
         public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] nint* buffer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.AndroidHardwareBufferPropertiesAndroid);")]
         public static unsafe Result GetAndroidHardwareBufferProperties(this AndroidExternalMemoryAndroidHardwareBuffer thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<nint> buffer, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AndroidHardwareBufferPropertiesANDROID> pProperties)
         {
             // SpanOverloader

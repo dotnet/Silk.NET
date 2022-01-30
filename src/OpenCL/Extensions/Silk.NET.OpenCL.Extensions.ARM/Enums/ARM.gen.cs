@@ -56,6 +56,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
+        [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
+        MemProtectedAllocArm = unchecked((int)0x1000000000),
         [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
         DeviceSchedulingKernelBatchingArm = 0x1,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]

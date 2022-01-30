@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageBlit2KHR")]
-    public unsafe partial struct ImageBlit2KHR
+    public unsafe partial struct ImageBlit2KHR : IChainStart
     {
         public ImageBlit2KHR
         (
@@ -89,7 +89,7 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<Offset3D> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
@@ -126,11 +126,36 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<Offset3D> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
         }
 
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageBlit2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ImageBlit2KHR Chain(
+            out ImageBlit2KHR capture)
+        {
+            capture = new ImageBlit2KHR(StructureType.ImageBlit2Khr);
+            return ref capture;
+        }
     }
 }

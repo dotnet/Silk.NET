@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_RESOURCE_FLAGS")]
     public enum ResourceFlags : int
     {
@@ -28,5 +29,7 @@ namespace Silk.NET.Direct3D12
         ResourceFlagAllowSimultaneousAccess = 0x20,
         [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY")]
         ResourceFlagVideoDecodeReferenceOnly = 0x40,
+        [NativeName("Name", "D3D12_RESOURCE_FLAG_VIDEO_ENCODE_REFERENCE_ONLY")]
+        ResourceFlagVideoEncodeReferenceOnly = 0x80,
     }
 }
