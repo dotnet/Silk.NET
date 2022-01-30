@@ -1,18 +1,19 @@
 ﻿<Project>
-
-  <PropertyGroup>
-    <SdkVersion>2021.1.2</SdkVersion>
-
-    <Title>SilkDotNet</Title>
-    <Description>Description</Description>
-
-    <Authors>Author</Authors>
-    <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of SilkDotNet</Copyright>
-    <PackageTags>resharper plugin</PackageTags>
-
-    <PackageProjectUrl></PackageProjectUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageIconUrl></PackageIconUrl>
-  </PropertyGroup>
-
+    <PropertyGroup>
+        <!-- Don't ask. -->
+        <SdkVersion>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)../../gradle.properties'))</SdkVersion>
+        <SdkVersion>$([System.Text.RegularExpressions.Regex]::Match('$(SdkVersion)', 'ProductVersion=(.+)'))</SdkVersion>
+        <SdkVersion>$([System.String]::new('$(SdkVersion)').TrimStart('ProductVersion=')).0</SdkVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+        <SilkPublicApiExempt>true</SilkPublicApiExempt>
+    </PropertyGroup>
+    <Import Project="../../../../build/props/common.props"/>
+    <PropertyGroup>
+        <PackageOutputPath>$(MSBuildThisFileDirectory)../../artifacts</PackageOutputPath>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PackageTags>resharper plugin</PackageTags>
+    </PropertyGroup>
 </Project>

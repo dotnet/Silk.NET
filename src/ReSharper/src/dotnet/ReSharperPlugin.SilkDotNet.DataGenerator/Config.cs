@@ -57,13 +57,13 @@ namespace ReSharperPlugin.SilkDotNet.DataGenerator
                 {
                     new OpenGLRefpagesJob
                     (
-                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/master.zip",
-                        "OpenGL-Refpages-master/gl4",
+                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/main.zip",
+                        "OpenGL-Refpages-main/gl4",
                         "https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/"
                     ),
                     new KhronosXmlJob
                     (
-                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml",
+                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml",
                         "gl"
                     )
                 }
@@ -74,13 +74,13 @@ namespace ReSharperPlugin.SilkDotNet.DataGenerator
                 {
                     new OpenGLRefpagesJob
                     (
-                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/master.zip",
-                        "OpenGL-Refpages-master/gl4",
+                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/main.zip",
+                        "OpenGL-Refpages-main/gl4",
                         "https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/"
                     ),
                     new KhronosXmlJob
                     (
-                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml",
+                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml",
                         "gl"
                     )
                 }
@@ -91,13 +91,13 @@ namespace ReSharperPlugin.SilkDotNet.DataGenerator
                 {
                     new OpenGLRefpagesJob
                     (
-                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/master.zip",
-                        "OpenGL-Refpages-master/es3.1",
+                        "https://github.com/KhronosGroup/OpenGL-Refpages/archive/refs/heads/main.zip",
+                        "OpenGL-Refpages-main/es3.1",
                         "https://www.khronos.org/registry/OpenGL-Refpages/es3.1/html/"
                     ),
                     new KhronosXmlJob
                     (
-                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml",
+                        "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml",
                         "gles2"
                     )
                 }

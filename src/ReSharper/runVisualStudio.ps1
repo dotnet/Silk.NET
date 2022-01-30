@@ -25,7 +25,7 @@ if (!(Test-Path "$UserProjectXmlFile")) {
     $ReleaseUrl = "https://data.services.jetbrains.com/products/releases?code=RSU&type=eap&type=release&majorVersion=$MajorVersion"
     $VersionEntry = $(Invoke-WebRequest -UseBasicParsing $ReleaseUrl | ConvertFrom-Json).RSU[0]
     ## TODO: check versions
-    $DownloadLink = [uri] $VersionEntry.downloads.windows.link
+    $DownloadLink = [uri] ($VersionEntry.downloads.windows.link.replace(".exe", ".Checked.exe"))
 
     # Download installer
     $InstallerFile = "$PSScriptRoot\build\installer\$($DownloadLink.Segments[-1])"

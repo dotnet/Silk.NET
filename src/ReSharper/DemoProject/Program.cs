@@ -1,9 +1,20 @@
-﻿using Silk.NET.Input;
+﻿using Silk.NET.Core.Native;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using System;
-using System.Drawing;
 using Silk.NET.Maths;
+using Silk.NET.Vulkan;
+
+namespace Silk.NET.Vulkan
+{
+    class Vk
+    {
+        [NativeApi(EntryPoint = "vkCreateInstance")]
+        public void A()
+        {
+            
+        }
+    }
+}
 
 namespace Tutorial
 {

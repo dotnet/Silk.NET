@@ -1,8 +1,8 @@
 <idea-plugin require-restart="true">
   <id>silkdotnet-rider</id>
-  <name>SilkDotNet</name>
+  <name>Silk.NET</name>
   <version>_PLACEHOLDER_</version>
-  <vendor url="https://project-url">Author</vendor>
+  <vendor url="https://dotnetfoundation.org">.NET Foundation</vendor>
   <idea-version since-build="_PLACEHOLDER_" until-build="_PLACEHOLDER_" />
   <depends>com.intellij.modules.rider</depends>
 
