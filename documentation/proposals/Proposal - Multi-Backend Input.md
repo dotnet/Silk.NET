@@ -142,83 +142,50 @@ After the lists have been updated, the `Update` method compares the old state an
 
 ## Custom List Types
 
-These are relatively simple, though note that we explicitly implement the `IReadOnlyList` indexer in favour of one that returns a `ref readonly` type and a corresponding custom enumerator.
-
-The actual type of the custom enumerator at this time the Silk.NET team would like to leave implementation defined, but with the following requirements:
-- The `Next` method must return a `ref readonly` type.
-- The type can be used as an operand in a `foreach` loop
-- This type is an enumerator type that returns a `ref readonly T` as defined by the C# language rules.
-
-The Silk.NET team does **not** wish to reserve the right to breaking changes for custom enumerator types, so once this type has been defined by the implementation it will remain the same type throughout the entirety of 3.X's service life. 
-
-All other details about the nature of the `IReadOnlyList` implementation (i.e. backing buffer) are implementation-defined.
+These are relatively simple list wrappers with the events fired when state changes.
 
 ```cs
-public partial class Mice : IReadOnlyList<MouseState>
+public partial class Mice : IReadOnlyList<IMouse>
 {
-    public ref readonly MouseState this[int index] { get; }
-    MouseState IReadOnlyList<MouseState>.this[int index] { get; }
-    
-    public <implementation defined> GetEnumerator();
-    IEnumerator<MouseState> IEnumerable<MouseState>.GetEnumerator();
-    
-    public event Action<ButtonEvent<MouseState, MouseButton>>? ButtonDown;
-    public event Action<ButtonEvent<MouseState, MouseButton>>? ButtonUp;
-    public event Action<ClickEvent<MouseState, MouseButton>>? Click;
-    public event Action<ClickEvent<MouseState, MouseButton>>? DoubleClick;
-    public event Action<AxisEvent<MouseState, Vector2>>? CursorMove;
-    public event Action<AxisEvent<MouseState, Vector2>>? Scroll;
+    public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonDown;
+    public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonUp;
+    public event Action<ClickEvent<IMouse, MouseButton>>? Click;
+    public event Action<ClickEvent<IMouse, MouseButton>>? DoubleClick;
+    public event Action<AxisEvent<IMouse, Vector2>>? CursorMove;
+    public event Action<AxisEvent<IMouse, Vector2>>? Scroll;
 }
 
-public partial class Keyboards : IReadOnlyList<KeyboardState>
+public partial class Keyboards : IReadOnlyList<IKeyboard>
 {
-    public ref readonly KeyboardState this[int index] { get; }
-    KeyboardState IReadOnlyList<KeyboardState>.this[int index] { get; }
-    
-    public <implementation defined> GetEnumerator();
-    IEnumerator<KeyboardState> IEnumerable<KeyboardState>.GetEnumerator();
-
-    public event Action<ButtonEvent<KeyboardState, Key>>? KeyDown;
-    public event Action<ButtonEvent<KeyboardState, Key>>? KeyUp;
-    public event Action<TextEvent<KeyboardState>>? TextInput;
+    public event Action<ButtonEvent<IKeyboard, Key>>? KeyDown;
+    public event Action<ButtonEvent<IKeyboard, Key>>? KeyUp;
+    public event Action<TextEvent<IKeyboard>>? TextInput;
 }
 
-public partial class Gamepads : IReadOnlyList<GamepadState>
+public partial class Gamepads : IReadOnlyList<IGamepad>
 {
-    public ref readonly GamepadState this[int index] { get; }
-    GamepadState IReadOnlyList<GamepadState>.this[int index] { get; }
-    
-    public <implementation defined> GetEnumerator();
-    IEnumerator<GamepadState> IEnumerable<GamepadState>.GetEnumerator();
-    
-    public event Action<ButtonEvent<GamepadState, JoystickButton>>? ButtonDown;
-    public event Action<ButtonEvent<GamepadState, JoystickButton>>? ButtonUp;
-    public event Action<AxisEvent<GamepadState, Vector2>>? ThumbstickMove;
-    public event Action<AxisEvent<GamepadState, float>>? TriggerMove;
+    public event Action<ButtonEvent<IGamepad, JoystickButton>>? ButtonDown;
+    public event Action<ButtonEvent<IGamepad, JoystickButton>>? ButtonUp;
+    public event Action<AxisEvent<IGamepad, Vector2>>? ThumbstickMove;
+    public event Action<AxisEvent<IGamepad, float>>? TriggerMove;
 }
 
-public partial class Joysticks : IReadOnlyList<JoystickState>
+public partial class Joysticks : IReadOnlyList<IJoystick>
 {
-    public ref readonly JoystickState this[int index] { get; }
-    JoystickState IReadOnlyList<JoystickState>.this[int index] { get; }
-    
-    public <implementation defined> GetEnumerator();
-    IEnumerator<JoystickState> IEnumerable<JoystickState>.GetEnumerator();
-
-    public event Action<ButtonEvent<JoystickState, JoystickButton>>? ButtonDown;
-    public event Action<ButtonEvent<JoystickState, JoystickButton>>? ButtonUp;
-    public event Action<AxisEvent<JoystickState, float>>? AxisMove;
-    public event Action<AxisEvent<JoystickState, Vector2>>? HatMove;
+    public event Action<ButtonEvent<IJoystick, JoystickButton>>? ButtonDown;
+    public event Action<ButtonEvent<IJoystick, JoystickButton>>? ButtonUp;
+    public event Action<AxisEvent<IJoystick, float>>? AxisMove;
+    public event Action<AxisEvent<IJoystick, Vector2>>? HatMove;
 }
 ```
 
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
 ```cs
-public readonly record struct ButtonEvent<TDevice, TButton>(in TDevice DeviceState, TButton Button);
-public readonly record struct ClickEvent<TDevice, TButton>(in TDevice DeviceState, TButton Button, Vector2 Position);
-public readonly record struct AxisEvent<TDevice, TAxis>(in TDevice DeviceState, int Index, TAxis OldValue, TAxis NewValue);
-public readonly record struct TextEvent<TDevice>(in TDevice DeviceState, string? OldText, string? NewText);
+public readonly record struct ButtonEvent<TDevice, TButton>(TDevice DeviceState, TButton Button);
+public readonly record struct ClickEvent<TDevice, TButton>(TDevice DeviceState, TButton Button, Vector2 Position);
+public readonly record struct AxisEvent<TDevice, TAxis>(TDevice DeviceState, int Index, TAxis OldValue, TAxis NewValue);
+public readonly record struct TextEvent<TDevice>(TDevice DeviceState, string? OldText, string? NewText);
 ```
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
@@ -260,24 +227,24 @@ public interface IMouse : IInputDevice
 The device state returned by `State` fills out the following structure:
 
 ```cs
-public readonly struct MouseState
-{
-    public IMouse Device { get; init; }
-    public MouseButtonState Buttons { get; init; }
-    public ICursorConfiguration Cursor { get; } // forwards to Device.Cursor
-    public Vector2 Position { get; set; } // all sets after the first set forward to Device.SetPosition
-    public Vector2 WheelPosition { get; init; }
-}
+public readonly record struct MouseState
+(
+    MouseButtonState Buttons,
+    Vector2 Position,
+    Vector2 WheelPosition
+);
 ```
 
 For ease-of-use, all APIs on `Device` (other than state) are accessible via the state struct, as indicated in the comments in the API snippet.
 
 `MouseButtonState` is defined as:
 ```cs
-public readonly struct MouseButtonState
+public readonly record struct MouseButtonState
+(
+    InputReadOnlyList<MouseButton> Down
+)
 {
     public bool this[MouseButton btn] { get; }
-    public InputReadOnlyList<MouseButton> Down { get; init; }
     public InputReadOnlyList<MouseButton> Up { get; }
 }
 ```
@@ -415,23 +382,24 @@ For instance, instead of a `KeyChar` event being raised every time a character i
 `KeyboardState` is defined as follows:
 
 ```cs
-public readonly struct KeyboardState
-{
-    public IKeyboard Device { get; init; }
-    public string? ClipboardText { get; set; } // all sets after the first set forward to Device.SetClipboardText
-    public string? Text { get; init; }
-    public KeyState Keys { get; init; }
-}
+public readonly record struct KeyboardState
+(
+    string? ClipboardText,
+    string? Text,
+    KeyState Keys
+);
 ```
 
 For ease-of-use, all APIs on `Device` (other than state) are accessible via the state struct, as indicated in the comments in the API snippet.
 
 ```cs
-public readonly struct KeyState
+public readonly record struct KeyState
+(
+    InputReadOnlyList<Key> Down
+)
 {
     public bool this[KeyName btn] { get; }
     public bool this[int scancode] { get; }
-    public InputReadOnlyList<Key> Down { get; init; }
     public InputReadOnlyList<Key> Up { get; }
 }
 ```
@@ -608,14 +576,13 @@ This is exactly as in 2.X.
 
 `GamepadState` is defined as follows:
 ```cs
-public struct GamepadState
-{
-    public IGamepad Device { get; init; }
-    public JoystickButtonState Buttons { get; init; }
-    public DualReadOnlyList<Vector2> Thumbsticks { get; init; }
-    public DualReadOnlyList<float> Triggers { get; init; }
-    public IReadOnlyList<IMotor> VibrationMotors { get; } // forwards to forwards Device.VibrationMotors for ease of use
-}
+public readonly record struct GamepadState
+(
+    JoystickButtonState Buttons,
+    DualReadOnlyList<Vector2> Thumbsticks,
+    DualReadOnlyList<float> Triggers,
+    IReadOnlyList<IMotor> VibrationMotors
+);
 ```
 
 `GamepadState` reuses a lot of the joystick API types, which are defined later in this proposal.
@@ -646,12 +613,11 @@ public interface IJoystick : IInputDevice
 }
 ```
 ```cs
-public struct JoystickState
+public readonly record struct JoystickState
 {
-    public IJoystick Device { get; init; }
-    public InputReadOnlyList<float> Axes { get; init; }
-    public JoystickButtonState Buttons { get; init; }
-    public InputReadOnlyList<Vector2> Hats { get; init; }
+    InputReadOnlyList<float> Axes,
+    JoystickButtonState Buttons,
+    InputReadOnlyList<Vector2> Hats
 }
 ```
 
@@ -661,10 +627,12 @@ This is pretty closely modeled as in 2.X: `Axes` containing the individual axes 
 
 `JoystickButtonState` is defined as follows:
 ```cs
-public struct JoystickButtonState
+public readonly record struct JoystickButtonState
+(
+    InputReadOnlyList<JoystickButton> Down
+)
 {
     public bool this[JoystickButton btn] { get; }
-    public InputReadOnlyList<JoystickButton> Down { get; init; }
     public InputReadOnlyList<JoystickButton> Up { get; }
 }
 ```
