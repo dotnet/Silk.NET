@@ -76,12 +76,12 @@ Input devices all inherit from a root interface.
 ```cs
 public interface IInputDevice
 {
-    nint BackendId { get; }
+    nint Id { get; }
     string Name { get; }
 }
 ```
 
-`BackendId` is an integral identifier for this device unique to this backend **only** - i.e. it is not globally unique, and if you have an input context with multiple backends there may be multiple devices with a particular `BackendId`. It may be a handle to memory, or it may be a generic integral index - this is implementation-defined.
+`Id` is an globally-unique integral identifier for this device.
 
 `Name` is a rough description of the input device. Its value is not intrinsically meaningful.
 
@@ -91,7 +91,7 @@ All devices originate from a context.
 public interface IInputBackend
 {
     string Name { get; }
-    nint Handle { get; }
+    nint Id { get; }
     IReadOnlyList<IInputDevice> Devices { get; }
     void Update();
 }
@@ -99,7 +99,7 @@ public interface IInputBackend
 
 `Name` is a rough description of the input backend. Its value is not intrinsically meaningful.
 
-`Handle` is a globally-unique handle to memory for this input backend. The memory this handle actually points to is implementation-defined.
+`Id` is a globally-unique integral identifier for this backend.
 
 `Devices` enumerates all of the **connected** devices available from this input backend. When a device is disconnected, its `IInputDevice` object should be discarded by all that consumed it, as it can not be relied upon for being reused by the input backend. An implementation is welcome to reuse old objects, but this is strictly implementation-defined. A device not being present in the `Devices` list is sufficient evidence that a device has been disconnected.
 
