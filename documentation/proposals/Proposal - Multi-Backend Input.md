@@ -16,7 +16,7 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
     - All input devices, regardless of what backends they come from, can be accessed from a central input context object.
     - Should the Silk.NET team design more APIs for more devices (for example VR hands using OpenXR) in the future, this can be added in a non-breaking way.
     - All input devices instead of exposing properties only expose a single `State` property, with additional properties and/or methods for writable state (i.e. vibration motors, mouse position). This also addresses comments from the Working Group on previous iterations of this proposal, where the Working Group expressed interest in the state being immutable and trivially capturable.
-    - Ensuring the input API is accessible and easy to use (e.g. this is why later in the proposal we have made properties on the state structures that just forward to the underlying device object)
+    - Ensuring the input API is accessible and easy to use.
     - Addressing APIs that the userbase frequently had issues/distaste with. For example, events are no longer on each individual device, rather they are aggregated in a list and accessed from a single entry-point.
 - This proposal aims to keep the look and feel of the Input APIs intended for general consumption similar to that of 2.0.
 - This proposal incorporates/supersedes the Enhanced Input Events proposal.
@@ -235,8 +235,6 @@ public readonly record struct MouseState
 );
 ```
 
-For ease-of-use, all APIs on `Device` (other than state) are accessible via the state struct, as indicated in the comments in the API snippet.
-
 `MouseButtonState` is defined as:
 ```cs
 public readonly record struct MouseButtonState
@@ -365,7 +363,7 @@ Once again, the interface is very simple.
 public interface IKeyboard : IInputDevice
 {
     KeyboardState State { get; }
-    string? ClipboardText { get; }
+    string? ClipboardText { get; set; }
     void BeginInput();
     void EndInput();
 }
@@ -389,7 +387,7 @@ public readonly record struct KeyboardState
 );
 ```
 
-For ease-of-use, all APIs on `Device` (other than state) are accessible via the state struct, as indicated in the comments in the API snippet.
+`Text` contains the text typed on the keyboard since `IKeyboard.BeginInput`. This is cleared (set to `null`) when `IKeyboard.EndInput` is called, and will not be non-`null` again until another `IKeyboard.BeginInput` call.
 
 ```cs
 public readonly record struct KeyState
