@@ -365,9 +365,9 @@ Once again, the interface is very simple.
 public interface IKeyboard : IInputDevice
 {
     KeyboardState State { get; }
+    string? ClipboardText { get; }
     void BeginInput();
     void EndInput();
-    void SetClipboardText(string? clipboard);
 }
 ```
 
@@ -377,14 +377,13 @@ public interface IKeyboard : IInputDevice
 
 For instance, instead of a `KeyChar` event being raised every time a character is pressed or repeated, a `TextInput` event is raised as the string is being built alleviating the need for developers to build the string themselves, given that the primary use of this event is for GUI input.
 
-`SetClipboardText` allows setting the text on the user's clipboard so they can paste information from your application in others.
+`ClipboardText` allows getting and setting the text on the user's clipboard so they can paste information to/from your application in others.
 
 `KeyboardState` is defined as follows:
 
 ```cs
 public readonly record struct KeyboardState
 (
-    string? ClipboardText,
     string? Text,
     KeyState Keys
 );
