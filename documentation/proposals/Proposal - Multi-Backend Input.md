@@ -182,10 +182,10 @@ public partial class Joysticks : IReadOnlyList<IJoystick>
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
 ```cs
-public readonly record struct ButtonEvent<TDevice, TButton>(TDevice DeviceState, TButton Button);
-public readonly record struct ClickEvent<TDevice, TButton>(TDevice DeviceState, TButton Button, Vector2 Position);
-public readonly record struct AxisEvent<TDevice, TAxis>(TDevice DeviceState, int Index, TAxis OldValue, TAxis NewValue);
-public readonly record struct TextEvent<TDevice>(TDevice DeviceState, string? OldText, string? NewText);
+public readonly record struct ButtonEvent<TDevice, TButton>(TDevice Device, TButton Button);
+public readonly record struct ClickEvent<TDevice, TButton>(TDevice Device, TButton Button, Vector2 Position);
+public readonly record struct AxisEvent<TDevice, TAxis>(TDevice Device, int Index, TAxis OldValue, TAxis NewValue);
+public readonly record struct TextEvent<TDevice>(TDevice Device, string? OldText, string? NewText);
 ```
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
