@@ -5,6 +5,8 @@ on:
       - "ci/*"
       - "develop/*"
       - "main"
+    paths:
+      - "build/submodules/GLFW"
 jobs:
   Build:
     strategy: 
