@@ -35,6 +35,7 @@ Cases where the **user** word is used without the **end** prefix can be assumed 
 ```cs
 IWindowHandlesSource someWindow = null!;
 var inputContext = someWindow.CreateInput();
+inputContext.Update();
 inputContext.Gamepads.ThumbstickMove += @event =>
 {
     Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.OldValue} to {@event.NewValue}");
@@ -44,9 +45,26 @@ var isButtonDown = inputContext.Gamepads.Any(gamepadState => gamepadState.Button
 ```cs
 IWindowHandlesSource someWindow = null!;
 var inputContext = new InputContext();
+inputContext.Update();
 inputContext.Backends.Add(someWindow.CreateInputBackend());
 // in future:
 // inputContext.Backends.Add(new OpenXRInputBackend(...));
+```
+```cs
+class MyThing
+{
+    [SilkEntryPoint]
+    public static void Run(ISurface surface)
+    {
+        var inputContext = surface.CreateInput();
+        surface.Update += _ => inputContext.Update();
+        inputContext.Gamepads.ThumbstickMove += @event =>
+        {
+            Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.OldValue} to {@event.NewValue}");
+        };
+        surface.Run();
+    }
+}
 ```
 
 # Reference Implementation
@@ -124,15 +142,15 @@ This is solved by the actor model, which is implemented by the custom list types
 ```cs
 public interface IActor
 {
-    void HandleDeviceConnectionChanged(IInputDevice device, bool isConnected);
+    void HandleDeviceConnectionChanged(ConnectionEvent<IInputDevice> @event);
 }
 ```
 
 The base `IActor` is simple, handling only device connections and device disconnections.
 
-`HandleDeviceConnectionChanged` must be called with a device and a value of `true` if the `device` has just been added to the `IInputBackend.Devices` list.
+`HandleDeviceConnectionChanged` must be called with a device and a value of `true` if the `ConnectionEvent.Device` has just been added to the `IInputBackend.Devices` list.
 
-`HandleDeviceConnectionChanged` must be called with a device and a value of `false` if the `device` has just been removed from the `IInputBackend.Devices` list.
+`HandleDeviceConnectionChanged` must be called with a device and a value of `false` if the `ConnectionEvent.Device` has just been removed from the `IInputBackend.Devices` list.
 
 All actor methods are called in the order that the state changes happened in the underlying backend. For example, a "double click" would be mouse down, mouse up, mouse down, and mouse up again. Even if those events happened entirely between two update calls (thus resulting in a net-zero change of state, given the button was released at the last update and is still released at this update), the input backend is expected to queue up the events so they may be delivered to the actor in the order in which they occurred when `Update` is called **where possible**.
 
@@ -165,6 +183,7 @@ public partial class InputContext
     public Joysticks Joysticks { get; }
     public IReadOnlyList<IInputDevice> Devices { get; }
     public IList<IInputBackend> Backends { get; }
+    public event Action<ConnectionEvent<IMouse>>? ConnectionChanged;
     public void Update();
 }
 ```
@@ -175,7 +194,7 @@ The central input object acts as the main entry point into the Input API, and is
 
 By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states enumerated by the lists will not change until `Update` is called.
 
-`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in an actor which implements `IMouseActor`, `IKeyboardActor`, `IGamepadActor`, and `IJoystickActor` with each of the methods invoking a matching event defined in "Custom List Types".
+`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in an actor which implements `IActor`, `IMouseActor`, `IKeyboardActor`, `IGamepadActor`, and `IJoystickActor` with each of the methods invoking a matching event defined in "Custom List Types".
 
 After the lists have been updated, the `Update` method compares the old state and the new state for that device and raises events accordingly. If there is no old state available for a device, the `ConnectionChanged` event (read on!) within each of the custom lists is called with a value of `true` signifying that a device has connected. Likewise, if there is no new state available for a device we have old state for, the `ConnectionChanged` event will be called with a value of `false` signifying that a device has been disconnected.
 
@@ -242,6 +261,7 @@ public readonly record struct ButtonEvent<TDevice, TButton>(TDevice Device, TBut
 public readonly record struct ClickEvent<TDevice, TButton>(TDevice Device, TButton Button, Vector2 Position);
 public readonly record struct AxisEvent<TDevice, TAxis>(TDevice Device, int Index, TAxis OldValue, TAxis NewValue);
 public readonly record struct TextEvent<TDevice>(TDevice Device, string? OldText, string? NewText);
+public readonly record struct ConnectionEvent<TDevice>(TDevice Device, bool IsConnected);
 ```
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
@@ -776,7 +796,6 @@ public enum JoystickButton
     DPadLeft
 }
 ```
-
 
 Changes to `JoystickState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Actors section).
 
