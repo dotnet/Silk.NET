@@ -2,7 +2,8 @@ using Silk.NET.Windowing;
 using Silk.NET.Input;
 using Silk.NET.OpenGL;
 
-WindowOptions windowOptions = WindowOptions.Default with {
+WindowOptions windowOptions = WindowOptions.Default with
+{
     Title = "My Silk.NET Window",
 	API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
 };

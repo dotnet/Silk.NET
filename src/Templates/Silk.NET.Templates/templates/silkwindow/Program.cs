@@ -1,6 +1,7 @@
 using Silk.NET.Windowing;
 
-WindowOptions windowOptions = WindowOptions.Default with {
+WindowOptions windowOptions = WindowOptions.Default with
+{
     Title = "My Silk.NET Window"
 };
 

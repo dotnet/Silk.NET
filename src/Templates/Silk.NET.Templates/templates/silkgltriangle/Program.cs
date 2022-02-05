@@ -4,7 +4,8 @@ using System.Runtime.InteropServices;
 using Silk.NET.Windowing;
 using Silk.NET.OpenGL;
 
-WindowOptions windowOptions = WindowOptions.Default with {
+WindowOptions windowOptions = WindowOptions.Default with
+{
     Title = "My Silk.NET Triangle",
     PreferredDepthBufferBits = 0,
     PreferredStencilBufferBits = 0,
