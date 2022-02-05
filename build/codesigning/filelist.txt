@@ -1,1 +1,2 @@
 **/Silk.NET*
+**/ReSharperPlugin.SilkDotNet*

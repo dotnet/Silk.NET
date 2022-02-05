@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Nuke.Common;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
@@ -20,18 +22,32 @@ partial class Build
     [Parameter("NuGet password")] readonly string NugetPassword;
     static string PackageDirectory => RootDirectory / "build" / "output_packages";
 
-    static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
-        .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
+    IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
+        .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"))
+        .Concat
+        (
+            Directory.GetFiles(ReSharperOutput)
+                .Where
+                (
+                    x => Regex.IsMatch
+                    (
+                        Path.GetFileName(x),
+                        "ReSharperPlugin\\.SilkDotNet\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.nupkg"
+                    )
+                )
+        );
 
     Target PushToNuGet => CommonTarget
     (
         x => x.DependsOn(Pack)
             .After(SignPackages)
-            .Executes(PushPackages)
+            .Executes(() => PushPackages())
     );
 
-    async Task<IEnumerable<Output>> PushPackages()
+    async Task<IEnumerable<Output>> PushPackages([CanBeNull] string nugetFeed = null, [CanBeNull] string srcDir = null)
     {
+        nugetFeed ??= NugetFeed;
+        srcDir ??= RootDirectory / "build" / "output_packages";
         var outputs = Enumerable.Empty<Output>();
         const int rateLimit = 300;
 
@@ -40,7 +56,7 @@ partial class Build
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
         var first = true;
-        Logger.Info($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
+        Logger.Info($"Searching for packages in \"{srcDir}\"...");
         foreach (var files in allFiles)
         {
             if (first)
@@ -52,9 +68,9 @@ partial class Build
                 await Task.Delay(TimeSpan.FromHours(1));
             }
 
-            if (!NugetFeed.Contains("nuget.org"))
+            if (!nugetFeed.Contains("nuget.org"))
             {
-                var srcSettings = new DotNetNuGetAddSourceSettings().SetName("Silk-PushPackages").SetSource(NugetFeed);
+                var srcSettings = new DotNetNuGetAddSourceSettings().SetName("Silk-PushPackages").SetSource(nugetFeed);
 
                 if (NugetUsername is not null || NugetPassword is not null)
                 {
@@ -72,18 +88,27 @@ partial class Build
                 outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));
             }
 
-            foreach (var pushSettings in files.Select
+            var apiKey = nugetFeed.Contains("jetbrains.com") ? JetbrainsApiKey : NugetApiKey;
+            foreach (var pushSettings in files.Where
+            (
+                // There's probably a way to not make this a ternary but brain isn't working tonight don't ask me to do
+                // non-basic boolean logic
+                x => nugetFeed.Contains("jetbrains.com")
+                    ? x.Contains("ReSharperPlugin.SilkDotNet")
+                    : !x.Contains("ReSharperPlugin.SilkDotNet")
+            )
+            .Select
             (
                 file =>
                 {
                     var x = new DotNetNuGetPushSettings()
                         .SetNoServiceEndpoint(NugetNoServiceEndpoint)
                         .EnableSkipDuplicate()
-                        .SetSource(NugetFeed.Contains("nuget.org") ? "nuget.org" : "Silk-PushPackages")
+                        .SetSource(nugetFeed.Contains("nuget.org") ? "nuget.org" : "Silk-PushPackages")
                         .SetTargetPath(file);
-                    if (NugetApiKey is not null)
+                    if (apiKey is not null)
                     {
-                        x = x.SetApiKey(NugetApiKey);
+                        x = x.SetApiKey(apiKey);
                     }
 
                     return x;
@@ -93,7 +118,7 @@ partial class Build
                 outputs = outputs.Concat(DotNetNuGetPush(pushSettings));
             }
 
-            if (!NugetFeed.Contains("nuget.org"))
+            if (!nugetFeed.Contains("nuget.org"))
             {
                 outputs = outputs.Concat(DotNet("dotnet nuget remove source \"Silk-PushPackages\""));
             }

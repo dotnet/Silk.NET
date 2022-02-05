@@ -53,6 +53,19 @@ partial class Build
             ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary())
             : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary());
 
+    IProcess Gradlew(string args, [CanBeNull] string cwd = null, [CanBeNull] Dictionary<string, string> envVars = null)
+        => OperatingSystem.IsLinux()
+            ? StartProcess
+            (
+                "bash", $"-c \"./gradlew {args}\"", cwd ?? Environment.CurrentDirectory,
+                envVars ?? CreateEnvVarDictionary()
+            )
+            : StartProcess
+            (
+                "cmd", $"/c \".\\gradlew {args}\"", cwd ?? Environment.CurrentDirectory,
+                envVars ?? CreateEnvVarDictionary()
+            );
+
     void AddToPath(string dir)
     {
         var pathVar = Environment.GetEnvironmentVariables()

@@ -73,9 +73,7 @@ partial class Build
                         CopyDirectoryRecursively(from, to, DirectoryExistsPolicy.Merge, FileExistsPolicy.Overwrite);
                     }
 
-                    var envVars = Environment.GetEnvironmentVariables()
-                        .Cast<DictionaryEntry>()
-                        .ToDictionary(x => (string) x.Key, x => (string) x.Value);
+                    var envVars = CreateEnvVarDictionary();
                     envVars["ANDROID_HOME"] = AndroidHome;
 
                     foreach (var ndk in Directory.GetDirectories((AbsolutePath) AndroidHome / "ndk")
@@ -84,9 +82,7 @@ partial class Build
                         envVars["ANDROID_NDK_HOME"] = ndk;
                     }
 
-                    using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                        ? StartProcess("bash", "-c \"./gradlew build\"", silkDroid, envVars)
-                        : StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid, envVars);
+                    using var process = Gradlew("build", silkDroid, envVars);
                     process.AssertZeroExitCode();
                     var ret = process.Output;
                     CopyFile
