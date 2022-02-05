@@ -17,18 +17,19 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBlitImageInfo2KHR")]
+    [NativeName("AliasOf", "VkBlitImageInfo2")]
     public unsafe partial struct BlitImageInfo2KHR : IChainable
     {
         public BlitImageInfo2KHR
         (
-            StructureType? sType = StructureType.BlitImageInfo2Khr,
+            StructureType? sType = StructureType.BlitImageInfo2,
             void* pNext = null,
             Image? srcImage = null,
             ImageLayout? srcImageLayout = null,
             Image? dstImage = null,
             ImageLayout? dstImageLayout = null,
             uint? regionCount = null,
-            ImageBlit2KHR* pRegions = null,
+            ImageBlit2* pRegions = null,
             Filter? filter = null
         ) : this()
         {
@@ -114,10 +115,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "regionCount")]
         public uint RegionCount;
 /// <summary></summary>
-        [NativeName("Type", "VkImageBlit2KHR*")]
-        [NativeName("Type.Name", "VkImageBlit2KHR")]
+        [NativeName("Type", "VkImageBlit2*")]
+        [NativeName("Type.Name", "VkImageBlit2")]
         [NativeName("Name", "pRegions")]
-        public ImageBlit2KHR* PRegions;
+        public ImageBlit2* PRegions;
 /// <summary></summary>
         [NativeName("Type", "VkFilter")]
         [NativeName("Type.Name", "VkFilter")]
@@ -127,7 +128,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BlitImageInfo2Khr;
+            return SType = StructureType.BlitImageInfo2;
         }
 
         /// <inheritdoc />

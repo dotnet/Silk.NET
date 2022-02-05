@@ -422,6 +422,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         EglYuvPlaneIntel = 0x4107,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         QueueThreadLocalExecEnableIntel = unchecked((int)0x80000000),
+        [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
+        MemAllocBufferLocationIntel = 0x419E,
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
         MemChannelIntel = 0x4213,
         [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]

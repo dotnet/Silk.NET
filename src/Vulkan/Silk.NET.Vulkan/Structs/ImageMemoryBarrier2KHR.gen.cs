@@ -17,16 +17,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryBarrier2KHR")]
+    [NativeName("AliasOf", "VkImageMemoryBarrier2")]
     public unsafe partial struct ImageMemoryBarrier2KHR : IChainStart
     {
         public ImageMemoryBarrier2KHR
         (
-            StructureType? sType = StructureType.ImageMemoryBarrier2Khr,
+            StructureType? sType = StructureType.ImageMemoryBarrier2,
             void* pNext = null,
-            PipelineStageFlags2KHR? srcStageMask = null,
-            AccessFlags2KHR? srcAccessMask = null,
-            PipelineStageFlags2KHR? dstStageMask = null,
-            AccessFlags2KHR? dstAccessMask = null,
+            PipelineStageFlags2? srcStageMask = null,
+            AccessFlags2? srcAccessMask = null,
+            PipelineStageFlags2? dstStageMask = null,
+            AccessFlags2? dstAccessMask = null,
             ImageLayout? oldLayout = null,
             ImageLayout? newLayout = null,
             uint? srcQueueFamilyIndex = null,
@@ -107,25 +108,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "srcStageMask")]
-        public PipelineStageFlags2KHR SrcStageMask;
+        public PipelineStageFlags2 SrcStageMask;
 /// <summary></summary>
-        [NativeName("Type", "VkAccessFlags2KHR")]
-        [NativeName("Type.Name", "VkAccessFlags2KHR")]
+        [NativeName("Type", "VkAccessFlags2")]
+        [NativeName("Type.Name", "VkAccessFlags2")]
         [NativeName("Name", "srcAccessMask")]
-        public AccessFlags2KHR SrcAccessMask;
+        public AccessFlags2 SrcAccessMask;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "dstStageMask")]
-        public PipelineStageFlags2KHR DstStageMask;
+        public PipelineStageFlags2 DstStageMask;
 /// <summary></summary>
-        [NativeName("Type", "VkAccessFlags2KHR")]
-        [NativeName("Type.Name", "VkAccessFlags2KHR")]
+        [NativeName("Type", "VkAccessFlags2")]
+        [NativeName("Type.Name", "VkAccessFlags2")]
         [NativeName("Name", "dstAccessMask")]
-        public AccessFlags2KHR DstAccessMask;
+        public AccessFlags2 DstAccessMask;
 /// <summary></summary>
         [NativeName("Type", "VkImageLayout")]
         [NativeName("Type.Name", "VkImageLayout")]
@@ -160,7 +161,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ImageMemoryBarrier2Khr;
+            return SType = StructureType.ImageMemoryBarrier2;
         }
 
         /// <inheritdoc />
@@ -178,7 +179,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref ImageMemoryBarrier2KHR Chain(
             out ImageMemoryBarrier2KHR capture)
         {
-            capture = new ImageMemoryBarrier2KHR(StructureType.ImageMemoryBarrier2Khr);
+            capture = new ImageMemoryBarrier2KHR(StructureType.ImageMemoryBarrier2);
             return ref capture;
         }
     }

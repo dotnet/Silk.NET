@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupRenderPassBeginInfoKHR")]
     [NativeName("AliasOf", "VkDeviceGroupRenderPassBeginInfo")]
-    public unsafe partial struct DeviceGroupRenderPassBeginInfoKHR : IExtendsChain<RenderPassBeginInfo>, IExtendsChain<RenderingInfoKHR>
+    public unsafe partial struct DeviceGroupRenderPassBeginInfoKHR : IExtendsChain<RenderPassBeginInfo>, IExtendsChain<RenderingInfo>, IExtendsChain<RenderingInfoKHR>
     {
         public DeviceGroupRenderPassBeginInfoKHR
         (

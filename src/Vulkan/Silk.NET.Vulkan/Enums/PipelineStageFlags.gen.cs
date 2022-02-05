@@ -73,5 +73,7 @@ namespace Silk.NET.Vulkan
         PipelineStageCommandPreprocessBitNV = 131072,
         [NativeName("Name", "VK_PIPELINE_STAGE_NONE_KHR")]
         PipelineStageNoneKhr = 0,
+        [NativeName("Name", "VK_PIPELINE_STAGE_NONE")]
+        PipelineStageNone = 0,
     }
 }

@@ -15,8 +15,8 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_FRAME_BIT_EXT")]
         VideoEncodeH265OutputModeFrameBitExt = 1,
-        [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_SLICE_BIT_EXT")]
-        VideoEncodeH265OutputModeSliceBitExt = 2,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_SLICE_SEGMENT_BIT_EXT")]
+        VideoEncodeH265OutputModeSliceSegmentBitExt = 2,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_NON_VCL_BIT_EXT")]
         VideoEncodeH265OutputModeNonVclBitExt = 4,
     }

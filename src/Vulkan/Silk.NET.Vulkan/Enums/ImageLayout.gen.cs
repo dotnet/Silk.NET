@@ -80,5 +80,9 @@ namespace Silk.NET.Vulkan
         StencilAttachmentOptimal = 1000241002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL")]
         StencilReadOnlyOptimal = 1000241003,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL")]
+        ReadOnlyOptimal = 1000314000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL")]
+        AttachmentOptimal = 1000314001,
     }
 }
