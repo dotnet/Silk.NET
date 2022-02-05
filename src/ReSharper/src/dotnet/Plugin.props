@@ -16,6 +16,7 @@
         <PackageOutputPath>$(MSBuildThisFileDirectory)../../artifacts</PackageOutputPath>
     </PropertyGroup>
     <PropertyGroup>
+        <Title>Silk.NET</Title>
         <PackageTags>resharper plugin</PackageTags>
     </PropertyGroup>
 </Project>
