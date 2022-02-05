@@ -183,7 +183,7 @@ public partial class InputContext
     public Joysticks Joysticks { get; }
     public IReadOnlyList<IInputDevice> Devices { get; }
     public IList<IInputBackend> Backends { get; }
-    public event Action<ConnectionEvent<IMouse>>? ConnectionChanged;
+    public event Action<ConnectionEvent<IInputDevice>>? ConnectionChanged;
     public void Update();
 }
 ```
