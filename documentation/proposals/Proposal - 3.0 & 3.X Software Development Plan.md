@@ -94,7 +94,7 @@ This is the last preview and is primarily a bugfix release. All breaking changes
     - The intention is that all developers of large amounts of code write implementation documentation and/or "orientation guides" for their codebases informing readers of all major things there is to know in their code.
     - We should also write documentation containing examples on using as many features of the surface APIs as possible \[for high level utilities\]
     - We will enforce XML documentation in all manually-written utilities and as much as possible in bindings.
-    - If time permits, we should productionize our website powered by Raisin.
+    - If time permits, we should productionize our website powered by Statiq + our custom API reference generator.
 - There's not a lot of planning
     - We have solved this in the form of the proposal you are reading and all linked proposals: getting all the design done now and documented now, to prevent design debates later down the line. This should reduce friction when actually working on the library.
     - We have been keeping the working group and key stakeholders in the loop with the 3.0 kickoff (again, see this proposal you are reading)
