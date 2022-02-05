@@ -8,6 +8,8 @@
     <PropertyGroup>
         <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
         <SilkPublicApiExempt>true</SilkPublicApiExempt>
+        <SilkDescription>The Silk.NET Rider and ReSharper plugin provides useful utilities for working with Silk.NET.</SilkDescription>
+        <SilkExtendedDescription>This plugin is still early days! We hope to provide more utilities, such as codefixes, later down the line.%0a%0aRight now this plugin will allow you to:%0a- Press F1 on any Silk.NET function to jump immediately to the Khronos specifications.</SilkExtendedDescription>
     </PropertyGroup>
     <Import Project="../../../../build/props/common.props"/>
     <PropertyGroup>

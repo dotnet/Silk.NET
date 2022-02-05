@@ -1,6 +1,12 @@
 // Reference https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/gradle_guide.html
 import org.apache.tools.ant.taskdefs.condition.Os
 
+buildscript {
+    dependencies {
+        classpath 'org.commonmark:commonmark:0.18.1'
+    }
+}
+
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.5.31'
@@ -86,17 +92,9 @@ buildPlugin {
             into "${rootDir}/output"
         }
 
-        // TODO: See also org.jetbrains.changelog: https://github.com/JetBrains/gradle-changelog-plugin
-        def changelogText = file("${rootDir}/CHANGELOG.md").text
-        def changelogMatches = changelogText =~ /(?s)(-.+?)(?=##|$)/
-        def changeNotes = changelogMatches.collect {
-            it[1].replaceAll(/(?s)- /, "\u2022 ").replaceAll(/`/, "").replaceAll(/,/, "%2C").replaceAll(/;/, "%3B")
-        }.take(1).join("")
-
         def arguments = setBuildTool.args.clone()
         arguments << "/t:Pack"
         arguments << "/p:PackageOutputPath=${rootDir}/output"
-        arguments << "/p:PackageReleaseNotes=${changeNotes}"
         exec {
             executable setBuildTool.executable
             args arguments
@@ -153,14 +151,16 @@ rdgen {
     }
 }
 
-patchPluginXml {
-    // TODO: See also org.jetbrains.changelog: https://github.com/JetBrains/gradle-changelog-plugin
-    def changelogText = file("${rootDir}/CHANGELOG.md").text
-    def changelogMatches = changelogText =~ /(?s)(-.+?)(?=##|$)/
+import org.commonmark.parser.Parser
+import org.commonmark.renderer.html.HtmlRenderer
 
-    changeNotes = changelogMatches.collect {
-        it[1].replaceAll(/(?s)\r?\n/, "<br />\n")
-    }.take(1).join('')
+patchPluginXml {
+    changeNotes = "Updated for Silk.NET version ${version}. Patch notes, which may or may not include changes to the Rider/ReSharper plugin, are available <a href=\"https://github.com/dotnet/Silk.NET/releases\"here</a>."
+    "dotnet msbuild -target:SilkGenerateNuGetReadme ${DotnetSolution}".execute()
+    def parser = Parser.builder().build()
+    def document = parser.parse(new File("${rootDir}/src/dotnet/${DotnetPluginId}/obj/${DotnetPluginId}.Rider/${BuildConfiguration}/README.md".toString()).getText())
+    def renderer = HtmlRenderer.builder().build()
+    pluginDescription = renderer.render(document)
 }
 
 prepareSandbox {
