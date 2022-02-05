@@ -278,7 +278,7 @@ public interface IMouse : IInputDevice
 
 `Cursor` contains the cursor configuration. This isn't actually state that the end user can change, and has been made an interface rather than a state struct accordingly.
 
-`SetPosition` allows moving the mouse cursor without the end user physically moving their mouse.
+`SetPosition` allows moving the mouse cursor without the end user physically moving their mouse. Please note that this does not immediately update `State` with the new value - the changes will be reflected next time `IInputBackend.Update` is called.
 
 The device state returned by `State` fills out the following structure:
 
