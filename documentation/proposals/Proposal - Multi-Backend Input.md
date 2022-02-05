@@ -190,6 +190,7 @@ These are relatively simple list wrappers with the events fired when state chang
 ```cs
 public partial class Mice : IReadOnlyList<IMouse>
 {
+    public MouseClickConfiguration ClickConfiguration { get; set; }
     public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonDown;
     public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonUp;
     public event Action<ClickEvent<IMouse, MouseButton>>? Click;
@@ -221,6 +222,18 @@ public partial class Joysticks : IReadOnlyList<IJoystick>
     public event Action<AxisEvent<IJoystick, Vector2>>? HatMove;
 }
 ```
+
+All events will be raised when their matching actor methods are called, with the exception of `Click` and `DoubleClick` which are implemented on top of `ButtonDown` and `ButtonUp` respectively (as in 2.X).
+
+`DoubleClick` will be raised if `Mice.ButtonDown` is raised two consecutive times within `MouseClickConfiguration.DoubleClickTime` milliseconds, and the `MouseState.Position`'s `X` or `Y` did not change more than `MouseClickConfiguration.DoubleClickRange` between the two events. If these conditions are not met, `Click` is raised instead.
+
+`MouseClickConfiguration` is defined as follows:
+
+```cs
+public record struct MouseClickConfiguration(int DoubleClickTime, float DoubleClickRange);
+```
+
+This will be configurable on `Mice` (i.e. via `InputContext.Mice.ClickConfiguration`). The Silk.NET team wishes to reserve the right to define the initial values set on `Mice.ClickConfiguration`, but these will most likely be the same as in 2.X.
 
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
