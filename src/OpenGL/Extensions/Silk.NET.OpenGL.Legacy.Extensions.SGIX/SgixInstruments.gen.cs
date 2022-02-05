@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixInstruments : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_instruments";
-        [NativeApi(EntryPoint = "glGetInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glGetInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial int GetInstruments();
 
-        [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
+        [NativeApi(EntryPoint = "glInstrumentsBufferSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
 
-        [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
+        [NativeApi(EntryPoint = "glInstrumentsBufferSGIX", Convention = CallingConvention.Winapi)]
         public partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out int buffer);
 
-        [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glPollInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
 
-        [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glPollInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);
 
-        [NativeApi(EntryPoint = "glReadInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glReadInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial void ReadInstruments([Flow(FlowDirection.In)] int marker);
 
-        [NativeApi(EntryPoint = "glStartInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glStartInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial void StartInstruments();
 
-        [NativeApi(EntryPoint = "glStopInstrumentsSGIX")]
+        [NativeApi(EntryPoint = "glStopInstrumentsSGIX", Convention = CallingConvention.Winapi)]
         public partial void StopInstruments([Flow(FlowDirection.In)] int marker);
 
         public unsafe void InstrumentsBuffer([Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer)

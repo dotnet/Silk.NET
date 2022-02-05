@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
     public unsafe partial class AngleTranslatedShaderSource : NativeExtension<GL>
     {
         public const string ExtensionName = "ANGLE_translated_shader_source";
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source);
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE", Convention = CallingConvention.Winapi)]
         public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source);
 
         public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)

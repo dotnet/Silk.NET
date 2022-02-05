@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -99,4 +99,64 @@ partial class Build
                 }
             )
     );
+
+    AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
+    Target GLFW => CommonTarget
+    (
+        x => x.Before(Compile)
+            .Executes
+            (
+                () =>
+                {
+                    var @out = GLFWPath / "build";
+                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
+                    var build = "cmake --build build --config Release";
+                    EnsureCleanDirectory(@out);
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
+                    if (OperatingSystem.IsWindows())
+                    {
+                        InheritedShell($"{prepare} -A X64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
+                        
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"{prepare} -A Win32", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+                        
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
+                    }
+                    else if (OperatingSystem.IsLinux())
+                    {
+                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=x86_64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("src/libglfw.so"), runtimes / "linux-x64" / "native");
+                    }
+                    else if (OperatingSystem.IsMacOS())
+                    {
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
+
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+                        
+                        CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
+                    }
+                }
+            )
+    );
+
 }

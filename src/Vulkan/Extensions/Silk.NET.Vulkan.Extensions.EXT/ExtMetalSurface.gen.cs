@@ -21,35 +21,35 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_metal_surface";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MetalSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MetalSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MetalSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
+        [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT", Convention = CallingConvention.Winapi)]
         public partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in MetalSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         public ExtMetalSurface(INativeContext ctx)

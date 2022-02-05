@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_multisample";
-        [NativeApi(EntryPoint = "glSampleMaskEXT")]
+        [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        [NativeApi(EntryPoint = "glSampleMaskEXT")]
+        [NativeApi(EntryPoint = "glSampleMaskEXT", Convention = CallingConvention.Winapi)]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
 
-        [NativeApi(EntryPoint = "glSamplePatternEXT")]
+        [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
 
-        [NativeApi(EntryPoint = "glSamplePatternEXT")]
+        [NativeApi(EntryPoint = "glSamplePatternEXT", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
 
         public ExtMultisample(INativeContext ctx)

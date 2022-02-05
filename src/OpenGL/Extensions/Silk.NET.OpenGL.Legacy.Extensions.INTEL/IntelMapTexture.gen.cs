@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
     public unsafe partial class IntelMapTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_map_texture";
-        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
 
-        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
 
-        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
 
-        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
 
-        [NativeApi(EntryPoint = "glSyncTextureINTEL")]
+        [NativeApi(EntryPoint = "glSyncTextureINTEL", Convention = CallingConvention.Winapi)]
         public partial void SyncTexture([Flow(FlowDirection.In)] uint texture);
 
-        [NativeApi(EntryPoint = "glUnmapTexture2DINTEL")]
+        [NativeApi(EntryPoint = "glUnmapTexture2DINTEL", Convention = CallingConvention.Winapi)]
         public partial void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         public IntelMapTexture(INativeContext ctx)

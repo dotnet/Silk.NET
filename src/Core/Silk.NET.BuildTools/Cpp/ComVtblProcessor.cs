@@ -188,23 +188,14 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            if (function.ReturnType.ToString() != "void")
-            {
-                sb.Append(ind + "ret = ");
-            }
-            else
-            {
-                sb.Append(ind);
-            }
-
             var conv = function.Convention switch
             {
-                CallingConvention.Winapi => throw new NotImplementedException(),
+                CallingConvention.Winapi => string.Empty,
                 CallingConvention.Cdecl => "Cdecl",
                 CallingConvention.StdCall => "Stdcall",
                 CallingConvention.ThisCall => "Thiscall",
                 CallingConvention.FastCall => "Fastcall",
-                _ => "Cdecl"
+                _ => string.Empty
             };
 
             var fnPtrSig = string.Join(", ", parameterInvocations.Select(x => x.Type.ToString()));
@@ -214,9 +205,27 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             fnPtrSig += function.ReturnType;
-            sb.Append($"((delegate* unmanaged[{conv}]<{fnPtrSig}>)");
-            sb.Append($"LpVtbl[{index}])");
-            sb.AppendLine("(" + string.Join(", ", parameterInvocations.Select(x => x.Parameter)) + ");");
+            var fnPtrPre = function.ReturnType.ToString() != "void" ? $"{ind}ret = " : ind;
+            var fnPtrInv = $"LpVtbl[{index}])({string.Join(", ", parameterInvocations.Select(x => x.Parameter))});";
+            if (conv == string.Empty)
+            {
+                sb.AppendLine("#if NET5_0_OR_GREATER");
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine("#else");
+                sb.AppendLine($"{ind}if (SilkMarshal.IsWinapiStdcall)");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Stdcall]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine($"{ind}else");
+                sb.AppendLine($"{ind}{{");
+                sb.AppendLine($"    {fnPtrPre}((delegate* unmanaged[Cdecl]<{fnPtrSig}>){fnPtrInv}");
+                sb.AppendLine($"{ind}}}");
+                sb.AppendLine("#endif");
+            }
+            else
+            {
+                sb.AppendLine($"{fnPtrPre}((delegate* unmanaged[{conv}]<{fnPtrSig}>){fnPtrInv}");
+            }
 
             for (var i = epilogue.Count - 1; i >= 0; i--)
             {

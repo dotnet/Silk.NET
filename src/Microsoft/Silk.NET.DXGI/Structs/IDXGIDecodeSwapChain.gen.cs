@@ -46,7 +46,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
+            }
+            #endif
             return ret;
         }
 
@@ -121,7 +176,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRect);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRect);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRect);
+            }
+            #endif
             return ret;
         }
 
@@ -132,7 +198,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -142,7 +219,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRect);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRect);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRect);
+            }
+            #endif
             return ret;
         }
 
@@ -153,7 +241,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -163,7 +262,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
+            }
+            #endif
             return ret;
         }
 
@@ -172,7 +282,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRect);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRect);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRect);
+            }
+            #endif
             return ret;
         }
 
@@ -183,7 +304,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -193,7 +325,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRect);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRect);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRect);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRect);
+            }
+            #endif
             return ret;
         }
 
@@ -204,7 +347,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -214,7 +368,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
+            }
+            #endif
             return ret;
         }
 
@@ -225,7 +390,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pHeightPtr = &pHeight)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -237,7 +413,18 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pWidthPtr = &pWidth)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
+                }
+            #endif
             }
             return ret;
         }
@@ -251,7 +438,18 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pHeightPtr = &pHeight)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -262,7 +460,18 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
+            }
+            #endif
             return ret;
         }
 

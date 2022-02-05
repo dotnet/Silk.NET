@@ -12,21 +12,23 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264MemMgmtControlOp")]
     public enum StdVideoH264MemMgmtControlOp : int
     {
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_end")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_END")]
         StdVideoH264MemMgmtControlOpEnd = 0x0,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_unmark_short_term")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_UNMARK_SHORT_TERM")]
         StdVideoH264MemMgmtControlOpUnmarkShortTerm = 0x1,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_unmark_long_term")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_UNMARK_LONG_TERM")]
         StdVideoH264MemMgmtControlOpUnmarkLongTerm = 0x2,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_mark_long_term")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_MARK_LONG_TERM")]
         StdVideoH264MemMgmtControlOpMarkLongTerm = 0x3,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_set_max_long_term_index")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_SET_MAX_LONG_TERM_INDEX")]
         StdVideoH264MemMgmtControlOpSetMaxLongTermIndex = 0x4,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_unmark_all")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_UNMARK_ALL")]
         StdVideoH264MemMgmtControlOpUnmarkAll = 0x5,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_mark_current_as_long_term")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_MARK_CURRENT_AS_LONG_TERM")]
         StdVideoH264MemMgmtControlOpMarkCurrentAsLongTerm = 0x6,
-        [NativeName("Name", "std_video_h264_mem_mgmt_control_op_invalid")]
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_INVALID")]
         StdVideoH264MemMgmtControlOpInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_MEM_MGMT_CONTROL_OP_MAX_ENUM")]
+        StdVideoH264MemMgmtControlOpMaxEnum = 0x7FFFFFFF,
     }
 }

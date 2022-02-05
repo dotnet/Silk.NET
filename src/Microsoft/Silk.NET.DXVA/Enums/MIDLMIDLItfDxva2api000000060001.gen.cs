@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXVA
 {
+    [Flags]
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0006_0001")]
     public enum MIDLMIDLItfDxva2api000000060001 : int
     {

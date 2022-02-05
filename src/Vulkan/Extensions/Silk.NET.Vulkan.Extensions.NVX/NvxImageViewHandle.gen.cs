@@ -21,20 +21,20 @@ namespace Silk.NET.Vulkan.Extensions.NVX
     {
         public const string ExtensionName = "VK_NVX_image_view_handle";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
+        [NativeApi(EntryPoint = "vkGetImageViewAddressNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ImageViewAddressPropertiesNvx);")]
-        [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
+        [NativeApi(EntryPoint = "vkGetImageViewAddressNVX", Convention = CallingConvention.Winapi)]
         public partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageViewAddressPropertiesNVX pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
+        [NativeApi(EntryPoint = "vkGetImageViewHandleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
+        [NativeApi(EntryPoint = "vkGetImageViewHandleNVX", Convention = CallingConvention.Winapi)]
         public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewHandleInfoNVX pInfo);
 
         public NvxImageViewHandle(INativeContext ctx)

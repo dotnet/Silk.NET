@@ -1,9 +1,9 @@
 
 [*]
 charset = utf-8
-end_of_line = crlf
+end_of_line = lf
 trim_trailing_whitespace = false
-insert_final_newline = false
+insert_final_newline = true
 indent_style = space
 indent_size = 4
 
@@ -35,6 +35,16 @@ dotnet_style_qualification_for_property = false:warning
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:hint
 csharp_style_inlined_variable_declaration = true:hint
 dotnet_sort_system_directives_first = true
+dotnet_public_api_analyzer.require_api_files = true
+dotnet_diagnostic.RS0016.severity = error
+dotnet_diagnostic.RS0017.severity = error
+
+# we should care more about this one day
+dotnet_diagnostic.RS0041.severity = warn
+
+# public api warnings silk.net doesn't care about
+dotnet_diagnostic.RS0026.severity = none  # Don't add multiple public overloads with optional parameters
+dotnet_diagnostic.RS0027.severity = none  # Overloads w/ optional parameters should have the most parameters of all overloads
 
 # ReSharper properties
 resharper_autodetect_indent_settings = true

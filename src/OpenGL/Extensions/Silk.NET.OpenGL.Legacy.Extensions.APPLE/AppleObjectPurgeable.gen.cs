@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     public unsafe partial class AppleObjectPurgeable : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_object_purgeable";
-        [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
+        [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
+        [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glObjectPurgeableAPPLE")]
+        [NativeApi(EntryPoint = "glObjectPurgeableAPPLE", Convention = CallingConvention.Winapi)]
         public partial APPLE ObjectPurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
 
-        [NativeApi(EntryPoint = "glObjectUnpurgeableAPPLE")]
+        [NativeApi(EntryPoint = "glObjectUnpurgeableAPPLE", Convention = CallingConvention.Winapi)]
         public partial APPLE ObjectUnpurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
 
         public AppleObjectPurgeable(INativeContext ctx)

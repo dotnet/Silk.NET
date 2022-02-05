@@ -20,52 +20,52 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrExternalMemory : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_external_memory";
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public partial int EnqueueAcquireExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] nint* @event);
 
-        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [NativeApi(EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR", Convention = CallingConvention.Winapi)]
         public partial int EnqueueReleaseExternalMemObjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in nint mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in nint event_wait_list, [Flow(FlowDirection.Out)] out nint @event);
 
         public KhrExternalMemory(INativeContext ctx)

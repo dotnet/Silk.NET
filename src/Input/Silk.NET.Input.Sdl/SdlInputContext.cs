@@ -10,16 +10,14 @@ using Silk.NET.Windowing.Sdl;
 
 namespace Silk.NET.Input.Sdl
 {
-    internal class SdlInputContext : IInputContext
+    internal class SdlInputContext : InputContextImplementationBase
     {
-        private readonly IView _view;
         private readonly SdlView _sdlView; // to circumvent CS0122
         private nint _lastHandle;
 
-        public SdlInputContext(SdlView view)
+        public SdlInputContext(SdlView view) : base(view)
         {
-            _view = _sdlView = view;
-            _sdlView.ProcessingEvents += ProcessEvents;
+            _sdlView = view;
             SdlGamepads = new Dictionary<int, SdlGamepad>();
             SdlJoysticks = new Dictionary<int, SdlJoystick>();
             Gamepads = new IsConnectedWrapper<IGamepad>
@@ -37,31 +35,31 @@ namespace Silk.NET.Input.Sdl
         }
 
         // Public properties
-        public IReadOnlyList<IGamepad> Gamepads { get; }
-        public IReadOnlyList<IJoystick> Joysticks { get; }
-        public IReadOnlyList<IKeyboard> Keyboards { get; }
-        public IReadOnlyList<IMouse> Mice { get; }
-        public IReadOnlyList<IInputDevice> OtherDevices { get; } = new IInputDevice[0];
+        public override IReadOnlyList<IGamepad> Gamepads { get; }
+        public override IReadOnlyList<IJoystick> Joysticks { get; }
+        public override IReadOnlyList<IKeyboard> Keyboards { get; }
+        public override IReadOnlyList<IMouse> Mice { get; }
+        public override IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>();
 
         // Implementation-specific properties
         public Dictionary<int, SdlGamepad> SdlGamepads { get; }
         public Dictionary<int, SdlJoystick> SdlJoysticks { get; }
 
         public SDL.Sdl Sdl => _sdlView.Sdl;
-        public nint Handle => _view.Handle;
-        public event Action<IInputDevice, bool>? ConnectionChanged;
+        public override nint Handle => Window.Handle;
+        public override event Action<IInputDevice, bool>? ConnectionChanged;
 
-        private void ProcessEvents()
+        public override void ProcessEvents()
         {
-            if (_view.Handle == 0)
+            if (Window.Handle == 0)
             {
                 throw new InvalidOperationException("Input update event fired without an underlying window.");
             }
 
-            if (_lastHandle != _view.Handle)
+            if (_lastHandle != Window.Handle)
             {
                 RefreshJoysticksAndGamepads();
-                _lastHandle = _view.Handle;
+                _lastHandle = Window.Handle;
             }
 
             var i = 0;
@@ -304,10 +302,8 @@ namespace Silk.NET.Input.Sdl
             }
         }
 
-        public void Dispose()
+        public override void CoreDispose()
         {
-            _sdlView.ProcessingEvents -= ProcessEvents;
-
             foreach (var gp in SdlGamepads.Values)
             {
                 gp.Dispose();

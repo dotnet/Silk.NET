@@ -21,29 +21,29 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_device_diagnostic_checkpoints";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetCheckpointNV")]
+        [NativeApi(EntryPoint = "vkCmdSetCheckpointNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetCheckpoint([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] void* pCheckpointMarker);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetCheckpointNV")]
+        [NativeApi(EntryPoint = "vkCmdSetCheckpointNV", Convention = CallingConvention.Winapi)]
         public partial void CmdSetCheckpoint<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ref T0 pCheckpointMarker) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointDataNV);")]
-        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV", Convention = CallingConvention.Winapi)]
         public partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
 
         public NVDeviceDiagnosticCheckpoints(INativeContext ctx)

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrAndroidSurfaceSwapchainFlagsFB")]
     public enum AndroidSurfaceSwapchainFlagsFB : long
     {

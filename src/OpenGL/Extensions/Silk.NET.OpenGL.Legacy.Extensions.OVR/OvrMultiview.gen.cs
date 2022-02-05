@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OVR
     public unsafe partial class OvrMultiview : NativeExtension<GL>
     {
         public const string ExtensionName = "OVR_multiview";
-        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
         public OvrMultiview(INativeContext ctx)

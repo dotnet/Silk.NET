@@ -262,12 +262,12 @@ namespace Silk.NET.XAudio
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateWithVersionInfo(IXAudio2** ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateWithVersionInfo(ref IXAudio2* ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
 

@@ -20,91 +20,91 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComExtendedGet2 : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_extended_get2";
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out uint programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out uint programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source, [Flow(FlowDirection.Out)] int* length);
 
-        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
+        [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string source, [Flow(FlowDirection.Out)] out int length);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out uint shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out uint shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out Shader shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
 
-        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out Shader shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
 
-        [NativeApi(EntryPoint = "glExtIsProgramBinaryQCOM")]
+        [NativeApi(EntryPoint = "glExtIsProgramBinaryQCOM", Convention = CallingConvention.Winapi)]
         public partial bool ExtIsProgramBinary([Flow(FlowDirection.In)] uint program);
 
         public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)

@@ -4,6 +4,7 @@
         "Name": "HLU Tutorials",
         "Url": "index.html",
         "Children": [
+            { "Url": "::troubleshooting.md" }
         ],
         "Metadata": {
             "theme.silk.nav.big_dropdown.icon.class": "icon icon-shape bg-gradient-warning rounded-circle text-white",

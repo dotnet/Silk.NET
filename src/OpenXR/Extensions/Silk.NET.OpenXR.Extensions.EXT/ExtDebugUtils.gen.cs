@@ -21,59 +21,59 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     {
         public const string ExtensionName = "XR_EXT_debug_utils";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroyDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "xrDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public partial Result DestroyDebugUtilsMessenger([Count(Count = 0)] DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT")]
+        [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT")]
+        [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
         public partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSessionEndDebugUtilsLabelRegionEXT")]
+        [NativeApi(EntryPoint = "xrSessionEndDebugUtilsLabelRegionEXT", Convention = CallingConvention.Winapi)]
         public partial Result SessionEndDebugUtilsLabelRegion([Count(Count = 0)] Session session);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
+        [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectNameInfoEXT* nameInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
+        [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
         public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectNameInfoEXT nameInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]
+        [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* callbackData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]
+        [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
         public partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT callbackData);
 
         public ExtDebugUtils(INativeContext ctx)

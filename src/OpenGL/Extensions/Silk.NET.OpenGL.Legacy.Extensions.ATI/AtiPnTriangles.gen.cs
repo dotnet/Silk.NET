@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public unsafe partial class AtiPnTriangles : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_pn_triangles";
-        [NativeApi(EntryPoint = "glPNTrianglesiATI")]
+        [NativeApi(EntryPoint = "glPNTrianglesiATI", Convention = CallingConvention.Winapi)]
         public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPNTrianglesiATI")]
+        [NativeApi(EntryPoint = "glPNTrianglesiATI", Convention = CallingConvention.Winapi)]
         public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPNTrianglesfATI")]
+        [NativeApi(EntryPoint = "glPNTrianglesfATI", Convention = CallingConvention.Winapi)]
         public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPNTrianglesfATI")]
+        [NativeApi(EntryPoint = "glPNTrianglesfATI", Convention = CallingConvention.Winapi)]
         public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);
 
         public AtiPnTriangles(INativeContext ctx)

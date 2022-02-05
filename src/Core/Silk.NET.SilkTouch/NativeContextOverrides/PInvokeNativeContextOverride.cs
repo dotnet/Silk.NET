@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -102,47 +103,49 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                             (
                                                 SeparatedList<AttributeArgumentSyntax>
                                                 (
-                                                    new SyntaxNodeOrToken[]
-                                                    {
-                                                        AttributeArgument
-                                                            (
-                                                                ImplicitArrayCreationExpression
+                                                    entrypoint.CallingConvention == CallingConvention.Winapi
+                                                        ? Array.Empty<SyntaxNodeOrToken>()
+                                                        : new SyntaxNodeOrToken[]
+                                                        {
+                                                            AttributeArgument
                                                                 (
-                                                                    InitializerExpression
+                                                                    ImplicitArrayCreationExpression
                                                                     (
-                                                                        SyntaxKind.ArrayInitializerExpression,
-                                                                        SingletonSeparatedList<ExpressionSyntax>
+                                                                        InitializerExpression
                                                                         (
-                                                                            TypeOfExpression
+                                                                            SyntaxKind.ArrayInitializerExpression,
+                                                                            SingletonSeparatedList<ExpressionSyntax>
                                                                             (
-                                                                                QualifiedName
+                                                                                TypeOfExpression
                                                                                 (
                                                                                     QualifiedName
                                                                                     (
                                                                                         QualifiedName
                                                                                         (
+                                                                                            QualifiedName
+                                                                                            (
+                                                                                                IdentifierName
+                                                                                                    ("System"),
+                                                                                                IdentifierName
+                                                                                                    ("Runtime")
+                                                                                            ),
                                                                                             IdentifierName
-                                                                                                ("System"),
-                                                                                            IdentifierName
-                                                                                                ("Runtime")
+                                                                                                ("CompilerServices")
                                                                                         ),
                                                                                         IdentifierName
-                                                                                            ("CompilerServices")
-                                                                                    ),
-                                                                                    IdentifierName
-                                                                                    (
-                                                                                        "CallConv" +
-                                                                                        entrypoint.CallingConvention
-                                                                                            .GetCallingConvention()
+                                                                                        (
+                                                                                            "CallConv" +
+                                                                                            entrypoint.CallingConvention
+                                                                                                .GetCallingConvention()
+                                                                                        )
                                                                                     )
                                                                                 )
                                                                             )
                                                                         )
                                                                     )
                                                                 )
-                                                            )
-                                                            .WithNameEquals(NameEquals(IdentifierName("CallConvs")))
-                                                    }
+                                                                .WithNameEquals(NameEquals(IdentifierName("CallConvs")))
+                                                        }
                                                 )
                                             )
                                         )

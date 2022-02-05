@@ -1174,302 +1174,302 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(RootSignatureDesc* pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3890, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeRootSignature(ref RootSignatureDesc pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3902, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(VersionedRootSignatureDesc* pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(VersionedRootSignatureDesc* pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(ref VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(ref VersionedRootSignatureDesc pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(ref VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature")]
+        [NativeApi(EntryPoint = "D3D12SerializeVersionedRootSignature", Convention = CallingConvention.Winapi)]
         public unsafe partial int SerializeVersionedRootSignature(ref VersionedRootSignatureDesc pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
+        [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21203, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12CreateDevice")]
+        [NativeApi(EntryPoint = "D3D12CreateDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21212, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetDebugInterface")]
+        [NativeApi(EntryPoint = "D3D12GetDebugInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDebugInterface(Guid* riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21212, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetDebugInterface")]
+        [NativeApi(EntryPoint = "D3D12GetDebugInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDebugInterface(Guid* riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21212, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetDebugInterface")]
+        [NativeApi(EntryPoint = "D3D12GetDebugInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDebugInterface(ref Guid riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21212, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetDebugInterface")]
+        [NativeApi(EntryPoint = "D3D12GetDebugInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetDebugInterface(ref Guid riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, Guid* pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, Guid* pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, Guid* pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, ref Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures(uint NumFeatures, ref Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnableExperimentalFeatures<T0>(uint NumFeatures, ref Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21238, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures")]
+        [NativeApi(EntryPoint = "D3D12EnableExperimentalFeatures", Convention = CallingConvention.Winapi)]
         public partial int EnableExperimentalFeatures<T0>(uint NumFeatures, ref Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(Guid* rclsid, Guid* riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(Guid* rclsid, Guid* riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(Guid* rclsid, ref Guid riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(Guid* rclsid, ref Guid riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(ref Guid rclsid, Guid* riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(ref Guid rclsid, Guid* riid, ref void* ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(ref Guid rclsid, ref Guid riid, void** ppvDebug);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 21301, Column 16 in d3d12.h")]
-        [NativeApi(EntryPoint = "D3D12GetInterface")]
+        [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetInterface(ref Guid rclsid, ref Guid riid, ref void* ppvDebug);
 
 

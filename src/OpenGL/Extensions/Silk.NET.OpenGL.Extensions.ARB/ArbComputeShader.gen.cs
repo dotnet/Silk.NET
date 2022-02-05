@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbComputeShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_compute_shader";
-        [NativeApi(EntryPoint = "glDispatchCompute")]
+        [NativeApi(EntryPoint = "glDispatchCompute", Convention = CallingConvention.Winapi)]
         public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
 
-        [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
+        [NativeApi(EntryPoint = "glDispatchComputeIndirect", Convention = CallingConvention.Winapi)]
         public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
 
         public ArbComputeShader(INativeContext ctx)

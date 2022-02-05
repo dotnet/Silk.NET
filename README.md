@@ -22,7 +22,7 @@ Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and com
 
 Use Silk.NET to spruce up applications with cross-platform 3D graphics, audio, compute and haptics!
 
-Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.
+Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, Xamarin, .NET Framework 4.6.1+, and .NET Core 2.0+.
 
 </div>
 <br />
@@ -62,7 +62,7 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 
 We currently have the following maintainers:
 - [Dylan Perks](https://github.com/Perksey) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=Dylan_Perks)
-- [Kai Jellinghaus](https://github.com/HurricanKai)
+- [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
 - [Thomas Mizrahi](https://github.com/ThomasMiz)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
@@ -71,6 +71,7 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 Prerequisites
 - **Must**: .NET 6 SDK
+- **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
 - **Should**: Android (w/ AOT), iOS, and MAUI .NET 6 workloads (use `dotnet workload install android android-aot ios maui` to install them)
 - **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
