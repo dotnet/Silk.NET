@@ -16,10 +16,10 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan.Video
 {
-    [NativeName("Name", "StdVideoEncodeH265SliceHeader")]
-    public unsafe partial struct StdVideoEncodeH265SliceHeader
+    [NativeName("Name", "StdVideoEncodeH265SliceSegmentHeader")]
+    public unsafe partial struct StdVideoEncodeH265SliceSegmentHeader
     {
-        public StdVideoEncodeH265SliceHeader
+        public StdVideoEncodeH265SliceSegmentHeader
         (
             StdVideoH265SliceType? sliceType = null,
             byte? slicePicParameterSetId = null,
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Video
             byte? sliceActYQpOffset = null,
             byte? sliceActCbQpOffset = null,
             byte? sliceActCrQpOffset = null,
-            StdVideoEncodeH265SliceHeaderFlags? flags = null
+            StdVideoEncodeH265SliceSegmentHeaderFlags? flags = null
         ) : this()
         {
             if (sliceType is not null)
@@ -294,9 +294,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_act_cr_qp_offset")]
         public byte SliceActCrQpOffset;
 
-        [NativeName("Type", "StdVideoEncodeH265SliceHeaderFlags")]
-        [NativeName("Type.Name", "StdVideoEncodeH265SliceHeaderFlags")]
+        [NativeName("Type", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
+        [NativeName("Type.Name", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
         [NativeName("Name", "flags")]
-        public StdVideoEncodeH265SliceHeaderFlags Flags;
+        public StdVideoEncodeH265SliceSegmentHeaderFlags Flags;
     }
 }

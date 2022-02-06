@@ -86,5 +86,35 @@ namespace Silk.NET.Vulkan
         PrimitiveRestartEnableExt = 1000377004,
         [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
         ColorWriteEnableExt = 1000381000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE")]
+        CullMode = 1000267000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_FRONT_FACE")]
+        FrontFace = 1000267001,
+        [NativeName("Name", "VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY")]
+        PrimitiveTopology = 1000267002,
+        [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT")]
+        ViewportWithCount = 1000267003,
+        [NativeName("Name", "VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT")]
+        ScissorWithCount = 1000267004,
+        [NativeName("Name", "VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE")]
+        VertexInputBindingStride = 1000267005,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE")]
+        DepthTestEnable = 1000267006,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE")]
+        DepthWriteEnable = 1000267007,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_COMPARE_OP")]
+        DepthCompareOp = 1000267008,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE")]
+        DepthBoundsTestEnable = 1000267009,
+        [NativeName("Name", "VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE")]
+        StencilTestEnable = 1000267010,
+        [NativeName("Name", "VK_DYNAMIC_STATE_STENCIL_OP")]
+        StencilOp = 1000267011,
+        [NativeName("Name", "VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE")]
+        RasterizerDiscardEnable = 1000377001,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE")]
+        DepthBiasEnable = 1000377002,
+        [NativeName("Name", "VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE")]
+        PrimitiveRestartEnable = 1000377004,
     }
 }

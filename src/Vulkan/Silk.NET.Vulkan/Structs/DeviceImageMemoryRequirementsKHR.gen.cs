@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceImageMemoryRequirementsKHR")]
+    [NativeName("AliasOf", "VkDeviceImageMemoryRequirements")]
     public unsafe partial struct DeviceImageMemoryRequirementsKHR : IChainable
     {
         public DeviceImageMemoryRequirementsKHR
         (
-            StructureType? sType = StructureType.DeviceImageMemoryRequirementsKhr,
+            StructureType? sType = StructureType.DeviceImageMemoryRequirements,
             void* pNext = null,
             ImageCreateInfo* pCreateInfo = null,
             ImageAspectFlags? planeAspect = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.DeviceImageMemoryRequirementsKhr;
+            return SType = StructureType.DeviceImageMemoryRequirements;
         }
 
         /// <inheritdoc />

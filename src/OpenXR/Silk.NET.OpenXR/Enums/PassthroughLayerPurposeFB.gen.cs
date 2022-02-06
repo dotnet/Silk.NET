@@ -16,5 +16,7 @@ namespace Silk.NET.OpenXR
         PassthroughLayerPurposeReconstructionFB = 0,
         [NativeName("Name", "XR_PASSTHROUGH_LAYER_PURPOSE_PROJECTED_FB")]
         PassthroughLayerPurposeProjectedFB = 1,
+        [NativeName("Name", "XR_PASSTHROUGH_LAYER_PURPOSE_TRACKED_KEYBOARD_HANDS_FB")]
+        PassthroughLayerPurposeTrackedKeyboardHandsFB = 1000203001,
     }
 }

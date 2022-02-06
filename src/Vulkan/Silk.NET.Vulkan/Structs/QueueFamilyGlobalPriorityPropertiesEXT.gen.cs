@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyGlobalPriorityPropertiesEXT")]
+    [NativeName("AliasOf", "VkQueueFamilyGlobalPriorityPropertiesKHR")]
     public unsafe partial struct QueueFamilyGlobalPriorityPropertiesEXT : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyGlobalPriorityPropertiesEXT
         (
-            StructureType? sType = StructureType.QueueFamilyGlobalPriorityPropertiesExt,
+            StructureType? sType = StructureType.QueueFamilyGlobalPriorityPropertiesKhr,
             void* pNext = null,
             uint? priorityCount = null
         ) : this()
@@ -58,30 +59,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "priorityCount")]
         public uint PriorityCount;
         /// <summary></summary>
-        [NativeName("Type", "VkQueueGlobalPriorityEXT")]
-        [NativeName("Type.Name", "VkQueueGlobalPriorityEXT")]
+        [NativeName("Type", "VkQueueGlobalPriorityKHR")]
+        [NativeName("Type.Name", "VkQueueGlobalPriorityKHR")]
         [NativeName("Name", "priorities")]
         public PrioritiesBuffer Priorities;
 
         public struct PrioritiesBuffer
         {
-            public QueueGlobalPriorityEXT Element0;
-            public QueueGlobalPriorityEXT Element1;
-            public QueueGlobalPriorityEXT Element2;
-            public QueueGlobalPriorityEXT Element3;
-            public QueueGlobalPriorityEXT Element4;
-            public QueueGlobalPriorityEXT Element5;
-            public QueueGlobalPriorityEXT Element6;
-            public QueueGlobalPriorityEXT Element7;
-            public QueueGlobalPriorityEXT Element8;
-            public QueueGlobalPriorityEXT Element9;
-            public QueueGlobalPriorityEXT Element10;
-            public QueueGlobalPriorityEXT Element11;
-            public QueueGlobalPriorityEXT Element12;
-            public QueueGlobalPriorityEXT Element13;
-            public QueueGlobalPriorityEXT Element14;
-            public QueueGlobalPriorityEXT Element15;
-            public ref QueueGlobalPriorityEXT this[int index]
+            public QueueGlobalPriorityKHR Element0;
+            public QueueGlobalPriorityKHR Element1;
+            public QueueGlobalPriorityKHR Element2;
+            public QueueGlobalPriorityKHR Element3;
+            public QueueGlobalPriorityKHR Element4;
+            public QueueGlobalPriorityKHR Element5;
+            public QueueGlobalPriorityKHR Element6;
+            public QueueGlobalPriorityKHR Element7;
+            public QueueGlobalPriorityKHR Element8;
+            public QueueGlobalPriorityKHR Element9;
+            public QueueGlobalPriorityKHR Element10;
+            public QueueGlobalPriorityKHR Element11;
+            public QueueGlobalPriorityKHR Element12;
+            public QueueGlobalPriorityKHR Element13;
+            public QueueGlobalPriorityKHR Element14;
+            public QueueGlobalPriorityKHR Element15;
+            public ref QueueGlobalPriorityKHR this[int index]
             {
                 get
                 {
@@ -90,7 +91,7 @@ namespace Silk.NET.Vulkan
                         throw new ArgumentOutOfRangeException(nameof(index));
                     }
 
-                    fixed (QueueGlobalPriorityEXT* ptr = &Element0)
+                    fixed (QueueGlobalPriorityKHR* ptr = &Element0)
                     {
                         return ref ptr[index];
                     }
@@ -98,7 +99,7 @@ namespace Silk.NET.Vulkan
             }
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-            public Span<QueueGlobalPriorityEXT> AsSpan()
+            public Span<QueueGlobalPriorityKHR> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 16);
 #endif
         }
@@ -107,7 +108,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.QueueFamilyGlobalPriorityPropertiesExt;
+            return SType = StructureType.QueueFamilyGlobalPriorityPropertiesKhr;
         }
 
         /// <inheritdoc />
