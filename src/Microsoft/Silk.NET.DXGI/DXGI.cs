@@ -31,7 +31,7 @@ namespace Silk.NET.DXGI
         public override bool IsExtensionPresent(string extension)
         {
             throw new NotImplementedException();
-        }    
+        }
     }
 }
 
