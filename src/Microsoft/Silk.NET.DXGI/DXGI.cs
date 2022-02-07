@@ -10,6 +10,10 @@ namespace Silk.NET.DXGI
 {
     public partial class DXGI
     {
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_CREATE_FACTORY_DEBUG")]
+        public const uint CreateFactoryDebug = unchecked((uint) 0x1);
+
         public static DXGI GetApi()
         {
              return new DXGI(CreateDefaultContext(new DXGILibraryNameContainer().GetLibraryName()));
