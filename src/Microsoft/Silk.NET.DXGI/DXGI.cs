@@ -28,6 +28,10 @@ namespace Silk.NET.DXGI
         {
             throw new NotImplementedException();
         }
+
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_CREATE_FACTORY_DEBUG")]
+        public const uint CreateFactoryDebug = unchecked((uint) 0x1);
     }
 }
 
