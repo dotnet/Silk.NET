@@ -244,7 +244,9 @@ public partial class Joysticks : IReadOnlyList<IJoystick>
 
 All events will be raised when their matching actor methods are called, with the exception of `Click` and `DoubleClick` which are implemented on top of `ButtonDown` and `ButtonUp` respectively (as in 2.X).
 
-`DoubleClick` will be raised if `Mice.ButtonDown` is raised two consecutive times within `MouseClickConfiguration.DoubleClickTime` milliseconds, and the `MouseState.Position`'s `X` or `Y` did not change more than `MouseClickConfiguration.DoubleClickRange` between the two events. If these conditions are not met, `Click` is raised instead.
+`DoubleClick` will be raised if `Mice.ButtonDown` is raised two consecutive times within `MouseClickConfiguration.DoubleClickTime` milliseconds, and the `MouseState.Position`'s `X` or `Y` did not change more than `MouseClickConfiguration.DoubleClickRange` between the two events. If these conditions are not met, `Click` is raised instead. For the avoidance of doubt, the behaviour of the click implementation here is exactly as it is in 2.X.
+
+**INFORMATIVE TEXT:** The click implementation may also even be exactly the same implementation as it is 2.X copied and pasted into 3.0, given a lot of research and effort went into this by the community contributor that implemented it.
 
 `MouseClickConfiguration` is defined as follows:
 
@@ -301,7 +303,7 @@ As discussed earlier, the interface will be very simple.
 ```cs
 public interface IMouse : IInputDevice
 {
-    MouseState State { get; }
+    ref readonly MouseState State { get; }
     ICursorConfiguration Cursor { get; }
     void SetPosition(Vector2 pos);
 }
@@ -473,7 +475,7 @@ Once again, the interface is very simple.
 ```cs
 public interface IKeyboard : IInputDevice
 {
-    KeyboardState State { get; }
+    ref readonly KeyboardState State { get; }
     string? ClipboardText { get; set; }
     void BeginInput();
     void EndInput();
@@ -679,7 +681,7 @@ The Silk.NET team wishes to reserve the right to remove any key names which do n
 ```cs
 public interface IGamepad : IInputDevice
 {
-    GamepadState State { get; }
+    ref readonly GamepadState State { get; }
     IReadOnlyList<IMotor> VibrationMotors { get; }
 }
 ```
@@ -755,7 +757,7 @@ This is the polyglot interface for any other human input device that roughly mee
 ```cs
 public interface IJoystick : IInputDevice
 {
-    JoystickState State { get; }
+    ref readonly JoystickState State { get; }
 }
 ```
 ```cs
