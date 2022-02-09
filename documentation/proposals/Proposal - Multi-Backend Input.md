@@ -113,7 +113,7 @@ public interface IInputBackend
     string Name { get; }
     nint Id { get; }
     IReadOnlyList<IInputDevice> Devices { get; }
-    void Update(IActor? actor = null);
+    void Update(IEventReceiver? actor = null);
 }
 ```
 
@@ -131,7 +131,7 @@ Threading rules for the reference implementation (if any) will be explicitly doc
 
 **INFORMATIVE TEXT:** For example, it is illegal for GLFW functions to be called anywhere except the thread `glfwInit` was called on, and it is illegal on some operating systems (such as macOS) for `glfwInit` to be called anywhere except the thread that called `main`.
 
-## Actors
+## Event Receivers
 
 Some users will want to receive events in the order that they happen. Observing state does not allow us to do this if, for instance, a button was pressed and released between update calls - the state would have a net-zero change and thus we wouldn't be able to detect such events.
 
@@ -140,31 +140,31 @@ This is solved by the actor model, which is implemented by the custom list types
 **INFORMATIVE TEXT:** A possible question is "why don't we just expose the events directly on the devices? Why do we need this actor model?". The answer to that is having events on the devices has considerations for the lifetime of the device objects, which the Silk.NET team wishes to leave unrestricted. For instance, when a device connects the input context will need to bind the events on each device itself and when a device disconnects the behaviour thereafter would be undefined because we have not explicitly allowed or disallowed the reuse of device objects, and we do not wish to. If a device object were to be reused when the device reconnects, those events would still be there. It's better to encapsulate these events in their own object using this actor model.
 
 ```cs
-public interface IActor
+public interface IEventReceiver
 {
-    void HandleDeviceConnectionChanged(ConnectionEvent<IInputDevice> @event);
+    void HandleDeviceConnectionChanged(ConnectionEvent @event);
 }
 ```
 
-The base `IActor` is simple, handling only device connections and device disconnections.
+The base `IEventReceiver` is simple, handling only device connections and device disconnections.
 
 `HandleDeviceConnectionChanged` must be called with a device and a value of `true` if the `ConnectionEvent.Device` has just been added to the `IInputBackend.Devices` list.
 
 `HandleDeviceConnectionChanged` must be called with a device and a value of `false` if the `ConnectionEvent.Device` has just been removed from the `IInputBackend.Devices` list.
 
-All actor methods are called in the order that the state changes happened in the underlying backend. For example, a "double click" would be mouse down, mouse up, mouse down, and mouse up again. Even if those events happened entirely between two update calls (thus resulting in a net-zero change of state, given the button was released at the last update and is still released at this update), the input backend is expected to queue up the events so they may be delivered to the actor in the order in which they occurred when `Update` is called **where possible**.
+All actor methods are called in the order that the state changes happened in the underlying backend. For example, a "double click" would be mouse down, mouse up, mouse down, and mouse up again. Even if those events happened entirely between two update calls (thus resulting in a net-zero change of state, given the button was released at the last update and is still released at this update), the input backend is expected to queue up the events so they may be delivered to the actor in the order in which they occurred when `Update` is called **where possible**. The events being in order is preferred and strongly recommended for backends, and if a backend is able to do so it must do so consistently. If the backend is unable to do so, then the events being in order is not required. 
 
 **INFORMATIVE TEXT:** Some backends, such as OpenXR, may only operate on a state query basis, and obviously we only query the state when `Update` is called. This is the reason why it's only a "where possible" requirement, because if we can't actually get the events in the order they happened from the underlying backend (like we can for GLFW, for example) then it's impossible for us to convey this up to the developer. However, regardless of backend-specifics, a `State` update must always be paired with an actor method call.
 
-The `IActor` passed into `Update` may implement multiple other actor interfaces (as defined below), and if the actor implements an extra interface (such as `IMouseActor` defined below) that would allow the backend to forward more events to the actor, the backend must do so via type checking. That is, if `actor` is an instance of `IMouseActor`, any mouse events are delivered to that actor. But if `actor` does not implement `IMouseActor`, no mouse events will be delivered.
+The `IEventReceiver` passed into `Update` may implement multiple other actor interfaces (as defined below), and if the actor implements an extra interface (such as `IMouseEventReceiver` defined below) that would allow the backend to forward more events to the actor, the backend must do so via type checking. That is, if `actor` is an instance of `IMouseEventReceiver`, any mouse events are delivered to that actor. But if `actor` does not implement `IMouseEventReceiver`, no mouse events will be delivered.
 
 Note that during the `Update` call, a backend must only update the device's state in the order that the events are delivered. For example when `IInputBackend.Update` is called:
 1. The backend has a queued "mouse down" event.
 2. The backend updates the `State` of the relevant `IMouse` for that button press.
-3. The backend calls `HandleButtonDown` on the `IMouseActor` (if applicable).
+3. The backend calls `HandleButtonDown` on the `IMouseEventReceiver` (if applicable).
 4. The backend has a queued "mouse up" event.
 5. The backend updates the `State` of the relevant `IMouse` for that button release.
-6. The backend calls `HandleButtonUp` on the `IMouseActor` (if applicable).
+6. The backend calls `HandleButtonUp` on the `IMouseEventReceiver` (if applicable).
 
 This allows the actor to work with the whole device state with the device state being representative of the time that the original event occurred.
 
@@ -183,7 +183,7 @@ public partial class InputContext
     public Joysticks Joysticks { get; }
     public IReadOnlyList<IInputDevice> Devices { get; }
     public IList<IInputBackend> Backends { get; }
-    public event Action<ConnectionEvent<IInputDevice>>? ConnectionChanged;
+    public event Action<ConnectionEvent>? ConnectionChanged;
     public void Update();
 }
 ```
@@ -194,7 +194,7 @@ The central input object acts as the main entry point into the Input API, and is
 
 By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states enumerated by the lists will not change until `Update` is called.
 
-`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in an actor which implements `IActor`, `IMouseActor`, `IKeyboardActor`, `IGamepadActor`, and `IJoystickActor` with each of the methods invoking a matching event defined in "Custom List Types".
+`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in an actor which implements `IEventReceiver`, `IMouseEventReceiver`, `IKeyboardEventReceiver`, `IGamepadEventReceiver`, and `IJoystickEventReceiver` with each of the methods invoking a matching event defined in "Custom List Types".
 
 After the lists have been updated, the `Update` method compares the old state and the new state for that device and raises events accordingly. If there is no old state available for a device, the `ConnectionChanged` event (read on!) within each of the custom lists is called with a value of `true` signifying that a device has connected. Likewise, if there is no new state available for a device we have old state for, the `ConnectionChanged` event will be called with a value of `false` signifying that a device has been disconnected.
 
@@ -210,35 +210,35 @@ These are relatively simple list wrappers with the events fired when state chang
 public partial class Mice : IReadOnlyList<IMouse>
 {
     public MouseClickConfiguration ClickConfiguration { get; set; }
-    public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonDown;
-    public event Action<ButtonEvent<IMouse, MouseButton>>? ButtonUp;
-    public event Action<ClickEvent<IMouse, MouseButton>>? Click;
-    public event Action<ClickEvent<IMouse, MouseButton>>? DoubleClick;
-    public event Action<AxisEvent<IMouse, Vector2>>? CursorMove;
-    public event Action<AxisEvent<IMouse, Vector2>>? Scroll;
+    public event Action<MouseDownEvent>? ButtonDown;
+    public event Action<MouseUpEvent>? ButtonUp;
+    public event Action<MouseClickEvent>? Click;
+    public event Action<MouseClickEvent>? DoubleClick;
+    public event Action<MouseMoveEvent>? CursorMove;
+    public event Action<MouseScrollEvent>? Scroll;
 }
 
 public partial class Keyboards : IReadOnlyList<IKeyboard>
 {
-    public event Action<ButtonEvent<IKeyboard, Key>>? KeyDown;
-    public event Action<ButtonEvent<IKeyboard, Key>>? KeyUp;
-    public event Action<TextEvent<IKeyboard>>? TextInput;
+    public event Action<KeyDownEvent>? KeyDown;
+    public event Action<KeyUpEvent>? KeyUp;
+    public event Action<KeyTextEvent>? TextInput;
 }
 
 public partial class Gamepads : IReadOnlyList<IGamepad>
 {
-    public event Action<ButtonEvent<IGamepad, JoystickButton>>? ButtonDown;
-    public event Action<ButtonEvent<IGamepad, JoystickButton>>? ButtonUp;
-    public event Action<AxisEvent<IGamepad, Vector2>>? ThumbstickMove;
-    public event Action<AxisEvent<IGamepad, float>>? TriggerMove;
+    public event Action<GamepadDownEvent>? ButtonDown;
+    public event Action<GamepadUpEvent>? ButtonUp;
+    public event Action<GamepadThumbstickMoveEvent>? ThumbstickMove;
+    public event Action<GamepadTriggerMoveEvent>? TriggerMove;
 }
 
 public partial class Joysticks : IReadOnlyList<IJoystick>
 {
-    public event Action<ButtonEvent<IJoystick, JoystickButton>>? ButtonDown;
-    public event Action<ButtonEvent<IJoystick, JoystickButton>>? ButtonUp;
-    public event Action<AxisEvent<IJoystick, float>>? AxisMove;
-    public event Action<AxisEvent<IJoystick, Vector2>>? HatMove;
+    public event Action<JoystickDownEvent>? ButtonDown;
+    public event Action<JoystickUpEvent>? ButtonUp;
+    public event Action<JoystickAxisMoveEvent>? AxisMove;
+    public event Action<JoystickHatMoveEvent>? HatMove;
 }
 ```
 
@@ -257,11 +257,24 @@ This will be configurable on `Mice` (i.e. via `InputContext.Mice.ClickConfigurat
 Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only argument for the event action. This allows us to provide more information to the event handlers without breaking in the future. These types are farily simple:
 
 ```cs
-public readonly record struct ButtonEvent<TDevice, TButton>(TDevice Device, TButton Button);
-public readonly record struct ClickEvent<TDevice, TButton>(TDevice Device, TButton Button, Vector2 Position);
-public readonly record struct AxisEvent<TDevice, TAxis>(TDevice Device, int Index, TAxis OldValue, TAxis NewValue);
-public readonly record struct TextEvent<TDevice>(TDevice Device, string? OldText, string? NewText);
-public readonly record struct ConnectionEvent<TDevice>(TDevice Device, bool IsConnected);
+public readonly record struct ConnectionEvent(IInputDevice Device, bool IsConnected);
+public readonly record struct KeyDownEvent(IKeyboard Keyboard, Key Key, bool IsRepeat);
+public readonly record struct KeyUpEvent(IKeyboard Keyboard, Key Key);
+public readonly record struct KeyCharEvent(IKeyboard Keyboard, char Character, int Scancode);
+public readonly record struct KeyTextEvent(IKeyboard Keyboard, string? Text);
+public readonly record struct MouseDownEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct MouseUpEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct MouseMoveEvent(IMouse Mouse, Vector2 Position, Vector2 Delta);
+public readonly record struct MouseScrollEvent(IMouse Mouse, Vector2 Position, Vector2 WheelPosition, Vector2 Delta);
+public readonly record struct MouseClickEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
+public readonly record struct JoystickDownEvent(IJoystick Joystick, JoystickButton Button);
+public readonly record struct JoystickUpEvent(IJoystick Joystick, JoystickButton Button);
+public readonly record struct JoystickHatMoveEvent(IJoystick, Vector2 Value, Vector2 Delta);
+public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, int Axis, float Value, float Delta);
+public readonly record struct GamepadDownEvent(IGamepad Gamepad, JoystickButton Button);
+public readonly record struct GamepadUpEvent(IGamepad Gamepad, JoystickButton Button);
+public readonly record struct GamepadThumbstickMoveEvent(IJoystick, Vector2 Value, Vector2 Delta);
+public readonly record struct GamepadTriggerMoveEvent(IJoystick Joystick, int Axis, float Value, float Delta);
 ```
 
 This is the part of this proposal that incorporates the ideas in Enhanced Input Events, and is why this proposal supersedes that one.
@@ -327,15 +340,15 @@ The indexer returns `true` if a particular button is pressed, false otherwise. I
 
 `Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
 
-Changes to `MouseState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Actors section).
+Changes to `MouseState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Event Receivers section).
 
 ```cs
-public interface IMouseActor : IActor
+public interface IMouseEventReceiver : IEventReceiver
 {
-    void HandleButtonDown(ButtonEvent<IMouse, MouseButton> @event);
-    void HandleButtonUp(ButtonEvent<IMouse, MouseButton> @event);
-    void HandleCursorMove(AxisEvent<IMouse, Vector2> @event);
-    void HandleScroll(AxisEvent<IMouse, Vector2> @event);
+    void HandleButtonDown(MouseDownEvent @event);
+    void HandleButtonUp(MouseUpEvent @event);
+    void HandleCursorMove(MouseCursorEvent @event);
+    void HandleScroll(MouseScrollEvent @event);
 }
 ```
 
@@ -511,14 +524,14 @@ public readonly record struct Key(KeyName Name, int Scancode);
 
 `KeyName` will be `Unknown` for scancode-only, unnamed keys.
 
-Changes to `KeyboardState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Actors section).
+Changes to `KeyboardState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Event Receivers section).
 
 ```cs
-public interface IKeyboardActor : IActor
+public interface IKeyboardEventReceiver : IEventReceiver
 {
-    void HandleKeyDown(ButtonEvent<IKeyboard, Key> @event);
-    void HandleKeyUp(ButtonEvent<IKeyboard, Key> @event);
-    void HandleTextInput(TextEvent<IKeyboard> @event);
+    void HandleKeyDown(KeyDownEvent @event);
+    void HandleKeyUp(KeyUpEvent @event);
+    void HandleKeyChar(KeyCharEvent @event);
 }
 ```
 
@@ -715,15 +728,15 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 
 This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
 
-Changes to `GamepadState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Actors section).
+Changes to `GamepadState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Event Receivers section).
 
 ```cs
-public interface IGamepadActor : IActor
+public interface IGamepadEventReceiver : IEventReceiver
 {
-    void HandleButtonDown(ButtonEvent<IGamepad, JoystickButton> @event);
-    void HandleButtonUp(ButtonEvent<IGamepad, JoystickButton> @event);
-    void HandleThumbstickMove(AxisEvent<IGamepad, Vector2> @event);
-    void HandleTriggerMove(AxisEvent<IGamepad, float> @event);
+    void HandleButtonDown(GamepadDownEvent @event);
+    void HandleButtonUp(GamepadUpEvent @event);
+    void HandleThumbstickMove(GamepadThumbstickMoveEvent @event);
+    void HandleTriggerMove(GamepadTriggerMoveEvent @event);
 }
 ```
 
@@ -797,15 +810,15 @@ public enum JoystickButton
 }
 ```
 
-Changes to `JoystickState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Actors section).
+Changes to `JoystickState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Event Receivers section).
 
 ```cs
-public interface IJoystickActor : IActor
+public interface IJoystickEventReceiver : IEventReceiver
 {
-    void HandleButtonDown(ButtonEvent<IJoystick, JoystickButton> @event);
-    void HandleButtonUp(ButtonEvent<IJoystick, JoystickButton> @event);
-    void HandleAxisMove(AxisEvent<IJoystick, float> @event);
-    void HandleHatMove(AxisEvent<IJoystick, Vector2> @event);
+    void HandleButtonDown(JoystickDownEvent @event);
+    void HandleButtonUp(JoystickUpEvent @event);
+    void HandleAxisMove(JoystickAxisMoveEvent @event);
+    void HandleHatMove(JoystickHatMoveEvent @event);
 }
 ```
 
