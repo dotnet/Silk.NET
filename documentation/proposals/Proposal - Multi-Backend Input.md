@@ -113,7 +113,7 @@ public interface IInputBackend
     string Name { get; }
     nint Id { get; }
     IReadOnlyList<IInputDevice> Devices { get; }
-    void Update(IInputHandler? actor = null);
+    void Update(IInputHandler? handler = null);
 }
 ```
 
@@ -135,9 +135,9 @@ Threading rules for the reference implementation (if any) will be explicitly doc
 
 Some users will want to receive events in the order that they happen. Observing state does not allow us to do this if, for instance, a button was pressed and released between update calls - the state would have a net-zero change and thus we wouldn't be able to detect such events.
 
-This is solved by the actor model, which is implemented by the custom list types - the actor methods invoking the matching events.
+This is solved by the handler model, which is implemented by the custom list types - the handler methods invoking the matching events.
 
-**INFORMATIVE TEXT:** A possible question is "why don't we just expose the events directly on the devices? Why do we need this actor model?". The answer to that is having events on the devices has considerations for the lifetime of the device objects, which the Silk.NET team wishes to leave unrestricted. For instance, when a device connects the input context will need to bind the events on each device itself and when a device disconnects the behaviour thereafter would be undefined because we have not explicitly allowed or disallowed the reuse of device objects, and we do not wish to. If a device object were to be reused when the device reconnects, those events would still be there. It's better to encapsulate these events in their own object using this actor model.
+**INFORMATIVE TEXT:** A possible question is "why don't we just expose the events directly on the devices? Why do we need this handler model?". The answer to that is having events on the devices has considerations for the lifetime of the device objects, which the Silk.NET team wishes to leave unrestricted. For instance, when a device connects the input context will need to bind the events on each device itself and when a device disconnects the behaviour thereafter would be undefined because we have not explicitly allowed or disallowed the reuse of device objects, and we do not wish to. If a device object were to be reused when the device reconnects, those events would still be there. It's better to encapsulate these events in their own object using this handler model.
 
 ```cs
 public interface IInputHandler
@@ -152,11 +152,11 @@ The base `IInputHandler` is simple, handling only device connections and device 
 
 `HandleDeviceConnectionChanged` must be called with a device and a value of `false` if the `ConnectionEvent.Device` has just been removed from the `IInputBackend.Devices` list.
 
-All actor methods are called in the order that the state changes happened in the underlying backend. For example, a "double click" would be mouse down, mouse up, mouse down, and mouse up again. Even if those events happened entirely between two update calls (thus resulting in a net-zero change of state, given the button was released at the last update and is still released at this update), the input backend is expected to queue up the events so they may be delivered to the actor in the order in which they occurred when `Update` is called **where possible**. The events being in order is preferred and strongly recommended for backend implementations, and if a backend is able to order events in this way it is required to do so and required to do so consistently. If the backend is unable to do so, then the events being in order is not required. 
+All handler methods are called in the order that the state changes happened in the underlying backend. For example, a "double click" would be mouse down, mouse up, mouse down, and mouse up again. Even if those events happened entirely between two update calls (thus resulting in a net-zero change of state, given the button was released at the last update and is still released at this update), the input backend is expected to queue up the events so they may be delivered to the handler in the order in which they occurred when `Update` is called **where possible**. The events being in order is preferred and strongly recommended for backend implementations, and if a backend is able to order events in this way it is required to do so and required to do so consistently. If the backend is unable to do so, then the events being in order is not required. 
 
-**INFORMATIVE TEXT:** Some backends, such as OpenXR, may only operate on a state query basis, and obviously we only query the state when `Update` is called. This is the reason why it's only a "where possible" requirement, because if we can't actually get the events in the order they happened from the underlying backend (like we can for GLFW, for example) then it's impossible for us to convey this up to the developer. However, regardless of backend-specifics, a `State` update must always be paired with an actor method call.
+**INFORMATIVE TEXT:** Some backends, such as OpenXR, may only operate on a state query basis, and obviously we only query the state when `Update` is called. This is the reason why it's only a "where possible" requirement, because if we can't actually get the events in the order they happened from the underlying backend (like we can for GLFW, for example) then it's impossible for us to convey this up to the developer. However, regardless of backend-specifics, a `State` update must always be paired with an handler method call.
 
-The `IInputHandler` passed into `Update` may implement multiple other actor interfaces (as defined below), and if the actor implements an extra interface (such as `IMouseInputHandler` defined below) that would allow the backend to forward more events to the actor, the backend must do so via type checking. That is, if `actor` is an instance of `IMouseInputHandler`, any mouse events are delivered to that actor. But if `actor` does not implement `IMouseInputHandler`, no mouse events will be delivered.
+The `IInputHandler` passed into `Update` may implement multiple other handler interfaces (as defined below), and if the actor implements an extra interface (such as `IMouseInputHandler` defined below) that would allow the backend to forward more events to the handler, the backend must do so via type checking. That is, if `handler` is an instance of `IMouseInputHandler`, any mouse events are delivered to that actor. But if `handler` does not implement `IMouseInputHandler`, no mouse events will be delivered.
 
 Note that during the `Update` call, a backend must only update the device's state in the order that the events are delivered. For example when `IInputBackend.Update` is called:
 1. The backend has a queued "mouse down" event.
@@ -194,7 +194,7 @@ The central input object acts as the main entry point into the Input API, and is
 
 By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states enumerated by the lists will not change until `Update` is called.
 
-`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in an actor which implements `IInputHandler`, `IMouseInputHandler`, `IKeyboardInputHandler`, `IGamepadInputHandler`, and `IJoystickInputHandler` with each of the methods invoking a matching event defined in "Custom List Types".
+`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in a handler which implements `IInputHandler`, `IMouseInputHandler`, `IKeyboardInputHandler`, `IGamepadInputHandler`, and `IJoystickInputHandler` with each of the methods invoking a matching event defined in "Custom List Types".
 
 After the lists have been updated, the `Update` method compares the old state and the new state for that device and raises events accordingly. If there is no old state available for a device, the `ConnectionChanged` event (read on!) within each of the custom lists is called with a value of `true` signifying that a device has connected. Likewise, if there is no new state available for a device we have old state for, the `ConnectionChanged` event will be called with a value of `false` signifying that a device has been disconnected.
 
@@ -222,7 +222,7 @@ public partial class Keyboards : IReadOnlyList<IKeyboard>
 {
     public event Action<KeyDownEvent>? KeyDown;
     public event Action<KeyUpEvent>? KeyUp;
-    public event Action<KeyTextEvent>? TextInput;
+    public event Action<KeyCharEvent>? KeyChar;
 }
 
 public partial class Gamepads : IReadOnlyList<IGamepad>
@@ -242,7 +242,7 @@ public partial class Joysticks : IReadOnlyList<IJoystick>
 }
 ```
 
-All events will be raised when their matching actor methods are called, with the exception of `Click` and `DoubleClick` which are implemented on top of `ButtonDown` and `ButtonUp` respectively (as in 2.X).
+All events will be raised when their matching handler methods are called, with the exception of `Click` and `DoubleClick` which are implemented on top of `ButtonDown` and `ButtonUp` respectively (as in 2.X).
 
 `DoubleClick` will be raised if `Mice.ButtonDown` is raised two consecutive times within `MouseClickConfiguration.DoubleClickTime` milliseconds, and the `MouseState.Position`'s `X` or `Y` did not change more than `MouseClickConfiguration.DoubleClickRange` between the two events. If these conditions are not met, `Click` is raised instead. For the avoidance of doubt, the behaviour of the click implementation here is exactly as it is in 2.X.
 
@@ -262,8 +262,7 @@ Unlike 1.0 and 2.0, this proposal uses `readonly record struct`s as their only a
 public readonly record struct ConnectionEvent(IInputDevice Device, bool IsConnected);
 public readonly record struct KeyDownEvent(IKeyboard Keyboard, Key Key, bool IsRepeat);
 public readonly record struct KeyUpEvent(IKeyboard Keyboard, Key Key);
-public readonly record struct KeyCharEvent(IKeyboard Keyboard, char Character, int Scancode);
-public readonly record struct KeyTextEvent(IKeyboard Keyboard, string? Text);
+public readonly record struct KeyCharEvent(IKeyboard Keyboard, char Character);
 public readonly record struct MouseDownEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
 public readonly record struct MouseUpEvent(IMouse Mouse, Vector2 Position, MouseButton Button);
 public readonly record struct MouseMoveEvent(IMouse Mouse, Vector2 Position, Vector2 Delta);
@@ -342,7 +341,7 @@ The indexer returns `true` if a particular button is pressed, false otherwise. I
 
 `Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
 
-Changes to `MouseState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `MouseState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
 
 ```cs
 public interface IMouseInputHandler : IInputHandler
@@ -484,9 +483,7 @@ public interface IKeyboard : IInputDevice
 
 `State` is the device state as defined earlier.
 
-`BeginInput` starts recording textual input, bringing up the on-screen keyboard on platforms where this is needed (i.e. mobile). Unlike 2.0, this is now required given that textual input is now on a full-string basis rather than a per-char basis, and we don't want to record textual input unless the user asks us to.
-
-For instance, instead of a `KeyChar` event being raised every time a character is pressed or repeated, a `TextInput` event is raised as the string is being built alleviating the need for developers to build the string themselves, given that the primary use of this event is for GUI input.
+`BeginInput` starts recording textual input, bringing up the on-screen keyboard on platforms where this is needed (i.e. mobile). The `State.Text` property will not be populated until after this is called.
 
 `ClipboardText` allows getting and setting the text on the user's clipboard so they can paste information to/from your application in others.
 
@@ -495,12 +492,14 @@ For instance, instead of a `KeyChar` event being raised every time a character i
 ```cs
 public readonly record struct KeyboardState
 (
-    string? Text,
+    InputReadOnlyList<char>? Text,
     KeyState Keys
 );
 ```
 
-`Text` contains the text typed on the keyboard since `IKeyboard.BeginInput`. This is cleared (set to `null`) when `IKeyboard.EndInput` is called, and will not be non-`null` again until another `IKeyboard.BeginInput` call.
+`Text` contains the characters typed on the keyboard since `IKeyboard.BeginInput`, and accounts for backspaces. This is cleared (set to `null`) when `IKeyboard.EndInput` is called, and will not be non-`null` again until another `IKeyboard.BeginInput` call. Given that `KeyChar` events are raised one character at a time, this property will update one character at a time to keep the state consistent with the event.
+
+**INFORMATIVE TEXT:** This is something we can optimize in `InputList` to not be allocatey, rest assured it is not acceptable to the Silk.NET team to allocate a new list for every character.
 
 ```cs
 public readonly record struct KeyState
@@ -526,7 +525,7 @@ public readonly record struct Key(KeyName Name, int Scancode);
 
 `KeyName` will be `Unknown` for scancode-only, unnamed keys.
 
-Changes to `KeyboardState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `KeyboardState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
 
 ```cs
 public interface IKeyboardInputHandler : IInputHandler
@@ -541,7 +540,7 @@ public interface IKeyboardInputHandler : IInputHandler
 
 `HandleKeyUp` must be called when a `Key` is removed from the `KeyState.Down` list.
 
-`HandleTextInput` must be called when `KeyboardState.Text` changes.
+`HandleKeyChar` must be called when a character is added to `KeyboardState.Text`.
 
 
 ## Enums
@@ -730,7 +729,7 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 
 This is used where the list will only ever have exactly two elements, mainly because the "gamepad" form factor is standard and it doesn't make sense to have multiple thumbsticks or triggers given a human only has two thumbs or index fingers. More exotic devices should be exposed using the joystick API.
 
-Changes to `GamepadState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `GamepadState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
 
 ```cs
 public interface IGamepadInputHandler : IInputHandler
@@ -812,7 +811,7 @@ public enum JoystickButton
 }
 ```
 
-Changes to `JoystickState` also have matching actor methods which are subject to the actor method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
+Changes to `JoystickState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
 
 ```cs
 public interface IJoystickInputHandler : IInputHandler
