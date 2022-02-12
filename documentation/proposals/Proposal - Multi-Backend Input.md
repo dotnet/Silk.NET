@@ -331,13 +331,14 @@ public readonly record struct MouseButtonState
 )
 {
     public bool this[MouseButton btn] { get; }
-    public InputReadOnlyList<MouseButton> Up { get; }
 }
 ```
 
-The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
+The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through the `Down` buttons.
 
-`Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
+**INFORMATIVE TEXT:** This struct only exists so we can implement an indexer that accepts a `MouseButton`, given that `Down` is effectively just a list and only takes an `int` index as a result. 
+
+The indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
 
 Changes to `MouseState` also have matching handler methods which are subject to the handler method rules i.e. the backend should call them in the order in which the backend received the events where possible etc (read the Input Handlers section).
 
@@ -507,13 +508,14 @@ public readonly record struct KeyState
 {
     public bool this[KeyName btn] { get; }
     public bool this[int scancode] { get; }
-    public InputReadOnlyList<Key> Up { get; }
 }
 ```
 
-The indexer returns `true` if a particular key is pressed, false otherwise. If the developer wishes to enumerate the key state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
+The indexer returns `true` if a particular key is pressed, false otherwise. If the developer wishes to enumerate the key state, they must explicitly enumerate through the `Down` buttons.
 
-`Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set. Scancode-only keys will not be present in `Up`.
+**INFORMATIVE TEXT:** This struct only exists so we can implement an indexer that accepts a `KeyName` or scancode, given that `Down` is effectively just a list and only takes an `int` index as a result. 
+
+The indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
 
 Note because not all keys are named, and because some developers may prefer to use scancodes instead, a `Key` struct is used instead of just having the list be a list of key names.
 
@@ -777,13 +779,14 @@ public readonly record struct JoystickButtonState
 )
 {
     public bool this[JoystickButton btn] { get; }
-    public InputReadOnlyList<JoystickButton> Up { get; }
 }
 ```
 
-The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through even the `Down` buttons or `Up` buttons.
+The indexer returns `true` if a particular button is pressed, false otherwise. If the developer wishes to enumerate the button state, they must explicitly enumerate through the `Down` buttons.
 
-`Up` and the indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
+**INFORMATIVE TEXT:** This struct only exists so we can implement an indexer that accepts a `JoystickButton`, given that `Down` is effectively just a list and only takes an `int` index as a result.
+
+The indexer will be implemented in terms of `Down`, which is the only property that a backend will need to set.
 
 `JoystickButton` is defined as follows:
 ```cs
