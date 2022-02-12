@@ -706,7 +706,6 @@ public readonly record struct GamepadState
     JoystickButtonState Buttons,
     DualReadOnlyList<Vector2> Thumbsticks,
     DualReadOnlyList<float> Triggers,
-    IReadOnlyList<IMotor> VibrationMotors
 );
 ```
 
