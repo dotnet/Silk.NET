@@ -720,8 +720,8 @@ Note the use of the `DualReadOnlyList` type. This is basically just:
 ```cs
 public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
 {
-    public readonly T E0;
-    public readonly T E1;
+    public readonly T Left;
+    public readonly T Right;
 }
 ```
 
