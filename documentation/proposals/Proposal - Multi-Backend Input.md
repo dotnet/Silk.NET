@@ -38,7 +38,7 @@ var inputContext = someWindow.CreateInput();
 inputContext.Update();
 inputContext.Gamepads.ThumbstickMove += @event =>
 {
-    Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.OldValue} to {@event.NewValue}");
+    Console.WriteLine($"Thumbstick {@event.Index} moved from {@event.Value - @event.Delta} to {@event.Value}");
 };
 var isButtonDown = inputContext.Gamepads.Any(gamepadState => gamepadState.Buttons[JoystickButton.A]);
 ```
