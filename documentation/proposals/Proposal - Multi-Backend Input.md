@@ -194,9 +194,7 @@ The central input object acts as the main entry point into the Input API, and is
 
 By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states enumerated by the lists will not change until `Update` is called.
 
-`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in a handler which implements `IInputHandler`, `IMouseInputHandler`, `IKeyboardInputHandler`, `IGamepadInputHandler`, and `IJoystickInputHandler` with each of the methods invoking a matching event defined in "Custom List Types".
-
-After the lists have been updated, the `Update` method compares the old state and the new state for that device and raises events accordingly. If there is no old state available for a device, the `ConnectionChanged` event (read on!) within each of the custom lists is called with a value of `true` signifying that a device has connected. Likewise, if there is no new state available for a device we have old state for, the `ConnectionChanged` event will be called with a value of `false` signifying that a device has been disconnected.
+`Update` will call `IInputBackend.Update` on each of the `Backends`, passing in a handler which implements `IInputHandler`, `IMouseInputHandler`, `IKeyboardInputHandler`, `IGamepadInputHandler`, and `IJoystickInputHandler` with each of the methods invoking a matching event defined in "Custom List Types" or on the input context itself (such as `ConnectionChanged`).
 
 `Backends` is a mutable list of input backends. Until `Update` is called again, no device lists, state, etc on the context will be updated. The `ConnectionChanged` rules above will still be respected e.g. when you remove a backend, all of its devices will have a disconnected event raised for them.
 
