@@ -21,17 +21,16 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
 - Allow Silk.NET's rich abstractions to be integrated into other frameworks rather than being completely standalone.
     - WPF, WinForms, MAUI, Avalonia (tenet: usability) 
 - Rewrite windowing to be more portable and facilitate true write-once-run-everywhere.
-    - For more information, see [the Windowing 3.0 proposal](Proposal - Windowing 3.0.md). (tenet: portability)
+    - For more information, see [the Windowing 3.0 proposal](Proposal%20-%20Windowing%203.0.md). (tenet: portability)
 - Remove the bulk of our bindings generation code in favour of more mature alternatives
-    - For more information, see [the SilkTouch 3.0 proposal](Proposal - Generation of Library Sources and PInvoke Mechanisms.md). (tenet: maintainability)
+    - For more information, see [the SilkTouch 3.0 proposal](Proposal%20-%20Generation%20of%20Library%20Sources%20and%20PInvoke%20Mechanisms.md). (tenet: maintainability)
 - Accelerate our maths library using SIMD hardware intrinsics
-    - For more information, see [the Vectorization SIMD proposal](Proposal - Vectorization - SIMD.md). (tenet: performance)
-- Enhance our input library to add more functionality and future-proof it against future functionality additions.
-    - For more information, see [the Enhanced Input Events proposal](Proposal - Enhanced Input Events.md). (tenet: maintainability)
-- Refactor our input library to work in multiple scenarios and environments
-    - For more information, see [the Multi-Backend Input proposal](Proposal - Multi-Backend Input.md). (tenet: usability)
+    - For more information, see [the Vectorization SIMD proposal](Proposal%20-%20Vectorization%20-%20SIMD.md). (tenet: performance)
+- Redesign our input library to work in multiple scenarios and environments, as well as be less prone to breaking changes.
+    - For more information, see [the Multi-Backend Input proposal](Proposal%20-%20Multi-Backend%20Input.md). (tenet: usability)
 
 Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past 2 years of the project's development.
+
 ## Development Roadmap
 
 Note that this development roadmap does not take into account unit tests, only functional tests such as experiments. The team should of course strive to add as many tests as possible where possible.
@@ -47,7 +46,7 @@ Before we can do anything, we need to get our brand new generators up and runnin
 - No development on Maths for this preview.
 - Exclusive support for .NET 6
 
-3.0 Preview 1 is not a production-ready preview and is very experimental. This preview should aim to release in early September.
+3.0 Preview 1 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 2
 
@@ -58,7 +57,7 @@ Now that we've got an initial preview out to show what our aims are, we can star
 - Android support has been restored for Windowing and Input, and have received initial testing on this platform.
 - No development on Maths for this preview.
 
-3.0 Preview 2 is not a production-ready preview and is very experimental. This preview should aim to release in late September.
+3.0 Preview 2 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 3
 
@@ -69,7 +68,7 @@ By this preview, the groundwork has been established for 3.0 and we should ensur
 - iOS support has been added for Windowing and Input, and have received initial testing on this platform.
 - If time permits, a start has been made on the SIMD APIs in Maths. No work has been done on integrating it into the other Maths types.
 
-3.0 Preview 3 is not a production-ready preview and is very experimental. This preview should aim to release in early October.
+3.0 Preview 3 is not a production-ready preview and is very experimental.
 
 ### 3.0 Preview 4
 
@@ -79,7 +78,7 @@ This is the first "production-ready" preview and we want users to start integrat
 - SIMD APIs in Maths have been complete, and work has started to integrate them into the other Maths types in the most common cases.
 - Ample work has been done to migrate 2.0 code to 3.0 code to evaluate differences in public API, fixing them where we deem necessary.
 
-3.0 Preview 4 is a production-ready preview and users are encouraged to start integrating this preview into their code. This preview should aim to release in late October.
+3.0 Preview 4 is a production-ready preview and users are encouraged to start integrating this preview into their code.
 
 ### 3.0 Preview 5
 
@@ -87,7 +86,7 @@ This is the last preview and is primarily a bugfix release. All breaking changes
 - Bugfixes from 3.0 Preview 4
 - A windowing integration for MAUI has been developed and has at least basic OpenGL(ES) support in a state that is as high-performance and as smoothed-out as possible.
 - If time permits, a windowing integration for Avalonia has been developed and has at least basic OpenGL(ES) support. If there is not enough time, this can be pushed to 3.X.
-- SIMD APIs should be integrated into Maths in as many common cases as possible. Ongoing performance improvements may be done in 3.X. This preview should aim to release in early November.
+- SIMD APIs should be integrated into Maths in as many common cases as possible. Ongoing performance improvements may be done in 3.X.
 
 ## Problems identified in past development
 
@@ -95,7 +94,7 @@ This is the last preview and is primarily a bugfix release. All breaking changes
     - The intention is that all developers of large amounts of code write implementation documentation and/or "orientation guides" for their codebases informing readers of all major things there is to know in their code.
     - We should also write documentation containing examples on using as many features of the surface APIs as possible \[for high level utilities\]
     - We will enforce XML documentation in all manually-written utilities and as much as possible in bindings.
-    - If time permits, we should productionize our website powered by Raisin.
+    - If time permits, we should productionize our website powered by Statiq + our custom API reference generator.
 - There's not a lot of planning
     - We have solved this in the form of the proposal you are reading and all linked proposals: getting all the design done now and documented now, to prevent design debates later down the line. This should reduce friction when actually working on the library.
     - We have been keeping the working group and key stakeholders in the loop with the 3.0 kickoff (again, see this proposal you are reading)
@@ -156,7 +155,7 @@ All other folders will contain documentation targeted at users for using specifi
 
 Silk.NET has been proven to excel at binding to OpenGL with games and applications such as [Project Hedra](https://projecthedra.com), a game made by @maxilevi; and [a clone of The Settlers](https://github.com/Pyrdacor/Freeserf.Net) made by @Pyrdacor.
 
-One thing we want to place an emphasis on is our commitment to actually keeping Silk.NET up-to-date. The schedule will be that on the **first Friday of the month**: The working group will evaluate recent changes with the Silk.NET codebase and related upstream resources. If the working group warrants that a patch fix is needed, a patch will be pushed to NuGet on this day.
+One thing we want to place an emphasis on is our commitment to actually keeping Silk.NET up-to-date. The schedule will be that on the **first Friday of the month** the bindings will be regenerated and a patch released containing all the changes since the last patch.
 
 We have a lot of bindings by now and the libraries we bind to change all the time. As such, monthly updates are critical to ensure our bindings are regenerated and are as up-to-date as possible. Bugfixes found over the month will be swept up in these monthly updates.
 

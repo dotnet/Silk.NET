@@ -134,7 +134,7 @@ public delegate void ToggleAction(bool newValue);
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface ISurface : IDisposable
+    public interface ISurface : IWindowHandlesSource, IDisposable
     {
         /// <summary>
         /// Determines whether the surface is being destroyed by the platform.
@@ -150,11 +150,6 @@ namespace Silk.NET.Windowing
         /// Elapsed time in seconds since the Run method last started.
         /// </summary>
         double Time { get; }
-
-        /// <summary>
-        /// Gets the native platform the surface is running on.
-        /// </summary>
-        INativePlatform Native { get; }
 
         /// <summary>
         /// The size of the surface's inner framebuffer. May differ from the surface size.
@@ -822,6 +817,8 @@ namespace Silk.NET.Windowing
 
 ## `Version32`
 
+Exactly as is from 2.X.
+
 ```cs
 namespace Silk.NET.Core
 {
@@ -897,6 +894,8 @@ namespace Silk.NET.Core
 
 ## `RawImage`
 
+Exactly as is from 2.X.
+
 ```cs
 namespace Silk.NET.Core
 {
@@ -969,88 +968,34 @@ namespace Silk.NET.Core
 }
 ```
 
-## `INativeInfo`
+## `IWindowHandlesSource`
+
+Pretty much as is from 2.X's `INativeWindowSource` except using the new struct.
 
 ```cs
-namespace Silk.NET.Windowing
+namespace Silk.NET.Core
 {
-    public interface INativePlatformData
+    public interface IWindowHandlesSource
     {
-        string PlatformName { get; }
+        WindowHandles Native { get; }
     }
 }
 ```
 
-## `IWin32PlatformData`
+## `WindowHandles`
+
+Replaces 2.X's `INativeWindow`
 
 ```cs
-namespace Silk.NET.Windowing
+namespace Silk.NET.Core
 {
-    public interface IWin32PlatformData : INativePlatformData
+    public struct WindowHandles
     {
-        nint Hwnd { get; }
-        nint HDC { get; }
-        nint HInstance { get; }
+        // ...
     }
 }
 ```
 
-## `IX11PlatformData`
+The Silk.NET team wishes to reserve the right to add any relevant window handles that arise when implementing the reference implementation as nullable fields in this struct.
 
-```cs
-namespace Silk.NET.Windowing
-{
-    public interface IX11PlatformData : INativePlatformData
-    {
-        nint Display { get; }
-        nint Window { get; }
-    }
-}
-```
-
-## `ICocoaPlatformData`
-
-```cs
-namespace Silk.NET.Windowing
-{
-    public interface ICocoaPlatformData : INativePlatformData
-    {
-        nint Window { get; }
-    }
-}
-```
-
-## `IWaylandPlatformData`
-
-```cs
-namespace Silk.NET.Windowing
-{
-    public interface IWaylandPlatformData : INativePlatformData
-    {
-        nint Display { get; }
-        nint Surface { get; }
-    }
-}
-```
-
-## `IUIKitPlatformData`
-
-Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
-
-## `IGlfwPlatformData`
-
-```cs
-namespace Silk.NET.Windowing
-{
-    public interface IGlfwPlatformData : INativePlatformData
-    {
-        nint Window { get; }
-    }
-}
-```
-
-## `IAndroidPlatformData`
-
-Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
-
-**NOTE:** Vivante handles have not been revived for 3.0, this is a niche platform that we can't commit to having first-party support for.
+The goal is to keep this type lightweight as it is in Silk.NET.Core (to ensure smooth interoperability between Silk.NET packages without creating hard references), hence why interfaces or type-system-driven approached were not used.
