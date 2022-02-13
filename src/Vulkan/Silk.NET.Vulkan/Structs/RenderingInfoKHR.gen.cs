@@ -17,20 +17,21 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingInfoKHR")]
+    [NativeName("AliasOf", "VkRenderingInfo")]
     public unsafe partial struct RenderingInfoKHR : IChainStart
     {
         public RenderingInfoKHR
         (
-            StructureType? sType = StructureType.RenderingInfoKhr,
+            StructureType? sType = StructureType.RenderingInfo,
             void* pNext = null,
-            RenderingFlagsKHR? flags = null,
+            RenderingFlags? flags = null,
             Rect2D? renderArea = null,
             uint? layerCount = null,
             uint? viewMask = null,
             uint? colorAttachmentCount = null,
-            RenderingAttachmentInfoKHR* pColorAttachments = null,
-            RenderingAttachmentInfoKHR* pDepthAttachment = null,
-            RenderingAttachmentInfoKHR* pStencilAttachment = null
+            RenderingAttachmentInfo* pColorAttachments = null,
+            RenderingAttachmentInfo* pDepthAttachment = null,
+            RenderingAttachmentInfo* pStencilAttachment = null
         ) : this()
         {
             if (sType is not null)
@@ -95,10 +96,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkRenderingFlagsKHR")]
-        [NativeName("Type.Name", "VkRenderingFlagsKHR")]
+        [NativeName("Type", "VkRenderingFlags")]
+        [NativeName("Type.Name", "VkRenderingFlags")]
         [NativeName("Name", "flags")]
-        public RenderingFlagsKHR Flags;
+        public RenderingFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkRect2D")]
         [NativeName("Type.Name", "VkRect2D")]
@@ -120,25 +121,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "colorAttachmentCount")]
         public uint ColorAttachmentCount;
 /// <summary></summary>
-        [NativeName("Type", "VkRenderingAttachmentInfoKHR*")]
-        [NativeName("Type.Name", "VkRenderingAttachmentInfoKHR")]
+        [NativeName("Type", "VkRenderingAttachmentInfo*")]
+        [NativeName("Type.Name", "VkRenderingAttachmentInfo")]
         [NativeName("Name", "pColorAttachments")]
-        public RenderingAttachmentInfoKHR* PColorAttachments;
+        public RenderingAttachmentInfo* PColorAttachments;
 /// <summary></summary>
-        [NativeName("Type", "VkRenderingAttachmentInfoKHR*")]
-        [NativeName("Type.Name", "VkRenderingAttachmentInfoKHR")]
+        [NativeName("Type", "VkRenderingAttachmentInfo*")]
+        [NativeName("Type.Name", "VkRenderingAttachmentInfo")]
         [NativeName("Name", "pDepthAttachment")]
-        public RenderingAttachmentInfoKHR* PDepthAttachment;
+        public RenderingAttachmentInfo* PDepthAttachment;
 /// <summary></summary>
-        [NativeName("Type", "VkRenderingAttachmentInfoKHR*")]
-        [NativeName("Type.Name", "VkRenderingAttachmentInfoKHR")]
+        [NativeName("Type", "VkRenderingAttachmentInfo*")]
+        [NativeName("Type.Name", "VkRenderingAttachmentInfo")]
         [NativeName("Name", "pStencilAttachment")]
-        public RenderingAttachmentInfoKHR* PStencilAttachment;
+        public RenderingAttachmentInfo* PStencilAttachment;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingInfoKhr;
+            return SType = StructureType.RenderingInfo;
         }
 
         /// <inheritdoc />
@@ -156,7 +157,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref RenderingInfoKHR Chain(
             out RenderingInfoKHR capture)
         {
-            capture = new RenderingInfoKHR(StructureType.RenderingInfoKhr);
+            capture = new RenderingInfoKHR(StructureType.RenderingInfo);
             return ref capture;
         }
     }

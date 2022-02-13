@@ -71,5 +71,9 @@ namespace Silk.NET.Vulkan
         PipelineCreateDispatchBaseBit = 16,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE")]
         PipelineCreateDispatchBase = 16,
+        [NativeName("Name", "VK_PIPELINE_CREATE_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT")]
+        PipelineCreateFailOnPipelineCompileRequiredBit = 256,
+        [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT")]
+        PipelineCreateEarlyReturnOnFailureBit = 512,
     }
 }

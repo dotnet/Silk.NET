@@ -16,16 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoEncodeH265NaluSliceEXT")]
-    public unsafe partial struct VideoEncodeH265NaluSliceEXT : IChainable
+    [NativeName("Name", "VkBufferCopy2")]
+    [NativeName("Aliases", "VkBufferCopy2KHR")]
+    public unsafe partial struct BufferCopy2 : IChainable
     {
-        public VideoEncodeH265NaluSliceEXT
+        public BufferCopy2
         (
-            StructureType? sType = StructureType.VideoEncodeH265NaluSliceExt,
+            StructureType? sType = StructureType.BufferCopy2,
             void* pNext = null,
-            uint? ctbCount = null,
-            VideoEncodeH265ReferenceListsEXT* pReferenceFinalLists = null,
-            Video.StdVideoEncodeH265SliceHeader* pSliceHeaderStd = null
+            ulong? srcOffset = null,
+            ulong? dstOffset = null,
+            ulong? size = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +39,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (ctbCount is not null)
+            if (srcOffset is not null)
             {
-                CtbCount = ctbCount.Value;
+                SrcOffset = srcOffset.Value;
             }
 
-            if (pReferenceFinalLists is not null)
+            if (dstOffset is not null)
             {
-                PReferenceFinalLists = pReferenceFinalLists;
+                DstOffset = dstOffset.Value;
             }
 
-            if (pSliceHeaderStd is not null)
+            if (size is not null)
             {
-                PSliceHeaderStd = pSliceHeaderStd;
+                Size = size.Value;
             }
         }
 
@@ -65,25 +66,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "ctbCount")]
-        public uint CtbCount;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "srcOffset")]
+        public ulong SrcOffset;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265ReferenceListsEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH265ReferenceListsEXT")]
-        [NativeName("Name", "pReferenceFinalLists")]
-        public VideoEncodeH265ReferenceListsEXT* PReferenceFinalLists;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "dstOffset")]
+        public ulong DstOffset;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoEncodeH265SliceHeader*")]
-        [NativeName("Type.Name", "StdVideoEncodeH265SliceHeader")]
-        [NativeName("Name", "pSliceHeaderStd")]
-        public Video.StdVideoEncodeH265SliceHeader* PSliceHeaderStd;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoEncodeH265NaluSliceExt;
+            return SType = StructureType.BufferCopy2;
         }
 
         /// <inheritdoc />

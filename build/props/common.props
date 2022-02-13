@@ -12,25 +12,23 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET January 2022 Update
+            Silk.NET February 2022 Update
             
-            - Add support for retrieving the clipboard text on IKeyboard (thanks @Beyley)
-            - Add a constructor for customizing the ImGui configuration before ImGuiController applies its configuration (thanks @sampletext32)
-            - Add Flags attributes to all bitmasks generated from C++ headers (i.e. DirectX), fixing warnings on usage
+            - Add an OpenGLES version of the ImGui plugin (thanks @Beyley)
+            - Add an initial version of a Rider/ReSharper plugin to open Khronos specifications with one click (may not be available for install immediately)
+            - Update to OpenXR 1.0.22
+            - Update to Vulkan 1.2.203
             - Update to latest OpenCL specifications
-            - Update to Vulkan 1.2.203 (from 1.2.201, not 1.2.210 as the previous update indicated)
-            - Fix input information being one or two frames behind due to running in DoUpdate instead of DoEvents 
-            - Fix BuildTools incorrectly defaulting to Cdecl instead of Winapi (fixes 32-bit issues)
-            - Fix string marshalling not allocating enough memory for multibyte UTF8 strings
-            - Fix a DivideByZeroException in PointToFramebuffer thrown in some circumstances
-            - Fix SymbolLoadingExceptions on usage of GetStringList functions in OpenAL
+            - Fix mouse scroll wheels state not always being up-to-date on the SDL backend (thanks @paralaxsd)
+
+            In addition, thanks to @roeyskoe for contributing lots of behind-the-scenes changes to improve the Silk.NET native packaging experience.
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.12</VersionPrefix>
+        <VersionPrefix>2.13</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

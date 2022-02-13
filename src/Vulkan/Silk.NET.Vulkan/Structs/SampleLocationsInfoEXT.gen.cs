@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSampleLocationsInfoEXT")]
-    public unsafe partial struct SampleLocationsInfoEXT : IExtendsChain<ImageMemoryBarrier>, IExtendsChain<ImageMemoryBarrier2KHR>
+    public unsafe partial struct SampleLocationsInfoEXT : IExtendsChain<ImageMemoryBarrier>, IExtendsChain<ImageMemoryBarrier2>, IExtendsChain<ImageMemoryBarrier2KHR>
     {
         public SampleLocationsInfoEXT
         (

@@ -320,6 +320,12 @@ namespace Silk.NET.OpenXR
         TypeViveTrackerPathsHtcx = 1000103000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_VIVE_TRACKER_CONNECTED_HTCX")]
         TypeEventDataViveTrackerConnectedHtcx = 1000103001,
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACIAL_TRACKING_PROPERTIES_HTC")]
+        TypeSystemFacialTrackingPropertiesHtc = 1000104000,
+        [NativeName("Name", "XR_TYPE_FACIAL_TRACKER_CREATE_INFO_HTC")]
+        TypeFacialTrackerCreateInfoHtc = 1000104001,
+        [NativeName("Name", "XR_TYPE_FACIAL_EXPRESSIONS_HTC")]
+        TypeFacialExpressionsHtc = 1000104002,
         [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
         TypeSystemColorSpacePropertiesFB = 1000108000,
         [NativeName("Name", "XR_TYPE_HAND_TRACKING_MESH_FB")]
@@ -338,6 +344,12 @@ namespace Silk.NET.OpenXR
         TypeSwapchainStateFoveationFB = 1000114002,
         [NativeName("Name", "XR_TYPE_FOVEATION_LEVEL_PROFILE_CREATE_INFO_FB")]
         TypeFoveationLevelProfileCreateInfoFB = 1000115000,
+        [NativeName("Name", "XR_TYPE_KEYBOARD_SPACE_CREATE_INFO_FB")]
+        TypeKeyboardSpaceCreateInfoFB = 1000116009,
+        [NativeName("Name", "XR_TYPE_KEYBOARD_TRACKING_QUERY_FB")]
+        TypeKeyboardTrackingQueryFB = 1000116004,
+        [NativeName("Name", "XR_TYPE_SYSTEM_KEYBOARD_TRACKING_PROPERTIES_FB")]
+        TypeSystemKeyboardTrackingPropertiesFB = 1000116002,
         [NativeName("Name", "XR_TYPE_TRIANGLE_MESH_CREATE_INFO_FB")]
         TypeTriangleMeshCreateInfoFB = 1000117001,
         [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_PROPERTIES_FB")]
@@ -360,6 +372,16 @@ namespace Silk.NET.OpenXR
         TypePassthroughColorMapMonoToMonoFB = 1000118022,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_PASSTHROUGH_STATE_CHANGED_FB")]
         TypeEventDataPassthroughStateChangedFB = 1000118030,
+        [NativeName("Name", "XR_TYPE_RENDER_MODEL_PATH_INFO_FB")]
+        TypeRenderModelPathInfoFB = 1000119000,
+        [NativeName("Name", "XR_TYPE_RENDER_MODEL_PROPERTIES_FB")]
+        TypeRenderModelPropertiesFB = 1000119001,
+        [NativeName("Name", "XR_TYPE_RENDER_MODEL_BUFFER_FB")]
+        TypeRenderModelBufferFB = 1000119002,
+        [NativeName("Name", "XR_TYPE_RENDER_MODEL_LOAD_INFO_FB")]
+        TypeRenderModelLoadInfoFB = 1000119003,
+        [NativeName("Name", "XR_TYPE_SYSTEM_RENDER_MODEL_PROPERTIES_FB")]
+        TypeSystemRenderModelPropertiesFB = 1000119004,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
         [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
@@ -392,5 +414,9 @@ namespace Silk.NET.OpenXR
         TypeCompositionLayerSpaceWarpInfoFB = 1000171000,
         [NativeName("Name", "XR_TYPE_SYSTEM_SPACE_WARP_PROPERTIES_FB")]
         TypeSystemSpaceWarpPropertiesFB = 1000171001,
+        [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
+        TypeDigitalLensControlAlmalence = 1000196000,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_KEYBOARD_HANDS_INTENSITY_FB")]
+        TypePassthroughKeyboardHandsIntensityFB = 1000203002,
     }
 }

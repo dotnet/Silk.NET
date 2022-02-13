@@ -162,6 +162,10 @@ namespace Silk.NET.OpenXR
         ErrorInsufficientResourcesPassthroughFB = -1000118004,
         [NativeName("Name", "XR_ERROR_UNKNOWN_PASSTHROUGH_FB")]
         ErrorUnknownPassthroughFB = -1000118050,
+        [NativeName("Name", "XR_ERROR_RENDER_MODEL_KEY_INVALID_FB")]
+        ErrorRenderModelKeyInvalidFB = -1000119000,
+        [NativeName("Name", "XR_RENDER_MODEL_UNAVAILABLE_FB")]
+        RenderModelUnavailableFB = 1000119020,
         [NativeName("Name", "XR_ERROR_MARKER_NOT_TRACKED_VARJO")]
         ErrorMarkerNotTrackedVarjo = -1000124000,
         [NativeName("Name", "XR_ERROR_MARKER_ID_INVALID_VARJO")]

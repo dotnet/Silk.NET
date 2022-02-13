@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageBlit2KHR")]
+    [NativeName("AliasOf", "VkImageBlit2")]
     public unsafe partial struct ImageBlit2KHR : IChainStart
     {
         public ImageBlit2KHR
         (
-            StructureType? sType = StructureType.ImageBlit2Khr,
+            StructureType? sType = StructureType.ImageBlit2,
             void* pNext = null,
             ImageSubresourceLayers? srcSubresource = null,
             ImageSubresourceLayers? dstSubresource = null
@@ -136,7 +137,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ImageBlit2Khr;
+            return SType = StructureType.ImageBlit2;
         }
 
         /// <inheritdoc />
@@ -154,7 +155,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref ImageBlit2KHR Chain(
             out ImageBlit2KHR capture)
         {
-            capture = new ImageBlit2KHR(StructureType.ImageBlit2Khr);
+            capture = new ImageBlit2KHR(StructureType.ImageBlit2);
             return ref capture;
         }
     }

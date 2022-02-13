@@ -108,5 +108,7 @@ namespace Silk.NET.Vulkan
         SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
         DescriptorUpdateTemplate = 1000085000,
+        [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
+        PrivateDataSlot = 1000295000,
     }
 }

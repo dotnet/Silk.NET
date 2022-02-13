@@ -43,5 +43,7 @@ namespace Silk.NET.Vulkan
         ImageAspectPlane1Bit = 32,
         [NativeName("Name", "VK_IMAGE_ASPECT_PLANE_2_BIT")]
         ImageAspectPlane2Bit = 64,
+        [NativeName("Name", "VK_IMAGE_ASPECT_NONE")]
+        ImageAspectNone = 0,
     }
 }
