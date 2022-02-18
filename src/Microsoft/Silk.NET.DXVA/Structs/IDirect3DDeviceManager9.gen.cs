@@ -46,7 +46,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -57,7 +68,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -69,7 +91,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -83,7 +116,18 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -112,7 +156,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevice, resetToken);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevice, resetToken);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevice, resetToken);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevice, resetToken);
+            }
+            #endif
             return ret;
         }
 
@@ -123,7 +178,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DDevice9* pDevicePtr = &pDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevicePtr, resetToken);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevicePtr, resetToken);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevicePtr, resetToken);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, Silk.NET.Direct3D9.IDirect3DDevice9*, uint, int>)LpVtbl[3])(@this, pDevicePtr, resetToken);
+                }
+            #endif
             }
             return ret;
         }
@@ -133,7 +199,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -144,7 +221,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** phDevicePtr = &phDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void**, int>)LpVtbl[4])(@this, phDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -154,7 +242,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -165,7 +264,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -175,7 +285,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevice);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevice);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevice);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevice);
+            }
+            #endif
             return ret;
         }
 
@@ -186,7 +307,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -196,7 +328,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+            }
+            #endif
             return ret;
         }
 
@@ -207,7 +350,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+                }
+            #endif
             }
             return ret;
         }
@@ -219,7 +373,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+                }
+            #endif
             }
             return ret;
         }
@@ -233,7 +398,18 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -244,7 +420,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevice, fSaveState);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevice, fSaveState);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevice, fSaveState);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevice, fSaveState);
+            }
+            #endif
             return ret;
         }
 
@@ -255,7 +442,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
+                }
+            #endif
             }
             return ret;
         }
@@ -265,7 +463,18 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppService);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppService);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppService);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppService);
+            }
+            #endif
             return ret;
         }
 
@@ -276,7 +485,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** ppServicePtr = &ppService)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -288,7 +508,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppService);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppService);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppService);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppService);
+                }
+            #endif
             }
             return ret;
         }
@@ -302,7 +533,18 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppServicePtr = &ppService)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -315,7 +557,18 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+                }
+            #endif
             }
             return ret;
         }
@@ -329,7 +582,18 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppServicePtr = &ppService)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -344,7 +608,18 @@ namespace Silk.NET.DXVA
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -361,7 +636,18 @@ namespace Silk.NET.DXVA
                 {
                     fixed (void** ppServicePtr = &ppService)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+                        }
+            #endif
                     }
                 }
             }

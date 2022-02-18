@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCopy2KHR")]
+    [NativeName("AliasOf", "VkBufferCopy2")]
     public unsafe partial struct BufferCopy2KHR : IChainable
     {
         public BufferCopy2KHR
         (
-            StructureType? sType = StructureType.BufferCopy2Khr,
+            StructureType? sType = StructureType.BufferCopy2,
             void* pNext = null,
             ulong? srcOffset = null,
             ulong? dstOffset = null,
@@ -83,7 +84,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BufferCopy2Khr;
+            return SType = StructureType.BufferCopy2;
         }
 
         /// <inheritdoc />

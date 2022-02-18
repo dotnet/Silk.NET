@@ -20,154 +20,154 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbGpuShaderFp64 : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_gpu_shader_fp64";
-        [NativeApi(EntryPoint = "glGetUniformdv")]
+        [NativeApi(EntryPoint = "glGetUniformdv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] double* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformdv")]
+        [NativeApi(EntryPoint = "glGetUniformdv", Convention = CallingConvention.Winapi)]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out double @params);
 
-        [NativeApi(EntryPoint = "glUniform1d")]
+        [NativeApi(EntryPoint = "glUniform1d", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x);
 
-        [NativeApi(EntryPoint = "glUniform1dv")]
+        [NativeApi(EntryPoint = "glUniform1dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniform1dv")]
+        [NativeApi(EntryPoint = "glUniform1dv", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniform2d")]
+        [NativeApi(EntryPoint = "glUniform2d", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
-        [NativeApi(EntryPoint = "glUniform2dv")]
+        [NativeApi(EntryPoint = "glUniform2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniform2dv")]
+        [NativeApi(EntryPoint = "glUniform2dv", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniform3d")]
+        [NativeApi(EntryPoint = "glUniform3d", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
-        [NativeApi(EntryPoint = "glUniform3dv")]
+        [NativeApi(EntryPoint = "glUniform3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniform3dv")]
+        [NativeApi(EntryPoint = "glUniform3dv", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniform4d")]
+        [NativeApi(EntryPoint = "glUniform4d", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
-        [NativeApi(EntryPoint = "glUniform4dv")]
+        [NativeApi(EntryPoint = "glUniform4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniform4dv")]
+        [NativeApi(EntryPoint = "glUniform4dv", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix2x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix3x4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x2dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
-        [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
+        [NativeApi(EntryPoint = "glUniformMatrix4x3dv", Convention = CallingConvention.Winapi)]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in double value);
 
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)

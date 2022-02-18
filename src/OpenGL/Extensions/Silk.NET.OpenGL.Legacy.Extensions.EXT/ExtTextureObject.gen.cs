@@ -20,109 +20,109 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtTextureObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_object";
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT", Convention = CallingConvention.Winapi)]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-        [NativeApi(EntryPoint = "glBindTextureEXT")]
+        [NativeApi(EntryPoint = "glBindTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
 
-        [NativeApi(EntryPoint = "glBindTextureEXT")]
+        [NativeApi(EntryPoint = "glBindTextureEXT", Convention = CallingConvention.Winapi)]
         public partial void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture);
 
-        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
 
-        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures);
 
-        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures);
 
-        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures);
 
-        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        [NativeApi(EntryPoint = "glGenTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
-        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        [NativeApi(EntryPoint = "glGenTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint textures);
 
-        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        [NativeApi(EntryPoint = "glGenTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Texture* textures);
 
-        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        [NativeApi(EntryPoint = "glGenTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Texture textures);
 
-        [NativeApi(EntryPoint = "glIsTextureEXT")]
+        [NativeApi(EntryPoint = "glIsTextureEXT", Convention = CallingConvention.Winapi)]
         public partial bool IsTexture([Flow(FlowDirection.In)] uint texture);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
-        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT", Convention = CallingConvention.Winapi)]
         public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
         public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)

@@ -475,6 +475,6 @@ src/**/build/
 *.gen.txt
 
 # Silk.NET Website Generation Output
-docs/
+/docs/
 src/Website/Silk.NET.Statiq/temp
 src/Website/Silk.NET.Statiq/cache

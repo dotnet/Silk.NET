@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbInternalformatQuery2 : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_internalformat_query2";
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
-        [NativeApi(EntryPoint = "glGetInternalformati64v")]
+        [NativeApi(EntryPoint = "glGetInternalformati64v", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out long @params);
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)

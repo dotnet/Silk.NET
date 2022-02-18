@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     {
         public const string ExtensionName = "XR_KHR_android_thread_settings";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetAndroidApplicationThreadKHR")]
+        [NativeApi(EntryPoint = "xrSetAndroidApplicationThreadKHR", Convention = CallingConvention.Winapi)]
         public partial Result SetAndroidApplicationThread([Count(Count = 0)] Session session, [Count(Count = 0)] AndroidThreadTypeKHR threadType, [Count(Count = 0)] uint threadId);
 
         public KhrAndroidThreadSettings(INativeContext ctx)

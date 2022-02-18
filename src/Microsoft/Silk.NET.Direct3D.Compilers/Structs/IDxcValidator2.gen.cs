@@ -49,7 +49,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            }
+            #endif
             return ret;
         }
 
@@ -60,7 +71,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -72,7 +94,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                }
+            #endif
             }
             return ret;
         }
@@ -86,7 +119,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -115,7 +159,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -126,7 +181,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, Flags, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -138,7 +204,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pShaderPtr = &pShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -152,7 +229,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, Flags, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -163,7 +251,18 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcValidator2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResult);
+            #if NET5_0_OR_GREATER
+            ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResult);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResult);
+            }
+            else
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResult);
+            }
+            #endif
             return ret;
         }
 
@@ -174,7 +273,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResultPtr);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResultPtr);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcode, ppResultPtr);
+                }
+            #endif
             }
             return ret;
         }
@@ -186,7 +296,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Buffer* pOptDebugBitcodePtr = &pOptDebugBitcode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -200,7 +321,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShader, Flags, pOptDebugBitcodePtr, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -213,7 +345,18 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pShaderPtr = &pShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResult);
+            #if NET5_0_OR_GREATER
+                ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResult);
+            #else
+                if (SilkMarshal.IsWinapiStdcall)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResult);
+                }
+                else
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResult);
+                }
+            #endif
             }
             return ret;
         }
@@ -227,7 +370,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResultPtr);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResultPtr);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcode, ppResultPtr);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -242,7 +396,18 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Buffer* pOptDebugBitcodePtr = &pOptDebugBitcode)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResult);
+            #if NET5_0_OR_GREATER
+                    ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResult);
+            #else
+                    if (SilkMarshal.IsWinapiStdcall)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResult);
+                    }
+                    else
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResult);
+                    }
+            #endif
                 }
             }
             return ret;
@@ -259,7 +424,18 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcOperationResult** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResultPtr);
+            #if NET5_0_OR_GREATER
+                        ret = ((delegate* unmanaged<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResultPtr);
+            #else
+                        if (SilkMarshal.IsWinapiStdcall)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResultPtr);
+                        }
+                        else
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcValidator2*, IDxcBlob*, uint, Buffer*, IDxcOperationResult**, int>)LpVtbl[4])(@this, pShaderPtr, Flags, pOptDebugBitcodePtr, ppResultPtr);
+                        }
+            #endif
                     }
                 }
             }

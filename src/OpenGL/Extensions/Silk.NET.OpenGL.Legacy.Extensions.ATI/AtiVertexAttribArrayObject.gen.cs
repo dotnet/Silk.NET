@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public unsafe partial class AtiVertexAttribArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_vertex_attrib_array_object";
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
         public AtiVertexAttribArrayObject(INativeContext ctx)

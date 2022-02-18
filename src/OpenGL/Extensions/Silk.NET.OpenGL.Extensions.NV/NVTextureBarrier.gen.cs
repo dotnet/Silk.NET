@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
     public unsafe partial class NVTextureBarrier : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_texture_barrier";
-        [NativeApi(EntryPoint = "glTextureBarrierNV")]
+        [NativeApi(EntryPoint = "glTextureBarrierNV", Convention = CallingConvention.Winapi)]
         public partial void TextureBarrier();
 
         public NVTextureBarrier(INativeContext ctx)

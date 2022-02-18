@@ -21,68 +21,68 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
     {
         public const string ExtensionName = "VK_FUCHSIA_buffer_collection";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCollectionCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionFUCHSIA* pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCollectionCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionFUCHSIA pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCollectionCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionFUCHSIA* pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCollectionCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionFUCHSIA pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCollectionCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionFUCHSIA* pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCollectionCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionFUCHSIA pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCollectionCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionFUCHSIA* pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkCreateBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result CreateBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferCollectionCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionFUCHSIA pCollection);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkDestroyBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferCollectionFUCHSIA")]
+        [NativeApi(EntryPoint = "vkDestroyBufferCollectionFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial void DestroyBufferCollectionFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetBufferCollectionPropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionPropertiesFUCHSIA* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.BufferCollectionPropertiesFuchsia);")]
-        [NativeApi(EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
+        [NativeApi(EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result GetBufferCollectionPropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionPropertiesFUCHSIA pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        [NativeApi(EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SetBufferCollectionBufferConstraintsFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] BufferConstraintsInfoFUCHSIA* pBufferConstraintsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA")]
+        [NativeApi(EntryPoint = "vkSetBufferCollectionBufferConstraintsFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result SetBufferCollectionBufferConstraintsFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] in BufferConstraintsInfoFUCHSIA pBufferConstraintsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        [NativeApi(EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SetBufferCollectionImageConstraintsFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] ImageConstraintsInfoFUCHSIA* pImageConstraintsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA")]
+        [NativeApi(EntryPoint = "vkSetBufferCollectionImageConstraintsFUCHSIA", Convention = CallingConvention.Winapi)]
         public partial Result SetBufferCollectionImageConstraintsFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.In)] in ImageConstraintsInfoFUCHSIA pImageConstraintsInfo);
 
         public FuchsiaBufferCollection(INativeContext ctx)

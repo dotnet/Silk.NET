@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures")]
     public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
         (
-            StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
+            StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeatures,
             void* pNext = null,
             Bool32? shaderDemoteToHelperInvocation = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt;
+            return SType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeatures;
         }
 
         /// <inheritdoc />

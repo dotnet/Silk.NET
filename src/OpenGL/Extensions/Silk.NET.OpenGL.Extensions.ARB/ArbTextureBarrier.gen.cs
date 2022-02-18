@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbTextureBarrier : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_barrier";
-        [NativeApi(EntryPoint = "glTextureBarrier")]
+        [NativeApi(EntryPoint = "glTextureBarrier", Convention = CallingConvention.Winapi)]
         public partial void TextureBarrier();
 
         public ArbTextureBarrier(INativeContext ctx)

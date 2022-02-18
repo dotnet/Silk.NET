@@ -21,21 +21,21 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_coverage_reduction_mode";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCombinations = new(StructureType.FramebufferMixedSamplesCombinationNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] out FramebufferMixedSamplesCombinationNV pCombinations);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCombinations = new(StructureType.FramebufferMixedSamplesCombinationNV);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] out FramebufferMixedSamplesCombinationNV pCombinations);
 
         public NVCoverageReductionMode(INativeContext ctx)

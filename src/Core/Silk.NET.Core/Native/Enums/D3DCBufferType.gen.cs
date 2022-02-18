@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
+    [Flags]
     [NativeName("Name", "_D3D_CBUFFER_TYPE")]
     public enum D3DCBufferType : int
     {

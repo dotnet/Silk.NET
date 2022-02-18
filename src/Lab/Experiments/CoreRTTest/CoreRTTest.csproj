@@ -10,7 +10,7 @@
 
     <!-- Some tutorials need ImageSharp -->
     <ItemGroup>
-        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
     </ItemGroup>
 
     <!-- Reference Silk.NET -->

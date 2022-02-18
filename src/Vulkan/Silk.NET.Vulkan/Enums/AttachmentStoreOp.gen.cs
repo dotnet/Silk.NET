@@ -22,5 +22,7 @@ namespace Silk.NET.Vulkan
         NoneQCom = 1000301000,
         [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE_EXT")]
         NoneExt = 1000301000,
+        [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE")]
+        None = 1000301000,
     }
 }

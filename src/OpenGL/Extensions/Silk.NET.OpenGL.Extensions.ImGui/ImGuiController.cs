@@ -6,9 +6,19 @@ using ImGuiNET;
 using Silk.NET.Input;
 using Silk.NET.Input.Extensions;
 using Silk.NET.Maths;
+#if GLES
+using Silk.NET.OpenGLES;
+#elif GL
+using Silk.NET.OpenGL;
+#endif
 using Silk.NET.Windowing;
 
+
+#if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
+#elif GLES
+namespace Silk.NET.OpenGLES.Extensions.ImGui
+#endif
 {
     public class ImGuiController : IDisposable
     {
@@ -38,31 +48,39 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         /// <summary>
         /// Constructs a new ImGuiController.
         /// </summary>
-        public ImGuiController(GL gl, IView view, IInputContext input)
+        public ImGuiController(GL gl, IView view, IInputContext input) : this(gl, view, input, null, null)
         {
-            Init(gl, view, input);
-
-            var io = ImGuiNET.ImGui.GetIO();
-            io.Fonts.AddFontDefault();
-            io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
-
-            CreateDeviceResources();
-            SetKeyMappings();
-
-            SetPerFrameImGuiData(1f / 60f);
-
-            BeginFrame();
         }
 
         /// <summary>
         /// Constructs a new ImGuiController with font configuration.
         /// </summary>
-        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig)
+        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig) : this(gl, view, input, imGuiFontConfig, null)
+        {
+        }
+        
+        /// <summary>
+        /// Constructs a new ImGuiController with an onConfigureIO Action.
+        /// </summary>
+        public ImGuiController(GL gl, IView view, IInputContext input, Action onConfigureIO) : this(gl, view, input, null, onConfigureIO)
+        {
+        }
+        
+        /// <summary>
+        /// Constructs a new ImGuiController with font configuration and onConfigure Action.
+        /// </summary>
+        public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig? imGuiFontConfig = null, Action onConfigureIO = null)
         {
             Init(gl, view, input);
 
             var io = ImGuiNET.ImGui.GetIO();
-            io.Fonts.AddFontFromFileTTF(imGuiFontConfig.FontPath, imGuiFontConfig.FontSize);
+            if (imGuiFontConfig is not null)
+            {
+                io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize);
+            }
+
+            onConfigureIO?.Invoke();
+
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
             CreateDeviceResources();
@@ -237,8 +255,10 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.Disable(GLEnum.DepthTest);
             _gl.Disable(GLEnum.StencilTest);
             _gl.Enable(GLEnum.ScissorTest);
+            #if !GLES
             _gl.Disable(GLEnum.PrimitiveRestart);
             _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
+            #endif
 
             float L = drawDataPtr.DisplayPos.X;
             float R = drawDataPtr.DisplayPos.X + drawDataPtr.DisplaySize.X;
@@ -296,9 +316,11 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArrayObject);
 
+            #if !GLES
             Span<int> lastPolygonMode = stackalloc int[2];
             _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
-
+            #endif
+    
             Span<int> lastScissorBox = stackalloc int[4];
             _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
 
@@ -317,8 +339,10 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             bool lastEnableStencilTest = _gl.IsEnabled(GLEnum.StencilTest);
             bool lastEnableScissorTest = _gl.IsEnabled(GLEnum.ScissorTest);
 
+            #if !GLES
             bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
-
+            #endif
+            
             SetupRenderState(drawDataPtr, framebufferWidth, framebufferHeight);
 
             // Will project scissor/clipping rectangles into framebuffer space
@@ -431,7 +455,8 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             {
                 _gl.Disable(GLEnum.ScissorTest);
             }
-
+            
+            #if !GLES
             if (lastEnablePrimitiveRestart)
             {
                 _gl.Enable(GLEnum.PrimitiveRestart);
@@ -442,7 +467,8 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             }
 
             _gl.PolygonMode(GLEnum.FrontAndBack, (GLEnum) lastPolygonMode[0]);
-
+            #endif
+            
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 
@@ -454,7 +480,25 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArray);
 
-            string vertexSource = @"#version 330
+            string vertexSource =
+        #if GLES
+                @"#version 300 es
+        precision highp float;
+            
+        layout (location = 0) in vec2 Position;
+        layout (location = 1) in vec2 UV;
+        layout (location = 2) in vec4 Color;
+        uniform mat4 ProjMtx;
+        out vec2 Frag_UV;
+        out vec4 Frag_Color;
+        void main()
+        {
+            Frag_UV = UV;
+            Frag_Color = Color;
+            gl_Position = ProjMtx * vec4(Position.xy,0.0,1.0);
+        }";
+        #elif GL
+                @"#version 330
         layout (location = 0) in vec2 Position;
         layout (location = 1) in vec2 UV;
         layout (location = 2) in vec4 Color;
@@ -467,9 +511,14 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             Frag_Color = Color;
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
+        #endif
 
 
-            string fragmentSource = @"#version 330
+            string fragmentSource = 
+        #if GLES
+                @"#version 300 es
+        precision highp float;
+        
         in vec2 Frag_UV;
         in vec4 Frag_Color;
         uniform sampler2D Texture;
@@ -478,6 +527,17 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         {
             Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
         }";
+        #elif GL
+                @"#version 330
+        in vec2 Frag_UV;
+        in vec4 Frag_Color;
+        uniform sampler2D Texture;
+        layout (location = 0) out vec4 Out_Color;
+        void main()
+        {
+            Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
+        }";
+        #endif
 
             _shader = new Shader(_gl, vertexSource, fragmentSource);
 

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     public unsafe partial class SgisMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_multisample";
-        [NativeApi(EntryPoint = "glSampleMaskSGIS")]
+        [NativeApi(EntryPoint = "glSampleMaskSGIS", Convention = CallingConvention.Winapi)]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        [NativeApi(EntryPoint = "glSampleMaskSGIS")]
+        [NativeApi(EntryPoint = "glSampleMaskSGIS", Convention = CallingConvention.Winapi)]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
 
-        [NativeApi(EntryPoint = "glSamplePatternSGIS")]
+        [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
 
-        [NativeApi(EntryPoint = "glSamplePatternSGIS")]
+        [NativeApi(EntryPoint = "glSamplePatternSGIS", Convention = CallingConvention.Winapi)]
         public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
 
         public SgisMultisample(INativeContext ctx)

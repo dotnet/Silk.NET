@@ -21,79 +21,79 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_transform_feedback";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginQueryIndexedEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginQueryIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginQueryIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query, [Count(Count = 0)] QueryControlFlags flags, [Count(Count = 0)] uint index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
+        [NativeApi(EntryPoint = "vkCmdDrawIndirectByteCountEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdDrawIndirectByteCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] Buffer counterBuffer, [Count(Count = 0)] ulong counterBufferOffset, [Count(Count = 0)] uint counterOffset, [Count(Count = 0)] uint vertexStride);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndQueryIndexedEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndQueryIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdEndQueryIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query, [Count(Count = 0)] uint index);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         /// <summary>To be documented.</summary>

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public unsafe partial class IntelSharingFormatQueryGl : NativeExtension<CL>
     {
         public const string ExtensionName = "INTEL_sharing_format_query_gl";
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
 
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
 
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
 
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL", Convention = CallingConvention.Winapi)]
         public partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
 
         public IntelSharingFormatQueryGl(INativeContext ctx)

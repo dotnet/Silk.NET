@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPipelineShaderStageCreateFlags")]
     public enum PipelineShaderStageCreateFlags : int
     {
@@ -21,5 +21,9 @@ namespace Silk.NET.Vulkan
         PipelineShaderStageCreateRequireFullSubgroupsBitExt = 2,
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR")]
         PipelineShaderStageCreateReserved3BitKhr = 8,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
+        PipelineShaderStageCreateAllowVaryingSubgroupSizeBit = 1,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT")]
+        PipelineShaderStageCreateRequireFullSubgroupsBit = 2,
     }
 }

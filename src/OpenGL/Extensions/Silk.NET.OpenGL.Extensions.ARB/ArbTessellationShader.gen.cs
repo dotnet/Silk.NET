@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbTessellationShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_tessellation_shader";
-        [NativeApi(EntryPoint = "glPatchParameteri")]
+        [NativeApi(EntryPoint = "glPatchParameteri", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glPatchParameteri")]
+        [NativeApi(EntryPoint = "glPatchParameteri", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
-        [NativeApi(EntryPoint = "glPatchParameterfv")]
+        [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
-        [NativeApi(EntryPoint = "glPatchParameterfv")]
+        [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float values);
 
-        [NativeApi(EntryPoint = "glPatchParameterfv")]
+        [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
-        [NativeApi(EntryPoint = "glPatchParameterfv")]
+        [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float values);
 
         public ArbTessellationShader(INativeContext ctx)

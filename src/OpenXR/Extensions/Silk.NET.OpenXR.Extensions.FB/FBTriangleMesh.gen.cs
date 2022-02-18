@@ -21,59 +21,59 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_triangle_mesh";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB")]
+        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB")]
+        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] TriangleMeshCreateInfoFB* createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB")]
+        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB")]
+        [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrDestroyTriangleMeshFB")]
+        [NativeApi(EntryPoint = "xrDestroyTriangleMeshFB", Convention = CallingConvention.Winapi)]
         public partial Result DestroyTriangleMeshFB([Count(Count = 0)] TriangleMeshFB mesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshBeginUpdateFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshBeginUpdateFB", Convention = CallingConvention.Winapi)]
         public partial Result TriangleMeshBeginUpdateFB([Count(Count = 0)] TriangleMeshFB mesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshBeginVertexBufferUpdateFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] uint* outVertexCount);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshBeginVertexBufferUpdateFB", Convention = CallingConvention.Winapi)]
         public partial Result TriangleMeshBeginVertexBufferUpdateFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref uint outVertexCount);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshEndUpdateFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshEndUpdateFB", Convention = CallingConvention.Winapi)]
         public partial Result TriangleMeshEndUpdateFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] uint vertexCount, [Count(Count = 0)] uint triangleCount);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshEndVertexBufferUpdateFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshEndVertexBufferUpdateFB", Convention = CallingConvention.Winapi)]
         public partial Result TriangleMeshEndVertexBufferUpdateFB([Count(Count = 0)] TriangleMeshFB mesh);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetIndexBufferFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshGetIndexBufferFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshGetIndexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] uint** outIndexBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetIndexBufferFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshGetIndexBufferFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshGetIndexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref uint* outIndexBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshGetVertexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] Vector3f** outVertexBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB")]
+        [NativeApi(EntryPoint = "xrTriangleMeshGetVertexBufferFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result TriangleMeshGetVertexBufferFB([Count(Count = 0)] TriangleMeshFB mesh, [Count(Count = 0)] ref Vector3f* outVertexBuffer);
 
         public FBTriangleMesh(INativeContext ctx)

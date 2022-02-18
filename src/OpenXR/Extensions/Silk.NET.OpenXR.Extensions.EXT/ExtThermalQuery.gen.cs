@@ -21,35 +21,35 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     {
         public const string ExtensionName = "XR_EXT_thermal_query";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
+        [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT", Convention = CallingConvention.Winapi)]
         public partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
         public ExtThermalQuery(INativeContext ctx)

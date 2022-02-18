@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolInlineUniformBlockCreateInfoEXT")]
+    [NativeName("AliasOf", "VkDescriptorPoolInlineUniformBlockCreateInfo")]
     public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfoEXT : IExtendsChain<DescriptorPoolCreateInfo>
     {
         public DescriptorPoolInlineUniformBlockCreateInfoEXT
         (
-            StructureType? sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
+            StructureType? sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfo,
             void* pNext = null,
             uint? maxInlineUniformBlockBindings = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt;
+            return SType = StructureType.DescriptorPoolInlineUniformBlockCreateInfo;
         }
 
         /// <inheritdoc />

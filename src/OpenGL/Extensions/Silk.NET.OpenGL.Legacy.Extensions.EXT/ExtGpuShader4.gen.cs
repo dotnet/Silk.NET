@@ -20,193 +20,193 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtGpuShader4 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_gpu_shader4";
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetUniformuivEXT")]
+        [NativeApi(EntryPoint = "glGetUniformuivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetUniformuivEXT")]
+        [NativeApi(EntryPoint = "glGetUniformuivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT")]
+        [NativeApi(EntryPoint = "glGetVertexAttribIuivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glUniform1uiEXT")]
+        [NativeApi(EntryPoint = "glUniform1uiEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
 
-        [NativeApi(EntryPoint = "glUniform1uivEXT")]
+        [NativeApi(EntryPoint = "glUniform1uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
-        [NativeApi(EntryPoint = "glUniform1uivEXT")]
+        [NativeApi(EntryPoint = "glUniform1uivEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glUniform2uiEXT")]
+        [NativeApi(EntryPoint = "glUniform2uiEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
 
-        [NativeApi(EntryPoint = "glUniform2uivEXT")]
+        [NativeApi(EntryPoint = "glUniform2uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
-        [NativeApi(EntryPoint = "glUniform2uivEXT")]
+        [NativeApi(EntryPoint = "glUniform2uivEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glUniform3uiEXT")]
+        [NativeApi(EntryPoint = "glUniform3uiEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
 
-        [NativeApi(EntryPoint = "glUniform3uivEXT")]
+        [NativeApi(EntryPoint = "glUniform3uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
-        [NativeApi(EntryPoint = "glUniform3uivEXT")]
+        [NativeApi(EntryPoint = "glUniform3uivEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glUniform4uiEXT")]
+        [NativeApi(EntryPoint = "glUniform4uiEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
 
-        [NativeApi(EntryPoint = "glUniform4uivEXT")]
+        [NativeApi(EntryPoint = "glUniform4uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
-        [NativeApi(EntryPoint = "glUniform4uivEXT")]
+        [NativeApi(EntryPoint = "glUniform4uivEXT", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint value);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1iEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1iEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1uiEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1uiEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1ivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1ivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] uint* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI1uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI1uivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] in uint v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2iEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2iEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2uiEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2uiEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2ivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2ivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] uint* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI2uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI2uivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in uint v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3iEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3iEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3uiEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3uiEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3ivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3ivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI3uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI3uivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] in uint v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4iEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4iEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4uiEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4uiEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4ivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4ivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4ivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4uivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4uivEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4uivEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in uint v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4bvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4bvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4bvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4bvEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in sbyte v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4svEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4svEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4svEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4svEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in short v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in byte v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4ubvEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4usvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4usvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
-        [NativeApi(EntryPoint = "glVertexAttribI4usvEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribI4usvEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in ushort v);
 
-        [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribIPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribIPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)

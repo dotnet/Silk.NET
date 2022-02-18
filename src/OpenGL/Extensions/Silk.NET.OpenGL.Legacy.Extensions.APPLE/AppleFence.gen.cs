@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     public unsafe partial class AppleFence : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_fence";
-        [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
+        [NativeApi(EntryPoint = "glDeleteFencesAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
-        [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
+        [NativeApi(EntryPoint = "glDeleteFencesAPPLE", Convention = CallingConvention.Winapi)]
         public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
 
-        [NativeApi(EntryPoint = "glFinishFenceAPPLE")]
+        [NativeApi(EntryPoint = "glFinishFenceAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
 
-        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
+        [NativeApi(EntryPoint = "glFinishObjectAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
 
-        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
+        [NativeApi(EntryPoint = "glFinishObjectAPPLE", Convention = CallingConvention.Winapi)]
         public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
 
-        [NativeApi(EntryPoint = "glGenFencesAPPLE")]
+        [NativeApi(EntryPoint = "glGenFencesAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
 
-        [NativeApi(EntryPoint = "glGenFencesAPPLE")]
+        [NativeApi(EntryPoint = "glGenFencesAPPLE", Convention = CallingConvention.Winapi)]
         public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
 
-        [NativeApi(EntryPoint = "glIsFenceAPPLE")]
+        [NativeApi(EntryPoint = "glIsFenceAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
 
-        [NativeApi(EntryPoint = "glSetFenceAPPLE")]
+        [NativeApi(EntryPoint = "glSetFenceAPPLE", Convention = CallingConvention.Winapi)]
         public partial void SetFence([Flow(FlowDirection.In)] uint fence);
 
-        [NativeApi(EntryPoint = "glTestFenceAPPLE")]
+        [NativeApi(EntryPoint = "glTestFenceAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
 
-        [NativeApi(EntryPoint = "glTestObjectAPPLE")]
+        [NativeApi(EntryPoint = "glTestObjectAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
 
-        [NativeApi(EntryPoint = "glTestObjectAPPLE")]
+        [NativeApi(EntryPoint = "glTestObjectAPPLE", Convention = CallingConvention.Winapi)]
         public partial bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);
 
         public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)

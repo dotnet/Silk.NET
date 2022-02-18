@@ -20,70 +20,70 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbSync : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sync";
-        [NativeApi(EntryPoint = "glClientWaitSync")]
+        [NativeApi(EntryPoint = "glClientWaitSync", Convention = CallingConvention.Winapi)]
         public partial ARB ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glClientWaitSync")]
+        [NativeApi(EntryPoint = "glClientWaitSync", Convention = CallingConvention.Winapi)]
         public partial ARB ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncObjectMask flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glDeleteSync")]
+        [NativeApi(EntryPoint = "glDeleteSync", Convention = CallingConvention.Winapi)]
         public partial void DeleteSync([Flow(FlowDirection.In)] nint sync);
 
-        [NativeApi(EntryPoint = "glFenceSync")]
+        [NativeApi(EntryPoint = "glFenceSync", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] ARB condition, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glFenceSync")]
+        [NativeApi(EntryPoint = "glFenceSync", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] ARB condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
-        [NativeApi(EntryPoint = "glFenceSync")]
+        [NativeApi(EntryPoint = "glFenceSync", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
 
-        [NativeApi(EntryPoint = "glFenceSync")]
+        [NativeApi(EntryPoint = "glFenceSync", Convention = CallingConvention.Winapi)]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
-        [NativeApi(EntryPoint = "glGetInteger64v")]
+        [NativeApi(EntryPoint = "glGetInteger64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
 
-        [NativeApi(EntryPoint = "glGetInteger64v")]
+        [NativeApi(EntryPoint = "glGetInteger64v", Convention = CallingConvention.Winapi)]
         public partial void GetInteger64([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
 
-        [NativeApi(EntryPoint = "glGetInteger64v")]
+        [NativeApi(EntryPoint = "glGetInteger64v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
 
-        [NativeApi(EntryPoint = "glGetInteger64v")]
+        [NativeApi(EntryPoint = "glGetInteger64v", Convention = CallingConvention.Winapi)]
         public partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
-        [NativeApi(EntryPoint = "glGetSynciv")]
+        [NativeApi(EntryPoint = "glGetSynciv", Convention = CallingConvention.Winapi)]
         public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
-        [NativeApi(EntryPoint = "glIsSync")]
+        [NativeApi(EntryPoint = "glIsSync", Convention = CallingConvention.Winapi)]
         public partial bool IsSync([Flow(FlowDirection.In)] nint sync);
 
-        [NativeApi(EntryPoint = "glWaitSync")]
+        [NativeApi(EntryPoint = "glWaitSync", Convention = CallingConvention.Winapi)]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        [NativeApi(EntryPoint = "glWaitSync")]
+        [NativeApi(EntryPoint = "glWaitSync", Convention = CallingConvention.Winapi)]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncBehaviorFlags flags, [Flow(FlowDirection.In)] ulong timeout);
 
         public unsafe long GetInteger64([Flow(FlowDirection.In)] ARB pname)

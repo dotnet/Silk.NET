@@ -20,16 +20,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public unsafe partial class KhrCreateCommandQueue : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_create_command_queue";
-        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in KHR properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in KHR properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrCreateCommandQueue(INativeContext ctx)

@@ -74,6 +74,8 @@ namespace Silk.NET.Vulkan
         ErrorFragmentationExt = -1000161000,
         [NativeName("Name", "VK_ERROR_NOT_PERMITTED_EXT")]
         ErrorNotPermittedExt = -1000174001,
+        [NativeName("Name", "VK_ERROR_NOT_PERMITTED_KHR")]
+        ErrorNotPermittedKhr = -1000174001,
         [NativeName("Name", "VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
         ErrorInvalidDeviceAddressExt = -1000257000,
         [NativeName("Name", "VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
@@ -100,5 +102,7 @@ namespace Silk.NET.Vulkan
         ErrorFragmentation = -1000161000,
         [NativeName("Name", "VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS")]
         ErrorInvalidOpaqueCaptureAddress = -1000257000,
+        [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
+        PipelineCompileRequired = 1000297000,
     }
 }

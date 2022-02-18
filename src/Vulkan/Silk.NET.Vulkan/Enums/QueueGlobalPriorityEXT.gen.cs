@@ -12,6 +12,14 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkQueueGlobalPriorityEXT")]
     public enum QueueGlobalPriorityEXT : int
     {
+        [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
+        QueueGlobalPriorityLowKhr = 128,
+        [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR")]
+        QueueGlobalPriorityMediumKhr = 256,
+        [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR")]
+        QueueGlobalPriorityHighKhr = 512,
+        [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_REALTIME_KHR")]
+        QueueGlobalPriorityRealtimeKhr = 1024,
         [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT")]
         QueueGlobalPriorityLowExt = 128,
         [NativeName("Name", "VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT")]

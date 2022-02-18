@@ -20,52 +20,52 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public unsafe partial class AtiEnvmapBumpmap : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_envmap_bumpmap";
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
 
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI", Convention = CallingConvention.Winapi)]
         public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
-        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI", Convention = CallingConvention.Winapi)]
         public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
 
         public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname)

@@ -20,49 +20,49 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
     public unsafe partial class KhrRobustness : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_robustness";
-        [NativeApi(EntryPoint = "glGetGraphicsResetStatusKHR")]
+        [NativeApi(EntryPoint = "glGetGraphicsResetStatusKHR", Convention = CallingConvention.Winapi)]
         public partial KHR GetGraphicsResetStatus();
 
-        [NativeApi(EntryPoint = "glGetnUniformfvKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformfvKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformfvKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformfvKHR", Convention = CallingConvention.Winapi)]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformivKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformivKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformivKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformivKHR", Convention = CallingConvention.Winapi)]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformuivKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformuivKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
 
-        [NativeApi(EntryPoint = "glGetnUniformuivKHR")]
+        [NativeApi(EntryPoint = "glGetnUniformuivKHR", Convention = CallingConvention.Winapi)]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out uint @params);
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glReadnPixelsKHR")]
+        [NativeApi(EntryPoint = "glReadnPixelsKHR", Convention = CallingConvention.Winapi)]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)
