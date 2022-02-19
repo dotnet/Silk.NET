@@ -12,7 +12,7 @@ namespace Silk.NET.Statiq.ApiReference.Scraper;
 internal class Scraper
 {
     public static bool Failed { get; set; }
-    public static async Task<int> RunAsync(FileInfo project, FileInfo output, LogMode logging)
+    public static async Task<int> RunAsync(FileInfo project, FileInfo output, LogMode logging, DirectoryInfo intermediateOutput)
     {
         // Configure the logger
         var loggerProvider = new UltzLoggerProvider();
@@ -84,24 +84,23 @@ internal class Scraper
         workspace.WorkspaceFailed += LogWorkspaceFailure;
 
         // Load the workspace and handoff to the scraper
-        var scraper = new CSharpScraper();
+        Log.Debug($"Using intermediate output directory \"{intermediateOutput.FullName}\"");
+        var scraper = new CSharpScraper(intermediateOutput);
         if (isSolution)
         {
-            var sln = await workspace.OpenSolutionAsync(project.FullName);
-            await Parallel.ForEachAsync(sln.Projects, (x, _) =>
-                {
-                    Log.Trace($"Handling: {x.Name} (SupportsCompilation: {x.SupportsCompilation})");
-                    return scraper.HandleProjectAsync(workspace, x);
-                }
+            var sln = await workspace.OpenSolutionAsync(project.FullName, new ProgressLogger());
+            await Parallel.ForEachAsync
+            (
+                sln.Projects,
+                async (slnProject, _) => await scraper.HandleProjectAsync(workspace, slnProject)
             );
         }
         else
         {
-            Log.Trace($"Handling: {project.Name}");
             await scraper.HandleProjectAsync
             (
                 workspace,
-                await workspace.OpenProjectAsync(project.FullName)
+                await workspace.OpenProjectAsync(project.FullName, new ProgressLogger())
             );
         }
 

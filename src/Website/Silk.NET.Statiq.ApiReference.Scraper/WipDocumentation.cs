@@ -9,6 +9,22 @@ namespace Silk.NET.Statiq.ApiReference.Scraper;
 public record WipDocumentation
 (
     Category Category,
-    StringBuilder Markdown,
+    string Directory,
+    string Name,
     ConcurrentDictionary<string, WipDocumentation> Children
-);
+)
+{
+    private StreamWriter? _writer = null;
+    public StreamWriter Markdown
+    {
+        get
+        {
+            if (!System.IO.Directory.Exists(Directory))
+            {
+                System.IO.Directory.CreateDirectory(Directory);
+            }
+
+            return _writer ??= new StreamWriter(Path.Combine(Directory, Name) + ".md"){AutoFlush = true};
+        }
+    }
+}

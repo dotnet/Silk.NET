@@ -63,8 +63,13 @@ var rootCommand = new RootCommand
         new[] { "--logging", "-l" },
         () => Debugger.IsAttached ? LogMode.VVerbose : LogMode.Standard,
         "The debug logging verbosity."
+    ),
+    new Option<DirectoryInfo>
+    (
+        new[] { "--intermediate-output", "-t" },
+        () => new DirectoryInfo(Path.Combine(Path.GetTempPath(), Path.GetRandomFileName()))
     )
 };
 
-rootCommand.Handler = CommandHandler.Create<FileInfo, FileInfo, LogMode>(Scraper.RunAsync);
+rootCommand.Handler = CommandHandler.Create<FileInfo, FileInfo, LogMode, DirectoryInfo>(Scraper.RunAsync);
 return await rootCommand.InvokeAsync(args);
