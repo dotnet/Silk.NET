@@ -1,0 +1,12 @@
+<Project>
+    <!-- NuGet Stuff -->
+    <ItemGroup>
+        <Content Include="$(MSBuildThisFileDirectory)..\documentation\branding\logo.png"
+                 Link="logo.png"
+                 Pack="true"
+                 PackagePath="\"
+                 Visible="false">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
