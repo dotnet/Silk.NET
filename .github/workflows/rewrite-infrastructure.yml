@@ -1,9 +1,8 @@
 name: 3.0 Rewrite Merger
 
 on:
-  push:
-    branches:
-      - "main"
+  schedule:
+  - cron: "0 0 * * Wed"
 
 jobs:
   update_develop:
