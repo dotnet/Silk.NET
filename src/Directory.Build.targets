@@ -1,7 +1,7 @@
 <Project InitialTargets="PostImportDefinitions">
     <!-- NuGet Stuff -->
     <ItemGroup>
-        <Content Include="$(MSBuildThisFileDirectory)..\documentation\branding\logo.png"
+        <Content Include="$(MSBuildThisFileDirectory)..\documentation\readme\silkdotnet_v3.png"
                  Link="logo.png"
                  Pack="true"
                  PackagePath="\"

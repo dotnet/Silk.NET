@@ -2,12 +2,8 @@
 <Project>
     <!-- General -->
     <PropertyGroup>
-        <!-- Target Framework - kept in sync with .NET LTS releases -->
+        <!-- Target Framework - kept in sync with .NET LTS releases. Use this property in all csprojs. -->
         <SilkTargetFramework>net6.0</SilkTargetFramework>
-        <!-- Set the TFM -->
-        <TargetFrameworks Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">$(SilkTargetFramework)</TargetFrameworks>
-        <!-- If TargetFrameworks is SilkTargetFramework, set TargetFramework as well to stop "multiple TFM" errors -->
-        <TargetFramework Condition="'$(TargetFrameworks)' == '$(SilkTargetFramework)'">$(SilkTargetFramework)</TargetFramework>
         <!-- Helper properties for accessing directories -->
         <SilkBenchmarksDir>$(MSBuildThisFileDirectory)benchmarks</SilkBenchmarksDir>
         <SilkBindingsDir>$(MSBuildThisFileDirectory)bindings</SilkBindingsDir>
@@ -16,7 +12,7 @@
         <SilkInfrastructureDir>$(MSBuildThisFileDirectory)infrastructure</SilkInfrastructureDir>
         <SilkLibrariesDir>$(MSBuildThisFileDirectory)libraries</SilkLibrariesDir>
         <SilkDocumentationDir>$(MSBuildThisFileDirectory)../documentation</SilkDocumentationDir>
-        <SilkTestsDir>$(MSBuildThisFileDirectory)../documentation</SilkTestsDir>
+        <SilkTestsDir>$(MSBuildThisFileDirectory)../tests</SilkTestsDir>
     </PropertyGroup>
     <!-- Compiler Options -->
     <PropertyGroup>
