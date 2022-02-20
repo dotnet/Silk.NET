@@ -1,7 +1,0 @@
-#nullable enable
-Silk.NET.Windowing.Glfw.GlfwWindowing
-static Silk.NET.Windowing.Glfw.GlfwWindowing.GetExistingApi(Silk.NET.Windowing.IView! view) -> Silk.NET.GLFW.Glfw?
-static Silk.NET.Windowing.Glfw.GlfwWindowing.GetHandle(Silk.NET.Windowing.IView! view) -> Silk.NET.GLFW.WindowHandle*
-static Silk.NET.Windowing.Glfw.GlfwWindowing.IsViewGlfw(Silk.NET.Windowing.IView! view) -> bool
-static Silk.NET.Windowing.Glfw.GlfwWindowing.RegisterPlatform() -> void
-static Silk.NET.Windowing.Glfw.GlfwWindowing.Use() -> void

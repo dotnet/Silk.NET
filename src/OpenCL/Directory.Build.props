@@ -1,5 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <SilkDescription>This package contains bindings for the OpenCL compute API.</SilkDescription>
-    </PropertyGroup>
-</Project>

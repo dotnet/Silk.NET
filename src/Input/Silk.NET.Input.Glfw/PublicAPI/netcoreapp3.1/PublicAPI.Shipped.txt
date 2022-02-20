@@ -1,3 +1,0 @@
-#nullable enable
-Silk.NET.Input.Glfw.GlfwInput
-static Silk.NET.Input.Glfw.GlfwInput.RegisterPlatform() -> void

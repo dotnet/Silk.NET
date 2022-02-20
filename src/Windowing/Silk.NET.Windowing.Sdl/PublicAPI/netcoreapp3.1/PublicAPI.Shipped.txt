@@ -1,9 +1,0 @@
-#nullable enable
-Silk.NET.Windowing.Sdl.SdlWindowing
-static Silk.NET.Windowing.Sdl.SdlWindowing.CreateFrom(void* handle, Silk.NET.Core.Contexts.IGLContext? ctx = null) -> Silk.NET.Windowing.IView!
-static Silk.NET.Windowing.Sdl.SdlWindowing.GetExistingApi(Silk.NET.Windowing.IView! view) -> Silk.NET.SDL.Sdl?
-static Silk.NET.Windowing.Sdl.SdlWindowing.GetHandle(Silk.NET.Windowing.IView! view) -> Silk.NET.SDL.Window*
-static Silk.NET.Windowing.Sdl.SdlWindowing.GetSysWMInfo(Silk.NET.Windowing.IView! view) -> Silk.NET.SDL.SysWMInfo?
-static Silk.NET.Windowing.Sdl.SdlWindowing.IsViewSdl(Silk.NET.Windowing.IView! view) -> bool
-static Silk.NET.Windowing.Sdl.SdlWindowing.RegisterPlatform() -> void
-static Silk.NET.Windowing.Sdl.SdlWindowing.Use() -> void
