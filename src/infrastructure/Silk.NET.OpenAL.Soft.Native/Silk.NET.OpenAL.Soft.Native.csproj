@@ -1,14 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <SilkNativePackage>true</SilkNativePackage>
+    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
   </PropertyGroup>
 
-  <Import Project="..\..\..\build\props\common.props" />
-
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
-    <PackageVersion>1.21.1.1</PackageVersion>
+    <TargetFramework>$(SilkTargetFramework)</TargetFramework>
+    <VersionPrefix>1.21.1.2</VersionPrefix>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>LGPL-2.0-or-later</PackageLicenseExpression>
