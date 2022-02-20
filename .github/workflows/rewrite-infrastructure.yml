@@ -3,6 +3,7 @@ name: 3.0 Rewrite Merger
 on:
   schedule:
   - cron: "0 0 * * Wed"
+  workflow_dispatch:
 
 jobs:
   update_develop:
