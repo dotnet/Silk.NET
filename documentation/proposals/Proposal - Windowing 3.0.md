@@ -712,9 +712,6 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// This screen's gamma correction.
         /// </summary>
-        /// <remarks>
-        /// Only supported by GLFW, has no effect on SDL.
-        /// </remarks>
         float Gamma { get; set; }
 
         /// <summary>

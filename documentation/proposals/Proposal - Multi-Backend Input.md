@@ -190,9 +190,9 @@ public partial class InputContext
 
 The central input object acts as the main entry point into the Input API, and is responsible for comparing the state reported by the devices for differences between `Update` calls (raising events as necessary). 
 
-`Mice`, `Keyboards`, `Gamepads`, and `Joysticks` are all custom `IReadOnlyList` types for enumerating the **state** (given that the actual input objects are thin, and the state contains a reference to the original device anyway). However, these custom types also contain the events. This is so we can "scope" the events, rather than putting them at the top-level and having to call the events `MouseButtonDown`, `JoystickButtonDown`, etc.
+`Mice`, `Keyboards`, `Gamepads`, and `Joysticks` are all custom `IReadOnlyList` types for enumerating the devices. However, these custom types also contain the events. This is so we can "scope" the events, rather than putting them at the top-level and having to call the events `MouseButtonDown`, `JoystickButtonDown`, etc.
 
-By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states enumerated by the lists will not change until `Update` is called.
+By virtue of the `State` properties not updating until `IInputBackend.Update` is called, the states of the devices enumerated by the lists will not change until `Update` is called.
 
 `Update` will call `IInputBackend.Update` on each of the `Backends`, passing in a handler which implements `IInputHandler`, `IMouseInputHandler`, `IKeyboardInputHandler`, `IGamepadInputHandler`, and `IJoystickInputHandler` with each of the methods invoking a matching event defined in "Custom List Types" or on the input context itself (such as `ConnectionChanged`).
 
