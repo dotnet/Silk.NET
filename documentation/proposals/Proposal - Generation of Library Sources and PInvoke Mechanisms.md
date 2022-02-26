@@ -7,7 +7,7 @@ Proposal design for a platform invoke (P/Invoke) mechanism for Silk.NET 3.0.
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Working Group (WG)
+- [x] Discussed with Working Group (WG)
 - [ ] Approved
 - [ ] Implemented
 
@@ -310,3 +310,60 @@ namespace Silk.NET.Core
     }
 }
 ```
+
+# Meeting Notes
+
+## 05/08/2021
+
+- SilkTouch for 2.0 is very hard to use
+- A lot of code
+- Will explode the repo a lot, but will also improve compile times because everything's already there and no need to generate at compile time
+- ClangSharp is used by win32metadata (official c#, rust bindings) and generally accurate for parsing header files
+    - very correct, battle tested, more reliable than BuildTools 2.0
+- Just use ReadOnlySpan<char> (implicit conversion from string)
+    - does our userbase know this?
+- Too many overloads could cause confusion/lack of visibility
+    - promote "best practice"
+    - include exposed native api
+- Only overload what we determine as "best practice", discourage per-parameter overloading
+    - One permutation per "overload style"? i.e. one function with all spans 
+    - Special "intermediary" types don't really make sense as it loses compile-time safety and has other compiler-level issues
+- Establish a baseline of overloads
+    - Scrap ArrayOverloads
+    - Scrap RefOverloads
+- Group? i.e. only create overloads based on a particular style
+- **Overloader needs more review/work, postpone to another meeting**
+    - number of overloads is a big concern right now
+
+## 25/02/2022
+
+[Video](https://youtu.be/dac3t0oh3VU?t=7616)
+
+- Approved (call conv modifier discussion notwithstanding), but we must come back to the overloader - it's a bit too early to decide on something solid as there's no perfect rule that we know of to generate them at this time - we can only get this through experimentation!
+- Why use an enum and custom attribute rather than reusing UnmanagedCallConv and the typeof(CallConv*) types that C#/.NET have standardized on for moving forward?
+    - We don't really have control over those types.
+    - For \[contrived\] example, what if we want a JavaScript calling convention?
+    - We can't just hack up a "calling convention" the runtime doesn't support, `MemberFunction` for example was just something that _happened_ to work on the Windows ABI
+    - We could use CallModifiers to, for example, influence codegen to call into IJsInProcessRuntime and call JavaScript code - this isn't necessarily _just_ an ABI-based concept. It could support other scenarios.
+    - It makes more sense to separate these, as these are sort of associated with DllImport and that side of the calling process, and a "JavaScript" convention concept (as discussed before).
+    - It's difficult to represent right now, because we have the native API attribute
+    - **We could/should change this to use the CallConv types instead**
+    - Direct advantages
+        - As the runtime versions in the future, it will continue to add CallConv types. These types are the official way moving forward to represent any calling convention information for the rutnime going forward.
+        - SilkTouch has to go out of this way to map this and understand this anyway, unless we just have the types then we can specify them as-is - SilkTouch doesn't even need to understand these.
+        - "\[DllImport\] is effectively magic" - @tannergooding
+        - **Just change Modifiers to a CallConv type array**
+- The overload problem does need to be solved in some way. Some functions have absurd amounts of overloads (particularly in assimp)
+    - We want to scrap a bunch of overloads as well. A lot of this is only generating a bunch of "important" overloads.
+    - Was there consideration for a source generator approach to opt-in to the friendliest variant that they want?
+        - Yes, kind of. We don't have a formal proposal as we only just thought of this today.
+        - We need to bake the most basic overloads into the assembly itself.
+        - We'd like to have a source generator.
+        - We want SilkTouch to be productized, and find a way to remap types per their liking and use overloads etc. 
+        - We should experiment with this and report back in a future community meeting. 
+
+**ACTIONS**
+- [ ] Change `Modifiers` to a CallConv\* `Type` array
+
+**FUTURE**
+- [ ] Report back to the Community our findings in experimenting with overloads

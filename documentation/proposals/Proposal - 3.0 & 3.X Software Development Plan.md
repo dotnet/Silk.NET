@@ -7,8 +7,8 @@
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Working Group
-- [ ] Approved
+- [x] Discussed with Working Group
+- [x] Approved
 - [ ] Implemented
 
 # Silk.NET 3.0
@@ -188,3 +188,14 @@ Additive changes which introduce a break are forbidden in a post-3.0, pre-4.0 up
 There are currently no plans to officially support anything but the latest monthly update i.e. the end-of-life date of a particular update is as soon as the next monthly update is released. Users are expected to be aware or made aware of the monthly update schedule and plan their work and/or support needs accordingly.
 
 Individual developers on the team may diverge from this, but they will be responsible for any support they give outside of this notice. If this changes and the Silk.NET team opt to introduce another support option, this proposal (or a future proposal which supersedes this one) will be updated accordingly and discussed with the Working Group.
+
+# Meeting Notes
+
+## 25/02/2022
+
+[Video](https://youtu.be/dac3t0oh3VU?t=529)
+
+- Approved.
+- Support Eto.Forms?
+    - Not really used or requested compared to the others, maybe as a community thing.
+- There were some questions about the bindings libraries and how the generator differences are going to be consolidated.

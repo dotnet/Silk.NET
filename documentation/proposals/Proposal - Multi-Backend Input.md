@@ -6,8 +6,8 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with Working Group
-- [ ] Approved
+- [x] Discussed with Working Group
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -556,7 +556,6 @@ public enum KeyName
     Period /* . */,
     Slash /* / */,
     Number0,
-    D0,
     Number1,
     Number2,
     Number3,
@@ -793,10 +792,14 @@ The indexer will be implemented in terms of `Down`, which is the only property t
 public enum JoystickButton
 {
     Unknown,
-    A,
-    B,
-    X,
-    Y,
+    ButtonDown,
+    A = ButtonDown,
+    ButtonRight,
+    B = ButtonRight,
+    ButtonLeft,
+    X = ButtonLeft,
+    ButtonUp,
+    Y = ButtonUp,
     LeftBumper,
     RightBumper,
     Back,
@@ -831,3 +834,68 @@ public interface IJoystickInputHandler : IInputHandler
 
 `HandleHatMove` must be called when any value of `JoystickState.Hats` changes.
 
+# Meeting Notes
+
+## 05/08/2021
+
+This also includes notes for [Enhanced Input Events]((Superseded)%20Proposal%20-%20Enhanced%20Input%20Events) as well as the previous version of this proposal.
+
+- Document the change in the enhanced input events (migration guide?)
+- Record struct ASAP when available to us, unanimous agreement
+    - no need for meeting clarification 
+- Make IsConnected less meaningful
+- Return `IReadOnlyList<T>` 
+- Make input states structs (immutable)
+    - have a `State` readonly property
+    - have methods for all settable things (where necessary)
+ - @HurricanKai To rework Multi Backend Input the proposal slightly
+
+## 25/02/2022
+
+[Video](https://youtu.be/dac3t0oh3VU?t=3722)
+
+- Approved, but do make the joystick buttons direction instead of Xbox-opinionated ABXY.
+- Structs are good for inputs. Help with versioning and more performant if you pass more than ~4-5 args.
+- Both event-driven input and state-based input available.
+    - Call Update with an IInputHandler to get events in the order they were received, pass null to just use the state-based API
+    - State will always be updated regardless of null
+- Some examples on using gamepads, keyboards, and mice in the same game would be appreciated.
+    - (Silk is fine with you using all simultaneously, you don't need to tell it to switch)
+- e.g. what if you want to assert that spacebar was hit exactly 2 times, or one before a frame and one after a frame?
+    - If spacebar was pressed between two frames, you will get up and down events for each press.
+    - Examples would be appreciated.
+- Engines are moving towards an "input action" model, where you have something like "Jump" and then have buttons mapped to that.
+    - If a user wants to jump, is A/X/Space pressed? It's an inverse mapping to what we have today.
+    - Possible extension point/on top of this API.
+- Enums are potentially opinionated for naming.
+    - Perhaps we could have something like the Key struct for joysticks as well?
+    - GLFW doesn't support anything other that the buttons we've exposed today.
+    - Not sure that having an integer helps if we haven't named it at all.
+    - Introducing multiple names for a single enum should be fine.
+    - Most trivial example is Nintendo controllers vs the Xbox controllers, A/B and X/Y are swapped (could be confusing!). Either going to assume that A = Nintendo's A (middle right) or A = Xbox A (bottom button)
+    - **Rename to be positional rather than opinionated.**
+    - More nuanced buttons can be via the joystick API, and gamepad kept a standard controller. We can't accomodate for everything, so we need to make concessions and be opinionated for gamepad, and leave the more exotic stuff for joystick.
+    - We could just have ISteamControllerGamepad on top of IGamepad for controllers with touch pads, for example.
+    - Take keyboards: you have integer-identified buttons but no keyboard layout is the same. An API is built on top of that abstract concept and query "what does that button represent" - on the high-level side we could have a nicer abstraction.
+    - Comes back to that concept of button codes.
+    - Nice and easy API for the common case, need for esoteric features like touchpads then you can actually go and add that support, you just need to do some more additional work.
+    - Difficult to say where this starts and ends: we might want to expose all of the buttons, but we also want to expose low-level features then we might want to expose all of the motors, then all the lights, etc etc: where does it end?!
+    - Difficult to tell what we can and can't support, and comes back to what the backends can actually do.
+    - Basically every OS exposes a "here's the raw PCI device ID, and here's a byte array of the data and what HID input it came from" - low-level API is very primitive
+    - Could always add another input backend.
+    - "Easier to get a smaller thing done now than have a larger thing in the works forever" - @Redhacker
+    - What we have today is a lot of what most people will want to use. A low-level thing could be built _as a parallel_.
+    - **Think about low-level input in the future in addition to this**
+    - Could we expose at least the vendor ID/device ID to the developer (in raw form or common vendor enums) to mitigate this for now.
+    - Notably, the same vendor/device information by Vulkan/DirectX and any audio device - it's a very common concept.
+    - **Think about exposing vendor and device IDs**
+        - Potentially modifying GLFW to get us that
+
+**ACTIONS**
+- [x] Rename ABXY to be less opinionated, and alias ABXY to that.
+
+**FUTURE**
+- [ ] Think about an "input action" model
+- [ ] Add examples on using gamepads, keyboards, and mice in the same game.
+- [ ] Think about low-level input in the future in addition to this
+- [ ] Think about exposing vendor and device IDs

@@ -8,8 +8,8 @@ Cross-platform windowing for Silk.NET rebuilt from the ground-up.
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with Community
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -986,6 +986,7 @@ Replaces 2.X's `INativeWindow`
 ```cs
 namespace Silk.NET.Core
 {
+    [StructLayout(LayoutKind.Auto)]
     public struct WindowHandles
     {
         // ...
@@ -996,3 +997,17 @@ namespace Silk.NET.Core
 The Silk.NET team wishes to reserve the right to add any relevant window handles that arise when implementing the reference implementation as nullable fields in this struct.
 
 The goal is to keep this type lightweight as it is in Silk.NET.Core (to ensure smooth interoperability between Silk.NET packages without creating hard references), hence why interfaces or type-system-driven approached were not used.
+
+# Meeting Notes
+
+## 25/02/2022
+
+[Video](https://youtu.be/dac3t0oh3VU?t=1984)
+
+- Approved.
+- Questions around windows handles
+    - What Win32 handles should be available?
+        - Mostly what we have for 2.X today, but as a struct
+    - StructLayout = Auto for WindowHandles so that people can't depend on the memory layout (so we can add more handles!)
+- Is glue mandatory?
+    - Nope, you can use GetOrCreate but SilkEntryPoint will be recommended.
