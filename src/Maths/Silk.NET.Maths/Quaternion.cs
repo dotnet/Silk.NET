@@ -224,6 +224,19 @@ namespace Silk.NET.Maths
 
             return ans;
         }
+        
+        /// <summary>Multiplies a Vector by a Quaternion, effectively rotating it.</summary>
+        /// <param name="value1">The Quaternion.</param>
+        /// <param name="value2">The Vector.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static Vector3D<T> operator *(Quaternion<T> value1, Vector3D<T> value2)
+        {
+            var u = new Vector3D<T>(value1.X, value1.Y, value1.Z);
+            T s = value1.W;
+            return Scalar.Multiply(Scalar<T>.Two, Vector3D.Dot(u, value2)) * u
+                 + Scalar.Subtract(Scalar.Multiply(s, s), Vector3D.Dot(u, u)) * value2
+                 + Scalar.Multiply(Scalar<T>.Two, s) * Vector3D.Cross(u, value2);
+        }
 
         /// <summary>Adds two Quaternions element-by-element.</summary>
         /// <param name="value1">The first source Quaternion.</param>
