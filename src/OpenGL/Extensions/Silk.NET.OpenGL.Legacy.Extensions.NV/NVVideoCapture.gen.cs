@@ -20,70 +20,70 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVVideoCapture : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_video_capture";
-        [NativeApi(EntryPoint = "glBeginVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glBeginVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public partial void BeginVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot);
 
-        [NativeApi(EntryPoint = "glBindVideoCaptureStreamBufferNV")]
+        [NativeApi(EntryPoint = "glBindVideoCaptureStreamBufferNV", Convention = CallingConvention.Winapi)]
         public partial void BindVideoCaptureStreamBuffer([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV frame_region, [Flow(FlowDirection.In)] nint offset);
 
-        [NativeApi(EntryPoint = "glBindVideoCaptureStreamTextureNV")]
+        [NativeApi(EntryPoint = "glBindVideoCaptureStreamTextureNV", Convention = CallingConvention.Winapi)]
         public partial void BindVideoCaptureStreamTexture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV frame_region, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint texture);
 
-        [NativeApi(EntryPoint = "glEndVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glEndVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public partial void EndVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureivNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureivNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureivNV", Convention = CallingConvention.Winapi)]
         public partial void GetVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamivNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamivNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamivNV", Convention = CallingConvention.Winapi)]
         public partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamfvNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamfvNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamdvNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
-        [NativeApi(EntryPoint = "glGetVideoCaptureStreamdvNV")]
+        [NativeApi(EntryPoint = "glGetVideoCaptureStreamdvNV", Convention = CallingConvention.Winapi)]
         public partial void GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public unsafe partial NV VideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] uint* sequence_num, [Flow(FlowDirection.Out)] ulong* capture_time);
 
-        [NativeApi(EntryPoint = "glVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public unsafe partial NV VideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] uint* sequence_num, [Flow(FlowDirection.Out)] out ulong capture_time);
 
-        [NativeApi(EntryPoint = "glVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public unsafe partial NV VideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] out uint sequence_num, [Flow(FlowDirection.Out)] ulong* capture_time);
 
-        [NativeApi(EntryPoint = "glVideoCaptureNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureNV", Convention = CallingConvention.Winapi)]
         public partial NV VideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.Out)] out uint sequence_num, [Flow(FlowDirection.Out)] out ulong capture_time);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterivNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterivNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterivNV", Convention = CallingConvention.Winapi)]
         public partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
 
-        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV")]
+        [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV", Convention = CallingConvention.Winapi)]
         public partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in double @params);
 
         public NVVideoCapture(INativeContext ctx)

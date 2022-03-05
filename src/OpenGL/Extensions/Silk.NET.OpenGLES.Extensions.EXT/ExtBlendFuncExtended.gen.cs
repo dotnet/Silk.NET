@@ -20,49 +20,49 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtBlendFuncExtended : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_func_extended";
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
+        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataIndexEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
+        [NativeApi(EntryPoint = "glGetFragDataIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT", Convention = CallingConvention.Winapi)]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         public ExtBlendFuncExtended(INativeContext ctx)

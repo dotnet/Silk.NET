@@ -1,8 +1,16 @@
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
+#if GLES
+using Silk.NET.OpenGLES;
+#elif GL
+using Silk.NET.OpenGL;
+#endif
 
+#if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
+#elif GLES
+namespace Silk.NET.OpenGLES.Extensions.ImGui
+#endif
 {
     static class Util
     {
@@ -21,5 +29,5 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                 Debug.Print($"{title}: {error}");
             }
         }
-     }
+    }
 }

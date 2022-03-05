@@ -9,10 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkDeviceQueueCreateFlags")]
     public enum DeviceQueueCreateFlags : int
     {
+        [NativeName("Name", "VK_DEVICE_QUEUE_CREATE_RESERVED_1_BIT_QCOM")]
+        DeviceQueueCreateReserved1BitQCom = 2,
         [NativeName("Name", "VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT")]
         DeviceQueueCreateProtectedBit = 1,
     }

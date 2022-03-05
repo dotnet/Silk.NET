@@ -20,187 +20,187 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtMemoryObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_memory_object";
-        [NativeApi(EntryPoint = "glBufferStorageMemEXT")]
+        [NativeApi(EntryPoint = "glBufferStorageMemEXT", Convention = CallingConvention.Winapi)]
         public partial void BufferStorageMem([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glBufferStorageMemEXT")]
+        [NativeApi(EntryPoint = "glBufferStorageMemEXT", Convention = CallingConvention.Winapi)]
         public partial void BufferStorageMem([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT")]
+        [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CreateMemoryObjects([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.Out)] uint* memoryObjects);
 
-        [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT")]
+        [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT", Convention = CallingConvention.Winapi)]
         public partial void CreateMemoryObjects([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.Out)] out uint memoryObjects);
 
-        [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT")]
+        [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteMemoryObjects([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* memoryObjects);
 
-        [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT")]
+        [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT", Convention = CallingConvention.Winapi)]
         public partial void DeleteMemoryObjects([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint memoryObjects);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] byte* data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out byte data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] byte* data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out byte data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytevEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] byte* data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out byte data);
 
-        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
+        [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT", Convention = CallingConvention.Winapi)]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
-        [NativeApi(EntryPoint = "glIsMemoryObjectEXT")]
+        [NativeApi(EntryPoint = "glIsMemoryObjectEXT", Convention = CallingConvention.Winapi)]
         public partial bool IsMemoryObject([Flow(FlowDirection.In)] uint memoryObject);
 
-        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.In)] int* @params);
 
-        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
+        [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.In)] in int @params);
 
-        [NativeApi(EntryPoint = "glNamedBufferStorageMemEXT")]
+        [NativeApi(EntryPoint = "glNamedBufferStorageMemEXT", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferStorageMem([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTexStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TexStorageMem3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem2DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem2DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
-        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT")]
+        [NativeApi(EntryPoint = "glTextureStorageMem3DMultisampleEXT", Convention = CallingConvention.Winapi)]
         public partial void TextureStorageMem3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] SizedInternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean fixedSampleLocations, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
         public unsafe uint CreateMemoryObject()

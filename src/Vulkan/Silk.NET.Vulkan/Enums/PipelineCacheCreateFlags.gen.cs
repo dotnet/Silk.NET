@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkPipelineCacheCreateFlags")]
     public enum PipelineCacheCreateFlags : int
     {
@@ -21,5 +21,7 @@ namespace Silk.NET.Vulkan
         PipelineCacheCreateReserved1BitKhr = 2,
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_RESERVED_2_BIT_KHR")]
         PipelineCacheCreateReserved2BitKhr = 4,
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT")]
+        PipelineCacheCreateExternallySynchronizedBit = 1,
     }
 }

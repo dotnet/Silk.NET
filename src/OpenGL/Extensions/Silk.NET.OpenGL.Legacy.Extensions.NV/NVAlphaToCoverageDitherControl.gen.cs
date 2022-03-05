@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVAlphaToCoverageDitherControl : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_alpha_to_coverage_dither_control";
-        [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV")]
+        [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV", Convention = CallingConvention.Winapi)]
         public partial void AlphaToCoverageDitherControl([Flow(FlowDirection.In)] NV mode);
 
         public NVAlphaToCoverageDitherControl(INativeContext ctx)

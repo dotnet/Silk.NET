@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVInstancedArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_instanced_arrays";
-        [NativeApi(EntryPoint = "glVertexAttribDivisorNV")]
+        [NativeApi(EntryPoint = "glVertexAttribDivisorNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 
         public NVInstancedArrays(INativeContext ctx)

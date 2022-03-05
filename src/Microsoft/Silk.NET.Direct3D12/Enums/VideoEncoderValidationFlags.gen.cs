@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAGS")]
     public enum VideoEncoderValidationFlags : int
     {

@@ -21,52 +21,52 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_copy_commands2";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage2KHR")]
-        public unsafe partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] BlitImageInfo2KHR* pBlitImageInfo);
+        [NativeApi(EntryPoint = "vkCmdBlitImage2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] BlitImageInfo2* pBlitImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage2KHR")]
-        public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in BlitImageInfo2KHR pBlitImageInfo);
+        [NativeApi(EntryPoint = "vkCmdBlitImage2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in BlitImageInfo2 pBlitImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR")]
-        public unsafe partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferInfo2KHR* pCopyBufferInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferInfo2* pCopyBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR")]
-        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferInfo2KHR pCopyBufferInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferInfo2 pCopyBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR")]
-        public unsafe partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferToImageInfo2KHR* pCopyBufferToImageInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferToImageInfo2* pCopyBufferToImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR")]
-        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferToImageInfo2KHR pCopyBufferToImageInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferToImageInfo2 pCopyBufferToImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage2KHR")]
-        public unsafe partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageInfo2KHR* pCopyImageInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyImage2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageInfo2* pCopyImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage2KHR")]
-        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageInfo2KHR pCopyImageInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyImage2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageInfo2 pCopyImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR")]
-        public unsafe partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageToBufferInfo2KHR* pCopyImageToBufferInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageToBufferInfo2* pCopyImageToBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR")]
-        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageToBufferInfo2KHR pCopyImageToBufferInfo);
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageToBufferInfo2 pCopyImageToBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage2KHR")]
-        public unsafe partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ResolveImageInfo2KHR* pResolveImageInfo);
+        [NativeApi(EntryPoint = "vkCmdResolveImage2KHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ResolveImageInfo2* pResolveImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage2KHR")]
-        public partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ResolveImageInfo2KHR pResolveImageInfo);
+        [NativeApi(EntryPoint = "vkCmdResolveImage2KHR", Convention = CallingConvention.Winapi)]
+        public partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ResolveImageInfo2 pResolveImageInfo);
 
         public KhrCopyCommands2(INativeContext ctx)
             : base(ctx)

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMultiviewPerViewAttributesInfoNVX")]
-    public unsafe partial struct MultiviewPerViewAttributesInfoNVX : IExtendsChain<CommandBufferInheritanceInfo>, IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<RenderingInfoKHR>
+    public unsafe partial struct MultiviewPerViewAttributesInfoNVX : IExtendsChain<CommandBufferInheritanceInfo>, IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<RenderingInfo>, IExtendsChain<RenderingInfoKHR>
     {
         public MultiviewPerViewAttributesInfoNVX
         (

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
+    [Flags]
     [NativeName("Name", "_D3D_SHADER_INPUT_FLAGS")]
     public enum D3DShaderInputFlags : int
     {

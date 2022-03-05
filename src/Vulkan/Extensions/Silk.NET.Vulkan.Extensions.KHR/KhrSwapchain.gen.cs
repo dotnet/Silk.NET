@@ -21,124 +21,124 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_swapchain";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImageKHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImageKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireNextImage([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ulong timeout, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0)] Fence fence, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImageKHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImageKHR", Convention = CallingConvention.Winapi)]
         public partial Result AcquireNextImage([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ulong timeout, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0)] Fence fence, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AcquireNextImageInfoKHR* pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR")]
+        [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
         public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSwapchainKHR")]
+        [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
         public partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySwapchainKHR")]
+        [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySwapchainKHR")]
+        [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
         public partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pDeviceGroupPresentCapabilities = new(StructureType.DeviceGroupPresentCapabilitiesKhr);")]
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetDeviceGroupPresentCapabilities([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceGroupPresentCapabilitiesKHR pDeviceGroupPresentCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceGroupPresentModeFlagsKHR* pModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
+        [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetDeviceGroupSurfacePresentModes([Count(Count = 0)] Device device, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] out DeviceGroupPresentModeFlagsKHR pModes);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] out Rect2D pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDevicePresentRectangles([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] ref uint pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] out Rect2D pRects);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR")]
+        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR")]
+        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] out Image pSwapchainImages);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR")]
+        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR")]
+        [NativeApi(EntryPoint = "vkGetSwapchainImagesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetSwapchainImages([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] out Image pSwapchainImages);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueuePresentKHR")]
+        [NativeApi(EntryPoint = "vkQueuePresentKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] PresentInfoKHR* pPresentInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueuePresentKHR")]
+        [NativeApi(EntryPoint = "vkQueuePresentKHR", Convention = CallingConvention.Winapi)]
         public partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in PresentInfoKHR pPresentInfo);
 
         public KhrSwapchain(INativeContext ctx)

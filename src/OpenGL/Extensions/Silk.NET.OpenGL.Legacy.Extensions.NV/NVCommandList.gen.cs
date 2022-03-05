@@ -20,223 +20,223 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVCommandList : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_command_list";
-        [NativeApi(EntryPoint = "glCallCommandListNV")]
+        [NativeApi(EntryPoint = "glCallCommandListNV", Convention = CallingConvention.Winapi)]
         public partial void CallCommandList([Flow(FlowDirection.In)] uint list);
 
-        [NativeApi(EntryPoint = "glCommandListSegmentsNV")]
+        [NativeApi(EntryPoint = "glCommandListSegmentsNV", Convention = CallingConvention.Winapi)]
         public partial void CommandListSegments([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segments);
 
-        [NativeApi(EntryPoint = "glCompileCommandListNV")]
+        [NativeApi(EntryPoint = "glCompileCommandListNV", Convention = CallingConvention.Winapi)]
         public partial void CompileCommandList([Flow(FlowDirection.In)] uint list);
 
-        [NativeApi(EntryPoint = "glCreateCommandListsNV")]
+        [NativeApi(EntryPoint = "glCreateCommandListsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CreateCommandLists([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* lists);
 
-        [NativeApi(EntryPoint = "glCreateCommandListsNV")]
+        [NativeApi(EntryPoint = "glCreateCommandListsNV", Convention = CallingConvention.Winapi)]
         public partial void CreateCommandLists([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint lists);
 
-        [NativeApi(EntryPoint = "glCreateStatesNV")]
+        [NativeApi(EntryPoint = "glCreateStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CreateStates([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* states);
 
-        [NativeApi(EntryPoint = "glCreateStatesNV")]
+        [NativeApi(EntryPoint = "glCreateStatesNV", Convention = CallingConvention.Winapi)]
         public partial void CreateStates([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint states);
 
-        [NativeApi(EntryPoint = "glDeleteCommandListsNV")]
+        [NativeApi(EntryPoint = "glDeleteCommandListsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteCommandLists([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* lists);
 
-        [NativeApi(EntryPoint = "glDeleteCommandListsNV")]
+        [NativeApi(EntryPoint = "glDeleteCommandListsNV", Convention = CallingConvention.Winapi)]
         public partial void DeleteCommandLists([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint lists);
 
-        [NativeApi(EntryPoint = "glDeleteStatesNV")]
+        [NativeApi(EntryPoint = "glDeleteStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteStates([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* states);
 
-        [NativeApi(EntryPoint = "glDeleteStatesNV")]
+        [NativeApi(EntryPoint = "glDeleteStatesNV", Convention = CallingConvention.Winapi)]
         public partial void DeleteStates([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint states);
 
-        [NativeApi(EntryPoint = "glDrawCommandsNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommands([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommands([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommands([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsNV", Convention = CallingConvention.Winapi)]
         public partial void DrawCommands([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsAddress([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsAddress([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsAddress([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsAddressNV", Convention = CallingConvention.Winapi)]
         public partial void DrawCommandsAddress([Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesNV", Convention = CallingConvention.Winapi)]
         public partial void DrawCommandsStates([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] in nint indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] ulong* indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV")]
+        [NativeApi(EntryPoint = "glDrawCommandsStatesAddressNV", Convention = CallingConvention.Winapi)]
         public partial void DrawCommandsStatesAddress([Flow(FlowDirection.In)] in ulong indirects, [Flow(FlowDirection.In)] in uint sizes, [Flow(FlowDirection.In)] in uint states, [Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glGetCommandHeaderNV")]
+        [NativeApi(EntryPoint = "glGetCommandHeaderNV", Convention = CallingConvention.Winapi)]
         public partial uint GetCommandHeader([Flow(FlowDirection.In)] NV tokenID, [Flow(FlowDirection.In)] uint size);
 
-        [NativeApi(EntryPoint = "glGetStageIndexNV")]
+        [NativeApi(EntryPoint = "glGetStageIndexNV", Convention = CallingConvention.Winapi)]
         public partial ushort GetStageIndex([Flow(FlowDirection.In)] NV shadertype);
 
-        [NativeApi(EntryPoint = "glGetStageIndexNV")]
+        [NativeApi(EntryPoint = "glGetStageIndexNV", Convention = CallingConvention.Winapi)]
         public partial ushort GetStageIndex([Flow(FlowDirection.In)] ShaderType shadertype);
 
-        [NativeApi(EntryPoint = "glIsCommandListNV")]
+        [NativeApi(EntryPoint = "glIsCommandListNV", Convention = CallingConvention.Winapi)]
         public partial bool IsCommandList([Flow(FlowDirection.In)] uint list);
 
-        [NativeApi(EntryPoint = "glIsStateNV")]
+        [NativeApi(EntryPoint = "glIsStateNV", Convention = CallingConvention.Winapi)]
         public partial bool IsState([Flow(FlowDirection.In)] uint state);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV")]
+        [NativeApi(EntryPoint = "glListDrawCommandsStatesClientNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint states, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint fbos, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glStateCaptureNV")]
+        [NativeApi(EntryPoint = "glStateCaptureNV", Convention = CallingConvention.Winapi)]
         public partial void StateCapture([Flow(FlowDirection.In)] uint state, [Flow(FlowDirection.In)] NV mode);
 
         public unsafe uint CreateCommandList()

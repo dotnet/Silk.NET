@@ -53,7 +53,18 @@ namespace Silk.NET.XAudio
         public readonly void OnCriticalError(int Error)
         {
             var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+            #if NET5_0_OR_GREATER
+            ((delegate* unmanaged<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+            #else
+            if (SilkMarshal.IsWinapiStdcall)
+            {
+                ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+            }
+            else
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+            }
+            #endif
         }
 
     }

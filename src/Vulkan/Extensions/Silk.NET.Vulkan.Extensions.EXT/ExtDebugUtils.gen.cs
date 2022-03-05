@@ -21,107 +21,107 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_debug_utils";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkCmdEndDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdEndDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
+        [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
         public partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueEndDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkQueueEndDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void QueueEndDebugUtilsLabel([Count(Count = 0)] Queue queue);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
+        [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
         public partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
+        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectNameInfoEXT* pNameInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
+        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
         public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectNameInfoEXT pNameInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
+        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectTagInfoEXT* pTagInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
+        [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT", Convention = CallingConvention.Winapi)]
         public partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectTagInfoEXT pTagInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
+        [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* pCallbackData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
+        [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
         public partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT pCallbackData);
 
         public ExtDebugUtils(INativeContext ctx)

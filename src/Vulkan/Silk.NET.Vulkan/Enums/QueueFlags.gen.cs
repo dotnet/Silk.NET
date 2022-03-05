@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkQueueFlags")]
     public enum QueueFlags : int
     {
@@ -25,6 +25,8 @@ namespace Silk.NET.Vulkan
         QueueVideoDecodeBitKhr = 32,
         [NativeName("Name", "VK_QUEUE_VIDEO_ENCODE_BIT_KHR")]
         QueueVideoEncodeBitKhr = 64,
+        [NativeName("Name", "VK_QUEUE_RESERVED_7_BIT_QCOM")]
+        QueueReserved7BitQCom = 128,
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         QueueProtectedBit = 16,
     }

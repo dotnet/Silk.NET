@@ -54,5 +54,7 @@ namespace Silk.NET.Vulkan
         DriverIDMesaPanvk = 20,
         [NativeName("Name", "VK_DRIVER_ID_SAMSUNG_PROPRIETARY")]
         DriverIDSamsungProprietary = 21,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_VENUS")]
+        DriverIDMesaVenus = 22,
     }
 }

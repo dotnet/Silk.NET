@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComAlphaTest : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_alpha_test";
-        [NativeApi(EntryPoint = "glAlphaFuncQCOM")]
+        [NativeApi(EntryPoint = "glAlphaFuncQCOM", Convention = CallingConvention.Winapi)]
         public partial void AlphaFunc([Flow(FlowDirection.In)] QCOM func, [Flow(FlowDirection.In)] float @ref);
 
         public QComAlphaTest(INativeContext ctx)

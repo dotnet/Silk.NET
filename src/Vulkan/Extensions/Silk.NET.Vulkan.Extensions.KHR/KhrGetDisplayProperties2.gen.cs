@@ -21,75 +21,75 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_get_display_properties2";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
-        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
-        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
+        [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR", Convention = CallingConvention.Winapi)]
         public partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 
         public KhrGetDisplayProperties2(INativeContext ctx)

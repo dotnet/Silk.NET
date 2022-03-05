@@ -21,27 +21,27 @@ namespace Silk.NET.OpenXR.Extensions.OCULUS
     {
         public const string ExtensionName = "XR_OCULUS_audio_device_guid";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetAudioInputDeviceGuidOcul([Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] char* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public partial Result GetAudioInputDeviceGuidOcul([Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] ref char buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public partial Result GetAudioInputDeviceGuidOcul([Count(Count = 0)] Instance instance, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetAudioOutputDeviceGuidOcul([Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] char* buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public partial Result GetAudioOutputDeviceGuidOcul([Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] ref char buffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus")]
+        [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus", Convention = CallingConvention.Winapi)]
         public partial Result GetAudioOutputDeviceGuidOcul([Count(Count = 0)] Instance instance, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         public OculusAudioDeviceGuid(INativeContext ctx)

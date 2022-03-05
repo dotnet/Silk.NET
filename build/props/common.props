@@ -1,29 +1,34 @@
 <!--suppress CheckTagEmptyBody -->
-<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkAddDateTime">
+<Project InitialTargets="SilkAddIcon;SilkGenerateNuGetReadme;SilkAddDateTime;SilkCreatePublicApi">
+    <!-- Presets for metapackages and native packages -->
+    <PropertyGroup Condition="'$(SilkMetapackage)' == 'true' or '$(SilkNativePackage)' == 'true'">
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+        <SilkPublicApiExempt>true</SilkPublicApiExempt>
+    </PropertyGroup>
+    <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET December 2021 Update
+            Silk.NET February 2022 Update
             
-            - Add a high-level C# wrapper over Vulkan Structure Chains (thanks @thargy).
-            - Add a WindowClass option in Windowing for setting the X11 class name (thanks @Pydacor)
-            - Add a IsContextControlDisabled option in Windowing to disable automatically making OpenGL contexts current
-            - Add support for cloning Vk objects to allow reuse of their function tables independently
+            - Add an OpenGLES version of the ImGui plugin (thanks @Beyley)
+            - Add an initial version of a Rider/ReSharper plugin to open Khronos specifications with one click (may not be available for install immediately)
+            - Update to OpenXR 1.0.22
+            - Update to Vulkan 1.2.203
             - Update to latest OpenCL specifications
-            - Update to latest OpenGL and OpenGLES specifications
-            - Update to Vulkan 1.2.210
-            - Fix string marshalling regression which resulted in multiple string-overloaded functions throwing
-            - Fix multiple input-related problems when using the SDL backend of our Windowing abstractions
-            - Discontinued support for Legacy Xamarin (exclusively supporting .NET 6 mobile from now on)
+            - Fix mouse scroll wheels state not always being up-to-date on the SDL backend (thanks @paralaxsd)
+
+            In addition, thanks to @roeyskoe for contributing lots of behind-the-scenes changes to improve the Silk.NET native packaging experience.
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.11</VersionPrefix>
+        <VersionPrefix>2.13</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
@@ -45,8 +50,8 @@
         <DebugType>portable</DebugType>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkSourceLinkExempt)' == ''">
-        <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.66" PrivateAssets="All"/>
-        <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="0.1.66" PrivateAssets="All"/>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All"/>
+        <PackageReference Include="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" PrivateAssets="All"/>
     </ItemGroup>
     <!-- Nuget Icon - done as a target so it doesn't appear in the IDE -->
     <Target Name="SilkAddIcon" Condition="'$(SilkIconExempt)' == ''">
@@ -99,5 +104,26 @@
         <ItemGroup>
             <None Include="$(SilkReadmePath)" Pack="true" PackagePath="\" />
         </ItemGroup>
+    </Target>
+    <!-- Public API Analyzer -->
+    <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true'">
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3" PrivateAssets="All" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true' and '$(TargetFramework)' != ''">
+        <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
+        <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
+    </ItemGroup>
+    <Target Name="SilkCreatePublicApi" Condition="'$(SilkPublicApiExempt)' != 'true' and '$(TargetFramework)' != ''">
+        <ItemGroup>
+            <SilkNewPublicAPILines Include="#nullable enable" />
+        </ItemGroup>
+        <MakeDir Directories="PublicAPI" Condition="!Exists('PublicAPI')" />
+        <MakeDir Directories="PublicAPI/$(TargetFramework)" Condition="!Exists('PublicAPI/$(TargetFramework)')" />
+        <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt"
+                          Lines="@(SilkNewPublicAPILines)"
+                          Condition="!Exists('PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt')" />
+        <WriteLinesToFile File="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt"
+                          Lines="@(SilkNewPublicAPILines)"
+                          Condition="!Exists('PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt')" />
     </Target>
 </Project>

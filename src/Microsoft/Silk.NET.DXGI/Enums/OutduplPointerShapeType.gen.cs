@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE")]
     public enum OutduplPointerShapeType : int
     {

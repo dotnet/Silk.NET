@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Silk.NET.Input
@@ -10,7 +11,7 @@ namespace Silk.NET.Input
     /// <summary>
     /// Represents a scroll wheel.
     /// </summary>
-    public struct ScrollWheel
+    public struct ScrollWheel : IEquatable<ScrollWheel>
     {
         /// <summary>
         /// The X position of the scroll wheel.
@@ -58,5 +59,32 @@ namespace Silk.NET.Input
             sb.Append('>');
             return sb.ToString();
         }
+
+        /// <inheritdoc />
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public override bool Equals(object obj) => obj is ScrollWheel other && Equals(other);
+
+        /// <inheritdoc />
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool Equals(ScrollWheel other) => this == other;
+
+        /// <inheritdoc />
+        public override int GetHashCode() => HashCode.Combine(X, Y);
+
+        /// <summary>Returns a boolean indicating whether the two given ScrollWheels are equal.</summary>
+        /// <param name="left">The first ScrollWheel to compare.</param>
+        /// <param name="right">The second ScrollWheel to compare.</param>
+        /// <returns>True if the ScrollWheel are equal; False otherwise.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator ==(ScrollWheel left, ScrollWheel right) =>
+            left.X == right.X &&
+            left.Y == right.Y;
+
+        /// <summary>Returns a boolean indicating whether the two given ScrollWheels are not equal.</summary>
+        /// <param name="left">The first ScrollWheel to compare.</param>
+        /// <param name="right">The second ScrollWheel to compare.</param>
+        /// <returns>True if the ScrollWheel are not equal; False if they are equal.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator !=(ScrollWheel left, ScrollWheel right) => !(left == right);
     }
 }

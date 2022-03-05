@@ -42,5 +42,7 @@ namespace Silk.NET.Vulkan
         AccelerationStructureNV = 1000165000,
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
         MutableValve = 1000351000,
+        [NativeName("Name", "VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK")]
+        InlineUniformBlock = 1000138000,
     }
 }

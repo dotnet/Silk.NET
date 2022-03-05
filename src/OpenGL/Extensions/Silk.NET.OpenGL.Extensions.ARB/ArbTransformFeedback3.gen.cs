@@ -20,46 +20,46 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbTransformFeedback3 : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_transform_feedback3";
-        [NativeApi(EntryPoint = "glBeginQueryIndexed")]
+        [NativeApi(EntryPoint = "glBeginQueryIndexed", Convention = CallingConvention.Winapi)]
         public partial void BeginQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glBeginQueryIndexed")]
+        [NativeApi(EntryPoint = "glBeginQueryIndexed", Convention = CallingConvention.Winapi)]
         public partial void BeginQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackStream")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackStream", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackStream([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackStream")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackStream", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackStream([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream);
 
-        [NativeApi(EntryPoint = "glEndQueryIndexed")]
+        [NativeApi(EntryPoint = "glEndQueryIndexed", Convention = CallingConvention.Winapi)]
         public partial void EndQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glEndQueryIndexed")]
+        [NativeApi(EntryPoint = "glEndQueryIndexed", Convention = CallingConvention.Winapi)]
         public partial void EndQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetQueryIndexediv")]
+        [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         public ArbTransformFeedback3(INativeContext ctx)

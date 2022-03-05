@@ -524,7 +524,8 @@
                     "StdVideoEncodeH265SliceHeader": "Video.StdVideoEncodeH265SliceHeader",
                     "StdVideoEncodeH265ReferenceModifications": "Video.StdVideoEncodeH265ReferenceModifications",
                     "StdVideoH265VideoParameterSet": "Video.StdVideoH265VideoParameterSet",
-                    "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo"
+                    "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo",
+                    "StdVideoEncodeH265SliceSegmentHeader": "Video.StdVideoEncodeH265SliceSegmentHeader"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

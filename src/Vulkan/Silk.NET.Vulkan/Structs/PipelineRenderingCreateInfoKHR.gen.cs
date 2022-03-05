@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRenderingCreateInfoKHR")]
+    [NativeName("AliasOf", "VkPipelineRenderingCreateInfo")]
     public unsafe partial struct PipelineRenderingCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineRenderingCreateInfoKHR
         (
-            StructureType? sType = StructureType.PipelineRenderingCreateInfoKhr,
+            StructureType? sType = StructureType.PipelineRenderingCreateInfo,
             void* pNext = null,
             uint? viewMask = null,
             uint? colorAttachmentCount = null,
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineRenderingCreateInfoKhr;
+            return SType = StructureType.PipelineRenderingCreateInfo;
         }
 
         /// <inheritdoc />

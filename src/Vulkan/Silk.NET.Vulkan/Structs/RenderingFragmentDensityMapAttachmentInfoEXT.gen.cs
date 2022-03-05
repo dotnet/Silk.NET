@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingFragmentDensityMapAttachmentInfoEXT")]
-    public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT : IExtendsChain<RenderingInfoKHR>
+    public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT : IExtendsChain<RenderingInfo>, IExtendsChain<RenderingInfoKHR>
     {
         public RenderingFragmentDensityMapAttachmentInfoEXT
         (

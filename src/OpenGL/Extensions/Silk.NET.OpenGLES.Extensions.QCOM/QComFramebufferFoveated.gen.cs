@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComFramebufferFoveated : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_framebuffer_foveated";
-        [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM")]
+        [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferFoveationConfig([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(FlowDirection.Out)] uint* providedFeatures);
 
-        [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM")]
+        [NativeApi(EntryPoint = "glFramebufferFoveationConfigQCOM", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFoveationConfig([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(FlowDirection.Out)] out uint providedFeatures);
 
-        [NativeApi(EntryPoint = "glFramebufferFoveationParametersQCOM")]
+        [NativeApi(EntryPoint = "glFramebufferFoveationParametersQCOM", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFoveationParameters([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint layer, [Flow(FlowDirection.In)] uint focalPoint, [Flow(FlowDirection.In)] float focalX, [Flow(FlowDirection.In)] float focalY, [Flow(FlowDirection.In)] float gainX, [Flow(FlowDirection.In)] float gainY, [Flow(FlowDirection.In)] float foveaArea);
 
         public QComFramebufferFoveated(INativeContext ctx)

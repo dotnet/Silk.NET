@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
-using System.Runtime.CompilerServices;
 using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
@@ -11,6 +10,8 @@ namespace Silk.NET.Input.Sdl
     {
         private readonly SdlInputContext _ctx;
         private readonly List<MouseButton> _downButtons = new List<MouseButton>();
+        private readonly ScrollWheel[] _scrollWheels = new ScrollWheel[1];
+
         private bool _wheelChanged;
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace Silk.NET.Input.Sdl
         public override IReadOnlyList<MouseButton> SupportedButtons { get; } = new[]
             {MouseButton.Left, MouseButton.Middle, MouseButton.Right, MouseButton.Button4, MouseButton.Button5};
 
-        public override IReadOnlyList<ScrollWheel> ScrollWheels { get; } = new ScrollWheel[1];
+        public override IReadOnlyList<ScrollWheel> ScrollWheels => _scrollWheels;
 
         public override unsafe Vector2 Position
         {
@@ -57,10 +58,11 @@ namespace Silk.NET.Input.Sdl
 
         public void Update()
         {
-            if (!_wheelChanged && Unsafe.As<ScrollWheel, Vector2>(ref ((ScrollWheel[]) ScrollWheels)[0]) != default)
+            if (!_wheelChanged && _scrollWheels[0] != default)
             {
-                ((ScrollWheel[]) ScrollWheels)[0] = default;
+                _scrollWheels[0] = default;
             }
+            _wheelChanged = false;
         }
 
         public void DoEvent(Event @event)
@@ -95,9 +97,10 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Mousewheel:
                 {
+                    ref var wheelData = ref @event.Wheel;
                     _wheelChanged = true;
-                    Scroll?.Invoke
-                        (this, ((ScrollWheel[]) ScrollWheels)[0] = new ScrollWheel(@event.Wheel.X, @event.Wheel.Y));
+                    _scrollWheels[0] = new ScrollWheel(wheelData.X, wheelData.Y);
+                    Scroll?.Invoke(this, _scrollWheels[0]);
                     break;
                 }
             }
