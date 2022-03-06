@@ -36,8 +36,14 @@
     </PropertyGroup>
     <!-- Date/time based versioning (mainly used by natives) -->
     <Target Name="SilkAddDateTime" Condition="'$(SilkGitDirForVersion)' != ''">
+        <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+            <SilkGitDateTimeFormat>%25%25cI</SilkGitDateTimeFormat>
+        </PropertyGroup>
+        <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+            <SilkGitDateTimeFormat>%25cI</SilkGitDateTimeFormat>
+        </PropertyGroup>
         <Exec ConsoleToMSBuild="True"
-              Command="git show -s &quot;--format=%25%25cI&quot;"
+              Command="git show -s &quot;--format=$(SilkGitDateTimeFormat)&quot;"
               WorkingDirectory="$(SilkGitDirForVersion)">
             <Output TaskParameter="ConsoleOutput" PropertyName="_SilkGitIdt" />
         </Exec>
