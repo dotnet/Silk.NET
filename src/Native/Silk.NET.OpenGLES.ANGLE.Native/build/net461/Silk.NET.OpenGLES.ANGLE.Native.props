@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_Silk_NET_OpenGLES_ANGLE_Native_IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</_Silk_NET_OpenGLES_ANGLE_Native_IsWindows>
+    <_Silk_NET_OpenGLES_ANGLE_Native_IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</_Silk_NET_OpenGLES_ANGLE_Native_IsMacOS>
+    <_Silk_NET_OpenGLES_ANGLE_Native_IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</_Silk_NET_OpenGLES_ANGLE_Native_IsLinux>
+
+    <_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime Condition=" '$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == '' And '$(_Silk_NET_OpenGLES_ANGLE_Native_IsMacOS)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">osx-x64</_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime>
+    <_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime Condition=" '$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == '' And '$(_Silk_NET_OpenGLES_ANGLE_Native_IsLinux)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">linux-x64</_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime>
+    <_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime Condition=" '$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == '' And '$(_Silk_NET_OpenGLES_ANGLE_Native_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'true' Or '$(PlatformTarget)' == 'x86')">win-x86</_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime>
+    <_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime Condition=" '$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == '' And '$(_Silk_NET_OpenGLES_ANGLE_Native_IsWindows)' == 'true' And ('$(Prefer32Bit)' == 'false' Or '$(PlatformTarget)' == 'x64')">win-x64</_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime>
+
+    <_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'win-x86'">libEGL.dll</_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'win-x64'">libEGL.dll</_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'osx-x64'">libEGL.dylib</_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'linux-x64'">libEGL.so</_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'win-x86'">libGLESv2.dll</_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'win-x64'">libGLESv2.dll</_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'osx-x64'">libGLESv2.dylib</_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName>
+    <_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' == 'linux-x64'">libGLESv2.so</_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)\native\$(_Silk_NET_OpenGLES_ANGLE_GLES_Native_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+    <Content Condition="'$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)' != ''" Include="$(MSBuildThisFileDirectory)..\..\runtimes\$(_Silk_NET_OpenGLES_ANGLE_Native_NativeRuntime)\native\$(_Silk_NET_OpenGLES_ANGLE_EGL_Native_NativeLibName)">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+</Project>
