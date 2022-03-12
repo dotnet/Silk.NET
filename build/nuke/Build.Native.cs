@@ -418,7 +418,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("src/libassimp.so*"), runtimes / "linux-x64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.so*"), runtimes / "linux-x64" / "native");
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
