@@ -11,6 +11,8 @@ using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
 using RuntimeEnvironment = Microsoft.DotNet.PlatformAbstractions.RuntimeEnvironment;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("MacPossibilities")]
+
 namespace Silk.NET.Core.Loader
 {
     /// <summary>
@@ -29,7 +31,7 @@ namespace Silk.NET.Core.Loader
         public override IEnumerable<string> EnumeratePossibleLibraryLoadTargets(string name)
             => CoreEnumeratePossibleLibraryLoadTargets(name);
 
-        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool noLinuxTraverse = false)
+        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool skipVersionTraverse = false)
         {
             yield return name;
             if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
@@ -63,11 +65,19 @@ namespace Silk.NET.Core.Loader
                 }
             }
 
-            if (!noLinuxTraverse)
+            if (!skipVersionTraverse)
             {
                 foreach (var linuxName in GetLinuxPossibilities(name))
                 {
                     foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(linuxName, true))
+                    {
+                        yield return possibleLoadTarget;
+                    }
+                }
+
+                foreach (var macName in GetMacPossibilities(name))
+                {
+                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(macName, false))
                     {
                         yield return possibleLoadTarget;
                     }
@@ -82,12 +92,29 @@ namespace Silk.NET.Core.Loader
             if (indexOfSo != -1)
             {
                 // for libglfw.so.3.3 this should return:
-                // libglfw.so
-                // libglfw.so.3
                 // libglfw.so.3.3
-                for (var i = indexOfSo; i < nameSplit.Length; i++)
+                // libglfw.so.3
+                // libglfw.so
+                for (var i = nameSplit.Length - 1; i >= indexOfSo; i--)
                 {
                     yield return string.Join(".", nameSplit, 0, i + 1);
+                }
+            }
+        }
+        
+        private static IEnumerable<string> GetMacPossibilities(string name)
+        {
+            var nameSplit = name.Split('.');
+            var indexOfDylib = Array.LastIndexOf(nameSplit, "dylib");
+            if (indexOfDylib != -1)
+            {
+                // for libglfw.3.3.dylib this should return:
+                // libglfw.3.3.dylib
+                // libglfw.3.dylib
+                // libglfw.dylib
+                for (var i = indexOfDylib - 1; i >= 0; i--)
+                {
+                    yield return $"{string.Join(".", nameSplit, 0, i + 1)}.dylib";
                 }
             }
         }

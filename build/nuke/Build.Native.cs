@@ -31,6 +31,10 @@ partial class Build
 
     [CanBeNull] string AndroidHomeValue;
 
+    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
+        ? $" -j{Environment.ProcessorCount}"
+        : string.Empty;
+
     string AndroidHome
     {
         get
@@ -122,10 +126,7 @@ partial class Build
                     Git("checkout HEAD build/", SwiftShaderBuildPath / "..");
                     StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=Release", SwiftShaderBuildPath)
                         .AssertZeroExitCode();
-                    var nonGitHubActionsArgs = string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
-                        ? " --parallel"
-                        : string.Empty;
-                    StartProcess("cmake", $"--build .{nonGitHubActionsArgs} --config Release", SwiftShaderBuildPath)
+                    StartProcess("cmake", $"--build .{JobsArg} --config Release", SwiftShaderBuildPath)
                         .AssertWaitForExit(); // might fail... as long as the output exists we're happy
                     var fname = sysName switch
                     {
@@ -286,7 +287,7 @@ partial class Build
                 {
                     var @out = GLFWPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
-                    var build = "cmake --build build --config Release";
+                    var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
@@ -351,10 +352,10 @@ partial class Build
                     var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
                     InheritedShell
                     (
-                        $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
+                        $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}{JobsArg}",
                         VulkanLoaderPath
                     ).AssertZeroExitCode();
-                    InheritedShell("cmake --build build --config Release", VulkanLoaderPath)
+                    InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
                         .AssertZeroExitCode();
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
@@ -392,7 +393,7 @@ partial class Build
                     
                     var @out = AssimpPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
-                    var build = "cmake --build build --config Release";
+                    var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
@@ -418,7 +419,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("bin/libassimp.so*"), runtimes / "linux-x64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.so.5"), runtimes / "linux-x64" / "native");
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
@@ -426,7 +427,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("bin/libassimp*.dylib"), runtimes / "osx-x64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
@@ -435,7 +436,7 @@ partial class Build
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("bin/libassimp*.dylib"), runtimes / "osx-arm64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-arm64" / "native");
                     }
                     
                     PrUpdatedNativeBinary("Assimp");
