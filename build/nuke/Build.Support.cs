@@ -171,7 +171,7 @@ partial class Build
             commentText = commentText.Replace($"{{{key}}}", value);
         }
         
-        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance.GitHubRunNumber)
+        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance.GitHubRunNumber.ToString())
             .Replace("{typeId}", type);
 
         if (existingComment is not null)

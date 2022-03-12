@@ -4,6 +4,15 @@
 [submodule "build/submodules/Vulkan-Headers"]
 	path = build/submodules/Vulkan-Headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers
+[submodule "build/submodules/SwiftShader"]
+	path = build/submodules/SwiftShader
+	url = https://github.com/google/swiftshader
+[submodule "build/submodules/ANGLE"]
+	path = build/submodules/ANGLE
+	url = https://chromium.googlesource.com/angle/angle
+[submodule "build/submodules/Vulkan-Loader"]
+	path = build/submodules/Vulkan-Loader
+	url = https://github.com/KhronosGroup/Vulkan-Loader
 [submodule "build/submodules/GLFW"]
 	path = build/submodules/GLFW
 	url = https://github.com/glfw/glfw.git
