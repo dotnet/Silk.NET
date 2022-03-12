@@ -18,6 +18,7 @@ jobs:
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
+              sudo apt-get update
               sudo apt-get remove php7.4-common 
               sudo apt-get install -y libx11-xcb-dev libapache2-mod-php7.4
           - os: windows-latest

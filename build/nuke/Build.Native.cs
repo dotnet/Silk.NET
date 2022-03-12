@@ -402,7 +402,7 @@ partial class Build
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
 
-                        CopyAs(@out, "bin/Release/assimp-vc143-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
+                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
                         EnsureCleanDirectory(@out);
                         
                         InheritedShell($"{prepare} -A Win32", AssimpPath)
@@ -410,7 +410,7 @@ partial class Build
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
                         
-                        CopyAs(@out, "bin/Release/assimp-vc143-mt.dll", runtimes / "win-x86" / "native" / "Assimp32.dll");
+                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x86" / "native" / "Assimp32.dll");
                     }
                     else if (OperatingSystem.IsLinux())
                     {
@@ -426,7 +426,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("src/libassimp*.dylib"), runtimes / "osx-x64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.dylib"), runtimes / "osx-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
@@ -435,7 +435,7 @@ partial class Build
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("src/libassimp*.dylib"), runtimes / "osx-arm64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp.dylib"), runtimes / "osx-arm64" / "native");
                     }
                     
                     PrUpdatedNativeBinary("Assimp");
