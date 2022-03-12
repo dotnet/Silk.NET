@@ -31,7 +31,7 @@ partial class Build
 
     [CanBeNull] string AndroidHomeValue;
 
-    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
+    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.GitHubJob)
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
