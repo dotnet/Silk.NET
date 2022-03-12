@@ -42,8 +42,8 @@ namespace Silk.NET.Assimp
         [NativeName("Name", "mVertexId")]
         public uint MVertexId;
 
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
+        [NativeName("Type", "ai_real")]
+        [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "mWeight")]
         public float MWeight;
     }

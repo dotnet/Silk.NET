@@ -118,17 +118,22 @@
             "type": "string",
             "enum": [
               "Angle",
+              "Assimp",
               "BuildLibSilkDroid",
               "Clean",
               "Compile",
+              "DeclareApi",
+              "EnsureApiDeclared",
               "FullCompile",
               "FullPack",
               "FullPushToNuGet",
+              "GLFW",
               "Pack",
               "Prerequisites",
               "PushToNuGet",
               "RegenerateBindings",
               "Restore",
+              "ShipApi",
               "SignPackages",
               "Sln",
               "SwiftShader",
@@ -149,17 +154,22 @@
             "type": "string",
             "enum": [
               "Angle",
+              "Assimp",
               "BuildLibSilkDroid",
               "Clean",
               "Compile",
+              "DeclareApi",
+              "EnsureApiDeclared",
               "FullCompile",
               "FullPack",
               "FullPushToNuGet",
+              "GLFW",
               "Pack",
               "Prerequisites",
               "PushToNuGet",
               "RegenerateBindings",
               "Restore",
+              "ShipApi",
               "SignPackages",
               "Sln",
               "SwiftShader",
@@ -178,6 +188,10 @@
             "Quiet",
             "Verbose"
           ]
+        },
+        "Warnings": {
+          "type": "boolean",
+          "description": "Outputs build warnings instead of keeping the MSBuild logging quiet with just errors"
         }
       }
     }

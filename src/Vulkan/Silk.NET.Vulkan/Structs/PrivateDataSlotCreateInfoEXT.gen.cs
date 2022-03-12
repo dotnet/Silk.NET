@@ -24,7 +24,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PrivateDataSlotCreateInfo,
             void* pNext = null,
-            PrivateDataSlotCreateFlags? flags = null
+            uint? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -57,7 +57,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPrivateDataSlotCreateFlags")]
         [NativeName("Type.Name", "VkPrivateDataSlotCreateFlags")]
         [NativeName("Name", "flags")]
-        public PrivateDataSlotCreateFlags Flags;
+        public uint Flags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

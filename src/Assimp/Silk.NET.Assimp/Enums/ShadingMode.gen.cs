@@ -30,7 +30,11 @@ namespace Silk.NET.Assimp
         ShadingModeCookTorrance = 0x8,
         [NativeName("Name", "aiShadingMode_NoShading")]
         ShadingModeNoShading = 0x9,
+        [NativeName("Name", "aiShadingMode_Unlit")]
+        ShadingModeUnlit = 0x9,
         [NativeName("Name", "aiShadingMode_Fresnel")]
         ShadingModeFresnel = 0xA,
+        [NativeName("Name", "aiShadingMode_PBR_BRDF")]
+        ShadingModePbrBrdf = 0xB,
     }
 }
