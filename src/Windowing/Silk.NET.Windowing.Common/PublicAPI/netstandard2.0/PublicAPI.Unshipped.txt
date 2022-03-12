@@ -1,1 +1,2 @@
 #nullable enable
+Silk.NET.Windowing.WindowOptions.SharedContext.set -> void
