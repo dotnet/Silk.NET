@@ -387,7 +387,7 @@ partial class Build
                     void CopyAs(AbsolutePath @out, string from, string to)
                     {
                         var file = @out.GlobFiles(from).First();
-                        CopyFile(file, to);
+                        CopyFile(file, to, FileExistsPolicy.Overwrite);
                     }
                     
                     var @out = AssimpPath / "build";
@@ -426,7 +426,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
-                        CopyAll(@out.GlobFiles("bin/libassimp.dylib"), runtimes / "osx-x64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp*.dylib"), runtimes / "osx-x64" / "native");
 
                         EnsureCleanDirectory(@out);
                         
@@ -435,7 +435,7 @@ partial class Build
                         InheritedShell(build, AssimpPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("bin/libassimp.dylib"), runtimes / "osx-arm64" / "native");
+                        CopyAll(@out.GlobFiles("bin/libassimp*.dylib"), runtimes / "osx-arm64" / "native");
                     }
                     
                     PrUpdatedNativeBinary("Assimp");
