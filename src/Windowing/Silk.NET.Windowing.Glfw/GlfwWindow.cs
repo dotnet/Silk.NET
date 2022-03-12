@@ -701,6 +701,15 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onFramebufferResize);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
+
+                _onClosing = null;
+                _onMaximized = null;
+                _onMinimized = null;
+                _onMove = null;
+                _onResize = null;
+                _onFramebufferResize = null;
+                _onFileDrop = null;
+                _onFocusChanged = null;
             }
         }
 
