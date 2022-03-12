@@ -401,7 +401,6 @@ partial class Build
                             .AssertZeroExitCode();
 
                         CopyAs(@out, "bin/Release/assimp-vc143-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
-                        
                         EnsureCleanDirectory(@out);
                         
                         InheritedShell($"{prepare} -A Win32", AssimpPath)
