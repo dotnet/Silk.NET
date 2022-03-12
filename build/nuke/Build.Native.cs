@@ -331,6 +331,8 @@ partial class Build
                         
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
                     }
+                    
+                    PrUpdatedNativeBinary("GLFW");
                 }
             )
     );
@@ -435,6 +437,8 @@ partial class Build
                         
                         CopyAll(@out.GlobFiles("src/libassimp*.dylib"), runtimes / "osx-arm64" / "native");
                     }
+                    
+                    PrUpdatedNativeBinary("Assimp");
                 }
             )
     );
