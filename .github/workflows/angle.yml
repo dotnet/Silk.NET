@@ -24,7 +24,8 @@ jobs:
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd
-            extras: ""
+            extras: |
+              pwsh build\Install-WindowsSDK.ps1
           - os: macos-latest
             name: Darwin
             nuke_invoke: ./build.sh
