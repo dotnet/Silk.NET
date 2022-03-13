@@ -16,15 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoDecodeCapabilitiesKHR>
+    [NativeName("Name", "VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE")]
+    public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public VideoDecodeH265CapabilitiesEXT
+        public PhysicalDeviceDescriptorSetHostMappingFeaturesVALVE
         (
-            StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
+            StructureType? sType = StructureType.PhysicalDeviceDescriptorSetHostMappingFeaturesValve,
             void* pNext = null,
-            uint? maxLevel = null,
-            ExtensionProperties? stdExtensionVersion = null
+            Bool32? descriptorSetHostMapping = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevel is not null)
+            if (descriptorSetHostMapping is not null)
             {
-                MaxLevel = maxLevel.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
+                DescriptorSetHostMapping = descriptorSetHostMapping.Value;
             }
         }
 
@@ -59,20 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorSetHostMapping")]
+        public Bool32 DescriptorSetHostMapping;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+            return SType = StructureType.PhysicalDeviceDescriptorSetHostMappingFeaturesValve;
         }
 
         /// <inheritdoc />

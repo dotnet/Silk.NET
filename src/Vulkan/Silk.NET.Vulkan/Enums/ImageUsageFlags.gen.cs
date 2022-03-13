@@ -45,6 +45,8 @@ namespace Silk.NET.Vulkan
         ImageUsageFragmentDensityMapBitExt = 512,
         [NativeName("Name", "VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         ImageUsageFragmentShadingRateAttachmentBitKhr = 256,
+        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_22_BIT_EXT")]
+        ImageUsageReserved22BitExt = 4194304,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
         ImageUsageVideoEncodeDstBitKhr = 8192,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]

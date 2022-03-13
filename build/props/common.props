@@ -16,11 +16,14 @@
             
             - Add a Version13 convenience property (thanks @Eeveelution)
             - Add DXGI_CREATE_FACTORY_DEBUG Constant to DXGI (thanks @Eeveelution)
-            - Update to Vulkan 1.3.206
+            - Update to Vulkan 1.3.207
             - Update to latest OpenCL specifications
+            - Update to latest OpenGL specifications
             - Fix SilkMarshal.StringToPtr throwing "buffer is too small to contain the encoded data" in some cases
             - Fix Direct3D11 having its own ID3D10Blob type
             - Fix Assimp using the wrong quaternion types
+            - Fix SDL windowing backend causing lots of allocations
+            - Fix GLFW windowing backend circular reference/memory leak
             
             This release may be breaking for users, but those users who experience breaking changes most likely had code that didn't work anyway.
         </PackageReleaseNotes>

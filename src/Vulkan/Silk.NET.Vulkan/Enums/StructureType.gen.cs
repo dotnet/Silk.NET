@@ -196,6 +196,8 @@ namespace Silk.NET.Vulkan
         QueueFamilyQueryResultStatusProperties2Khr = 1000023016,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_INFO_KHR")]
         VideoDecodeInfoKhr = 1000024000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_CAPABILITIES_KHR")]
+        VideoDecodeCapabilitiesKhr = 1000024001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_IMAGE_CREATE_INFO_NV")]
         DedicatedAllocationImageCreateInfoNV = 1000026000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_BUFFER_CREATE_INFO_NV")]
@@ -1268,6 +1270,12 @@ namespace Silk.NET.Vulkan
         DeviceBufferMemoryRequirementsKhr = 1000413002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
         DeviceImageMemoryRequirementsKhr = 1000413003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_SET_HOST_MAPPING_FEATURES_VALVE")]
+        PhysicalDeviceDescriptorSetHostMappingFeaturesValve = 1000420000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_SET_BINDING_REFERENCE_VALVE")]
+        DescriptorSetBindingReferenceValve = 1000420001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_HOST_MAPPING_INFO_VALVE")]
+        DescriptorSetLayoutHostMappingInfoValve = 1000420002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
         PhysicalDeviceFragmentDensityMapOffsetFeaturesQCom = 1000425000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]

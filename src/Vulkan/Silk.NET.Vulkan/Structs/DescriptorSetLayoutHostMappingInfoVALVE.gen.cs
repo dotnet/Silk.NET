@@ -16,15 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoDecodeCapabilitiesKHR>
+    [NativeName("Name", "VkDescriptorSetLayoutHostMappingInfoVALVE")]
+    public unsafe partial struct DescriptorSetLayoutHostMappingInfoVALVE : IChainable
     {
-        public VideoDecodeH265CapabilitiesEXT
+        public DescriptorSetLayoutHostMappingInfoVALVE
         (
-            StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
+            StructureType? sType = StructureType.DescriptorSetLayoutHostMappingInfoValve,
             void* pNext = null,
-            uint? maxLevel = null,
-            ExtensionProperties? stdExtensionVersion = null
+            nuint? descriptorOffset = null,
+            uint? descriptorSize = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevel is not null)
+            if (descriptorOffset is not null)
             {
-                MaxLevel = maxLevel.Value;
+                DescriptorOffset = descriptorOffset.Value;
             }
 
-            if (stdExtensionVersion is not null)
+            if (descriptorSize is not null)
             {
-                StdExtensionVersion = stdExtensionVersion.Value;
+                DescriptorSize = descriptorSize.Value;
             }
         }
 
@@ -59,20 +59,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "descriptorOffset")]
+        public nuint DescriptorOffset;
+/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        [NativeName("Name", "descriptorSize")]
+        public uint DescriptorSize;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+            return SType = StructureType.DescriptorSetLayoutHostMappingInfoValve;
         }
 
         /// <inheritdoc />

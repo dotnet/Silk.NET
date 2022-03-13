@@ -16,15 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoDecodeCapabilitiesKHR>
+    [NativeName("Name", "VkVideoDecodeCapabilitiesKHR")]
+    public unsafe partial struct VideoDecodeCapabilitiesKHR : IChainStart, IExtendsChain<VideoCapabilitiesKHR>
     {
-        public VideoDecodeH265CapabilitiesEXT
+        public VideoDecodeCapabilitiesKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
+            StructureType? sType = StructureType.VideoDecodeCapabilitiesKhr,
             void* pNext = null,
-            uint? maxLevel = null,
-            ExtensionProperties? stdExtensionVersion = null
+            VideoDecodeCapabilityFlagsKHR? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevel is not null)
+            if (flags is not null)
             {
-                MaxLevel = maxLevel.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
+                Flags = flags.Value;
             }
         }
 
@@ -59,20 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        [NativeName("Type", "VkVideoDecodeCapabilityFlagsKHR")]
+        [NativeName("Type.Name", "VkVideoDecodeCapabilityFlagsKHR")]
+        [NativeName("Name", "flags")]
+        public VideoDecodeCapabilityFlagsKHR Flags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+            return SType = StructureType.VideoDecodeCapabilitiesKhr;
         }
 
         /// <inheritdoc />
@@ -80,6 +69,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoDecodeCapabilitiesKHR Chain(
+            out VideoDecodeCapabilitiesKHR capture)
+        {
+            capture = new VideoDecodeCapabilitiesKHR(StructureType.VideoDecodeCapabilitiesKhr);
+            return ref capture;
         }
     }
 }
