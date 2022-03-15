@@ -20,8 +20,8 @@ partial class Build
         (
             () =>
             {
-                var files = RootDirectory.GlobFiles("**/*.csproj").ToArray();
-                Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
+                var files = SourceDirectory.GlobFiles("**/*.csproj").ToArray();
+                Logger.Info($"Found {files.Length} csproj files in \"{SourceDirectory}\"");
                 var missedOut = new List<string>();
                 foreach (var file in files)
                 {
@@ -44,7 +44,7 @@ partial class Build
                             "extension) to the AllowedExclusions array in the NUKE Build.CI.AutoReview.cs file."
                         );
 
-                        missedOut.Add(Path.GetRelativePath(RootDirectory, file));
+                        missedOut.Add(Path.GetRelativePath(RootDirectory, file).Replace('\\', '/'));
                     }
                 }
 

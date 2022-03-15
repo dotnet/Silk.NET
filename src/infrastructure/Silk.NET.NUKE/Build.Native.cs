@@ -31,6 +31,10 @@ partial class Build
 
     [CanBeNull] string AndroidHomeValue;
 
+    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.GitHubJob)
+        ? $" -j{Environment.ProcessorCount}"
+        : string.Empty;
+
     string AndroidHome
     {
         get
@@ -122,10 +126,7 @@ partial class Build
                     Git("checkout HEAD build/", SwiftShaderBuildPath / "..");
                     StartProcess("cmake", ".. -DCMAKE_BUILD_TYPE=Release", SwiftShaderBuildPath)
                         .AssertZeroExitCode();
-                    var nonGitHubActionsArgs = string.IsNullOrWhiteSpace(GitHubActions.Instance.GitHubJob)
-                        ? " --parallel"
-                        : string.Empty;
-                    StartProcess("cmake", $"--build .{nonGitHubActionsArgs} --config Release", SwiftShaderBuildPath)
+                    StartProcess("cmake", $"--build .{JobsArg} --config Release", SwiftShaderBuildPath)
                         .AssertWaitForExit(); // might fail... as long as the output exists we're happy
                     var fname = sysName switch
                     {
@@ -275,7 +276,9 @@ partial class Build
                 }
             )
     );
+
     AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
+
     Target GLFW => CommonTarget
     (
         x => x.Before(Compile)
@@ -286,7 +289,7 @@ partial class Build
                 {
                     var @out = GLFWPath / "build";
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
-                    var build = "cmake --build build --config Release";
+                    var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
@@ -296,14 +299,14 @@ partial class Build
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
-                        
+
                         EnsureCleanDirectory(@out);
-                        
+
                         InheritedShell($"{prepare} -A Win32", GLFWPath)
                             .AssertZeroExitCode();
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
-                        
+
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
                     }
                     else if (OperatingSystem.IsLinux())
@@ -323,19 +326,22 @@ partial class Build
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-x64" / "native");
 
                         EnsureCleanDirectory(@out);
-                        
+
                         InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", GLFWPath)
                             .AssertZeroExitCode();
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
-                        
+
                         CopyAll(@out.GlobFiles("src/libglfw.3.dylib"), runtimes / "osx-arm64" / "native");
                     }
+
+                    PrUpdatedNativeBinary("GLFW");
                 }
             )
     );
 
     AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
+
     Target VulkanLoader => CommonTarget
     (
         x => x.Before(Compile)
@@ -348,11 +354,12 @@ partial class Build
                     EnsureCleanDirectory(@out);
                     var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
                     InheritedShell
-                    (
-                        $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
-                        VulkanLoaderPath
-                    ).AssertZeroExitCode();
-                    InheritedShell("cmake --build build --config Release", VulkanLoaderPath)
+                        (
+                            $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}{JobsArg}",
+                            VulkanLoaderPath
+                        )
+                        .AssertZeroExitCode();
+                    InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
                         .AssertZeroExitCode();
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
@@ -374,12 +381,82 @@ partial class Build
             )
     );
 
+    AbsolutePath AssimpPath => RootDirectory / "build" / "submodules" / "Assimp";
+
+    Target Assimp => CommonTarget
+    (
+        x => x.Before(Compile)
+            .After(Clean)
+            .Executes
+            (
+                () =>
+                {
+                    void CopyAs(AbsolutePath @out, string from, string to)
+                    {
+                        var file = @out.GlobFiles(from).First();
+                        CopyFile(file, to, FileExistsPolicy.Overwrite);
+                    }
+
+                    var @out = AssimpPath / "build";
+                    var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
+                    var build = $"cmake --build build --config Release{JobsArg}";
+                    EnsureCleanDirectory(@out);
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";
+                    if (OperatingSystem.IsWindows())
+                    {
+                        InheritedShell($"{prepare} -A X64", AssimpPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, AssimpPath)
+                            .AssertZeroExitCode();
+
+                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x64" / "native" / "Assimp64.dll");
+                        EnsureCleanDirectory(@out);
+
+                        InheritedShell($"{prepare} -A Win32", AssimpPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, AssimpPath)
+                            .AssertZeroExitCode();
+
+                        CopyAs(@out, "bin/Release/assimp-*-mt.dll", runtimes / "win-x86" / "native" / "Assimp32.dll");
+                    }
+                    else if (OperatingSystem.IsLinux())
+                    {
+                        InheritedShell($"{prepare} -DCMAKE_SYSTEM_PROCESSOR=x86_64", AssimpPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, AssimpPath)
+                            .AssertZeroExitCode();
+
+                        CopyAll(@out.GlobFiles("bin/libassimp.so.5"), runtimes / "linux-x64" / "native");
+                    }
+                    else if (OperatingSystem.IsMacOS())
+                    {
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=x86_64", AssimpPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, AssimpPath)
+                            .AssertZeroExitCode();
+                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-x64" / "native");
+
+                        EnsureCleanDirectory(@out);
+
+                        InheritedShell($"{prepare} -DCMAKE_OSX_ARCHITECTURES=arm64", AssimpPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, AssimpPath)
+                            .AssertZeroExitCode();
+
+                        CopyAll(@out.GlobFiles("bin/libassimp.5.dylib"), runtimes / "osx-arm64" / "native");
+                    }
+
+                    PrUpdatedNativeBinary("Assimp");
+                }
+            )
+    );
+
     void PrUpdatedNativeBinary(string name)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
-        if (GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
-            !string.IsNullOrWhiteSpace(pushableToken) &&
+        if (!string.IsNullOrWhiteSpace(pushableToken) &&
+            GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
             curBranch != "HEAD" &&
             !string.IsNullOrWhiteSpace(curBranch) &&
             !curBranch.StartsWith("ci/", StringComparison.OrdinalIgnoreCase) && // ignore other CI branches
@@ -387,15 +464,30 @@ partial class Build
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
+            var suffix = string.Empty;
+            if (OperatingSystem.IsWindows())
+            {
+                suffix = "/**/*.dll";
+            }
+            else if (OperatingSystem.IsMacOS())
+            {
+                suffix = "/**/*.dylib";
+            }
+            else if (OperatingSystem.IsLinux())
+            {
+                suffix = "/**/*.so*";
+            }
+            
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git("add src/Native", RootDirectory);
+            Git($"add src/Native{suffix}", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
-            (
-                $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
-            ).AssertWaitForExit();
+                (
+                    $"git commit -m \"New binaries for {name} on {RuntimeInformation.OSDescription}\""
+                )
+                .AssertWaitForExit();
             if (!commitCmd.Output.Any(x => x.Text.Contains("nothing to commit", StringComparison.OrdinalIgnoreCase)))
             {
                 commitCmd.AssertZeroExitCode();

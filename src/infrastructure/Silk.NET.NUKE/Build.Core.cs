@@ -84,7 +84,7 @@ partial class Build
             .After(Clean)
             .Executes
             (
-                () => DotNetBuild
+                () => ErrorsOnly<DotNetBuildSettings>
                 (
                     s => s.SetProjectFile(Solution)
                         .SetConfiguration(Configuration)
