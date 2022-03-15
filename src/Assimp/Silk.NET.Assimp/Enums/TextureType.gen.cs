@@ -48,6 +48,12 @@ namespace Silk.NET.Assimp
         TextureTypeDiffuseRoughness = 0x10,
         [NativeName("Name", "aiTextureType_AMBIENT_OCCLUSION")]
         TextureTypeAmbientOcclusion = 0x11,
+        [NativeName("Name", "aiTextureType_SHEEN")]
+        TextureTypeSheen = 0x13,
+        [NativeName("Name", "aiTextureType_CLEARCOAT")]
+        TextureTypeClearcoat = 0x14,
+        [NativeName("Name", "aiTextureType_TRANSMISSION")]
+        TextureTypeTransmission = 0x15,
         [NativeName("Name", "aiTextureType_UNKNOWN")]
         TextureTypeUnknown = 0x12,
     }

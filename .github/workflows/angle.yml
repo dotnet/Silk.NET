@@ -18,12 +18,14 @@ jobs:
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
+              sudo apt-get update
               sudo apt-get remove php7.4-common 
               sudo apt-get install -y libx11-xcb-dev libapache2-mod-php7.4
           - os: windows-latest
             name: Windows
             nuke_invoke: ./build.cmd
-            extras: ""
+            extras: |
+              pwsh build\Install-WindowsSDK.ps1
           - os: macos-latest
             name: Darwin
             nuke_invoke: ./build.sh
@@ -53,7 +55,7 @@ jobs:
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.100
+          dotnet-version: 6.0.201
       - name: Build ANGLE
         run: ${{ matrix.env.nuke_invoke }} Angle
         env:

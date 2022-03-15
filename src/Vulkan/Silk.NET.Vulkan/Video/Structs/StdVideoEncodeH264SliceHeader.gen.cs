@@ -22,6 +22,7 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH264SliceHeader
         (
             StdVideoEncodeH264SliceHeaderFlags? flags = null,
+            uint? firstMbInSlice = null,
             StdVideoH264SliceType? sliceType = null,
             byte? seqParameterSetId = null,
             byte? picParameterSetId = null,
@@ -31,13 +32,17 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH264CabacInitIdc? cabacInitIdc = null,
             StdVideoH264DisableDeblockingFilterIdc? disableDeblockingFilterIdc = null,
             byte? sliceAlphaC0OffsetDiv2 = null,
-            byte? sliceBetaOffsetDiv2 = null,
-            StdVideoEncodeH264RefMemMgmtCtrlOperations* pMemMgmtCtrlOperations = null
+            byte? sliceBetaOffsetDiv2 = null
         ) : this()
         {
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (firstMbInSlice is not null)
+            {
+                FirstMbInSlice = firstMbInSlice.Value;
             }
 
             if (sliceType is not null)
@@ -89,11 +94,6 @@ namespace Silk.NET.Vulkan.Video
             {
                 SliceBetaOffsetDiv2 = sliceBetaOffsetDiv2.Value;
             }
-
-            if (pMemMgmtCtrlOperations is not null)
-            {
-                PMemMgmtCtrlOperations = pMemMgmtCtrlOperations;
-            }
         }
 
 
@@ -101,6 +101,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "StdVideoEncodeH264SliceHeaderFlags")]
         [NativeName("Name", "flags")]
         public StdVideoEncodeH264SliceHeaderFlags Flags;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "first_mb_in_slice")]
+        public uint FirstMbInSlice;
 
         [NativeName("Type", "StdVideoH264SliceType")]
         [NativeName("Type.Name", "StdVideoH264SliceType")]
@@ -151,10 +156,5 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_beta_offset_div2")]
         public byte SliceBetaOffsetDiv2;
-
-        [NativeName("Type", "StdVideoEncodeH264RefMemMgmtCtrlOperations *")]
-        [NativeName("Type.Name", "StdVideoEncodeH264RefMemMgmtCtrlOperations *")]
-        [NativeName("Name", "pMemMgmtCtrlOperations")]
-        public StdVideoEncodeH264RefMemMgmtCtrlOperations* PMemMgmtCtrlOperations;
     }
 }

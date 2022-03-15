@@ -118,6 +118,7 @@
             "type": "string",
             "enum": [
               "Angle",
+              "Assimp",
               "BuildLibSilkDroid",
               "Clean",
               "Compile",
@@ -153,6 +154,7 @@
             "type": "string",
             "enum": [
               "Angle",
+              "Assimp",
               "BuildLibSilkDroid",
               "Clean",
               "Compile",
@@ -186,6 +188,10 @@
             "Quiet",
             "Verbose"
           ]
+        },
+        "Warnings": {
+          "type": "boolean",
+          "description": "Outputs build warnings instead of keeping the MSBuild logging quiet with just errors"
         }
       }
     }

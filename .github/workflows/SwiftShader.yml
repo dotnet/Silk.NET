@@ -18,6 +18,7 @@ jobs:
             name: Linux
             nuke_invoke: ./build.sh
             extras: |
+              sudo apt-get update
               sudo apt-get install -y libx11-xcb-dev 
           - os: windows-latest
             name: Windows
@@ -52,7 +53,7 @@ jobs:
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.100
+          dotnet-version: 6.0.201
       - name: Build SwiftShader
         run: ${{ matrix.env.nuke_invoke }} SwiftShader
         env:

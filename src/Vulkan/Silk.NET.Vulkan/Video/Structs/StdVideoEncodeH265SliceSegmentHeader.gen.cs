@@ -34,7 +34,6 @@ namespace Silk.NET.Vulkan.Video
             byte? lumaLog2WeightDenom = null,
             byte? deltaChromaLog2WeightDenom = null,
             byte? maxNumMergeCand = null,
-            byte? sliceQpDelta = null,
             byte? sliceCbQpOffset = null,
             byte? sliceCrQpOffset = null,
             byte? sliceBetaOffsetDiv2 = null,
@@ -108,11 +107,6 @@ namespace Silk.NET.Vulkan.Video
             if (maxNumMergeCand is not null)
             {
                 MaxNumMergeCand = maxNumMergeCand.Value;
-            }
-
-            if (sliceQpDelta is not null)
-            {
-                SliceQpDelta = sliceQpDelta.Value;
             }
 
             if (sliceCbQpOffset is not null)
@@ -253,11 +247,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "MaxNumMergeCand")]
         public byte MaxNumMergeCand;
-
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "slice_qp_delta")]
-        public byte SliceQpDelta;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]

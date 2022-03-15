@@ -23,12 +23,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264NaluSliceExt,
             void* pNext = null,
-            Video.StdVideoEncodeH264SliceHeader* pSliceHeaderStd = null,
             uint? mbCount = null,
-            byte? refFinalList0EntryCount = null,
-            VideoEncodeH264DpbSlotInfoEXT* pRefFinalList0Entries = null,
-            byte? refFinalList1EntryCount = null,
-            VideoEncodeH264DpbSlotInfoEXT* pRefFinalList1Entries = null
+            VideoEncodeH264ReferenceListsEXT* pReferenceFinalLists = null,
+            Video.StdVideoEncodeH264SliceHeader* pSliceHeaderStd = null
         ) : this()
         {
             if (sType is not null)
@@ -41,34 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pSliceHeaderStd is not null)
-            {
-                PSliceHeaderStd = pSliceHeaderStd;
-            }
-
             if (mbCount is not null)
             {
                 MbCount = mbCount.Value;
             }
 
-            if (refFinalList0EntryCount is not null)
+            if (pReferenceFinalLists is not null)
             {
-                RefFinalList0EntryCount = refFinalList0EntryCount.Value;
+                PReferenceFinalLists = pReferenceFinalLists;
             }
 
-            if (pRefFinalList0Entries is not null)
+            if (pSliceHeaderStd is not null)
             {
-                PRefFinalList0Entries = pRefFinalList0Entries;
-            }
-
-            if (refFinalList1EntryCount is not null)
-            {
-                RefFinalList1EntryCount = refFinalList1EntryCount.Value;
-            }
-
-            if (pRefFinalList1Entries is not null)
-            {
-                PRefFinalList1Entries = pRefFinalList1Entries;
+                PSliceHeaderStd = pSliceHeaderStd;
             }
         }
 
@@ -83,35 +65,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoEncodeH264SliceHeader*")]
-        [NativeName("Type.Name", "StdVideoEncodeH264SliceHeader")]
-        [NativeName("Name", "pSliceHeaderStd")]
-        public Video.StdVideoEncodeH264SliceHeader* PSliceHeaderStd;
-/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "mbCount")]
         public uint MbCount;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refFinalList0EntryCount")]
-        public byte RefFinalList0EntryCount;
+        [NativeName("Type", "VkVideoEncodeH264ReferenceListsEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH264ReferenceListsEXT")]
+        [NativeName("Name", "pReferenceFinalLists")]
+        public VideoEncodeH264ReferenceListsEXT* PReferenceFinalLists;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264DpbSlotInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
-        [NativeName("Name", "pRefFinalList0Entries")]
-        public VideoEncodeH264DpbSlotInfoEXT* PRefFinalList0Entries;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refFinalList1EntryCount")]
-        public byte RefFinalList1EntryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264DpbSlotInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
-        [NativeName("Name", "pRefFinalList1Entries")]
-        public VideoEncodeH264DpbSlotInfoEXT* PRefFinalList1Entries;
+        [NativeName("Type", "StdVideoEncodeH264SliceHeader*")]
+        [NativeName("Type.Name", "StdVideoEncodeH264SliceHeader")]
+        [NativeName("Name", "pSliceHeaderStd")]
+        public Video.StdVideoEncodeH264SliceHeader* PSliceHeaderStd;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -525,7 +525,9 @@
                     "StdVideoEncodeH265ReferenceModifications": "Video.StdVideoEncodeH265ReferenceModifications",
                     "StdVideoH265VideoParameterSet": "Video.StdVideoH265VideoParameterSet",
                     "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo",
-                    "StdVideoEncodeH265SliceSegmentHeader": "Video.StdVideoEncodeH265SliceSegmentHeader"
+                    "StdVideoEncodeH265SliceSegmentHeader": "Video.StdVideoEncodeH265SliceSegmentHeader",
+                    "StdVideoEncodeH264RefMemMgmtCtrlOperations": "Video.StdVideoEncodeH264RefMemMgmtCtrlOperations",
+                    "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -617,24 +619,25 @@
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
                     "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/Assimp/include",
                     "-Isrc/Assimp/Include"
                 ],
                 "traverse": [
-                    "src/Assimp/Include/assimp/cexport.h",
-                    "src/Assimp/Include/assimp/cfileio.h",
-                    "src/Assimp/Include/assimp/cimport.h",
-                    "src/Assimp/Include/assimp/types.h",
-                    "src/Assimp/Include/assimp/importerdesc.h",
-                    "src/Assimp/Include/assimp/material.h",
-                    "src/Assimp/Include/assimp/version.h",
-                    "src/Assimp/Include/assimp/texture.h",
-                    "src/Assimp/Include/assimp/mesh.h",
-                    "src/Assimp/Include/assimp/light.h",
-                    "src/Assimp/Include/assimp/camera.h",
-                    "src/Assimp/Include/assimp/anim.h",
-                    "src/Assimp/Include/assimp/metadata.h",
-                    "src/Assimp/Include/assimp/scene.h",
-                    "src/Assimp/Include/assimp/aabb.h"
+                    "build/submodules/Assimp/include/assimp/cexport.h",
+                    "build/submodules/Assimp/include/assimp/cfileio.h",
+                    "build/submodules/Assimp/include/assimp/cimport.h",
+                    "build/submodules/Assimp/include/assimp/types.h",
+                    "build/submodules/Assimp/include/assimp/importerdesc.h",
+                    "build/submodules/Assimp/include/assimp/material.h",
+                    "build/submodules/Assimp/include/assimp/version.h",
+                    "build/submodules/Assimp/include/assimp/texture.h",
+                    "build/submodules/Assimp/include/assimp/mesh.h",
+                    "build/submodules/Assimp/include/assimp/light.h",
+                    "build/submodules/Assimp/include/assimp/camera.h",
+                    "build/submodules/Assimp/include/assimp/anim.h",
+                    "build/submodules/Assimp/include/assimp/metadata.h",
+                    "build/submodules/Assimp/include/assimp/scene.h",
+                    "build/submodules/Assimp/include/assimp/aabb.h"
                 ],
                 "classes": {
                     "assimp.h": "[Core]Assimp"
@@ -693,7 +696,7 @@
                     "aiColor4D": "System.Numerics.Vector4",
                     "aiColor3D": "System.Numerics.Vector3",
                     "aiVector2D": "System.Numerics.Vector2",
-                    "aiQuaternion": "System.Numerics.Quaternion",
+                    "aiQuaternion": "AssimpQuaternion",
                     "aiMatrix4x4": "System.Numerics.Matrix4x4",
                     "aiMatrix3x3": "Silk.NET.Maths.Matrix3X3<float>",
                     "aiAABB": "Silk.NET.Maths.Box3D<float>",
@@ -1277,6 +1280,7 @@
                 }
             },
             "exclude": [
+                "ID3D10Blob"
             ],
             "rename": {
                 "D3D11_OMAC": "OMAC"
@@ -1312,7 +1316,8 @@
             },
             "typeMaps": [
                 {
-                    "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001"
+                    "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001",
+                    "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

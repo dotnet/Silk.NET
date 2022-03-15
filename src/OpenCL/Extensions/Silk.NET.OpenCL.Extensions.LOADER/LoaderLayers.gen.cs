@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
     {
         public const string ExtensionName = "LOADER_layers";
         [NativeApi(EntryPoint = "clGetLayerInfo", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetLayerInfo([Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
+        public unsafe partial int GetLayerInfo([Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetLayerInfo", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetLayerInfo([Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
+        public unsafe partial int GetLayerInfo([Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetLayerInfo", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetLayerInfo<T0>([Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
+        public unsafe partial int GetLayerInfo<T0>([Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetLayerInfo", Convention = CallingConvention.Winapi)]
-        public partial int GetLayerInfo<T0>([Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
+        public partial int GetLayerInfo<T0>([Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
         public unsafe partial int InitLayer([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.In)] void* target_dispatch, [Flow(FlowDirection.Out)] uint* num_entries_ret, [Flow(FlowDirection.In)] void** layer_dispatch);

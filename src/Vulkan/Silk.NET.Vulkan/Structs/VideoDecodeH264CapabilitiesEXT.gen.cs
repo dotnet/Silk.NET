@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH264CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
+    public unsafe partial struct VideoDecodeH264CapabilitiesEXT : IExtendsChain<VideoDecodeCapabilitiesKHR>
     {
         public VideoDecodeH264CapabilitiesEXT
         (
