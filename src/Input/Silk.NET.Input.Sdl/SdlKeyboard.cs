@@ -70,7 +70,7 @@ namespace Silk.NET.Input.Sdl
                         }
                         else
                         {
-                            keyUp = key;
+                            keyUp = Key.Unknown;
                         }
 
                         KeyUp?.Invoke(this, keyUp, (int) @event.Key.Keysym.Scancode);
