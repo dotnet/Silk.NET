@@ -38,7 +38,7 @@ jobs:
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android android-aot ios maccatalyst maui
+      run: dotnet workload install android ios maccatalyst maui
     - name: Test
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
