@@ -17,7 +17,7 @@ namespace Silk.NET.DirectStorage
     public static class DStorageOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         public static unsafe int SetConfiguration(this DStorage thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Configuration> configuration)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         public static unsafe int GetFactory(this DStorage thisApi, Span<Guid> riid, void** ppv)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         public static unsafe int GetFactory(this DStorage thisApi, Span<Guid> riid, ref void* ppv)
         {
             // SpanOverloader

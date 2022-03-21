@@ -33,32 +33,32 @@ namespace Silk.NET.DirectStorage
         public const int RequestMaxName = unchecked((int) 0x40);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.Winapi)]
         public unsafe partial int SetConfiguration([Flow(FlowDirection.In)] Configuration* configuration);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 849, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageSetConfiguration", Convention = CallingConvention.Winapi)]
         public partial int SetConfiguration([Flow(FlowDirection.In)] in Configuration configuration);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFactory(Guid* riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFactory(Guid* riid, ref void* ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFactory(ref Guid riid, void** ppv);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\3tq13s04.yoz\\Include\\DirectStorage\\dstorage.h")]
+        [NativeName("Src", "Line 859, Column 9 in C:\\Users\\perks\\AppData\\Local\\Temp\\5fkrgvkb.use\\Include\\DirectStorage\\dstorage.h")]
         [NativeApi(EntryPoint = "DStorageGetFactory", Convention = CallingConvention.Winapi)]
         public unsafe partial int GetFactory(ref Guid riid, ref void* ppv);
 

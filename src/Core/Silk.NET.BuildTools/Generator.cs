@@ -15,6 +15,7 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
@@ -140,7 +141,23 @@ namespace Silk.NET.BuildTools
         public static void RunTask(BindTask task) => RunTask(task, null);
 
         private static void RunTask(BindTask task, Stopwatch? sw)
-        {
+        { 
+            foreach (var (glob, dest) in task.CopyFiles ?? Enumerable.Empty<KeyValuePair<string, string>>())
+            {
+                var sources = Glob(new[]{GetPath(glob)});
+                foreach (var source in sources)
+                {
+                    var destination = Path.Combine(dest, Path.GetFileName(source));
+                    if (File.Exists(dest) || Directory.Exists(Path.GetDirectoryName(dest)) && !Directory.Exists(dest))
+                    {
+                        destination = dest;
+                    }
+
+                    Console.WriteLine($"{source} -> {destination}");
+                    File.Copy(source, destination, true);
+                }
+            }
+            
             foreach (var typeMap in task.TypeMaps)
             {
                 var toAdd = new List<KeyValuePair<string, string>>();
@@ -155,7 +172,7 @@ namespace Silk.NET.BuildTools
                 foreach (var kvp in toAdd)
                 {
                     var includedMap = JsonConvert.DeserializeObject<Dictionary<string, string>>
-                        (File.ReadAllText(kvp.Value));
+                        (File.ReadAllText(GetPath(kvp.Value)));
                     typeMap.Remove(kvp.Key);
                     foreach (var includedKvp in includedMap)
                     {
@@ -362,44 +379,88 @@ namespace Silk.NET.BuildTools
             // $nuget/<name>/<version or *>/<path in package>
             if (split[0].ToLower() == "$nuget" && split.Length >= 3)
             {
-                return Path.Combine
+                var ogVer = split[2];
+                var downloaded = _downloaded.GetOrAdd
                 (
-                    Enumerable.Repeat
-                    (
-                        _downloaded.GetOrAdd
-                        (
-                            $"$nuget/{split[1]}/{split[2]}", _ =>
-                            {
-                                if (split[2].Trim() == "*")
-                                {
-                                    split[2] = JsonConvert.DeserializeObject<VersionsPayload>
-                                    (
-                                        wb.GetStringAsync(string.Format(VersionsUrl, split[1]))
-                                            .GetAwaiter()
-                                            .GetResult()
-                                    ).Versions.Last();
-                                }
-
-                                var url = string.Format(DownloadUrl, split[1], split[2].Trim());
-                                var dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-                                Console.WriteLine($"Downloading & extracting {url} into {dir}");
-                                new ZipArchive
+                    $"$nuget/{split[1]}/{split[2]}", _ =>
+                    {
+                        if (split[2].Trim() == "*")
+                        {
+                            split[2] = JsonConvert.DeserializeObject<VersionsPayload>
                                 (
-                                    wb.GetStreamAsync(url)
+                                    wb.GetStringAsync(string.Format(VersionsUrl, split[1]))
                                         .GetAwaiter()
                                         .GetResult()
-                                ).ExtractToDirectory(dir);
-                                return dir;
-                            }
-                        ), 1
-                    )
-                    .Concat(split.Skip(3))
-                    .ToArray()
+                                )
+                                .Versions.Last();
+                        }
+
+                        var url = string.Format(DownloadUrl, split[1], split[2].Trim());
+                        var dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                        Console.WriteLine($"Downloading & extracting {url} into {dir}");
+                        new ZipArchive
+                        (
+                            wb.GetStreamAsync(url)
+                                .GetAwaiter()
+                                .GetResult()
+                        ).ExtractToDirectory(dir);
+                        return dir;
+                    }
                 );
+
+                var verKey = $"$nuget/{split[1]}/{ogVer}/$version";
+                _downloaded.TryAdd(verKey, split[2]);
+
+                if (split.Last().Trim().ToLower() == "$version")
+                {
+                    var verPath = Path.GetTempFileName();
+                    File.WriteAllText(verPath, _downloaded[verKey]);
+                    return verPath;
+                }
+
+                return Path.Combine(Enumerable.Repeat(downloaded, 1).Concat(split.Skip(3)).ToArray());
             }
 
             return path;
             // ReSharper restore AccessToDisposedClosure
+        }
+        
+        internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
+        {
+            cd ??= Environment.CurrentDirectory;
+            var matcher = new Matcher();
+            static string PathFixup(string path)
+            {
+                if (Path.IsPathFullyQualified(path))
+                {
+                    path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
+                }
+
+                return path.ToLower().Replace('\\', '/');
+            }
+            
+            matcher.AddIncludePatterns
+            (
+                paths.Where(x => !x.StartsWith("!")).Select(PathFixup)
+            );
+            matcher.AddExcludePatterns
+            (
+                paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
+            );
+
+            return matcher.GetResultsInFullPath(cd)
+                .Concat
+                (
+                    paths.Select(x => x.StartsWith('!') ? x[1..] : x)
+                        .Where(Path.IsPathFullyQualified)
+                        .Select(Path.GetPathRoot)
+                        .Distinct()
+                        .SelectMany(x => matcher.GetResultsInFullPath(x))
+                )
+                .Concat(paths.Where(File.Exists))
+                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+                .Distinct()
+                .ToArray();
         }
     }
 }

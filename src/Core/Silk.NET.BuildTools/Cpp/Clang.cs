@@ -117,43 +117,7 @@ namespace Silk.NET.BuildTools.Cpp
                 Name = Path.GetFileNameWithoutExtension(fileName)
             };
 
-            var matcher = new Matcher();
-            static string PathFixup(string path)
-            {
-                if (Path.IsPathFullyQualified(path))
-                {
-                    path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
-                }
-
-                return path.ToLower().Replace('\\', '/');
-            }
-            
-            matcher.AddIncludePatterns
-            (
-                task.ClangOpts.Traverse.Select(PathFixup)
-                    .Where(x => !x.StartsWith("!"))
-            );
-            matcher.AddExcludePatterns
-            (
-                task.ClangOpts.Traverse.Select(PathFixup)
-                    .Where(x => x.StartsWith("!"))
-                    .Select(x => x[1..])
-            );
-
-            var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
-                .Concat
-                (
-                    task.ClangOpts.Traverse.Select(x => x.StartsWith('!') ? x[1..] : x)
-                        .Where(Path.IsPathFullyQualified)
-                        .Select(Path.GetPathRoot)
-                        .Distinct()
-                        .SelectMany(x => matcher.GetResultsInFullPath(x))
-                )
-                .Concat(task.ClangOpts.Traverse.Where(File.Exists))
-                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
-                .Distinct()
-                .ToArray();
-
+            var traversals = Generator.Glob(task.ClangOpts.Traverse).ToArray();
             task.ClangOpts = task.ClangOpts with { Traverse = traversals };
 
             Console.WriteLine("Loading input header...");
