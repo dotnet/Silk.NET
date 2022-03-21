@@ -561,11 +561,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         varying vec2 Frag_UV;
         varying vec4 Frag_Color;
 
-        uniform sampler2D tex0;
+        uniform sampler2D Texture;
 
         void main()
         {
-            gl_FragColor = Frag_Color * texture2D(tex0, Frag_UV.st);
+            gl_FragColor = Frag_Color * texture2D(Texture, Frag_UV.st);
         }";
         #endif
 
