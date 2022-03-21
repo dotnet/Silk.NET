@@ -105,7 +105,7 @@ namespace Silk.NET.BuildTools.Cpp
                     return false;
                 }
 
-                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/"));
+                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/").ToLower());
             }
         }
 
@@ -118,23 +118,43 @@ namespace Silk.NET.BuildTools.Cpp
             };
 
             var matcher = new Matcher();
+            static string PathFixup(string path)
+            {
+                if (Path.IsPathFullyQualified(path))
+                {
+                    path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
+                }
+
+                return path.ToLower().Replace('\\', '/');
+            }
+            
             matcher.AddIncludePatterns
             (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                task.ClangOpts.Traverse.Select(PathFixup)
                     .Where(x => !x.StartsWith("!"))
             );
             matcher.AddExcludePatterns
             (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                task.ClangOpts.Traverse.Select(PathFixup)
                     .Where(x => x.StartsWith("!"))
-                    .Select(x => x.Substring(1))
+                    .Select(x => x[1..])
             );
 
             var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
-                .Concat(task.ClangOpts.Traverse.Where(x => File.Exists(x)))
+                .Concat
+                (
+                    task.ClangOpts.Traverse.Select(x => x.StartsWith('!') ? x[1..] : x)
+                        .Where(Path.IsPathFullyQualified)
+                        .Select(Path.GetPathRoot)
+                        .Distinct()
+                        .SelectMany(x => matcher.GetResultsInFullPath(x))
+                )
+                .Concat(task.ClangOpts.Traverse.Where(File.Exists))
                 .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
                 .Distinct()
                 .ToArray();
+
+            task.ClangOpts = task.ClangOpts with { Traverse = traversals };
 
             Console.WriteLine("Loading input header...");
             using var ms = new MemoryStream();
@@ -214,7 +234,10 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Visting declarations...");
             VisitDecls(DeclsOf(translationUnitDecl, translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
-
+            if (traversals.Any(x => x.Contains("winnt.h")))
+            {
+                Debugger.Break();
+            }
             Console.WriteLine("Creating finished profile...");
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
