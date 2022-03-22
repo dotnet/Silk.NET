@@ -601,7 +601,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.Fonts.GetTexDataAsRGBA32(out IntPtr pixels, out int width, out int height, out int bytesPerPixel);   // Load as RGBA 32-bit (75% of the memory is wasted, but default font is so small) because it is more likely to be compatible with user's existing shaders. If your ImTextureId represent a higher-level concept than just a GL texture id, consider calling GetTexDataAsAlpha8() instead to save on GPU memory.
 
             // Upload texture to graphics system
-            _gl.GetInteger(GLEnum.Texture2D, out int lastTexture);
+            _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
          
             _fontTexture = new Texture(_gl, width, height, pixels);
             _fontTexture.Bind();
