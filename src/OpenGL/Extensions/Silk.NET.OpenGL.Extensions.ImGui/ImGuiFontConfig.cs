@@ -4,6 +4,8 @@
 namespace Silk.NET.OpenGL.Extensions.ImGui
 #elif GLES
 namespace Silk.NET.OpenGLES.Extensions.ImGui
+#elif LEGACY
+namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 #endif
 {
     public readonly struct ImGuiFontConfig
