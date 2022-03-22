@@ -567,7 +567,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> b = new Quaternion<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
-            object obj = b;
+            object? obj = b;
 
             bool expected = true;
             bool actual = a.Equals(obj);

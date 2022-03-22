@@ -1,4 +1,4 @@
-<Project InitialTargets="PostImportDefinitions">
+<Project>
     <!-- NuGet Stuff -->
     <ItemGroup>
         <Content Include="$(MSBuildThisFileDirectory)..\documentation\branding\logo.png"
@@ -9,10 +9,4 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
-    <!-- Force Documentation -->
-    <Target Name="PostImportDefinitions">
-        <PropertyGroup Condition="'$(SilkDocumentationExempt)' != 'true'">
-            <WarningsAsErrors>$(SilkDocumentationWarningsAsErrors);$(WarningsAsErrors)</WarningsAsErrors>
-        </PropertyGroup>
-    </Target>
 </Project>

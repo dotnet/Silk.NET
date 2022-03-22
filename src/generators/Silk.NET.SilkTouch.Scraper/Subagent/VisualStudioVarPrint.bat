@@ -2,7 +2,8 @@
 :: The .NET Foundation licenses this file to you under the MIT license.
 
 echo off
-.\Common7\Tools\VsDevCmd.bat >NUL
+cd
+call .\Common7\Tools\VsDevCmd.bat >NUL
 echo ***VARSTART***
 set
 echo ***VAREND***

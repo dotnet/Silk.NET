@@ -5,11 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Scraper.Subagent;
-using Ultz.Extensions.Logging;
 
 namespace SilkTouch
 {
@@ -18,6 +17,13 @@ namespace SilkTouch
     /// </summary>
     internal class ClangSharpSubagent : ISubagent
     {
+        private readonly ILogger _logger;
+
+        public ClangSharpSubagent(ILogger<ClangSharpSubagent> logger)
+        {
+            _logger = logger;
+        }
+        
         /// <inheritdoc />
         public async Task<int> RunClangSharpAsync(SubagentOptions opts, List<string>? errors = null)
         {
@@ -65,7 +71,7 @@ namespace SilkTouch
                 }
             }
             
-            Log.Trace($"Running command \"{proc.StartInfo.FileName}\" {proc.StartInfo.Arguments}");
+            _logger.LogTrace("Running command \"{FileName}\" {Arguments}", proc.StartInfo.FileName, proc.StartInfo.Arguments);
 
             // run the subprocess.
             if (!proc.Start())
@@ -82,35 +88,16 @@ namespace SilkTouch
                     continue;
                 }
 
-                switch (line[..2])
+                var level = line[..2] switch
                 {
-                    case "I:":
-                    {
-                        Log.Information($"{opts.NamespaceName}: {line[2..]}");
-                        break;
-                    }
-                    case "W:":
-                    {
-                        Log.Warning($"{opts.NamespaceName}: {line[2..]}");
-                        break;
-                    }
-                    case "T:":
-                    {
-                        Log.Trace($"{opts.NamespaceName}: {line[2..]}");
-                        break;
-                    }
-                    case "E:":
-                    {
-                        Log.Error($"{opts.NamespaceName}: {line[2..]}");
-                        errors?.Add(line[2..]);
-                        break;
-                    }
-                    default:
-                    {
-                        Log.Debug($"{opts.NamespaceName}: {line}");
-                        break;
-                    }
-                }
+                    "I:" => LogLevel.Information,
+                    "W:" => LogLevel.Warning,
+                    "T:" => LogLevel.Trace,
+                    "E:" => LogLevel.Error,
+                    _ => LogLevel.Debug
+                };
+                
+                _logger.Log(level, "{Namespace}: {Message}", opts.NamespaceName, line[2..]);
             }
             
             await proc.WaitForExitAsync();
