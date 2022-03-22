@@ -12,7 +12,7 @@ All JSON configuration structures are represented by C# records in the Silk.NET.
 
 ### Project Configuration
 
-Each project has its own JSON configuration file which defines what each generator does for that particular project. This file should be added by the user as an `AdditionalFiles` file, with the name `silktouch.json` unless the `silktouch_config_file` `.editorconfig` option is used to override this with a new file name or file path (either absolute or relative). 
+Each project has its own JSON configuration file which defines what each generator does for that particular project. This file should be added by the user as an `AdditionalFiles` file, with the name `silktouch.json` unless the `silktouch_config_file` `.editorconfig` option in the source generator format factor or the `config` option in the CLI form factor are used to override this with a new file name or file path (either absolute or relative). 
 
 Each generator has its own specific configuration structure, which is outlined in XML documentation in the `Config.cs` file as well as the markdown documents for each individual generator.
 
@@ -21,6 +21,13 @@ The project configuration also provides a (relative or absolute) path to a file 
 ### Global Configuration
 
 The global configuration contains variables which aren't specific to a particular project or generation process/job. Stuff like the License Header, which doesn't need to be duplicated across every single project configuration.
+
+### CLI Configuration
+The CLI has 3 ways to be configured:
+- Command line parameters, possible formats are "key1=value1 --key2=value2 /key3=value3 --key4 value4 /key5 value5"
+- A JSON file, with the path taken either from the config option `config` or by default silktouch.json (in the working directory)
+- Environment Variables, prefixed with SilkTouch_ (to configure hierarchical data, use two underscores like `set SilkTouch_Parent__Root=value`)
+The CLI uses the Microsoft.Extensions.Configuration package for this, for more information on how to use the above options see [here](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/) (note that we do not use user secrets)
 
 ## Generation
 

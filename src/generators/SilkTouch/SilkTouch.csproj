@@ -20,6 +20,7 @@
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
       <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" />
       <PackageReference Include="System.CommandLine" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" />
     </ItemGroup>
 
 </Project>

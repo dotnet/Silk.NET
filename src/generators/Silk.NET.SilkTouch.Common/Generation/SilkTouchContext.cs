@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Silk.NET.SilkTouch.Configuration;
@@ -12,10 +13,6 @@ namespace Silk.NET.SilkTouch.Generation
     /// </summary>
     /// <param name="AssemblyName">The name of the assembly represented by the C# project.</param>
     /// <param name="Compilation">The Roslyn compilation, containing all C# compiler info (such as syntax trees)</param>
-    /// <param name="Configuration">The project-specific configuration for this project.</param>
-    /// <param name="GlobalConfiguration">
-    /// The global/common configuration referenced by the <see cref="Configuration"/>'s
-    /// <see cref="ProjectConfiguration.GlobalConfigFile"/>.</param>
     /// <param name="BaseDirectory">
     /// The "base directory", used as the root for all relative paths referenced elsewhere in the configuration. This is
     /// usually the same folder in which the C# project file (<c>csproj</c>) is contained.
@@ -24,9 +21,8 @@ namespace Silk.NET.SilkTouch.Generation
     (
         string AssemblyName,
         Compilation Compilation,
-        ProjectConfiguration Configuration,
-        GlobalConfiguration? GlobalConfiguration,
-        string BaseDirectory
+        string BaseDirectory,
+        IServiceProvider ServiceProvider
     )
     {
         // Internal Properties

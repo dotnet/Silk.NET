@@ -883,7 +883,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             // case 1: compare between same values
-            object obj = b;
+            object? obj = b;
 
             bool expected = true;
             bool actual = a.Equals(obj);
