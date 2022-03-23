@@ -198,10 +198,6 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Visting declarations...");
             VisitDecls(DeclsOf(translationUnitDecl, translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
-            if (traversals.Any(x => x.Contains("winnt.h")))
-            {
-                Debugger.Break();
-            }
             Console.WriteLine("Creating finished profile...");
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
