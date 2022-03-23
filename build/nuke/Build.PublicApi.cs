@@ -76,7 +76,7 @@ partial class Build
                     var cmd = string.Format
                     (
                         FormatDeclCmd,
-                        GitHubActions.Instance.GitHubRef?.Contains("/pull/") ?? false
+                        GitHubActions.Instance.Ref?.Contains("/pull/") ?? false
                             ? "inbound_pr/Silk.NET.sln"
                             : "Silk.NET.sln"
                     );
@@ -106,7 +106,7 @@ partial class Build
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
-        if (GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
+        if (GitHubActions.Instance?.Repository == "dotnet/Silk.NET" &&
             !string.IsNullOrWhiteSpace(pushableToken))
         {
             if (curBranch == "HEAD" || string.IsNullOrWhiteSpace(curBranch))

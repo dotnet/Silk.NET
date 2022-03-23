@@ -31,7 +31,7 @@ partial class Build
 
     [CanBeNull] string AndroidHomeValue;
 
-    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.GitHubJob)
+    static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
@@ -456,7 +456,7 @@ partial class Build
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
         if (!string.IsNullOrWhiteSpace(pushableToken) &&
-            GitHubActions.Instance?.GitHubRepository == "dotnet/Silk.NET" &&
+            GitHubActions.Instance?.Repository == "dotnet/Silk.NET" &&
             curBranch != "HEAD" &&
             !string.IsNullOrWhiteSpace(curBranch) &&
             !curBranch.StartsWith("ci/", StringComparison.OrdinalIgnoreCase) && // ignore other CI branches
