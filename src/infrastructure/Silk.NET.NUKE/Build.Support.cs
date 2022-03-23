@@ -134,7 +134,7 @@ partial class Build
             return;
         }
         
-        var @ref = GitHubActions.Instance.GitHubRef;
+        var @ref = GitHubActions.Instance?.Ref;
         if (string.IsNullOrWhiteSpace(@ref))
         {
             Logger.Info("Not running in GitHub Actions, skipping writing a comment.");
@@ -176,7 +176,7 @@ partial class Build
             commentText = commentText.Replace($"{{{key}}}", value);
         }
         
-        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance.GitHubRunNumber.ToString())
+        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance?.RunNumber.ToString())
             .Replace("{typeId}", type);
 
         if (existingComment is not null)
@@ -211,8 +211,6 @@ partial class Build
             toolSettings.ProcessExecutionTimeout,
             toolSettings.ProcessLogOutput,
             toolSettings.ProcessLogInvocation,
-            toolSettings.ProcessLogTimestamp,
-            toolSettings.ProcessLogFile,
             toolSettings.ProcessCustomLogger,
             arguments.FilterSecrets
         );
