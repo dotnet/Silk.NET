@@ -1,0 +1,25 @@
+<Project>
+  <!--
+	This file tracks all package versions used in Silk.NET, including tests.
+	For more information what this is see https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions
+	-->
+  <ItemGroup>
+	<PackageVersion Include="BenchmarkDotNet" Version="0.12.1" />
+	<PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-2.final" />
+    <PackageVersion Include="System.Text.Json" Version="6.0.0-preview.6.21352.12" />
+    <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta2" />
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.4.1" />
+    <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0-preview.6.21352.12" />
+    <PackageVersion Include="Microsoft.Build.Framework" Version="16.10.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final" />
+    <PackageVersion Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
+	<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageVersion Include="NuGet.Protocol" Version="5.8.0" />
+    <PackageVersion Include="Nuke.Common" Version="5.0.0" />
+    <PackageVersion Include="Ultz.Bcl.Half" Version="1.0.0" />
+    <PackageVersion Include="Microsoft.Bcl.HashCode" Version="1.1.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.1" />
+  </ItemGroup>
+</Project>
