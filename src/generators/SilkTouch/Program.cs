@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.Diagnostics;
@@ -205,8 +205,7 @@ namespace SilkTouch
             if (isSolution)
             {
                 var sln = await workspace.OpenSolutionAsync(project.FullName);
-                // ReSharper disable once AccessToDisposedClosure
-                await Task.WhenAll(sln.Projects.Select(x => GeneratorHandoff.HandleProjectAsync(services, x)));
+                await Parallel.ForEachAsync(sln.Projects, (x, _) => GeneratorHandoff.HandleProjectAsync(services, x));
             }
             else
             {

@@ -11,10 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{6842A2
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}"
-ProjectSection(SolutionItems) = preProject
-	src\Directory.Build.props = src\Directory.Build.props
-	src\Directory.Build.targets = src\Directory.Build.targets
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{C9718C94-2F21-4E8D-B55D-8F0B1A131346}"
 EndProject
@@ -22,26 +22,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "src\libra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{FD15E196-1C63-47D6-8AD5-64F015120B4B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "experiments", "experiments", "{1565E50D-3BF1-407E-842A-169F4F86513D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{F07CABFC-DC6A-4B5B-BC56-B10EEC2C0BFA}"
-ProjectSection(SolutionItems) = preProject
-	src\infrastructure\.gitignore = src\infrastructure\.gitignore
-	src\infrastructure\_._ = src\infrastructure\_._
-	src\infrastructure\Directory.Build.targets = src\infrastructure\Directory.Build.targets
-	src\infrastructure\README.md = src\infrastructure\README.md
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\infrastructure\.gitignore = src\infrastructure\.gitignore
+		src\infrastructure\_._ = src\infrastructure\_._
+		src\infrastructure\Directory.Build.targets = src\infrastructure\Directory.Build.targets
+		src\infrastructure\README.md = src\infrastructure\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bindings", "bindings", "{9020C7C6-C366-4BD3-8C8A-F81394EC7174}"
-ProjectSection(SolutionItems) = preProject
-	src\bindings\silktouch.json = src\bindings\silktouch.json
-	src\bindings\Directory.Build.targets = src\bindings\Directory.Build.targets
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\bindings\silktouch.json = src\bindings\silktouch.json
+		src\bindings\Directory.Build.targets = src\bindings\Directory.Build.targets
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generators", "generators", "{8238D9F3-E158-4633-8017-B29AA3AD61F7}"
-ProjectSection(SolutionItems) = preProject
-	src\generators\README.md = src\generators\README.md
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\generators\README.md = src\generators\README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Assimp.Native", "src\infrastructure\Silk.NET.Assimp.Native\Silk.NET.Assimp.Native.csproj", "{1FBF178D-3F9B-46C5-9D50-21D4D547113E}"
 EndProject
@@ -74,8 +72,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Tests", "tests\Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.csproj", "{A0726B46-F2F6-4996-A640-1BD01EEBAF07}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4F57D302-947A-45B9-ACE6-E1AF87152042}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,18 +275,6 @@ Global
 		{A0726B46-F2F6-4996-A640-1BD01EEBAF07}.Release|x64.Build.0 = Release|Any CPU
 		{A0726B46-F2F6-4996-A640-1BD01EEBAF07}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0726B46-F2F6-4996-A640-1BD01EEBAF07}.Release|x86.Build.0 = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|x64.Build.0 = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Debug|x86.Build.0 = Debug|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|x64.ActiveCfg = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|x64.Build.0 = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|x86.ActiveCfg = Release|Any CPU
-		{4F57D302-947A-45B9-ACE6-E1AF87152042}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -300,7 +284,6 @@ Global
 		{C9718C94-2F21-4E8D-B55D-8F0B1A131346} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
 		{7A2A3176-DBA1-4026-AF65-8E36B4F09B01} = {C9718C94-2F21-4E8D-B55D-8F0B1A131346}
 		{FD15E196-1C63-47D6-8AD5-64F015120B4B} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
-		{1565E50D-3BF1-407E-842A-169F4F86513D} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
 		{F07CABFC-DC6A-4B5B-BC56-B10EEC2C0BFA} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
 		{9020C7C6-C366-4BD3-8C8A-F81394EC7174} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
 		{8238D9F3-E158-4633-8017-B29AA3AD61F7} = {EA3CA547-452A-4D9E-BDB3-3BC5D7F15ACA}
