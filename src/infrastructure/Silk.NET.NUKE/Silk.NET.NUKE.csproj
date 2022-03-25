@@ -14,7 +14,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
     <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
-    <PackageReference Include="Nuke.Common" Version="5.0.0" />
+    <PackageReference Include="Nuke.Common" Version="6.0.1" />
   </ItemGroup>
 
 </Project>
