@@ -17,6 +17,7 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.Git;
 using Octokit;
 using Octokit.Internal;
+using Serilog;
 using static Nuke.Common.IO.CompressionTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.IO.HttpTasks;
@@ -29,87 +30,13 @@ partial class Build
 {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
-    [CanBeNull] string AndroidHomeValue;
+    string? AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Environment.ProcessorCount}"
         : string.Empty;
 
-    string AndroidHome
-    {
-        get
-        {
-            if (AndroidHomeValue is not null)
-            {
-                return AndroidHomeValue;
-            }
-
-            var utils = RootDirectory / "build" / "utilities";
-            DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
-            AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
-            Logger.Info($"Android Home: {AndroidHomeValue}");
-            return AndroidHomeValue;
-        }
-    }
-
-    Target BuildLibSilkDroid => CommonTarget
-    (
-        x => x.Before(Compile)
-            .After(Clean)
-            .Executes
-            (
-                () =>
-                {
-                    if (!Native)
-                    {
-                        Logger.Warn("Skipping gradlew build as the --native parameter has not been specified.");
-                        return Enumerable.Empty<Output>();
-                    }
-
-                    var sdl = RootDirectory / "build" / "submodules" / "SDL";
-                    var silkDroid = SourceDirectory / "Windowing" / "SilkDroid";
-                    var xcopy = new (string, string)[]
-                    {
-                        (sdl / "android-project" / "app" / "src" / "main" / "java",
-                            silkDroid / "app" / "src" / "main" / "java"),
-                        (sdl, silkDroid / "app" / "jni" / "SDL2")
-                    };
-
-                    foreach (var (from, to) in xcopy)
-                    {
-                        if (!Directory.Exists(from))
-                        {
-                            ControlFlow.Fail
-                                ($"\"{from}\" does not exist (did you forget to recursively clone the repo?)");
-                        }
-
-                        CopyDirectoryRecursively(from, to, DirectoryExistsPolicy.Merge, FileExistsPolicy.Overwrite);
-                    }
-
-                    var envVars = CreateEnvVarDictionary();
-                    envVars["ANDROID_HOME"] = AndroidHome;
-
-                    foreach (var ndk in Directory.GetDirectories((AbsolutePath) AndroidHome / "ndk")
-                                 .OrderByDescending(x => Version.Parse(Path.GetFileName(x))))
-                    {
-                        envVars["ANDROID_NDK_HOME"] = ndk;
-                    }
-
-                    using var process = StartShell($".{Path.PathSeparator}gradlew build", silkDroid, envVars);
-                    process.AssertZeroExitCode();
-                    var ret = process.Output;
-                    CopyFile
-                    (
-                        silkDroid / "app" / "build" / "outputs" / "aar" / "app-release.aar",
-                        SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Android" / "app-release.aar",
-                        FileExistsPolicy.Overwrite
-                    );
-                    return ret;
-                }
-            )
-    );
-
-    AbsolutePath SwiftShaderBuildPath => RootDirectory / "build" / "submodules" / "SwiftShader" / "build";
+    AbsolutePath SwiftShaderBuildPath => SourceDirectory / "submodules" / "SwiftShader" / "build";
 
     Target SwiftShader => CommonTarget
     (
@@ -136,7 +63,7 @@ partial class Build
                         _ => throw new("what")
                     };
 
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.SwiftShader.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "infrastructure" / "Silk.NET.Vulkan.SwiftShader.Native" / "runtimes";
                     var outputPath = SwiftShaderBuildPath / sysName;
                     const string icd = "vk_swiftshader_icd.json";
                     if (OperatingSystem.IsWindows())
@@ -194,7 +121,7 @@ partial class Build
             )
     );
 
-    AbsolutePath AnglePath => RootDirectory / "build" / "submodules" / "ANGLE";
+    AbsolutePath AnglePath => SourceDirectory / "submodules" / "ANGLE";
 
     Target Angle => CommonTarget
     (
@@ -228,7 +155,7 @@ partial class Build
                         InheritedShell("sudo ./build/install-build-deps.sh", AnglePath).AssertZeroExitCode();
                     }
 
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.OpenGLES.ANGLE.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "infrastructure" / "Silk.NET.OpenGLES.ANGLE.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
                         InheritedShell
@@ -277,7 +204,7 @@ partial class Build
             )
     );
 
-    AbsolutePath GLFWPath => RootDirectory / "build" / "submodules" / "GLFW";
+    AbsolutePath GLFWPath => SourceDirectory / "submodules" / "GLFW";
 
     Target GLFW => CommonTarget
     (
@@ -291,7 +218,7 @@ partial class Build
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.GLFW.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "infrastructure" / "Silk.NET.GLFW.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
                         InheritedShell($"{prepare} -A X64", GLFWPath)
@@ -340,7 +267,7 @@ partial class Build
             )
     );
 
-    AbsolutePath VulkanLoaderPath => RootDirectory / "build" / "submodules" / "Vulkan-Loader";
+    AbsolutePath VulkanLoaderPath => SourceDirectory / "submodules" / "Vulkan-Loader";
 
     Target VulkanLoader => CommonTarget
     (
@@ -361,7 +288,7 @@ partial class Build
                         .AssertZeroExitCode();
                     InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
                         .AssertZeroExitCode();
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "infrastructure" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
                         CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
@@ -381,7 +308,7 @@ partial class Build
             )
     );
 
-    AbsolutePath AssimpPath => RootDirectory / "build" / "submodules" / "Assimp";
+    AbsolutePath AssimpPath => SourceDirectory / "submodules" / "Assimp";
 
     Target Assimp => CommonTarget
     (
@@ -401,7 +328,7 @@ partial class Build
                     var prepare = "cmake -S. -B build -D BUILD_SHARED_LIBS=ON";
                     var build = $"cmake --build build --config Release{JobsArg}";
                     EnsureCleanDirectory(@out);
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Assimp.Native" / "runtimes";
+                    var runtimes = RootDirectory / "src" / "infrastructure" / "Silk.NET.Assimp.Native" / "runtimes";
                     if (OperatingSystem.IsWindows())
                     {
                         InheritedShell($"{prepare} -A X64", AssimpPath)
@@ -498,13 +425,13 @@ partial class Build
             Git("reset --hard", RootDirectory);
             if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
             {
-                Logger.Info("Checking for existing branch...");
+                Log.Information("Checking for existing branch...");
                 var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
                     .AssertWaitForExit()
                     .ExitCode == 0;
                 if (!exists)
                 {
-                    Logger.Info("None found, creating a new one...");
+                    Log.Information("None found, creating a new one...");
                     Git($"checkout -b \"{newBranch}\"");
                 }
 

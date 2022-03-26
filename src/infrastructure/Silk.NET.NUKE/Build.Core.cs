@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using Nuke.Common;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Serilog;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
@@ -39,12 +40,12 @@ partial class Build
                         )
                     );
 
-                    if (Directory.Exists(RootDirectory / "build" / "output_packages"))
+                    if (Directory.Exists(RootDirectory / "artifacts"))
                     {
-                        Directory.Delete(RootDirectory / "build" / "output_packages", true);
+                        Directory.Delete(RootDirectory / "artifacts", true);
                     }
 
-                    Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
+                    Directory.CreateDirectory(RootDirectory / "artifacts");
 
                     if (Native)
                     {
@@ -57,7 +58,7 @@ partial class Build
                     }
                     else
                     {
-                        Logger.Warn("Skipping gradlew clean as the \"native\" feature-set has not been specified.");
+                        Log.Warning("Skipping gradlew clean as the \"native\" feature-set has not been specified.");
                     }
 
                     return outputs;

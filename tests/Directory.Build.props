@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <NoWarn>1591;$(NoWarn)</NoWarn>
+        <NoWarn>1591</NoWarn>
     </PropertyGroup>
-    <Import Project="$(MSBuildThisFileDirectory)../Directory.Build.props" />
+    <Import Project="$(MSBuildThisFileDirectory)../src/Directory.Build.props" />
 </Project>

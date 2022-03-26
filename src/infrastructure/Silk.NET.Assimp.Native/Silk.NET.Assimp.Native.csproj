@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+    <SilkNativePackage>true</SilkNativePackage>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>$(SilkTargetFramework)</TargetFramework>
-    <VersionPrefix>5.0.1.4</VersionPrefix>
+    <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
+    <PackageVersion>5.2.2</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>

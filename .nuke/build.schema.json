@@ -119,7 +119,6 @@
             "enum": [
               "Angle",
               "Assimp",
-              "BuildLibSilkDroid",
               "Clean",
               "Compile",
               "DeclareApi",
@@ -155,7 +154,6 @@
             "enum": [
               "Angle",
               "Assimp",
-              "BuildLibSilkDroid",
               "Clean",
               "Compile",
               "DeclareApi",

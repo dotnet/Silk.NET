@@ -14,34 +14,35 @@ using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
-    [Parameter("Code-signing service username")] readonly string SignUsername;
-    [Parameter("Code-signing service password")] readonly string SignPassword;
+    [Parameter("Code-signing service username")] readonly string? SignUsername;
+    [Parameter("Code-signing service password")] readonly string? SignPassword;
     bool CanCodeSign => !string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword);
 
     Target SignPackages => CommonTarget
     (
         x => x.Before(PushToNuGet)
             .After(Pack)
-            .Produces("build/output_packages/*.nupkg")
+            .Produces("artifacts/*.nupkg")
             .Executes
             (
                 () =>
                 {
                     if (!CanCodeSign)
                     {
-                        ControlFlow.Fail("SignClient username and/or password not specified.");
+                        Assert.Fail("SignClient username and/or password not specified.");
                     }
-
+                    
                     var outputs = Enumerable.Empty<Output>();
-                    var basePath = RootDirectory / "build" / "codesigning";
-                    var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
+                    var engPath = RootDirectory / "eng";
+                    var toolPath = TemporaryDirectory / "signclient";
+                    var execPath = toolPath / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
                     if (!File.Exists(execPath))
                     {
                         outputs = outputs.Concat
                         (
                             DotNetToolInstall
                             (
-                                s => s.SetToolInstallationPath(basePath / "tool")
+                                s => s.SetToolInstallationPath(toolPath)
                                     .SetPackageName("SignClient")
                             )
                         );
@@ -84,8 +85,8 @@ partial class Build
                                 "sign " +
                                 $"--baseDirectory {PackageDirectory} " +
                                 $"--input \"{pkg}\" " +
-                                $"--config \"{basePath / "config.json"}\" " +
-                                $"--filelist \"{basePath / "filelist.txt"}\" " +
+                                $"--config \"{engPath / "code-signing-config.json"}\" " +
+                                $"--filelist \"{engPath / "code-signing-filelist.txt"}\" " +
                                 $"--user \"{SignUsername}\" " +
                                 $"--secret \"{SignPassword}\" " +
                                 "--name \"Silk.NET\" " +
