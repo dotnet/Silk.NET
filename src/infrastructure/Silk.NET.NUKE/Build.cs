@@ -33,12 +33,12 @@ partial class Build : NukeBuild
 
     Target FullCompile => CommonTarget
     (
-        x => x.DependsOn(BuildLibSilkDroid, RegenerateBindings, Compile)
+        x => x.DependsOn(RegenerateBindings, Compile)
     );
 
     Target FullPack => CommonTarget
     (
-        x => x.DependsOn(BuildLibSilkDroid, RegenerateBindings, Pack)
+        x => x.DependsOn(RegenerateBindings, Pack)
     );
 
     Target FullPushToNuGet => CommonTarget

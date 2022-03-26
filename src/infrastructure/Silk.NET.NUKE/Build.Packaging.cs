@@ -11,8 +11,8 @@ partial class Build
     Target Pack => CommonTarget
     (
         x => x.DependsOn(Restore)
-            .After(Clean, RegenerateBindings, BuildLibSilkDroid)
-            .Produces("build/output_packages/*.nupkg")
+            .After(Clean, RegenerateBindings)
+            .Produces("artifacts/*.nupkg")
             .Executes
             (
                 () => ErrorsOnly<DotNetPackSettings>

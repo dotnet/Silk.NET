@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,10 +11,18 @@ using Serilog;
 
 partial class Build
 {
-    // ReSharper disable once RedundantEmptyObjectOrCollectionInitializer
-    readonly HashSet<string> AllowedExclusions = new()
-    {
-    };
+    HashSet<string>? AllowedExclusionsValue;
+
+    HashSet<string> AllowedExclusions => AllowedExclusionsValue ??= ExclusionGlob
+    (
+        new[]
+        {
+            "src/submodules/**/*.csproj"
+        }
+    );
+
+    HashSet<string> ExclusionGlob(string[] glob)
+        => RootDirectory.GlobFiles(glob).Select(x => x.NameWithoutExtension).ToHashSet();
 
     Target ValidateSolution => CommonTarget
     (

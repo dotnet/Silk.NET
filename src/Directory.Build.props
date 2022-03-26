@@ -11,13 +11,13 @@
         <SilkGeneratorsDir>$(MSBuildThisFileDirectory)generators</SilkGeneratorsDir>
         <SilkInfrastructureDir>$(MSBuildThisFileDirectory)infrastructure</SilkInfrastructureDir>
         <SilkLibrariesDir>$(MSBuildThisFileDirectory)libraries</SilkLibrariesDir>
+        <SilkSubmodulesDir>$(MSBuildThisFileDirectory)submodules</SilkSubmodulesDir>
         <SilkDocumentationDir>$(MSBuildThisFileDirectory)../documentation</SilkDocumentationDir>
         <SilkTestsDir>$(MSBuildThisFileDirectory)../tests</SilkTestsDir>
     </PropertyGroup>
     <!-- Compiler Options -->
     <PropertyGroup>
         <Nullable>enable</Nullable>
-        <SilkDocumentationWarningsAsErrors>CS1591;CS1573</SilkDocumentationWarningsAsErrors>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
     <!-- NuGet -->

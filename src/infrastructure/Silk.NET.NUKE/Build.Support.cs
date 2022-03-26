@@ -170,7 +170,7 @@ partial class Build
             return;
         }
 
-        var commentDir = RootDirectory / "build" / "comments";
+        var commentDir = RootDirectory / "eng" / "chatops";
         var commentText = await File.ReadAllTextAsync(commentDir / $"{file}.md") +
                           await File.ReadAllTextAsync(commentDir / "footer.md");
         foreach (var (key, value) in subs)

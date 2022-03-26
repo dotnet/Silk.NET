@@ -40,12 +40,12 @@ partial class Build
                         )
                     );
 
-                    if (Directory.Exists(RootDirectory / "build" / "output_packages"))
+                    if (Directory.Exists(RootDirectory / "artifacts"))
                     {
-                        Directory.Delete(RootDirectory / "build" / "output_packages", true);
+                        Directory.Delete(RootDirectory / "artifacts", true);
                     }
 
-                    Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
+                    Directory.CreateDirectory(RootDirectory / "artifacts");
 
                     if (Native)
                     {
