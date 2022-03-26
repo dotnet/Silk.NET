@@ -19,6 +19,7 @@ using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Utilities;
 using Octokit;
+using Serilog;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
@@ -51,9 +52,10 @@ partial class Build
     Dictionary<string, string> CreateEnvVarDictionary()
         => Environment.GetEnvironmentVariables()
             .Cast<DictionaryEntry>()
-            .ToDictionary(x => (string) x.Key, x => (string) x.Value);
+            .Where(x => x.Value is not null)
+            .ToDictionary(x => (string) x.Key, x => (string) x.Value!);
 
-    IProcess InheritedShell(string cmd, [CanBeNull] string workDir = null)
+    IProcess InheritedShell(string cmd, string? workDir = null)
         => OperatingSystem.IsWindows()
             ? StartProcess("powershell", $"-Command {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary())
             : StartProcess("bash", $"-c {cmd.DoubleQuote()}", workDir, CreateEnvVarDictionary());
@@ -66,7 +68,7 @@ partial class Build
         Environment.SetEnvironmentVariable
         (
             (string) pathVar.Key,
-            (string) pathVar.Value + (OperatingSystem.IsWindows() ? $";{dir}" : $":{dir}")
+            (string?) pathVar.Value + (OperatingSystem.IsWindows() ? $";{dir}" : $":{dir}")
         );
     }
 
@@ -84,11 +86,11 @@ partial class Build
     [Nuke.Common.Parameter("Extra properties passed to MSBuild commands")]
     readonly string[] MsbuildProperties = Array.Empty<string>();
 
-    [Solution] readonly Solution OriginalSolution;
+    [Solution] readonly Solution? OriginalSolution;
 
     bool HasProcessedProperties { get; set; }
 
-    Dictionary<string, object> ProcessedMsbuildPropertiesValue;
+    Dictionary<string, object>? ProcessedMsbuildPropertiesValue;
 
     Dictionary<string, object> ProcessedMsbuildProperties
     {
@@ -106,7 +108,7 @@ partial class Build
                 );
             }
 
-            return ProcessedMsbuildPropertiesValue;
+            return ProcessedMsbuildPropertiesValue.NotNull()!;
         }
     }
 
@@ -116,7 +118,7 @@ partial class Build
     
     ConcurrentDictionary<Target, Target> Targets = new();
     static Target GetEmptyTarget() => _ => _.Executes(() => {});
-    Target CommonTarget([CanBeNull] Target actualTarget = null) => Targets.GetOrAdd
+    Target CommonTarget(Target? actualTarget = null) => Targets.GetOrAdd
     (
         actualTarget ??= GetEmptyTarget(), def =>
         {
@@ -130,27 +132,27 @@ partial class Build
         var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
         if (string.IsNullOrWhiteSpace(githubToken))
         {
-            Logger.Info("GitHub token not found, skipping writing a comment.");
+            Log.Information("GitHub token not found, skipping writing a comment.");
             return;
         }
         
         var @ref = GitHubActions.Instance?.Ref;
         if (string.IsNullOrWhiteSpace(@ref))
         {
-            Logger.Info("Not running in GitHub Actions, skipping writing a comment.");
+            Log.Information("Not running in GitHub Actions, skipping writing a comment.");
             return;
         }
 
         var prMatch = PrRegex.Match(@ref);
         if (!prMatch.Success || prMatch.Groups.Count < 2)
         {
-            Logger.Info($"Couldn't match {@ref} to a PR, skipping writing a comment.");
+            Log.Information($"Couldn't match {@ref} to a PR, skipping writing a comment.");
             return;
         }
 
         if (!int.TryParse(prMatch.Groups[1].Value, out var pr))
         {
-            Logger.Info($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
+            Log.Information($"Couldn't parse {@prMatch.Groups[1].Value} as an int, skipping writing a comment.");
             return;
         }
         
@@ -164,7 +166,7 @@ partial class Build
             .FirstOrDefault(x => x.Body.Contains($"`{type}`") && x.User.Name == "github-actions[bot]");
         if (existingComment is null && editOnly)
         {
-            Logger.Info("Edit only mode is on and no existing comment found, skipping writing a comment.");
+            Log.Information("Edit only mode is on and no existing comment found, skipping writing a comment.");
             return;
         }
 
@@ -181,12 +183,12 @@ partial class Build
 
         if (existingComment is not null)
         {
-            Logger.Info("Updated the comment on the PR.");
+            Log.Information("Updated the comment on the PR.");
             await github.Issue.Comment.Update("dotnet", "Silk.NET", existingComment.Id, commentText);
         }
         else
         {
-            Logger.Info("Added a comment to the PR.");
+            Log.Information("Added a comment to the PR.");
             await github.Issue.Comment.Create("dotnet", "Silk.NET", pr, commentText);
         }
     }

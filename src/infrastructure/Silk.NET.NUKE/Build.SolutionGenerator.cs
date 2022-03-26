@@ -12,6 +12,7 @@ using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Utilities;
+using Serilog;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.ProjectModel.ProjectModelTasks;
 
@@ -27,19 +28,19 @@ partial class Build
         "include project dependencies. The solution will be regenerated whenever you run a NUKE build with this " +
         "specified, but if you don't want to run a build just use \"nuke sln --projects ...\" to run a dummy target."
     )]
-    readonly string[] Projects;
+    readonly string[]? Projects;
 
-    Solution GeneratedSolution;
+    Solution? GeneratedSolution;
 
     Solution Solution => GeneratedSolution ?? (File.Exists(RootDirectory / "Silk.NET.gen.sln")
         ? ParseSolution(RootDirectory / "Silk.NET.gen.sln")
-        : OriginalSolution);
+        : OriginalSolution.NotNull()!);
 
     void GenerateSolution()
     {
         if (Projects is not { Length: > 0 })
         {
-            Logger.Trace("Nothing to do for GenerateSolution.");
+            Log.Verbose("Nothing to do for GenerateSolution.");
             return;
         }
 
@@ -66,7 +67,8 @@ partial class Build
             return path / next;
         }
 
-        var include = OriginalSolution.GetProjects("*")
+        var include = OriginalSolution.NotNull()!
+            .GetProjects("*")
             .Where
             (
                 project => Projects.Any
@@ -88,7 +90,8 @@ partial class Build
             var projPath = include[i];
             include.AddRange
             (
-                OriginalSolution.GetProjects("*")
+                OriginalSolution.NotNull()!
+                    .GetProjects("*")
                     .First(x => x.Path == projPath)
                     .GetItems("ProjectReference")
                     .Select(x => Path.GetFullPath(x, ((AbsolutePath) projPath).Parent))
@@ -97,7 +100,7 @@ partial class Build
         }
 
         // make a new Solution object to prevent us mutating the OriginalSolution
-        var genSln = ParseSolution(OriginalSolution.Path);
+        var genSln = ParseSolution(OriginalSolution.NotNull()!.Path);
         
         // remove irrelevant projects
         foreach (var project in genSln.GetProjects("*"))
@@ -109,7 +112,7 @@ partial class Build
         }
 
         genSln.SaveAs(RootDirectory / "Silk.NET.gen.sln");
-        Logger.Info($"Generated solution containing {genSln.AllProjects.Count} projects");
+        Log.Information($"Generated solution containing {genSln.AllProjects.Count} projects");
     }
     
     Target Sln => CommonTarget();

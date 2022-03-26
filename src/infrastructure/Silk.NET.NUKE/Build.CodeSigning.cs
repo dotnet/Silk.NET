@@ -14,8 +14,8 @@ using static Nuke.Common.Tooling.ProcessTasks;
 
 partial class Build
 {
-    [Parameter("Code-signing service username")] readonly string SignUsername;
-    [Parameter("Code-signing service password")] readonly string SignPassword;
+    [Parameter("Code-signing service username")] readonly string? SignUsername;
+    [Parameter("Code-signing service password")] readonly string? SignPassword;
     bool CanCodeSign => !string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword);
 
     Target SignPackages => CommonTarget
@@ -29,7 +29,7 @@ partial class Build
                 {
                     if (!CanCodeSign)
                     {
-                        ControlFlow.Fail("SignClient username and/or password not specified.");
+                        Assert.Fail("SignClient username and/or password not specified.");
                     }
 
                     var outputs = Enumerable.Empty<Output>();

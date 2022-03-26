@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using Nuke.Common;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Serilog;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
 {
-    [Parameter("The API key used to push packages and symbols packages to NuGet")] readonly string NugetApiKey;
+    [Parameter("The API key used to push packages and symbols packages to NuGet")] readonly string? NugetApiKey;
     [Parameter("NuGet -NoServiceEndpoint")] readonly bool NugetNoServiceEndpoint;
     [Parameter("NuGet feed")] readonly string NugetFeed = "https://api.nuget.org/v3/index.json";
-    [Parameter("NuGet username")] readonly string NugetUsername;
-    [Parameter("NuGet password")] readonly string NugetPassword;
+    [Parameter("NuGet username")] readonly string? NugetUsername;
+    [Parameter("NuGet password")] readonly string? NugetPassword;
     static string PackageDirectory => RootDirectory / "build" / "output_packages";
 
     static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
@@ -40,7 +41,7 @@ partial class Build
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
         var first = true;
-        Logger.Info($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
+        Log.Information($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
         foreach (var files in allFiles)
         {
             if (first)
@@ -60,7 +61,7 @@ partial class Build
                 {
                     if (NugetUsername is null || NugetPassword is null)
                     {
-                        ControlFlow.Fail
+                        Assert.Fail
                         (
                             "Both \"NugetUsername\" and \"NugetPassword\" must be specified if either are used."
                         );

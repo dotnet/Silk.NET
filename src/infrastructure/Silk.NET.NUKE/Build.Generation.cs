@@ -3,7 +3,9 @@
 
 using System.IO;
 using Nuke.Common;
+using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
+using Serilog;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
@@ -16,10 +18,10 @@ partial class Build
             (
                 () =>
                 {
-                    var project = OriginalSolution.GetProject("Silk.NET.BuildTools");
+                    var project = OriginalSolution.NotNull()!.GetProject("SilkTouch");
                     if (project == default)
                     {
-                        Logger.Error("Couldn't find BuildTools in the solution file.");
+                        Log.Error("Couldn't find SilkTouch in the solution file.");
                         return;
                     }
 
@@ -27,7 +29,7 @@ partial class Build
                     (
                         s => s.SetProjectFile(project)
                             .SetConfiguration("Release")
-                            .SetApplicationArguments(Path.Combine(RootDirectory, "generator.json"))
+                            .SetProcessWorkingDirectory(RootDirectory)
                     );
                 }
             )

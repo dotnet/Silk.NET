@@ -18,6 +18,7 @@
     <PropertyGroup>
         <Nullable>enable</Nullable>
         <SilkDocumentationWarningsAsErrors>CS1591;CS1573</SilkDocumentationWarningsAsErrors>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
     <!-- NuGet -->
     <PropertyGroup>

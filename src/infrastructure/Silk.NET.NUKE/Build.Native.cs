@@ -17,6 +17,7 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.Git;
 using Octokit;
 using Octokit.Internal;
+using Serilog;
 using static Nuke.Common.IO.CompressionTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.IO.HttpTasks;
@@ -29,7 +30,7 @@ partial class Build
 {
     [Nuke.Common.Parameter("Build native code")] readonly bool Native;
 
-    [CanBeNull] string AndroidHomeValue;
+    string? AndroidHomeValue;
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Environment.ProcessorCount}"
@@ -47,7 +48,7 @@ partial class Build
             var utils = RootDirectory / "build" / "utilities";
             DotNet($"build \"{utils / "android_probe.proj"}\" /t:GetAndroidJar");
             AndroidHomeValue = (AbsolutePath) File.ReadAllText(utils / "android.jar.gen.txt") / ".." / ".." / "..";
-            Logger.Info($"Android Home: {AndroidHomeValue}");
+            Log.Information($"Android Home: {AndroidHomeValue}");
             return AndroidHomeValue;
         }
     }
@@ -62,7 +63,7 @@ partial class Build
                 {
                     if (!Native)
                     {
-                        Logger.Warn("Skipping gradlew build as the --native parameter has not been specified.");
+                        Log.Warning("Skipping gradlew build as the --native parameter has not been specified.");
                         return Enumerable.Empty<Output>();
                     }
 
@@ -79,7 +80,7 @@ partial class Build
                     {
                         if (!Directory.Exists(from))
                         {
-                            ControlFlow.Fail
+                            Assert.Fail
                                 ($"\"{from}\" does not exist (did you forget to recursively clone the repo?)");
                         }
 
@@ -498,13 +499,13 @@ partial class Build
             Git("reset --hard", RootDirectory);
             if (GitCurrentCommit(RootDirectory) != curCommit) // might get "nothing to commit", you never know...
             {
-                Logger.Info("Checking for existing branch...");
+                Log.Information("Checking for existing branch...");
                 var exists = StartProcess("git", $"checkout \"{newBranch}\"", RootDirectory)
                     .AssertWaitForExit()
                     .ExitCode == 0;
                 if (!exists)
                 {
-                    Logger.Info("None found, creating a new one...");
+                    Log.Information("None found, creating a new one...");
                     Git($"checkout -b \"{newBranch}\"");
                 }
 
