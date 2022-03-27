@@ -21,30 +21,30 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoDecodeH265ReferenceInfo
         (
-            int? picOrderCntVal = null,
-            StdVideoDecodeH265ReferenceInfoFlags? flags = null
+            StdVideoDecodeH265ReferenceInfoFlags? flags = null,
+            int? picOrderCntVal = null
         ) : this()
         {
-            if (picOrderCntVal is not null)
-            {
-                PicOrderCntVal = picOrderCntVal.Value;
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;
             }
+
+            if (picOrderCntVal is not null)
+            {
+                PicOrderCntVal = picOrderCntVal.Value;
+            }
         }
 
-
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "PicOrderCntVal")]
-        public int PicOrderCntVal;
 
         [NativeName("Type", "StdVideoDecodeH265ReferenceInfoFlags")]
         [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfoFlags")]
         [NativeName("Name", "flags")]
         public StdVideoDecodeH265ReferenceInfoFlags Flags;
+
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "PicOrderCntVal")]
+        public int PicOrderCntVal;
     }
 }

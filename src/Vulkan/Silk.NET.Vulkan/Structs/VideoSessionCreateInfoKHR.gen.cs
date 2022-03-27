@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionCreateInfoKHR")]
-    public unsafe partial struct VideoSessionCreateInfoKHR : IChainStart
+    public unsafe partial struct VideoSessionCreateInfoKHR : IChainable
     {
         public VideoSessionCreateInfoKHR
         (
@@ -30,7 +30,8 @@ namespace Silk.NET.Vulkan
             Extent2D? maxCodedExtent = null,
             Format? referencePicturesFormat = null,
             uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null
+            uint? maxReferencePicturesActiveCount = null,
+            ExtensionProperties* pStdHeaderVersion = null
         ) : this()
         {
             if (sType is not null)
@@ -81,6 +82,11 @@ namespace Silk.NET.Vulkan
             if (maxReferencePicturesActiveCount is not null)
             {
                 MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+            }
+
+            if (pStdHeaderVersion is not null)
+            {
+                PStdHeaderVersion = pStdHeaderVersion;
             }
         }
 
@@ -134,6 +140,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties*")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "pStdHeaderVersion")]
+        public ExtensionProperties* PStdHeaderVersion;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
@@ -146,18 +157,6 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
-        }
-
-        /// <summary>
-        /// Convenience method to start a chain.
-        /// </summary>
-        /// <param name="capture">The newly created chain root</param>
-        /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref VideoSessionCreateInfoKHR Chain(
-            out VideoSessionCreateInfoKHR capture)
-        {
-            capture = new VideoSessionCreateInfoKHR(StructureType.VideoSessionCreateInfoKhr);
-            return ref capture;
         }
     }
 }

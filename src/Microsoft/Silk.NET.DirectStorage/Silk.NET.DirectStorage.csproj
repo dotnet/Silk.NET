@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Silk.NET.Core.Win32Extras\Silk.NET.Core.Win32Extras.csproj" />
+    <ProjectReference Include="..\..\Native\Silk.NET.DirectStorage.Native\Silk.NET.DirectStorage.Native.csproj" />
     <ProjectReference Include="..\Silk.NET.Direct3D12\Silk.NET.Direct3D12.csproj" />
   </ItemGroup>
 

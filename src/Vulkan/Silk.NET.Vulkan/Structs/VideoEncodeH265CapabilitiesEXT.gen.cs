@@ -42,8 +42,7 @@ namespace Silk.NET.Vulkan
             byte? maxMaxTransformHierarchyDepthIntra = null,
             byte? maxDiffCuQpDeltaDepth = null,
             byte? minMaxNumMergeCand = null,
-            byte? maxMaxNumMergeCand = null,
-            ExtensionProperties? stdExtensionVersion = null
+            byte? maxMaxNumMergeCand = null
         ) : this()
         {
             if (sType is not null)
@@ -154,11 +153,6 @@ namespace Silk.NET.Vulkan
             if (maxMaxNumMergeCand is not null)
             {
                 MaxMaxNumMergeCand = maxMaxNumMergeCand.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
             }
         }
 
@@ -272,11 +266,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "maxMaxNumMergeCand")]
         public byte MaxMaxNumMergeCand;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

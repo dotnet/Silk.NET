@@ -23,6 +23,96 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
         [NativeName("Type", "int")]
+        [NativeName("Name", "D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT")]
+        public const int InfoQueueDefaultMessageCountLimit = unchecked((int) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_DOUBLES")]
+        public const int D3DShaderRequiresDoubles = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_EARLY_DEPTH_STENCIL")]
+        public const int D3DShaderRequiresEarlyDepthStencil = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE")]
+        public const int D3DShaderRequiresUavsATEveryStage = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_64_UAVS")]
+        public const int D3DShaderRequires64Uavs = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_MINIMUM_PRECISION")]
+        public const int D3DShaderRequiresMinimumPrecision = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS")]
+        public const int D3DShaderRequires111DoubleExtensions = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS")]
+        public const int D3DShaderRequires111ShaderExtensions = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_LEVEL_9_COMPARISON_FILTERING")]
+        public const int D3DShaderRequiresLevel9ComparisonFiltering = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_TILED_RESOURCES")]
+        public const int D3DShaderRequiresTiledResources = unchecked((int) 0x100);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_STENCIL_REF")]
+        public const int D3DShaderRequiresStencilRef = unchecked((int) 0x200);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_INNER_COVERAGE")]
+        public const int D3DShaderRequiresInnerCoverage = unchecked((int) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_TYPED_UAV_LOAD_ADDITIONAL_FORMATS")]
+        public const int D3DShaderRequiresTypedUavLoadAdditionalFormats = unchecked((int) 0x800);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_ROVS")]
+        public const int D3DShaderRequiresRovs = unchecked((int) 0x1000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER")]
+        public const int D3DShaderRequiresViewportAndRTArrayIndexFromAnyShaderFeedingRasterizer = unchecked((int) 0x2000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_WAVE_OPS")]
+        public const int D3DShaderRequiresWaveOps = unchecked((int) 0x4000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_INT64_OPS")]
+        public const int D3DShaderRequiresInt64Ops = unchecked((int) 0x8000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_VIEW_ID")]
+        public const int D3DShaderRequiresViewID = unchecked((int) 0x10000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_BARYCENTRICS")]
+        public const int D3DShaderRequiresBarycentrics = unchecked((int) 0x20000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_NATIVE_16BIT_OPS")]
+        public const int D3DShaderRequiresNative16BitOps = unchecked((int) 0x40000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_SHADING_RATE")]
+        public const int D3DShaderRequiresShadingRate = unchecked((int) 0x80000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_RAYTRACING_TIER_1_1")]
+        public const int D3DShaderRequiresRaytracingTier11 = unchecked((int) 0x100000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_SAMPLER_FEEDBACK")]
+        public const int D3DShaderRequiresSamplerFeedback = unchecked((int) 0x200000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_ATOMIC_INT64_ON_TYPED_RESOURCE")]
+        public const int D3DShaderRequiresAtomicInt64OnTypedResource = unchecked((int) 0x400000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_ATOMIC_INT64_ON_GROUP_SHARED")]
+        public const int D3DShaderRequiresAtomicInt64OnGroupShared = unchecked((int) 0x800000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_DERIVATIVES_IN_MESH_AND_AMPLIFICATION_SHADERS")]
+        public const int D3DShaderRequiresDerivativesInMeshAndAmplificationShaders = unchecked((int) 0x1000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_RESOURCE_DESCRIPTOR_HEAP_INDEXING")]
+        public const int D3DShaderRequiresResourceDescriptorHeapIndexing = unchecked((int) 0x2000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_SAMPLER_DESCRIPTOR_HEAP_INDEXING")]
+        public const int D3DShaderRequiresSamplerDescriptorHeapIndexing = unchecked((int) 0x4000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_WAVE_MMA")]
+        public const int D3DShaderRequiresWaveMma = unchecked((int) 0x8000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE")]
+        public const int D3DShaderRequiresAtomicInt64OnDescriptorHeapResource = unchecked((int) 0x10000000);
+        [NativeName("Type", "int")]
         [NativeName("Name", "D3D12_16BIT_INDEX_STRIP_CUT_VALUE")]
         public const int D3D1216BitIndexStripCutValue = unchecked((int) 0xFFFF);
         [NativeName("Type", "unsigned int")]

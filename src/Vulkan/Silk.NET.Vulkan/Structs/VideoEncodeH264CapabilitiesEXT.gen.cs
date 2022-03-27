@@ -33,8 +33,7 @@ namespace Silk.NET.Vulkan
             uint? maxBytesPerPicDenom = null,
             uint? maxBitsPerMbDenom = null,
             uint? log2MaxMvLengthHorizontal = null,
-            uint? log2MaxMvLengthVertical = null,
-            ExtensionProperties? stdExtensionVersion = null
+            uint? log2MaxMvLengthVertical = null
         ) : this()
         {
             if (sType is not null)
@@ -100,11 +99,6 @@ namespace Silk.NET.Vulkan
             if (log2MaxMvLengthVertical is not null)
             {
                 Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
             }
         }
 
@@ -173,11 +167,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "log2MaxMvLengthVertical")]
         public uint Log2MaxMvLengthVertical;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

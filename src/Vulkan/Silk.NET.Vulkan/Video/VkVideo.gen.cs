@@ -43,9 +43,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_H264_SCALING_LIST_8X8_NUM_ELEMENTS")]
         public const int StdVideoH264ScalingList8X8NumElements = unchecked((int) 0x40);
-        [NativeName("Type", "")]
-        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H264_EXTENSION_NAME")]
-        public const string VKStdVulkanVideoCodecH264ExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h264");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "STD_VIDEO_H264_MAX_NUM_LIST_REF")]
+        public const int StdVideoH264MaxNumListRef = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "STD_VIDEO_H264_MAX_CHROMA_PLANES")]
+        public const int StdVideoH264MaxChromaPlanes = unchecked((int) 0x2);
         [NativeName("Type", "int")]
         [NativeName("Name", "VULKAN_VIDEO_CODEC_H264STD_DECODE_H_")]
         public const int VulkanVideoCodecH264StdDecodeH = unchecked((int) 0x1);
@@ -58,12 +61,18 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_DECODE_H264_MVC_REF_LIST_SIZE")]
         public const int StdVideoDecodeH264MvcRefListSize = unchecked((int) 0xF);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H264_DECODE_EXTENSION_NAME")]
+        public const string VKStdVulkanVideoCodecH264DecodeExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h264_decode");
         [NativeName("Type", "int")]
         [NativeName("Name", "VULKAN_VIDEO_CODEC_H264STD_ENCODE_H_")]
         public const int VulkanVideoCodecH264StdEncodeH = unchecked((int) 0x1);
         [NativeName("Type", "int")]
         [NativeName("Name", "vulkan_video_codec_h264std_encode")]
         public const int VulkanVideoCodecH264stdEncode = unchecked((int) 0x1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H264_ENCODE_EXTENSION_NAME")]
+        public const string VKStdVulkanVideoCodecH264EncodeExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h264_encode");
         [NativeName("Type", "int")]
         [NativeName("Name", "VULKAN_VIDEO_CODEC_H265STD_H_")]
         public const int VulkanVideoCodecH265StdH = unchecked((int) 0x1);
@@ -107,6 +116,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "STD_VIDEO_H265_PREDICTOR_PALETTE_COMP_ENTRIES_LIST_SIZE")]
         public const int StdVideoH265PredictorPaletteCompEntriesListSize = unchecked((int) 0x80);
         [NativeName("Type", "int")]
+        [NativeName("Name", "STD_VIDEO_H265_SPS_MAX_SUB_LAYERS")]
+        public const int StdVideoH265SpsMaxSubLayers = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_H265_CHROMA_QP_OFFSET_TILE_COLS_LIST_SIZE")]
         public const int StdVideoH265ChromaQPOffsetTileColsListSize = unchecked((int) 0x13);
         [NativeName("Type", "int")]
@@ -115,9 +127,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_H265_CHROMA_QP_OFFSET_LIST_SIZE")]
         public const int StdVideoH265ChromaQPOffsetListSize = unchecked((int) 0x6);
-        [NativeName("Type", "")]
-        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H265_EXTENSION_NAME")]
-        public const string VKStdVulkanVideoCodecH265ExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h265");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "STD_VIDEO_H265_MAX_NUM_LIST_REF")]
+        public const int StdVideoH265MaxNumListRef = unchecked((int) 0xF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "STD_VIDEO_H265_MAX_CHROMA_PLANES")]
+        public const int StdVideoH265MaxChromaPlanes = unchecked((int) 0x2);
         [NativeName("Type", "int")]
         [NativeName("Name", "VULKAN_VIDEO_CODEC_H265STD_DECODE_H_")]
         public const int VulkanVideoCodecH265StdDecodeH = unchecked((int) 0x1);
@@ -127,21 +142,18 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_DECODE_H265_REF_PIC_SET_LIST_SIZE")]
         public const int StdVideoDecodeH265RefPicSetListSize = unchecked((int) 0x8);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H265_DECODE_EXTENSION_NAME")]
+        public const string VKStdVulkanVideoCodecH265DecodeExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h265_decode");
         [NativeName("Type", "int")]
         [NativeName("Name", "VULKAN_VIDEO_CODEC_H265STD_ENCODE_H_")]
         public const int VulkanVideoCodecH265StdEncodeH = unchecked((int) 0x1);
         [NativeName("Type", "int")]
         [NativeName("Name", "vulkan_video_codec_h265std_encode")]
         public const int VulkanVideoCodecH265stdEncode = unchecked((int) 0x1);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "STD_VIDEO_ENCODE_H265_LUMA_LIST_SIZE")]
-        public const int StdVideoEncodeH265LumaListSize = unchecked((int) 0xF);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "STD_VIDEO_ENCODE_H265_CHROMA_LIST_SIZE")]
-        public const int StdVideoEncodeH265ChromaListSize = unchecked((int) 0xF);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "STD_VIDEO_ENCODE_H265_CHROMA_LISTS_NUM")]
-        public const int StdVideoEncodeH265ChromaListsNum = unchecked((int) 0x2);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_STD_VULKAN_VIDEO_CODEC_H265_ENCODE_EXTENSION_NAME")]
+        public const string VKStdVulkanVideoCodecH265EncodeExtensionName = unchecked((string) "VK_STD_vulkan_video_codec_h265_encode");
 
     }
 }

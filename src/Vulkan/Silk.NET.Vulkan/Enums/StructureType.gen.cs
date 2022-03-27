@@ -222,68 +222,62 @@ namespace Silk.NET.Vulkan
         ImageViewAddressPropertiesNvx = 1000030001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_CAPABILITIES_EXT")]
         VideoEncodeH264CapabilitiesExt = 1000038000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_CREATE_INFO_EXT")]
-        VideoEncodeH264SessionCreateInfoExt = 1000038001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_CREATE_INFO_EXT")]
-        VideoEncodeH264SessionParametersCreateInfoExt = 1000038002,
+        VideoEncodeH264SessionParametersCreateInfoExt = 1000038001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_ADD_INFO_EXT")]
-        VideoEncodeH264SessionParametersAddInfoExt = 1000038003,
+        VideoEncodeH264SessionParametersAddInfoExt = 1000038002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_VCL_FRAME_INFO_EXT")]
-        VideoEncodeH264VclFrameInfoExt = 1000038004,
+        VideoEncodeH264VclFrameInfoExt = 1000038003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_DPB_SLOT_INFO_EXT")]
-        VideoEncodeH264DpbSlotInfoExt = 1000038005,
+        VideoEncodeH264DpbSlotInfoExt = 1000038004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_EXT")]
-        VideoEncodeH264NaluSliceExt = 1000038006,
+        VideoEncodeH264NaluSliceExt = 1000038005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_EMIT_PICTURE_PARAMETERS_EXT")]
-        VideoEncodeH264EmitPictureParametersExt = 1000038007,
+        VideoEncodeH264EmitPictureParametersExt = 1000038006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_EXT")]
-        VideoEncodeH264ProfileExt = 1000038008,
+        VideoEncodeH264ProfileExt = 1000038007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_EXT")]
-        VideoEncodeH264RateControlInfoExt = 1000038009,
+        VideoEncodeH264RateControlInfoExt = 1000038008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_EXT")]
-        VideoEncodeH264RateControlLayerInfoExt = 1000038010,
+        VideoEncodeH264RateControlLayerInfoExt = 1000038009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_REFERENCE_LISTS_EXT")]
-        VideoEncodeH264ReferenceListsExt = 1000038011,
+        VideoEncodeH264ReferenceListsExt = 1000038010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_EXT")]
         VideoEncodeH265CapabilitiesExt = 1000039000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_CREATE_INFO_EXT")]
-        VideoEncodeH265SessionCreateInfoExt = 1000039001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT")]
-        VideoEncodeH265SessionParametersCreateInfoExt = 1000039002,
+        VideoEncodeH265SessionParametersCreateInfoExt = 1000039001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_ADD_INFO_EXT")]
-        VideoEncodeH265SessionParametersAddInfoExt = 1000039003,
+        VideoEncodeH265SessionParametersAddInfoExt = 1000039002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_VCL_FRAME_INFO_EXT")]
-        VideoEncodeH265VclFrameInfoExt = 1000039004,
+        VideoEncodeH265VclFrameInfoExt = 1000039003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_DPB_SLOT_INFO_EXT")]
-        VideoEncodeH265DpbSlotInfoExt = 1000039005,
+        VideoEncodeH265DpbSlotInfoExt = 1000039004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_EXT")]
-        VideoEncodeH265NaluSliceSegmentExt = 1000039006,
+        VideoEncodeH265NaluSliceSegmentExt = 1000039005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_EMIT_PICTURE_PARAMETERS_EXT")]
-        VideoEncodeH265EmitPictureParametersExt = 1000039007,
+        VideoEncodeH265EmitPictureParametersExt = 1000039006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_EXT")]
-        VideoEncodeH265ProfileExt = 1000039008,
+        VideoEncodeH265ProfileExt = 1000039007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_REFERENCE_LISTS_EXT")]
-        VideoEncodeH265ReferenceListsExt = 1000039009,
+        VideoEncodeH265ReferenceListsExt = 1000039008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_EXT")]
-        VideoEncodeH265RateControlInfoExt = 1000039010,
+        VideoEncodeH265RateControlInfoExt = 1000039009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_EXT")]
-        VideoEncodeH265RateControlLayerInfoExt = 1000039011,
+        VideoEncodeH265RateControlLayerInfoExt = 1000039010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_CAPABILITIES_EXT")]
         VideoDecodeH264CapabilitiesExt = 1000040000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_SESSION_CREATE_INFO_EXT")]
-        VideoDecodeH264SessionCreateInfoExt = 1000040001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PICTURE_INFO_EXT")]
-        VideoDecodeH264PictureInfoExt = 1000040002,
+        VideoDecodeH264PictureInfoExt = 1000040001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_MVC_EXT")]
-        VideoDecodeH264MvcExt = 1000040003,
+        VideoDecodeH264MvcExt = 1000040002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PROFILE_EXT")]
-        VideoDecodeH264ProfileExt = 1000040004,
+        VideoDecodeH264ProfileExt = 1000040003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_SESSION_PARAMETERS_CREATE_INFO_EXT")]
-        VideoDecodeH264SessionParametersCreateInfoExt = 1000040005,
+        VideoDecodeH264SessionParametersCreateInfoExt = 1000040004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_SESSION_PARAMETERS_ADD_INFO_EXT")]
-        VideoDecodeH264SessionParametersAddInfoExt = 1000040006,
+        VideoDecodeH264SessionParametersAddInfoExt = 1000040005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_DPB_SLOT_INFO_EXT")]
-        VideoDecodeH264DpbSlotInfoExt = 1000040007,
+        VideoDecodeH264DpbSlotInfoExt = 1000040006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_TEXTURE_LOD_GATHER_FORMAT_PROPERTIES_AMD")]
         TextureLodGatherFormatPropertiesAmd = 1000041000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDERING_INFO_KHR")]
@@ -788,18 +782,16 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceShaderCorePropertiesAmd = 1000185000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_CAPABILITIES_EXT")]
         VideoDecodeH265CapabilitiesExt = 1000187000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_CREATE_INFO_EXT")]
-        VideoDecodeH265SessionCreateInfoExt = 1000187001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_PARAMETERS_CREATE_INFO_EXT")]
-        VideoDecodeH265SessionParametersCreateInfoExt = 1000187002,
+        VideoDecodeH265SessionParametersCreateInfoExt = 1000187001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_PARAMETERS_ADD_INFO_EXT")]
-        VideoDecodeH265SessionParametersAddInfoExt = 1000187003,
+        VideoDecodeH265SessionParametersAddInfoExt = 1000187002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_PROFILE_EXT")]
-        VideoDecodeH265ProfileExt = 1000187004,
+        VideoDecodeH265ProfileExt = 1000187003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_PICTURE_INFO_EXT")]
-        VideoDecodeH265PictureInfoExt = 1000187005,
+        VideoDecodeH265PictureInfoExt = 1000187004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_DPB_SLOT_INFO_EXT")]
-        VideoDecodeH265DpbSlotInfoExt = 1000187006,
+        VideoDecodeH265DpbSlotInfoExt = 1000187005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_KHR")]
         DeviceQueueGlobalPriorityCreateInfoKhr = 1000174000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_KHR")]

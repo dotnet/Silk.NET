@@ -24,8 +24,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoDecodeH264CapabilitiesExt,
             void* pNext = null,
             uint? maxLevel = null,
-            Offset2D? fieldOffsetGranularity = null,
-            ExtensionProperties? stdExtensionVersion = null
+            Offset2D? fieldOffsetGranularity = null
         ) : this()
         {
             if (sType is not null)
@@ -46,11 +45,6 @@ namespace Silk.NET.Vulkan
             if (fieldOffsetGranularity is not null)
             {
                 FieldOffsetGranularity = fieldOffsetGranularity.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
             }
         }
 
@@ -74,11 +68,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkOffset2D")]
         [NativeName("Name", "fieldOffsetGranularity")]
         public Offset2D FieldOffsetGranularity;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

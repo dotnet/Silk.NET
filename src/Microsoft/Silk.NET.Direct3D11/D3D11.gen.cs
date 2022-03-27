@@ -23,6 +23,156 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
         [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_SDK_LAYERS_VERSION")]
+        public const int SdkLayersVersion = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_FLUSH_PER_RENDER_OP")]
+        public const int DebugFeatureFlushPerRenderOp = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_FINISH_PER_RENDER_OP")]
+        public const int DebugFeatureFinishPerRenderOp = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_PRESENT_PER_RENDER_OP")]
+        public const int DebugFeaturePresentPerRenderOp = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_ALWAYS_DISCARD_OFFERED_RESOURCE")]
+        public const int DebugFeatureAlwaysDiscardOfferedResource = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_NEVER_DISCARD_OFFERED_RESOURCE")]
+        public const int DebugFeatureNeverDiscardOfferedResource = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_AVOID_BEHAVIOR_CHANGING_DEBUG_AIDS")]
+        public const int DebugFeatureAvoidBehaviorChangingDebugAids = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_DEBUG_FEATURE_DISABLE_TILED_RESOURCE_MAPPING_TRACKING_AND_VALIDATION")]
+        public const int DebugFeatureDisableTiledResourceMappingTrackingAndValidation = unchecked((int) 0x80);
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_REGKEY_PATH")]
+        public const string RegkeyPath = unchecked((string) "Software\\Microsoft\\Direct3D");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_MUTE_DEBUG_OUTPUT")]
+        public const string MuteDebugOutput = unchecked((string) "MuteDebugOutput");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_ENABLE_BREAK_ON_MESSAGE")]
+        public const string EnableBreakOnMessage = unchecked((string) "EnableBreakOnMessage");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_INFOQUEUE_STORAGE_FILTER_OVERRIDE")]
+        public const string InfoqueueStorageFilterOverride = unchecked((string) "InfoQueueStorageFilterOverride");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_MUTE_CATEGORY")]
+        public const string MuteCategory = unchecked((string) "Mute_CATEGORY_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_MUTE_SEVERITY")]
+        public const string MuteSeverity = unchecked((string) "Mute_SEVERITY_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_MUTE_ID_STRING")]
+        public const string MuteIDString = unchecked((string) "Mute_ID_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_MUTE_ID_DECIMAL")]
+        public const string MuteIDDecimal = unchecked((string) "Mute_ID_%d");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_UNMUTE_SEVERITY_INFO")]
+        public const string UnmuteSeverityInfo = unchecked((string) "Unmute_SEVERITY_INFO");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_BREAKON_CATEGORY")]
+        public const string BreakonCategory = unchecked((string) "BreakOn_CATEGORY_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_BREAKON_SEVERITY")]
+        public const string BreakonSeverity = unchecked((string) "BreakOn_SEVERITY_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_BREAKON_ID_STRING")]
+        public const string BreakonIDString = unchecked((string) "BreakOn_ID_%s");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_BREAKON_ID_DECIMAL")]
+        public const string BreakonIDDecimal = unchecked((string) "BreakOn_ID_%d");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_APPSIZE_STRING")]
+        public const string AppsizeString = unchecked((string) "Size");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_APPNAME_STRING")]
+        public const string AppnameString = unchecked((string) "Name");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_FORCE_DEBUGGABLE")]
+        public const string ForceDebuggable = unchecked((string) "ForceDebuggable");
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3D11_FORCE_SHADER_SKIP_OPTIMIZATION")]
+        public const string ForceShaderSkipOptimization = unchecked((string) "ForceShaderSkipOptimization");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT")]
+        public const int InfoQueueDefaultMessageCountLimit = unchecked((int) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_COMPONENT_X")]
+        public const int TraceComponentX = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_COMPONENT_Y")]
+        public const int TraceComponentY = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_COMPONENT_Z")]
+        public const int TraceComponentZ = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_COMPONENT_W")]
+        public const int TraceComponentW = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES")]
+        public const int ShaderTraceFlagRecordRegisterWrites = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS")]
+        public const int ShaderTraceFlagRecordRegisterReads = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING")]
+        public const int TraceRegisterFlagsRelativeIndexing = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_GS_EMIT")]
+        public const int TraceMiscGSEmit = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_GS_CUT")]
+        public const int TraceMiscGSCut = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_PS_DISCARD")]
+        public const int TraceMiscPSDiscard = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_GS_EMIT_STREAM")]
+        public const int TraceMiscGSEmitStream = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_GS_CUT_STREAM")]
+        public const int TraceMiscGSCutStream = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_HALT")]
+        public const int TraceMiscHalt = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D11_TRACE_MISC_MESSAGE")]
+        public const int TraceMiscMessage = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_DOUBLES")]
+        public const int D3DShaderRequiresDoubles = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_EARLY_DEPTH_STENCIL")]
+        public const int D3DShaderRequiresEarlyDepthStencil = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE")]
+        public const int D3DShaderRequiresUavsATEveryStage = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_64_UAVS")]
+        public const int D3DShaderRequires64Uavs = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_MINIMUM_PRECISION")]
+        public const int D3DShaderRequiresMinimumPrecision = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS")]
+        public const int D3DShaderRequires111DoubleExtensions = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS")]
+        public const int D3DShaderRequires111ShaderExtensions = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_LEVEL_9_COMPARISON_FILTERING")]
+        public const int D3DShaderRequiresLevel9ComparisonFiltering = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SHADER_REQUIRES_TILED_RESOURCES")]
+        public const int D3DShaderRequiresTiledResources = unchecked((int) 0x100);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "D3D11_PACKED_TILE")]
+        public const uint PackedTile = unchecked((uint) 0xFFFFFFFFFFFFFFFF);
+        [NativeName("Type", "int")]
         [NativeName("Name", "D3D11_16BIT_INDEX_STRIP_CUT_VALUE")]
         public const int D3D1116BitIndexStripCutValue = unchecked((int) 0xFFFF);
         [NativeName("Type", "unsigned int")]

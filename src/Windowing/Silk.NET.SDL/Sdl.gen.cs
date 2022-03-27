@@ -162,10 +162,10 @@ namespace Silk.NET.SDL
         public const string Priu64 = unchecked((string) "I64u");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_PRIx64")]
-        public const string Prix64 = unchecked((string) "I64x");
+        public const string PRIx64 = unchecked((string) "I64x");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_PRIX64")]
-        public const string Prix64 = unchecked((string) "I64X");
+        public const string PRIX64 = unchecked((string) "I64X");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_PRIs32")]
         public const string Pris32 = unchecked((string) "d");
@@ -174,19 +174,10 @@ namespace Silk.NET.SDL
         public const string Priu32 = unchecked((string) "u");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_PRIx32")]
-        public const string Prix32 = unchecked((string) "x");
+        public const string PRIx32 = unchecked((string) "x");
         [NativeName("Type", "")]
         [NativeName("Name", "SDL_PRIX32")]
-        public const string Prix32 = unchecked((string) "X");
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_ASSERT_LEVEL")]
-        public const int AssertLevel = unchecked((int) 0x1);
-        [NativeName("Type", "")]
-        [NativeName("Name", "SDL_FILE")]
-        public const string File = unchecked((string) "SDL.h");
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_LINE")]
-        public const int Line = unchecked((int) 0x18C);
+        public const string PRIX32 = unchecked((string) "X");
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_LIL_ENDIAN")]
         public const int LilEndian = unchecked((int) 0x4D2);
@@ -196,6 +187,42 @@ namespace Silk.NET.SDL
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_BYTEORDER")]
         public const int Byteorder = unchecked((int) 0x4D2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ALPHA_OPAQUE")]
+        public const int AlphaOpaque = unchecked((int) 0xFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ALPHA_TRANSPARENT")]
+        public const int AlphaTransparent = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_SWSURFACE")]
+        public const int Swsurface = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_PREALLOC")]
+        public const int Prealloc = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_RLEACCEL")]
+        public const int Rleaccel = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_DONTFREE")]
+        public const int Dontfree = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_SIMD_ALIGNED")]
+        public const int SimdAligned = unchecked((int) 0x8);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "SDL_WINDOWPOS_UNDEFINED_MASK")]
+        public const uint WindowposUndefinedMask = unchecked((uint) 0x1FFF0000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "SDL_WINDOWPOS_CENTERED_MASK")]
+        public const uint WindowposCenteredMask = unchecked((uint) 0x2FFF0000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ASSERT_LEVEL")]
+        public const int AssertLevel = unchecked((int) 0x1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_FILE")]
+        public const string File = unchecked((string) "SDL.h");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_LINE")]
+        public const int Line = unchecked((int) 0x18C);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_MUTEX_TIMEDOUT")]
         public const int MutexTimedout = unchecked((int) 0x1);
@@ -277,33 +304,6 @@ namespace Silk.NET.SDL
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_CACHELINE_SIZE")]
         public const int CachelineSize = unchecked((int) 0x80);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_ALPHA_OPAQUE")]
-        public const int AlphaOpaque = unchecked((int) 0xFF);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_ALPHA_TRANSPARENT")]
-        public const int AlphaTransparent = unchecked((int) 0x0);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_SWSURFACE")]
-        public const int Swsurface = unchecked((int) 0x0);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_PREALLOC")]
-        public const int Prealloc = unchecked((int) 0x1);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_RLEACCEL")]
-        public const int Rleaccel = unchecked((int) 0x2);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_DONTFREE")]
-        public const int Dontfree = unchecked((int) 0x4);
-        [NativeName("Type", "int")]
-        [NativeName("Name", "SDL_SIMD_ALIGNED")]
-        public const int SimdAligned = unchecked((int) 0x8);
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Name", "SDL_WINDOWPOS_UNDEFINED_MASK")]
-        public const uint WindowposUndefinedMask = unchecked((uint) 0x1FFF0000);
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Name", "SDL_WINDOWPOS_CENTERED_MASK")]
-        public const uint WindowposCenteredMask = unchecked((uint) 0x2FFF0000);
         [NativeName("Type", "int")]
         [NativeName("Name", "SDL_BUTTON_LEFT")]
         public const int ButtonLeft = unchecked((int) 0x1);
