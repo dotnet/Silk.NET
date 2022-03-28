@@ -33,7 +33,7 @@ jobs:
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Install Workloads
       # TODO: This is slow. Maybe we can make a docker container with this already done?
-      run: dotnet workload install android android-aot ios maccatalyst maui
+      run: dotnet workload install android ios maccatalyst maui
     - name: Pack
       run: nuke Pack --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Legacy-Android Legacy-iOS
     - name: Upload Unsigned Artifacts to Actions
