@@ -19,6 +19,243 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "const size_t")]
         [NativeName("Name", "MAXLEN")]
         public const nuint Maxlen = unchecked((nuint) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_FALSE")]
+        public const int False = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_TRUE")]
+        public const int True = unchecked((int) 0x1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_DEFAULT_MATERIAL_NAME")]
+        public const string DefaultMaterialName = unchecked((string) "DefaultMaterial");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_NAME")]
+        public const string MatkeyName = unchecked((string) "?mat.name");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_TWOSIDED")]
+        public const string MatkeyTwosided = unchecked((string) "$mat.twosided");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADING_MODEL")]
+        public const string MatkeyShadingModel = unchecked((string) "$mat.shadingm");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_ENABLE_WIREFRAME")]
+        public const string MatkeyEnableWireframe = unchecked((string) "$mat.wireframe");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_BLEND_FUNC")]
+        public const string MatkeyBlendFunc = unchecked((string) "$mat.blend");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_OPACITY")]
+        public const string MatkeyOpacity = unchecked((string) "$mat.opacity");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_TRANSPARENCYFACTOR")]
+        public const string MatkeyTransparencyfactor = unchecked((string) "$mat.transparencyfactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_BUMPSCALING")]
+        public const string MatkeyBumpscaling = unchecked((string) "$mat.bumpscaling");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHININESS")]
+        public const string MatkeyShininess = unchecked((string) "$mat.shininess");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_REFLECTIVITY")]
+        public const string MatkeyReflectivity = unchecked((string) "$mat.reflectivity");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHININESS_STRENGTH")]
+        public const string MatkeyShininessStrength = unchecked((string) "$mat.shinpercent");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_REFRACTI")]
+        public const string MatkeyRefracti = unchecked((string) "$mat.refracti");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_DIFFUSE")]
+        public const string MatkeyColorDiffuse = unchecked((string) "$clr.diffuse");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_AMBIENT")]
+        public const string MatkeyColorAmbient = unchecked((string) "$clr.ambient");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_SPECULAR")]
+        public const string MatkeyColorSpecular = unchecked((string) "$clr.specular");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_EMISSIVE")]
+        public const string MatkeyColorEmissive = unchecked((string) "$clr.emissive");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_TRANSPARENT")]
+        public const string MatkeyColorTransparent = unchecked((string) "$clr.transparent");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_COLOR_REFLECTIVE")]
+        public const string MatkeyColorReflective = unchecked((string) "$clr.reflective");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_GLOBAL_BACKGROUND_IMAGE")]
+        public const string MatkeyGlobalBackgroundImage = unchecked((string) "?bg.global");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_GLOBAL_SHADERLANG")]
+        public const string MatkeyGlobalShaderlang = unchecked((string) "?sh.lang");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_VERTEX")]
+        public const string MatkeyShaderVertex = unchecked((string) "?sh.vs");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_FRAGMENT")]
+        public const string MatkeyShaderFragment = unchecked((string) "?sh.fs");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_GEO")]
+        public const string MatkeyShaderGeo = unchecked((string) "?sh.gs");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_TESSELATION")]
+        public const string MatkeyShaderTesselation = unchecked((string) "?sh.ts");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_PRIMITIVE")]
+        public const string MatkeyShaderPrimitive = unchecked((string) "?sh.ps");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHADER_COMPUTE")]
+        public const string MatkeyShaderCompute = unchecked((string) "?sh.cs");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_USE_COLOR_MAP")]
+        public const string MatkeyUseColorMap = unchecked((string) "$mat.useColorMap");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_BASE_COLOR")]
+        public const string MatkeyBaseColor = unchecked((string) "$clr.base");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_USE_METALLIC_MAP")]
+        public const string MatkeyUseMetallicMap = unchecked((string) "$mat.useMetallicMap");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_METALLIC_FACTOR")]
+        public const string MatkeyMetallicFactor = unchecked((string) "$mat.metallicFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_USE_ROUGHNESS_MAP")]
+        public const string MatkeyUseRoughnessMap = unchecked((string) "$mat.useRoughnessMap");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_ROUGHNESS_FACTOR")]
+        public const string MatkeyRoughnessFactor = unchecked((string) "$mat.roughnessFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_ANISOTROPY_FACTOR")]
+        public const string MatkeyAnisotropyFactor = unchecked((string) "$mat.anisotropyFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SPECULAR_FACTOR")]
+        public const string MatkeySpecularFactor = unchecked((string) "$mat.specularFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_GLOSSINESS_FACTOR")]
+        public const string MatkeyGlossinessFactor = unchecked((string) "$mat.glossinessFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHEEN_COLOR_FACTOR")]
+        public const string MatkeySheenColorFactor = unchecked((string) "$clr.sheen.factor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_SHEEN_ROUGHNESS_FACTOR")]
+        public const string MatkeySheenRoughnessFactor = unchecked((string) "$mat.sheen.roughnessFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_CLEARCOAT_FACTOR")]
+        public const string MatkeyClearcoatFactor = unchecked((string) "$mat.clearcoat.factor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_CLEARCOAT_ROUGHNESS_FACTOR")]
+        public const string MatkeyClearcoatRoughnessFactor = unchecked((string) "$mat.clearcoat.roughnessFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_TRANSMISSION_FACTOR")]
+        public const string MatkeyTransmissionFactor = unchecked((string) "$mat.transmission.factor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_VOLUME_THICKNESS_FACTOR")]
+        public const string MatkeyVolumeThicknessFactor = unchecked((string) "$mat.volume.thicknessFactor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_VOLUME_ATTENUATION_DISTANCE")]
+        public const string MatkeyVolumeAttenuationDistance = unchecked((string) "$mat.volume.attenuationDistance");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_VOLUME_ATTENUATION_COLOR")]
+        public const string MatkeyVolumeAttenuationColor = unchecked((string) "$mat.volume.attenuationColor");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_USE_EMISSIVE_MAP")]
+        public const string MatkeyUseEmissiveMap = unchecked((string) "$mat.useEmissiveMap");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_EMISSIVE_INTENSITY")]
+        public const string MatkeyEmissiveIntensity = unchecked((string) "$mat.emissiveIntensity");
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_MATKEY_USE_AO_MAP")]
+        public const string MatkeyUseAOMap = unchecked((string) "$mat.useAOMap");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_TEXTURE_BASE")]
+        public const string MatkeyTextureBase = unchecked((string) "$tex.file");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_UVWSRC_BASE")]
+        public const string MatkeyUvwsrcBase = unchecked((string) "$tex.uvwsrc");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_TEXOP_BASE")]
+        public const string MatkeyTexopBase = unchecked((string) "$tex.op");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_MAPPING_BASE")]
+        public const string MatkeyMappingBase = unchecked((string) "$tex.mapping");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_TEXBLEND_BASE")]
+        public const string MatkeyTexblendBase = unchecked((string) "$tex.blend");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_MAPPINGMODE_U_BASE")]
+        public const string MatkeyMappingmodeUBase = unchecked((string) "$tex.mapmodeu");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_MAPPINGMODE_V_BASE")]
+        public const string MatkeyMappingmodeVBase = unchecked((string) "$tex.mapmodev");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_TEXMAP_AXIS_BASE")]
+        public const string MatkeyTexmapAxisBase = unchecked((string) "$tex.mapaxis");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_UVTRANSFORM_BASE")]
+        public const string MatkeyUvtransformBase = unchecked((string) "$tex.uvtrafo");
+        [NativeName("Type", "")]
+        [NativeName("Name", "_AI_MATKEY_TEXFLAGS_BASE")]
+        public const string MatkeyTexflagsBase = unchecked((string) "$tex.flags");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_SHARED")]
+        public const int AssimpCflagsShared = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_STLPORT")]
+        public const int AssimpCflagsStlport = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_DEBUG")]
+        public const int AssimpCflagsDebug = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_NOBOOST")]
+        public const int AssimpCflagsNoboost = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_SINGLETHREADED")]
+        public const int AssimpCflagsSinglethreaded = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "ASSIMP_CFLAGS_DOUBLE_SUPPORT")]
+        public const int AssimpCflagsDoubleSupport = unchecked((int) 0x20);
+        [NativeName("Type", "")]
+        [NativeName("Name", "AI_EMBEDDED_TEXNAME_PREFIX")]
+        public const string EmbeddedTexnamePrefix = unchecked((string) "*");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HINTMAXTEXTURELEN")]
+        public const int Hintmaxtexturelen = unchecked((int) 0x9);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_FACE_INDICES")]
+        public const int MaxFaceIndices = unchecked((int) 0x7FFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_BONE_WEIGHTS")]
+        public const int MaxBoneWeights = unchecked((int) 0x7FFFFFFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_VERTICES")]
+        public const int MaxVertices = unchecked((int) 0x7FFFFFFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_FACES")]
+        public const int MaxFaces = unchecked((int) 0x7FFFFFFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_NUMBER_OF_COLOR_SETS")]
+        public const int MaxNumberOfColorSets = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_MAX_NUMBER_OF_TEXTURECOORDS")]
+        public const int MaxNumberOfTexturecoords = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_INCOMPLETE")]
+        public const int SceneFlagsIncomplete = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_VALIDATED")]
+        public const int SceneFlagsValidated = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_VALIDATION_WARNING")]
+        public const int SceneFlagsValidationWarning = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_NON_VERBOSE_FORMAT")]
+        public const int SceneFlagsNonVerboseFormat = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_TERRAIN")]
+        public const int SceneFlagsTerrain = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AI_SCENE_FLAGS_ALLOW_SHARED")]
+        public const int SceneFlagsAllowShared = unchecked((int) 0x20);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 19 in build/submodules/Assimp/include\\assimp/cexport.h")]

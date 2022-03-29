@@ -3,3 +3,5 @@
 #include <minwinbase.h>
 #include <timezoneapi.h>
 #include <winnt.h>
+#include <handleapi.h>
+#include <fileapi.h>

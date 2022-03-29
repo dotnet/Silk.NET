@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -10,10 +11,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
-
+using Microsoft.Extensions.FileSystemGlobbing;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
@@ -27,7 +29,12 @@ namespace Silk.NET.BuildTools
 {
     public static class Generator
     {
+        public const string VersionsUrl = "https://api.nuget.org/v3-flatcontainer/{0}/index.json";
+        public const string DownloadUrl = "https://www.nuget.org/api/v2/package/{0}/{1}";
+
+        private static readonly ConcurrentDictionary<string, string> _downloaded = new();
         public const bool TestMode = false;
+
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
@@ -90,7 +97,7 @@ namespace Silk.NET.BuildTools
                 Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
                 sw = Stopwatch.StartNew();
             }
-            
+
             try
             {
                 RunTask(task, sw);
@@ -105,7 +112,7 @@ namespace Silk.NET.BuildTools
                     return;
                 }
             }
-            
+
             if (sw is not null)
             {
                 Program.ConsoleWriter.Instance.Timings.Value =
@@ -121,19 +128,36 @@ namespace Silk.NET.BuildTools
                 Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
                 sw = Stopwatch.StartNew();
             }
-            
+
             RunTask(task, sw);
-            
+
             if (sw is not null)
             {
                 Program.ConsoleWriter.Instance.Timings.Value =
                     new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, true));
             }
         }
-        
+
         public static void RunTask(BindTask task) => RunTask(task, null);
+
         private static void RunTask(BindTask task, Stopwatch? sw)
-        {
+        { 
+            foreach (var (glob, dest) in task.CopyFiles ?? Enumerable.Empty<KeyValuePair<string, string>>())
+            {
+                var sources = Glob(new[]{GetPath(glob)});
+                foreach (var source in sources)
+                {
+                    var destination = Path.Combine(dest, Path.GetFileName(source));
+                    if (File.Exists(dest) || Directory.Exists(Path.GetDirectoryName(dest)) && !Directory.Exists(dest))
+                    {
+                        destination = dest;
+                    }
+
+                    Console.WriteLine($"{source} -> {destination}");
+                    File.Copy(source, destination, true);
+                }
+            }
+            
             foreach (var typeMap in task.TypeMaps)
             {
                 var toAdd = new List<KeyValuePair<string, string>>();
@@ -144,11 +168,11 @@ namespace Silk.NET.BuildTools
                         toAdd.Add(kvp);
                     }
                 }
-                
+
                 foreach (var kvp in toAdd)
                 {
                     var includedMap = JsonConvert.DeserializeObject<Dictionary<string, string>>
-                        (File.ReadAllText(kvp.Value));
+                        (File.ReadAllText(GetPath(kvp.Value)));
                     typeMap.Remove(kvp.Key);
                     foreach (var includedKvp in includedMap)
                     {
@@ -168,23 +192,24 @@ namespace Silk.NET.BuildTools
                     foreach (var src in task.Sources)
                     {
                         var rawProfiles = ProfileConverter.ReadProfiles
-                        (
-                            task.ConverterOpts.Reader.ToLower() switch
-                            {
-                                "gl" => new OpenGLReader(),
-                                "cl" => new OpenCLReader(),
-                                "vk" => new VulkanReader(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            }, task.ConverterOpts.Constructor.ToLower() switch
-                            {
-                                "gl" => new OpenGLConstructor(),
-                                "cl" => new OpenCLConstructor(),
-                                "vk" => new VulkanConstructor(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            },
-                            OpenPath(src),
-                            task
-                        ).ToList();
+                            (
+                                task.ConverterOpts.Reader.ToLower() switch
+                                {
+                                    "gl" => new OpenGLReader(),
+                                    "cl" => new OpenCLReader(),
+                                    "vk" => new VulkanReader(),
+                                    _ => throw new ArgumentException("Couldn't find a reader with that name")
+                                }, task.ConverterOpts.Constructor.ToLower() switch
+                                {
+                                    "gl" => new OpenGLConstructor(),
+                                    "cl" => new OpenCLConstructor(),
+                                    "vk" => new VulkanConstructor(),
+                                    _ => throw new ArgumentException("Couldn't find a reader with that name")
+                                },
+                                File.OpenRead(GetPath(src)),
+                                task
+                            )
+                            .ToList();
 
                         Console.WriteLine("Raw profile parsing complete, cloning in memory prior to baking...");
                         profiles.AddRange
@@ -199,22 +224,37 @@ namespace Silk.NET.BuildTools
                                 )
                             )
                         );
-                        
+
                         Console.WriteLine("Profiles are ready.");
                     }
                 }
                 else if (task.Mode == ConverterMode.Clang)
                 {
+                    for (var i = 0; i < task.Sources.Length; i++)
+                    {
+                        task.Sources[i] = GetPath(task.Sources[i]);
+                    }
+                    for (var i = 0; i < task.ClangOpts.Traverse.Length; i++)
+                    {
+                        task.ClangOpts.Traverse[i] = GetPath(task.ClangOpts.Traverse[i]);
+                    }
+                    for (var i = 0; i < task.ClangOpts.ClangArgs.Length; i++)
+                    {
+                        if (task.ClangOpts.ClangArgs[i].StartsWith("-I"))
+                        {
+                            task.ClangOpts.ClangArgs[i] = $"-I{GetPath(task.ClangOpts.ClangArgs[i][2..])}";
+                        }
+                    }
                     ClangConfig.SubstituteWindowsSdkPath(ref task);
                     foreach (var src in task.Sources)
                     {
-                        profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
+                        profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), File.OpenRead(GetPath(src)), task));
                     }
                 }
 
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList(), in task);
-                
+
                 PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 
                 var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
@@ -227,7 +267,7 @@ namespace Silk.NET.BuildTools
                     {
                         Directory.CreateDirectory(task.CacheFolder);
                     }
-                
+
                     using var fileStream = File.OpenWrite(Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
                     using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
                     gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
@@ -254,6 +294,7 @@ namespace Silk.NET.BuildTools
                         "(conversion was skipped as per the control variables)"
                     );
                 }
+
                 using var memoryStream = new MemoryStream();
                 using var fileStream = File.OpenRead(file);
                 using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
@@ -285,22 +326,22 @@ namespace Silk.NET.BuildTools
         private static bool ShouldConvert(string[] controls)
         {
             if (controls.Any
-                (y => y.ToLower() == "convert-windows-only") && !RuntimeInformation.IsOSPlatform
-                (OSPlatform.Windows))
+                    (y => y.ToLower() == "convert-windows-only") && !RuntimeInformation.IsOSPlatform
+                    (OSPlatform.Windows))
             {
                 return false;
             }
-                
+
             if (controls.Any
-                (y => y.ToLower() == "convert-macos-only") && !RuntimeInformation.IsOSPlatform
-                (OSPlatform.OSX))
+                    (y => y.ToLower() == "convert-macos-only") && !RuntimeInformation.IsOSPlatform
+                    (OSPlatform.OSX))
             {
                 return false;
             }
-                
+
             if (controls.Any
-                (y => y.ToLower() == "convert-linux-only") && !RuntimeInformation.IsOSPlatform
-                (OSPlatform.Linux))
+                    (y => y.ToLower() == "convert-linux-only") && !RuntimeInformation.IsOSPlatform
+                    (OSPlatform.Linux))
             {
                 return false;
             }
@@ -311,16 +352,115 @@ namespace Silk.NET.BuildTools
         private static bool ShouldBind(IEnumerable<string> controls) => controls.All
             (x => !string.Equals(x.ToLower(), "no-bind", StringComparison.InvariantCultureIgnoreCase));
 
-        private static Stream OpenPath(string path)
+        private readonly record struct VersionsPayload([property: JsonPropertyName("versions")] string[] Versions);
+
+        internal static string GetPath(string path)
         {
+            // ReSharper disable AccessToDisposedClosure
+            using var wb = new HttpClient();
             if (path.StartsWith("http://") || path.StartsWith("https://"))
             {
                 // Download from the specified url into a temporary file
-                using var wb = new HttpClient();
-                return wb.GetStreamAsync(path).GetAwaiter().GetResult();
+                return _downloaded.GetOrAdd
+                (
+                    path, _ =>
+                    {
+                        using var file = File.OpenWrite(Path.GetTempFileName());
+                        Console.WriteLine($"Downloading {path} into {file.Name}");
+                        wb.GetStreamAsync(path).GetAwaiter().GetResult().CopyTo(file);
+                        file.Flush();
+                        return file.Name;
+                    }
+                );
             }
 
-            return File.OpenRead(path);
+            var split = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            // format:
+            // $nuget/<name>/<version or *>/<path in package>
+            if (split[0].ToLower() == "$nuget" && split.Length >= 3)
+            {
+                var ogVer = split[2];
+                var downloaded = _downloaded.GetOrAdd
+                (
+                    $"$nuget/{split[1]}/{split[2]}", _ =>
+                    {
+                        if (split[2].Trim() == "*")
+                        {
+                            split[2] = JsonConvert.DeserializeObject<VersionsPayload>
+                                (
+                                    wb.GetStringAsync(string.Format(VersionsUrl, split[1]))
+                                        .GetAwaiter()
+                                        .GetResult()
+                                )
+                                .Versions.Last();
+                        }
+
+                        var url = string.Format(DownloadUrl, split[1], split[2].Trim());
+                        var dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                        Console.WriteLine($"Downloading & extracting {url} into {dir}");
+                        new ZipArchive
+                        (
+                            wb.GetStreamAsync(url)
+                                .GetAwaiter()
+                                .GetResult()
+                        ).ExtractToDirectory(dir);
+                        return dir;
+                    }
+                );
+
+                var verKey = $"$nuget/{split[1]}/{ogVer}/$version";
+                _downloaded.TryAdd(verKey, split[2]);
+
+                if (split.Last().Trim().ToLower() == "$version")
+                {
+                    var verPath = Path.GetTempFileName();
+                    File.WriteAllText(verPath, _downloaded[verKey]);
+                    return verPath;
+                }
+
+                return Path.Combine(Enumerable.Repeat(downloaded, 1).Concat(split.Skip(3)).ToArray());
+            }
+
+            return path;
+            // ReSharper restore AccessToDisposedClosure
+        }
+        
+        internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
+        {
+            cd ??= Environment.CurrentDirectory;
+            var matcher = new Matcher();
+            static string PathFixup(string path)
+            {
+                if (Path.IsPathFullyQualified(path))
+                {
+                    path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
+                }
+
+                return path.ToLower().Replace('\\', '/');
+            }
+            
+            matcher.AddIncludePatterns
+            (
+                paths.Where(x => !x.StartsWith("!")).Select(PathFixup)
+            );
+            matcher.AddExcludePatterns
+            (
+                paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
+            );
+
+            return matcher.GetResultsInFullPath(cd)
+                .Concat
+                (
+                    paths.Select(x => x.StartsWith('!') ? x[1..] : x)
+                        .Where(Path.IsPathFullyQualified)
+                        .Select(Path.GetPathRoot)
+                        .Distinct()
+                        .SelectMany(x => matcher.GetResultsInFullPath(x))
+                )
+                .Concat(paths.Where(File.Exists))
+                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+                .Distinct()
+                .ToArray();
         }
     }
 }

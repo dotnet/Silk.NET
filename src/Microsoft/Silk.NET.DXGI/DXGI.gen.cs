@@ -17,11 +17,23 @@ namespace Silk.NET.DXGI
     public unsafe partial class DXGI : NativeAPI
     {
         [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_FORMAT_DEFINED")]
+        public const int FormatDefined = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
         public const int RequiredRpcndrHVersion = unchecked((int) 0x1F4);
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_DEBUG_BINARY_VERSION")]
+        public const int DebugBinaryVersion = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION")]
+        public const int InfoQueueMessageIDStringFromApplication = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT")]
+        public const int InfoQueueDefaultMessageCountLimit = unchecked((int) 0x400);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN")]
         public const uint StandardMultisampleQualityPattern = unchecked((uint) 0xFFFFFFFFFFFFFFFF);
@@ -46,6 +58,21 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "int")]
         [NativeName("Name", "DXGI_CPU_ACCESS_FIELD")]
         public const int CpuAccessField = unchecked((int) 0xF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CREATE_FACTORY_DEBUG")]
+        public const int CreateFactoryDebug = unchecked((int) 0x1);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_ENUM_MODES_STEREO")]
+        public const uint EnumModesStereo = unchecked((uint) 0x4);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_ENUM_MODES_DISABLED_STEREO")]
+        public const uint EnumModesDisabledStereo = unchecked((uint) 0x8);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_SHARED_RESOURCE_READ")]
+        public const uint SharedResourceRead = unchecked((uint) 0xFFFFFFFF80000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_SHARED_RESOURCE_WRITE")]
+        public const int SharedResourceWrite = unchecked((int) 0x1);
         [NativeName("Type", "unsigned long")]
         [NativeName("Name", "DXGI_USAGE_SHADER_INPUT")]
         public const uint UsageShaderInput = unchecked((uint) 0x10);

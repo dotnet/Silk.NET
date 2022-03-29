@@ -24,6 +24,7 @@ namespace Silk.NET.Vulkan.Video
             uint? firstSliceSegmentInPicFlag = null,
             uint? noOutputOfPriorPicsFlag = null,
             uint? dependentSliceSegmentFlag = null,
+            uint? picOutputFlag = null,
             uint? shortTermRefPicSetSpsFlag = null,
             uint? sliceTemporalMvpEnableFlag = null,
             uint? sliceSaoLumaFlag = null,
@@ -33,13 +34,7 @@ namespace Silk.NET.Vulkan.Video
             uint? cabacInitFlag = null,
             uint? sliceDeblockingFilterDisableFlag = null,
             uint? collocatedFromL0Flag = null,
-            uint? sliceLoopFilterAcrossSlicesEnabledFlag = null,
-            uint? bLastSliceInPic = null,
-            uint? reservedBits = null,
-            ushort? lumaWeightL0Flag = null,
-            ushort? chromaWeightL0Flag = null,
-            ushort? lumaWeightL1Flag = null,
-            ushort? chromaWeightL1Flag = null
+            uint? sliceLoopFilterAcrossSlicesEnabledFlag = null
         ) : this()
         {
             if (firstSliceSegmentInPicFlag is not null)
@@ -55,6 +50,11 @@ namespace Silk.NET.Vulkan.Video
             if (dependentSliceSegmentFlag is not null)
             {
                 DependentSliceSegmentFlag = dependentSliceSegmentFlag.Value;
+            }
+
+            if (picOutputFlag is not null)
+            {
+                PicOutputFlag = picOutputFlag.Value;
             }
 
             if (shortTermRefPicSetSpsFlag is not null)
@@ -106,36 +106,6 @@ namespace Silk.NET.Vulkan.Video
             {
                 SliceLoopFilterAcrossSlicesEnabledFlag = sliceLoopFilterAcrossSlicesEnabledFlag.Value;
             }
-
-            if (bLastSliceInPic is not null)
-            {
-                BLastSliceInPic = bLastSliceInPic.Value;
-            }
-
-            if (reservedBits is not null)
-            {
-                ReservedBits = reservedBits.Value;
-            }
-
-            if (lumaWeightL0Flag is not null)
-            {
-                LumaWeightL0Flag = lumaWeightL0Flag.Value;
-            }
-
-            if (chromaWeightL0Flag is not null)
-            {
-                ChromaWeightL0Flag = chromaWeightL0Flag.Value;
-            }
-
-            if (lumaWeightL1Flag is not null)
-            {
-                LumaWeightL1Flag = lumaWeightL1Flag.Value;
-            }
-
-            if (chromaWeightL1Flag is not null)
-            {
-                ChromaWeightL1Flag = chromaWeightL1Flag.Value;
-            }
         }
 
 
@@ -165,7 +135,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        public uint ShortTermRefPicSetSpsFlag
+        public uint PicOutputFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 3) & 0x1u);
@@ -173,7 +143,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        public uint SliceTemporalMvpEnableFlag
+        public uint ShortTermRefPicSetSpsFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x1u);
@@ -181,7 +151,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
         }
 
-        public uint SliceSaoLumaFlag
+        public uint SliceTemporalMvpEnableFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 5) & 0x1u);
@@ -189,7 +159,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
         }
 
-        public uint SliceSaoChromaFlag
+        public uint SliceSaoLumaFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 6) & 0x1u);
@@ -197,7 +167,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
         }
 
-        public uint NumRefIdxActiveOverrideFlag
+        public uint SliceSaoChromaFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 7) & 0x1u);
@@ -205,7 +175,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
         }
 
-        public uint MvdL1ZeroFlag
+        public uint NumRefIdxActiveOverrideFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 8) & 0x1u);
@@ -213,7 +183,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
         }
 
-        public uint CabacInitFlag
+        public uint MvdL1ZeroFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 9) & 0x1u);
@@ -221,7 +191,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
         }
 
-        public uint SliceDeblockingFilterDisableFlag
+        public uint CabacInitFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 10) & 0x1u);
@@ -229,7 +199,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
         }
 
-        public uint CollocatedFromL0Flag
+        public uint SliceDeblockingFilterDisableFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 11) & 0x1u);
@@ -237,7 +207,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
         }
 
-        public uint SliceLoopFilterAcrossSlicesEnabledFlag
+        public uint CollocatedFromL0Flag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 12) & 0x1u);
@@ -245,40 +215,12 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
         }
 
-        public uint BLastSliceInPic
+        public uint SliceLoopFilterAcrossSlicesEnabledFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 13) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
         }
-
-        public uint ReservedBits
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 14) & 0x3FFFFu);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFu << 14)) | (uint)(((uint)(value) & 0x3FFFFu) << 14));
-        }
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "luma_weight_l0_flag")]
-        public ushort LumaWeightL0Flag;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "chroma_weight_l0_flag")]
-        public ushort ChromaWeightL0Flag;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "luma_weight_l1_flag")]
-        public ushort LumaWeightL1Flag;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "chroma_weight_l1_flag")]
-        public ushort ChromaWeightL1Flag;
     }
 }

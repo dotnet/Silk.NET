@@ -22,6 +22,8 @@ namespace Silk.NET.Vulkan.Video
         public StdVideoEncodeH264PictureInfo
         (
             StdVideoEncodeH264PictureInfoFlags? flags = null,
+            byte? seqParameterSetId = null,
+            byte? picParameterSetId = null,
             StdVideoH264PictureType? pictureType = null,
             uint? frameNum = null,
             int? picOrderCnt = null
@@ -30,6 +32,16 @@ namespace Silk.NET.Vulkan.Video
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (seqParameterSetId is not null)
+            {
+                SeqParameterSetId = seqParameterSetId.Value;
+            }
+
+            if (picParameterSetId is not null)
+            {
+                PicParameterSetId = picParameterSetId.Value;
             }
 
             if (pictureType is not null)
@@ -53,6 +65,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "StdVideoEncodeH264PictureInfoFlags")]
         [NativeName("Name", "flags")]
         public StdVideoEncodeH264PictureInfoFlags Flags;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "seq_parameter_set_id")]
+        public byte SeqParameterSetId;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "pic_parameter_set_id")]
+        public byte PicParameterSetId;
 
         [NativeName("Type", "StdVideoH264PictureType")]
         [NativeName("Type.Name", "StdVideoH264PictureType")]

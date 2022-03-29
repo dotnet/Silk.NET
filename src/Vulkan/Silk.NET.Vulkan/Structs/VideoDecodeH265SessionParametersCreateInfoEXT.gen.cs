@@ -23,6 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt,
             void* pNext = null,
+            uint? maxVpsStdCount = null,
             uint? maxSpsStdCount = null,
             uint? maxPpsStdCount = null,
             VideoDecodeH265SessionParametersAddInfoEXT* pParametersAddInfo = null
@@ -36,6 +37,11 @@ namespace Silk.NET.Vulkan
             if (pNext is not null)
             {
                 PNext = pNext;
+            }
+
+            if (maxVpsStdCount is not null)
+            {
+                MaxVpsStdCount = maxVpsStdCount.Value;
             }
 
             if (maxSpsStdCount is not null)
@@ -64,6 +70,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pNext")]
         public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxVpsStdCount")]
+        public uint MaxVpsStdCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

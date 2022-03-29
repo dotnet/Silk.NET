@@ -17,6 +17,9022 @@ namespace Silk.NET.Core.Win32Extras
     public static class WindowsOverloads
     {
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 44, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CompareFileTime(this Windows thisApi, Filetime* lpFileTime1, Span<Filetime> lpFileTime2)
+        {
+            // SpanOverloader
+            return thisApi.CompareFileTime(lpFileTime1, ref lpFileTime2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 44, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CompareFileTime(this Windows thisApi, Span<Filetime> lpFileTime1, Filetime* lpFileTime2)
+        {
+            // SpanOverloader
+            return thisApi.CompareFileTime(ref lpFileTime1.GetPinnableReference(), lpFileTime2);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 44, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CompareFileTime(this Windows thisApi, Span<Filetime> lpFileTime1, Span<Filetime> lpFileTime2)
+        {
+            // SpanOverloader
+            return thisApi.CompareFileTime(ref lpFileTime1.GetPinnableReference(), ref lpFileTime2.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 52, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryA(this Windows thisApi, byte* lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryA(lpPathName, ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 52, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryA(this Windows thisApi, Span<byte> lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryA(ref lpPathName.GetPinnableReference(), lpSecurityAttributes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 52, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryA(this Windows thisApi, Span<byte> lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryA(ref lpPathName.GetPinnableReference(), ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 52, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryA(lpPathName, ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 60, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryW(this Windows thisApi, char* lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryW(lpPathName, ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 60, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryW(this Windows thisApi, Span<char> lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryW(ref lpPathName.GetPinnableReference(), lpSecurityAttributes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 60, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryW(this Windows thisApi, Span<char> lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryW(ref lpPathName.GetPinnableReference(), ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 60, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int CreateDirectoryW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes)
+        {
+            // SpanOverloader
+            return thisApi.CreateDirectoryW(lpPathName, ref lpSecurityAttributes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA(this Windows thisApi, byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, byte* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA(this Windows thisApi, Span<byte> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, Span<byte> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA(this Windows thisApi, Span<byte> lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, Span<byte> lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileA<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW(this Windows thisApi, char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, char* lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, void* hTemplateFile)
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 92, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFileW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, Span<Silk.NET.Core.Native.SecurityAttributes> lpSecurityAttributes, uint dwCreationDisposition, uint dwFlagsAndAttributes, Span<T0> hTemplateFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, ref lpSecurityAttributes.GetPinnableReference(), dwCreationDisposition, dwFlagsAndAttributes, ref hTemplateFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 116, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DefineDosDeviceW(this Windows thisApi, uint dwFlags, char* lpDeviceName, Span<char> lpTargetPath)
+        {
+            // SpanOverloader
+            return thisApi.DefineDosDeviceW(dwFlags, lpDeviceName, ref lpTargetPath.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 116, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DefineDosDeviceW(this Windows thisApi, uint dwFlags, Span<char> lpDeviceName, char* lpTargetPath)
+        {
+            // SpanOverloader
+            return thisApi.DefineDosDeviceW(dwFlags, ref lpDeviceName.GetPinnableReference(), lpTargetPath);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 116, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DefineDosDeviceW(this Windows thisApi, uint dwFlags, Span<char> lpDeviceName, Span<char> lpTargetPath)
+        {
+            // SpanOverloader
+            return thisApi.DefineDosDeviceW(dwFlags, ref lpDeviceName.GetPinnableReference(), ref lpTargetPath.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 116, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DefineDosDeviceW(this Windows thisApi, uint dwFlags, Span<char> lpDeviceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath)
+        {
+            // SpanOverloader
+            return thisApi.DefineDosDeviceW(dwFlags, ref lpDeviceName.GetPinnableReference(), lpTargetPath);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 116, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DefineDosDeviceW(this Windows thisApi, uint dwFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, Span<char> lpTargetPath)
+        {
+            // SpanOverloader
+            return thisApi.DefineDosDeviceW(dwFlags, lpDeviceName, ref lpTargetPath.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 135, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DeleteFileA(this Windows thisApi, Span<byte> lpFileName)
+        {
+            // SpanOverloader
+            return thisApi.DeleteFileA(ref lpFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 142, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DeleteFileW(this Windows thisApi, Span<char> lpFileName)
+        {
+            // SpanOverloader
+            return thisApi.DeleteFileW(ref lpFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 160, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int DeleteVolumeMountPointW(this Windows thisApi, Span<char> lpszVolumeMountPoint)
+        {
+            // SpanOverloader
+            return thisApi.DeleteVolumeMountPointW(ref lpszVolumeMountPoint.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 177, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FileTimeToLocalFileTime(this Windows thisApi, Filetime* lpFileTime, Span<Filetime> lpLocalFileTime)
+        {
+            // SpanOverloader
+            return thisApi.FileTimeToLocalFileTime(lpFileTime, ref lpLocalFileTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 177, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FileTimeToLocalFileTime(this Windows thisApi, Span<Filetime> lpFileTime, Filetime* lpLocalFileTime)
+        {
+            // SpanOverloader
+            return thisApi.FileTimeToLocalFileTime(ref lpFileTime.GetPinnableReference(), lpLocalFileTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 177, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FileTimeToLocalFileTime(this Windows thisApi, Span<Filetime> lpFileTime, Span<Filetime> lpLocalFileTime)
+        {
+            // SpanOverloader
+            return thisApi.FileTimeToLocalFileTime(ref lpFileTime.GetPinnableReference(), ref lpLocalFileTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 191, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindClose<T0>(this Windows thisApi, Span<T0> hFindFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindClose(ref hFindFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 204, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindCloseChangeNotification<T0>(this Windows thisApi, Span<T0> hChangeHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindCloseChangeNotification(ref hChangeHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstChangeNotificationA(this Windows thisApi, Span<byte> lpPathName, int bWatchSubtree, uint dwNotifyFilter)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstChangeNotificationA(ref lpPathName.GetPinnableReference(), bWatchSubtree, dwNotifyFilter);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 220, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstChangeNotificationW(this Windows thisApi, Span<char> lpPathName, int bWatchSubtree, uint dwNotifyFilter)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstChangeNotificationW(ref lpPathName.GetPinnableReference(), bWatchSubtree, dwNotifyFilter);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 240, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileA(this Windows thisApi, byte* lpFileName, Span<Win32FindDataa> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileA(lpFileName, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 240, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileA(this Windows thisApi, Span<byte> lpFileName, Win32FindDataa* lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileA(ref lpFileName.GetPinnableReference(), lpFindFileData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 240, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileA(this Windows thisApi, Span<byte> lpFileName, Span<Win32FindDataa> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileA(ref lpFileName.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 240, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, Span<Win32FindDataa> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileA(lpFileName, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 248, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileW(this Windows thisApi, char* lpFileName, Span<Win32FindDataw> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileW(lpFileName, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 248, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileW(this Windows thisApi, Span<char> lpFileName, Win32FindDataw* lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileW(ref lpFileName.GetPinnableReference(), lpFindFileData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 248, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileW(this Windows thisApi, Span<char> lpFileName, Span<Win32FindDataw> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileW(ref lpFileName.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 248, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, Span<Win32FindDataw> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileW(lpFileName, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, byte* lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, byte* lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0, T1>(this Windows thisApi, byte* lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA(this Windows thisApi, Span<byte> lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, Span<byte> lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, Span<byte> lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0, T1>(this Windows thisApi, Span<byte> lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 263, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExA<T0, T1>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExA(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, char* lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, char* lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0, T1>(this Windows thisApi, char* lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW(this Windows thisApi, Span<char> lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileData, fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, Span<char> lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, Span<char> lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0, T1>(this Windows thisApi, Span<char> lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, FindexInfoLevels fInfoLevelId, void* lpFindFileData, FindexSearchOps fSearchOp, Span<T0> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, lpFindFileData, fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, void* lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, lpSearchFilter, dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 275, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileExW<T0, T1>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, FindexInfoLevels fInfoLevelId, Span<T0> lpFindFileData, FindexSearchOps fSearchOp, Span<T1> lpSearchFilter, uint dwAdditionalFlags) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileExW(lpFileName, fInfoLevelId, ref lpFindFileData.GetPinnableReference(), fSearchOp, ref lpSearchFilter.GetPinnableReference(), dwAdditionalFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 300, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstVolumeW(this Windows thisApi, Span<char> lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstVolumeW(ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 312, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextChangeNotification<T0>(this Windows thisApi, Span<T0> hChangeHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextChangeNotification(ref hChangeHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 325, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileA(this Windows thisApi, void* hFindFile, Span<Win32FindDataa> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileA(hFindFile, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 325, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileA<T0>(this Windows thisApi, Span<T0> hFindFile, Win32FindDataa* lpFindFileData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileA(ref hFindFile.GetPinnableReference(), lpFindFileData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 325, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileA<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataa> lpFindFileData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileA(ref hFindFile.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 333, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileW(this Windows thisApi, void* hFindFile, Span<Win32FindDataw> lpFindFileData)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileW(hFindFile, ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 333, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileW<T0>(this Windows thisApi, Span<T0> hFindFile, Win32FindDataw* lpFindFileData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileW(ref hFindFile.GetPinnableReference(), lpFindFileData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 333, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileW<T0>(this Windows thisApi, Span<T0> hFindFile, Span<Win32FindDataw> lpFindFileData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileW(ref hFindFile.GetPinnableReference(), ref lpFindFileData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextVolumeW(this Windows thisApi, void* hFindVolume, Span<char> lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.FindNextVolumeW(hFindVolume, ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, char* lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), lpszVolumeName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, Span<char> lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextVolumeW<T0>(this Windows thisApi, Span<T0> hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextVolumeW(ref hFindVolume.GetPinnableReference(), lpszVolumeName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 365, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindVolumeClose<T0>(this Windows thisApi, Span<T0> hFindVolume) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindVolumeClose(ref hFindVolume.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 378, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FlushFileBuffers<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FlushFileBuffers(ref hFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, byte* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, Span<byte> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 385, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceA(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, char* lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, Span<char> lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(ref lpRootPathName.GetPinnableReference(), ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, lpSectorsPerCluster, ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, uint* lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), lpBytesPerSector, ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, uint* lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), lpNumberOfFreeClusters, ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), lpTotalNumberOfClusters);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 396, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<uint> lpSectorsPerCluster, Span<uint> lpBytesPerSector, Span<uint> lpNumberOfFreeClusters, Span<uint> lpTotalNumberOfClusters)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceW(lpRootPathName, ref lpSectorsPerCluster.GetPinnableReference(), ref lpBytesPerSector.GetPinnableReference(), ref lpNumberOfFreeClusters.GetPinnableReference(), ref lpTotalNumberOfClusters.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, byte* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, Span<byte> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 412, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExA(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, char* lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, Span<char> lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(ref lpDirectoryName.GetPinnableReference(), ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, lpFreeBytesAvailableToCaller, ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), lpTotalNumberOfBytes, ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), lpTotalNumberOfFreeBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 422, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskFreeSpaceExW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, Span<ulong> lpFreeBytesAvailableToCaller, Span<ulong> lpTotalNumberOfBytes, Span<ulong> lpTotalNumberOfFreeBytes)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskFreeSpaceExW(lpDirectoryName, ref lpFreeBytesAvailableToCaller.GetPinnableReference(), ref lpTotalNumberOfBytes.GetPinnableReference(), ref lpTotalNumberOfFreeBytes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 534, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationA(this Windows thisApi, byte* rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationA(rootPath, ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 534, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationA(this Windows thisApi, Span<byte> rootPath, DiskSpaceInformation* diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationA(ref rootPath.GetPinnableReference(), diskSpaceInfo);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 534, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationA(this Windows thisApi, Span<byte> rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationA(ref rootPath.GetPinnableReference(), ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 534, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationA(rootPath, ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 542, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationW(this Windows thisApi, char* rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationW(rootPath, ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 542, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationW(this Windows thisApi, Span<char> rootPath, DiskSpaceInformation* diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationW(ref rootPath.GetPinnableReference(), diskSpaceInfo);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 542, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationW(this Windows thisApi, Span<char> rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationW(ref rootPath.GetPinnableReference(), ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 542, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetDiskSpaceInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string rootPath, Span<DiskSpaceInformation> diskSpaceInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetDiskSpaceInformationW(rootPath, ref diskSpaceInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 561, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetDriveTypeA(this Windows thisApi, Span<byte> lpRootPathName)
+        {
+            // SpanOverloader
+            return thisApi.GetDriveTypeA(ref lpRootPathName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 568, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetDriveTypeW(this Windows thisApi, Span<char> lpRootPathName)
+        {
+            // SpanOverloader
+            return thisApi.GetDriveTypeW(ref lpRootPathName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 589, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileAttributesA(this Windows thisApi, Span<byte> lpFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesA(ref lpFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 596, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileAttributesW(this Windows thisApi, Span<char> lpFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesW(ref lpFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 608, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExA<T0>(this Windows thisApi, byte* lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExA(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 608, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExA(this Windows thisApi, Span<byte> lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation)
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFileInformation);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 608, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExA<T0>(this Windows thisApi, Span<byte> lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExA(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 608, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExA<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExA(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 617, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExW<T0>(this Windows thisApi, char* lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExW(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 617, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExW(this Windows thisApi, Span<char> lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation)
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, lpFileInformation);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 617, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExW<T0>(this Windows thisApi, Span<char> lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExW(ref lpFileName.GetPinnableReference(), fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 617, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileAttributesExW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, Span<T0> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileAttributesExW(lpFileName, fInfoLevelId, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 644, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileInformationByHandle(this Windows thisApi, void* hFile, Span<ByHandleFileInformation> lpFileInformation)
+        {
+            // SpanOverloader
+            return thisApi.GetFileInformationByHandle(hFile, ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 644, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, ByHandleFileInformation* lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileInformationByHandle(ref hFile.GetPinnableReference(), lpFileInformation);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 644, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, Span<ByHandleFileInformation> lpFileInformation) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileInformationByHandle(ref hFile.GetPinnableReference(), ref lpFileInformation.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 658, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileSize(this Windows thisApi, void* hFile, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetFileSize(hFile, ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 658, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileSize<T0>(this Windows thisApi, Span<T0> hFile, uint* lpFileSizeHigh) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileSize(ref hFile.GetPinnableReference(), lpFileSizeHigh);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 658, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileSize<T0>(this Windows thisApi, Span<T0> hFile, Span<uint> lpFileSizeHigh) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileSize(ref hFile.GetPinnableReference(), ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 672, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileSizeEx(this Windows thisApi, void* hFile, Span<long> lpFileSize)
+        {
+            // SpanOverloader
+            return thisApi.GetFileSizeEx(hFile, ref lpFileSize.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 672, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileSizeEx<T0>(this Windows thisApi, Span<T0> hFile, long* lpFileSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileSizeEx(ref hFile.GetPinnableReference(), lpFileSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 672, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileSizeEx<T0>(this Windows thisApi, Span<T0> hFile, Span<long> lpFileSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileSizeEx(ref hFile.GetPinnableReference(), ref lpFileSize.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 680, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFileType<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileType(ref hFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 689, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleA(this Windows thisApi, void* hFile, Span<byte> lpszFilePath, uint cchFilePath, uint dwFlags)
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleA(hFile, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 689, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, byte* lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 689, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, Span<byte> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 689, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleA<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleA(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 699, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleW(this Windows thisApi, void* hFile, Span<char> lpszFilePath, uint cchFilePath, uint dwFlags)
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleW(hFile, ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 699, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 699, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), ref lpszFilePath.GetPinnableReference(), cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 699, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFinalPathNameByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFilePath, uint cchFilePath, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFinalPathNameByHandleW(ref hFile.GetPinnableReference(), lpszFilePath, cchFilePath, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 716, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, char* lpFileName, uint nBufferLength, Span<char> lpBuffer, char** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, char* lpFileName, uint nBufferLength, Span<char> lpBuffer, ref char* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, char* lpBuffer, char** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, char* lpBuffer, ref char* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, Span<char> lpBuffer, char** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, Span<char> lpBuffer, ref char* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpBuffer, char** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, Span<char> lpFileName, uint nBufferLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpBuffer, ref char* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint nBufferLength, Span<char> lpBuffer, char** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 727, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint nBufferLength, Span<char> lpBuffer, ref char* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameW(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, byte* lpFileName, uint nBufferLength, Span<byte> lpBuffer, byte** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, byte* lpFileName, uint nBufferLength, Span<byte> lpBuffer, ref byte* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, byte* lpBuffer, byte** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, byte* lpBuffer, ref byte* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, Span<byte> lpBuffer, byte** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, Span<byte> lpBuffer, ref byte* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpBuffer, byte** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, Span<byte> lpFileName, uint nBufferLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpBuffer, ref byte* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(ref lpFileName.GetPinnableReference(), nBufferLength, lpBuffer, ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint nBufferLength, Span<byte> lpBuffer, byte** lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 742, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetFullPathNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint nBufferLength, Span<byte> lpBuffer, ref byte* lpFilePart)
+        {
+            // SpanOverloader
+            return thisApi.GetFullPathNameA(lpFileName, nBufferLength, ref lpBuffer.GetPinnableReference(), ref lpFilePart);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 769, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLogicalDriveStringsW(this Windows thisApi, uint nBufferLength, Span<char> lpBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLogicalDriveStringsW(nBufferLength, ref lpBuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 788, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameA(this Windows thisApi, byte* lpszShortPath, Span<byte> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameA(lpszShortPath, ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 788, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameA(this Windows thisApi, Span<byte> lpszShortPath, byte* lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameA(ref lpszShortPath.GetPinnableReference(), lpszLongPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 788, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameA(this Windows thisApi, Span<byte> lpszShortPath, Span<byte> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameA(ref lpszShortPath.GetPinnableReference(), ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 788, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameA(this Windows thisApi, Span<byte> lpszShortPath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameA(ref lpszShortPath.GetPinnableReference(), lpszLongPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 788, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpszShortPath, Span<byte> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameA(lpszShortPath, ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 802, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameW(this Windows thisApi, char* lpszShortPath, Span<char> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameW(lpszShortPath, ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 802, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameW(this Windows thisApi, Span<char> lpszShortPath, char* lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameW(ref lpszShortPath.GetPinnableReference(), lpszLongPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 802, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameW(this Windows thisApi, Span<char> lpszShortPath, Span<char> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameW(ref lpszShortPath.GetPinnableReference(), ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 802, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameW(this Windows thisApi, Span<char> lpszShortPath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameW(ref lpszShortPath.GetPinnableReference(), lpszLongPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 802, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetLongPathNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszShortPath, Span<char> lpszLongPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetLongPathNameW(lpszShortPath, ref lpszLongPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 823, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int AreShortNamesEnabled(this Windows thisApi, void* Handle, Span<int> Enabled)
+        {
+            // SpanOverloader
+            return thisApi.AreShortNamesEnabled(Handle, ref Enabled.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 823, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int AreShortNamesEnabled<T0>(this Windows thisApi, Span<T0> Handle, int* Enabled) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.AreShortNamesEnabled(ref Handle.GetPinnableReference(), Enabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 823, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int AreShortNamesEnabled<T0>(this Windows thisApi, Span<T0> Handle, Span<int> Enabled) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.AreShortNamesEnabled(ref Handle.GetPinnableReference(), ref Enabled.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetShortPathNameW(this Windows thisApi, char* lpszLongPath, Span<char> lpszShortPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetShortPathNameW(lpszLongPath, ref lpszShortPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetShortPathNameW(this Windows thisApi, Span<char> lpszLongPath, char* lpszShortPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetShortPathNameW(ref lpszLongPath.GetPinnableReference(), lpszShortPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetShortPathNameW(this Windows thisApi, Span<char> lpszLongPath, Span<char> lpszShortPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetShortPathNameW(ref lpszLongPath.GetPinnableReference(), ref lpszShortPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetShortPathNameW(this Windows thisApi, Span<char> lpszLongPath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszShortPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetShortPathNameW(ref lpszLongPath.GetPinnableReference(), lpszShortPath, cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetShortPathNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszLongPath, Span<char> lpszShortPath, uint cchBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetShortPathNameW(lpszLongPath, ref lpszShortPath.GetPinnableReference(), cchBuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, char* lpPathName, char* lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, char* lpPathName, Span<char> lpPrefixString, uint uUnique, char* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, char* lpPathName, Span<char> lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, char* lpPathName, Span<char> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, char* lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, char* lpPrefixString, uint uUnique, char* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, char* lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, char* lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, Span<char> lpPrefixString, uint uUnique, char* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, Span<char> lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, Span<char> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPrefixString, uint uUnique, char* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, Span<char> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, char* lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Span<char> lpPrefixString, uint uUnique, char* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Span<char> lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Span<char> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 853, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPrefixString, uint uUnique, Span<char> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameW(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW(this Windows thisApi, void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(hFile, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 875, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationByHandleW<T0>(this Windows thisApi, Span<T0> hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationByHandleW(ref hFile.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, Span<char> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, Span<char> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<char> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 891, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationW(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 909, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNameW(this Windows thisApi, char* lpszFileName, Span<char> lpszVolumePathName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNameW(lpszFileName, ref lpszVolumePathName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 909, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNameW(this Windows thisApi, Span<char> lpszFileName, char* lpszVolumePathName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNameW(ref lpszFileName.GetPinnableReference(), lpszVolumePathName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 909, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNameW(this Windows thisApi, Span<char> lpszFileName, Span<char> lpszVolumePathName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNameW(ref lpszFileName.GetPinnableReference(), ref lpszVolumePathName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 909, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNameW(this Windows thisApi, Span<char> lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNameW(ref lpszFileName.GetPinnableReference(), lpszVolumePathName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 909, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, Span<char> lpszVolumePathName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNameW(lpszFileName, ref lpszVolumePathName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 922, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LocalFileTimeToFileTime(this Windows thisApi, Filetime* lpLocalFileTime, Span<Filetime> lpFileTime)
+        {
+            // SpanOverloader
+            return thisApi.LocalFileTimeToFileTime(lpLocalFileTime, ref lpFileTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 922, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LocalFileTimeToFileTime(this Windows thisApi, Span<Filetime> lpLocalFileTime, Filetime* lpFileTime)
+        {
+            // SpanOverloader
+            return thisApi.LocalFileTimeToFileTime(ref lpLocalFileTime.GetPinnableReference(), lpFileTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 922, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LocalFileTimeToFileTime(this Windows thisApi, Span<Filetime> lpLocalFileTime, Span<Filetime> lpFileTime)
+        {
+            // SpanOverloader
+            return thisApi.LocalFileTimeToFileTime(ref lpLocalFileTime.GetPinnableReference(), ref lpFileTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 930, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LockFile<T0>(this Windows thisApi, Span<T0> hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.LockFile(ref hFile.GetPinnableReference(), dwFileOffsetLow, dwFileOffsetHigh, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 941, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LockFileEx(this Windows thisApi, void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.LockFileEx(hFile, dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 941, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.LockFileEx(ref hFile.GetPinnableReference(), dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 941, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int LockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.LockFileEx(ref hFile.GetPinnableReference(), dwFlags, dwReserved, nNumberOfBytesToLockLow, nNumberOfBytesToLockHigh, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 959, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint QueryDosDeviceW(this Windows thisApi, char* lpDeviceName, Span<char> lpTargetPath, uint ucchMax)
+        {
+            // SpanOverloader
+            return thisApi.QueryDosDeviceW(lpDeviceName, ref lpTargetPath.GetPinnableReference(), ucchMax);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 959, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint QueryDosDeviceW(this Windows thisApi, Span<char> lpDeviceName, char* lpTargetPath, uint ucchMax)
+        {
+            // SpanOverloader
+            return thisApi.QueryDosDeviceW(ref lpDeviceName.GetPinnableReference(), lpTargetPath, ucchMax);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 959, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint QueryDosDeviceW(this Windows thisApi, Span<char> lpDeviceName, Span<char> lpTargetPath, uint ucchMax)
+        {
+            // SpanOverloader
+            return thisApi.QueryDosDeviceW(ref lpDeviceName.GetPinnableReference(), ref lpTargetPath.GetPinnableReference(), ucchMax);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 959, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint QueryDosDeviceW(this Windows thisApi, Span<char> lpDeviceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath, uint ucchMax)
+        {
+            // SpanOverloader
+            return thisApi.QueryDosDeviceW(ref lpDeviceName.GetPinnableReference(), lpTargetPath, ucchMax);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 959, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint QueryDosDeviceW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, Span<char> lpTargetPath, uint ucchMax)
+        {
+            // SpanOverloader
+            return thisApi.QueryDosDeviceW(lpDeviceName, ref lpTargetPath.GetPinnableReference(), ucchMax);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpNumberOfBytesRead, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 979, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<uint> lpNumberOfBytesRead, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpNumberOfBytesRead.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(hFile, lpBuffer, nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 991, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToRead, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToRead, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1003, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int ReadFileScatter<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToRead, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.ReadFileScatter(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToRead, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1014, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int RemoveDirectoryA(this Windows thisApi, Span<byte> lpPathName)
+        {
+            // SpanOverloader
+            return thisApi.RemoveDirectoryA(ref lpPathName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1021, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int RemoveDirectoryW(this Windows thisApi, Span<char> lpPathName)
+        {
+            // SpanOverloader
+            return thisApi.RemoveDirectoryW(ref lpPathName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1033, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetEndOfFile<T0>(this Windows thisApi, Span<T0> hFile) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetEndOfFile(ref hFile.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1040, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileAttributesA(this Windows thisApi, Span<byte> lpFileName, uint dwFileAttributes)
+        {
+            // SpanOverloader
+            return thisApi.SetFileAttributesA(ref lpFileName.GetPinnableReference(), dwFileAttributes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1048, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileAttributesW(this Windows thisApi, Span<char> lpFileName, uint dwFileAttributes)
+        {
+            // SpanOverloader
+            return thisApi.SetFileAttributesW(ref lpFileName.GetPinnableReference(), dwFileAttributes);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1063, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileInformationByHandle<T0>(this Windows thisApi, void* hFile, FileInfoByHandleClass FileInformationClass, Span<T0> lpFileInformation, uint dwBufferSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileInformationByHandle(hFile, FileInformationClass, ref lpFileInformation.GetPinnableReference(), dwBufferSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1063, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileInformationByHandle<T0>(this Windows thisApi, Span<T0> hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileInformationByHandle(ref hFile.GetPinnableReference(), FileInformationClass, lpFileInformation, dwBufferSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1063, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileInformationByHandle<T0, T1>(this Windows thisApi, Span<T0> hFile, FileInfoByHandleClass FileInformationClass, Span<T1> lpFileInformation, uint dwBufferSize) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileInformationByHandle(ref hFile.GetPinnableReference(), FileInformationClass, ref lpFileInformation.GetPinnableReference(), dwBufferSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1075, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint SetFilePointer(this Windows thisApi, void* hFile, int lDistanceToMove, Span<int> lpDistanceToMoveHigh, uint dwMoveMethod)
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointer(hFile, lDistanceToMove, ref lpDistanceToMoveHigh.GetPinnableReference(), dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1075, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint SetFilePointer<T0>(this Windows thisApi, Span<T0> hFile, int lDistanceToMove, int* lpDistanceToMoveHigh, uint dwMoveMethod) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointer(ref hFile.GetPinnableReference(), lDistanceToMove, lpDistanceToMoveHigh, dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1075, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint SetFilePointer<T0>(this Windows thisApi, Span<T0> hFile, int lDistanceToMove, Span<int> lpDistanceToMoveHigh, uint dwMoveMethod) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointer(ref hFile.GetPinnableReference(), lDistanceToMove, ref lpDistanceToMoveHigh.GetPinnableReference(), dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1085, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFilePointerEx(this Windows thisApi, void* hFile, long liDistanceToMove, Span<long> lpNewFilePointer, uint dwMoveMethod)
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointerEx(hFile, liDistanceToMove, ref lpNewFilePointer.GetPinnableReference(), dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1085, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFilePointerEx<T0>(this Windows thisApi, Span<T0> hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointerEx(ref hFile.GetPinnableReference(), liDistanceToMove, lpNewFilePointer, dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1085, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFilePointerEx<T0>(this Windows thisApi, Span<T0> hFile, long liDistanceToMove, Span<long> lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFilePointerEx(ref hFile.GetPinnableReference(), liDistanceToMove, ref lpNewFilePointer.GetPinnableReference(), dwMoveMethod);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime(this Windows thisApi, void* hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime)
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(hFile, ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Filetime* lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), lpCreationTime, ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Filetime* lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), lpLastAccessTime, ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), lpLastWriteTime);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1095, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileTime<T0>(this Windows thisApi, Span<T0> hFile, Span<Filetime> lpCreationTime, Span<Filetime> lpLastAccessTime, Span<Filetime> lpLastWriteTime) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileTime(ref hFile.GetPinnableReference(), ref lpCreationTime.GetPinnableReference(), ref lpLastAccessTime.GetPinnableReference(), ref lpLastWriteTime.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1107, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileValidData<T0>(this Windows thisApi, Span<T0> hFile, long ValidDataLength) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileValidData(ref hFile.GetPinnableReference(), ValidDataLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1117, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int UnlockFile<T0>(this Windows thisApi, Span<T0> hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.UnlockFile(ref hFile.GetPinnableReference(), dwFileOffsetLow, dwFileOffsetHigh, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1128, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int UnlockFileEx(this Windows thisApi, void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.UnlockFileEx(hFile, dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1128, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int UnlockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.UnlockFileEx(ref hFile.GetPinnableReference(), dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1128, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int UnlockFileEx<T0>(this Windows thisApi, Span<T0> hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.UnlockFileEx(ref hFile.GetPinnableReference(), dwReserved, nNumberOfBytesToUnlockLow, nNumberOfBytesToUnlockHigh, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpNumberOfBytesWritten, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1139, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFile<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, Span<uint> lpNumberOfBytesWritten, Span<Overlapped> lpOverlapped) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFile(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpNumberOfBytesWritten.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx(this Windows thisApi, void* hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(hFile, lpBuffer, nNumberOfBytesToWrite, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0>(this Windows thisApi, void* hFile, Span<T0> lpBuffer, uint nNumberOfBytesToWrite, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(hFile, ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0>(this Windows thisApi, Span<T0> hFile, void* lpBuffer, uint nNumberOfBytesToWrite, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(ref hFile.GetPinnableReference(), lpBuffer, nNumberOfBytesToWrite, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, lpOverlapped, lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1150, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileEx<T0, T1>(this Windows thisApi, Span<T0> hFile, Span<T1> lpBuffer, uint nNumberOfBytesToWrite, Span<Overlapped> lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileEx(ref hFile.GetPinnableReference(), ref lpBuffer.GetPinnableReference(), nNumberOfBytesToWrite, ref lpOverlapped.GetPinnableReference(), lpCompletionRoutine);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather(this Windows thisApi, void* hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped)
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(hFile, ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), aSegmentArray, nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, lpReserved, ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), lpOverlapped);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1161, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int WriteFileGather<T0>(this Windows thisApi, Span<T0> hFile, Span<FileSegmentElement> aSegmentArray, uint nNumberOfBytesToWrite, Span<uint> lpReserved, Span<Overlapped> lpOverlapped) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.WriteFileGather(ref hFile.GetPinnableReference(), ref aSegmentArray.GetPinnableReference(), nNumberOfBytesToWrite, ref lpReserved.GetPinnableReference(), ref lpOverlapped.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1172, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempPathW(this Windows thisApi, uint nBufferLength, Span<char> lpBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetTempPathW(nBufferLength, ref lpBuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1190, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeNameForVolumeMountPointW(this Windows thisApi, char* lpszVolumeMountPoint, Span<char> lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeNameForVolumeMountPointW(lpszVolumeMountPoint, ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1190, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeNameForVolumeMountPointW(this Windows thisApi, Span<char> lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeNameForVolumeMountPointW(ref lpszVolumeMountPoint.GetPinnableReference(), lpszVolumeName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1190, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeNameForVolumeMountPointW(this Windows thisApi, Span<char> lpszVolumeMountPoint, Span<char> lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeNameForVolumeMountPointW(ref lpszVolumeMountPoint.GetPinnableReference(), ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1190, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeNameForVolumeMountPointW(this Windows thisApi, Span<char> lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeNameForVolumeMountPointW(ref lpszVolumeMountPoint.GetPinnableReference(), lpszVolumeName, cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1190, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeNameForVolumeMountPointW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, Span<char> lpszVolumeName, uint cchBufferLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeNameForVolumeMountPointW(lpszVolumeMountPoint, ref lpszVolumeName.GetPinnableReference(), cchBufferLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, char* lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, char* lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, lpcchReturnLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, char* lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, char* lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), lpszVolumePathNames, cchBufferLength, lpcchReturnLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, lpcchReturnLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), lpszVolumePathNames, cchBufferLength, lpcchReturnLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, Span<char> lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(ref lpszVolumeName.GetPinnableReference(), lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, lpcchReturnLength);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, Span<char> lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, ref lpszVolumePathNames.GetPinnableReference(), cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1211, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumePathNamesForVolumeNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, Span<uint> lpcchReturnLength)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumePathNamesForVolumeNameW(lpszVolumeName, lpszVolumePathNames, cchBufferLength, ref lpcchReturnLength.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1244, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFile2(this Windows thisApi, char* lpFileName, uint dwDesiredAccess, uint dwShareMode, uint dwCreationDisposition, Span<Createfile2ExtendedParameters> pCreateExParams)
+        {
+            // SpanOverloader
+            return thisApi.CreateFile2(lpFileName, dwDesiredAccess, dwShareMode, dwCreationDisposition, ref pCreateExParams.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1244, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFile2(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, uint dwCreationDisposition, Createfile2ExtendedParameters* pCreateExParams)
+        {
+            // SpanOverloader
+            return thisApi.CreateFile2(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, dwCreationDisposition, pCreateExParams);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1244, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFile2(this Windows thisApi, Span<char> lpFileName, uint dwDesiredAccess, uint dwShareMode, uint dwCreationDisposition, Span<Createfile2ExtendedParameters> pCreateExParams)
+        {
+            // SpanOverloader
+            return thisApi.CreateFile2(ref lpFileName.GetPinnableReference(), dwDesiredAccess, dwShareMode, dwCreationDisposition, ref pCreateExParams.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1244, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* CreateFile2(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwDesiredAccess, uint dwShareMode, uint dwCreationDisposition, Span<Createfile2ExtendedParameters> pCreateExParams)
+        {
+            // SpanOverloader
+            return thisApi.CreateFile2(lpFileName, dwDesiredAccess, dwShareMode, dwCreationDisposition, ref pCreateExParams.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1265, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileIoOverlappedRange(this Windows thisApi, void* FileHandle, Span<byte> OverlappedRangeStart, uint Length)
+        {
+            // SpanOverloader
+            return thisApi.SetFileIoOverlappedRange(FileHandle, ref OverlappedRangeStart.GetPinnableReference(), Length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1265, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, byte* OverlappedRangeStart, uint Length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), OverlappedRangeStart, Length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1265, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, Span<byte> OverlappedRangeStart, uint Length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), ref OverlappedRangeStart.GetPinnableReference(), Length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1265, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int SetFileIoOverlappedRange<T0>(this Windows thisApi, Span<T0> FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetFileIoOverlappedRange(ref FileHandle.GetPinnableReference(), OverlappedRangeStart, Length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1278, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeA(this Windows thisApi, byte* lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeA(lpFileName, ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1278, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeA(this Windows thisApi, Span<byte> lpFileName, uint* lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeA(ref lpFileName.GetPinnableReference(), lpFileSizeHigh);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1278, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeA(this Windows thisApi, Span<byte> lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeA(ref lpFileName.GetPinnableReference(), ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1278, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeA(lpFileName, ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1286, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeW(this Windows thisApi, char* lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeW(lpFileName, ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1286, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeW(this Windows thisApi, Span<char> lpFileName, uint* lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeW(ref lpFileName.GetPinnableReference(), lpFileSizeHigh);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1286, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeW(this Windows thisApi, Span<char> lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeW(ref lpFileName.GetPinnableReference(), ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1286, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetCompressedFileSizeW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, Span<uint> lpFileSizeHigh)
+        {
+            // SpanOverloader
+            return thisApi.GetCompressedFileSizeW(lpFileName, ref lpFileSizeHigh.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1317, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstStreamW<T0>(this Windows thisApi, char* lpFileName, StreamInfoLevels InfoLevel, Span<T0> lpFindStreamData, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstStreamW(lpFileName, InfoLevel, ref lpFindStreamData.GetPinnableReference(), dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1317, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstStreamW(this Windows thisApi, Span<char> lpFileName, StreamInfoLevels InfoLevel, void* lpFindStreamData, uint dwFlags)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstStreamW(ref lpFileName.GetPinnableReference(), InfoLevel, lpFindStreamData, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1317, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstStreamW<T0>(this Windows thisApi, Span<char> lpFileName, StreamInfoLevels InfoLevel, Span<T0> lpFindStreamData, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstStreamW(ref lpFileName.GetPinnableReference(), InfoLevel, ref lpFindStreamData.GetPinnableReference(), dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1317, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstStreamW<T0>(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, StreamInfoLevels InfoLevel, Span<T0> lpFindStreamData, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindFirstStreamW(lpFileName, InfoLevel, ref lpFindStreamData.GetPinnableReference(), dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1327, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextStreamW<T0>(this Windows thisApi, void* hFindStream, Span<T0> lpFindStreamData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextStreamW(hFindStream, ref lpFindStreamData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1327, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextStreamW<T0>(this Windows thisApi, Span<T0> hFindStream, void* lpFindStreamData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextStreamW(ref hFindStream.GetPinnableReference(), lpFindStreamData);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1327, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextStreamW<T0, T1>(this Windows thisApi, Span<T0> hFindStream, Span<T1> lpFindStreamData) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextStreamW(ref hFindStream.GetPinnableReference(), ref lpFindStreamData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1356, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempPathA(this Windows thisApi, uint nBufferLength, Span<byte> lpBuffer)
+        {
+            // SpanOverloader
+            return thisApi.GetTempPathA(nBufferLength, ref lpBuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, char* lpFileName, uint dwFlags, uint* StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, StringLength, ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, char* lpFileName, uint dwFlags, Span<uint> StringLength, char* LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, char* lpFileName, uint dwFlags, Span<uint> StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, char* lpFileName, uint dwFlags, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, uint* StringLength, char* LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, StringLength, LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, uint* StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, StringLength, ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, StringLength, LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, Span<uint> StringLength, char* LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, Span<uint> StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, Span<char> lpFileName, uint dwFlags, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(ref lpFileName.GetPinnableReference(), dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFlags, uint* StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, StringLength, ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFlags, Span<uint> StringLength, char* LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFlags, Span<uint> StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1376, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe void* FindFirstFileNameW(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFlags, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindFirstFileNameW(lpFileName, dwFlags, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW(this Windows thisApi, void* hFindStream, uint* StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(hFindStream, StringLength, ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, char* LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, Span<char> LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW(this Windows thisApi, void* hFindStream, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName)
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(hFindStream, ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, char* LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, Span<char> LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), StringLength, LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, char* LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, Span<char> LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), ref LinkName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1386, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int FindNextFileNameW<T0>(this Windows thisApi, Span<T0> hFindStream, Span<uint> StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.FindNextFileNameW(ref hFindStream.GetPinnableReference(), ref StringLength.GetPinnableReference(), LinkName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, Span<byte> lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(ref lpRootPathName.GetPinnableReference(), lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, Span<byte> lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, ref lpVolumeNameBuffer.GetPinnableReference(), nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, lpVolumeSerialNumber, ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, uint* lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), lpMaximumComponentLength, ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), lpFileSystemFlags, lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, Span<byte> lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), ref lpFileSystemNameBuffer.GetPinnableReference(), nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1403, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe int GetVolumeInformationA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, Span<uint> lpVolumeSerialNumber, Span<uint> lpMaximumComponentLength, Span<uint> lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize)
+        {
+            // SpanOverloader
+            return thisApi.GetVolumeInformationA(lpRootPathName, lpVolumeNameBuffer, nVolumeNameSize, ref lpVolumeSerialNumber.GetPinnableReference(), ref lpMaximumComponentLength.GetPinnableReference(), ref lpFileSystemFlags.GetPinnableReference(), lpFileSystemNameBuffer, nFileSystemNameSize);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, byte* lpPathName, byte* lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, byte* lpPathName, Span<byte> lpPrefixString, uint uUnique, byte* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, byte* lpPathName, Span<byte> lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, byte* lpPathName, Span<byte> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, byte* lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, byte* lpPrefixString, uint uUnique, byte* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, byte* lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, byte* lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, Span<byte> lpPrefixString, uint uUnique, byte* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, Span<byte> lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, Span<byte> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPrefixString, uint uUnique, byte* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, Span<byte> lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(ref lpPathName.GetPinnableReference(), lpPrefixString, uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, byte* lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Span<byte> lpPrefixString, uint uUnique, byte* lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Span<byte> lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Span<byte> lpPrefixString, uint uUnique, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, ref lpPrefixString.GetPinnableReference(), uUnique, lpTempFileName);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1427, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempFileNameA(this Windows thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPrefixString, uint uUnique, Span<byte> lpTempFileName)
+        {
+            // SpanOverloader
+            return thisApi.GetTempFileNameA(lpPathName, lpPrefixString, uUnique, ref lpTempFileName.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1469, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempPath2W(this Windows thisApi, uint BufferLength, Span<char> Buffer)
+        {
+            // SpanOverloader
+            return thisApi.GetTempPath2W(BufferLength, ref Buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1482, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\fileapi.h")]
+        public static unsafe uint GetTempPath2A(this Windows thisApi, uint BufferLength, Span<byte> Buffer)
+        {
+            // SpanOverloader
+            return thisApi.GetTempPath2A(BufferLength, ref Buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 39, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int CloseHandle<T0>(this Windows thisApi, Span<T0> hObject) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CloseHandle(ref hObject.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, void* hSourceHandle, Span<T0> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, void* hSourceHandle, Span<T0> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, Span<T1> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, void* hSourceProcessHandle, Span<T0> hSourceHandle, Span<T1> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(hSourceProcessHandle, ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, Span<T1> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, void* hSourceHandle, Span<T1> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), hSourceHandle, ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), hTargetProcessHandle, ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1, T2>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, Span<T2> hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 46, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int DuplicateHandle<T0, T1, T2>(this Windows thisApi, Span<T0> hSourceProcessHandle, Span<T1> hSourceHandle, Span<T2> hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.DuplicateHandle(ref hSourceProcessHandle.GetPinnableReference(), ref hSourceHandle.GetPinnableReference(), ref hTargetProcessHandle.GetPinnableReference(), ref lpTargetHandle, dwDesiredAccess, bInheritHandle, dwOptions);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 65, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int CompareObjectHandles<T0>(this Windows thisApi, void* hFirstObjectHandle, Span<T0> hSecondObjectHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CompareObjectHandles(hFirstObjectHandle, ref hSecondObjectHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 65, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int CompareObjectHandles<T0>(this Windows thisApi, Span<T0> hFirstObjectHandle, void* hSecondObjectHandle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CompareObjectHandles(ref hFirstObjectHandle.GetPinnableReference(), hSecondObjectHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 65, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int CompareObjectHandles<T0, T1>(this Windows thisApi, Span<T0> hFirstObjectHandle, Span<T1> hSecondObjectHandle) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CompareObjectHandles(ref hFirstObjectHandle.GetPinnableReference(), ref hSecondObjectHandle.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int GetHandleInformation(this Windows thisApi, void* hObject, Span<uint> lpdwFlags)
+        {
+            // SpanOverloader
+            return thisApi.GetHandleInformation(hObject, ref lpdwFlags.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int GetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, uint* lpdwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetHandleInformation(ref hObject.GetPinnableReference(), lpdwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 79, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int GetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, Span<uint> lpdwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetHandleInformation(ref hObject.GetPinnableReference(), ref lpdwFlags.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 87, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/um\\handleapi.h")]
+        public static unsafe int SetHandleInformation<T0>(this Windows thisApi, Span<T0> hObject, uint dwMask, uint dwFlags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.SetHandleInformation(ref hObject.GetPinnableReference(), dwMask, dwFlags);
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, char* InstanceName, Span<EventTraceProperties> Properties)
         {

@@ -105,7 +105,7 @@ namespace Silk.NET.BuildTools.Cpp
                     return false;
                 }
 
-                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/"));
+                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/").ToLower());
             }
         }
 
@@ -117,24 +117,8 @@ namespace Silk.NET.BuildTools.Cpp
                 Name = Path.GetFileNameWithoutExtension(fileName)
             };
 
-            var matcher = new Matcher();
-            matcher.AddIncludePatterns
-            (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
-                    .Where(x => !x.StartsWith("!"))
-            );
-            matcher.AddExcludePatterns
-            (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
-                    .Where(x => x.StartsWith("!"))
-                    .Select(x => x.Substring(1))
-            );
-
-            var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
-                .Concat(task.ClangOpts.Traverse.Where(x => File.Exists(x)))
-                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
-                .Distinct()
-                .ToArray();
+            var traversals = Generator.Glob(task.ClangOpts.Traverse).ToArray();
+            task.ClangOpts = task.ClangOpts with { Traverse = traversals };
 
             Console.WriteLine("Loading input header...");
             using var ms = new MemoryStream();
@@ -214,7 +198,6 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Visting declarations...");
             VisitDecls(DeclsOf(translationUnitDecl, translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
-
             Console.WriteLine("Creating finished profile...");
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');

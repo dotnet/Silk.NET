@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH264ReferenceInfoFlags
         (
-            uint? isLongTerm = null
+            uint? usedForLongTermReference = null
         ) : this()
         {
-            if (isLongTerm is not null)
+            if (usedForLongTermReference is not null)
             {
-                IsLongTerm = isLongTerm.Value;
+                UsedForLongTermReference = usedForLongTermReference.Value;
             }
         }
 
 
         private uint _bitfield1;
 
-        public uint IsLongTerm
+        public uint UsedForLongTermReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);

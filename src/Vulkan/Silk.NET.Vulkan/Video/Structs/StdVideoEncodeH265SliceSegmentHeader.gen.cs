@@ -21,8 +21,8 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH265SliceSegmentHeader
         (
+            StdVideoEncodeH265SliceSegmentHeaderFlags? flags = null,
             StdVideoH265SliceType? sliceType = null,
-            byte? slicePicParameterSetId = null,
             byte? numShortTermRefPicSets = null,
             uint? sliceSegmentAddress = null,
             byte? shortTermRefPicSetIdx = null,
@@ -31,8 +31,6 @@ namespace Silk.NET.Vulkan.Video
             byte? collocatedRefIdx = null,
             byte? numRefIdxL0ActiveMinus1 = null,
             byte? numRefIdxL1ActiveMinus1 = null,
-            byte? lumaLog2WeightDenom = null,
-            byte? deltaChromaLog2WeightDenom = null,
             byte? maxNumMergeCand = null,
             byte? sliceCbQpOffset = null,
             byte? sliceCrQpOffset = null,
@@ -41,17 +39,17 @@ namespace Silk.NET.Vulkan.Video
             byte? sliceActYQpOffset = null,
             byte? sliceActCbQpOffset = null,
             byte? sliceActCrQpOffset = null,
-            StdVideoEncodeH265SliceSegmentHeaderFlags? flags = null
+            StdVideoEncodeH265WeightTable* pWeightTable = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (sliceType is not null)
             {
                 SliceType = sliceType.Value;
-            }
-
-            if (slicePicParameterSetId is not null)
-            {
-                SlicePicParameterSetId = slicePicParameterSetId.Value;
             }
 
             if (numShortTermRefPicSets is not null)
@@ -94,16 +92,6 @@ namespace Silk.NET.Vulkan.Video
                 NumRefIdxL1ActiveMinus1 = numRefIdxL1ActiveMinus1.Value;
             }
 
-            if (lumaLog2WeightDenom is not null)
-            {
-                LumaLog2WeightDenom = lumaLog2WeightDenom.Value;
-            }
-
-            if (deltaChromaLog2WeightDenom is not null)
-            {
-                DeltaChromaLog2WeightDenom = deltaChromaLog2WeightDenom.Value;
-            }
-
             if (maxNumMergeCand is not null)
             {
                 MaxNumMergeCand = maxNumMergeCand.Value;
@@ -144,22 +132,22 @@ namespace Silk.NET.Vulkan.Video
                 SliceActCrQpOffset = sliceActCrQpOffset.Value;
             }
 
-            if (flags is not null)
+            if (pWeightTable is not null)
             {
-                Flags = flags.Value;
+                PWeightTable = pWeightTable;
             }
         }
 
+
+        [NativeName("Type", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
+        [NativeName("Type.Name", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoEncodeH265SliceSegmentHeaderFlags Flags;
 
         [NativeName("Type", "StdVideoH265SliceType")]
         [NativeName("Type.Name", "StdVideoH265SliceType")]
         [NativeName("Name", "slice_type")]
         public StdVideoH265SliceType SliceType;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "slice_pic_parameter_set_id")]
-        public byte SlicePicParameterSetId;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -203,48 +191,6 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "luma_log2_weight_denom")]
-        public byte LumaLog2WeightDenom;
-
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "delta_chroma_log2_weight_denom")]
-        public byte DeltaChromaLog2WeightDenom;
-        [NativeName("Type", "int8_t [15]")]
-        [NativeName("Type.Name", "int8_t [15]")]
-        [NativeName("Name", "delta_luma_weight_l0")]
-        public fixed byte DeltaLumaWeightL0[15];
-        [NativeName("Type", "int8_t [15]")]
-        [NativeName("Type.Name", "int8_t [15]")]
-        [NativeName("Name", "luma_offset_l0")]
-        public fixed byte LumaOffsetL0[15];
-        [NativeName("Type", "int8_t [15][2]")]
-        [NativeName("Type.Name", "int8_t [15][2]")]
-        [NativeName("Name", "delta_chroma_weight_l0")]
-        public fixed byte DeltaChromaWeightL0[30];
-        [NativeName("Type", "int8_t [15][2]")]
-        [NativeName("Type.Name", "int8_t [15][2]")]
-        [NativeName("Name", "delta_chroma_offset_l0")]
-        public fixed byte DeltaChromaOffsetL0[30];
-        [NativeName("Type", "int8_t [15]")]
-        [NativeName("Type.Name", "int8_t [15]")]
-        [NativeName("Name", "delta_luma_weight_l1")]
-        public fixed byte DeltaLumaWeightL1[15];
-        [NativeName("Type", "int8_t [15]")]
-        [NativeName("Type.Name", "int8_t [15]")]
-        [NativeName("Name", "luma_offset_l1")]
-        public fixed byte LumaOffsetL1[15];
-        [NativeName("Type", "int8_t [15][2]")]
-        [NativeName("Type.Name", "int8_t [15][2]")]
-        [NativeName("Name", "delta_chroma_weight_l1")]
-        public fixed byte DeltaChromaWeightL1[30];
-        [NativeName("Type", "int8_t [15][2]")]
-        [NativeName("Type.Name", "int8_t [15][2]")]
-        [NativeName("Name", "delta_chroma_offset_l1")]
-        public fixed byte DeltaChromaOffsetL1[30];
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "MaxNumMergeCand")]
         public byte MaxNumMergeCand;
 
@@ -283,9 +229,9 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "slice_act_cr_qp_offset")]
         public byte SliceActCrQpOffset;
 
-        [NativeName("Type", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
-        [NativeName("Type.Name", "StdVideoEncodeH265SliceSegmentHeaderFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoEncodeH265SliceSegmentHeaderFlags Flags;
+        [NativeName("Type", "const StdVideoEncodeH265WeightTable *")]
+        [NativeName("Type.Name", "const StdVideoEncodeH265WeightTable *")]
+        [NativeName("Name", "pWeightTable")]
+        public StdVideoEncodeH265WeightTable* PWeightTable;
     }
 }

@@ -16,6 +16,732 @@ namespace Silk.NET.SDL
 {
     public unsafe partial class Sdl : NativeAPI
     {
+        [NativeName("Type", "int")]
+        [NativeName("Name", "__ANDROID__")]
+        public const int Android = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_WINAPIFAMILY_H")]
+        public const int HaveWinapifamilyH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "__WINDOWS__")]
+        public const int Windows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "__WIN32__")]
+        public const int Win32 = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "NULL")]
+        public const int Null = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_STDINT_H")]
+        public const int HaveStdintH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SIZEOF_VOIDP")]
+        public const int SizeofVoidp = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_DDRAW_H")]
+        public const int HaveDdrawH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_DINPUT_H")]
+        public const int HaveDinputH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_DSOUND_H")]
+        public const int HaveDsoundH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_DXGI_H")]
+        public const int HaveDxgiH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_XINPUT_H")]
+        public const int HaveXinputH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_MMDEVICEAPI_H")]
+        public const int HaveMmdeviceapiH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_AUDIOCLIENT_H")]
+        public const int HaveAudioclientH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_STDARG_H")]
+        public const int HaveStdargH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "HAVE_STDDEF_H")]
+        public const int HaveStddefH = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_DRIVER_WASAPI")]
+        public const int AudioDriverWasapi = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_DRIVER_DSOUND")]
+        public const int AudioDriverDsound = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_DRIVER_WINMM")]
+        public const int AudioDriverWinmm = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_DRIVER_DISK")]
+        public const int AudioDriverDisk = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_DRIVER_DUMMY")]
+        public const int AudioDriverDummy = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_DINPUT")]
+        public const int JoystickDinput = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_HIDAPI")]
+        public const int JoystickHidapi = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_VIRTUAL")]
+        public const int JoystickVirtual = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_WGI")]
+        public const int JoystickWgi = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_XINPUT")]
+        public const int JoystickXinput = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_DINPUT")]
+        public const int HapticDinput = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_XINPUT")]
+        public const int HapticXinput = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_SENSOR_WINDOWS")]
+        public const int SensorWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_LOADSO_WINDOWS")]
+        public const int LoadsoWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_THREAD_GENERIC_COND_SUFFIX")]
+        public const int ThreadGenericCondSuffix = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_THREAD_WINDOWS")]
+        public const int ThreadWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_TIMER_WINDOWS")]
+        public const int TimerWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_DRIVER_DUMMY")]
+        public const int VideoDriverDummy = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_DRIVER_WINDOWS")]
+        public const int VideoDriverWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_RENDER_D3D")]
+        public const int VideoRenderD3D = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_RENDER_D3D11")]
+        public const int VideoRenderD3D11 = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_OPENGL")]
+        public const int VideoOpengl = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_OPENGL_WGL")]
+        public const int VideoOpenglWgl = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_RENDER_OGL")]
+        public const int VideoRenderOgl = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_RENDER_OGL_ES2")]
+        public const int VideoRenderOglES2 = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_OPENGL_ES2")]
+        public const int VideoOpenglES2 = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_OPENGL_EGL")]
+        public const int VideoOpenglEgl = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_VIDEO_VULKAN")]
+        public const int VideoVulkan = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_POWER_WINDOWS")]
+        public const int PowerWindows = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_FILESYSTEM_WINDOWS")]
+        public const int FilesystemWindows = unchecked((int) 0x1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIs64")]
+        public const string Pris64 = unchecked((string) "I64d");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIu64")]
+        public const string Priu64 = unchecked((string) "I64u");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIx64")]
+        public const string PRIx64 = unchecked((string) "I64x");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIX64")]
+        public const string PRIX64 = unchecked((string) "I64X");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIs32")]
+        public const string Pris32 = unchecked((string) "d");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIu32")]
+        public const string Priu32 = unchecked((string) "u");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIx32")]
+        public const string PRIx32 = unchecked((string) "x");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_PRIX32")]
+        public const string PRIX32 = unchecked((string) "X");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_LIL_ENDIAN")]
+        public const int LilEndian = unchecked((int) 0x4D2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BIG_ENDIAN")]
+        public const int BigEndian = unchecked((int) 0x10E1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BYTEORDER")]
+        public const int Byteorder = unchecked((int) 0x4D2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ALPHA_OPAQUE")]
+        public const int AlphaOpaque = unchecked((int) 0xFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ALPHA_TRANSPARENT")]
+        public const int AlphaTransparent = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_SWSURFACE")]
+        public const int Swsurface = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_PREALLOC")]
+        public const int Prealloc = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_RLEACCEL")]
+        public const int Rleaccel = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_DONTFREE")]
+        public const int Dontfree = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_SIMD_ALIGNED")]
+        public const int SimdAligned = unchecked((int) 0x8);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "SDL_WINDOWPOS_UNDEFINED_MASK")]
+        public const uint WindowposUndefinedMask = unchecked((uint) 0x1FFF0000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "SDL_WINDOWPOS_CENTERED_MASK")]
+        public const uint WindowposCenteredMask = unchecked((uint) 0x2FFF0000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ASSERT_LEVEL")]
+        public const int AssertLevel = unchecked((int) 0x1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_FILE")]
+        public const string File = unchecked((string) "SDL.h");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_LINE")]
+        public const int Line = unchecked((int) 0x18C);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_MUTEX_TIMEDOUT")]
+        public const int MutexTimedout = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_MASK_BITSIZE")]
+        public const int AudioMaskBitsize = unchecked((int) 0xFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_U8")]
+        public const int AudioU8 = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S8")]
+        public const int AudioS8 = unchecked((int) 0x8008);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_U16LSB")]
+        public const int AudioU16Lsb = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S16LSB")]
+        public const int AudioS16Lsb = unchecked((int) 0x8010);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_U16MSB")]
+        public const int AudioU16Msb = unchecked((int) 0x1010);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S16MSB")]
+        public const int AudioS16Msb = unchecked((int) 0x9010);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_U16")]
+        public const int AudioU16 = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S16")]
+        public const int AudioS16 = unchecked((int) 0x8010);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S32LSB")]
+        public const int AudioS32Lsb = unchecked((int) 0x8020);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S32MSB")]
+        public const int AudioS32Msb = unchecked((int) 0x9020);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S32")]
+        public const int AudioS32 = unchecked((int) 0x8020);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_F32LSB")]
+        public const int AudioF32Lsb = unchecked((int) 0x8120);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_F32MSB")]
+        public const int AudioF32Msb = unchecked((int) 0x9120);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_F32")]
+        public const int AudioF32 = unchecked((int) 0x8120);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_U16SYS")]
+        public const int AudioU16Sys = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S16SYS")]
+        public const int AudioS16Sys = unchecked((int) 0x8010);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_S32SYS")]
+        public const int AudioS32Sys = unchecked((int) 0x8020);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDIO_F32SYS")]
+        public const int AudioF32Sys = unchecked((int) 0x8120);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_ALLOW_FREQUENCY_CHANGE")]
+        public const int AudioAllowFrequencyChange = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_ALLOW_FORMAT_CHANGE")]
+        public const int AudioAllowFormatChange = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_ALLOW_CHANNELS_CHANGE")]
+        public const int AudioAllowChannelsChange = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIO_ALLOW_SAMPLES_CHANGE")]
+        public const int AudioAllowSamplesChange = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_AUDIOCVT_MAX_FILTERS")]
+        public const int AudiocvtMaxFilters = unchecked((int) 0x9);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_MIX_MAXVOLUME")]
+        public const int MixMaxvolume = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_CACHELINE_SIZE")]
+        public const int CachelineSize = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BUTTON_LEFT")]
+        public const int ButtonLeft = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BUTTON_MIDDLE")]
+        public const int ButtonMiddle = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BUTTON_RIGHT")]
+        public const int ButtonRight = unchecked((int) 0x3);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BUTTON_X1")]
+        public const int ButtonX1 = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_BUTTON_X2")]
+        public const int ButtonX2 = unchecked((int) 0x5);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_JOYSTICK_AXIS_MAX")]
+        public const int JoystickAxisMax = unchecked((int) 0x7FFF);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAT_CENTERED")]
+        public const int HatCentered = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAT_UP")]
+        public const int HatUp = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAT_RIGHT")]
+        public const int HatRight = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAT_DOWN")]
+        public const int HatDown = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAT_LEFT")]
+        public const int HatLeft = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_RELEASED")]
+        public const int Released = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_PRESSED")]
+        public const int Pressed = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_TEXTEDITINGEVENT_TEXT_SIZE")]
+        public const int TexteditingeventTextSize = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_TEXTINPUTEVENT_TEXT_SIZE")]
+        public const int TextinputeventTextSize = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_IGNORE")]
+        public const int Ignore = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_DISABLE")]
+        public const int Disable = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ENABLE")]
+        public const int Enable = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_POLAR")]
+        public const int HapticPolar = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_CARTESIAN")]
+        public const int HapticCartesian = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_SPHERICAL")]
+        public const int HapticSpherical = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_HAPTIC_STEERING_AXIS")]
+        public const int HapticSteeringAxis = unchecked((int) 0x3);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "SDL_HAPTIC_INFINITY")]
+        public const uint HapticInfinity = unchecked((uint) 0xFFFFFFFFFFFFFFFF);
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_FRAMEBUFFER_ACCELERATION")]
+        public const string HintFramebufferAcceleration = unchecked((string) "SDL_FRAMEBUFFER_ACCELERATION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_DRIVER")]
+        public const string HintRenderDriver = unchecked((string) "SDL_RENDER_DRIVER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_OPENGL_SHADERS")]
+        public const string HintRenderOpenglShaders = unchecked((string) "SDL_RENDER_OPENGL_SHADERS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_DIRECT3D_THREADSAFE")]
+        public const string HintRenderDirect3DThreadsafe = unchecked((string) "SDL_RENDER_DIRECT3D_THREADSAFE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_DIRECT3D11_DEBUG")]
+        public const string HintRenderDirect3D11Debug = unchecked((string) "SDL_RENDER_DIRECT3D11_DEBUG");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_LOGICAL_SIZE_MODE")]
+        public const string HintRenderLogicalSizeMode = unchecked((string) "SDL_RENDER_LOGICAL_SIZE_MODE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_SCALE_QUALITY")]
+        public const string HintRenderScaleQuality = unchecked((string) "SDL_RENDER_SCALE_QUALITY");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_VSYNC")]
+        public const string HintRenderVsync = unchecked((string) "SDL_RENDER_VSYNC");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_ALLOW_SCREENSAVER")]
+        public const string HintVideoAllowScreensaver = unchecked((string) "SDL_VIDEO_ALLOW_SCREENSAVER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_EXTERNAL_CONTEXT")]
+        public const string HintVideoExternalContext = unchecked((string) "SDL_VIDEO_EXTERNAL_CONTEXT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_XVIDMODE")]
+        public const string HintVideoX11Xvidmode = unchecked((string) "SDL_VIDEO_X11_XVIDMODE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_XINERAMA")]
+        public const string HintVideoX11Xinerama = unchecked((string) "SDL_VIDEO_X11_XINERAMA");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_XRANDR")]
+        public const string HintVideoX11Xrandr = unchecked((string) "SDL_VIDEO_X11_XRANDR");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_WINDOW_VISUALID")]
+        public const string HintVideoX11WindowVisualid = unchecked((string) "SDL_VIDEO_X11_WINDOW_VISUALID");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_NET_WM_PING")]
+        public const string HintVideoX11NetWMPing = unchecked((string) "SDL_VIDEO_X11_NET_WM_PING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR")]
+        public const string HintVideoX11NetWMBypassCompositor = unchecked((string) "SDL_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_X11_FORCE_EGL")]
+        public const string HintVideoX11ForceEgl = unchecked((string) "SDL_VIDEO_X11_FORCE_EGL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN")]
+        public const string HintWindowFrameUsableWhileCursorHidden = unchecked((string) "SDL_WINDOW_FRAME_USABLE_WHILE_CURSOR_HIDDEN");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_INTRESOURCE_ICON")]
+        public const string HintWindowsIntresourceIcon = unchecked((string) "SDL_WINDOWS_INTRESOURCE_ICON");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_INTRESOURCE_ICON_SMALL")]
+        public const string HintWindowsIntresourceIconSmall = unchecked((string) "SDL_WINDOWS_INTRESOURCE_ICON_SMALL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_ENABLE_MESSAGELOOP")]
+        public const string HintWindowsEnableMessageloop = unchecked((string) "SDL_WINDOWS_ENABLE_MESSAGELOOP");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GRAB_KEYBOARD")]
+        public const string HintGrabKeyboard = unchecked((string) "SDL_GRAB_KEYBOARD");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_DOUBLE_CLICK_TIME")]
+        public const string HintMouseDoubleClickTime = unchecked((string) "SDL_MOUSE_DOUBLE_CLICK_TIME");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_DOUBLE_CLICK_RADIUS")]
+        public const string HintMouseDoubleClickRadius = unchecked((string) "SDL_MOUSE_DOUBLE_CLICK_RADIUS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_NORMAL_SPEED_SCALE")]
+        public const string HintMouseNormalSpeedScale = unchecked((string) "SDL_MOUSE_NORMAL_SPEED_SCALE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_RELATIVE_SPEED_SCALE")]
+        public const string HintMouseRelativeSpeedScale = unchecked((string) "SDL_MOUSE_RELATIVE_SPEED_SCALE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_RELATIVE_SCALING")]
+        public const string HintMouseRelativeScaling = unchecked((string) "SDL_MOUSE_RELATIVE_SCALING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_RELATIVE_MODE_WARP")]
+        public const string HintMouseRelativeModeWarp = unchecked((string) "SDL_MOUSE_RELATIVE_MODE_WARP");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_FOCUS_CLICKTHROUGH")]
+        public const string HintMouseFocusClickthrough = unchecked((string) "SDL_MOUSE_FOCUS_CLICKTHROUGH");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_TOUCH_MOUSE_EVENTS")]
+        public const string HintTouchMouseEvents = unchecked((string) "SDL_TOUCH_MOUSE_EVENTS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MOUSE_TOUCH_EVENTS")]
+        public const string HintMouseTouchEvents = unchecked((string) "SDL_MOUSE_TOUCH_EVENTS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_MINIMIZE_ON_FOCUS_LOSS")]
+        public const string HintVideoMinimizeOnFocusLoss = unchecked((string) "SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_IDLE_TIMER_DISABLED")]
+        public const string HintIdleTimerDisabled = unchecked((string) "SDL_IOS_IDLE_TIMER_DISABLED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ORIENTATIONS")]
+        public const string HintOrientations = unchecked((string) "SDL_IOS_ORIENTATIONS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS")]
+        public const string HintAppleTVControllerUIEvents = unchecked((string) "SDL_APPLE_TV_CONTROLLER_UI_EVENTS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION")]
+        public const string HintAppleTVRemoteAllowRotation = unchecked((string) "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_IOS_HIDE_HOME_INDICATOR")]
+        public const string HintIosHideHomeIndicator = unchecked((string) "SDL_IOS_HIDE_HOME_INDICATOR");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ACCELEROMETER_AS_JOYSTICK")]
+        public const string HintAccelerometerAsJoystick = unchecked((string) "SDL_ACCELEROMETER_AS_JOYSTICK");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_TV_REMOTE_AS_JOYSTICK")]
+        public const string HintTVRemoteAsJoystick = unchecked((string) "SDL_TV_REMOTE_AS_JOYSTICK");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_XINPUT_ENABLED")]
+        public const string HintXinputEnabled = unchecked((string) "SDL_XINPUT_ENABLED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_XINPUT_USE_OLD_JOYSTICK_MAPPING")]
+        public const string HintXinputUseOldJoystickMapping = unchecked((string) "SDL_XINPUT_USE_OLD_JOYSTICK_MAPPING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLERTYPE")]
+        public const string HintGamecontrollertype = unchecked((string) "SDL_GAMECONTROLLERTYPE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLERCONFIG")]
+        public const string HintGamecontrollerconfig = unchecked((string) "SDL_GAMECONTROLLERCONFIG");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLERCONFIG_FILE")]
+        public const string HintGamecontrollerconfigFile = unchecked((string) "SDL_GAMECONTROLLERCONFIG_FILE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES")]
+        public const string HintGamecontrollerIgnoreDevices = unchecked((string) "SDL_GAMECONTROLLER_IGNORE_DEVICES");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT")]
+        public const string HintGamecontrollerIgnoreDevicesExcept = unchecked((string) "SDL_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS")]
+        public const string HintGamecontrollerUseButtonLabels = unchecked((string) "SDL_GAMECONTROLLER_USE_BUTTON_LABELS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS")]
+        public const string HintJoystickAllowBackgroundEvents = unchecked((string) "SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI")]
+        public const string HintJoystickHidapi = unchecked((string) "SDL_JOYSTICK_HIDAPI");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_PS4")]
+        public const string HintJoystickHidapiPS4 = unchecked((string) "SDL_JOYSTICK_HIDAPI_PS4");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_PS4_RUMBLE")]
+        public const string HintJoystickHidapiPS4Rumble = unchecked((string) "SDL_JOYSTICK_HIDAPI_PS4_RUMBLE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_PS5")]
+        public const string HintJoystickHidapiPS5 = unchecked((string) "SDL_JOYSTICK_HIDAPI_PS5");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_PS5_RUMBLE")]
+        public const string HintJoystickHidapiPS5Rumble = unchecked((string) "SDL_JOYSTICK_HIDAPI_PS5_RUMBLE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_PS5_PLAYER_LED")]
+        public const string HintJoystickHidapiPS5PlayerLed = unchecked((string) "SDL_JOYSTICK_HIDAPI_PS5_PLAYER_LED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_STADIA")]
+        public const string HintJoystickHidapiStadia = unchecked((string) "SDL_JOYSTICK_HIDAPI_STADIA");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_STEAM")]
+        public const string HintJoystickHidapiSteam = unchecked((string) "SDL_JOYSTICK_HIDAPI_STEAM");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_SWITCH")]
+        public const string HintJoystickHidapiSwitch = unchecked((string) "SDL_JOYSTICK_HIDAPI_SWITCH");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_SWITCH_HOME_LED")]
+        public const string HintJoystickHidapiSwitchHomeLed = unchecked((string) "SDL_JOYSTICK_HIDAPI_SWITCH_HOME_LED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS")]
+        public const string HintJoystickHidapiJoyCons = unchecked((string) "SDL_JOYSTICK_HIDAPI_JOY_CONS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_XBOX")]
+        public const string HintJoystickHidapiXbox = unchecked((string) "SDL_JOYSTICK_HIDAPI_XBOX");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_CORRELATE_XINPUT")]
+        public const string HintJoystickHidapiCorrelateXinput = unchecked((string) "SDL_JOYSTICK_HIDAPI_CORRELATE_XINPUT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE")]
+        public const string HintJoystickHidapiGamecube = unchecked((string) "SDL_JOYSTICK_HIDAPI_GAMECUBE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ENABLE_STEAM_CONTROLLERS")]
+        public const string HintEnableSteamControllers = unchecked((string) "SDL_ENABLE_STEAM_CONTROLLERS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_RAWINPUT")]
+        public const string HintJoystickRawinput = unchecked((string) "SDL_JOYSTICK_RAWINPUT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_JOYSTICK_THREAD")]
+        public const string HintJoystickThread = unchecked((string) "SDL_JOYSTICK_THREAD");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_LINUX_JOYSTICK_DEADZONES")]
+        public const string HintLinuxJoystickDeadzones = unchecked((string) "SDL_LINUX_JOYSTICK_DEADZONES");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ALLOW_TOPMOST")]
+        public const string HintAllowTopmost = unchecked((string) "SDL_ALLOW_TOPMOST");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_TIMER_RESOLUTION")]
+        public const string HintTimerResolution = unchecked((string) "SDL_TIMER_RESOLUTION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_QTWAYLAND_CONTENT_ORIENTATION")]
+        public const string HintQtwaylandContentOrientation = unchecked((string) "SDL_QTWAYLAND_CONTENT_ORIENTATION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_QTWAYLAND_WINDOW_FLAGS")]
+        public const string HintQtwaylandWindowFlags = unchecked((string) "SDL_QTWAYLAND_WINDOW_FLAGS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_THREAD_STACK_SIZE")]
+        public const string HintThreadStackSize = unchecked((string) "SDL_THREAD_STACK_SIZE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_THREAD_PRIORITY_POLICY")]
+        public const string HintThreadPriorityPolicy = unchecked((string) "SDL_THREAD_PRIORITY_POLICY");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_THREAD_FORCE_REALTIME_TIME_CRITICAL")]
+        public const string HintThreadForceRealtimeTimeCritical = unchecked((string) "SDL_THREAD_FORCE_REALTIME_TIME_CRITICAL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_HIGHDPI_DISABLED")]
+        public const string HintVideoHighdpiDisabled = unchecked((string) "SDL_VIDEO_HIGHDPI_DISABLED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK")]
+        public const string HintMacCtrlClickEmulateRightClick = unchecked((string) "SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_WIN_D3DCOMPILER")]
+        public const string HintVideoWinD3Dcompiler = unchecked((string) "SDL_VIDEO_WIN_D3DCOMPILER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_WINDOW_SHARE_PIXEL_FORMAT")]
+        public const string HintVideoWindowSharePixelFormat = unchecked((string) "SDL_VIDEO_WINDOW_SHARE_PIXEL_FORMAT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINRT_PRIVACY_POLICY_URL")]
+        public const string HintWinrtPrivacyPolicyUrl = unchecked((string) "SDL_WINRT_PRIVACY_POLICY_URL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINRT_PRIVACY_POLICY_LABEL")]
+        public const string HintWinrtPrivacyPolicyLabel = unchecked((string) "SDL_WINRT_PRIVACY_POLICY_LABEL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINRT_HANDLE_BACK_BUTTON")]
+        public const string HintWinrtHandleBackButton = unchecked((string) "SDL_WINRT_HANDLE_BACK_BUTTON");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_MAC_FULLSCREEN_SPACES")]
+        public const string HintVideoMacFullscreenSpaces = unchecked((string) "SDL_VIDEO_MAC_FULLSCREEN_SPACES");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_MAC_BACKGROUND_APP")]
+        public const string HintMacBackgroundApp = unchecked((string) "SDL_MAC_BACKGROUND_APP");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION")]
+        public const string HintAndroidApkExpansionMainFileVersion = unchecked((string) "SDL_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION")]
+        public const string HintAndroidApkExpansionPatchFileVersion = unchecked((string) "SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_IME_INTERNAL_EDITING")]
+        public const string HintImeInternalEditing = unchecked((string) "SDL_IME_INTERNAL_EDITING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ANDROID_TRAP_BACK_BUTTON")]
+        public const string HintAndroidTrapBackButton = unchecked((string) "SDL_ANDROID_TRAP_BACK_BUTTON");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ANDROID_BLOCK_ON_PAUSE")]
+        public const string HintAndroidBlockOnPause = unchecked((string) "SDL_ANDROID_BLOCK_ON_PAUSE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO")]
+        public const string HintAndroidBlockOnPausePauseaudio = unchecked((string) "SDL_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RETURN_KEY_HIDES_IME")]
+        public const string HintReturnKeyHidesIme = unchecked((string) "SDL_RETURN_KEY_HIDES_IME");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT")]
+        public const string HintEmscriptenKeyboardElement = unchecked((string) "SDL_EMSCRIPTEN_KEYBOARD_ELEMENT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_EMSCRIPTEN_ASYNCIFY")]
+        public const string HintEmscriptenAsyncify = unchecked((string) "SDL_EMSCRIPTEN_ASYNCIFY");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_NO_SIGNAL_HANDLERS")]
+        public const string HintNoSignalHandlers = unchecked((string) "SDL_NO_SIGNAL_HANDLERS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_NO_CLOSE_ON_ALT_F4")]
+        public const string HintWindowsNoCloseOnAltF4 = unchecked((string) "SDL_WINDOWS_NO_CLOSE_ON_ALT_F4");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_BMP_SAVE_LEGACY_FORMAT")]
+        public const string HintBmpSaveLegacyFormat = unchecked((string) "SDL_BMP_SAVE_LEGACY_FORMAT");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_DISABLE_THREAD_NAMING")]
+        public const string HintWindowsDisableThreadNaming = unchecked((string) "SDL_WINDOWS_DISABLE_THREAD_NAMING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS")]
+        public const string HintWindowsForceMutexCriticalSections = unchecked((string) "SDL_WINDOWS_FORCE_MUTEX_CRITICAL_SECTIONS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_FORCE_SEMAPHORE_KERNEL")]
+        public const string HintWindowsForceSemaphoreKernel = unchecked((string) "SDL_WINDOWS_FORCE_SEMAPHORE_KERNEL");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WINDOWS_USE_D3D9EX")]
+        public const string HintWindowsUseD3D9EX = unchecked((string) "SDL_WINDOWS_USE_D3D9EX");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RPI_VIDEO_LAYER")]
+        public const string HintRpiVideoLayer = unchecked((string) "SDL_RPI_VIDEO_LAYER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_VIDEO_DOUBLE_BUFFER")]
+        public const string HintVideoDoubleBuffer = unchecked((string) "SDL_VIDEO_DOUBLE_BUFFER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_KMSDRM_REQUIRE_DRM_MASTER")]
+        public const string HintKmsdrmRequireDrmMaster = unchecked((string) "SDL_KMSDRM_REQUIRE_DRM_MASTER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_OPENGL_ES_DRIVER")]
+        public const string HintOpenglESDriver = unchecked((string) "SDL_OPENGL_ES_DRIVER");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUDIO_RESAMPLING_MODE")]
+        public const string HintAudioResamplingMode = unchecked((string) "SDL_AUDIO_RESAMPLING_MODE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUDIO_CATEGORY")]
+        public const string HintAudioCategory = unchecked((string) "SDL_AUDIO_CATEGORY");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_RENDER_BATCHING")]
+        public const string HintRenderBatching = unchecked((string) "SDL_RENDER_BATCHING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUTO_UPDATE_JOYSTICKS")]
+        public const string HintAutoUpdateJoysticks = unchecked((string) "SDL_AUTO_UPDATE_JOYSTICKS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUTO_UPDATE_SENSORS")]
+        public const string HintAutoUpdateSensors = unchecked((string) "SDL_AUTO_UPDATE_SENSORS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_EVENT_LOGGING")]
+        public const string HintEventLogging = unchecked((string) "SDL_EVENT_LOGGING");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WAVE_RIFF_CHUNK_SIZE")]
+        public const string HintWaveRiffChunkSize = unchecked((string) "SDL_WAVE_RIFF_CHUNK_SIZE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WAVE_TRUNCATION")]
+        public const string HintWaveTruncation = unchecked((string) "SDL_WAVE_TRUNCATION");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_WAVE_FACT_CHUNK")]
+        public const string HintWaveFactChunk = unchecked((string) "SDL_WAVE_FACT_CHUNK");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_DISPLAY_USABLE_BOUNDS")]
+        public const string HintDisplayUsableBounds = unchecked((string) "SDL_DISPLAY_USABLE_BOUNDS");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUDIO_DEVICE_APP_NAME")]
+        public const string HintAudioDeviceAppName = unchecked((string) "SDL_AUDIO_DEVICE_APP_NAME");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUDIO_DEVICE_STREAM_NAME")]
+        public const string HintAudioDeviceStreamName = unchecked((string) "SDL_AUDIO_DEVICE_STREAM_NAME");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_AUDIO_DEVICE_STREAM_ROLE")]
+        public const string HintAudioDeviceStreamRole = unchecked((string) "SDL_AUDIO_DEVICE_STREAM_ROLE");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED")]
+        public const string HintAllowAltTabWhileGrabbed = unchecked((string) "SDL_ALLOW_ALT_TAB_WHILE_GRABBED");
+        [NativeName("Type", "")]
+        [NativeName("Name", "SDL_HINT_PREFERRED_LOCALES")]
+        public const string HintPreferredLocales = unchecked((string) "SDL_PREFERRED_LOCALES");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_MAX_LOG_MESSAGE")]
+        public const int MaxLogMessage = unchecked((int) 0x1000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ANDROID_EXTERNAL_STORAGE_READ")]
+        public const int AndroidExternalStorageRead = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_ANDROID_EXTERNAL_STORAGE_WRITE")]
+        public const int AndroidExternalStorageWrite = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_MAJOR_VERSION")]
+        public const int MajorVersion = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_MINOR_VERSION")]
+        public const int MinorVersion = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "SDL_PATCHLEVEL")]
+        public const int Patchlevel = unchecked((int) 0xF);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "SDL_INIT_TIMER")]
         public const uint InitTimer = unchecked((uint) 0x1);

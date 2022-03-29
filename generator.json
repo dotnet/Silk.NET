@@ -1002,7 +1002,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m32",
+                    "-m64",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1015,7 +1015,9 @@
                     "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntrace.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/minwinbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/timezoneapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -1047,7 +1049,8 @@
                     "_FILETIME": "Filetime",
                     "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
                     "_WNODE_HEADER": "WnodeHeader",
-                    "_EXCEPTION_RECORD": "ExceptionRecord"
+                    "_EXCEPTION_RECORD": "ExceptionRecord",
+                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1617,6 +1620,90 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "DirectStorage",
+            "sources": [
+                "src/Microsoft/Silk.NET.DirectStorage/silk.net.directstorage.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dstorage",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "prefix": "DStorage",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-I$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage"
+                ],
+                "traverse": [
+                    "$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage/*.h"
+                ],
+                "classes": {
+                    "silk.net.directstorage.h": "[Core]DStorage"
+                }
+            },
+            "exclude": [
+                "ID3D12Resource",
+                "ID3D12Fence"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "silk.net.directstorage"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DirectStorage",
+            "extensionsNamespace": "Silk.NET.DirectStorage.Extensions",
+            "nameContainer": {
+                "linux-x64": "libdstorage.so",
+                "win-x64": "dstorage.dll",
+                "win-x86": "dstorage.dll",
+                "osx-x64": "libdstorage.dylib",
+                "android": "libdstorage.so",
+                "iOS": "__Internal",
+                "className": "DStorageLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "ID3D12Resource": "Silk.NET.Direct3D12.ID3D12Resource",
+                    "ID3D12Fence": "Silk.NET.Direct3D12.ID3D12Fence",
+                    "ID3D12Device": "Silk.NET.Direct3D12.ID3D12Device",
+                    "D3D12_TILED_RESOURCE_COORDINATE": "Silk.NET.Direct3D12.TiledResourceCoordinate",
+                    "D3D12_TILE_REGION_SIZE": "Silk.NET.Direct3D12.TileRegionSize",
+                    "_BY_HANDLE_FILE_INFORMATION": "Silk.NET.Core.Win32Extras.ByHandleFileInformation",
+                    "D3D12_BOX": "Silk.NET.Direct3D12.Box"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ],
+            "copy": {
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/ARM64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-arm64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x64/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x64/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/bin/x86/*.dll": "src/Native/Silk.NET.DirectStorage.Native/runtimes/win-x86/native",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/LICENSE.txt": "src/Native/Silk.NET.DirectStorage.Native/LICENSE.txt",
+                "$nuget/Microsoft.Direct3D.DirectStorage/*/$version": "src/Native/Silk.NET.DirectStorage.Native/version.txt"
+            }
         },
         {
             "profileName": "XAudio",

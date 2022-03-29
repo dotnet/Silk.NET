@@ -30,7 +30,8 @@ namespace Silk.NET.Vulkan
             Extent2D? minExtent = null,
             Extent2D? maxExtent = null,
             uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null
+            uint? maxReferencePicturesActiveCount = null,
+            ExtensionProperties? stdHeaderVersion = null
         ) : this()
         {
             if (sType is not null)
@@ -81,6 +82,11 @@ namespace Silk.NET.Vulkan
             if (maxReferencePicturesActiveCount is not null)
             {
                 MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+            }
+
+            if (stdHeaderVersion is not null)
+            {
+                StdHeaderVersion = stdHeaderVersion.Value;
             }
         }
 
@@ -134,6 +140,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "stdHeaderVersion")]
+        public ExtensionProperties StdHeaderVersion;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

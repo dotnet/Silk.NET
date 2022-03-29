@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.InstanceCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            InstanceCreateFlags? flags = null,
             ApplicationInfo* pApplicationInfo = null,
             uint? enabledLayerCount = null,
             byte** ppEnabledLayerNames = null,
@@ -86,7 +86,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkInstanceCreateFlags")]
         [NativeName("Type.Name", "VkInstanceCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public InstanceCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkApplicationInfo*")]
         [NativeName("Type.Name", "VkApplicationInfo")]
