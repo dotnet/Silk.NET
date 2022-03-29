@@ -96,19 +96,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
 
-The Silk.NET solution is **very large**. As such, to generate a solution that only has the projects you care about for your contribution, use the following command:
-`nuke sln --projects project1 project2...`. `<projects>` can be substitued for:
-- A name of an individual project. The Silk.NET prefix can be omitted provided there is no matching subfolder.
-- A name of a subfolder in the repo root, `src/`, or `examples/CSharp`
-
-Example: `nuke sln --projects opengl silk.net.vulkan core.win32extras "opengl tutorials" build`. This:
-- matches `opengl` to `src/OpenGL`
-- matches `silk.net.vulkan` to `src/Vulkan/Silk.NET.Vulkan`
-- matches `core.win32extras` to `src/Core/Silk.NET.Core.Win32Extras`
-- matches `"opengl tutorials"` to `examples/CSharp/OpenGL Tutorials`
-- matches `build` to `build/`
-
-The generated solution is: `Silk.NET.gen.sln`
+The Silk.NET solution is **very large**. Learn about how you can combat this using our build process in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <!-- End exclude from NuGet readme. -->
 
