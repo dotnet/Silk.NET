@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
 using RuntimeEnvironment = Microsoft.DotNet.PlatformAbstractions.RuntimeEnvironment;
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("MacPossibilities")]
+#nullable enable
 
 namespace Silk.NET.Core.Loader
 {
@@ -23,6 +23,110 @@ namespace Silk.NET.Core.Loader
     /// </summary>
     public class DefaultPathResolver : PathResolver
     {
+        /// <summary>
+        /// Creates a path resolver pre-loaded with the default <see cref="Resolvers"/>, which are the following in the
+        /// given order:
+        /// - <see cref="LinuxVersioningResolver" />
+        /// - <see cref="MacVersioningResolver" />
+        /// - <see cref="BaseDirectoryResolver" />
+        /// - <see cref="MainModuleDirectoryResolver" />
+        /// - <see cref="RuntimesFolderResolver" />
+        /// - <see cref="NativePackageResolver" />
+        /// </summary>
+        public DefaultPathResolver() => Resolvers = new()
+        {
+            LinuxVersioningResolver,
+            MacVersioningResolver,
+            BaseDirectoryResolver,
+            MainModuleDirectoryResolver,
+            RuntimesFolderResolver,
+            NativePackageResolver
+        };
+
+        /// <summary>
+        /// A list of resolvers to use to obtain paths. 
+        /// </summary>
+        public List<Func<string, IEnumerable<string>>> Resolvers
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// A resolver that returns a path to a file in <see cref="AppContext.BaseDirectory"/> with the given name.
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> BaseDirectoryResolver = name
+            // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+            // doesn't blow up.
+            => string.IsNullOrEmpty(AppContext.BaseDirectory) && string.IsNullOrWhiteSpace(Path.GetDirectoryName(name))
+                ? Enumerable.Empty<string>()
+                : Enumerable.Repeat(Path.Combine(AppContext.BaseDirectory, name), 1);
+
+        /// <summary>
+        /// A resolver that returns a path to a file in <see cref="Process.MainModule"/>'s
+        /// <see cref="ProcessModule.FileName"/> directory with the given name.
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> MainModuleDirectoryResolver = name =>
+        {
+            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+            // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+            // doesn't blow up.
+            if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && mainModFname is not null)
+            {
+                mainModFname = Path.GetDirectoryName(mainModFname);
+                if (mainModFname is not null)
+                {
+                    return Enumerable.Repeat(Path.Combine(mainModFname, name), 1);
+                }
+            }
+            
+            return Enumerable.Empty<string>();
+        };
+
+        /// <summary>
+        /// A resolver that, given an absolute or relative path, searches for a "runtimes" folder in the directory
+        /// represented by the given name for a file matching the given path's file name in one of the applicable
+        /// RID-specific runtimes folders applicable to the current dependency context. 
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> RuntimesFolderResolver = name =>
+        {
+            var dirName = Path.GetDirectoryName(name);
+            var fileName = Path.GetFileName(name);
+            return string.IsNullOrWhiteSpace(dirName) ||
+                   string.IsNullOrWhiteSpace(fileName) ||
+                   !TryLocateNativeAssetInRuntimesFolder(fileName, dirName, out var result) ||
+                   result is null 
+                ? Enumerable.Empty<string>()
+                : Enumerable.Repeat(result, 1);
+        };
+
+        /// <summary>
+        /// A resolver that returns less version-specific Linux shared object names. That is, given a string of
+        /// "libglfw.so.3.3.6", this resolver will return "libglfw.so.3.3", "libglfw.so.3", and "libglfw.so" (in that
+        /// order).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> LinuxVersioningResolver = GetLinuxPossibilities;
+        
+        /// <summary>
+        /// A resolver that returns less version-specific macOS dynamic library names. That is, given a string of
+        /// "libglfw.3.3.6.dylib", this resolver will return "libglfw.3.3.dylib", "libglfw.3.dylib", and "libglfw.dylib"
+        /// (in that order).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> MacVersioningResolver = GetMacPossibilities;
+
+        /// <summary>
+        /// A resolver that searches the restored NuGet packages for the current executable for a file matching the
+        /// given file name in one of the applicable RID-specific runtimes folders applicable to the current dependency
+        /// context. 
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> NativePackageResolver = name =>
+            string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) &&
+            TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath) &&
+            appLocalNativePath is not null &&
+            depsResolvedPath is not null
+                ? new[] { appLocalNativePath, depsResolvedPath }
+                : Enumerable.Empty<string>();
+
         /// <summary>
         ///     Returns an enumerator which yields possible library load targets, in priority order.
         /// </summary>
@@ -37,13 +141,13 @@ namespace Silk.NET.Core.Loader
             if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
             {
                 yield return Path.Combine(AppContext.BaseDirectory, name);
-                if (TryLocateNativeAssetInRuntimesFolder(name, AppContext.BaseDirectory, out var result))
+                if (TryLocateNativeAssetInRuntimesFolder(name, AppContext.BaseDirectory, out var result) && result is not null)
                 {
                     yield return result;
                 }
             }
 
-            if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath))
+            if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath) && appLocalNativePath is not null && depsResolvedPath is not null)
             {
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
@@ -57,11 +161,10 @@ namespace Silk.NET.Core.Loader
                 if (mainModFname is not null)
                 {
                     yield return Path.Combine(mainModFname, name);
-                }
-
-                if (TryLocateNativeAssetInRuntimesFolder(name, mainModFname, out var result))
-                {
-                    yield return result;
+                    if (TryLocateNativeAssetInRuntimesFolder(name, mainModFname, out var result) && result is not null)
+                    {
+                        yield return result;
+                    }
                 }
             }
 
@@ -77,7 +180,7 @@ namespace Silk.NET.Core.Loader
 
                 foreach (var macName in GetMacPossibilities(name))
                 {
-                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(macName, false))
+                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(macName, true))
                     {
                         yield return possibleLoadTarget;
                     }
@@ -119,11 +222,11 @@ namespace Silk.NET.Core.Loader
             }
         }
 
-        private bool TryLocateNativeAssetFromDeps
+        private static bool TryLocateNativeAssetFromDeps
         (
             string name,
-            out string appLocalNativePath,
-            out string depsResolvedPath
+            out string? appLocalNativePath,
+            out string? depsResolvedPath
         )
         {
             try
@@ -133,25 +236,29 @@ namespace Silk.NET.Core.Loader
                 if (defaultContext is null && !(entAsm is null))
                 {
                     var json = new DependencyContextJsonReader();
+                    var dir = Path.GetDirectoryName(entAsm.Location);
+                    if (dir is not null)
+                    {
+                        defaultContext ??= json.Read
+                        (
+                            File.OpenRead
+                            (
+                                Path.Combine
+                                (
+                                    dir,
+                                    entAsm.GetName().Name + ".deps.json"
+                                )
+                            )
+                        );
+                    }
+                    
                     defaultContext ??= json.Read
                     (
                         File.OpenRead
                         (
-                            Path.Combine
-                            (
-                                Path.GetDirectoryName(entAsm.Location),
-                                entAsm.GetName().Name + ".deps.json"
-                            )
+                            Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
                         )
                     );
-                    defaultContext ??=
-                        json.Read
-                        (
-                            File.OpenRead
-                            (
-                                Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
-                            )
-                        );
                 }
 
                 if (defaultContext == null)
@@ -192,7 +299,7 @@ namespace Silk.NET.Core.Loader
                 depsResolvedPath = null;
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 appLocalNativePath = null;
                 depsResolvedPath = null;
@@ -200,9 +307,9 @@ namespace Silk.NET.Core.Loader
             }
         }
 
-        private bool TryLocateNativeAssetInRuntimesFolder(string name, string baseFolder, out string result)
+        private static bool TryLocateNativeAssetInRuntimesFolder(string name, string baseFolder, out string? result)
         {
-            static bool Check(string name, string ridFolder, out string result)
+            static bool Check(string name, string ridFolder, out string? result)
             {
                 var theoreticalFName = Path.Combine(ridFolder, name);
                 if (File.Exists(theoreticalFName))
@@ -234,7 +341,7 @@ namespace Silk.NET.Core.Loader
             "opensuse", "rhel", "sles", "tizen"
         };
 
-        private string GuessFallbackRid(string actualRuntimeIdentifier)
+        private static string? GuessFallbackRid(string actualRuntimeIdentifier)
         {
             if (actualRuntimeIdentifier == "osx.10.13-x64")
             {
@@ -245,6 +352,11 @@ namespace Silk.NET.Core.Loader
             if (split[0] != "osx" && split[0].StartsWith("osx"))
             {
                 return $"osx-{string.Join("-", split.Skip(1))}".TrimEnd('-');
+            }
+
+            if (split[0] == "osx" && split.Length > 1)
+            {
+                return "osx"; // fat binaries are fairly commonplace
             }
 
             if (split[0] != "win" && split[0].StartsWith("win"))
@@ -260,7 +372,7 @@ namespace Silk.NET.Core.Loader
             return null;
         }
 
-        private bool AddFallbacks(List<string> fallbacks, string rid, IReadOnlyList<RuntimeFallbacks> allFallbacks)
+        private static bool AddFallbacks(List<string> fallbacks, string? rid, IReadOnlyList<RuntimeFallbacks> allFallbacks)
         {
             foreach (var fb in allFallbacks)
             {
@@ -284,23 +396,23 @@ namespace Silk.NET.Core.Loader
             return false;
         }
 
-        private string GetNugetPackagesRootDirectory()
+        private static string GetNugetPackagesRootDirectory()
         {
             // TODO: Handle alternative package directories, if they are configured.
             return Path.Combine(GetUserDirectory(), ".nuget", "packages");
         }
 
-        private string GetUserDirectory()
+        private static string GetUserDirectory()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                return Environment.GetEnvironmentVariable("USERPROFILE");
+                return Environment.GetEnvironmentVariable("USERPROFILE")!;
             }
 
-            return Environment.GetEnvironmentVariable("HOME");
+            return Environment.GetEnvironmentVariable("HOME")!;
         }
 
-        private List<string> GetAllRuntimeIds(string currentRid, DependencyContext ctx)
+        private static List<string> GetAllRuntimeIds(string currentRid, DependencyContext? ctx)
         {
             var allRiDs = new List<string>();
 

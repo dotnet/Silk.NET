@@ -27,6 +27,8 @@ namespace Silk.NET.Vulkan
         QueueVideoEncodeBitKhr = 64,
         [NativeName("Name", "VK_QUEUE_RESERVED_7_BIT_QCOM")]
         QueueReserved7BitQCom = 128,
+        [NativeName("Name", "VK_QUEUE_RESERVED_8_BIT_NV")]
+        QueueReserved8BitNV = 256,
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         QueueProtectedBit = 16,
     }

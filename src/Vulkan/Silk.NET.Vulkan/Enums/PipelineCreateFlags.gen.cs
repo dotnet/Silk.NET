@@ -59,10 +59,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_23_BIT_AMD")]
-        PipelineCreateReserved23BitAmd = 8388608,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_10_BIT_AMD")]
-        PipelineCreateReserved10BitAmd = 1024,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
+        PipelineCreateRetainLinkTimeOptimizationInfoBitExt = 8388608,
+        [NativeName("Name", "VK_PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_BIT_EXT")]
+        PipelineCreateLinkTimeOptimizationBitExt = 1024,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
         PipelineCreateRayTracingAllowMotionBitNV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]

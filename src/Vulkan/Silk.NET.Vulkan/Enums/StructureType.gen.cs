@@ -1108,6 +1108,12 @@ namespace Silk.NET.Vulkan
         QueueFamilyCheckpointProperties2NV = 1000314008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
         CheckpointData2NV = 1000314009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_FEATURES_EXT")]
+        PhysicalDeviceGraphicsPipelineLibraryFeaturesExt = 1000320000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_PROPERTIES_EXT")]
+        PhysicalDeviceGraphicsPipelineLibraryPropertiesExt = 1000320001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_LIBRARY_CREATE_INFO_EXT")]
+        GraphicsPipelineLibraryCreateInfoExt = 1000320002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_FEATURES_KHR")]
         PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKhr = 1000323000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
@@ -1236,6 +1242,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceColorWriteEnableFeaturesExt = 1000381000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_COLOR_WRITE_CREATE_INFO_EXT")]
         PipelineColorWriteCreateInfoExt = 1000381001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVES_GENERATED_QUERY_FEATURES_EXT")]
+        PhysicalDevicePrimitivesGeneratedQueryFeaturesExt = 1000382000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_EXT")]
         PhysicalDeviceGlobalPriorityQueryFeaturesExt = 1000388000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]

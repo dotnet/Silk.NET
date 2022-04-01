@@ -147,5 +147,13 @@ namespace Silk.NET.Vulkan
         FormatFeature2Reserved37BitQCom = 137438953472,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
         FormatFeature2Reserved39BitExt = 549755813888,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_40_BIT_NV")]
+        FormatFeature2Reserved40BitNV = 1099511627776,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_41_BIT_NV")]
+        FormatFeature2Reserved41BitNV = 2199023255552,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_42_BIT_NV")]
+        FormatFeature2Reserved42BitNV = 4398046511104,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_43_BIT_NV")]
+        FormatFeature2Reserved43BitNV = 8796093022208,
     }
 }

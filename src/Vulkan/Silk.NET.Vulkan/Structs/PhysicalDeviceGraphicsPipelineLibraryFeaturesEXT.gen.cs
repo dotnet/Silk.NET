@@ -16,15 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe partial struct PipelineLibraryCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
+    [NativeName("Name", "VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PipelineLibraryCreateInfoKHR
+        public PhysicalDeviceGraphicsPipelineLibraryFeaturesEXT
         (
-            StructureType? sType = StructureType.PipelineLibraryCreateInfoKhr,
+            StructureType? sType = StructureType.PhysicalDeviceGraphicsPipelineLibraryFeaturesExt,
             void* pNext = null,
-            uint? libraryCount = null,
-            Pipeline* pLibraries = null
+            Bool32? graphicsPipelineLibrary = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (libraryCount is not null)
+            if (graphicsPipelineLibrary is not null)
             {
-                LibraryCount = libraryCount.Value;
-            }
-
-            if (pLibraries is not null)
-            {
-                PLibraries = pLibraries;
+                GraphicsPipelineLibrary = graphicsPipelineLibrary.Value;
             }
         }
 
@@ -59,20 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "libraryCount")]
-        public uint LibraryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkPipeline*")]
-        [NativeName("Type.Name", "VkPipeline")]
-        [NativeName("Name", "pLibraries")]
-        public Pipeline* PLibraries;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "graphicsPipelineLibrary")]
+        public Bool32 GraphicsPipelineLibrary;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineLibraryCreateInfoKhr;
+            return SType = StructureType.PhysicalDeviceGraphicsPipelineLibraryFeaturesExt;
         }
 
         /// <inheritdoc />
