@@ -26,6 +26,7 @@ namespace Silk.NET.Core.Loader
         /// <summary>
         /// Creates a path resolver pre-loaded with the default <see cref="Resolvers"/>, which are the following in the
         /// given order:
+        /// - <see cref="PassthroughResolver" />
         /// - <see cref="LinuxVersioningResolver" />
         /// - <see cref="MacVersioningResolver" />
         /// - <see cref="BaseDirectoryResolver" />
@@ -35,6 +36,7 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         public DefaultPathResolver() => Resolvers = new()
         {
+            PassthroughResolver,
             LinuxVersioningResolver,
             MacVersioningResolver,
             BaseDirectoryResolver,
@@ -51,6 +53,14 @@ namespace Silk.NET.Core.Loader
             get;
             set;
         }
+
+        /// <summary>
+        /// A resolver that returns the given name with no modifications. Note that this resolver is intrinsically
+        /// meaningful in that always operates on the originally passed name, rather than what's currently in the
+        /// candidate list (as this would be pointless).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> PassthroughResolver = name
+            => Enumerable.Repeat(name, 1);
 
         /// <summary>
         /// A resolver that returns a path to a file in <see cref="AppContext.BaseDirectory"/> with the given name.
@@ -133,59 +143,26 @@ namespace Silk.NET.Core.Loader
         /// <param name="name">The name of the library to load.</param>
         /// <returns>An enumerator yielding load targets.</returns>
         public override IEnumerable<string> EnumeratePossibleLibraryLoadTargets(string name)
-            => CoreEnumeratePossibleLibraryLoadTargets(name);
-
-        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool skipVersionTraverse = false)
         {
-            yield return name;
-            if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
+            var candidates = new List<string>();
+            foreach (var resolver in Resolvers)
             {
-                yield return Path.Combine(AppContext.BaseDirectory, name);
-                if (TryLocateNativeAssetInRuntimesFolder(name, AppContext.BaseDirectory, out var result) && result is not null)
+                if (candidates.Count == 0 || resolver == PassthroughResolver)
                 {
-                    yield return result;
+                    candidates.AddRange(resolver.Invoke(name));
                 }
-            }
-
-            if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath) && appLocalNativePath is not null && depsResolvedPath is not null)
-            {
-                yield return appLocalNativePath;
-                yield return depsResolvedPath;
-            }
-            
-            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
-            if (AppContext.BaseDirectory != Process.GetCurrentProcess().MainModule?.FileName &&
-                mainModFname is not null)
-            {
-                mainModFname = Path.GetDirectoryName(mainModFname);
-                if (mainModFname is not null)
+                else
                 {
-                    yield return Path.Combine(mainModFname, name);
-                    if (TryLocateNativeAssetInRuntimesFolder(name, mainModFname, out var result) && result is not null)
+                    for (var i = 0; i < candidates.Count; i++)
                     {
-                        yield return result;
+                        var oldCnt = candidates.Count;
+                        candidates.InsertRange(i + 1, resolver.Invoke(candidates[i]));
+                        i += candidates.Count - oldCnt;
                     }
                 }
             }
 
-            if (!skipVersionTraverse)
-            {
-                foreach (var linuxName in GetLinuxPossibilities(name))
-                {
-                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(linuxName, true))
-                    {
-                        yield return possibleLoadTarget;
-                    }
-                }
-
-                foreach (var macName in GetMacPossibilities(name))
-                {
-                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(macName, true))
-                    {
-                        yield return possibleLoadTarget;
-                    }
-                }
-            }
+            return candidates.Distinct();
         }
 
         private static IEnumerable<string> GetLinuxPossibilities(string name)

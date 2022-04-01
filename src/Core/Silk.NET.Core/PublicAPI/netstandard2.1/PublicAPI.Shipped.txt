@@ -1208,3 +1208,4 @@ static readonly Silk.NET.Core.Loader.DefaultPathResolver.MacVersioningResolver -
 static readonly Silk.NET.Core.Loader.DefaultPathResolver.MainModuleDirectoryResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
 static readonly Silk.NET.Core.Loader.DefaultPathResolver.NativePackageResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
 static readonly Silk.NET.Core.Loader.DefaultPathResolver.RuntimesFolderResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.PassthroughResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
