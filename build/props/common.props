@@ -15,7 +15,7 @@
             Silk.NET April 2022 Update
             
             - Add DirectStorage bindings
-            - Add legacy OpenGL 2.0 support for the ImGui extension
+            - Add legacy OpenGL 2.0 support for the ImGui extension (thank you @Beyley)
             - Add the ability to customize the functionality/priorities of DefaultPathResolver
             - Add more auto-generated constants to Assimp, DirectX, and SDL
             - Update to Vulkan 1.3.210
