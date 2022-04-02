@@ -48,11 +48,7 @@ namespace Silk.NET.Core.Loader
         /// <summary>
         /// A list of resolvers to use to obtain paths. 
         /// </summary>
-        public List<Func<string, IEnumerable<string>>> Resolvers
-        {
-            get;
-            set;
-        }
+        public List<Func<string, IEnumerable<string>>> Resolvers { get; set; }
 
         /// <summary>
         /// A resolver that returns the given name with no modifications. Note that this resolver is intrinsically
