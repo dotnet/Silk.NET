@@ -43,7 +43,7 @@ namespace Silk.NET.Input.Sdl
                     if (@event.Key.Repeat != 1)
                     {
                         Key keyDown;
-                        if (_keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
                         {
                             keyDown = key;
                             _keysDown.Add(keyDown);
@@ -63,7 +63,7 @@ namespace Silk.NET.Input.Sdl
                     if (@event.Key.Repeat != 1)
                     {
                         Key keyUp;
-                        if (_keyMap.TryGetValue((KeyCode) @event.Key.Keysym.Sym, out var key))
+                        if (_keyMap.TryGetValue(@event.Key.Keysym.Scancode, out var key))
                         {
                             keyUp = key;
                             _keysDown.Remove(keyUp);

@@ -16,13 +16,15 @@ namespace InputTest
         // Exclude the entry point if we're running in .NET 6, as this file is
         // compiled into the TriangleNET6 project too which has its own
         // entrypoint.
-        private static void Main() => Run();
+        private static void Main(string[] args) => Run(args);
 #endif
 
-        private static void Run()
+        private static void Run(string[]? args = null)
         {
-            //Window.PrioritizeSdl();
-            
+            if (args?.Contains("--sdl") ?? false)
+            {
+                Window.PrioritizeSdl();
+            }
             var opts = WindowOptions.Default;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;

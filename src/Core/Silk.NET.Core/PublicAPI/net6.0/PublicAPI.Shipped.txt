@@ -1202,3 +1202,12 @@ virtual Silk.NET.Core.Native.NativeApiContainer.PostInit() -> void
 ~static Silk.NET.Core.Version64.implicit operator System.Version(Silk.NET.Core.Version64 version) -> System.Version
 ~virtual Silk.NET.Core.Loader.SearchPathContainer.Android.get -> string
 ~virtual Silk.NET.Core.Loader.SearchPathContainer.IOS.get -> string
+Silk.NET.Core.Loader.DefaultPathResolver.Resolvers.get -> System.Collections.Generic.List<System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!>!
+Silk.NET.Core.Loader.DefaultPathResolver.Resolvers.set -> void
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.BaseDirectoryResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.LinuxVersioningResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.MacVersioningResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.MainModuleDirectoryResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.NativePackageResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.RuntimesFolderResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!
+static readonly Silk.NET.Core.Loader.DefaultPathResolver.PassthroughResolver -> System.Func<string!, System.Collections.Generic.IEnumerable<string!>!>!

@@ -16,15 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe partial struct PipelineLibraryCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
+    [NativeName("Name", "VkGraphicsPipelineLibraryCreateInfoEXT")]
+    public unsafe partial struct GraphicsPipelineLibraryCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>
     {
-        public PipelineLibraryCreateInfoKHR
+        public GraphicsPipelineLibraryCreateInfoEXT
         (
-            StructureType? sType = StructureType.PipelineLibraryCreateInfoKhr,
+            StructureType? sType = StructureType.GraphicsPipelineLibraryCreateInfoExt,
             void* pNext = null,
-            uint? libraryCount = null,
-            Pipeline* pLibraries = null
+            GraphicsPipelineLibraryFlagsEXT? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (libraryCount is not null)
+            if (flags is not null)
             {
-                LibraryCount = libraryCount.Value;
-            }
-
-            if (pLibraries is not null)
-            {
-                PLibraries = pLibraries;
+                Flags = flags.Value;
             }
         }
 
@@ -59,20 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "libraryCount")]
-        public uint LibraryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkPipeline*")]
-        [NativeName("Type.Name", "VkPipeline")]
-        [NativeName("Name", "pLibraries")]
-        public Pipeline* PLibraries;
+        [NativeName("Type", "VkGraphicsPipelineLibraryFlagsEXT")]
+        [NativeName("Type.Name", "VkGraphicsPipelineLibraryFlagsEXT")]
+        [NativeName("Name", "flags")]
+        public GraphicsPipelineLibraryFlagsEXT Flags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineLibraryCreateInfoKhr;
+            return SType = StructureType.GraphicsPipelineLibraryCreateInfoExt;
         }
 
         /// <inheritdoc />

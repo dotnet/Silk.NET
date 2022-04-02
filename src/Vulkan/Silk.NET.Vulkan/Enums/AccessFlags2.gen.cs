@@ -139,5 +139,9 @@ namespace Silk.NET.Vulkan
         Access2InvocationMaskReadBitHuawei = 549755813888,
         [NativeName("Name", "VK_ACCESS_2_RESERVED_387_BIT_KHR")]
         Access2Reserved387BitKhr = 1099511627776,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_42_BIT_NV")]
+        Access2Reserved42BitNV = 4398046511104,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_43_BIT_NV")]
+        Access2Reserved43BitNV = 8796093022208,
     }
 }

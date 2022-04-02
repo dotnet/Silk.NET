@@ -34,5 +34,7 @@ namespace Silk.NET.Vulkan
         PerformanceQueryIntel = 1000210000,
         [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR")]
         VideoEncodeBitstreamBufferRangeKhr = 1000299000,
+        [NativeName("Name", "VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
+        PrimitivesGeneratedExt = 1000382000,
     }
 }

@@ -24,6 +24,7 @@ namespace Silk.NET.Windowing.Sdl.Android
 
         internal static SilkActivity Instance { get; private set; }
         internal static MainFunc CurrentMain { get; private set; }
+        internal static nint NativeCurrentMain { get; private set; }
 
         [DllImport("libmain.so", EntryPoint = "sdSetMain")]
         internal static extern void SetupMain(nint funcPtr);
@@ -49,13 +50,22 @@ namespace Silk.NET.Windowing.Sdl.Android
         public override unsafe void LoadLibraries()
         {
             base.LoadLibraries();
+            if (ReferenceEquals(Instance, this))
+            {
+                return;
+            }
+
             if (Instance is not null)
             {
-                throw new InvalidOperationException("Only one SilkActivity may be present throughout the whole application.");
+                throw new InvalidOperationException
+                    ("Only one SilkActivity may be present throughout the whole application.");
             }
 
             Instance = this;
-            SetupMain(SilkMarshal.DelegateToPtr(CurrentMain));
+            if (NativeCurrentMain is 0)
+            {
+                SetupMain(NativeCurrentMain = SilkMarshal.DelegateToPtr(CurrentMain));
+            }
         }
 
         public override void SetOrientationBis(int w, int h, bool resizable, string hint)
@@ -64,6 +74,12 @@ namespace Silk.NET.Windowing.Sdl.Android
         }
 
         protected abstract void OnRun();
+
+        protected override void OnDestroy()
+        {
+            Instance = null;
+            base.OnDestroy();
+        }
 
         private void Run()
         {

@@ -247,3 +247,4 @@ static Silk.NET.Windowing.WindowExtensions.SetWindowIcon(this Silk.NET.Windowing
 static Silk.NET.Windowing.WindowExtensions.SwapBuffers(this Silk.NET.Windowing.IView! view) -> void
 static Silk.NET.Windowing.WindowOptions.Default.get -> Silk.NET.Windowing.WindowOptions
 static Silk.NET.Windowing.WindowOptions.DefaultVulkan.get -> Silk.NET.Windowing.WindowOptions
+Silk.NET.Windowing.WindowOptions.SharedContext.set -> void
