@@ -72,10 +72,10 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 Prerequisites
 - **Must**: .NET 6 SDK
 - **Should**: [NUKE](https://nuke.build) (build system). Install using `dotnet tool install Nuke.GlobalTool --global`
-- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maui` to install them)
+- **Should**: Android, iOS, and MAUI .NET 6 workloads (use `dotnet workload install android ios maccatalyst maui` to install them)
 - **Should**: Android SDK version 30 with NDK tools installed. On Windows, for best results this should be installed into `C:\ProgramData\Android\android-sdk`.
 - **Could**: Java JDK (for gradle)
-- **Could**: Visual Studio 2019 Community version 16.10 or later
+- **Could**: Visual Studio 2022 Community version 17.0 or later
 
 Instructions
 - Clone the repository (recursively)
