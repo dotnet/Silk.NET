@@ -4,7 +4,7 @@
         <SilkGitDirForVersion>$(SilkSubmodulesDir)\ANGLE</SilkGitDirForVersion>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
+        <TargetFramework>$(SilkTargetFramework)</TargetFramework>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
