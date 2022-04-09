@@ -19,10 +19,21 @@ namespace Silk.NET.SilkTouch.Generation
         /// <summary>
         /// Creates a <see cref="SilkTouchGenerator"/> for the given <see cref="FormFactor"/>.
         /// </summary>
+        /// <param name="serviceProvider">The service provider used to resolve dependencies</param>
         /// <param name="formFactor">The form factor this generator is running within.</param>
-        public SilkTouchGenerator(FormFactors formFactor) => FormFactor = formFactor;
-        
+        public SilkTouchGenerator(IServiceProvider serviceProvider, FormFactors formFactor)
+        {
+            ServiceProvider = serviceProvider;
+            FormFactor = formFactor;
+        }
+
         // Public Properties
+        
+        /// <summary>
+        /// The service provider used to resolve dependencies
+        /// </summary>
+        public IServiceProvider ServiceProvider { get; }
+
         /// <summary>
         /// The form factor this generator is running within.
         /// </summary>
@@ -43,16 +54,6 @@ namespace Silk.NET.SilkTouch.Generation
         /// The assembly name for this C# project.
         /// </summary>
         public string? AssemblyName { get; private set; }
-
-        /// <summary>
-        /// The common/global configuration variables.
-        /// </summary>
-        public GlobalConfiguration? GlobalConfiguration { get; private set; }
-
-        /// <summary>
-        /// The project-specific configuration for this project.
-        /// </summary>
-        public ProjectConfiguration? ThisConfiguration { get; private set; }
 
         /// <summary>
         /// The "base directory" of this project, used as the root of all relative paths referenced in the
@@ -133,8 +134,6 @@ namespace Silk.NET.SilkTouch.Generation
             IsActive = true;
             Compilation = compilation;
             AssemblyName = assemblyName;
-            GlobalConfiguration = projectConfig?.GetGlobalConfiguration(baseDir);
-            ThisConfiguration = projectConfig;
             BaseDirectory = baseDir;
             return true;
         }
@@ -165,8 +164,6 @@ namespace Silk.NET.SilkTouch.Generation
             IsActive = false;
             Compilation = null;
             AssemblyName = null;
-            GlobalConfiguration = null;
-            ThisConfiguration = null;
             BaseDirectory = null;
         }
     }

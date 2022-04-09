@@ -7,12 +7,14 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using ClangSharp;
 using Microsoft.CodeAnalysis;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Configuration;
 using Silk.NET.SilkTouch.Generation;
 using Silk.NET.SilkTouch.Scraper.Subagent;
-using Ultz.Extensions.Logging;
 using Diagnostic = Microsoft.CodeAnalysis.Diagnostic;
 
 namespace Silk.NET.SilkTouch.Scraper
@@ -32,15 +34,13 @@ namespace Silk.NET.SilkTouch.Scraper
         /// </summary>
         /// <param name="ctx">The SilkTouch Context to generate into.</param>
         /// <typeparam name="T">The subagent spawner to use.</typeparam>
-        public static async Task RunAsync<T>(SilkTouchContext ctx) where T:ISubagent, new()
+        public static async Task RunAsync<T>(SilkTouchContext ctx) where T:ISubagent
         {
-            var subagentSpawner = new T();
-            await Parallel.ForEachAsync
-            (
-                ctx.Configuration.Scraper?.Jobs?.Select((x, i) => (x, i))
-                    ?? Enumerable.Empty<(ScraperJobConfiguration, int)>(),
-                async (x, _) => await RunAsync(ctx, subagentSpawner, x.x, x.i)
-            );
+            var configuration = ctx.ServiceProvider.GetService<IOptions<ScraperConfiguration>>();
+            ISubagent subagentSpawner = ActivatorUtilities.CreateInstance<T>(ctx.ServiceProvider);
+            await Task.WhenAll((configuration?.Value.Jobs?.Select
+                ((x, i) => (x, i)) ?? Enumerable.Empty<(ScraperJobConfiguration, int)>()).Select
+                (x => RunAsync(ctx, subagentSpawner, x.x, x.i)));
         }
 
         private static async Task RunAsync
@@ -51,10 +51,12 @@ namespace Silk.NET.SilkTouch.Scraper
             int jobNumber
         )
         {
+            var logger = ctx.ServiceProvider.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(RunAsync) + "_" + jobNumber);
+            var configuration = ctx.ServiceProvider.GetService<IOptions<GlobalConfiguration>>();
             // initial validation
             var error = false;
             var libraryNames = job.LibraryNames;
-            if ((libraryNames?.Length ?? 0) == 0)
+            if (libraryNames is not { Length: > 1 })
             {
                 ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoLibraryName, Location.None, jobNumber));
                 error = true;
@@ -79,10 +81,10 @@ namespace Silk.NET.SilkTouch.Scraper
             string? licenseHeaderFile = null;
             Directory.CreateDirectory(workFolder);
             File.WriteAllLines(@in, job.HeaderText ?? Array.Empty<string>());
-            if (ctx.GlobalConfiguration?.FileHeaderLines is not null)
+            if (configuration?.Value.FileHeaderLines is not null)
             {
                 licenseHeaderFile = Path.Combine(workFolder, "licenseHeader.txt");
-                await File.WriteAllLinesAsync(licenseHeaderFile, ctx.GlobalConfiguration.FileHeaderLines);
+                await File.WriteAllLinesAsync(licenseHeaderFile, configuration.Value.FileHeaderLines);
             }
             
             // format our includes. this allows both relative paths like "../" which resolve relative to the
@@ -132,8 +134,8 @@ namespace Silk.NET.SilkTouch.Scraper
                 .Select(x => Path.GetFullPath(x.Path.Replace('\\', '/'), ctx.BaseDirectory))
                 .ToArray();
 
-            Log.Debug($"Using work folder \"{workFolder}\" job {jobNumber}");
-            Log.Information($"Starting ClangSharp subagent for \"{ctx.AssemblyName}\" job {jobNumber}...");
+            logger.LogDebug("Using work folder \"{WorkFolder}\"", workFolder);
+            logger.LogInformation("Starting ClangSharp subagent for \"{AssemblyName}\"", ctx.AssemblyName);
             var options = new SubagentOptions
             (
                 @in,
@@ -181,6 +183,7 @@ namespace Silk.NET.SilkTouch.Scraper
                 return;
             }
             
+            logger.LogTrace("Job done");
             // TODO mods
             // TODO transformation + ctx.EmitOutput
         }

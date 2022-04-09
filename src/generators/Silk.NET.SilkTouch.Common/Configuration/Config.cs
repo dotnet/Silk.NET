@@ -12,7 +12,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 using Silk.NET.SilkTouch.Configuration.Json;
-using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Configuration
 {

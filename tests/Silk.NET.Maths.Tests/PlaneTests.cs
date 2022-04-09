@@ -37,7 +37,7 @@ namespace Silk.NET.Maths.Tests
             Plane<float> b = new Plane<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
-            object obj = b;
+            object? obj = b;
 
             bool expected = true;
             bool actual = a.Equals(obj);

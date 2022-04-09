@@ -7,13 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Configuration;
 using Silk.NET.SilkTouch.Emitter;
 using Silk.NET.SilkTouch.Generation;
 using Silk.NET.SilkTouch.Overloader;
 using Silk.NET.SilkTouch.Scraper;
 using Silk.NET.SilkTouch.Scraper.Subagent;
-using Ultz.Extensions.Logging;
 
 namespace SilkTouch
 {
@@ -46,11 +48,16 @@ namespace SilkTouch
         
         public static int ExitCode { get; private set; }
 
-        public static async ValueTask HandleProjectAsync(MSBuildWorkspace workspace, Project project)
+        public static async Task HandleProjectAsync(IServiceProvider services, Project project)
         {
             // Create the generator
-            var generator = new SilkTouchGenerator(FormFactors.CLI);
-            var raiseDiagnostic = LogDiagnostic(project.AssemblyName);
+            var generator = new SilkTouchGenerator(services, FormFactors.CLI);
+
+            var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger($"Project {project.Name}");
+            var configuration = services.GetService<IOptions<ProjectConfiguration>>();
+            
+            var raiseDiagnostic = LogDiagnostic(logger, project.AssemblyName);
             generator.DiagnosticRaised += raiseDiagnostic;
             generator.OutputGenerated += _ => throw new NotImplementedException();
 
@@ -63,13 +70,13 @@ namespace SilkTouch
             ))
             {
                 // diagnostics already raised, just quit.
-                Log.Debug($"generator.Begin failed - {project.AssemblyName}");
+                logger.LogDebug("generator.Begin failed");
                 return;
             }
 
-            if (generator.ThisConfiguration?.CommandLineSkipIf?.Any(x => ApplicableSkipIfs.Contains(x.Trim())) ?? false)
+            if (configuration?.Value.CommandLineSkipIf?.Any(x => ApplicableSkipIfs.Contains(x.Trim())) ?? false)
             {
-                Log.Information($"Per the configuration, generation of \"{project.AssemblyName}\" has been skipped.");
+                logger.LogInformation("Per the configuration, generation has been skipped");
                 return;
             }
 
@@ -78,7 +85,7 @@ namespace SilkTouch
             generator.End();
         }
 
-        private static Action<Diagnostic> LogDiagnostic(string proj) => diagnostic =>
+        private static Action<Diagnostic> LogDiagnostic(ILogger logger, string proj) => diagnostic =>
         {
             var diagnosticString = $"{diagnostic} ({proj})";
             // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
@@ -86,18 +93,18 @@ namespace SilkTouch
             {
                 case DiagnosticSeverity.Hidden:
                 {
-                    Log.Trace(diagnosticString);
+                    logger.LogTrace("{Diagnostic}", diagnosticString);
                     break;
                 }
                 case DiagnosticSeverity.Info:
                 {
                     if (diagnostic.Descriptor.IsEnabledByDefault)
                     {
-                        Log.Information(diagnosticString);
+                        logger.LogInformation("{Diagnostic}", diagnosticString);
                     }
                     else
                     {
-                        Log.Trace(diagnosticString);
+                        logger.LogTrace("{Diagnostic}", diagnosticString);
                     }
 
                     break;
@@ -106,18 +113,18 @@ namespace SilkTouch
                 {
                     if (diagnostic.Descriptor.IsEnabledByDefault)
                     {
-                        Log.Warning(diagnosticString);
+                        logger.LogWarning("{Diagnostic}", diagnosticString);
                     }
                     else
                     {
-                        Log.Trace(diagnosticString);
+                        logger.LogTrace("{Diagnostic}", diagnosticString);
                     }
 
                     break;
                 }
                 case DiagnosticSeverity.Error:
                 {
-                    Log.Error(diagnosticString);
+                    logger.LogError("{Diagnostic}", diagnosticString);
                     ExitCode--;
                     break;
                 }

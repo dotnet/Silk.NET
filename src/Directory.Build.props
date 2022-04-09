@@ -48,10 +48,11 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkEnableSourceLink)' != 'false' And '$(SilkSourceLinkExempt)' == ''">
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
     </ItemGroup>
     <PropertyGroup Condition="'$(SilkSourceLinkExempt)' != ''">
         <IncludeSymbols>false</IncludeSymbols>
         <SymbolPackageFormat></SymbolPackageFormat>
     </PropertyGroup>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
 </Project>

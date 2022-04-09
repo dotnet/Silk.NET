@@ -8,13 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="HtmlAgilityPack" Version="1.11.42" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.11.0" />
-      <PackageReference Include="Statiq.App" Version="1.0.0-beta.48" />
-      <PackageReference Include="Statiq.Feeds" Version="1.0.0-beta.48" />
-      <PackageReference Include="Statiq.Markdown" Version="1.0.0-beta.48" />
-      <PackageReference Include="Statiq.Razor" Version="1.0.0-beta.48" />
-      <PackageReference Include="Statiq.Yaml" Version="1.0.0-beta.48" />
+      <PackageReference Include="HtmlAgilityPack" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
+      <PackageReference Include="Statiq.App" />
+      <PackageReference Include="Statiq.Feeds" />
+      <PackageReference Include="Statiq.Markdown" />
+      <PackageReference Include="Statiq.Razor" />
+      <PackageReference Include="Statiq.Yaml" />
     </ItemGroup>
 
     <ItemGroup>
