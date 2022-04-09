@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
     </ItemGroup>
 
 </Project>
