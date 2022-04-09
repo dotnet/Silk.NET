@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
     </ItemGroup>
 
 </Project>
