@@ -16,8 +16,35 @@ public abstract class SymbolVisitor
     public virtual Symbol Visit(Symbol symbol)
     {
         if (symbol is TypeSymbol ts) return VisitType(ts);
+        if (symbol is MemberSymbol ms) return VisitMember(ms);
 
         return ThrowUnknownSymbol(nameof(Symbol), symbol);
+    }
+
+    /// <summary>
+    /// Visit a <see cref="MemberSymbol"/>. This will call the appropriate method based on the actual type of the <paramref name="memberSymbol"/>
+    /// </summary>
+    /// <param name="memberSymbol">The member symbol to visit</param>
+    /// <returns>The rewritten symbol. May or may not be a <see cref="MemberSymbol"/></returns>
+    /// <seealso cref="VisitField"/>
+    public virtual Symbol VisitMember(MemberSymbol memberSymbol)
+    {
+        if (memberSymbol is FieldSymbol fs) return VisitField(fs);
+        
+        return ThrowUnknownSymbol(nameof(MemberSymbol), memberSymbol);
+    }
+
+    /// <summary>
+    /// Visit a <see cref="FieldSymbol"/>. Will call the appropriate methods to visit the different parts of the field.
+    /// </summary>
+    /// <param name="fieldSymbol">The field symbol to visit</param>
+    /// <returns>The rewritten symbol. May or may not be a <see cref="FieldSymbol"/></returns>
+    /// <remarks>
+    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    public virtual Symbol VisitField(FieldSymbol fieldSymbol)
+    {
+        return new FieldSymbol(VisitType(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
     }
 
     /// <summary>
