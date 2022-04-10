@@ -21,7 +21,7 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
+            .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
     }
 
     [Fact]
@@ -36,7 +36,7 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
+            .Verify<StructSymbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
     }
 
     [Fact]
@@ -51,6 +51,6 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
+            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
     }
 }

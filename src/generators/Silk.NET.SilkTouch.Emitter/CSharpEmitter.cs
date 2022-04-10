@@ -51,7 +51,7 @@ public sealed class CSharpEmitter
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
 
-        protected override Symbol VisitStruct(StructSymbol structSymbol)
+        protected override StructSymbol VisitStruct(StructSymbol structSymbol)
         {
             var members = List<MemberDeclarationSyntax>();
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
