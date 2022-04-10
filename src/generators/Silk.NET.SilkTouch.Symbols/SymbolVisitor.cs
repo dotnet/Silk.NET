@@ -18,6 +18,8 @@ public abstract class SymbolVisitor
         if (symbol is TypeSymbol ts) return VisitType(ts);
         if (symbol is MemberSymbol ms) return VisitMember(ms);
 
+        if (symbol is IdentifierSymbol @is) return VisitIdentifier(@is);
+
         return ThrowUnknownSymbol<Symbol>(symbol);
     }
 
