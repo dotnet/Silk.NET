@@ -14,6 +14,11 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="Moq" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\generators\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
     </ItemGroup>
 
 </Project>
