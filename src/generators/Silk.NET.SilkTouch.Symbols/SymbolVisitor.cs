@@ -27,7 +27,7 @@ public abstract class SymbolVisitor
     /// <param name="memberSymbol">The member symbol to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <seealso cref="VisitField"/>
-    public virtual MemberSymbol VisitMember(MemberSymbol memberSymbol)
+    protected virtual MemberSymbol VisitMember(MemberSymbol memberSymbol)
     {
         if (memberSymbol is FieldSymbol fs) return VisitField(fs);
         
@@ -42,7 +42,7 @@ public abstract class SymbolVisitor
     /// <remarks>
     /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
-    public virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
+    protected virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
     {
         return new FieldSymbol(VisitType(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
     }
