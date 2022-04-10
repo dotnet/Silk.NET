@@ -53,4 +53,65 @@ public sealed class SymbolVisitorTests
         visitor.Protected()
             .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
     }
+
+    [Fact]
+    public void FieldIsVisitedAsField()
+    {
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var visitor = new Mock<SymbolVisitor>
+        {
+            CallBase = true
+        };
+
+        visitor.Object.Visit(symbol);
+        
+        visitor.Protected()
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.IsAny<FieldSymbol>());
+    }
+
+    [Fact]
+    public void FieldIsVisitedAsMember()
+    {
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var visitor = new Mock<SymbolVisitor>
+        {
+            CallBase = true
+        };
+
+        visitor.Object.Visit(symbol);
+        
+        visitor.Protected()
+            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.IsAny<MemberSymbol>());
+    }
+
+    [Fact]
+    public void FieldTypeIsVisited()
+    {
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var visitor = new Mock<SymbolVisitor>
+        {
+            CallBase = true
+        };
+
+        visitor.Object.Visit(symbol);
+        
+        visitor.Protected()
+            .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
+    }
+
+    [Fact]
+    public void FieldIdentifierIsVisited()
+    {
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var visitor = new Mock<SymbolVisitor>
+        {
+            CallBase = true
+        };
+
+        visitor.Object.Visit(symbol);
+        
+        // note that this also tests whether the struct identifier is visited, there's just no good way of testing JUST the field identifier
+        visitor.Protected()
+            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Exactly(2), ItExpr.IsAny<IdentifierSymbol>());
+    }
 }
