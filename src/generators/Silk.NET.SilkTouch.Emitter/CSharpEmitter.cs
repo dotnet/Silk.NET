@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Symbols;
-using SymbolVisitor = Microsoft.CodeAnalysis.SymbolVisitor;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Emitter;
 
@@ -24,7 +24,7 @@ public sealed class CSharpEmitter
     }
     
     /// <summary>
-    /// Transforms the given <see cref="Symbol"/> into a <see cref="CSharpSyntaxNode"/>
+    /// Transforms the given <see cref="Silk.NET.SilkTouch.Symbols.Symbol"/> into a <see cref="CSharpSyntaxNode"/>
     /// </summary>
     /// <param name="symbol">The symbol to transform</param>
     /// <returns>A syntax node, containing syntax depending on the symbol. The syntax node should produce valid C# code.</returns>
@@ -50,5 +50,18 @@ public sealed class CSharpEmitter
     {
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
+
+        protected override Symbol VisitStruct(StructSymbol structSymbol)
+        {
+            var members = List<MemberDeclarationSyntax>();
+            var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
+            _syntax = StructDeclaration
+                (
+                    List<AttributeListSyntax>(), modifiers, Identifier(structSymbol.Identifier.Value), null, null,
+                    List<TypeParameterConstraintClauseSyntax>(), members
+                )
+                .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)));
+            return base.VisitStruct(structSymbol);
+        }
     }
 }
