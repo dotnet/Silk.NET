@@ -64,7 +64,7 @@ namespace Silk.NET.OpenCL
         DeviceMaxSamplers = 0x1018,
         [NativeName("Name", "CL_DEVICE_MEM_BASE_ADDR_ALIGN")]
         DeviceMemBaseAddrAlign = 0x1019,
-        [System.Obsolete("Deprecated in version  1.2")]
+        [System.Obsolete("Deprecated in version 1.2")]
         [NativeName("Name", "CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE")]
         DeviceMinDataTypeAlignSize = 0x101A,
         [NativeName("Name", "CL_DEVICE_SINGLE_FP_CONFIG")]
@@ -97,7 +97,7 @@ namespace Silk.NET.OpenCL
         DeviceCompilerAvailable = 0x1028,
         [NativeName("Name", "CL_DEVICE_EXECUTION_CAPABILITIES")]
         DeviceExecutionCapabilities = 0x1029,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_QUEUE_PROPERTIES")]
         DeviceQueueProperties = 0x102A,
         [NativeName("Name", "CL_DEVICE_QUEUE_ON_HOST_PROPERTIES")]
@@ -122,7 +122,7 @@ namespace Silk.NET.OpenCL
         DeviceHalfFPConfig = 0x1033,
         [NativeName("Name", "CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF")]
         DevicePreferredVectorWidthHalf = 0x1034,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_HOST_UNIFIED_MEMORY")]
         DeviceHostUnifiedMemory = 0x1035,
         [NativeName("Name", "CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR")]
@@ -139,7 +139,7 @@ namespace Silk.NET.OpenCL
         DeviceNativeVectorWidthDouble = 0x103B,
         [NativeName("Name", "CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF")]
         DeviceNativeVectorWidthHalf = 0x103C,
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_DEVICE_OPENCL_C_VERSION")]
         DeviceOpenclCVersion = 0x103D,
         [NativeName("Name", "CL_DEVICE_LINKER_AVAILABLE")]
@@ -432,7 +432,7 @@ namespace Silk.NET.OpenCL
         ImageDepth = 0x1116,
         [NativeName("Name", "CL_IMAGE_ARRAY_SIZE")]
         ImageArraySize = 0x1117,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_IMAGE_BUFFER")]
         ImageBuffer = 0x1118,
         [NativeName("Name", "CL_IMAGE_NUM_MIP_LEVELS")]
@@ -505,10 +505,10 @@ namespace Silk.NET.OpenCL
         ProgramIL = 0x1169,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_CTORS_PRESENT")]
         ProgramScopeGlobalCtorsPresent = 0x116A,
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
         ProgramScopeGlobalDtorsPresent = 0x116B,
         [NativeName("Name", "CL_PROGRAM_BUILD_STATUS")]

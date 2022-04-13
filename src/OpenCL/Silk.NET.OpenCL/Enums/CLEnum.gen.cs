@@ -500,10 +500,10 @@ namespace Silk.NET.OpenCL
         Submitted = 0x2,
         [NativeName("Name", "CL_QUEUED")]
         Queued = 0x3,
-        [System.Obsolete("Deprecated in version  1.2")]
+        [System.Obsolete("Deprecated in version 1.2")]
         [NativeName("Name", "CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE")]
         DeviceMinDataTypeAlignSize = 0x101A,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_QUEUE_PROPERTIES")]
         DeviceQueueProperties = 0x102A,
         [NativeName("Name", "CL_MISALIGNED_SUB_BUFFER_OFFSET")]
@@ -556,10 +556,10 @@ namespace Silk.NET.OpenCL
         CommandUser = 0x1204,
         [NativeName("Name", "CL_BUFFER_CREATE_TYPE_REGION")]
         BufferCreateTypeRegion = 0x1220,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_HOST_UNIFIED_MEMORY")]
         DeviceHostUnifiedMemory = 0x1035,
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_DEVICE_OPENCL_C_VERSION")]
         DeviceOpenclCVersion = 0x103D,
         [NativeName("Name", "CL_COMPILE_PROGRAM_FAILURE")]
@@ -720,7 +720,7 @@ namespace Silk.NET.OpenCL
         KernelArgTypeVolatile = 0x4,
         [NativeName("Name", "CL_KERNEL_GLOBAL_WORK_SIZE")]
         KernelGlobalWorkSize = 0x11B5,
-        [System.Obsolete("Deprecated in version  2.0")]
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_IMAGE_BUFFER")]
         ImageBuffer = 0x1118,
         [NativeName("Name", "CL_INVALID_PIPE_SIZE")]
@@ -857,10 +857,10 @@ namespace Silk.NET.OpenCL
         InvalidSpecID = unchecked((int) 0xFFFFFFFFFFFFFFB9),
         [NativeName("Name", "CL_MAX_SIZE_RESTRICTION_EXCEEDED")]
         MaxSizeRestrictionExceeded = unchecked((int) 0xFFFFFFFFFFFFFFB8),
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_CTORS_PRESENT")]
         ProgramScopeGlobalCtorsPresent = 0x116A,
-        [System.Obsolete("Deprecated in version  3.0")]
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
         ProgramScopeGlobalDtorsPresent = 0x116B,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_RELAXED")]
