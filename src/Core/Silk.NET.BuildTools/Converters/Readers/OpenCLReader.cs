@@ -858,7 +858,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             (x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
                                 ? null
                                 : (1L << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X"))),
-                            CleanupEnumName(EnumName(x.Parent.Attribute("name").Value))
+                            CleanupEnumName(Rename(x.Parent.Attribute("name").Value, task))
                          )
                 );
             Debug.Assert(allEnums != null, nameof(allEnums) + " != null");
@@ -874,7 +874,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 registry
                 .Elements("feature")
                 .Elements("require")
-                .Where(x => x.Attribute("comment")?.Value.Contains("were deprecated") == true)
+                .Where(x => x.Attribute("comment")?.Value.Contains("deprecated") == true)
                 .Elements("enum")
                 .ToDictionary(x => x.Attribute("name").Value, x => GetDeprecatedIn(x.Parent.Attribute("comment").Value));
 
@@ -909,26 +909,22 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         : null;
                     var tokens = requirement.Elements("enum")
                         .Attributes("name")
-                        .Where(x => !Constants.ContainsKey(x.Value) && allEnums.ContainsKey(x.Value))
+                        .Select(x => Rename(x.Value, task))
+                        .Where(x => !Constants.ContainsKey(x) && allEnums.ContainsKey(x))
                         .Select
                         (
                             token => new Token
                             {
-                                Attributes = GetTokenAttributes(token.Value),
+                                Attributes = GetTokenAttributes(token),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
-                                NativeName = token.Value,
+                                Name = Naming.Translate(TrimName(token, task), task.FunctionPrefix),
+                                NativeName = token,
                                 Value = allEnums.ContainsKey
-                                    (token.Value)
-                                    ? allEnums[token.Value].Item1
-                                    : FormatToken(Constants[token.Value].ToString())
+                                    (token)
+                                    ? allEnums[token].Item1
+                                    : FormatToken(Constants[token].ToString())
                             }
                         ).ToList();
-
-                    if(tokens.Count == 0)
-                    {
-                        continue;
-                    }
 
                     foreach (var name in apiName.Split('|'))
                     {
@@ -1012,9 +1008,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
+        private static string Rename(string origName, BindTask task)
+        {
+            if (task.RenamedNativeNames.TryGetValue(origName, out var renamed))
+            {
+                return renamed;
+            }
+            return origName;
+        }
+
         private string GetDeprecatedIn(string msg)
         {
-            return msg.Substring(msg.LastIndexOf(' '));
+            return msg.Substring(msg.LastIndexOf(' ') + 1);
         }
 
         private string TrimTokenName(string tokenName, string groupName)
@@ -1047,26 +1052,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return value.Replace('.', '_');
         }
 
-        private static string EnumName(string @enum)
-        {
-            return @enum switch
-            {
-                // typo in spec
-                "cl_kernel_arg_type_qualifer" => "cl_kernel_arg_type_qualifier",
-                _ => @enum,
-            };
-        }
-
         private static string ExtensionName(string ext, BindTask task)
         {
-            switch (ext)
-            {
-                // spec inconsistency
-                case "cl_device_partition_property_ext":
-                    return "EXT_device_partition_property";
-                case "cl_khr_mipmap_image":
-                    return "KHR_mipmap_image";
-            }
+            ext = Rename(ext, task);
 
             var trimmedExt = TrimName(ext, task);
             var splitTrimmed = trimmedExt.Split('_');
