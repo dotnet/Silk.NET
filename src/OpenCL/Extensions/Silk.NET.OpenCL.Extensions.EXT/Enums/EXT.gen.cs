@@ -15,11 +15,11 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
         DeviceCxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_PARTITION_FAILED_EXT")]
-        DevicePartitionFailedExt = unchecked((int)0xFFFFFFFFFFFFFBDF),
+        DevicePartitionFailedExt = unchecked((int) 0xFFFFFFFFFFFFFBDF),
         [NativeName("Name", "CL_INVALID_PARTITION_COUNT_EXT")]
-        InvalidPartitionCountExt = unchecked((int)0xFFFFFFFFFFFFFBDE),
+        InvalidPartitionCountExt = unchecked((int) 0xFFFFFFFFFFFFFBDE),
         [NativeName("Name", "CL_INVALID_PARTITION_NAME_EXT")]
-        InvalidPartitionNameExt = unchecked((int)0xFFFFFFFFFFFFFBDD),
+        InvalidPartitionNameExt = unchecked((int) 0xFFFFFFFFFFFFFBDD),
         [NativeName("Name", "CL_DEVICE_PARENT_DEVICE_EXT")]
         DeviceParentDeviceExt = 0x4054,
         [NativeName("Name", "CL_DEVICE_PARTITION_TYPES_EXT")]

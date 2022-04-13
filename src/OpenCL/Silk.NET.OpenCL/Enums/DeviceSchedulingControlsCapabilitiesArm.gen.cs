@@ -1,0 +1,26 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+
+using System;
+using Silk.NET.Core.Attributes;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.OpenCL
+{
+    [NativeName("Name", "cl_device_scheduling_controls_capabilities_arm")]
+    public enum DeviceSchedulingControlsCapabilitiesArm : ulong
+    {
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
+        DeviceSchedulingKernelBatchingArm = 0x1,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]
+        DeviceSchedulingWorkgroupBatchSizeArm = 0x2,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
+        DeviceSchedulingWorkgroupBatchSizeModifierArm = 0x4,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_DEFERRED_FLUSH_ARM")]
+        DeviceSchedulingDeferredFlushArm = 0x8,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
+        DeviceSchedulingRegisterAllocationArm = 0x10,
+    }
+}

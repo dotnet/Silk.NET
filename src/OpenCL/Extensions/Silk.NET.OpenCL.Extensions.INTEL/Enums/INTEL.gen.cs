@@ -21,13 +21,13 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_ACCELERATOR_TYPE_INTEL")]
         AcceleratorTypeIntel = 0x4093,
         [NativeName("Name", "CL_INVALID_ACCELERATOR_INTEL")]
-        InvalidAcceleratorIntel = unchecked((int)0xFFFFFFFFFFFFFBBA),
+        InvalidAcceleratorIntel = unchecked((int) 0xFFFFFFFFFFFFFBBA),
         [NativeName("Name", "CL_INVALID_ACCELERATOR_TYPE_INTEL")]
-        InvalidAcceleratorTypeIntel = unchecked((int)0xFFFFFFFFFFFFFBB9),
+        InvalidAcceleratorTypeIntel = unchecked((int) 0xFFFFFFFFFFFFFBB9),
         [NativeName("Name", "CL_INVALID_ACCELERATOR_DESCRIPTOR_INTEL")]
-        InvalidAcceleratorDescriptorIntel = unchecked((int)0xFFFFFFFFFFFFFBB8),
+        InvalidAcceleratorDescriptorIntel = unchecked((int) 0xFFFFFFFFFFFFFBB8),
         [NativeName("Name", "CL_ACCELERATOR_TYPE_NOT_SUPPORTED_INTEL")]
-        AcceleratorTypeNotSupportedIntel = unchecked((int)0xFFFFFFFFFFFFFBB7),
+        AcceleratorTypeNotSupportedIntel = unchecked((int) 0xFFFFFFFFFFFFFBB7),
         [NativeName("Name", "CL_DEVICE_ME_VERSION_INTEL")]
         DeviceMEVersionIntel = 0x407E,
         [NativeName("Name", "CL_ME_VERSION_LEGACY_INTEL")]
@@ -287,9 +287,9 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_FORWARD_ENABLE_INTEL")]
         AvcMESkipBlock8x8ForwardEnableIntel = 1426063360,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x8BackwardEnableIntel = -1442840576,
+        AvcMESkipBlock8x8BackwardEnableIntel = unchecked((int) -1442840576),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_DUAL_ENABLE_INTEL")]
-        AvcMESkipBlock8x8DualEnableIntel = -16777216,
+        AvcMESkipBlock8x8DualEnableIntel = unchecked((int) -16777216),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_FORWARD_ENABLE_INTEL")]
         AvcMESkipBlock8x80ForwardEnableIntel = 16777216,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_BACKWARD_ENABLE_INTEL")]
@@ -305,7 +305,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_FORWARD_ENABLE_INTEL")]
         AvcMESkipBlock8x83ForwardEnableIntel = 1073741824,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x83BackwardEnableIntel = -2147483648,
+        AvcMESkipBlock8x83BackwardEnableIntel = unchecked((int) -2147483648),
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_4x4_INTEL")]
         AvcMEBlockBasedSkip4x4Intel = 0x0,
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_8x8_INTEL")]
@@ -385,13 +385,13 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
         ContextDiagnosticsLevelNeutralIntel = 0x4,
         [NativeName("Name", "CL_INVALID_DX9_DEVICE_INTEL")]
-        InvalidDX9DeviceIntel = unchecked((int)0xFFFFFFFFFFFFFC0E),
+        InvalidDX9DeviceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_RESOURCE_INTEL")]
-        InvalidDX9ResourceIntel = unchecked((int)0xFFFFFFFFFFFFFC0D),
+        InvalidDX9ResourceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0D),
         [NativeName("Name", "CL_DX9_RESOURCE_ALREADY_ACQUIRED_INTEL")]
-        DX9ResourceAlreadyAcquiredIntel = unchecked((int)0xFFFFFFFFFFFFFC0C),
+        DX9ResourceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0C),
         [NativeName("Name", "CL_DX9_RESOURCE_NOT_ACQUIRED_INTEL")]
-        DX9ResourceNotAcquiredIntel = unchecked((int)0xFFFFFFFFFFFFFC0B),
+        DX9ResourceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0B),
         [NativeName("Name", "CL_D3D9_DEVICE_INTEL")]
         D3D9DeviceIntel = 0x4022,
         [NativeName("Name", "CL_D3D9EX_DEVICE_INTEL")]
@@ -421,7 +421,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         EglYuvPlaneIntel = 0x4107,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
-        QueueThreadLocalExecEnableIntel = unchecked((int)0x80000000),
+        QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
         [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
         MemAllocBufferLocationIntel = 0x419E,
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
@@ -539,13 +539,13 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_COMMAND_MEMADVISE_INTEL")]
         CommandMemadviseIntel = 0x4207,
         [NativeName("Name", "CL_INVALID_VA_API_MEDIA_ADAPTER_INTEL")]
-        InvalidVAApiMediaAdapterIntel = unchecked((int)0xFFFFFFFFFFFFFBB6),
+        InvalidVAApiMediaAdapterIntel = unchecked((int) 0xFFFFFFFFFFFFFBB6),
         [NativeName("Name", "CL_INVALID_VA_API_MEDIA_SURFACE_INTEL")]
-        InvalidVAApiMediaSurfaceIntel = unchecked((int)0xFFFFFFFFFFFFFBB5),
+        InvalidVAApiMediaSurfaceIntel = unchecked((int) 0xFFFFFFFFFFFFFBB5),
         [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_ALREADY_ACQUIRED_INTEL")]
-        VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int)0xFFFFFFFFFFFFFBB4),
+        VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB4),
         [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_NOT_ACQUIRED_INTEL")]
-        VAApiMediaSurfaceNotAcquiredIntel = unchecked((int)0xFFFFFFFFFFFFFBB3),
+        VAApiMediaSurfaceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB3),
         [NativeName("Name", "CL_VA_API_DISPLAY_INTEL")]
         VAApiDisplayIntel = 0x4094,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_VA_API_INTEL")]

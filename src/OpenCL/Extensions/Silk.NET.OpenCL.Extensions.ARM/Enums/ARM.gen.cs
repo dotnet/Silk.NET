@@ -13,7 +13,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum ARM : int
     {
         [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
-        CommandTerminatedItselfWithFailureArm = unchecked((int)0xFFFFFFFFFFFFFBAC),
+        CommandTerminatedItselfWithFailureArm = unchecked((int) 0xFFFFFFFFFFFFFBAC),
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_SUCCESS_ARM")]
         DeviceControlledTerminationSuccessArm = 0x1,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_FAILURE_ARM")]
@@ -47,7 +47,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_IMPORT_DMA_BUF_DATA_CONSISTENCY_WITH_HOST_ARM")]
         ImportDmaBufDataConsistencyWithHostArm = 0x41E3,
         [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
-        ImportMemoryWholeAllocationArm = -1,
+        ImportMemoryWholeAllocationArm = unchecked((int) -1),
         [NativeName("Name", "CL_IMPORT_ANDROID_HARDWARE_BUFFER_PLANE_INDEX_ARM")]
         ImportAndroidHardwareBufferPlaneIndexArm = 0x41EF,
         [NativeName("Name", "CL_IMPORT_ANDROID_HARDWARE_BUFFER_LAYER_INDEX_ARM")]
@@ -57,7 +57,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
-        MemProtectedAllocArm = unchecked((int)0x1000000000),
+        MemProtectedAllocArm = unchecked((int) 0x1000000000),
         [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
         DeviceSchedulingKernelBatchingArm = 0x1,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]

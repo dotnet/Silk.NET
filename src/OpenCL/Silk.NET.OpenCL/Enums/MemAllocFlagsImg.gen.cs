@@ -7,10 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.POCL
+namespace Silk.NET.OpenCL
 {
-    [NativeName("Name", "GLenum")]
-    public enum POCL : int
+    [NativeName("Name", "cl_mem_alloc_flags_img")]
+    public enum MemAllocFlagsImg : ulong
     {
+        [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
+        MemAllocRelaxRequirementsImg = 0x1,
     }
 }

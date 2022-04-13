@@ -29,11 +29,11 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
         CommandBufferSimultaneousUseKhr = 0x1,
         [NativeName("Name", "CL_INVALID_COMMAND_BUFFER_KHR")]
-        InvalidCommandBufferKhr = unchecked((int)0xFFFFFFFFFFFFFB8E),
+        InvalidCommandBufferKhr = unchecked((int) 0xFFFFFFFFFFFFFB8E),
         [NativeName("Name", "CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
-        InvalidSyncPointWaitListKhr = unchecked((int)0xFFFFFFFFFFFFFB8D),
+        InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
         [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
-        IncompatibleCommandQueueKhr = unchecked((int)0xFFFFFFFFFFFFFB8C),
+        IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
         CommandBufferQueuesKhr = 0x1294,
         [NativeName("Name", "CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
@@ -55,13 +55,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_COMMAND_COMMAND_BUFFER_KHR")]
         CommandCommandBufferKhr = 0x12A8,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
-        InvalidD3D10DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC16),
+        InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
-        InvalidD3D10ResourceKhr = unchecked((int)0xFFFFFFFFFFFFFC15),
+        InvalidD3D10ResourceKhr = unchecked((int) 0xFFFFFFFFFFFFFC15),
         [NativeName("Name", "CL_D3D10_RESOURCE_ALREADY_ACQUIRED_KHR")]
-        D3D10ResourceAlreadyAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC14),
+        D3D10ResourceAlreadyAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC14),
         [NativeName("Name", "CL_D3D10_RESOURCE_NOT_ACQUIRED_KHR")]
-        D3D10ResourceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC13),
+        D3D10ResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC13),
         [NativeName("Name", "CL_D3D10_DEVICE_KHR")]
         D3D10DeviceKhr = 0x4010,
         [NativeName("Name", "CL_D3D10_DXGI_ADAPTER_KHR")]
@@ -83,13 +83,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_COMMAND_RELEASE_D3D10_OBJECTS_KHR")]
         CommandReleaseD3D10ObjectsKhr = 0x4018,
         [NativeName("Name", "CL_INVALID_D3D11_DEVICE_KHR")]
-        InvalidD3D11DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC12),
+        InvalidD3D11DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC12),
         [NativeName("Name", "CL_INVALID_D3D11_RESOURCE_KHR")]
-        InvalidD3D11ResourceKhr = unchecked((int)0xFFFFFFFFFFFFFC11),
+        InvalidD3D11ResourceKhr = unchecked((int) 0xFFFFFFFFFFFFFC11),
         [NativeName("Name", "CL_D3D11_RESOURCE_ALREADY_ACQUIRED_KHR")]
-        D3D11ResourceAlreadyAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC10),
+        D3D11ResourceAlreadyAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC10),
         [NativeName("Name", "CL_D3D11_RESOURCE_NOT_ACQUIRED_KHR")]
-        D3D11ResourceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC0F),
+        D3D11ResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0F),
         [NativeName("Name", "CL_D3D11_DEVICE_KHR")]
         D3D11DeviceKhr = 0x4019,
         [NativeName("Name", "CL_D3D11_DXGI_ADAPTER_KHR")]
@@ -127,13 +127,13 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_DEVICE_NODE_MASK_KHR")]
         DeviceNodeMaskKhr = 0x106E,
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_ADAPTER_KHR")]
-        InvalidDX9MediaAdapterKhr = unchecked((int)0xFFFFFFFFFFFFFC0E),
+        InvalidDX9MediaAdapterKhr = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_SURFACE_KHR")]
-        InvalidDX9MediaSurfaceKhr = unchecked((int)0xFFFFFFFFFFFFFC0D),
+        InvalidDX9MediaSurfaceKhr = unchecked((int) 0xFFFFFFFFFFFFFC0D),
         [NativeName("Name", "CL_DX9_MEDIA_SURFACE_ALREADY_ACQUIRED_KHR")]
-        DX9MediaSurfaceAlreadyAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC0C),
+        DX9MediaSurfaceAlreadyAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0C),
         [NativeName("Name", "CL_DX9_MEDIA_SURFACE_NOT_ACQUIRED_KHR")]
-        DX9MediaSurfaceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC0B),
+        DX9MediaSurfaceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0B),
         [NativeName("Name", "CL_ADAPTER_D3D9_KHR")]
         AdapterD3D9Khr = 0x2020,
         [NativeName("Name", "CL_ADAPTER_D3D9EX_KHR")]
@@ -167,9 +167,9 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_COMMAND_RELEASE_EGL_OBJECTS_KHR")]
         CommandReleaseEglObjectsKhr = 0x202E,
         [NativeName("Name", "CL_INVALID_EGL_OBJECT_KHR")]
-        InvalidEglObjectKhr = unchecked((int)0xFFFFFFFFFFFFFBBB),
+        InvalidEglObjectKhr = unchecked((int) 0xFFFFFFFFFFFFFBBB),
         [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
-        EglResourceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFBBC),
+        EglResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFBBC),
         [NativeName("Name", "CL_VERSION_MAJOR_BITS_KHR")]
         VersionMajorBitsKhr = 0x10,
         [NativeName("Name", "CL_VERSION_MINOR_BITS_KHR")]
@@ -251,7 +251,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]
         GLNumSamples = 0x2012,
         [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
-        InvalidGLSharegroupReferenceKhr = unchecked((int)0xFFFFFFFFFFFFFC18),
+        InvalidGLSharegroupReferenceKhr = unchecked((int) 0xFFFFFFFFFFFFFC18),
         [NativeName("Name", "CL_CURRENT_DEVICE_FOR_GL_CONTEXT_KHR")]
         CurrentDeviceForGLContextKhr = 0x2006,
         [NativeName("Name", "CL_DEVICES_FOR_GL_CONTEXT_KHR")]
@@ -289,7 +289,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         PlatformIcdSuffixKhr = 0x920,
         [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
-        PlatformNotFoundKhr = unchecked((int)0xFFFFFFFFFFFFFC17),
+        PlatformNotFoundKhr = unchecked((int) 0xFFFFFFFFFFFFFC17),
         [NativeName("Name", "CL_DEVICE_IL_VERSION_KHR")]
         DeviceILVersionKhr = 0x105B,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
@@ -347,7 +347,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_COMMAND_SEMAPHORE_SIGNAL_KHR")]
         CommandSemaphoreSignalKhr = 0x2043,
         [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]
-        InvalidSemaphoreKhr = unchecked((int)0xFFFFFFFFFFFFFB8A),
+        InvalidSemaphoreKhr = unchecked((int) 0xFFFFFFFFFFFFFB8A),
         [NativeName("Name", "CL_DEVICE_SPIR_VERSIONS")]
         DeviceSpirVersions = 0x40E0,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
@@ -363,7 +363,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
         ContextTerminateKhr = 0x2032,
         [NativeName("Name", "CL_CONTEXT_TERMINATED_KHR")]
-        ContextTerminatedKhr = unchecked((int)0xFFFFFFFFFFFFFB9F),
+        ContextTerminatedKhr = unchecked((int) 0xFFFFFFFFFFFFFB9F),
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
         QueueThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_THROTTLE_HIGH_KHR")]
