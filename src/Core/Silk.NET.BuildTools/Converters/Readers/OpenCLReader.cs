@@ -835,25 +835,31 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
-            
+
+            var ulongEnums = new HashSet<string>(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield")
+                .Select(e => e.Elements("name").Single().Value));
+
             var allEnums = registry
                 .Elements("enums")
                 .Elements("enum")
-                .DistinctBy(x => x.Attribute("name")?.Value)
+                .DistinctBy(x => x.Attribute("name").Value)
                 .Where
                 (
-                    x => x.Parent?.Attribute("name")?.Value != "Constants" &&
-                         x.Parent?.Attribute("name")?.Value != "MiscNumbers"
+                    x => x.Parent.Attribute("name").Value != "Constants" &&
+                         x.Parent.Attribute("name").Value != "MiscNumbers"
                 )
                 .ToDictionary
                 (
-                    x => x.Attribute("name")?.Value,
-                    x => FormatToken
-                    (
-                        x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
-                            ? null
-                            : (1L << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X"))
-                    )
+                    x => x.Attribute("name").Value,
+                    x => (FormatToken
+                            (x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
+                                ? null
+                                : (1L << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X"))),
+                            CleanupEnumName(EnumName(x.Parent.Attribute("name").Value))
+                         )
                 );
             Debug.Assert(allEnums != null, nameof(allEnums) + " != null");
             
@@ -863,14 +869,32 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 ?? throw new InvalidDataException()
             );
             Debug.Assert(apis != null, nameof(apis) + " != null");
-            
-            var removals = registry
+
+            var removals =
+                registry
                 .Elements("feature")
-                .Elements("remove")
+                .Elements("require")
+                .Where(x => x.Attribute("comment")?.Value.Contains("were deprecated") == true)
                 .Elements("enum")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
+                .ToDictionary(x => x.Attribute("name").Value, x => GetDeprecatedIn(x.Parent.Attribute("comment").Value));
+
+            List<Attribute> GetTokenAttributes(string name)
+            {
+                if (!removals.TryGetValue(name, out var version))
+                {
+                    return new List<Attribute>();
+                }
+
+                return new List<Attribute>
+                {
+                    new Attribute
+                    {
+                        Arguments = new List<string>
+                        {$"\"Deprecated in version {version}\""},
+                        Name = "System.Obsolete"
+                    }
+                };
+            }
             
             foreach (var api in apis)
             {
@@ -890,27 +914,22 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         (
                             token => new Token
                             {
-                                Attributes = removals.Contains(token.Value)
-                                    ? new List<Attribute>
-                                    {
-                                        new Attribute
-                                        {
-                                            Arguments = new List<string>
-                                                {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
-                                            Name = "System.Obsolete"
-                                        }
-                                    }
-                                    : new List<Attribute>(),
+                                Attributes = GetTokenAttributes(token.Value),
                                 Doc = string.Empty,
                                 Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
                                 NativeName = token.Value,
                                 Value = allEnums.ContainsKey
                                     (token.Value)
-                                    ? allEnums[token.Value]
+                                    ? allEnums[token.Value].Item1
                                     : FormatToken(Constants[token.Value].ToString())
                             }
-                        )
-                        .ToList();
+                        ).ToList();
+
+                    if(tokens.Count == 0)
+                    {
+                        continue;
+                    }
+
                     foreach (var name in apiName.Split('|'))
                     {
                         var ret = new Enum
@@ -930,8 +949,114 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 }
             }
+
+
+            var groups = new Dictionary<string, (List<Token> list, bool is64bit, string translatedName)>();
+            foreach (var @enum in allEnums)
+            {
+                var group = @enum.Value.Item2;
+
+                var is64bit = ulongEnums.Contains(group);
+
+                var token = new Token
+                {
+                    Attributes = GetTokenAttributes(@enum.Key),
+                    Doc = string.Empty,
+                    Name = Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
+                    NativeName = @enum.Key,
+                    Value = @enum.Value.Item1
+                };
+
+                if (group == "enums")
+                {
+                    continue;
+                }
+
+                if (groups.TryGetValue(group, out var val))
+                {
+                    token.Name = TrimTokenName(token.Name, val.translatedName);
+                    val.Item1.Add(token);
+                }
+                else
+                {
+                    var groupName = Naming.Translate(TrimName(group, task), task.FunctionPrefix);
+                    token.Name = TrimTokenName(token.Name, groupName);
+                    groups.Add
+                    (
+                        group, (new List<Token> { token }, is64bit, groupName)
+                    );
+                }
+            }
+
+            foreach (var group in groups)
+            {
+                foreach (var (apiName, apiVersion) in registry
+                    .Elements("feature")
+                    .Select(x => (x.Attribute("api")?.Value, x.Attribute("number")?.Value))
+                    .Distinct())
+                {
+                    var ret = new Enum
+                    {
+                        Name = group.Value.translatedName,
+                        NativeName = group.Key,
+                        Attributes = new List<Attribute>(),
+                        ExtensionName = "Core (Grouped)",
+                        ProfileName = apiName,
+                        ProfileVersion = Version.Parse(apiVersion),
+                        Tokens = group.Value.list,
+                        EnumBaseType = group.Value.is64bit ? new Type { Name = "ulong" } : new Type { Name = "int" }
+                    };
+
+                    yield return ret;
+                }
+            }
         }
-        
+
+        private string GetDeprecatedIn(string msg)
+        {
+            return msg.Substring(msg.LastIndexOf(' '));
+        }
+
+        private string TrimTokenName(string tokenName, string groupName)
+        {
+            if (tokenName.StartsWith(groupName))
+            {
+                return tokenName.Remove(0, groupName.Length);
+            }
+            return tokenName;
+        }
+
+        private string CleanupEnumName(string value)
+        {
+            if (!value.Contains("."))
+            {
+                return value;
+            }
+            var parts = value.Split('.');
+
+            if (int.TryParse(parts[1], NumberStyles.HexNumber, null, out _))
+            {
+                return parts[0];
+            }
+
+            if(parts[0] == "Constants")
+            {
+                return parts[1];
+            }
+
+            return value.Replace('.', '_');
+        }
+
+        private static string EnumName(string @enum)
+        {
+            return @enum switch
+            {
+                // typo in spec
+                "cl_kernel_arg_type_qualifer" => "cl_kernel_arg_type_qualifier",
+                _ => @enum,
+            };
+        }
+
         private static string ExtensionName(string ext, BindTask task)
         {
             switch (ext)
@@ -939,7 +1064,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 // spec inconsistency
                 case "cl_device_partition_property_ext":
                     return "EXT_device_partition_property";
-                case "ck_khr_mipmap_image":
+                case "cl_khr_mipmap_image":
                     return "KHR_mipmap_image";
             }
 
@@ -1025,12 +1150,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
 
             var valueString = $"0x{value:X}";
-            var needsCasting = value > int.MaxValue || value < 0;
-            if (needsCasting)
-            {
-                Console.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
-                valueString = $"unchecked((int){valueString})";
-            }
 
             return valueString;
         }
