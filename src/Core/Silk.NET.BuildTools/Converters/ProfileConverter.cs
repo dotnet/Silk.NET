@@ -46,6 +46,8 @@ namespace Silk.NET.BuildTools.Converters
                 .Distinct()
                 .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion));
 
+            task.TypeMaps = new List<Dictionary<string, string>> { TypeMapper.MergeMaps(task.TypeMaps) };
+
             foreach (var profile in profiles)
             {
                 ctor.WriteEnums(profile, enums, task);

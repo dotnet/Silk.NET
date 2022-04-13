@@ -756,6 +756,33 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
 
+            string ProcessTypedef(XElement element)
+            {
+                if (element.Value.Contains('*'))
+                {
+                    if (element.Value.StartsWith("typedef struct") || element.Element("type")?.Value == "void")
+                    {
+                        return "intptr_t";
+                    }
+
+                    throw new InvalidDataException("Unable to process a typedef");
+                }
+
+                return element.Element("type")?.Value;
+            }
+
+            var typemap = registry
+                .Elements("types")
+                .Elements("type")
+                .Where(x => x.Attribute("category")?.Value == "define" && x.Value.StartsWith("typedef"))
+                .Select(x => (x.Element("name").Value, ProcessTypedef(x)))
+                .Where(x => x.Item2 != null)
+                .ToDictionary(x => x.Item1, x => x.Item2);
+
+            var nulls = typemap.Where(x => x.Value == null).ToArray();
+
+            task.TypeMaps.Add(typemap);
+
             var apis = registry.Elements("feature").Concat
             (
                 registry.Elements("extensions").Elements("extension")
@@ -1114,6 +1141,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     yield return ret;
                 }
             }
+
+            task.TypeMaps.Add(groups.ToDictionary(group => group.Key, group => group.Value.translatedName));
         }
 
         private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
