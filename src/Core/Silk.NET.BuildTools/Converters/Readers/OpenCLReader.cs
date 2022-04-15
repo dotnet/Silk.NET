@@ -1082,6 +1082,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 enumExtensions.TryAdd(enumExt.Item1, Rename(enumExt.Item2, task));
             }
 
+            var enumTypemap = new Dictionary<string, string>();
+
             foreach (var group in enumEntries)
             {
                 var tokens = group.Value.Select(name =>
@@ -1120,6 +1122,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var is64bit = ulongEnums.Contains(group.Key.Renamed);
 
                 RenameTokens(tokens, group.Key.Renamed, extTag, task);
+                enumTypemap[group.Key.Original] = groupName;
+                enumTypemap[group.Key.Renamed] = groupName;
 
                 foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
@@ -1142,7 +1146,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
 
-            task.TypeMaps.Add(groups.ToDictionary(group => group.Key, group => group.Value.translatedName));
+            task.TypeMaps.Add(enumTypemap);
         }
 
         private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
