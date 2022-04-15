@@ -42,7 +42,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {"CL_PARTITION_BY_COUNTS_LIST_END_EXT", ("0", "uint")},
             {"CL_PARTITION_BY_NAMES_LIST_END_EXT", ("ulong.MaxValue", "ulong")},
             {"CL_PARTITION_BY_NAMES_LIST_END_INTEL", ("ulong.MaxValue", "ulong")},
-            {"CL_PROPERTIES_LIST_END_EXT", ("ulong.MaxValue", "ulong")},
+            {"CL_PROPERTIES_LIST_END_EXT", ("0", "uint")},
 
         };
         
