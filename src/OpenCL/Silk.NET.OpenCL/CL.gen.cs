@@ -252,7 +252,7 @@ namespace Silk.NET.OpenCL
         public const ulong PartitionByNamesListEndIntel = unchecked((ulong) ulong.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_PROPERTIES_LIST_END_EXT")]
-        public const ulong PropertiesListEndExt = unchecked((ulong) ulong.MaxValue);
+        public const uint PropertiesListEndExt = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_QUEUE_DEFAULT_CAPABILITIES_INTEL")]
         public const int QueueDefaultCapabilitiesIntel = unchecked((int) 0);
