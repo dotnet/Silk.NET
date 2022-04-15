@@ -1062,7 +1062,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
                     extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
-                    rawName = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
+                    var groupNoTag = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
+                    if(!enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
+                    {
+                        rawName = groupNoTag;
+                    }
+                    else
+                    {
+                        rawName = group.Key.Renamed;
+                    }
                 }
                 else
                 {
@@ -1099,6 +1107,20 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private string FindCommonPrefix(List<string> names, bool containsTypeName)
         {
+            var commonPrefixFirstPass = FindCommonPrefix(names, containsTypeName, names.Max(x => x.Length));
+            var tgtPos = commonPrefixFirstPass.Length;
+
+            var startingWithDigit = names.Where(n => n.Length > tgtPos && char.IsDigit(n[tgtPos]));
+            if (startingWithDigit.Any())
+            {
+                return FindCommonPrefix(names, containsTypeName, tgtPos - 1);
+            }
+
+            return commonPrefixFirstPass;
+        }
+
+        private string FindCommonPrefix(List<string> names, bool containsTypeName, int maxPos)
+        {
             var pos = 0;
             var foundPrefix = "";
             var minLen = names.Min(x => x.Length);
@@ -1112,7 +1134,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var prefix = names[0].Substring(0, pos);
                 foreach (var name in names.Skip(1))
                 {
-                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) || pos >= maxPos)
                     {
                         if (!foundPrefix.Contains('_'))
                         {
