@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
+    [System.Flags]
     [NativeName("Name", "cl_svm_mem_flags_arm")]
     public enum SvmMemFlags : ulong
     {

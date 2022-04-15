@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_command_buffer_properties_khr")]
-    public enum CommandBufferProperties : int
+    public enum CommandBufferProperties : ulong
     {
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
         Flags = 0x1293,

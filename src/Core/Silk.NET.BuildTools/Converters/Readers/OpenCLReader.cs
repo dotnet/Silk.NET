@@ -766,13 +766,20 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var ulongEnums = new HashSet<string>(registry
                 .Elements("types")
                 .Elements("type")
-                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_properties" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong")
                 .Select(e => Rename(e.Element("name").Value, task).Renamed));
 
             var flagEnums = new HashSet<string>(registry
                 .Elements("enums")
                 .Where(e => e.Attribute("type")?.Value == "bitmask")
-                .Select(e => Rename(e.Attribute("name").Value, task).Renamed));
+                .Select(e => Rename(e.Attribute("name").Value, task).Renamed)
+                .Concat(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield")
+                .Select(e => Rename(e.Element("name").Value, task).Renamed)));
 
             var enumEntries = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
             var enumTypes = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
@@ -1041,8 +1048,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         Value = value
                     };
                 }).ToList();
-
-
 
                 string extTag = "";
                 string rawName = "";

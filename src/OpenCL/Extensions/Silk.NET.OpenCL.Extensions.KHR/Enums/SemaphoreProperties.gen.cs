@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_semaphore_properties_khr")]
-    public enum SemaphoreProperties : int
+    public enum SemaphoreProperties : ulong
     {
         [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
         ExportHandleTypes = 0x203F,

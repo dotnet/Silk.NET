@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
+    [System.Flags]
     [NativeName("Name", "cl_mem_migration_flags_ext")]
     public enum MemMigrationFlagsExt : ulong
     {

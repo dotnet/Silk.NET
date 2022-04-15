@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_queue_properties")]
-    public enum QueueProperties : int
+    public enum QueueProperties : ulong
     {
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         Priority = 0x1096,

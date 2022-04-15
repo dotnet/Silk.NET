@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.IMG
 {
     [NativeName("Name", "cl_mem_properties")]
-    public enum MemProperties : int
+    public enum MemProperties : ulong
     {
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
         MemAllocFlags = 0x40D7,

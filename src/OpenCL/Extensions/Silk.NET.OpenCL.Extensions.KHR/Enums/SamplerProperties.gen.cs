@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_sampler_properties")]
-    public enum SamplerProperties : int
+    public enum SamplerProperties : ulong
     {
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
         MipFilterMode = 0x1155,
