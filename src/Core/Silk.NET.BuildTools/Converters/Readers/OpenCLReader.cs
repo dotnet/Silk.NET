@@ -1326,31 +1326,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return valueString;
         }
 
-        class RenamedEntry
+        sealed record RenamedEntry(string Original, string Renamed)
         {
-            public string Original { get; }
-            public string Renamed { get; }
-
-            public RenamedEntry(string origName, string renamed)
+            public bool Equals(RenamedEntry other)
             {
-                Renamed = renamed;
-                Original = origName;
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (ReferenceEquals(this, obj)) 
-                    return true;
-
-                if(obj is RenamedEntry r)
-                {
-                    return string.Equals(Renamed, r?.Renamed);
-                }
-                if(obj is string s)
-                {
-                    return string.Equals(Renamed, s);
-                }
-                return false;
+                return string.Equals(Renamed, other?.Renamed);
             }
 
             public override int GetHashCode()
@@ -1360,7 +1340,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             public override string ToString()
             {
-                if(string.Equals(Original, Renamed))
+                if (string.Equals(Original, Renamed))
                     return Renamed;
 
                 return $"{Renamed} (renamed from {Original})";
