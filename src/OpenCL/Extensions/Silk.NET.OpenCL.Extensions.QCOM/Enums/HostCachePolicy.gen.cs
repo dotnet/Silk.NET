@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.QCOM
 {
-    [NativeName("Name", "host_cache_policy")]
+    [NativeName("Name", "cl_uint host_cache_policy")]
     public enum HostCachePolicy : int
     {
         [NativeName("Name", "CL_MEM_HOST_UNCACHED_QCOM")]

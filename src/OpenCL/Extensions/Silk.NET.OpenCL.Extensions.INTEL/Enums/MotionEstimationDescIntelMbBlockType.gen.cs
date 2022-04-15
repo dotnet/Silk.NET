@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [System.Flags]
-    [NativeName("Name", "cl_motion_estimation_desc_intel_mb_block_type")]
+    [NativeName("Name", "cl_motion_estimation_desc_intel.mb_block_type")]
     public enum MotionEstimationDescIntelMbBlockType : int
     {
         [NativeName("Name", "CL_ME_MB_TYPE_16x16_INTEL")]

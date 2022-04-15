@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.QCOM
 {
-    [NativeName("Name", "allocation_type")]
+    [NativeName("Name", "cl_uint allocation_type")]
     public enum AllocationType : int
     {
         [NativeName("Name", "CL_MEM_ION_HOST_PTR_QCOM")]

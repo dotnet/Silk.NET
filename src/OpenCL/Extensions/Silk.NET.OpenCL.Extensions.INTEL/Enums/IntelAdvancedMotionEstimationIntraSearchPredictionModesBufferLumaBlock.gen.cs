@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [NativeName("Name", "cl_intel_advanced_motion_estimation_intra_search_prediction_modes_buffer_luma_block")]
+    [NativeName("Name", "cl_intel_advanced_motion_estimation.intra_search_prediction_modes_buffer.luma_block")]
     public enum IntelAdvancedMotionEstimationIntraSearchPredictionModesBufferLumaBlock : int
     {
         [NativeName("Name", "CL_ME_LUMA_PREDICTOR_MODE_VERTICAL_INTEL")]

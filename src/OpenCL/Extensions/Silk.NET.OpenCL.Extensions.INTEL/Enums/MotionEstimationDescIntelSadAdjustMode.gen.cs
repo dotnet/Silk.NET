@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [System.Flags]
-    [NativeName("Name", "cl_motion_estimation_desc_intel_sad_adjust_mode")]
+    [NativeName("Name", "cl_motion_estimation_desc_intel.sad_adjust_mode")]
     public enum MotionEstimationDescIntelSadAdjustMode : int
     {
         [NativeName("Name", "CL_ME_SAD_ADJUST_MODE_NONE_INTEL")]

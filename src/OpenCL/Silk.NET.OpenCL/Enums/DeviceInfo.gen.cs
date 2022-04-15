@@ -98,7 +98,7 @@ namespace Silk.NET.OpenCL
         Name = 0x102B,
         [NativeName("Name", "CL_DEVICE_VENDOR")]
         Vendor = 0x102C,
-        [NativeName("Name", "CL_DEVICE_DRIVER_VERSION")]
+        [NativeName("Name", "CL_DRIVER_VERSION")]
         DriverVersion = 0x102D,
         [NativeName("Name", "CL_DEVICE_PROFILE")]
         Profile = 0x102E,
@@ -352,7 +352,7 @@ namespace Silk.NET.OpenCL
         SharedSystemMemCapabilitiesIntel = 0x4194,
         [NativeName("Name", "CL_DEVICE_UUID_KHR")]
         UuidKhr = 0x106A,
-        [NativeName("Name", "CL_DEVICE_DRIVER_UUID_KHR")]
+        [NativeName("Name", "CL_DRIVER_UUID_KHR")]
         DriverUuidKhr = 0x106B,
         [NativeName("Name", "CL_DEVICE_LUID_VALID_KHR")]
         LuidValidKhr = 0x106C,

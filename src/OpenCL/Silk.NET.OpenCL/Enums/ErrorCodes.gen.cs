@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
-    [NativeName("Name", "ErrorCodes")]
+    [NativeName("Name", "ErrorCodes.0")]
     public enum ErrorCodes : int
     {
         [NativeName("Name", "CL_SUCCESS")]

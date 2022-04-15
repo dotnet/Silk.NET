@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [NativeName("Name", "cl_intel_device_side_avc_motion_estimation_cost_precision")]
+    [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.cost.precision")]
     public enum IntelDeviceSideAvcMotionEstimationCostPrecision : int
     {
         [NativeName("Name", "CL_AVC_ME_COST_PRECISION_QPEL_INTEL")]

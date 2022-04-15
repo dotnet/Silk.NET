@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    [NativeName("Name", "cl_intel_device_side_avc_motion_estimation_skip_block_based")]
+    [NativeName("Name", "cl_intel_device_side_avc_motion_estimation.skip.block.based")]
     public enum IntelDeviceSideAvcMotionEstimationSkipBlockBased : int
     {
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_4x4_INTEL")]
