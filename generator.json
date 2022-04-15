@@ -264,7 +264,9 @@
             "clang": {},
             "rename": {
                 "cl_kernel_arg_type_qualifer": "cl_kernel_arg_type_qualifier",
-                "ck_khr_mipmap_image": "KHR_mipmap_image",
+                "ck_khr_mipmap_image": "cl_khr_mipmap_image",
+                "CL_DRIVER_VERSION": "CL_DEVICE_DRIVER_VERSION",
+                "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
             },
             "bakery": {
                 "profileNames": [

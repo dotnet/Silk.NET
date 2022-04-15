@@ -42,6 +42,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {"CL_PARTITION_BY_COUNTS_LIST_END_EXT", ("0", "uint")},
             {"CL_PARTITION_BY_NAMES_LIST_END_EXT", ("ulong.MaxValue", "ulong")},
             {"CL_PARTITION_BY_NAMES_LIST_END_INTEL", ("ulong.MaxValue", "ulong")},
+            {"CL_PROPERTIES_LIST_END_EXT", ("ulong.MaxValue", "ulong")},
 
         };
         
@@ -1053,10 +1054,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var groupName = Naming.Translate(TrimName(group.Key, task), task.FunctionPrefix);
                 var is64bit = ulongEnums.Contains(group.Key);
 
-                if (!enumExtensions.TryGetValue(group.Key, out var extName))
+
+                string extTag = "";
+                if (enumExtensions.TryGetValue(group.Key, out var extName))
+                {
+                    extTag = extName.Substring(0, extName.IndexOf('_'));
+                }
+                else
                 {
                     extName = "Core (Grouped)";
                 }
+
+                RenameTokens(tokens, group.Key, extTag, task);
 
                 foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
@@ -1077,6 +1086,76 @@ namespace Silk.NET.BuildTools.Converters.Readers
             
                     yield return ret;
                 }
+            }
+        }
+
+        private string FindCommonPrefix(List<string> names, bool containsTypeName)
+        {
+            var pos = 0;
+            var foundPrefix = "";
+            var minLen = names.Min(x => x.Length);
+            while (true)
+            {
+                pos++;
+                if (pos > names[0].Length)
+                {
+                    throw new InvalidDataException();
+                }
+                var prefix = names[0].Substring(0, pos);
+                foreach (var name in names.Skip(1))
+                {
+                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (!foundPrefix.Contains('_'))
+                        {
+                            return "";
+                        }
+
+                        if(foundPrefix.Length == minLen && containsTypeName)
+                        {
+                            return foundPrefix;
+                        }
+                        return foundPrefix.Substring(0, foundPrefix.LastIndexOf('_') + 1);
+                    }
+                }
+                foundPrefix = prefix;
+            }
+        }
+
+        private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
+        {
+            var prefix = "";
+            if (list.Count == 1)
+            {
+                prefix = FindCommonPrefix(new List<string> { list[0].NativeName, groupName }, true);
+            }
+            else
+            {
+                prefix = FindCommonPrefix(list.Select(x => x.NativeName).ToList(), false);
+            }
+
+            string suffix = "";
+            if (extTag != "")
+            {
+                suffix = $"_{extTag}";
+            }
+
+            string TrimTag(string name)
+            {
+                if (suffix.Length == 0)
+                {
+                    return name;
+                }
+                if (name.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    return name.Substring(0, name.Length - suffix.Length);
+                }
+                return name;
+            }
+
+            foreach (var token in list)
+            {
+                token.Name = Naming.Translate(TrimTag(token.NativeName.Substring(prefix.Length)), task.FunctionPrefix);
             }
         }
 
