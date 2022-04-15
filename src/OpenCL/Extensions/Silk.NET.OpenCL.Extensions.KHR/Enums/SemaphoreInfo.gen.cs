@@ -13,16 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum SemaphoreInfo : int
     {
         [NativeName("Name", "CL_SEMAPHORE_CONTEXT_KHR")]
-        SemaphoreContext = 0x2039,
+        Context = 0x2039,
         [NativeName("Name", "CL_SEMAPHORE_REFERENCE_COUNT_KHR")]
-        SemaphoreReferenceCount = 0x203A,
+        ReferenceCount = 0x203A,
         [NativeName("Name", "CL_SEMAPHORE_PROPERTIES_KHR")]
-        SemaphoreProperties = 0x203B,
+        Properties = 0x203B,
         [NativeName("Name", "CL_SEMAPHORE_PAYLOAD_KHR")]
-        SemaphorePayload = 0x203C,
-        [NativeName("Name", "CL_SEMAPHORE_TYPE_KHR")]
-        SemaphoreType = 0x203D,
-        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
-        DeviceHandleList = 0x2051,
+        Payload = 0x203C,
     }
 }

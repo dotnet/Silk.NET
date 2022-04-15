@@ -86,12 +86,6 @@ namespace Silk.NET.OpenCL
         AcquireDX9MediaSurfacesKhr = 0x202B,
         [NativeName("Name", "CL_COMMAND_RELEASE_DX9_MEDIA_SURFACES_KHR")]
         ReleaseDX9MediaSurfacesKhr = 0x202C,
-        [NativeName("Name", "CL_COMMAND_EGL_FENCE_SYNC_OBJECT_KHR")]
-        EglFenceSyncObjectKhr = 0x202F,
-        [NativeName("Name", "CL_COMMAND_ACQUIRE_EGL_OBJECTS_KHR")]
-        AcquireEglObjectsKhr = 0x202D,
-        [NativeName("Name", "CL_COMMAND_RELEASE_EGL_OBJECTS_KHR")]
-        ReleaseEglObjectsKhr = 0x202E,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
         MigrateMemObjectExt = 0x4040,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_GRALLOC_OBJECTS_IMG")]

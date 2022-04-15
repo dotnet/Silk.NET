@@ -18,7 +18,5 @@ namespace Silk.NET.OpenCL
         ByCounts = 0x1087,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN")]
         ByAffinityDomain = 0x1088,
-        [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
-        ByNamesIntel = 0x4052,
     }
 }

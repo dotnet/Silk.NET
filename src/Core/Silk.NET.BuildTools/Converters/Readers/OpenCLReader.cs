@@ -851,32 +851,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         {
                             type = pass1type;
                         }
-                        else
+                        else if (typeStr != null)
                         {
-                            typeStr = name.Renamed switch
+                            if (typeStr == "Error codes") type = new RenamedEntry(type.Original, "ErrorCodes");
+                            else if (typeStr?.StartsWith("OpenCL ") == true && typeStr.Contains("deprecated"))
                             {
-                                "CL_CONTEXT_MEMORY_INITIALIZE_KHR" => "cl_context_properties",
-                                "CL_DEVICE_PARTITION_BY_NAMES_INTEL" => "cl_device_partition_property",
-                                _ => typeStr
-                            };
-
-                            if (typeStr == "Error codes" || typeStr?.StartsWith("Error type") == true) typeStr = "ErrorCodes";
-                            if (typeStr?.StartsWith("OpenCL ") == true && typeStr.Contains("deprecated"))
-                            {
+                                // Core spec deprecation notices
                                 var typeNameStart = typeStr.IndexOf(' ', "OpenCL ".Length) + 1;
                                 var typeNameEnd = typeStr.IndexOf(' ', typeNameStart + 1);
-                                typeStr = typeStr.Substring(typeNameStart, typeNameEnd - typeNameStart);
+                                type = new RenamedEntry(type.Original, typeStr.Substring(typeNameStart, typeNameEnd - typeNameStart));
                             }
-                            if (typeStr?.StartsWith("Command type ") == true) typeStr = "cl_command_type";
-                            if (typeStr?.StartsWith("cl_uint ") == true) typeStr = typeStr.Substring("cl_uint ".Length);
-                            if (typeStr?.StartsWith("Additional ") == true) typeStr = typeStr.Substring("Additional ".Length);
-
-                            if (typeStr?.Contains(' ') == true)
-                            {
-                                typeStr = typeStr.Substring(0, typeStr.IndexOf(' '));
-                            }
-
-                            type = new RenamedEntry(type?.Original, typeStr);
+                            else if (typeStr?.StartsWith("cl_uint ") == true) type = new RenamedEntry(type.Original, typeStr.Substring("cl_uint ".Length)); // QCOM extensions
+                            else type = null;
                         }
                     }
 

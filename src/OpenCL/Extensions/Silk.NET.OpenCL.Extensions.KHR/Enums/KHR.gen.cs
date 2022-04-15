@@ -183,15 +183,15 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_DEVICES_FOR_GL_CONTEXT_KHR")]
         DevicesForGLContextKhr = 0x2007,
         [NativeName("Name", "CL_GL_CONTEXT_KHR")]
-        ContextGLContextKhr = 0x2008,
+        GLContextKhr = 0x2008,
         [NativeName("Name", "CL_EGL_DISPLAY_KHR")]
-        ContextEglDisplayKhr = 0x2009,
+        EglDisplayKhr = 0x2009,
         [NativeName("Name", "CL_GLX_DISPLAY_KHR")]
-        ContextGlxDisplayKhr = 0x200A,
+        GlxDisplayKhr = 0x200A,
         [NativeName("Name", "CL_WGL_HDC_KHR")]
-        ContextWglHdcKhr = 0x200B,
+        WglHdcKhr = 0x200B,
         [NativeName("Name", "CL_CGL_SHAREGROUP_KHR")]
-        ContextCglSharegroupKhr = 0x200C,
+        CglSharegroupKhr = 0x200C,
         [NativeName("Name", "CL_GL_OBJECT_BUFFER")]
         GLObjectBuffer = 0x2000,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE2D")]

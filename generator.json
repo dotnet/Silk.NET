@@ -271,12 +271,6 @@
                 
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
                 "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM",
-                "CL_GL_CONTEXT_KHR": "CL_CONTEXT_GL_CONTEXT_KHR",
-                "CL_EGL_DISPLAY_KHR": "CL_CONTEXT_EGL_DISPLAY_KHR",
-                "CL_GLX_DISPLAY_KHR": "CL_CONTEXT_GLX_DISPLAY_KHR",
-                "CL_WGL_HDC_KHR": "CL_CONTEXT_WGL_HDC_KHR",
-                "CL_WGL_HD": "CL_CONTEXT_WGL_HD",
-                "CL_CGL_SHAREGROUP_KHR": "CL_CONTEXT_CGL_SHAREGROUP_KHR",
             },
             "bakery": {
                 "profileNames": [
