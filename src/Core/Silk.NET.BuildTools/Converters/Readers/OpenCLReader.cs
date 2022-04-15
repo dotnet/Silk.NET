@@ -880,10 +880,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         }
                     }
 
-                    Debug.Assert(type != null);
-
-                    AddEntry(type, name, enumEntries);
-                    AddEntry(name, type, enumTypes);
+                    if(type != null)
+                    {
+                        AddEntry(type, name, enumEntries);
+                        AddEntry(name, type, enumTypes);
+                    }
                 });
 
             var enumValues = registry
@@ -1026,6 +1027,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     .Attributes("name")
                     .Select(x => Rename(x.Value, task))
                     .Where(x => !constants.Contains(x))
+                    .Where(x => enumTypes.ContainsKey(x))
                     .SelectMany(x => enumTypes[x])
                     .Where(x => !coreEnums.Contains(x))
                     .Distinct()
