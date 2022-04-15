@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_mem_flags")]
     public enum MemFlags : ulong
     {
@@ -36,41 +37,21 @@ namespace Silk.NET.OpenCL
         MemSvmAtomics = 0x800,
         [NativeName("Name", "CL_MEM_KERNEL_READ_AND_WRITE")]
         MemKernelReadAndWrite = 0x1000,
-        [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
-        MemForceHostMemoryIntel = 0x100000,
-        [NativeName("Name", "CL_MEM_RESERVED21_INTEL")]
-        MemReserved21Intel = 0x200000,
-        [NativeName("Name", "CL_MEM_RESERVED22_INTEL")]
-        MemReserved22Intel = 0x400000,
-        [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
-        MemNoAccessIntel = 0x1000000,
-        [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
-        MemAccessFlagsUnrestrictedIntel = 0x2000000,
+        [NativeName("Name", "CL_MEM_EXT_HOST_PTR_QCOM")]
+        MemExtHostPtrQCom = 0x20000000,
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
         MemUseUncachedCpuMemoryImg = 0x4000000,
         [NativeName("Name", "CL_MEM_USE_CACHED_CPU_MEMORY_IMG")]
         MemUseCachedCpuMemoryImg = 0x8000000,
         [NativeName("Name", "CL_MEM_USE_GRALLOC_PTR_IMG")]
         MemUseGrallocPtrImg = 0x10000000,
-        [NativeName("Name", "CL_MEM_EXT_HOST_PTR_QCOM")]
-        MemExtHostPtrQCom = 0x20000000,
-        [NativeName("Name", "CL_MEM_RESERVED0_ARM")]
-        MemReserved0Arm = 0x100000000,
-        [NativeName("Name", "CL_MEM_RESERVED1_ARM")]
-        MemReserved1Arm = 0x200000000,
-        [NativeName("Name", "CL_MEM_RESERVED2_ARM")]
-        MemReserved2Arm = 0x400000000,
-        [NativeName("Name", "CL_MEM_RESERVED3_ARM")]
-        MemReserved3Arm = 0x800000000,
+        [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
+        MemNoAccessIntel = 0x1000000,
+        [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
+        MemAccessFlagsUnrestrictedIntel = 0x2000000,
+        [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
+        MemForceHostMemoryIntel = 0x100000,
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
         MemProtectedAllocArm = 0x1000000000,
-        [NativeName("Name", "CL_MEM_RESERVED0_QCOM")]
-        MemReserved0QCom = 0x2000000000,
-        [NativeName("Name", "CL_MEM_RESERVED1_QCOM")]
-        MemReserved1QCom = 0x4000000000,
-        [NativeName("Name", "CL_MEM_RESERVED2_QCOM")]
-        MemReserved2QCom = 0x8000000000,
-        [NativeName("Name", "CL_MEM_RESERVED3_QCOM")]
-        MemReserved3QCom = 0x10000000000,
     }
 }

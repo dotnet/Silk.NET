@@ -13,12 +13,14 @@ namespace Silk.NET.OpenCL
     public enum ProgramBinaryType : int
     {
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_NONE")]
-        None = 0x0,
+        ProgramBinaryTypeNone = 0x0,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_COMPILED_OBJECT")]
-        CompiledObject = 0x1,
+        ProgramBinaryTypeCompiledObject = 0x1,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_LIBRARY")]
-        Library = 0x2,
+        ProgramBinaryTypeLibrary = 0x2,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_EXECUTABLE")]
-        Executable = 0x4,
+        ProgramBinaryTypeExecutable = 0x4,
+        [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
+        ProgramBinaryTypeIntermediate = 0x40E1,
     }
 }

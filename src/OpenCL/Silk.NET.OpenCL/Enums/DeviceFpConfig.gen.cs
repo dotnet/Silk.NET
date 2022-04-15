@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_device_fp_config")]
     public enum DeviceFpConfig : ulong
     {

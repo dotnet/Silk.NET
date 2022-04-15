@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_command_queue_properties")]
     public enum CommandQueueProperties : ulong
     {
@@ -20,8 +21,6 @@ namespace Silk.NET.OpenCL
         QueueOnDevice = 0x4,
         [NativeName("Name", "CL_QUEUE_ON_DEVICE_DEFAULT")]
         QueueOnDeviceDefault = 0x8,
-        [NativeName("Name", "CL_QUEUE_RESERVED_QCOM")]
-        QueueReservedQCom = 0x40000000,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         QueueThreadLocalExecEnableIntel = 0x80000000,
     }

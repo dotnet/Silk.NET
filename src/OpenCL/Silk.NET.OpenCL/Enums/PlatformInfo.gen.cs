@@ -24,15 +24,23 @@ namespace Silk.NET.OpenCL
         PlatformExtensions = 0x904,
         [NativeName("Name", "CL_PLATFORM_HOST_TIMER_RESOLUTION")]
         PlatformHostTimerResolution = 0x905,
-        [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
-        PlatformNumericVersionKhr = 0x906,
         [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION")]
         PlatformNumericVersion = 0x906,
-        [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
-        PlatformExtensionsWithVersionKhr = 0x907,
         [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION")]
         PlatformExtensionsWithVersion = 0x907,
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         PlatformIcdSuffixKhr = 0x920,
+        [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
+        PlatformNumericVersionKhr = 0x906,
+        [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
+        PlatformExtensionsWithVersionKhr = 0x907,
+        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_TYPES_KHR")]
+        PlatformSemaphoreTypesKhr = 0x2036,
+        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
+        PlatformSemaphoreImportHandleTypesKhr = 0x2037,
+        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+        PlatformSemaphoreExportHandleTypesKhr = 0x2038,
+        [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
+        PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
     }
 }

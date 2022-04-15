@@ -9,20 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_device_type")]
     public enum DeviceType : ulong
     {
         [NativeName("Name", "CL_DEVICE_TYPE_DEFAULT")]
-        Default = 0x1,
+        DeviceTypeDefault = 0x1,
         [NativeName("Name", "CL_DEVICE_TYPE_CPU")]
-        Cpu = 0x2,
+        DeviceTypeCpu = 0x2,
         [NativeName("Name", "CL_DEVICE_TYPE_GPU")]
-        Gpu = 0x4,
+        DeviceTypeGpu = 0x4,
         [NativeName("Name", "CL_DEVICE_TYPE_ACCELERATOR")]
-        Accelerator = 0x8,
-        [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
-        Custom = 0x10,
+        DeviceTypeAccelerator = 0x8,
         [NativeName("Name", "CL_DEVICE_TYPE_ALL")]
-        All = 0xFFFFFFFF,
+        DeviceTypeAll = 0xFFFFFFFF,
+        [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
+        DeviceTypeCustom = 0x10,
     }
 }

@@ -12,48 +12,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "GLenum")]
     public enum KHR : int
     {
-        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
-        DeviceCommandBufferCapabilitiesKhr = 0x12A9,
-        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
-        DeviceCommandBufferRequiredQueuePropertiesKhr = 0x12AA,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR")]
-        CommandBufferCapabilityKernelPrintfKhr = 0x1,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR")]
-        CommandBufferCapabilityDeviceSideEnqueueKhr = 0x2,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
-        CommandBufferCapabilitySimultaneousUseKhr = 0x4,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
-        CommandBufferCapabilityOutOfOrderKhr = 0x8,
-        [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
-        CommandBufferFlagsKhr = 0x1293,
-        [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
-        CommandBufferSimultaneousUseKhr = 0x1,
-        [NativeName("Name", "CL_INVALID_COMMAND_BUFFER_KHR")]
-        InvalidCommandBufferKhr = unchecked((int) 0xFFFFFFFFFFFFFB8E),
-        [NativeName("Name", "CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
-        InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
-        [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
-        IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
-        [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
-        CommandBufferQueuesKhr = 0x1294,
-        [NativeName("Name", "CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
-        CommandBufferNumQueuesKhr = 0x1295,
-        [NativeName("Name", "CL_COMMAND_BUFFER_REFERENCE_COUNT_KHR")]
-        CommandBufferReferenceCountKhr = 0x1296,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_KHR")]
-        CommandBufferStateKhr = 0x1297,
-        [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
-        CommandBufferPropertiesArrayKhr = 0x1298,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
-        CommandBufferStateRecordingKhr = 0x0,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
-        CommandBufferStateExecutableKhr = 0x1,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
-        CommandBufferStatePendingKhr = 0x2,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
-        CommandBufferStateInvalidKhr = 0x3,
-        [NativeName("Name", "CL_COMMAND_COMMAND_BUFFER_KHR")]
-        CommandCommandBufferKhr = 0x12A8,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -110,22 +68,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandAcquireD3D11ObjectsKhr = 0x4020,
         [NativeName("Name", "CL_COMMAND_RELEASE_D3D11_OBJECTS_KHR")]
         CommandReleaseD3D11ObjectsKhr = 0x4021,
-        [NativeName("Name", "CL_DEPTH")]
-        Depth = 0x10BD,
-        [NativeName("Name", "CL_UUID_SIZE_KHR")]
-        UuidSizeKhr = 0x16,
-        [NativeName("Name", "CL_LUID_SIZE_KHR")]
-        LuidSizeKhr = 0x8,
-        [NativeName("Name", "CL_DEVICE_UUID_KHR")]
-        DeviceUuidKhr = 0x106A,
-        [NativeName("Name", "CL_DRIVER_UUID_KHR")]
-        DriverUuidKhr = 0x106B,
-        [NativeName("Name", "CL_DEVICE_LUID_VALID_KHR")]
-        DeviceLuidValidKhr = 0x106C,
-        [NativeName("Name", "CL_DEVICE_LUID_KHR")]
-        DeviceLuidKhr = 0x106D,
-        [NativeName("Name", "CL_DEVICE_NODE_MASK_KHR")]
-        DeviceNodeMaskKhr = 0x106E,
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_ADAPTER_KHR")]
         InvalidDX9MediaAdapterKhr = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_SURFACE_KHR")]
@@ -170,84 +112,68 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         InvalidEglObjectKhr = unchecked((int) 0xFFFFFFFFFFFFFBBB),
         [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
         EglResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFBBC),
-        [NativeName("Name", "CL_VERSION_MAJOR_BITS_KHR")]
-        VersionMajorBitsKhr = 0x10,
-        [NativeName("Name", "CL_VERSION_MINOR_BITS_KHR")]
-        VersionMinorBitsKhr = 0x10,
-        [NativeName("Name", "CL_VERSION_PATCH_BITS_KHR")]
-        VersionPatchBitsKhr = 0x12,
-        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
-        NameVersionMaxNameSizeKhr = 0x64,
-        [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
-        PlatformNumericVersionKhr = 0x906,
-        [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
-        PlatformExtensionsWithVersionKhr = 0x907,
-        [NativeName("Name", "CL_DEVICE_NUMERIC_VERSION_KHR")]
-        DeviceNumericVersionKhr = 0x105E,
-        [NativeName("Name", "CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR")]
-        DeviceOpenclCNumericVersionKhr = 0x105F,
-        [NativeName("Name", "CL_DEVICE_EXTENSIONS_WITH_VERSION_KHR")]
-        DeviceExtensionsWithVersionKhr = 0x1060,
-        [NativeName("Name", "CL_DEVICE_ILS_WITH_VERSION_KHR")]
-        DeviceIlsWithVersionKhr = 0x1061,
-        [NativeName("Name", "CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
-        DeviceBuiltInKernelsWithVersionKhr = 0x1062,
-        [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
-        PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
-        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
-        DeviceExternalMemoryImportHandleTypesKhr = 0x204F,
-        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
-        DeviceHandleListKhr = 0x2051,
-        [NativeName("Name", "CL_COMMAND_ACQUIRE_EXTERNAL_MEM_OBJECTS_KHR")]
-        CommandAcquireExternalMemObjectsKhr = 0x2047,
-        [NativeName("Name", "CL_COMMAND_RELEASE_EXTERNAL_MEM_OBJECTS_KHR")]
-        CommandReleaseExternalMemObjectsKhr = 0x2048,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_DMA_BUF_KHR")]
-        ExternalMemoryHandleDmaBufKhr = 0x2067,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KHR")]
-        ExternalMemoryHandleD3D11TextureKhr = 0x2063,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KMT_KHR")]
-        ExternalMemoryHandleD3D11TextureKmtKhr = 0x2064,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_HEAP_KHR")]
-        ExternalMemoryHandleD3D12HeapKhr = 0x2065,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_RESOURCE_KHR")]
-        ExternalMemoryHandleD3D12ResourceKhr = 0x2066,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
-        ExternalMemoryHandleOpaqueFDKhr = 0x2060,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KHR")]
-        ExternalMemoryHandleOpaqueWin32Khr = 0x2061,
-        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
-        ExternalMemoryHandleOpaqueWin32KmtKhr = 0x2062,
-        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
-        PlatformSemaphoreImportHandleTypesKhr = 0x2037,
-        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
-        PlatformSemaphoreExportHandleTypesKhr = 0x2038,
-        [NativeName("Name", "CL_DEVICE_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
-        DeviceSemaphoreImportHandleTypesKhr = 0x204D,
-        [NativeName("Name", "CL_DEVICE_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
-        DeviceSemaphoreExportHandleTypesKhr = 0x204E,
-        [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
-        SemaphoreExportHandleTypesKhr = 0x203F,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
-        SemaphoreHandleD3D12FenceKhr = 0x2059,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
-        SemaphoreHandleOpaqueFDKhr = 0x2055,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
-        SemaphoreHandleSyncFDKhr = 0x2058,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KHR")]
-        SemaphoreHandleOpaqueWin32Khr = 0x2056,
-        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
-        SemaphoreHandleOpaqueWin32KmtKhr = 0x2057,
-        [NativeName("Name", "CL_DEVICE_HALF_FP_CONFIG")]
-        DeviceHalfFPConfig = 0x1033,
         [NativeName("Name", "CL_DEVICE_DOUBLE_FP_CONFIG")]
         DeviceDoubleFPConfig = 0x1032,
+        [NativeName("Name", "CL_DEVICE_HALF_FP_CONFIG")]
+        DeviceHalfFPConfig = 0x1033,
+        [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
+        PlatformIcdSuffixKhr = 0x920,
+        [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
+        PlatformNotFoundKhr = unchecked((int) 0xFFFFFFFFFFFFFC17),
+        [NativeName("Name", "CL_DEVICE_IL_VERSION_KHR")]
+        DeviceILVersionKhr = 0x105B,
+        [NativeName("Name", "CL_PROGRAM_IL_KHR")]
+        ProgramILKhr = 0x1169,
+        [NativeName("Name", "CL_DEVICE_IMAGE_PITCH_ALIGNMENT_KHR")]
+        DeviceImagePitchAlignmentKhr = 0x104A,
+        [NativeName("Name", "CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT_KHR")]
+        DeviceImageBaseAddressAlignmentKhr = 0x104B,
+        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
+        ContextMemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_KHR")]
+        DeviceTerminateCapabilityKhr = 0x2031,
+        [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
+        ContextTerminateKhr = 0x2032,
+        [NativeName("Name", "CL_CONTEXT_TERMINATED_KHR")]
+        ContextTerminatedKhr = unchecked((int) 0xFFFFFFFFFFFFFB9F),
+        [NativeName("Name", "CL_DEVICE_SPIR_VERSIONS")]
+        DeviceSpirVersions = 0x40E0,
+        [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
+        ProgramBinaryTypeIntermediate = 0x40E1,
+        [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
+        SamplerMipFilterModeKhr = 0x1155,
+        [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
+        SamplerLodMinKhr = 0x1156,
+        [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
+        SamplerLodMaxKhr = 0x1157,
+        [NativeName("Name", "CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE_KHR")]
+        KernelMaxSubGroupSizeForNdrangeKhr = 0x2033,
+        [NativeName("Name", "CL_KERNEL_SUB_GROUP_COUNT_FOR_NDRANGE_KHR")]
+        KernelSubGroupCountForNdrangeKhr = 0x2034,
+        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
+        QueuePriorityKhr = 0x1096,
+        [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
+        QueuePriorityHighKhr = 0x1,
+        [NativeName("Name", "CL_QUEUE_PRIORITY_MED_KHR")]
+        QueuePriorityMedKhr = 0x2,
+        [NativeName("Name", "CL_QUEUE_PRIORITY_LOW_KHR")]
+        QueuePriorityLowKhr = 0x4,
+        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
+        QueueThrottleKhr = 0x1097,
+        [NativeName("Name", "CL_QUEUE_THROTTLE_HIGH_KHR")]
+        QueueThrottleHighKhr = 0x1,
+        [NativeName("Name", "CL_QUEUE_THROTTLE_MED_KHR")]
+        QueueThrottleMedKhr = 0x2,
+        [NativeName("Name", "CL_QUEUE_THROTTLE_LOW_KHR")]
+        QueueThrottleLowKhr = 0x4,
+        [NativeName("Name", "CL_DEVICE_MAX_NAMED_BARRIER_COUNT_KHR")]
+        DeviceMaxNamedBarrierCountKhr = 0x2035,
+        [NativeName("Name", "CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
+        CommandGLFenceSyncObjectKhr = 0x200D,
         [NativeName("Name", "CL_DEPTH_STENCIL")]
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]
         UnormInt24 = 0x10DF,
-        [NativeName("Name", "CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
-        CommandGLFenceSyncObjectKhr = 0x200D,
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]
         GLNumSamples = 0x2012,
         [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
@@ -286,20 +212,34 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         GLTextureTarget = 0x2004,
         [NativeName("Name", "CL_GL_MIPMAP_LEVEL")]
         GLMipmapLevel = 0x2005,
-        [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
-        PlatformIcdSuffixKhr = 0x920,
-        [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
-        PlatformNotFoundKhr = unchecked((int) 0xFFFFFFFFFFFFFC17),
-        [NativeName("Name", "CL_DEVICE_IL_VERSION_KHR")]
-        DeviceILVersionKhr = 0x105B,
-        [NativeName("Name", "CL_PROGRAM_IL_KHR")]
-        ProgramILKhr = 0x1169,
-        [NativeName("Name", "CL_DEVICE_IMAGE_PITCH_ALIGNMENT_KHR")]
-        DeviceImagePitchAlignmentKhr = 0x104A,
-        [NativeName("Name", "CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT_KHR")]
-        DeviceImageBaseAddressAlignmentKhr = 0x104B,
-        [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
-        ContextMemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_DEVICE_UUID_KHR")]
+        DeviceUuidKhr = 0x106A,
+        [NativeName("Name", "CL_DRIVER_UUID_KHR")]
+        DriverUuidKhr = 0x106B,
+        [NativeName("Name", "CL_DEVICE_LUID_VALID_KHR")]
+        DeviceLuidValidKhr = 0x106C,
+        [NativeName("Name", "CL_DEVICE_LUID_KHR")]
+        DeviceLuidKhr = 0x106D,
+        [NativeName("Name", "CL_DEVICE_NODE_MASK_KHR")]
+        DeviceNodeMaskKhr = 0x106E,
+        [NativeName("Name", "CL_DEPTH")]
+        Depth = 0x10BD,
+        [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
+        PlatformNumericVersionKhr = 0x906,
+        [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
+        PlatformExtensionsWithVersionKhr = 0x907,
+        [NativeName("Name", "CL_DEVICE_NUMERIC_VERSION_KHR")]
+        DeviceNumericVersionKhr = 0x105E,
+        [NativeName("Name", "CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR")]
+        DeviceOpenclCNumericVersionKhr = 0x105F,
+        [NativeName("Name", "CL_DEVICE_EXTENSIONS_WITH_VERSION_KHR")]
+        DeviceExtensionsWithVersionKhr = 0x1060,
+        [NativeName("Name", "CL_DEVICE_ILS_WITH_VERSION_KHR")]
+        DeviceIlsWithVersionKhr = 0x1061,
+        [NativeName("Name", "CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
+        DeviceBuiltInKernelsWithVersionKhr = 0x1062,
+        [NativeName("Name", "CL_DEVICE_PCI_BUS_INFO_KHR")]
+        DevicePciBusInfoKhr = 0x410F,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
         DeviceIntegerDotProductInput4x8BitKhr = 0x2,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
@@ -310,22 +250,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceIntegerDotProductAccelerationProperties8BitKhr = 0x1074,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_4x8BIT_PACKED_KHR")]
         DeviceIntegerDotProductAccelerationProperties4x8BitPackedKhr = 0x1075,
-        [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
-        SamplerMipFilterModeKhr = 0x1155,
-        [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
-        SamplerLodMinKhr = 0x1156,
-        [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
-        SamplerLodMaxKhr = 0x1157,
-        [NativeName("Name", "CL_DEVICE_PCI_BUS_INFO_KHR")]
-        DevicePciBusInfoKhr = 0x410F,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        QueuePriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
-        QueuePriorityHighKhr = 0x1,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_MED_KHR")]
-        QueuePriorityMedKhr = 0x2,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_LOW_KHR")]
-        QueuePriorityLowKhr = 0x4,
         [NativeName("Name", "CL_SEMAPHORE_TYPE_BINARY_KHR")]
         SemaphoreTypeBinaryKhr = 0x1,
         [NativeName("Name", "CL_PLATFORM_SEMAPHORE_TYPES_KHR")]
@@ -342,35 +266,99 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         SemaphorePayloadKhr = 0x203C,
         [NativeName("Name", "CL_SEMAPHORE_TYPE_KHR")]
         SemaphoreTypeKhr = 0x203D,
+        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
+        DeviceHandleListKhr = 0x2051,
         [NativeName("Name", "CL_COMMAND_SEMAPHORE_WAIT_KHR")]
         CommandSemaphoreWaitKhr = 0x2042,
         [NativeName("Name", "CL_COMMAND_SEMAPHORE_SIGNAL_KHR")]
         CommandSemaphoreSignalKhr = 0x2043,
         [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]
         InvalidSemaphoreKhr = unchecked((int) 0xFFFFFFFFFFFFFB8A),
-        [NativeName("Name", "CL_DEVICE_SPIR_VERSIONS")]
-        DeviceSpirVersions = 0x40E0,
-        [NativeName("Name", "CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
-        ProgramBinaryTypeIntermediate = 0x40E1,
-        [NativeName("Name", "CL_DEVICE_MAX_NAMED_BARRIER_COUNT_KHR")]
-        DeviceMaxNamedBarrierCountKhr = 0x2035,
-        [NativeName("Name", "CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE_KHR")]
-        KernelMaxSubGroupSizeForNdrangeKhr = 0x2033,
-        [NativeName("Name", "CL_KERNEL_SUB_GROUP_COUNT_FOR_NDRANGE_KHR")]
-        KernelSubGroupCountForNdrangeKhr = 0x2034,
-        [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_KHR")]
-        DeviceTerminateCapabilityKhr = 0x2031,
-        [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
-        ContextTerminateKhr = 0x2032,
-        [NativeName("Name", "CL_CONTEXT_TERMINATED_KHR")]
-        ContextTerminatedKhr = unchecked((int) 0xFFFFFFFFFFFFFB9F),
-        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        QueueThrottleKhr = 0x1097,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_HIGH_KHR")]
-        QueueThrottleHighKhr = 0x1,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_MED_KHR")]
-        QueueThrottleMedKhr = 0x2,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_LOW_KHR")]
-        QueueThrottleLowKhr = 0x4,
+        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
+        PlatformSemaphoreImportHandleTypesKhr = 0x2037,
+        [NativeName("Name", "CL_PLATFORM_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+        PlatformSemaphoreExportHandleTypesKhr = 0x2038,
+        [NativeName("Name", "CL_DEVICE_SEMAPHORE_IMPORT_HANDLE_TYPES_KHR")]
+        DeviceSemaphoreImportHandleTypesKhr = 0x204D,
+        [NativeName("Name", "CL_DEVICE_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+        DeviceSemaphoreExportHandleTypesKhr = 0x204E,
+        [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+        SemaphoreExportHandleTypesKhr = 0x203F,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
+        SemaphoreHandleD3D12FenceKhr = 0x2059,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
+        SemaphoreHandleOpaqueFDKhr = 0x2055,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
+        SemaphoreHandleSyncFDKhr = 0x2058,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KHR")]
+        SemaphoreHandleOpaqueWin32Khr = 0x2056,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
+        SemaphoreHandleOpaqueWin32KmtKhr = 0x2057,
+        [NativeName("Name", "CL_PLATFORM_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
+        PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
+        [NativeName("Name", "CL_DEVICE_EXTERNAL_MEMORY_IMPORT_HANDLE_TYPES_KHR")]
+        DeviceExternalMemoryImportHandleTypesKhr = 0x204F,
+        [NativeName("Name", "CL_COMMAND_ACQUIRE_EXTERNAL_MEM_OBJECTS_KHR")]
+        CommandAcquireExternalMemObjectsKhr = 0x2047,
+        [NativeName("Name", "CL_COMMAND_RELEASE_EXTERNAL_MEM_OBJECTS_KHR")]
+        CommandReleaseExternalMemObjectsKhr = 0x2048,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_DMA_BUF_KHR")]
+        ExternalMemoryHandleDmaBufKhr = 0x2067,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KHR")]
+        ExternalMemoryHandleD3D11TextureKhr = 0x2063,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D11_TEXTURE_KMT_KHR")]
+        ExternalMemoryHandleD3D11TextureKmtKhr = 0x2064,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_HEAP_KHR")]
+        ExternalMemoryHandleD3D12HeapKhr = 0x2065,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_D3D12_RESOURCE_KHR")]
+        ExternalMemoryHandleD3D12ResourceKhr = 0x2066,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
+        ExternalMemoryHandleOpaqueFDKhr = 0x2060,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KHR")]
+        ExternalMemoryHandleOpaqueWin32Khr = 0x2061,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
+        ExternalMemoryHandleOpaqueWin32KmtKhr = 0x2062,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
+        DeviceCommandBufferCapabilitiesKhr = 0x12A9,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
+        DeviceCommandBufferRequiredQueuePropertiesKhr = 0x12AA,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR")]
+        CommandBufferCapabilityKernelPrintfKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR")]
+        CommandBufferCapabilityDeviceSideEnqueueKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
+        CommandBufferCapabilitySimultaneousUseKhr = 0x4,
+        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
+        CommandBufferCapabilityOutOfOrderKhr = 0x8,
+        [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
+        CommandBufferFlagsKhr = 0x1293,
+        [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
+        CommandBufferSimultaneousUseKhr = 0x1,
+        [NativeName("Name", "CL_INVALID_COMMAND_BUFFER_KHR")]
+        InvalidCommandBufferKhr = unchecked((int) 0xFFFFFFFFFFFFFB8E),
+        [NativeName("Name", "CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
+        InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
+        [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
+        IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
+        [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
+        CommandBufferQueuesKhr = 0x1294,
+        [NativeName("Name", "CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
+        CommandBufferNumQueuesKhr = 0x1295,
+        [NativeName("Name", "CL_COMMAND_BUFFER_REFERENCE_COUNT_KHR")]
+        CommandBufferReferenceCountKhr = 0x1296,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_KHR")]
+        CommandBufferStateKhr = 0x1297,
+        [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
+        CommandBufferPropertiesArrayKhr = 0x1298,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
+        CommandBufferStateRecordingKhr = 0x0,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
+        CommandBufferStateExecutableKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
+        CommandBufferStatePendingKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
+        CommandBufferStateInvalidKhr = 0x3,
+        [NativeName("Name", "CL_COMMAND_COMMAND_BUFFER_KHR")]
+        CommandCommandBufferKhr = 0x12A8,
     }
 }

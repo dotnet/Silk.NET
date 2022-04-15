@@ -12,6 +12,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "GLenum")]
     public enum INTEL : int
     {
+        [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
+        QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
+        [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
+        DevicePartitionByNamesIntel = 0x4052,
         [NativeName("Name", "CL_ACCELERATOR_DESCRIPTOR_INTEL")]
         AcceleratorDescriptorIntel = 0x4090,
         [NativeName("Name", "CL_ACCELERATOR_REFERENCE_COUNT_INTEL")]
@@ -28,6 +32,30 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         InvalidAcceleratorDescriptorIntel = unchecked((int) 0xFFFFFFFFFFFFFBB8),
         [NativeName("Name", "CL_ACCELERATOR_TYPE_NOT_SUPPORTED_INTEL")]
         AcceleratorTypeNotSupportedIntel = unchecked((int) 0xFFFFFFFFFFFFFBB7),
+        [NativeName("Name", "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
+        AcceleratorTypeMotionEstimationIntel = 0x0,
+        [NativeName("Name", "CL_ME_MB_TYPE_16x16_INTEL")]
+        MEMBType16x16Intel = 0x0,
+        [NativeName("Name", "CL_ME_MB_TYPE_8x8_INTEL")]
+        MEMBType8x8Intel = 0x1,
+        [NativeName("Name", "CL_ME_MB_TYPE_4x4_INTEL")]
+        MEMBType4x4Intel = 0x2,
+        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_INTEGER_INTEL")]
+        MESubpixelModeIntegerIntel = 0x0,
+        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_HPEL_INTEL")]
+        MESubpixelModeHpelIntel = 0x1,
+        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_QPEL_INTEL")]
+        MESubpixelModeQpelIntel = 0x2,
+        [NativeName("Name", "CL_ME_SAD_ADJUST_MODE_NONE_INTEL")]
+        MESadAdjustModeNoneIntel = 0x0,
+        [NativeName("Name", "CL_ME_SAD_ADJUST_MODE_HAAR_INTEL")]
+        MESadAdjustModeHaarIntel = 0x1,
+        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_2_2_INTEL")]
+        MESearchPathRadius22Intel = 0x0,
+        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_4_4_INTEL")]
+        MESearchPathRadius44Intel = 0x1,
+        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_16_12_INTEL")]
+        MESearchPathRadius1612Intel = 0x5,
         [NativeName("Name", "CL_DEVICE_ME_VERSION_INTEL")]
         DeviceMEVersionIntel = 0x407E,
         [NativeName("Name", "CL_ME_VERSION_LEGACY_INTEL")]
@@ -104,68 +132,46 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         MEBidirWeightTwoThirdIntel = 0x43,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_THREE_QUARTER_INTEL")]
         MEBidirWeightThreeQuarterIntel = 0x48,
-        [NativeName("Name", "CL_QUEUE_FAMILY_MAX_NAME_SIZE_INTEL")]
-        QueueFamilyMaxNameSizeIntel = 0x64,
-        [NativeName("Name", "CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
-        DeviceQueueFamilyPropertiesIntel = 0x418B,
-        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
-        QueueFamilyIntel = 0x418C,
-        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
-        QueueIndexIntel = 0x418D,
-        [NativeName("Name", "CL_QUEUE_DEFAULT_CAPABILITIES_INTEL")]
-        QueueDefaultCapabilitiesIntel = 0x0,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
-        QueueCapabilityCreateSingleQueueEventsIntel = 0x1,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_CROSS_QUEUE_EVENTS_INTEL")]
-        QueueCapabilityCreateCrossQueueEventsIntel = 0x2,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_SINGLE_QUEUE_EVENT_WAIT_LIST_INTEL")]
-        QueueCapabilitySingleQueueEventWaitListIntel = 0x4,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_CROSS_QUEUE_EVENT_WAIT_LIST_INTEL")]
-        QueueCapabilityCrossQueueEventWaitListIntel = 0x8,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_INTEL")]
-        QueueCapabilityTransferBufferIntel = 0x100,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_RECT_INTEL")]
-        QueueCapabilityTransferBufferRectIntel = 0x200,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_BUFFER_INTEL")]
-        QueueCapabilityMapBufferIntel = 0x400,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_BUFFER_INTEL")]
-        QueueCapabilityFillBufferIntel = 0x800,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_INTEL")]
-        QueueCapabilityTransferImageIntel = 0x1000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_IMAGE_INTEL")]
-        QueueCapabilityMapImageIntel = 0x2000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_IMAGE_INTEL")]
-        QueueCapabilityFillImageIntel = 0x4000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_IMAGE_INTEL")]
-        QueueCapabilityTransferBufferImageIntel = 0x8000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_BUFFER_INTEL")]
-        QueueCapabilityTransferImageBufferIntel = 0x10000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_MARKER_INTEL")]
-        QueueCapabilityMarkerIntel = 0x1000000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_BARRIER_INTEL")]
-        QueueCapabilityBarrierIntel = 0x2000000,
-        [NativeName("Name", "CL_QUEUE_CAPABILITY_KERNEL_INTEL")]
-        QueueCapabilityKernelIntel = 0x4000000,
-        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DP4A_INTEL")]
-        DeviceFeatureFlagDP4AIntel = 0x1,
-        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DPAS_INTEL")]
-        DeviceFeatureFlagDpasIntel = 0x2,
-        [NativeName("Name", "CL_DEVICE_IP_VERSION_INTEL")]
-        DeviceIPVersionIntel = 0x4250,
-        [NativeName("Name", "CL_DEVICE_ID_INTEL")]
-        DeviceIDIntel = 0x4251,
-        [NativeName("Name", "CL_DEVICE_NUM_SLICES_INTEL")]
-        DeviceNumSlicesIntel = 0x4252,
-        [NativeName("Name", "CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL")]
-        DeviceNumSubSlicesPerSliceIntel = 0x4253,
-        [NativeName("Name", "CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL")]
-        DeviceNumEusPerSubSliceIntel = 0x4254,
-        [NativeName("Name", "CL_DEVICE_NUM_THREADS_PER_EU_INTEL")]
-        DeviceNumThreadsPerEUIntel = 0x4255,
-        [NativeName("Name", "CL_DEVICE_FEATURE_CAPABILITIES_INTEL")]
-        DeviceFeatureCapabilitiesIntel = 0x4256,
-        [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
-        DevicePartitionByNamesIntel = 0x4052,
+        [NativeName("Name", "CL_DEVICE_SIMULTANEOUS_INTEROPS_INTEL")]
+        DeviceSimultaneousInteropsIntel = 0x4104,
+        [NativeName("Name", "CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
+        DeviceNumSimultaneousInteropsIntel = 0x4105,
+        [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
+        EglYuvPlaneIntel = 0x4107,
+        [NativeName("Name", "CL_YUYV_INTEL")]
+        YuyvIntel = 0x4076,
+        [NativeName("Name", "CL_UYVY_INTEL")]
+        UyvyIntel = 0x4077,
+        [NativeName("Name", "CL_YVYU_INTEL")]
+        YvyuIntel = 0x4078,
+        [NativeName("Name", "CL_VYUY_INTEL")]
+        VyuyIntel = 0x4079,
+        [NativeName("Name", "CL_DEVICE_SUB_GROUP_SIZES_INTEL")]
+        DeviceSubGroupSizesIntel = 0x4108,
+        [NativeName("Name", "CL_KERNEL_SPILL_MEM_SIZE_INTEL")]
+        KernelSpillMemSizeIntel = 0x4109,
+        [NativeName("Name", "CL_KERNEL_COMPILE_SUB_GROUP_SIZE_INTEL")]
+        KernelCompileSubGroupSizeIntel = 0x410A,
+        [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
+        ContextShowDiagnosticsIntel = 0x4106,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
+        ContextDiagnosticsLevelAllIntel = 0xFF,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
+        ContextDiagnosticsLevelGoodIntel = 0x1,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
+        ContextDiagnosticsLevelBadIntel = 0x2,
+        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
+        ContextDiagnosticsLevelNeutralIntel = 0x4,
+        [NativeName("Name", "CL_NV12_INTEL")]
+        NV12Intel = 0x410E,
+        [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
+        MemNoAccessIntel = 0x1000000,
+        [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
+        MemAccessFlagsUnrestrictedIntel = 0x2000000,
+        [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_WIDTH_INTEL")]
+        DevicePlanarYuvMaxWidthIntel = 0x417E,
+        [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_HEIGHT_INTEL")]
+        DevicePlanarYuvMaxHeightIntel = 0x417F,
         [NativeName("Name", "CL_DEVICE_AVC_ME_VERSION_INTEL")]
         DeviceAvcMEVersionIntel = 0x410B,
         [NativeName("Name", "CL_DEVICE_AVC_ME_SUPPORTS_TEXTURE_SAMPLER_USE_INTEL")]
@@ -279,33 +285,33 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_PARTITION_8x8_INTEL")]
         AvcMESkipBlockPartition8x8Intel = 0x4000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock16x16ForwardEnableIntel = 16777216,
+        AvcMESkipBlock16x16ForwardEnableIntel = 0x1000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock16x16BackwardEnableIntel = 33554432,
+        AvcMESkipBlock16x16BackwardEnableIntel = 0x2000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_DUAL_ENABLE_INTEL")]
-        AvcMESkipBlock16x16DualEnableIntel = 50331648,
+        AvcMESkipBlock16x16DualEnableIntel = 0x3000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x8ForwardEnableIntel = 1426063360,
+        AvcMESkipBlock8x8ForwardEnableIntel = 0x55000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x8BackwardEnableIntel = unchecked((int) -1442840576),
+        AvcMESkipBlock8x8BackwardEnableIntel = unchecked((int) 0xAA000000),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_DUAL_ENABLE_INTEL")]
-        AvcMESkipBlock8x8DualEnableIntel = unchecked((int) -16777216),
+        AvcMESkipBlock8x8DualEnableIntel = unchecked((int) 0xFF000000),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x80ForwardEnableIntel = 16777216,
+        AvcMESkipBlock8x80ForwardEnableIntel = 0x1000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x80BackwardEnableIntel = 33554432,
+        AvcMESkipBlock8x80BackwardEnableIntel = 0x2000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_1_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x81ForwardEnableIntel = 67108864,
+        AvcMESkipBlock8x81ForwardEnableIntel = 0x4000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_1_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x81BackwardEnableIntel = 134217728,
+        AvcMESkipBlock8x81BackwardEnableIntel = 0x8000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_2_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x82ForwardEnableIntel = 268435456,
+        AvcMESkipBlock8x82ForwardEnableIntel = 0x10000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_2_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x82BackwardEnableIntel = 536870912,
+        AvcMESkipBlock8x82BackwardEnableIntel = 0x20000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x83ForwardEnableIntel = 1073741824,
+        AvcMESkipBlock8x83ForwardEnableIntel = 0x40000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x83BackwardEnableIntel = unchecked((int) -2147483648),
+        AvcMESkipBlock8x83BackwardEnableIntel = unchecked((int) 0x80000000),
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_4x4_INTEL")]
         AvcMEBlockBasedSkip4x4Intel = 0x0,
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_8x8_INTEL")]
@@ -374,16 +380,30 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         AvcMEInterlacedScanTopFieldIntel = 0x0,
         [NativeName("Name", "CL_AVC_ME_INTERLACED_SCAN_BOTTOM_FIELD_INTEL")]
         AvcMEInterlacedScanBottomFieldIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
-        ContextShowDiagnosticsIntel = 0x4106,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        ContextDiagnosticsLevelAllIntel = 0xFF,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        ContextDiagnosticsLevelGoodIntel = 0x1,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        ContextDiagnosticsLevelBadIntel = 0x2,
-        [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        ContextDiagnosticsLevelNeutralIntel = 0x4,
+        [NativeName("Name", "CL_INVALID_VA_API_MEDIA_ADAPTER_INTEL")]
+        InvalidVAApiMediaAdapterIntel = unchecked((int) 0xFFFFFFFFFFFFFBB6),
+        [NativeName("Name", "CL_INVALID_VA_API_MEDIA_SURFACE_INTEL")]
+        InvalidVAApiMediaSurfaceIntel = unchecked((int) 0xFFFFFFFFFFFFFBB5),
+        [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_ALREADY_ACQUIRED_INTEL")]
+        VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB4),
+        [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_NOT_ACQUIRED_INTEL")]
+        VAApiMediaSurfaceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB3),
+        [NativeName("Name", "CL_VA_API_DISPLAY_INTEL")]
+        VAApiDisplayIntel = 0x4094,
+        [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_VA_API_INTEL")]
+        PreferredDevicesForVAApiIntel = 0x4095,
+        [NativeName("Name", "CL_ALL_DEVICES_FOR_VA_API_INTEL")]
+        AllDevicesForVAApiIntel = 0x4096,
+        [NativeName("Name", "CL_CONTEXT_VA_API_DISPLAY_INTEL")]
+        ContextVAApiDisplayIntel = 0x4097,
+        [NativeName("Name", "CL_MEM_VA_API_MEDIA_SURFACE_INTEL")]
+        MemVAApiMediaSurfaceIntel = 0x4098,
+        [NativeName("Name", "CL_IMAGE_VA_API_PLANE_INTEL")]
+        ImageVAApiPlaneIntel = 0x4099,
+        [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
+        CommandAcquireVAApiMediaSurfacesIntel = 0x409A,
+        [NativeName("Name", "CL_COMMAND_RELEASE_VA_API_MEDIA_SURFACES_INTEL")]
+        CommandReleaseVAApiMediaSurfacesIntel = 0x409B,
         [NativeName("Name", "CL_INVALID_DX9_DEVICE_INTEL")]
         InvalidDX9DeviceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_RESOURCE_INTEL")]
@@ -418,68 +438,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandAcquireDX9ObjectsIntel = 0x402A,
         [NativeName("Name", "CL_COMMAND_RELEASE_DX9_OBJECTS_INTEL")]
         CommandReleaseDX9ObjectsIntel = 0x402B,
-        [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
-        EglYuvPlaneIntel = 0x4107,
-        [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
-        QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
-        [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
-        MemAllocBufferLocationIntel = 0x419E,
-        [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
-        MemChannelIntel = 0x4213,
-        [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
-        MemForceHostMemoryIntel = 0x100000,
-        [NativeName("Name", "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
-        AcceleratorTypeMotionEstimationIntel = 0x0,
-        [NativeName("Name", "CL_ME_MB_TYPE_16x16_INTEL")]
-        MEMBType16x16Intel = 0x0,
-        [NativeName("Name", "CL_ME_MB_TYPE_8x8_INTEL")]
-        MEMBType8x8Intel = 0x1,
-        [NativeName("Name", "CL_ME_MB_TYPE_4x4_INTEL")]
-        MEMBType4x4Intel = 0x2,
-        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_INTEGER_INTEL")]
-        MESubpixelModeIntegerIntel = 0x0,
-        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_HPEL_INTEL")]
-        MESubpixelModeHpelIntel = 0x1,
-        [NativeName("Name", "CL_ME_SUBPIXEL_MODE_QPEL_INTEL")]
-        MESubpixelModeQpelIntel = 0x2,
-        [NativeName("Name", "CL_ME_SAD_ADJUST_MODE_NONE_INTEL")]
-        MESadAdjustModeNoneIntel = 0x0,
-        [NativeName("Name", "CL_ME_SAD_ADJUST_MODE_HAAR_INTEL")]
-        MESadAdjustModeHaarIntel = 0x1,
-        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_2_2_INTEL")]
-        MESearchPathRadius22Intel = 0x0,
-        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_4_4_INTEL")]
-        MESearchPathRadius44Intel = 0x1,
-        [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_16_12_INTEL")]
-        MESearchPathRadius1612Intel = 0x5,
-        [NativeName("Name", "CL_YUYV_INTEL")]
-        YuyvIntel = 0x4076,
-        [NativeName("Name", "CL_UYVY_INTEL")]
-        UyvyIntel = 0x4077,
-        [NativeName("Name", "CL_YVYU_INTEL")]
-        YvyuIntel = 0x4078,
-        [NativeName("Name", "CL_VYUY_INTEL")]
-        VyuyIntel = 0x4079,
-        [NativeName("Name", "CL_NV12_INTEL")]
-        NV12Intel = 0x410E,
-        [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
-        MemNoAccessIntel = 0x1000000,
-        [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
-        MemAccessFlagsUnrestrictedIntel = 0x2000000,
-        [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_WIDTH_INTEL")]
-        DevicePlanarYuvMaxWidthIntel = 0x417E,
-        [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_HEIGHT_INTEL")]
-        DevicePlanarYuvMaxHeightIntel = 0x417F,
-        [NativeName("Name", "CL_DEVICE_SUB_GROUP_SIZES_INTEL")]
-        DeviceSubGroupSizesIntel = 0x4108,
-        [NativeName("Name", "CL_KERNEL_SPILL_MEM_SIZE_INTEL")]
-        KernelSpillMemSizeIntel = 0x4109,
-        [NativeName("Name", "CL_KERNEL_COMPILE_SUB_GROUP_SIZE_INTEL")]
-        KernelCompileSubGroupSizeIntel = 0x410A,
-        [NativeName("Name", "CL_DEVICE_SIMULTANEOUS_INTEROPS_INTEL")]
-        DeviceSimultaneousInteropsIntel = 0x4104,
-        [NativeName("Name", "CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
-        DeviceNumSimultaneousInteropsIntel = 0x4105,
         [NativeName("Name", "CL_DEVICE_HOST_MEM_CAPABILITIES_INTEL")]
         DeviceHostMemCapabilitiesIntel = 0x4190,
         [NativeName("Name", "CL_DEVICE_DEVICE_MEM_CAPABILITIES_INTEL")]
@@ -538,29 +496,67 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandMigratememIntel = 0x4206,
         [NativeName("Name", "CL_COMMAND_MEMADVISE_INTEL")]
         CommandMemadviseIntel = 0x4207,
-        [NativeName("Name", "CL_INVALID_VA_API_MEDIA_ADAPTER_INTEL")]
-        InvalidVAApiMediaAdapterIntel = unchecked((int) 0xFFFFFFFFFFFFFBB6),
-        [NativeName("Name", "CL_INVALID_VA_API_MEDIA_SURFACE_INTEL")]
-        InvalidVAApiMediaSurfaceIntel = unchecked((int) 0xFFFFFFFFFFFFFBB5),
-        [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_ALREADY_ACQUIRED_INTEL")]
-        VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB4),
-        [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_NOT_ACQUIRED_INTEL")]
-        VAApiMediaSurfaceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB3),
-        [NativeName("Name", "CL_VA_API_DISPLAY_INTEL")]
-        VAApiDisplayIntel = 0x4094,
-        [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_VA_API_INTEL")]
-        PreferredDevicesForVAApiIntel = 0x4095,
-        [NativeName("Name", "CL_ALL_DEVICES_FOR_VA_API_INTEL")]
-        AllDevicesForVAApiIntel = 0x4096,
-        [NativeName("Name", "CL_CONTEXT_VA_API_DISPLAY_INTEL")]
-        ContextVAApiDisplayIntel = 0x4097,
-        [NativeName("Name", "CL_MEM_VA_API_MEDIA_SURFACE_INTEL")]
-        MemVAApiMediaSurfaceIntel = 0x4098,
-        [NativeName("Name", "CL_IMAGE_VA_API_PLANE_INTEL")]
-        ImageVAApiPlaneIntel = 0x4099,
-        [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
-        CommandAcquireVAApiMediaSurfacesIntel = 0x409A,
-        [NativeName("Name", "CL_COMMAND_RELEASE_VA_API_MEDIA_SURFACES_INTEL")]
-        CommandReleaseVAApiMediaSurfacesIntel = 0x409B,
+        [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
+        MemChannelIntel = 0x4213,
+        [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
+        MemAllocBufferLocationIntel = 0x419E,
+        [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
+        MemForceHostMemoryIntel = 0x100000,
+        [NativeName("Name", "CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
+        DeviceQueueFamilyPropertiesIntel = 0x418B,
+        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
+        QueueFamilyIntel = 0x418C,
+        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
+        QueueIndexIntel = 0x418D,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
+        QueueCapabilityCreateSingleQueueEventsIntel = 0x1,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_CROSS_QUEUE_EVENTS_INTEL")]
+        QueueCapabilityCreateCrossQueueEventsIntel = 0x2,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_SINGLE_QUEUE_EVENT_WAIT_LIST_INTEL")]
+        QueueCapabilitySingleQueueEventWaitListIntel = 0x4,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CROSS_QUEUE_EVENT_WAIT_LIST_INTEL")]
+        QueueCapabilityCrossQueueEventWaitListIntel = 0x8,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_INTEL")]
+        QueueCapabilityTransferBufferIntel = 0x100,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_RECT_INTEL")]
+        QueueCapabilityTransferBufferRectIntel = 0x200,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_BUFFER_INTEL")]
+        QueueCapabilityMapBufferIntel = 0x400,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_BUFFER_INTEL")]
+        QueueCapabilityFillBufferIntel = 0x800,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_INTEL")]
+        QueueCapabilityTransferImageIntel = 0x1000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_IMAGE_INTEL")]
+        QueueCapabilityMapImageIntel = 0x2000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_IMAGE_INTEL")]
+        QueueCapabilityFillImageIntel = 0x4000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_IMAGE_INTEL")]
+        QueueCapabilityTransferBufferImageIntel = 0x8000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_BUFFER_INTEL")]
+        QueueCapabilityTransferImageBufferIntel = 0x10000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MARKER_INTEL")]
+        QueueCapabilityMarkerIntel = 0x1000000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_BARRIER_INTEL")]
+        QueueCapabilityBarrierIntel = 0x2000000,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_KERNEL_INTEL")]
+        QueueCapabilityKernelIntel = 0x4000000,
+        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DP4A_INTEL")]
+        DeviceFeatureFlagDP4AIntel = 0x1,
+        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DPAS_INTEL")]
+        DeviceFeatureFlagDpasIntel = 0x2,
+        [NativeName("Name", "CL_DEVICE_IP_VERSION_INTEL")]
+        DeviceIPVersionIntel = 0x4250,
+        [NativeName("Name", "CL_DEVICE_ID_INTEL")]
+        DeviceIDIntel = 0x4251,
+        [NativeName("Name", "CL_DEVICE_NUM_SLICES_INTEL")]
+        DeviceNumSlicesIntel = 0x4252,
+        [NativeName("Name", "CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL")]
+        DeviceNumSubSlicesPerSliceIntel = 0x4253,
+        [NativeName("Name", "CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL")]
+        DeviceNumEusPerSubSliceIntel = 0x4254,
+        [NativeName("Name", "CL_DEVICE_NUM_THREADS_PER_EU_INTEL")]
+        DeviceNumThreadsPerEUIntel = 0x4255,
+        [NativeName("Name", "CL_DEVICE_FEATURE_CAPABILITIES_INTEL")]
+        DeviceFeatureCapabilitiesIntel = 0x4256,
     }
 }

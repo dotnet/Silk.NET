@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_device_svm_capabilities")]
     public enum DeviceSvmCapabilities : ulong
     {

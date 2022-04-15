@@ -17,8 +17,8 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_TRUE")]
         True = 0x1,
         [NativeName("Name", "CL_BLOCKING")]
-        Blocking = 1,
+        Blocking = 0x1,
         [NativeName("Name", "CL_NON_BLOCKING")]
-        NonBlocking = 0,
+        NonBlocking = 0x0,
     }
 }

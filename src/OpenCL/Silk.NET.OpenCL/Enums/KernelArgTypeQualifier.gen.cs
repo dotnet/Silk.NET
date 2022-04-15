@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_kernel_arg_type_qualifier")]
     public enum KernelArgTypeQualifier : ulong
     {

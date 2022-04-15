@@ -12,8 +12,6 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
     [NativeName("Name", "GLenum")]
     public enum QCOM : int
     {
-        [NativeName("Name", "CL_MEM_ANDROID_NATIVE_BUFFER_HOST_PTR_QCOM")]
-        MemAndroidNativeBufferHostPtrQCom = 0x40C6,
         [NativeName("Name", "CL_MEM_EXT_HOST_PTR_QCOM")]
         MemExtHostPtrQCom = 0x20000000,
         [NativeName("Name", "CL_DEVICE_EXT_MEM_PADDING_IN_BYTES_QCOM")]
@@ -36,5 +34,7 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
         MemHostIocoherentQCom = 0x40A9,
         [NativeName("Name", "CL_MEM_ION_HOST_PTR_QCOM")]
         MemIonHostPtrQCom = 0x40A8,
+        [NativeName("Name", "CL_MEM_ANDROID_NATIVE_BUFFER_HOST_PTR_QCOM")]
+        MemAndroidNativeBufferHostPtrQCom = 0x40C6,
     }
 }

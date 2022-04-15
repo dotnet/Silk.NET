@@ -9,13 +9,12 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenCL
 {
+    [System.Flags]
     [NativeName("Name", "cl_mem_migration_flags")]
     public enum MemMigrationFlags : ulong
     {
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST")]
         MigrateMemObjectHost = 0x1,
-        [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-        MigrateMemObjectHostExt = 0x1,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
         MigrateMemObjectContentUndefined = 0x2,
     }

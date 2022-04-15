@@ -38,20 +38,6 @@ namespace Silk.NET.OpenCL
         BuildProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFF5),
         [NativeName("Name", "CL_MAP_FAILURE")]
         MapFailure = unchecked((int) 0xFFFFFFFFFFFFFFF4),
-        [NativeName("Name", "CL_MISALIGNED_SUB_BUFFER_OFFSET")]
-        MisalignedSubBufferOffset = unchecked((int) 0xFFFFFFFFFFFFFFF3),
-        [NativeName("Name", "CL_EXEC_STATUS_ERROR_FOR_EVENTS_IN_WAIT_LIST")]
-        ExecStatusErrorForEventsInWaitList = unchecked((int) 0xFFFFFFFFFFFFFFF2),
-        [NativeName("Name", "CL_COMPILE_PROGRAM_FAILURE")]
-        CompileProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFF1),
-        [NativeName("Name", "CL_LINKER_NOT_AVAILABLE")]
-        LinkerNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFF0),
-        [NativeName("Name", "CL_LINK_PROGRAM_FAILURE")]
-        LinkProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFEF),
-        [NativeName("Name", "CL_DEVICE_PARTITION_FAILED")]
-        DevicePartitionFailed = unchecked((int) 0xFFFFFFFFFFFFFFEE),
-        [NativeName("Name", "CL_KERNEL_ARG_INFO_NOT_AVAILABLE")]
-        KernelArgInfoNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFED),
         [NativeName("Name", "CL_INVALID_VALUE")]
         InvalidValue = unchecked((int) 0xFFFFFFFFFFFFFFE2),
         [NativeName("Name", "CL_INVALID_DEVICE_TYPE")]
@@ -120,8 +106,22 @@ namespace Silk.NET.OpenCL
         InvalidMipLevel = unchecked((int) 0xFFFFFFFFFFFFFFC2),
         [NativeName("Name", "CL_INVALID_GLOBAL_WORK_SIZE")]
         InvalidGlobalWorkSize = unchecked((int) 0xFFFFFFFFFFFFFFC1),
+        [NativeName("Name", "CL_MISALIGNED_SUB_BUFFER_OFFSET")]
+        MisalignedSubBufferOffset = unchecked((int) 0xFFFFFFFFFFFFFFF3),
+        [NativeName("Name", "CL_EXEC_STATUS_ERROR_FOR_EVENTS_IN_WAIT_LIST")]
+        ExecStatusErrorForEventsInWaitList = unchecked((int) 0xFFFFFFFFFFFFFFF2),
         [NativeName("Name", "CL_INVALID_PROPERTY")]
         InvalidProperty = unchecked((int) 0xFFFFFFFFFFFFFFC0),
+        [NativeName("Name", "CL_COMPILE_PROGRAM_FAILURE")]
+        CompileProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFF1),
+        [NativeName("Name", "CL_LINKER_NOT_AVAILABLE")]
+        LinkerNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFF0),
+        [NativeName("Name", "CL_LINK_PROGRAM_FAILURE")]
+        LinkProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFEF),
+        [NativeName("Name", "CL_DEVICE_PARTITION_FAILED")]
+        DevicePartitionFailed = unchecked((int) 0xFFFFFFFFFFFFFFEE),
+        [NativeName("Name", "CL_KERNEL_ARG_INFO_NOT_AVAILABLE")]
+        KernelArgInfoNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFED),
         [NativeName("Name", "CL_INVALID_IMAGE_DESCRIPTOR")]
         InvalidImageDescriptor = unchecked((int) 0xFFFFFFFFFFFFFFBF),
         [NativeName("Name", "CL_INVALID_COMPILER_OPTIONS")]
@@ -138,10 +138,6 @@ namespace Silk.NET.OpenCL
         InvalidSpecID = unchecked((int) 0xFFFFFFFFFFFFFFB9),
         [NativeName("Name", "CL_MAX_SIZE_RESTRICTION_EXCEEDED")]
         MaxSizeRestrictionExceeded = unchecked((int) 0xFFFFFFFFFFFFFFB8),
-        [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
-        InvalidGLSharegroupReferenceKhr = unchecked((int) 0xFFFFFFFFFFFFFC18),
-        [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
-        PlatformNotFoundKhr = unchecked((int) 0xFFFFFFFFFFFFFC17),
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -158,32 +154,32 @@ namespace Silk.NET.OpenCL
         D3D11ResourceAlreadyAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC10),
         [NativeName("Name", "CL_D3D11_RESOURCE_NOT_ACQUIRED_KHR")]
         D3D11ResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0F),
-        [NativeName("Name", "CL_INVALID_DX9_DEVICE_INTEL")]
-        InvalidDX9DeviceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_ADAPTER_KHR")]
         InvalidDX9MediaAdapterKhr = unchecked((int) 0xFFFFFFFFFFFFFC0E),
         [NativeName("Name", "CL_INVALID_DX9_MEDIA_SURFACE_KHR")]
         InvalidDX9MediaSurfaceKhr = unchecked((int) 0xFFFFFFFFFFFFFC0D),
-        [NativeName("Name", "CL_INVALID_DX9_RESOURCE_INTEL")]
-        InvalidDX9ResourceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0D),
         [NativeName("Name", "CL_DX9_MEDIA_SURFACE_ALREADY_ACQUIRED_KHR")]
         DX9MediaSurfaceAlreadyAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0C),
-        [NativeName("Name", "CL_DX9_RESOURCE_ALREADY_ACQUIRED_INTEL")]
-        DX9ResourceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0C),
         [NativeName("Name", "CL_DX9_MEDIA_SURFACE_NOT_ACQUIRED_KHR")]
         DX9MediaSurfaceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFC0B),
-        [NativeName("Name", "CL_DX9_RESOURCE_NOT_ACQUIRED_INTEL")]
-        DX9ResourceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0B),
+        [NativeName("Name", "CL_INVALID_EGL_OBJECT_KHR")]
+        InvalidEglObjectKhr = unchecked((int) 0xFFFFFFFFFFFFFBBB),
+        [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
+        EglResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFBBC),
+        [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
+        PlatformNotFoundKhr = unchecked((int) 0xFFFFFFFFFFFFFC17),
+        [NativeName("Name", "CL_CONTEXT_TERMINATED_KHR")]
+        ContextTerminatedKhr = unchecked((int) 0xFFFFFFFFFFFFFB9F),
         [NativeName("Name", "CL_DEVICE_PARTITION_FAILED_EXT")]
         DevicePartitionFailedExt = unchecked((int) 0xFFFFFFFFFFFFFBDF),
         [NativeName("Name", "CL_INVALID_PARTITION_COUNT_EXT")]
         InvalidPartitionCountExt = unchecked((int) 0xFFFFFFFFFFFFFBDE),
         [NativeName("Name", "CL_INVALID_PARTITION_NAME_EXT")]
         InvalidPartitionNameExt = unchecked((int) 0xFFFFFFFFFFFFFBDD),
-        [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
-        EglResourceNotAcquiredKhr = unchecked((int) 0xFFFFFFFFFFFFFBBC),
-        [NativeName("Name", "CL_INVALID_EGL_OBJECT_KHR")]
-        InvalidEglObjectKhr = unchecked((int) 0xFFFFFFFFFFFFFBBB),
+        [NativeName("Name", "CL_GRALLOC_RESOURCE_NOT_ACQUIRED_IMG")]
+        GrallocResourceNotAcquiredImg = 0x40D4,
+        [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]
+        InvalidGrallocObjectImg = 0x40D5,
         [NativeName("Name", "CL_INVALID_ACCELERATOR_INTEL")]
         InvalidAcceleratorIntel = unchecked((int) 0xFFFFFFFFFFFFFBBA),
         [NativeName("Name", "CL_INVALID_ACCELERATOR_TYPE_INTEL")]
@@ -200,29 +196,25 @@ namespace Silk.NET.OpenCL
         VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB4),
         [NativeName("Name", "CL_VA_API_MEDIA_SURFACE_NOT_ACQUIRED_INTEL")]
         VAApiMediaSurfaceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFBB3),
-        [NativeName("Name", "CL_PIPE_FULL_INTEL")]
-        PipeFullIntel = unchecked((int) 0xFFFFFFFFFFFFFBAE),
-        [NativeName("Name", "CL_PIPE_EMPTY_INTEL")]
-        PipeEmptyIntel = unchecked((int) 0xFFFFFFFFFFFFFBAD),
+        [NativeName("Name", "CL_INVALID_DX9_DEVICE_INTEL")]
+        InvalidDX9DeviceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0E),
+        [NativeName("Name", "CL_INVALID_DX9_RESOURCE_INTEL")]
+        InvalidDX9ResourceIntel = unchecked((int) 0xFFFFFFFFFFFFFC0D),
+        [NativeName("Name", "CL_DX9_RESOURCE_ALREADY_ACQUIRED_INTEL")]
+        DX9ResourceAlreadyAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0C),
+        [NativeName("Name", "CL_DX9_RESOURCE_NOT_ACQUIRED_INTEL")]
+        DX9ResourceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0B),
+        [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
+        InvalidGLSharegroupReferenceKhr = unchecked((int) 0xFFFFFFFFFFFFFC18),
         [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
         CommandTerminatedItselfWithFailureArm = unchecked((int) 0xFFFFFFFFFFFFFBAC),
-        [NativeName("Name", "CL_CONTEXT_TERMINATED_KHR")]
-        ContextTerminatedKhr = unchecked((int) 0xFFFFFFFFFFFFFB9F),
-        [NativeName("Name", "CL_ERROR_RESERVED0_IMG")]
-        ErrorReserved0Img = unchecked((int) 0xFFFFFFFFFFFFFB9E),
-        [NativeName("Name", "CL_ERROR_RESERVED1_IMG")]
-        ErrorReserved1Img = unchecked((int) 0xFFFFFFFFFFFFFB9D),
-        [NativeName("Name", "CL_ERROR_RESERVED2_IMG")]
-        ErrorReserved2Img = unchecked((int) 0xFFFFFFFFFFFFFB9C),
-        [NativeName("Name", "CL_ERROR_RESERVED3_IMG")]
-        ErrorReserved3Img = unchecked((int) 0xFFFFFFFFFFFFFB9B),
+        [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]
+        InvalidSemaphoreKhr = unchecked((int) 0xFFFFFFFFFFFFFB8A),
         [NativeName("Name", "CL_INVALID_COMMAND_BUFFER_KHR")]
         InvalidCommandBufferKhr = unchecked((int) 0xFFFFFFFFFFFFFB8E),
         [NativeName("Name", "CL_INVALID_SYNC_POINT_WAIT_LIST_KHR")]
         InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
         [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
-        [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]
-        InvalidSemaphoreKhr = unchecked((int) 0xFFFFFFFFFFFFFB8A),
     }
 }

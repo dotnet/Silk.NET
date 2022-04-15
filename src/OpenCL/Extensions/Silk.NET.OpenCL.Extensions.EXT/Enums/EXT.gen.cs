@@ -12,8 +12,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     [NativeName("Name", "GLenum")]
     public enum EXT : int
     {
-        [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
-        DeviceCxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_PARTITION_FAILED_EXT")]
         DevicePartitionFailedExt = unchecked((int) 0xFFFFFFFFFFFFFBDF),
         [NativeName("Name", "CL_INVALID_PARTITION_COUNT_EXT")]
@@ -50,6 +48,12 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         AffinityDomainNumaExt = 0x10,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT")]
         AffinityDomainNextFissionableExt = 0x100,
+        [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
+        MigrateMemObjectHostExt = 0x1,
+        [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
+        CommandMigrateMemObjectExt = 0x4040,
+        [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
+        DeviceCxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_LOAD_STORE_EXT")]
         DeviceGlobalFPAtomicLoadStoreExt = 0x1,
         [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_ADD_EXT")]
@@ -68,9 +72,5 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         DeviceDoubleFPAtomicCapabilitiesExt = 0x4232,
         [NativeName("Name", "CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
         DeviceHalfFPAtomicCapabilitiesExt = 0x4233,
-        [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-        MigrateMemObjectHostExt = 0x1,
-        [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
-        CommandMigrateMemObjectExt = 0x4040,
     }
 }

@@ -18,13 +18,13 @@ namespace Silk.NET.OpenCL
     {
         [NativeName("Type", "")]
         [NativeName("Name", "CL_CHAR_BIT")]
-        public const int CharBit = unchecked((int) 8);
+        public const sbyte CharBit = unchecked((sbyte) 8);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_CHAR_MAX")]
-        public const int CharMax = unchecked((int) 127);
+        public const sbyte CharMax = unchecked((sbyte) sbyte.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_CHAR_MIN")]
-        public const int CharMin = unchecked((int) -127 - 1);
+        public const sbyte CharMin = unchecked((sbyte) sbyte.MinValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_DIG")]
         public const double DblDig = unchecked((double) 15);
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenCL
         public const double DblMantDig = unchecked((double) 53);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_MAX")]
-        public const double DblMax = unchecked((double) 1.7976931348623158e+308);
+        public const double DblMax = unchecked((double) double.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_MAX_10_EXP")]
         public const double DblMax10Exp = unchecked((double) +308);
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenCL
         public const double DblMaxExp = unchecked((double) +1024);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_MIN")]
-        public const double DblMin = unchecked((double) 2.225073858507201383090e-308);
+        public const double DblMin = unchecked((double) double.MinValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_MIN_10_EXP")]
         public const double DblMin10Exp = unchecked((double) -307);
@@ -55,6 +55,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DBL_RADIX")]
         public const double DblRadix = unchecked((double) 2);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DEVICE_HANDLE_LIST_END_KHR")]
+        public const int DeviceHandleListEndKhr = unchecked((int) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS_LIST_END")]
         public const int DevicePartitionByCountsListEnd = unchecked((int) 0x0);
@@ -69,7 +72,7 @@ namespace Silk.NET.OpenCL
         public const float FltMantDig = unchecked((float) 24);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_FLT_MAX")]
-        public const float FltMax = unchecked((float) 340282346638528859811704183484516925440.0f);
+        public const float FltMax = unchecked((float) float.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_FLT_MAX_10_EXP")]
         public const float FltMax10Exp = unchecked((float) +38);
@@ -78,7 +81,7 @@ namespace Silk.NET.OpenCL
         public const float FltMaxExp = unchecked((float) +128);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_FLT_MIN")]
-        public const float FltMin = unchecked((float) 1.175494350822287507969e-38f);
+        public const float FltMin = unchecked((float) float.MinValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_FLT_MIN_10_EXP")]
         public const float FltMin10Exp = unchecked((float) -37);
@@ -90,55 +93,64 @@ namespace Silk.NET.OpenCL
         public const float FltRadix = unchecked((float) 2);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_DIG")]
-        public const short HalfDig = unchecked((short) 3);
+        public const float HalfDig = unchecked((float) 3);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_EPSILON")]
-        public const short HalfEpsilon = unchecked((short) unchecked((short)9.765625e-04f));
+        public const float HalfEpsilon = unchecked((float) 9.765625e-04f);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MANT_DIG")]
-        public const short HalfMantDig = unchecked((short) 11);
+        public const float HalfMantDig = unchecked((float) 11);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MAX")]
-        public const short HalfMax = unchecked((short) unchecked((short)65504.0f));
+        public const float HalfMax = unchecked((float) 65504.0f);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MAX_10_EXP")]
-        public const short HalfMax10Exp = unchecked((short) +4);
+        public const float HalfMax10Exp = unchecked((float) +4);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MAX_EXP")]
-        public const short HalfMaxExp = unchecked((short) +16);
+        public const float HalfMaxExp = unchecked((float) +16);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MIN")]
-        public const short HalfMin = unchecked((short) unchecked((short)6.103515625e-05f));
+        public const float HalfMin = unchecked((float) 6.103515625e-05f);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MIN_10_EXP")]
-        public const short HalfMin10Exp = unchecked((short) -4);
+        public const float HalfMin10Exp = unchecked((float) -4);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_MIN_EXP")]
-        public const short HalfMinExp = unchecked((short) -13);
+        public const float HalfMinExp = unchecked((float) -13);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HALF_RADIX")]
-        public const short HalfRadix = unchecked((short) 2);
+        public const float HalfRadix = unchecked((float) 2);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HUGE_VAL")]
         public const double HugeVal = unchecked((double) double.PositiveInfinity);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_HUGE_VALF")]
-        public const float HugeValf = unchecked((float) (float) 1e50);
+        public const float HugeValf = unchecked((float) float.PositiveInfinity);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
+        public const ulong ImportMemoryWholeAllocationArm = unchecked((ulong) ulong.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_INFINITY")]
         public const float Infinity = unchecked((float) float.PositiveInfinity);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_INT_MAX")]
-        public const int IntMax = unchecked((int) 2147483647);
+        public const int IntMax = unchecked((int) int.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_INT_MIN")]
-        public const int IntMin = unchecked((int) -2147483647 - 1);
+        public const int IntMin = unchecked((int) int.MinValue);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_LAYER_API_VERSION_100")]
+        public const int LayerApiVersion100 = unchecked((int) 100);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_LONG_MAX")]
-        public const long LongMax = unchecked((long) 0x7FFFFFFFFFFFFFFFL);
+        public const long LongMax = unchecked((long) long.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_LONG_MIN")]
-        public const long LongMin = unchecked((long) -0x7FFFFFFFFFFFFFFFL - 1L);
+        public const long LongMin = unchecked((long) long.MinValue);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_LUID_SIZE_KHR")]
+        public const int LuidSizeKhr = unchecked((int) 8);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_M_1_PI")]
         public const double M1PI = unchecked((double) 0.31830988618379067154);
@@ -224,53 +236,77 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE")]
         public const int NameVersionMaxNameSize = unchecked((int) 64);
         [NativeName("Type", "")]
+        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
+        public const int NameVersionMaxNameSizeKhr = unchecked((int) 64);
+        [NativeName("Type", "")]
         [NativeName("Name", "CL_NAN")]
         public const float Nan = unchecked((float) float.NaN);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_PARTITION_BY_COUNTS_LIST_END_EXT")]
-        public const int PartitionByCountsListEndExt = unchecked((int) 0);
+        public const uint PartitionByCountsListEndExt = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_PARTITION_BY_NAMES_LIST_END_EXT")]
-        public const int PartitionByNamesListEndExt = unchecked((int) 0 - 1);
+        public const ulong PartitionByNamesListEndExt = unchecked((ulong) ulong.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_PARTITION_BY_NAMES_LIST_END_INTEL")]
-        public const int PartitionByNamesListEndIntel = unchecked((int) -1);
+        public const ulong PartitionByNamesListEndIntel = unchecked((ulong) ulong.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_PROPERTIES_LIST_END_EXT")]
-        public const int PropertiesListEndExt = unchecked((int) 0);
+        public const int PropertiesListEndExt = unchecked((int) ((cl_device_partition_property_ext)0));
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_QUEUE_DEFAULT_CAPABILITIES_INTEL")]
+        public const int QueueDefaultCapabilitiesIntel = unchecked((int) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_QUEUE_FAMILY_MAX_NAME_SIZE_INTEL")]
+        public const int QueueFamilyMaxNameSizeIntel = unchecked((int) 64);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SCHAR_MAX")]
-        public const int ScharMax = unchecked((int) 127);
+        public const sbyte ScharMax = unchecked((sbyte) sbyte.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SCHAR_MIN")]
-        public const int ScharMin = unchecked((int) -127 - 1);
+        public const sbyte ScharMin = unchecked((sbyte) sbyte.MinValue);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_LIST_END_KHR")]
+        public const int SemaphoreExportHandleTypesListEndKhr = unchecked((int) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SHRT_MAX")]
-        public const short ShrtMax = unchecked((short) 32767);
+        public const short ShrtMax = unchecked((short) short.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_SHRT_MIN")]
-        public const short ShrtMin = unchecked((short) -32767 - 1);
+        public const short ShrtMin = unchecked((short) short.MinValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_UCHAR_MAX")]
-        public const int UcharMax = unchecked((int) 255);
+        public const byte UcharMax = unchecked((byte) byte.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_UINT_MAX")]
-        public const uint UintMax = unchecked((uint) 0xffffffffU);
+        public const uint UintMax = unchecked((uint) uint.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_ULONG_MAX")]
-        public const ulong UlongMax = unchecked((ulong) 0xFFFFFFFFFFFFFFFFUL);
+        public const ulong UlongMax = unchecked((ulong) ulong.MaxValue);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_USHRT_MAX")]
-        public const ushort UshrtMax = unchecked((ushort) 65535);
+        public const ushort UshrtMax = unchecked((ushort) ushort.MaxValue);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_UUID_SIZE_KHR")]
+        public const int UuidSizeKhr = unchecked((int) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "CL_VERSION_MAJOR_BITS")]
         public const int VersionMajorBits = unchecked((int) 10);
         [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_MAJOR_BITS_KHR")]
+        public const int VersionMajorBitsKhr = unchecked((int) 10);
+        [NativeName("Type", "")]
         [NativeName("Name", "CL_VERSION_MINOR_BITS")]
         public const int VersionMinorBits = unchecked((int) 10);
         [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_MINOR_BITS_KHR")]
+        public const int VersionMinorBitsKhr = unchecked((int) 10);
+        [NativeName("Type", "")]
         [NativeName("Name", "CL_VERSION_PATCH_BITS")]
         public const int VersionPatchBits = unchecked((int) 12);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_PATCH_BITS_KHR")]
+        public const int VersionPatchBitsKhr = unchecked((int) 12);
 
         [NativeApi(EntryPoint = "clCreateBufferWithProperties", Convention = CallingConvention.Winapi)]
         public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);

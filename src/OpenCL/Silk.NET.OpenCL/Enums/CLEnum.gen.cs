@@ -589,9 +589,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_COMMAND_FILL_IMAGE")]
         CommandFillImage = 0x1208,
         [NativeName("Name", "CL_BLOCKING")]
-        Blocking = 1,
+        Blocking = 0x1,
         [NativeName("Name", "CL_NON_BLOCKING")]
-        NonBlocking = 0,
+        NonBlocking = 0x0,
         [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
         DeviceTypeCustom = 0x10,
         [NativeName("Name", "CL_DEVICE_DOUBLE_FP_CONFIG")]
@@ -925,13 +925,5 @@ namespace Silk.NET.OpenCL
         MemProperties = 0x110A,
         [NativeName("Name", "CL_COMMAND_SVM_MIGRATE_MEM")]
         CommandSvmMigrateMem = 0x120E,
-        [NativeName("Name", "CL_VERSION_MAJOR_BITS")]
-        VersionMajorBits = 0x10,
-        [NativeName("Name", "CL_VERSION_MINOR_BITS")]
-        VersionMinorBits = 0x10,
-        [NativeName("Name", "CL_VERSION_PATCH_BITS")]
-        VersionPatchBits = 0x12,
-        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE")]
-        NameVersionMaxNameSize = 0x64,
     }
 }
