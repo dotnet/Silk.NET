@@ -326,12 +326,13 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.WindowHint(WindowHintBool.OpenGLDebugContext, true);
             }
 
-            // Set API profile
-            _glfw.WindowHint
-            (
-                WindowHintOpenGlProfile.OpenGlProfile,
-                opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
-            );
+            if((opts.API.Version.MajorVersion == 3 && opts.API.Version.MinorVersion >= 2) || opts.API.Version.MajorVersion > 3)
+                // Set API profile
+                _glfw.WindowHint
+                (
+                    WindowHintOpenGlProfile.OpenGlProfile,
+                    opts.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
+                );
 
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate ?? -1);
