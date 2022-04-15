@@ -1055,19 +1055,23 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }).ToList();
 
-                var groupName = Naming.Translate(TrimName(group.Key.Renamed, task), task.FunctionPrefix);
-                var is64bit = ulongEnums.Contains(group.Key.Renamed);
 
 
                 string extTag = "";
+                string rawName = "";
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
                     extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
+                    rawName = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
                     extName = new RenamedEntry("Core (Grouped)", "Core (Grouped)");
+                    rawName = group.Key.Renamed;
                 }
+
+                var groupName = Naming.Translate(TrimName(rawName, task), task.FunctionPrefix);
+                var is64bit = ulongEnums.Contains(group.Key.Renamed);
 
                 RenameTokens(tokens, group.Key.Renamed, extTag, task);
 
