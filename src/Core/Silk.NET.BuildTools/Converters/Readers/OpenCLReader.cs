@@ -767,17 +767,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Elements("types")
                 .Elements("type")
                 .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield")
-                .Select(e => Rename(e.Element("name").Value, task)));
+                .Select(e => Rename(e.Element("name").Value, task).Renamed));
 
             var flagEnums = new HashSet<string>(registry
                 .Elements("enums")
                 .Where(e => e.Attribute("type")?.Value == "bitmask")
-                .Select(e => Rename(e.Attribute("name").Value, task)));
+                .Select(e => Rename(e.Attribute("name").Value, task).Renamed));
 
-            var enumEntries = new Dictionary<string, HashSet<string>>();
-            var enumTypes = new Dictionary<string, HashSet<string>>();
+            var enumEntries = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
+            var enumTypes = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
 
-            void AddEntry(string key, string value, Dictionary<string, HashSet<string>> dict)
+            void AddEntry(RenamedEntry key, RenamedEntry value, Dictionary<RenamedEntry, HashSet<RenamedEntry>> dict)
             {
                 if (dict.TryGetValue(key, out var list))
                 {
@@ -785,17 +785,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
                 else
                 {
-                    dict.Add(key, new HashSet<string> { value });
+                    dict.Add(key, new HashSet<RenamedEntry> { value });
                 }
             }
 
-            var constants = new HashSet<string>(registry
+            var constants = new HashSet<RenamedEntry>(registry
                 .Elements("enums")
                 .Where(x => x.Attribute("name").Value.StartsWith("Constants") || 
                             x.Attribute("name").Value == "MiscNumbers")
                 .Elements("enum")
                 .Select(x => Rename(x.Attribute("name").Value, task))
-                .Concat(Constants.Keys));
+                .Concat(Constants.Keys.Select(c => Rename(c, task))));
 
             var enumsPass1 = registry
                 .Elements("enums")
@@ -813,23 +813,24 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     x =>
                     {
                         var type = Rename(x.Parent.Attribute("name").Value, task);
-                        string newName;
-                        if (type.StartsWith("ErrorCodes"))
+                        string newName = "";
+                        var typeStr = type.Renamed;
+                        if (typeStr.StartsWith("ErrorCodes"))
                         {
-                            return "ErrorCodes";
+                            return new RenamedEntry(type.Original, "ErrorCodes");
                         }
-                        if (type.EndsWith(".flags"))
+                        if (typeStr.EndsWith(".flags"))
                         {
-                            newName = type.Substring(0, type.Length - ".flags".Length);
+                            newName = typeStr.Substring(0, typeStr.Length - ".flags".Length);
                             flagEnums.Add(newName);
-                            return newName;
+                            return new RenamedEntry(type.Original, newName);
                         }
-                        newName = type.Replace('.', '_');
-                        if (flagEnums.Contains(type))
+                        newName = typeStr.Replace('.', '_');
+                        if (flagEnums.Contains(typeStr))
                         {
                             flagEnums.Add(newName);
                         }
-                        return newName;
+                        return new RenamedEntry(type.Original, newName);
                     }
                 );
 
@@ -840,9 +841,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                     if (constants.Contains(name)) return;
 
-                    var type = x.Parent.Attribute("comment")?.Value;
+                    var type = Rename(x.Parent.Attribute("comment")?.Value, task);
 
-                    if (type == null || type.Contains(' '))
+                    var typeStr = type?.Renamed;
+
+                    if (typeStr == null || typeStr.Contains(' '))
                     {
                         if (enumsPass1.TryGetValue(name, out var pass1type))
                         {
@@ -850,35 +853,36 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         }
                         else
                         {
-                            type = name switch
+                            typeStr = name.Renamed switch
                             {
                                 "CL_CONTEXT_MEMORY_INITIALIZE_KHR" => "cl_context_properties",
                                 "CL_DEVICE_PARTITION_BY_NAMES_INTEL" => "cl_device_partition_property",
-                                _ => type
+                                _ => typeStr
                             };
 
-                            if (type?.Contains("cl_device_info ") == true) type = "cl_device_info";
-                            if (type == "Error codes" || type.StartsWith("Error type")) type = "ErrorCodes";
-                            if (type?.StartsWith("OpenCL ") == true && type.Contains("deprecated"))
+                            if (typeStr?.Contains("cl_device_info ") == true) typeStr = "cl_device_info";
+                            if (typeStr == "Error codes" || typeStr.StartsWith("Error type")) typeStr = "ErrorCodes";
+                            if (typeStr?.StartsWith("OpenCL ") == true && typeStr.Contains("deprecated"))
                             {
-                                var typeNameStart = type.IndexOf(' ', "OpenCL ".Length) + 1;
-                                var typeNameEnd = type.IndexOf(' ', typeNameStart + 1);
-                                type = type.Substring(typeNameStart, typeNameEnd - typeNameStart);
+                                var typeNameStart = typeStr.IndexOf(' ', "OpenCL ".Length) + 1;
+                                var typeNameEnd = typeStr.IndexOf(' ', typeNameStart + 1);
+                                typeStr = typeStr.Substring(typeNameStart, typeNameEnd - typeNameStart);
                             }
-                            if (type?.StartsWith("Command type ") == true) type = "cl_command_type";
-                            if (type?.StartsWith("cl_uint ") == true) type = type.Substring("cl_uint ".Length);
-                            if (type?.StartsWith("Additional ") == true) type = type.Substring("Additional ".Length);
+                            if (typeStr?.StartsWith("Command type ") == true) typeStr = "cl_command_type";
+                            if (typeStr?.StartsWith("cl_uint ") == true) typeStr = typeStr.Substring("cl_uint ".Length);
+                            if (typeStr?.StartsWith("Additional ") == true) typeStr = typeStr.Substring("Additional ".Length);
 
-                            if (type?.Contains(' ') == true)
+                            if (typeStr?.Contains(' ') == true)
                             {
-                                type = type.Substring(0, type.IndexOf(' '));
+                                typeStr = typeStr.Substring(0, typeStr.IndexOf(' '));
                             }
+
+                            type = new RenamedEntry(type?.Original, typeStr);
                         }
                     }
 
                     Debug.Assert(type != null);
 
-                    type = Rename(type, task);
                     AddEntry(type, name, enumEntries);
                     AddEntry(name, type, enumTypes);
                 });
@@ -893,7 +897,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 )
                 .ToDictionary
                 (
-                    x => Rename(x.Attribute("name").Value, task),
+                    x => Rename(x.Attribute("name").Value, task).Renamed,
                     x => FormatToken
                             (x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
                                 ? null
@@ -947,11 +951,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         (
                             token => new Token
                             {
-                                Attributes = GetTokenAttributes(token),
+                                Attributes = GetTokenAttributes(token.Renamed),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token, task), task.FunctionPrefix),
-                                NativeName = token,
-                                Value = enumValues[token]
+                                Name = Naming.Translate(TrimName(token.Renamed, task), task.FunctionPrefix),
+                                NativeName = token.Original,
+                                Value = enumValues[token.Renamed]
                             }
                         ).ToList();
 
@@ -990,7 +994,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 };
             }
 
-            var coreEnums = new HashSet<string>(registry
+            var coreEnums = new HashSet<RenamedEntry>(registry
                 .Elements("feature")
                 .Elements("require")
                 .Elements("enum")
@@ -1029,43 +1033,43 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     .Select(type => (type, e.Item2)))
                 .ToList();
 
-            var enumExtensions = new Dictionary<string, string>();
+            var enumExtensions = new Dictionary<RenamedEntry, RenamedEntry>();
 
             foreach (var enumExt in enumExtensionsByType.Concat(enumExtensionsInferred))
             {
-                enumExtensions.TryAdd(enumExt.Item1, enumExt.Item2);
+                enumExtensions.TryAdd(enumExt.Item1, Rename(enumExt.Item2, task));
             }
 
             foreach (var group in enumEntries)
             {
                 var tokens = group.Value.Select(name =>
                 {
-                    var value = enumValues[name];
+                    var value = enumValues[name.Renamed];
                     return new Token
                     {
-                        Attributes = GetTokenAttributes(name),
+                        Attributes = GetTokenAttributes(name.Renamed),
                         Doc = string.Empty,
-                        Name = Naming.Translate(TrimName(name, task), task.FunctionPrefix),
-                        NativeName = name,
+                        Name = Naming.Translate(TrimName(name.Renamed, task), task.FunctionPrefix),
+                        NativeName = name.Original,
                         Value = value
                     };
                 }).ToList();
 
-                var groupName = Naming.Translate(TrimName(group.Key, task), task.FunctionPrefix);
-                var is64bit = ulongEnums.Contains(group.Key);
+                var groupName = Naming.Translate(TrimName(group.Key.Renamed, task), task.FunctionPrefix);
+                var is64bit = ulongEnums.Contains(group.Key.Renamed);
 
 
                 string extTag = "";
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
-                    extTag = extName.Substring(0, extName.IndexOf('_'));
+                    extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
                 }
                 else
                 {
-                    extName = "Core (Grouped)";
+                    extName = new RenamedEntry("Core (Grouped)", "Core (Grouped)");
                 }
 
-                RenameTokens(tokens, group.Key, extTag, task);
+                RenameTokens(tokens, group.Key.Renamed, extTag, task);
 
                 foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
@@ -1075,9 +1079,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     var ret = new Enum
                     {
                         Name = groupName,
-                        NativeName = group.Key,
-                        Attributes = GetEnumAttributes(group.Key),
-                        ExtensionName = extName,
+                        NativeName = group.Key.Original,
+                        Attributes = GetEnumAttributes(group.Key.Renamed),
+                        ExtensionName = extName.Renamed,
                         ProfileName = apiName,
                         ProfileVersion = Version.Parse(apiVersion),
                         Tokens = tokens,
@@ -1127,11 +1131,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var prefix = "";
             if (list.Count == 1)
             {
-                prefix = FindCommonPrefix(new List<string> { list[0].NativeName, groupName }, true);
+                prefix = FindCommonPrefix(new List<string> { Rename(list[0].NativeName, task).Renamed, groupName }, true);
             }
             else
             {
-                prefix = FindCommonPrefix(list.Select(x => x.NativeName).ToList(), false);
+                prefix = FindCommonPrefix(list.Select(x => Rename(x.NativeName, task).Renamed).ToList(), false);
             }
 
             string suffix = "";
@@ -1155,17 +1159,22 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             foreach (var token in list)
             {
-                token.Name = Naming.Translate(TrimTag(token.NativeName.Substring(prefix.Length)), task.FunctionPrefix);
+                token.Name = Naming.Translate(TrimTag(Rename(token.NativeName, task).Renamed.Substring(prefix.Length)), task.FunctionPrefix);
             }
         }
 
-        private static string Rename(string origName, BindTask task)
+        private static RenamedEntry Rename(string origName, BindTask task)
         {
+            if (origName == null)
+            {
+                return null;
+            }
+
             if (task.RenamedNativeNames.TryGetValue(origName, out var renamed))
             {
-                return renamed;
+                return new RenamedEntry(origName, renamed);
             }
-            return origName;
+            return new RenamedEntry(origName, origName);
         }
 
         private string GetDeprecatedIn(string msg)
@@ -1175,7 +1184,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private static string ExtensionName(string ext, BindTask task)
         {
-            ext = Rename(ext, task);
+            ext = Rename(ext, task).Renamed;
 
             var trimmedExt = TrimName(ext, task);
             var splitTrimmed = trimmedExt.Split('_');
@@ -1192,7 +1201,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
 
-            var constants = new List<(string, string)>(registry
+            var constants = new List<(RenamedEntry, string)>(registry
                 .Elements("enums")
                 .Where(x => x.Attribute("name").Value.StartsWith("Constants") || 
                             x.Attribute("name").Value == "MiscNumbers")
@@ -1203,9 +1212,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             (
                 x =>
                 {
-                    var type = GetConstType(x.Item1);
-                    var value = GetConstValue(x.Item1, x.Item2, type);
-                    if (Constants.TryGetValue(x.Item1, out var t))
+                    var type = GetConstType(x.Item1.Renamed);
+                    var value = GetConstValue(x.Item1.Renamed, x.Item2, type);
+                    if (Constants.TryGetValue(x.Item1.Renamed, out var t))
                     {
                         value = t.value;
                         type = t.type;
@@ -1213,8 +1222,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                     return new Constant
                     {
-                        Name = Naming.Translate(TrimName(x.Item1, task), task.FunctionPrefix),
-                        NativeName = x.Item1,
+                        Name = Naming.Translate(TrimName(x.Item1.Renamed, task), task.FunctionPrefix),
+                        NativeName = x.Item1.Original,
                         Type = new Type { Name = type },
                         Value = value
                     };
@@ -1289,6 +1298,47 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var valueString = $"0x{value:X}";
 
             return valueString;
+        }
+
+        class RenamedEntry
+        {
+            public string Original { get; }
+            public string Renamed { get; }
+
+            public RenamedEntry(string origName, string renamed)
+            {
+                Renamed = renamed;
+                Original = origName;
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (ReferenceEquals(this, obj)) 
+                    return true;
+
+                if(obj is RenamedEntry r)
+                {
+                    return string.Equals(Renamed, r?.Renamed);
+                }
+                if(obj is string s)
+                {
+                    return string.Equals(Renamed, s);
+                }
+                return false;
+            }
+
+            public override int GetHashCode()
+            {
+                return Renamed.GetHashCode();
+            }
+
+            public override string ToString()
+            {
+                if(string.Equals(Original, Renamed))
+                    return Renamed;
+
+                return $"{Renamed} (renamed from {Original})";
+            }
         }
     }
 }
