@@ -13,9 +13,9 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum ARM : int
     {
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
-        PrintfCallbackArm = 0x40B0,
+        ContextPrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
-        PrintfBuffersizeArm = 0x40B1,
+        ContextPrintfBuffersizeArm = 0x40B1,
         [NativeName("Name", "CL_IMPORT_TYPE_ARM")]
         ImportTypeArm = 0x40B2,
         [NativeName("Name", "CL_IMPORT_TYPE_HOST_ARM")]

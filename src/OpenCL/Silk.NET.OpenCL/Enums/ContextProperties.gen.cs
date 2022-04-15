@@ -13,27 +13,27 @@ namespace Silk.NET.OpenCL
     public enum ContextProperties : int
     {
         [NativeName("Name", "CL_CONTEXT_PLATFORM")]
-        ContextPlatform = 0x1084,
+        Platform = 0x1084,
         [NativeName("Name", "CL_CONTEXT_INTEROP_USER_SYNC")]
-        ContextInteropUserSync = 0x1085,
+        InteropUserSync = 0x1085,
         [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
-        ContextMemoryInitializeKhr = 0x2030,
+        MemoryInitializeKhr = 0x2030,
         [NativeName("Name", "CL_CONTEXT_TERMINATE_KHR")]
-        ContextTerminateKhr = 0x2032,
+        TerminateKhr = 0x2032,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
-        ContextShowDiagnosticsIntel = 0x4106,
+        ShowDiagnosticsIntel = 0x4106,
         [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
-        ContextDiagnosticsLevelAllIntel = 0xFF,
+        DiagnosticsLevelAllIntel = 0xFF,
         [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
-        ContextDiagnosticsLevelGoodIntel = 0x1,
+        DiagnosticsLevelGoodIntel = 0x1,
         [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
-        ContextDiagnosticsLevelBadIntel = 0x2,
+        DiagnosticsLevelBadIntel = 0x2,
         [NativeName("Name", "CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
-        ContextDiagnosticsLevelNeutralIntel = 0x4,
+        DiagnosticsLevelNeutralIntel = 0x4,
         [NativeName("Name", "CL_GL_CONTEXT_KHR")]
         GLContextKhr = 0x2008,
         [NativeName("Name", "CL_EGL_DISPLAY_KHR")]
