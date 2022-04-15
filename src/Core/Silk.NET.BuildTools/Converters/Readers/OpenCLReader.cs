@@ -1104,63 +1104,16 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
-        private string FindCommonPrefix(List<string> names, bool containsTypeName)
-        {
-            var commonPrefixFirstPass = FindCommonPrefix(names, containsTypeName, names.Max(x => x.Length));
-            var tgtPos = commonPrefixFirstPass.Length;
-
-            var startingWithDigit = names.Where(n => n.Length > tgtPos && char.IsDigit(n[tgtPos]));
-            if (startingWithDigit.Any())
-            {
-                return FindCommonPrefix(names, containsTypeName, tgtPos - 1);
-            }
-
-            return commonPrefixFirstPass;
-        }
-
-        private string FindCommonPrefix(List<string> names, bool containsTypeName, int maxPos)
-        {
-            var pos = 0;
-            var foundPrefix = "";
-            var minLen = names.Min(x => x.Length);
-            while (true)
-            {
-                pos++;
-                if (pos > names[0].Length)
-                {
-                    throw new InvalidDataException();
-                }
-                var prefix = names[0].Substring(0, pos);
-                foreach (var name in names.Skip(1))
-                {
-                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) || pos >= maxPos)
-                    {
-                        if (!foundPrefix.Contains('_'))
-                        {
-                            return "";
-                        }
-
-                        if(foundPrefix.Length == minLen && containsTypeName)
-                        {
-                            return foundPrefix;
-                        }
-                        return foundPrefix.Substring(0, foundPrefix.LastIndexOf('_') + 1);
-                    }
-                }
-                foundPrefix = prefix;
-            }
-        }
-
         private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
         {
             var prefix = "";
             if (list.Count == 1)
             {
-                prefix = FindCommonPrefix(new List<string> { Rename(list[0].NativeName, task).Renamed, groupName }, true);
+                prefix = Utilities.FindCommonPrefix(new List<string> { Rename(list[0].NativeName, task).Renamed, groupName }, true, false);
             }
             else
             {
-                prefix = FindCommonPrefix(list.Select(x => Rename(x.NativeName, task).Renamed).ToList(), false);
+                prefix = Utilities.FindCommonPrefix(list.Select(x => Rename(x.NativeName, task).Renamed).ToList(), false, false);
             }
 
             string suffix = "";

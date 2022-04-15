@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -441,5 +441,75 @@ namespace Silk.NET.BuildTools.Common
             "LPWSTR" or "LPCWSTR" => "Silk.NET.Core.Native.UnmanagedType.LPWStr",
             _ => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str"
         };
+
+        /// <summary>
+        /// Finds a common prefix in a set of names with respect to the word boundaries
+        /// </summary>
+        /// <param name="names">Set of names, snake_case</param>
+        /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+        /// <param name="allowLeadingDigits">Allows remainder tokens to start with a digit</param>
+        /// <returns>String that is common between all provided names</returns>
+        public static string FindCommonPrefix(List<string> names, bool allowFullMatch, bool allowLeadingDigits)
+        {
+            var commonPrefixFirstPass = FindCommonPrefix(names, allowFullMatch, names.Max(x => x.Length));
+            if (allowLeadingDigits)
+            {
+                return commonPrefixFirstPass;
+            }
+
+            var tgtPos = commonPrefixFirstPass.Length;
+
+            var startingWithDigit = names.Where(n => n.Length > tgtPos && char.IsDigit(n[tgtPos]));
+            if (startingWithDigit.Any())
+            {
+                return FindCommonPrefix(names, allowFullMatch, tgtPos - 1);
+            }
+
+            return commonPrefixFirstPass;
+        }
+
+        /// <summary>
+        /// Finds a common prefix in a set of names with respect to the word boundaries
+        /// </summary>
+        /// <param name="names">Set of names, snake_case</param>
+        /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+        /// <param name="maxLen">Match length limit</param>
+        /// <returns>String that is common between all provided names</returns>
+        public static string FindCommonPrefix(List<string> names, bool allowFullMatch, int maxLen)
+        {
+            var pos = 0;
+            var foundPrefix = "";
+            var minLen = names.Min(x => x.Length);
+            var found = false;
+            while (!found)
+            {
+                pos++;
+                if (pos >= maxLen || pos > names[0].Length)
+                {
+                    break;
+                }
+                var prefix = names[0].Substring(0, pos);
+                foreach (var name in names.Skip(1))
+                {
+                    if (!name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                foundPrefix = prefix;
+            }
+
+            if (!foundPrefix.Contains('_'))
+            {
+                return "";
+            }
+
+            if (foundPrefix.Length == minLen && allowFullMatch)
+            {
+                return foundPrefix;
+            }
+            return foundPrefix.Substring(0, foundPrefix.LastIndexOf('_') + 1);
+        }
     }
 }
