@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL
     public enum FilterMode : int
     {
         [NativeName("Name", "CL_FILTER_NEAREST")]
-        FilterNearest = 0x1140,
+        Nearest = 0x1140,
         [NativeName("Name", "CL_FILTER_LINEAR")]
-        FilterLinear = 0x1141,
+        Linear = 0x1141,
     }
 }

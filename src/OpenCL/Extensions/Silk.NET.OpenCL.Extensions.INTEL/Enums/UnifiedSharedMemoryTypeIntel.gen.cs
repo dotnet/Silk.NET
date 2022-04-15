@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum UnifiedSharedMemoryTypeIntel : int
     {
         [NativeName("Name", "CL_MEM_TYPE_UNKNOWN_INTEL")]
-        MemTypeUnknownIntel = 0x4196,
+        Unknown = 0x4196,
         [NativeName("Name", "CL_MEM_TYPE_HOST_INTEL")]
-        MemTypeHostIntel = 0x4197,
+        Host = 0x4197,
         [NativeName("Name", "CL_MEM_TYPE_DEVICE_INTEL")]
-        MemTypeDeviceIntel = 0x4198,
+        Device = 0x4198,
         [NativeName("Name", "CL_MEM_TYPE_SHARED_INTEL")]
-        MemTypeSharedIntel = 0x4199,
+        Shared = 0x4199,
     }
 }

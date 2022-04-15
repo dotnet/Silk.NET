@@ -14,16 +14,16 @@ namespace Silk.NET.OpenCL
     public enum DeviceAffinityDomain : ulong
     {
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
-        DeviceAffinityDomainNuma = 0x1,
+        Numa = 0x1,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L4_CACHE")]
-        DeviceAffinityDomainL4Cache = 0x2,
+        L4Cache = 0x2,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L3_CACHE")]
-        DeviceAffinityDomainL3Cache = 0x4,
+        L3Cache = 0x4,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L2_CACHE")]
-        DeviceAffinityDomainL2Cache = 0x8,
+        L2Cache = 0x8,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L1_CACHE")]
-        DeviceAffinityDomainL1Cache = 0x10,
+        L1Cache = 0x10,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NEXT_PARTITIONABLE")]
-        DeviceAffinityDomainNextPartitionable = 0x20,
+        NextPartitionable = 0x20,
     }
 }

@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum VaApiDeviceSourceIntel : int
     {
         [NativeName("Name", "CL_VA_API_DISPLAY_INTEL")]
-        VAApiDisplayIntel = 0x4094,
+        Display = 0x4094,
     }
 }

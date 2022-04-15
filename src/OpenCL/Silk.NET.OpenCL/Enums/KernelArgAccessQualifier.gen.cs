@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL
     public enum KernelArgAccessQualifier : int
     {
         [NativeName("Name", "CL_KERNEL_ARG_ACCESS_READ_ONLY")]
-        KernelArgAccessReadOnly = 0x11A0,
+        ReadOnly = 0x11A0,
         [NativeName("Name", "CL_KERNEL_ARG_ACCESS_WRITE_ONLY")]
-        KernelArgAccessWriteOnly = 0x11A1,
+        WriteOnly = 0x11A1,
         [NativeName("Name", "CL_KERNEL_ARG_ACCESS_READ_WRITE")]
-        KernelArgAccessReadWrite = 0x11A2,
+        ReadWrite = 0x11A2,
         [NativeName("Name", "CL_KERNEL_ARG_ACCESS_NONE")]
-        KernelArgAccessNone = 0x11A3,
+        None = 0x11A3,
     }
 }

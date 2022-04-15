@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationWeight : int
     {
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_QUARTER_INTEL")]
-        AvcMEBidirWeightQuarterIntel = 0x10,
+        Quarter = 0x10,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_THIRD_INTEL")]
-        AvcMEBidirWeightThirdIntel = 0x15,
+        Third = 0x15,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_HALF_INTEL")]
-        AvcMEBidirWeightHalfIntel = 0x20,
+        Half = 0x20,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_TWO_THIRD_INTEL")]
-        AvcMEBidirWeightTwoThirdIntel = 0x2B,
+        TwoThird = 0x2B,
         [NativeName("Name", "CL_AVC_ME_BIDIR_WEIGHT_THREE_QUARTER_INTEL")]
-        AvcMEBidirWeightThreeQuarterIntel = 0x30,
+        ThreeQuarter = 0x30,
     }
 }

@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
     public enum HostCachePolicy : int
     {
         [NativeName("Name", "CL_MEM_HOST_UNCACHED_QCOM")]
-        MemHostUncachedQCom = 0x40A4,
+        Uncached = 0x40A4,
         [NativeName("Name", "CL_MEM_HOST_WRITEBACK_QCOM")]
-        MemHostWritebackQCom = 0x40A5,
+        Writeback = 0x40A5,
         [NativeName("Name", "CL_MEM_HOST_WRITETHROUGH_QCOM")]
-        MemHostWritethroughQCom = 0x40A6,
+        Writethrough = 0x40A6,
         [NativeName("Name", "CL_MEM_HOST_WRITE_COMBINING_QCOM")]
-        MemHostWriteCombiningQCom = 0x40A7,
+        WriteCombining = 0x40A7,
         [NativeName("Name", "CL_MEM_HOST_IOCOHERENT_QCOM")]
-        MemHostIocoherentQCom = 0x40A9,
+        Iocoherent = 0x40A9,
     }
 }

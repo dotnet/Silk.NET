@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum KernelExecInfoArm : int
     {
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_PTRS_ARM")]
-        KernelExecInfoSvmPtrsArm = 0x40B8,
+        Ptrs = 0x40B8,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_FINE_GRAIN_SYSTEM_ARM")]
-        KernelExecInfoSvmFineGrainSystemArm = 0x40B9,
+        FineGrainSystem = 0x40B9,
     }
 }

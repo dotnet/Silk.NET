@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
     public enum AllocationType : int
     {
         [NativeName("Name", "CL_MEM_ION_HOST_PTR_QCOM")]
-        MemIonHostPtrQCom = 0x40A8,
+        IonHostPtr = 0x40A8,
         [NativeName("Name", "CL_MEM_ANDROID_NATIVE_BUFFER_HOST_PTR_QCOM")]
-        MemAndroidNativeBufferHostPtrQCom = 0x40C6,
+        AndroidNativeBufferHostPtr = 0x40C6,
     }
 }

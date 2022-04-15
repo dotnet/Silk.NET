@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum SemaphoreType : int
     {
         [NativeName("Name", "CL_SEMAPHORE_TYPE_BINARY_KHR")]
-        SemaphoreTypeBinaryKhr = 0x1,
+        Binary = 0x1,
     }
 }

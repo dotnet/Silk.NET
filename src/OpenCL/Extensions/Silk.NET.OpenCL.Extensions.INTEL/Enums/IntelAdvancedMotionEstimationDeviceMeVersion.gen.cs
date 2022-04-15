@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationDeviceMeVersion : int
     {
         [NativeName("Name", "CL_ME_VERSION_LEGACY_INTEL")]
-        MEVersionLegacyIntel = 0x0,
+        Legacy = 0x0,
         [NativeName("Name", "CL_ME_VERSION_ADVANCED_VER_1_INTEL")]
-        MEVersionAdvancedVer1Intel = 0x1,
+        AdvancedVer1 = 0x1,
         [NativeName("Name", "CL_ME_VERSION_ADVANCED_VER_2_INTEL")]
-        MEVersionAdvancedVer2Intel = 0x2,
+        AdvancedVer2 = 0x2,
     }
 }

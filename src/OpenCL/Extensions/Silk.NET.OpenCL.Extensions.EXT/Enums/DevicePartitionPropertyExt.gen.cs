@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     public enum DevicePartitionPropertyExt : int
     {
         [NativeName("Name", "CL_DEVICE_PARTITION_EQUALLY_EXT")]
-        DevicePartitionEquallyExt = 0x4050,
+        Equally = 0x4050,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS_EXT")]
-        DevicePartitionByCountsExt = 0x4051,
+        ByCounts = 0x4051,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_EXT")]
-        DevicePartitionByNamesExt = 0x4052,
+        ByNames = 0x4052,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN_EXT")]
-        DevicePartitionByAffinityDomainExt = 0x4053,
+        ByAffinityDomain = 0x4053,
     }
 }

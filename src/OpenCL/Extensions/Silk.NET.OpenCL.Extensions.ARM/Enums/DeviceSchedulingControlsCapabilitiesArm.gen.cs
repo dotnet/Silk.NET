@@ -14,14 +14,14 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum DeviceSchedulingControlsCapabilitiesArm : ulong
     {
         [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
-        DeviceSchedulingKernelBatchingArm = 0x1,
+        KernelBatching = 0x1,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]
-        DeviceSchedulingWorkgroupBatchSizeArm = 0x2,
+        WorkgroupBatchSize = 0x2,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
-        DeviceSchedulingWorkgroupBatchSizeModifierArm = 0x4,
+        WorkgroupBatchSizeModifier = 0x4,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_DEFERRED_FLUSH_ARM")]
-        DeviceSchedulingDeferredFlushArm = 0x8,
+        DeferredFlush = 0x8,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
-        DeviceSchedulingRegisterAllocationArm = 0x10,
+        RegisterAllocation = 0x10,
     }
 }

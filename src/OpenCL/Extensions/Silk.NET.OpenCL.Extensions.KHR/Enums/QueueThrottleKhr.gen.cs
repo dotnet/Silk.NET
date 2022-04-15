@@ -14,10 +14,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum QueueThrottleKhr : int
     {
         [NativeName("Name", "CL_QUEUE_THROTTLE_HIGH_KHR")]
-        QueueThrottleHighKhr = 0x1,
+        High = 0x1,
         [NativeName("Name", "CL_QUEUE_THROTTLE_MED_KHR")]
-        QueueThrottleMedKhr = 0x2,
+        Med = 0x2,
         [NativeName("Name", "CL_QUEUE_THROTTLE_LOW_KHR")]
-        QueueThrottleLowKhr = 0x4,
+        Low = 0x4,
     }
 }

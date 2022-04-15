@@ -14,8 +14,8 @@ namespace Silk.NET.OpenCL
     public enum MemMigrationFlags : ulong
     {
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST")]
-        MigrateMemObjectHost = 0x1,
+        Host = 0x1,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
-        MigrateMemObjectContentUndefined = 0x2,
+        ContentUndefined = 0x2,
     }
 }

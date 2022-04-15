@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum AcceleratorTypeIntel : int
     {
         [NativeName("Name", "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
-        AcceleratorTypeMotionEstimationIntel = 0x0,
+        MotionEstimation = 0x0,
     }
 }

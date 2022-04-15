@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum GlTextureInfo : int
     {
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]
-        GLNumSamples = 0x2012,
+        NumSamples = 0x2012,
         [NativeName("Name", "CL_GL_TEXTURE_TARGET")]
-        GLTextureTarget = 0x2004,
+        TextureTarget = 0x2004,
         [NativeName("Name", "CL_GL_MIPMAP_LEVEL")]
-        GLMipmapLevel = 0x2005,
+        MipmapLevel = 0x2005,
     }
 }

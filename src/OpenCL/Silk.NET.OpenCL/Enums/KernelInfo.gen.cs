@@ -13,16 +13,16 @@ namespace Silk.NET.OpenCL
     public enum KernelInfo : int
     {
         [NativeName("Name", "CL_KERNEL_FUNCTION_NAME")]
-        KernelFunctionName = 0x1190,
+        FunctionName = 0x1190,
         [NativeName("Name", "CL_KERNEL_NUM_ARGS")]
-        KernelNumArgs = 0x1191,
+        NumArgs = 0x1191,
         [NativeName("Name", "CL_KERNEL_REFERENCE_COUNT")]
-        KernelReferenceCount = 0x1192,
+        ReferenceCount = 0x1192,
         [NativeName("Name", "CL_KERNEL_CONTEXT")]
-        KernelContext = 0x1193,
+        Context = 0x1193,
         [NativeName("Name", "CL_KERNEL_PROGRAM")]
-        KernelProgram = 0x1194,
+        Program = 0x1194,
         [NativeName("Name", "CL_KERNEL_ATTRIBUTES")]
-        KernelAttributes = 0x1195,
+        Attributes = 0x1195,
     }
 }

@@ -13,16 +13,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum QueueProperties : int
     {
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        QueuePriorityKhr = 0x1096,
+        Priority = 0x1096,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        QueueThrottleKhr = 0x1097,
+        Throttle = 0x1097,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
-        QueueKernelBatchingArm = 0x41E7,
+        KernelBatchingArm = 0x41E7,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
-        QueueDeferredFlushArm = 0x41EC,
+        DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
-        QueueFamilyIntel = 0x418C,
+        FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
-        QueueIndexIntel = 0x418D,
+        IndexIntel = 0x418D,
     }
 }

@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationClMotionDetectDescIntel2 : int
     {
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_QUARTER_INTEL")]
-        MEBidirWeightQuarterIntel = 0x16,
+        Quarter = 0x16,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_THIRD_INTEL")]
-        MEBidirWeightThirdIntel = 0x21,
+        Third = 0x21,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_HALF_INTEL")]
-        MEBidirWeightHalfIntel = 0x32,
+        Half = 0x32,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_TWO_THIRD_INTEL")]
-        MEBidirWeightTwoThirdIntel = 0x43,
+        TwoThird = 0x43,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_THREE_QUARTER_INTEL")]
-        MEBidirWeightThreeQuarterIntel = 0x48,
+        ThreeQuarter = 0x48,
     }
 }

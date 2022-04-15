@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL
     public enum KernelArgInfo : int
     {
         [NativeName("Name", "CL_KERNEL_ARG_ADDRESS_QUALIFIER")]
-        KernelArgAddressQualifier = 0x1196,
+        AddressQualifier = 0x1196,
         [NativeName("Name", "CL_KERNEL_ARG_ACCESS_QUALIFIER")]
-        KernelArgAccessQualifier = 0x1197,
+        AccessQualifier = 0x1197,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_NAME")]
-        KernelArgTypeName = 0x1198,
+        TypeName = 0x1198,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_QUALIFIER")]
-        KernelArgTypeQualifier = 0x1199,
+        TypeQualifier = 0x1199,
         [NativeName("Name", "CL_KERNEL_ARG_NAME")]
-        KernelArgName = 0x119A,
+        Name = 0x119A,
     }
 }

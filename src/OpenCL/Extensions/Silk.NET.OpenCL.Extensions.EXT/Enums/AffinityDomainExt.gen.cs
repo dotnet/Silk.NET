@@ -13,16 +13,16 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     public enum AffinityDomainExt : int
     {
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L1_CACHE_EXT")]
-        AffinityDomainL1CacheExt = 0x1,
+        L1Cache = 0x1,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L2_CACHE_EXT")]
-        AffinityDomainL2CacheExt = 0x2,
+        L2Cache = 0x2,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L3_CACHE_EXT")]
-        AffinityDomainL3CacheExt = 0x3,
+        L3Cache = 0x3,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L4_CACHE_EXT")]
-        AffinityDomainL4CacheExt = 0x4,
+        L4Cache = 0x4,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_NUMA_EXT")]
-        AffinityDomainNumaExt = 0x10,
+        Numa = 0x10,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT")]
-        AffinityDomainNextFissionableExt = 0x100,
+        NextFissionable = 0x100,
     }
 }

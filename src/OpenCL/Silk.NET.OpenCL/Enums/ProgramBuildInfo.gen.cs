@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL
     public enum ProgramBuildInfo : int
     {
         [NativeName("Name", "CL_PROGRAM_BUILD_STATUS")]
-        ProgramBuildStatus = 0x1181,
+        BuildStatus = 0x1181,
         [NativeName("Name", "CL_PROGRAM_BUILD_OPTIONS")]
-        ProgramBuildOptions = 0x1182,
+        BuildOptions = 0x1182,
         [NativeName("Name", "CL_PROGRAM_BUILD_LOG")]
-        ProgramBuildLog = 0x1183,
+        BuildLog = 0x1183,
         [NativeName("Name", "CL_PROGRAM_BINARY_TYPE")]
-        ProgramBinaryType = 0x1184,
+        BinaryType = 0x1184,
         [NativeName("Name", "CL_PROGRAM_BUILD_GLOBAL_VARIABLE_TOTAL_SIZE")]
-        ProgramBuildGlobalVariableTotalSize = 0x1185,
+        BuildGlobalVariableTotalSize = 0x1185,
     }
 }

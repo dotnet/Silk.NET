@@ -13,7 +13,7 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     public enum MemProperties : int
     {
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
-        MemAllocFlagsImg = 0x40D7,
+        MemAllocFlags = 0x40D7,
         [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
     }

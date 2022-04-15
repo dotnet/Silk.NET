@@ -14,12 +14,12 @@ namespace Silk.NET.OpenCL
     public enum DeviceSvmCapabilities : ulong
     {
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER")]
-        DeviceSvmCoarseGrainBuffer = 0x1,
+        CoarseGrainBuffer = 0x1,
         [NativeName("Name", "CL_DEVICE_SVM_FINE_GRAIN_BUFFER")]
-        DeviceSvmFineGrainBuffer = 0x2,
+        FineGrainBuffer = 0x2,
         [NativeName("Name", "CL_DEVICE_SVM_FINE_GRAIN_SYSTEM")]
-        DeviceSvmFineGrainSystem = 0x4,
+        FineGrainSystem = 0x4,
         [NativeName("Name", "CL_DEVICE_SVM_ATOMICS")]
-        DeviceSvmAtomics = 0x8,
+        Atomics = 0x8,
     }
 }

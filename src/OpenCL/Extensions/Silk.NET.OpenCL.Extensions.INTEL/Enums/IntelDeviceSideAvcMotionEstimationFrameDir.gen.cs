@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationFrameDir : int
     {
         [NativeName("Name", "CL_AVC_ME_FRAME_FORWARD_INTEL")]
-        AvcMEFrameForwardIntel = 0x1,
+        Forward = 0x1,
         [NativeName("Name", "CL_AVC_ME_FRAME_BACKWARD_INTEL")]
-        AvcMEFrameBackwardIntel = 0x2,
+        Backward = 0x2,
         [NativeName("Name", "CL_AVC_ME_FRAME_DUAL_INTEL")]
-        AvcMEFrameDualIntel = 0x3,
+        Dual = 0x3,
     }
 }

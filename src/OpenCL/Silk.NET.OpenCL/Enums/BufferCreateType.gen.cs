@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL
     public enum BufferCreateType : int
     {
         [NativeName("Name", "CL_BUFFER_CREATE_TYPE_REGION")]
-        BufferCreateTypeRegion = 0x1220,
+        Region = 0x1220,
     }
 }

@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum MemAllocInfoIntel : int
     {
         [NativeName("Name", "CL_MEM_ALLOC_TYPE_INTEL")]
-        MemAllocTypeIntel = 0x419A,
+        Type = 0x419A,
         [NativeName("Name", "CL_MEM_ALLOC_BASE_PTR_INTEL")]
-        MemAllocBasePtrIntel = 0x419B,
+        BasePtr = 0x419B,
         [NativeName("Name", "CL_MEM_ALLOC_SIZE_INTEL")]
-        MemAllocSizeIntel = 0x419C,
+        Size = 0x419C,
         [NativeName("Name", "CL_MEM_ALLOC_DEVICE_INTEL")]
-        MemAllocDeviceIntel = 0x419D,
+        Device = 0x419D,
         [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
-        MemAllocBufferLocationIntel = 0x419E,
+        BufferLocation = 0x419E,
     }
 }

@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     public enum MipmapFilterModeImg : int
     {
         [NativeName("Name", "CL_MIPMAP_FILTER_ANY_IMG")]
-        MipmapFilterAnyImg = 0x0,
+        Any = 0x0,
         [NativeName("Name", "CL_MIPMAP_FILTER_BOX_IMG")]
-        MipmapFilterBoxImg = 0x1,
+        Box = 0x1,
     }
 }

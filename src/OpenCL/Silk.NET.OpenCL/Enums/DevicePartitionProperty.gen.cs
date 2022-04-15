@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL
     public enum DevicePartitionProperty : int
     {
         [NativeName("Name", "CL_DEVICE_PARTITION_EQUALLY")]
-        DevicePartitionEqually = 0x1086,
+        Equally = 0x1086,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS")]
-        DevicePartitionByCounts = 0x1087,
+        ByCounts = 0x1087,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN")]
-        DevicePartitionByAffinityDomain = 0x1088,
+        ByAffinityDomain = 0x1088,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
-        DevicePartitionByNamesIntel = 0x4052,
+        ByNamesIntel = 0x4052,
     }
 }

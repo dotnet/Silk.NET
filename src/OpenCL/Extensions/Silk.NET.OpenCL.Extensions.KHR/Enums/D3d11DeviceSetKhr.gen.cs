@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum D3d11DeviceSetKhr : int
     {
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_D3D11_KHR")]
-        PreferredDevicesForD3D11Khr = 0x401B,
+        PreferredDevicesForD3D11 = 0x401B,
         [NativeName("Name", "CL_ALL_DEVICES_FOR_D3D11_KHR")]
-        AllDevicesForD3D11Khr = 0x401C,
+        AllDevicesForD3D11 = 0x401C,
     }
 }

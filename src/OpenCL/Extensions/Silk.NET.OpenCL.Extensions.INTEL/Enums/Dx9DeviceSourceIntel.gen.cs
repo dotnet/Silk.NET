@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum Dx9DeviceSourceIntel : int
     {
         [NativeName("Name", "CL_D3D9_DEVICE_INTEL")]
-        D3D9DeviceIntel = 0x4022,
+        D3D9Device = 0x4022,
         [NativeName("Name", "CL_D3D9EX_DEVICE_INTEL")]
-        D3D9EXDeviceIntel = 0x4070,
+        D3D9EXDevice = 0x4070,
         [NativeName("Name", "CL_DXVA_DEVICE_INTEL")]
-        DxvaDeviceIntel = 0x4071,
+        DxvaDevice = 0x4071,
     }
 }

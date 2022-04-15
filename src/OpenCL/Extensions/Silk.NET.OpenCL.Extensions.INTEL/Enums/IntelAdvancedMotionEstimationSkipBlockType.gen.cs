@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationSkipBlockType : int
     {
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_16x16_INTEL")]
-        MESkipBlockType16x16Intel = 0x0,
+        Cl16x16 = 0x0,
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_8x8_INTEL")]
-        MESkipBlockType8x8Intel = 0x1,
+        Cl8x8 = 0x1,
     }
 }

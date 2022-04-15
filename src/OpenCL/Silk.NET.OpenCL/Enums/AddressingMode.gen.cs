@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL
     public enum AddressingMode : int
     {
         [NativeName("Name", "CL_ADDRESS_NONE")]
-        AddressNone = 0x1130,
+        None = 0x1130,
         [NativeName("Name", "CL_ADDRESS_CLAMP_TO_EDGE")]
-        AddressClampToEdge = 0x1131,
+        ClampToEdge = 0x1131,
         [NativeName("Name", "CL_ADDRESS_CLAMP")]
-        AddressClamp = 0x1132,
+        Clamp = 0x1132,
         [NativeName("Name", "CL_ADDRESS_REPEAT")]
-        AddressRepeat = 0x1133,
+        Repeat = 0x1133,
         [NativeName("Name", "CL_ADDRESS_MIRRORED_REPEAT")]
-        AddressMirroredRepeat = 0x1134,
+        MirroredRepeat = 0x1134,
     }
 }

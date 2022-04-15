@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum SvmMemFlagsArm : ulong
     {
         [NativeName("Name", "CL_MEM_SVM_FINE_GRAIN_BUFFER_ARM")]
-        MemSvmFineGrainBufferArm = 0x400,
+        FineGrainBuffer = 0x400,
         [NativeName("Name", "CL_MEM_SVM_ATOMICS_ARM")]
-        MemSvmAtomicsArm = 0x800,
+        Atomics = 0x800,
     }
 }

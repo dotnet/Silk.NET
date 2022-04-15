@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationSkipBlockBased : int
     {
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_4x4_INTEL")]
-        AvcMEBlockBasedSkip4x4Intel = 0x0,
+        Cl4x4 = 0x0,
         [NativeName("Name", "CL_AVC_ME_BLOCK_BASED_SKIP_8x8_INTEL")]
-        AvcMEBlockBasedSkip8x8Intel = 0x80,
+        Cl8x8 = 0x80,
     }
 }

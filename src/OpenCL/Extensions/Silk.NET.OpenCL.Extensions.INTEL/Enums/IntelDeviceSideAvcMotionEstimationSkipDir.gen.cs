@@ -13,32 +13,32 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationSkipDir : int
     {
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock16x16ForwardEnableIntel = 0x1000000,
+        Cl16x16ForwardEnable = 0x1000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock16x16BackwardEnableIntel = 0x2000000,
+        Cl16x16BackwardEnable = 0x2000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_16x16_DUAL_ENABLE_INTEL")]
-        AvcMESkipBlock16x16DualEnableIntel = 0x3000000,
+        Cl16x16DualEnable = 0x3000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x8ForwardEnableIntel = 0x55000000,
+        Cl8x8ForwardEnable = 0x55000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x8BackwardEnableIntel = unchecked((int) 0xAA000000),
+        Cl8x8BackwardEnable = unchecked((int) 0xAA000000),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_DUAL_ENABLE_INTEL")]
-        AvcMESkipBlock8x8DualEnableIntel = unchecked((int) 0xFF000000),
+        Cl8x8DualEnable = unchecked((int) 0xFF000000),
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x80ForwardEnableIntel = 0x1000000,
+        Cl8x80ForwardEnable = 0x1000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_0_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x80BackwardEnableIntel = 0x2000000,
+        Cl8x80BackwardEnable = 0x2000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_1_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x81ForwardEnableIntel = 0x4000000,
+        Cl8x81ForwardEnable = 0x4000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_1_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x81BackwardEnableIntel = 0x8000000,
+        Cl8x81BackwardEnable = 0x8000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_2_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x82ForwardEnableIntel = 0x10000000,
+        Cl8x82ForwardEnable = 0x10000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_2_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x82BackwardEnableIntel = 0x20000000,
+        Cl8x82BackwardEnable = 0x20000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_FORWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x83ForwardEnableIntel = 0x40000000,
+        Cl8x83ForwardEnable = 0x40000000,
         [NativeName("Name", "CL_AVC_ME_SKIP_BLOCK_8x8_3_BACKWARD_ENABLE_INTEL")]
-        AvcMESkipBlock8x83BackwardEnableIntel = unchecked((int) 0x80000000),
+        Cl8x83BackwardEnable = unchecked((int) 0x80000000),
     }
 }

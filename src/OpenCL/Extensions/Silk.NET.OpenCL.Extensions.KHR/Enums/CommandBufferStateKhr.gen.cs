@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum CommandBufferStateKhr : int
     {
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_RECORDING_KHR")]
-        CommandBufferStateRecordingKhr = 0x0,
+        Recording = 0x0,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
-        CommandBufferStateExecutableKhr = 0x1,
+        Executable = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
-        CommandBufferStatePendingKhr = 0x2,
+        Pending = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
-        CommandBufferStateInvalidKhr = 0x3,
+        Invalid = 0x3,
     }
 }

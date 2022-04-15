@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationIntraSearchPredictionModesBufferChromaBlock : int
     {
         [NativeName("Name", "CL_ME_CHROMA_PREDICTOR_MODE_DC_INTEL")]
-        MEChromaPredictorModeDCIntel = 0x0,
+        DC = 0x0,
         [NativeName("Name", "CL_ME_CHROMA_PREDICTOR_MODE_HORIZONTAL_INTEL")]
-        MEChromaPredictorModeHorizontalIntel = 0x1,
+        Horizontal = 0x1,
         [NativeName("Name", "CL_ME_CHROMA_PREDICTOR_MODE_VERTICAL_INTEL")]
-        MEChromaPredictorModeVerticalIntel = 0x2,
+        Vertical = 0x2,
         [NativeName("Name", "CL_ME_CHROMA_PREDICTOR_MODE_PLANE_INTEL")]
-        MEChromaPredictorModePlaneIntel = 0x3,
+        Plane = 0x3,
     }
 }

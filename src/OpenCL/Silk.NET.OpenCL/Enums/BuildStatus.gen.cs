@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL
     public enum BuildStatus : int
     {
         [NativeName("Name", "CL_BUILD_SUCCESS")]
-        BuildSuccess = 0x0,
+        Success = 0x0,
         [NativeName("Name", "CL_BUILD_NONE")]
-        BuildNone = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        None = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "CL_BUILD_ERROR")]
-        BuildError = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+        Error = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "CL_BUILD_IN_PROGRESS")]
-        BuildInProgress = unchecked((int) 0xFFFFFFFFFFFFFFFD),
+        InProgress = unchecked((int) 0xFFFFFFFFFFFFFFFD),
     }
 }

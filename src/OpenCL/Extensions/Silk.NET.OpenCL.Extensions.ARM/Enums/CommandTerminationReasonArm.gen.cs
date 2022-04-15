@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     public enum CommandTerminationReasonArm : int
     {
         [NativeName("Name", "CL_COMMAND_TERMINATION_COMPLETION_ARM")]
-        CommandTerminationCompletionArm = 0x0,
+        Completion = 0x0,
         [NativeName("Name", "CL_COMMAND_TERMINATION_CONTROLLED_SUCCESS_ARM")]
-        CommandTerminationControlledSuccessArm = 0x1,
+        ControlledSuccess = 0x1,
         [NativeName("Name", "CL_COMMAND_TERMINATION_CONTROLLED_FAILURE_ARM")]
-        CommandTerminationControlledFailureArm = 0x2,
+        ControlledFailure = 0x2,
         [NativeName("Name", "CL_COMMAND_TERMINATION_ERROR_ARM")]
-        CommandTerminationErrorArm = 0x3,
+        Error = 0x3,
     }
 }

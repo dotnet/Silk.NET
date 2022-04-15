@@ -14,10 +14,10 @@ namespace Silk.NET.OpenCL
     public enum MapFlags : ulong
     {
         [NativeName("Name", "CL_MAP_READ")]
-        MapRead = 0x1,
+        Read = 0x1,
         [NativeName("Name", "CL_MAP_WRITE")]
-        MapWrite = 0x2,
+        Write = 0x2,
         [NativeName("Name", "CL_MAP_WRITE_INVALIDATE_REGION")]
-        MapWriteInvalidateRegion = 0x4,
+        WriteInvalidateRegion = 0x4,
     }
 }

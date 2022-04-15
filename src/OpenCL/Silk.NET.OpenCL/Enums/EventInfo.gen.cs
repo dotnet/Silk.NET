@@ -13,16 +13,16 @@ namespace Silk.NET.OpenCL
     public enum EventInfo : int
     {
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
-        EventCommandQueue = 0x11D0,
+        CommandQueue = 0x11D0,
         [NativeName("Name", "CL_EVENT_COMMAND_TYPE")]
-        EventCommandType = 0x11D1,
+        CommandType = 0x11D1,
         [NativeName("Name", "CL_EVENT_REFERENCE_COUNT")]
-        EventReferenceCount = 0x11D2,
+        ReferenceCount = 0x11D2,
         [NativeName("Name", "CL_EVENT_COMMAND_EXECUTION_STATUS")]
-        EventCommandExecutionStatus = 0x11D3,
+        CommandExecutionStatus = 0x11D3,
         [NativeName("Name", "CL_EVENT_CONTEXT")]
-        EventContext = 0x11D4,
+        Context = 0x11D4,
         [NativeName("Name", "CL_EVENT_COMMAND_TERMINATION_REASON_ARM")]
-        EventCommandTerminationReasonArm = 0x41ED,
+        CommandTerminationReasonArm = 0x41ED,
     }
 }

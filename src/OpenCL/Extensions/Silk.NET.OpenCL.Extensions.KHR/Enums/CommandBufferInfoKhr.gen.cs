@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum CommandBufferInfoKhr : int
     {
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
-        CommandBufferQueuesKhr = 0x1294,
+        Queues = 0x1294,
         [NativeName("Name", "CL_COMMAND_BUFFER_NUM_QUEUES_KHR")]
-        CommandBufferNumQueuesKhr = 0x1295,
+        NumQueues = 0x1295,
         [NativeName("Name", "CL_COMMAND_BUFFER_REFERENCE_COUNT_KHR")]
-        CommandBufferReferenceCountKhr = 0x1296,
+        ReferenceCount = 0x1296,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_KHR")]
-        CommandBufferStateKhr = 0x1297,
+        State = 0x1297,
         [NativeName("Name", "CL_COMMAND_BUFFER_PROPERTIES_ARRAY_KHR")]
-        CommandBufferPropertiesArrayKhr = 0x1298,
+        PropertiesArray = 0x1298,
     }
 }

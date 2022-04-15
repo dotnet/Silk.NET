@@ -14,18 +14,18 @@ namespace Silk.NET.OpenCL
     public enum DeviceAtomicCapabilities : ulong
     {
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_RELAXED")]
-        DeviceAtomicOrderRelaxed = 0x1,
+        OrderRelaxed = 0x1,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_ACQ_REL")]
-        DeviceAtomicOrderAcqRel = 0x2,
+        OrderAcqRel = 0x2,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_SEQ_CST")]
-        DeviceAtomicOrderSeqCst = 0x4,
+        OrderSeqCst = 0x4,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_WORK_ITEM")]
-        DeviceAtomicScopeWorkItem = 0x8,
+        ScopeWorkItem = 0x8,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP")]
-        DeviceAtomicScopeWorkGroup = 0x10,
+        ScopeWorkGroup = 0x10,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_DEVICE")]
-        DeviceAtomicScopeDevice = 0x20,
+        ScopeDevice = 0x20,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_ALL_DEVICES")]
-        DeviceAtomicScopeAllDevices = 0x40,
+        ScopeAllDevices = 0x40,
     }
 }

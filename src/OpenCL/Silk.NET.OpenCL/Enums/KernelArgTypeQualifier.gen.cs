@@ -14,14 +14,14 @@ namespace Silk.NET.OpenCL
     public enum KernelArgTypeQualifier : ulong
     {
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_NONE")]
-        KernelArgTypeNone = 0x0,
+        None = 0x0,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_CONST")]
-        KernelArgTypeConst = 0x1,
+        Const = 0x1,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_RESTRICT")]
-        KernelArgTypeRestrict = 0x2,
+        Restrict = 0x2,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_VOLATILE")]
-        KernelArgTypeVolatile = 0x4,
+        Volatile = 0x4,
         [NativeName("Name", "CL_KERNEL_ARG_TYPE_PIPE")]
-        KernelArgTypePipe = 0x8,
+        Pipe = 0x8,
     }
 }

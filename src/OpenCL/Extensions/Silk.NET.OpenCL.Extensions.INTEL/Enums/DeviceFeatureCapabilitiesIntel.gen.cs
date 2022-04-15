@@ -14,8 +14,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum DeviceFeatureCapabilitiesIntel : ulong
     {
         [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DP4A_INTEL")]
-        DeviceFeatureFlagDP4AIntel = 0x1,
+        DP4A = 0x1,
         [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DPAS_INTEL")]
-        DeviceFeatureFlagDpasIntel = 0x2,
+        Dpas = 0x2,
     }
 }

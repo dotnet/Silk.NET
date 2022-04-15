@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum AcceleratorInfoIntel : int
     {
         [NativeName("Name", "CL_ACCELERATOR_DESCRIPTOR_INTEL")]
-        AcceleratorDescriptorIntel = 0x4090,
+        Descriptor = 0x4090,
         [NativeName("Name", "CL_ACCELERATOR_REFERENCE_COUNT_INTEL")]
-        AcceleratorReferenceCountIntel = 0x4091,
+        ReferenceCount = 0x4091,
         [NativeName("Name", "CL_ACCELERATOR_CONTEXT_INTEL")]
-        AcceleratorContextIntel = 0x4092,
+        Context = 0x4092,
         [NativeName("Name", "CL_ACCELERATOR_TYPE_INTEL")]
-        AcceleratorTypeIntel = 0x4093,
+        Type = 0x4093,
     }
 }

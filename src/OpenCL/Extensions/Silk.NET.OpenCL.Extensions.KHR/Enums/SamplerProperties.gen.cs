@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum SamplerProperties : int
     {
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
-        SamplerMipFilterModeKhr = 0x1155,
+        MipFilterMode = 0x1155,
         [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
-        SamplerLodMinKhr = 0x1156,
+        LodMin = 0x1156,
         [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
-        SamplerLodMaxKhr = 0x1157,
+        LodMax = 0x1157,
     }
 }

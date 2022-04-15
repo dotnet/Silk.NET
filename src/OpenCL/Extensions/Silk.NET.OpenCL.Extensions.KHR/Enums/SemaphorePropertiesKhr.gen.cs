@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum SemaphorePropertiesKhr : int
     {
         [NativeName("Name", "CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
-        SemaphoreExportHandleTypesKhr = 0x203F,
+        ExportHandleTypes = 0x203F,
     }
 }

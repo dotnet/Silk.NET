@@ -14,10 +14,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum MemAllocFlagsIntel : ulong
     {
         [NativeName("Name", "CL_MEM_ALLOC_WRITE_COMBINED_INTEL")]
-        MemAllocWriteCombinedIntel = 0x1,
+        WriteCombined = 0x1,
         [NativeName("Name", "CL_MEM_ALLOC_INITIAL_PLACEMENT_DEVICE_INTEL")]
-        MemAllocInitialPlacementDeviceIntel = 0x2,
+        InitialPlacementDevice = 0x2,
         [NativeName("Name", "CL_MEM_ALLOC_INITIAL_PLACEMENT_HOST_INTEL")]
-        MemAllocInitialPlacementHostIntel = 0x4,
+        InitialPlacementHost = 0x4,
     }
 }

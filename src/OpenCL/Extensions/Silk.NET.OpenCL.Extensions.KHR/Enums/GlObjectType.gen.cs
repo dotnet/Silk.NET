@@ -13,20 +13,20 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum GlObjectType : int
     {
         [NativeName("Name", "CL_GL_OBJECT_BUFFER")]
-        GLObjectBuffer = 0x2000,
+        Buffer = 0x2000,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE2D")]
-        GLObjectTexture2D = 0x2001,
+        Texture2D = 0x2001,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE3D")]
-        GLObjectTexture3D = 0x2002,
+        Texture3D = 0x2002,
         [NativeName("Name", "CL_GL_OBJECT_RENDERBUFFER")]
-        GLObjectRenderbuffer = 0x2003,
+        Renderbuffer = 0x2003,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE2D_ARRAY")]
-        GLObjectTexture2DArray = 0x200E,
+        Texture2DArray = 0x200E,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE1D")]
-        GLObjectTexture1D = 0x200F,
+        Texture1D = 0x200F,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE1D_ARRAY")]
-        GLObjectTexture1DArray = 0x2010,
+        Texture1DArray = 0x2010,
         [NativeName("Name", "CL_GL_OBJECT_TEXTURE_BUFFER")]
-        GLObjectTextureBuffer = 0x2011,
+        TextureBuffer = 0x2011,
     }
 }

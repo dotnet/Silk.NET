@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum Dx9DeviceSetIntel : int
     {
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_DX9_INTEL")]
-        PreferredDevicesForDX9Intel = 0x4024,
+        PreferredDevicesForDX9 = 0x4024,
         [NativeName("Name", "CL_ALL_DEVICES_FOR_DX9_INTEL")]
-        AllDevicesForDX9Intel = 0x4025,
+        AllDevicesForDX9 = 0x4025,
     }
 }

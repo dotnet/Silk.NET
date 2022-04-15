@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum D3d10DeviceSourceKhr : int
     {
         [NativeName("Name", "CL_D3D10_DEVICE_KHR")]
-        D3D10DeviceKhr = 0x4010,
+        Device = 0x4010,
         [NativeName("Name", "CL_D3D10_DXGI_ADAPTER_KHR")]
-        D3D10DxgiAdapterKhr = 0x4011,
+        DxgiAdapter = 0x4011,
     }
 }

@@ -13,28 +13,28 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationWindow : int
     {
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_EXHAUSTIVE_INTEL")]
-        AvcMESearchWindowExhaustiveIntel = 0x0,
+        Exhaustive = 0x0,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_SMALL_INTEL")]
-        AvcMESearchWindowSmallIntel = 0x1,
+        Small = 0x1,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_TINY_INTEL")]
-        AvcMESearchWindowTinyIntel = 0x2,
+        Tiny = 0x2,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_EXTRA_TINY_INTEL")]
-        AvcMESearchWindowExtraTinyIntel = 0x3,
+        ExtraTiny = 0x3,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_DIAMOND_INTEL")]
-        AvcMESearchWindowDiamondIntel = 0x4,
+        Diamond = 0x4,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_LARGE_DIAMOND_INTEL")]
-        AvcMESearchWindowLargeDiamondIntel = 0x5,
+        LargeDiamond = 0x5,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_RESERVED0_INTEL")]
-        AvcMESearchWindowReserved0Intel = 0x6,
+        Reserved0 = 0x6,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_RESERVED1_INTEL")]
-        AvcMESearchWindowReserved1Intel = 0x7,
+        Reserved1 = 0x7,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_CUSTOM_INTEL")]
-        AvcMESearchWindowCustomIntel = 0x8,
+        Custom = 0x8,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_16x12_RADIUS_INTEL")]
-        AvcMESearchWindow16x12RadiusIntel = 0x9,
+        Cl16x12Radius = 0x9,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_4x4_RADIUS_INTEL")]
-        AvcMESearchWindow4x4RadiusIntel = 0x2,
+        Cl4x4Radius = 0x2,
         [NativeName("Name", "CL_AVC_ME_SEARCH_WINDOW_2x2_RADIUS_INTEL")]
-        AvcMESearchWindow2x2RadiusIntel = 0xA,
+        Cl2x2Radius = 0xA,
     }
 }

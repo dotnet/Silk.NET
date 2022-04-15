@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum ExternalSemaphoreHandleTypeKhr : int
     {
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
-        SemaphoreHandleD3D12FenceKhr = 0x2059,
+        D3D12Fence = 0x2059,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
-        SemaphoreHandleOpaqueFDKhr = 0x2055,
+        OpaqueFD = 0x2055,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
-        SemaphoreHandleSyncFDKhr = 0x2058,
+        SyncFD = 0x2058,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KHR")]
-        SemaphoreHandleOpaqueWin32Khr = 0x2056,
+        OpaqueWin32 = 0x2056,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_WIN32_KMT_KHR")]
-        SemaphoreHandleOpaqueWin32KmtKhr = 0x2057,
+        OpaqueWin32Kmt = 0x2057,
     }
 }

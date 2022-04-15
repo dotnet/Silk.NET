@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
     public enum LayerInfo : int
     {
         [NativeName("Name", "CL_LAYER_API_VERSION")]
-        LayerApiVersion = 0x4240,
+        ApiVersion = 0x4240,
     }
 }

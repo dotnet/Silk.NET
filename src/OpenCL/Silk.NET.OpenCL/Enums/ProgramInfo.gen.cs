@@ -13,32 +13,32 @@ namespace Silk.NET.OpenCL
     public enum ProgramInfo : int
     {
         [NativeName("Name", "CL_PROGRAM_REFERENCE_COUNT")]
-        ProgramReferenceCount = 0x1160,
+        ReferenceCount = 0x1160,
         [NativeName("Name", "CL_PROGRAM_CONTEXT")]
-        ProgramContext = 0x1161,
+        Context = 0x1161,
         [NativeName("Name", "CL_PROGRAM_NUM_DEVICES")]
-        ProgramNumDevices = 0x1162,
+        NumDevices = 0x1162,
         [NativeName("Name", "CL_PROGRAM_DEVICES")]
-        ProgramDevices = 0x1163,
+        Devices = 0x1163,
         [NativeName("Name", "CL_PROGRAM_SOURCE")]
-        ProgramSource = 0x1164,
+        Source = 0x1164,
         [NativeName("Name", "CL_PROGRAM_BINARY_SIZES")]
-        ProgramBinarySizes = 0x1165,
+        BinarySizes = 0x1165,
         [NativeName("Name", "CL_PROGRAM_BINARIES")]
-        ProgramBinaries = 0x1166,
+        Binaries = 0x1166,
         [NativeName("Name", "CL_PROGRAM_NUM_KERNELS")]
-        ProgramNumKernels = 0x1167,
+        NumKernels = 0x1167,
         [NativeName("Name", "CL_PROGRAM_KERNEL_NAMES")]
-        ProgramKernelNames = 0x1168,
+        KernelNames = 0x1168,
         [NativeName("Name", "CL_PROGRAM_IL")]
-        ProgramIL = 0x1169,
+        IL = 0x1169,
         [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_CTORS_PRESENT")]
-        ProgramScopeGlobalCtorsPresent = 0x116A,
+        ScopeGlobalCtorsPresent = 0x116A,
         [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
-        ProgramScopeGlobalDtorsPresent = 0x116B,
+        ScopeGlobalDtorsPresent = 0x116B,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
-        ProgramILKhr = 0x1169,
+        ILKhr = 0x1169,
     }
 }

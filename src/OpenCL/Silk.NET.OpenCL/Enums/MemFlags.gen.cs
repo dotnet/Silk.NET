@@ -14,44 +14,44 @@ namespace Silk.NET.OpenCL
     public enum MemFlags : ulong
     {
         [NativeName("Name", "CL_MEM_READ_WRITE")]
-        MemReadWrite = 0x1,
+        ReadWrite = 0x1,
         [NativeName("Name", "CL_MEM_WRITE_ONLY")]
-        MemWriteOnly = 0x2,
+        WriteOnly = 0x2,
         [NativeName("Name", "CL_MEM_READ_ONLY")]
-        MemReadOnly = 0x4,
+        ReadOnly = 0x4,
         [NativeName("Name", "CL_MEM_USE_HOST_PTR")]
-        MemUseHostPtr = 0x8,
+        UseHostPtr = 0x8,
         [NativeName("Name", "CL_MEM_ALLOC_HOST_PTR")]
-        MemAllocHostPtr = 0x10,
+        AllocHostPtr = 0x10,
         [NativeName("Name", "CL_MEM_COPY_HOST_PTR")]
-        MemCopyHostPtr = 0x20,
+        CopyHostPtr = 0x20,
         [NativeName("Name", "CL_MEM_HOST_WRITE_ONLY")]
-        MemHostWriteOnly = 0x80,
+        HostWriteOnly = 0x80,
         [NativeName("Name", "CL_MEM_HOST_READ_ONLY")]
-        MemHostReadOnly = 0x100,
+        HostReadOnly = 0x100,
         [NativeName("Name", "CL_MEM_HOST_NO_ACCESS")]
-        MemHostNoAccess = 0x200,
+        HostNoAccess = 0x200,
         [NativeName("Name", "CL_MEM_SVM_FINE_GRAIN_BUFFER")]
-        MemSvmFineGrainBuffer = 0x400,
+        SvmFineGrainBuffer = 0x400,
         [NativeName("Name", "CL_MEM_SVM_ATOMICS")]
-        MemSvmAtomics = 0x800,
+        SvmAtomics = 0x800,
         [NativeName("Name", "CL_MEM_KERNEL_READ_AND_WRITE")]
-        MemKernelReadAndWrite = 0x1000,
+        KernelReadAndWrite = 0x1000,
         [NativeName("Name", "CL_MEM_EXT_HOST_PTR_QCOM")]
-        MemExtHostPtrQCom = 0x20000000,
+        ExtHostPtrQCom = 0x20000000,
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
-        MemUseUncachedCpuMemoryImg = 0x4000000,
+        UseUncachedCpuMemoryImg = 0x4000000,
         [NativeName("Name", "CL_MEM_USE_CACHED_CPU_MEMORY_IMG")]
-        MemUseCachedCpuMemoryImg = 0x8000000,
+        UseCachedCpuMemoryImg = 0x8000000,
         [NativeName("Name", "CL_MEM_USE_GRALLOC_PTR_IMG")]
-        MemUseGrallocPtrImg = 0x10000000,
+        UseGrallocPtrImg = 0x10000000,
         [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
-        MemNoAccessIntel = 0x1000000,
+        NoAccessIntel = 0x1000000,
         [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
-        MemAccessFlagsUnrestrictedIntel = 0x2000000,
+        AccessFlagsUnrestrictedIntel = 0x2000000,
         [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
-        MemForceHostMemoryIntel = 0x100000,
+        ForceHostMemoryIntel = 0x100000,
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
-        MemProtectedAllocArm = 0x1000000000,
+        ProtectedAllocArm = 0x1000000000,
     }
 }

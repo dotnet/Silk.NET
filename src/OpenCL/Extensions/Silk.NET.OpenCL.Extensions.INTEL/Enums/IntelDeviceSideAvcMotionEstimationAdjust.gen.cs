@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationAdjust : int
     {
         [NativeName("Name", "CL_AVC_ME_SAD_ADJUST_MODE_NONE_INTEL")]
-        AvcMESadAdjustModeNoneIntel = 0x0,
+        None = 0x0,
         [NativeName("Name", "CL_AVC_ME_SAD_ADJUST_MODE_HAAR_INTEL")]
-        AvcMESadAdjustModeHaarIntel = 0x2,
+        Haar = 0x2,
     }
 }

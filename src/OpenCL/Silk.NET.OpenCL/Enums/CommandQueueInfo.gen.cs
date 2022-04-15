@@ -13,18 +13,18 @@ namespace Silk.NET.OpenCL
     public enum CommandQueueInfo : int
     {
         [NativeName("Name", "CL_QUEUE_CONTEXT")]
-        QueueContext = 0x1090,
+        Context = 0x1090,
         [NativeName("Name", "CL_QUEUE_DEVICE")]
-        QueueDevice = 0x1091,
+        Device = 0x1091,
         [NativeName("Name", "CL_QUEUE_REFERENCE_COUNT")]
-        QueueReferenceCount = 0x1092,
+        ReferenceCount = 0x1092,
         [NativeName("Name", "CL_QUEUE_PROPERTIES")]
-        QueueProperties = 0x1093,
+        Properties = 0x1093,
         [NativeName("Name", "CL_QUEUE_SIZE")]
-        QueueSize = 0x1094,
+        Size = 0x1094,
         [NativeName("Name", "CL_QUEUE_DEVICE_DEFAULT")]
-        QueueDeviceDefault = 0x1095,
+        DeviceDefault = 0x1095,
         [NativeName("Name", "CL_QUEUE_PROPERTIES_ARRAY")]
-        QueuePropertiesArray = 0x1098,
+        PropertiesArray = 0x1098,
     }
 }

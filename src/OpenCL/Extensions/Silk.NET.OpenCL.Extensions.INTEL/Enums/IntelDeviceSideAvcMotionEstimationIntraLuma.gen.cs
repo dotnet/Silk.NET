@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationIntraLuma : int
     {
         [NativeName("Name", "CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_16x16_INTEL")]
-        AvcMEIntraLumaPartitionMask16x16Intel = 0x6,
+        Cl16x16 = 0x6,
         [NativeName("Name", "CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_8x8_INTEL")]
-        AvcMEIntraLumaPartitionMask8x8Intel = 0x5,
+        Cl8x8 = 0x5,
         [NativeName("Name", "CL_AVC_ME_INTRA_LUMA_PARTITION_MASK_4x4_INTEL")]
-        AvcMEIntraLumaPartitionMask4x4Intel = 0x3,
+        Cl4x4 = 0x3,
     }
 }

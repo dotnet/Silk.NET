@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL
     public enum PipeInfo : int
     {
         [NativeName("Name", "CL_PIPE_PACKET_SIZE")]
-        PipePacketSize = 0x1120,
+        PacketSize = 0x1120,
         [NativeName("Name", "CL_PIPE_MAX_PACKETS")]
-        PipeMaxPackets = 0x1121,
+        MaxPackets = 0x1121,
         [NativeName("Name", "CL_PIPE_PROPERTIES")]
-        PipeProperties = 0x1122,
+        Properties = 0x1122,
     }
 }

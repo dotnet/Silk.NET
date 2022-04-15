@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationBorder : int
     {
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_LEFT_INTEL")]
-        AvcMEBorderReachedLeftIntel = 0x0,
+        Left = 0x0,
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_RIGHT_INTEL")]
-        AvcMEBorderReachedRightIntel = 0x2,
+        Right = 0x2,
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_TOP_INTEL")]
-        AvcMEBorderReachedTopIntel = 0x4,
+        Top = 0x4,
         [NativeName("Name", "CL_AVC_ME_BORDER_REACHED_BOTTOM_INTEL")]
-        AvcMEBorderReachedBottomIntel = 0x8,
+        Bottom = 0x8,
     }
 }

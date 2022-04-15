@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationSearchCostPenalty : int
     {
         [NativeName("Name", "CL_ME_COST_PENALTY_NONE_INTEL")]
-        MECostPenaltyNoneIntel = 0x0,
+        None = 0x0,
         [NativeName("Name", "CL_ME_COST_PENALTY_LOW_INTEL")]
-        MECostPenaltyLowIntel = 0x1,
+        Low = 0x1,
         [NativeName("Name", "CL_ME_COST_PENALTY_NORMAL_INTEL")]
-        MECostPenaltyNormalIntel = 0x2,
+        Normal = 0x2,
         [NativeName("Name", "CL_ME_COST_PENALTY_HIGH_INTEL")]
-        MECostPenaltyHighIntel = 0x3,
+        High = 0x3,
     }
 }

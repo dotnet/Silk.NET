@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum MemPropertiesIntel : int
     {
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_INTEL")]
-        MemAllocFlagsIntel = 0x4195,
+        AllocFlags = 0x4195,
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
-        MemChannelIntel = 0x4213,
+        Channel = 0x4213,
         [NativeName("Name", "CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
-        MemAllocBufferLocationIntel = 0x419E,
+        AllocBufferLocation = 0x419E,
     }
 }

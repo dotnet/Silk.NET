@@ -13,20 +13,20 @@ namespace Silk.NET.OpenCL
     public enum KernelExecInfo : int
     {
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_PTRS")]
-        KernelExecInfoSvmPtrs = 0x11B6,
+        SvmPtrs = 0x11B6,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_FINE_GRAIN_SYSTEM")]
-        KernelExecInfoSvmFineGrainSystem = 0x11B7,
+        SvmFineGrainSystem = 0x11B7,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_INDIRECT_HOST_ACCESS_INTEL")]
-        KernelExecInfoIndirectHostAccessIntel = 0x4200,
+        IndirectHostAccessIntel = 0x4200,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_INDIRECT_DEVICE_ACCESS_INTEL")]
-        KernelExecInfoIndirectDeviceAccessIntel = 0x4201,
+        IndirectDeviceAccessIntel = 0x4201,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_INDIRECT_SHARED_ACCESS_INTEL")]
-        KernelExecInfoIndirectSharedAccessIntel = 0x4202,
+        IndirectSharedAccessIntel = 0x4202,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_USM_PTRS_INTEL")]
-        KernelExecInfoUsmPtrsIntel = 0x4203,
+        UsmPtrsIntel = 0x4203,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
-        KernelExecInfoWorkgroupBatchSizeArm = 0x41E5,
+        WorkgroupBatchSizeArm = 0x41E5,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
-        KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
+        WorkgroupBatchSizeModifierArm = 0x41E6,
     }
 }

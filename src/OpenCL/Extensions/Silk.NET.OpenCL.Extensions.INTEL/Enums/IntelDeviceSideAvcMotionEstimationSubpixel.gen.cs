@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelDeviceSideAvcMotionEstimationSubpixel : int
     {
         [NativeName("Name", "CL_AVC_ME_SUBPIXEL_MODE_INTEGER_INTEL")]
-        AvcMESubpixelModeIntegerIntel = 0x0,
+        Integer = 0x0,
         [NativeName("Name", "CL_AVC_ME_SUBPIXEL_MODE_HPEL_INTEL")]
-        AvcMESubpixelModeHpelIntel = 0x1,
+        Hpel = 0x1,
         [NativeName("Name", "CL_AVC_ME_SUBPIXEL_MODE_QPEL_INTEL")]
-        AvcMESubpixelModeQpelIntel = 0x3,
+        Qpel = 0x3,
     }
 }

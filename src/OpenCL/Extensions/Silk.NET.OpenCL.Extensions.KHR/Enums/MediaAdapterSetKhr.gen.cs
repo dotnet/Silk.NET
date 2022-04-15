@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum MediaAdapterSetKhr : int
     {
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_DX9_MEDIA_ADAPTER_KHR")]
-        PreferredDevicesForDX9MediaAdapterKhr = 0x2023,
+        PreferredDevicesForDX9MediaAdapter = 0x2023,
         [NativeName("Name", "CL_ALL_DEVICES_FOR_DX9_MEDIA_ADAPTER_KHR")]
-        AllDevicesForDX9MediaAdapterKhr = 0x2024,
+        AllDevicesForDX9MediaAdapter = 0x2024,
     }
 }

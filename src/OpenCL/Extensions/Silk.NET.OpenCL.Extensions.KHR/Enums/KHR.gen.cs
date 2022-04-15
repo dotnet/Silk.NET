@@ -214,8 +214,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         GLMipmapLevel = 0x2005,
         [NativeName("Name", "CL_DEVICE_UUID_KHR")]
         DeviceUuidKhr = 0x106A,
-        [NativeName("Name", "CL_DRIVER_UUID_KHR")]
-        DriverUuidKhr = 0x106B,
+        [NativeName("Name", "CL_DEVICE_DRIVER_UUID_KHR")]
+        DeviceDriverUuidKhr = 0x106B,
         [NativeName("Name", "CL_DEVICE_LUID_VALID_KHR")]
         DeviceLuidValidKhr = 0x106C,
         [NativeName("Name", "CL_DEVICE_LUID_KHR")]

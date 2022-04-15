@@ -13,20 +13,20 @@ namespace Silk.NET.OpenCL
     public enum MemObjectType : int
     {
         [NativeName("Name", "CL_MEM_OBJECT_BUFFER")]
-        MemObjectBuffer = 0x10F0,
+        Buffer = 0x10F0,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE2D")]
-        MemObjectImage2D = 0x10F1,
+        Image2D = 0x10F1,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE3D")]
-        MemObjectImage3D = 0x10F2,
+        Image3D = 0x10F2,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE2D_ARRAY")]
-        MemObjectImage2DArray = 0x10F3,
+        Image2DArray = 0x10F3,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE1D")]
-        MemObjectImage1D = 0x10F4,
+        Image1D = 0x10F4,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE1D_ARRAY")]
-        MemObjectImage1DArray = 0x10F5,
+        Image1DArray = 0x10F5,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE1D_BUFFER")]
-        MemObjectImage1DBuffer = 0x10F6,
+        Image1DBuffer = 0x10F6,
         [NativeName("Name", "CL_MEM_OBJECT_PIPE")]
-        MemObjectPipe = 0x10F7,
+        Pipe = 0x10F7,
     }
 }

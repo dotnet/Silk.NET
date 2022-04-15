@@ -14,20 +14,20 @@ namespace Silk.NET.OpenCL
     public enum DeviceFpConfig : ulong
     {
         [NativeName("Name", "CL_FP_DENORM")]
-        FPDenorm = 0x1,
+        Denorm = 0x1,
         [NativeName("Name", "CL_FP_INF_NAN")]
-        FPInfNan = 0x2,
+        InfNan = 0x2,
         [NativeName("Name", "CL_FP_ROUND_TO_NEAREST")]
-        FPRoundToNearest = 0x4,
+        RoundToNearest = 0x4,
         [NativeName("Name", "CL_FP_ROUND_TO_ZERO")]
-        FPRoundToZero = 0x8,
+        RoundToZero = 0x8,
         [NativeName("Name", "CL_FP_ROUND_TO_INF")]
-        FPRoundToInf = 0x10,
+        RoundToInf = 0x10,
         [NativeName("Name", "CL_FP_FMA")]
-        FPFma = 0x20,
+        Fma = 0x20,
         [NativeName("Name", "CL_FP_SOFT_FLOAT")]
-        FPSoftFloat = 0x40,
+        SoftFloat = 0x40,
         [NativeName("Name", "CL_FP_CORRECTLY_ROUNDED_DIVIDE_SQRT")]
-        FPCorrectlyRoundedDivideSqrt = 0x80,
+        CorrectlyRoundedDivideSqrt = 0x80,
     }
 }

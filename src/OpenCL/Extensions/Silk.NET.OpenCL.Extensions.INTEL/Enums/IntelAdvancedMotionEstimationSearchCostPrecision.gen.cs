@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationSearchCostPrecision : int
     {
         [NativeName("Name", "CL_ME_COST_PRECISION_QPEL_INTEL")]
-        MECostPrecisionQpelIntel = 0x0,
+        Qpel = 0x0,
         [NativeName("Name", "CL_ME_COST_PRECISION_HPEL_INTEL")]
-        MECostPrecisionHpelIntel = 0x1,
+        Hpel = 0x1,
         [NativeName("Name", "CL_ME_COST_PRECISION_PEL_INTEL")]
-        MECostPrecisionPelIntel = 0x2,
+        Pel = 0x2,
         [NativeName("Name", "CL_ME_COST_PRECISION_DPEL_INTEL")]
-        MECostPrecisionDpelIntel = 0x3,
+        Dpel = 0x3,
     }
 }

@@ -14,16 +14,16 @@ namespace Silk.NET.OpenCL
     public enum DeviceType : ulong
     {
         [NativeName("Name", "CL_DEVICE_TYPE_DEFAULT")]
-        DeviceTypeDefault = 0x1,
+        Default = 0x1,
         [NativeName("Name", "CL_DEVICE_TYPE_CPU")]
-        DeviceTypeCpu = 0x2,
+        Cpu = 0x2,
         [NativeName("Name", "CL_DEVICE_TYPE_GPU")]
-        DeviceTypeGpu = 0x4,
+        Gpu = 0x4,
         [NativeName("Name", "CL_DEVICE_TYPE_ACCELERATOR")]
-        DeviceTypeAccelerator = 0x8,
+        Accelerator = 0x8,
         [NativeName("Name", "CL_DEVICE_TYPE_ALL")]
-        DeviceTypeAll = 0xFFFFFFFF,
+        All = 0xFFFFFFFF,
         [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
-        DeviceTypeCustom = 0x10,
+        Custom = 0x10,
     }
 }

@@ -14,8 +14,8 @@ namespace Silk.NET.OpenCL
     public enum DeviceDeviceEnqueueCapabilities : ulong
     {
         [NativeName("Name", "CL_DEVICE_QUEUE_SUPPORTED")]
-        DeviceQueueSupported = 0x1,
+        Supported = 0x1,
         [NativeName("Name", "CL_DEVICE_QUEUE_REPLACEABLE_DEFAULT")]
-        DeviceQueueReplaceableDefault = 0x2,
+        ReplaceableDefault = 0x2,
     }
 }

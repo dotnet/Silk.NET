@@ -14,8 +14,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimation : int
     {
         [NativeName("Name", "CL_ME_CHROMA_INTRA_PREDICT_ENABLED_INTEL")]
-        MEChromaIntraPredictEnabledIntel = 0x1,
+        ChromaIntraPredictEnabled = 0x1,
         [NativeName("Name", "CL_ME_LUMA_INTRA_PREDICT_ENABLED_INTEL")]
-        MELumaIntraPredictEnabledIntel = 0x2,
+        LumaIntraPredictEnabled = 0x2,
     }
 }

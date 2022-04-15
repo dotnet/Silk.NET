@@ -14,10 +14,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum QueuePriorityKhr : int
     {
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
-        QueuePriorityHighKhr = 0x1,
+        High = 0x1,
         [NativeName("Name", "CL_QUEUE_PRIORITY_MED_KHR")]
-        QueuePriorityMedKhr = 0x2,
+        Med = 0x2,
         [NativeName("Name", "CL_QUEUE_PRIORITY_LOW_KHR")]
-        QueuePriorityLowKhr = 0x4,
+        Low = 0x4,
     }
 }

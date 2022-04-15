@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum CommandBufferPropertiesKhr : int
     {
         [NativeName("Name", "CL_COMMAND_BUFFER_FLAGS_KHR")]
-        CommandBufferFlagsKhr = 0x1293,
+        Flags = 0x1293,
     }
 }

@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     public enum MemMigrationFlagsExt : ulong
     {
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-        MigrateMemObjectHostExt = 0x1,
+        MigrateMemObjectHost = 0x1,
     }
 }

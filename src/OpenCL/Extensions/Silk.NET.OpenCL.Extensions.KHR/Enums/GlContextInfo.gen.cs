@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum GlContextInfo : int
     {
         [NativeName("Name", "CL_CURRENT_DEVICE_FOR_GL_CONTEXT_KHR")]
-        CurrentDeviceForGLContextKhr = 0x2006,
+        CurrentDeviceForGLContext = 0x2006,
         [NativeName("Name", "CL_DEVICES_FOR_GL_CONTEXT_KHR")]
-        DevicesForGLContextKhr = 0x2007,
+        DevicesForGLContext = 0x2007,
     }
 }

@@ -13,14 +13,14 @@ namespace Silk.NET.OpenCL
     public enum ProfilingInfo : int
     {
         [NativeName("Name", "CL_PROFILING_COMMAND_QUEUED")]
-        ProfilingCommandQueued = 0x1280,
+        Queued = 0x1280,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
-        ProfilingCommandSubmit = 0x1281,
+        Submit = 0x1281,
         [NativeName("Name", "CL_PROFILING_COMMAND_START")]
-        ProfilingCommandStart = 0x1282,
+        Start = 0x1282,
         [NativeName("Name", "CL_PROFILING_COMMAND_END")]
-        ProfilingCommandEnd = 0x1283,
+        End = 0x1283,
         [NativeName("Name", "CL_PROFILING_COMMAND_COMPLETE")]
-        ProfilingCommandComplete = 0x1284,
+        Complete = 0x1284,
     }
 }

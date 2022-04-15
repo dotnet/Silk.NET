@@ -14,14 +14,14 @@ namespace Silk.NET.OpenCL
     public enum CommandQueueProperties : ulong
     {
         [NativeName("Name", "CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE")]
-        QueueOutOfOrderExecModeEnable = 0x1,
+        OutOfOrderExecModeEnable = 0x1,
         [NativeName("Name", "CL_QUEUE_PROFILING_ENABLE")]
-        QueueProfilingEnable = 0x2,
+        ProfilingEnable = 0x2,
         [NativeName("Name", "CL_QUEUE_ON_DEVICE")]
-        QueueOnDevice = 0x4,
+        OnDevice = 0x4,
         [NativeName("Name", "CL_QUEUE_ON_DEVICE_DEFAULT")]
-        QueueOnDeviceDefault = 0x8,
+        OnDeviceDefault = 0x8,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
-        QueueThreadLocalExecEnableIntel = 0x80000000,
+        ThreadLocalExecEnableIntel = 0x80000000,
     }
 }

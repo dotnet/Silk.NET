@@ -13,10 +13,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum IntelAdvancedMotionEstimationClMotionDetectDescIntel : int
     {
         [NativeName("Name", "CL_ME_FORWARD_INPUT_MODE_INTEL")]
-        MEForwardInputModeIntel = 0x1,
+        ForwardInputMode = 0x1,
         [NativeName("Name", "CL_ME_BACKWARD_INPUT_MODE_INTEL")]
-        MEBackwardInputModeIntel = 0x2,
+        BackwardInputMode = 0x2,
         [NativeName("Name", "CL_ME_BIDIRECTION_INPUT_MODE_INTEL")]
-        MEBidirectionInputModeIntel = 0x3,
+        BidirectionInputMode = 0x3,
     }
 }

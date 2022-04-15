@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
     public enum ImagePitchInfoQcom : int
     {
         [NativeName("Name", "CL_IMAGE_ROW_ALIGNMENT_QCOM")]
-        ImageRowAlignmentQCom = 0x40A2,
+        RowAlignment = 0x40A2,
         [NativeName("Name", "CL_IMAGE_SLICE_ALIGNMENT_QCOM")]
-        ImageSliceAlignmentQCom = 0x40A3,
+        SliceAlignment = 0x40A3,
     }
 }

@@ -13,12 +13,12 @@ namespace Silk.NET.OpenCL
     public enum KernelArgAddressQualifier : int
     {
         [NativeName("Name", "CL_KERNEL_ARG_ADDRESS_GLOBAL")]
-        KernelArgAddressGlobal = 0x119B,
+        Global = 0x119B,
         [NativeName("Name", "CL_KERNEL_ARG_ADDRESS_LOCAL")]
-        KernelArgAddressLocal = 0x119C,
+        Local = 0x119C,
         [NativeName("Name", "CL_KERNEL_ARG_ADDRESS_CONSTANT")]
-        KernelArgAddressConstant = 0x119D,
+        Constant = 0x119D,
         [NativeName("Name", "CL_KERNEL_ARG_ADDRESS_PRIVATE")]
-        KernelArgAddressPrivate = 0x119E,
+        Private = 0x119E,
     }
 }

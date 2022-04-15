@@ -13,6 +13,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     public enum EglImagePropertiesKhr : int
     {
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
-        EglYuvPlaneIntel = 0x4107,
+        YuvPlaneIntel = 0x4107,
     }
 }

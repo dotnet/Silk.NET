@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum VaApiDeviceSetIntel : int
     {
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_VA_API_INTEL")]
-        PreferredDevicesForVAApiIntel = 0x4095,
+        PreferredDevicesForVAApi = 0x4095,
         [NativeName("Name", "CL_ALL_DEVICES_FOR_VA_API_INTEL")]
-        AllDevicesForVAApiIntel = 0x4096,
+        AllDevicesForVAApi = 0x4096,
     }
 }

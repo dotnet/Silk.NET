@@ -216,8 +216,8 @@ namespace Silk.NET.OpenCL
         DeviceName = 0x102B,
         [NativeName("Name", "CL_DEVICE_VENDOR")]
         DeviceVendor = 0x102C,
-        [NativeName("Name", "CL_DRIVER_VERSION")]
-        DriverVersion = 0x102D,
+        [NativeName("Name", "CL_DEVICE_DRIVER_VERSION")]
+        DeviceDriverVersion = 0x102D,
         [NativeName("Name", "CL_DEVICE_PROFILE")]
         DeviceProfile = 0x102E,
         [NativeName("Name", "CL_DEVICE_VERSION")]
