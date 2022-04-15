@@ -803,9 +803,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Where
                 (
                     x => !x.Parent.Attribute("name").Value.StartsWith("Constants") &&
-                         !x.Parent.Attribute("name").Value.StartsWith("enums") &&
-                         x.Parent.Attribute("name").Value != "MiscNumbers" &&
-                         x.Parent.Attribute("name").Value != "cl_device_info"
+                         !x.Parent.Attribute("name").Value.StartsWith("enums") && // these are unnamed
+                         x.Parent.Attribute("name").Value != "MiscNumbers" &&     // these are constants
+                         x.Parent.Attribute("name").Value != "cl_device_info"     // bug in XML spec - see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
                 )
                 .ToDictionary
                 (
