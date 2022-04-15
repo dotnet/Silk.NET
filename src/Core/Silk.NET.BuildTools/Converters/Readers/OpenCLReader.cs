@@ -861,14 +861,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         else if (typeStr != null)
                         {
                             if (typeStr == "Error codes") type = new RenamedEntry(type.Original, "ErrorCodes");
-                            else if (typeStr?.StartsWith("OpenCL ") == true && typeStr.Contains("deprecated"))
+                            else if (typeStr?.StartsWith("OpenCL ") ?? false && typeStr.Contains("deprecated"))
                             {
                                 // Core spec deprecation notices
                                 var typeNameStart = typeStr.IndexOf(' ', "OpenCL ".Length) + 1;
                                 var typeNameEnd = typeStr.IndexOf(' ', typeNameStart + 1);
                                 type = new RenamedEntry(type.Original, typeStr.Substring(typeNameStart, typeNameEnd - typeNameStart));
                             }
-                            else if (typeStr?.StartsWith("cl_uint ") == true) type = new RenamedEntry(type.Original, typeStr.Substring("cl_uint ".Length)); // QCOM extensions
+                            else if (typeStr?.StartsWith("cl_uint ") ?? false) type = new RenamedEntry(type.Original, typeStr.Substring("cl_uint ".Length)); // QCOM extensions
                             else type = null;
                         }
                     }
@@ -902,7 +902,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 registry
                 .Elements("feature")
                 .Elements("require")
-                .Where(x => x.Attribute("comment")?.Value.Contains("deprecated") == true)
+                .Where(x => x.Attribute("comment")?.Value.Contains("deprecated") ?? false)
                 .Elements("enum")
                 .ToDictionary(x => x.Attribute("name").Value, x => GetDeprecatedIn(x.Parent.Attribute("comment").Value));
 
