@@ -264,9 +264,7 @@
             "clang": {},
             "rename": {
                 "cl_kernel_arg_type_qualifer": "cl_kernel_arg_type_qualifier",
-                "cl_device_partition_property_ext": "EXT_device_partition_property",
                 "ck_khr_mipmap_image": "KHR_mipmap_image",
-                "cl_khr_mipmap_image": "KHR_mipmap_image",
             },
             "bakery": {
                 "profileNames": [
