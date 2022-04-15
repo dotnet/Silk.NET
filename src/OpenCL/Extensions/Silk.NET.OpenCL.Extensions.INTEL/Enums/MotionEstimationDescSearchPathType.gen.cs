@@ -14,10 +14,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum MotionEstimationDescSearchPathType : int
     {
         [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_2_2_INTEL")]
-        Cl22 = 0x0,
+        Radius22 = 0x0,
         [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_4_4_INTEL")]
-        Cl44 = 0x1,
+        Radius44 = 0x1,
         [NativeName("Name", "CL_ME_SEARCH_PATH_RADIUS_16_12_INTEL")]
-        Cl1612 = 0x5,
+        Radius1612 = 0x5,
     }
 }

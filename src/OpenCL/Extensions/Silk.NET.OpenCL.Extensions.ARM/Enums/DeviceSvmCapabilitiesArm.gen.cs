@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [NativeName("Name", "cl_device_svm_capabilities_arm")]
-    public enum DeviceSvmCapabilities : ulong
+    public enum DeviceSvmCapabilitiesArm : ulong
     {
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
         CoarseGrainBuffer = 0x1,

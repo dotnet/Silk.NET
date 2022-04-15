@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
     [NativeName("Name", "cl_mem_migration_flags_ext")]
-    public enum MemMigrationFlags : ulong
+    public enum MemMigrationFlagsExt : ulong
     {
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
         MigrateMemObjectHost = 0x1,

@@ -13,8 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum DeviceSideAvcMotionEstimationVersion : int
     {
         [NativeName("Name", "CL_AVC_ME_VERSION_0_INTEL")]
-        Cl0 = 0x0,
+        Version0 = 0x0,
         [NativeName("Name", "CL_AVC_ME_VERSION_1_INTEL")]
-        Cl1 = 0x1,
+        Version1 = 0x1,
     }
 }

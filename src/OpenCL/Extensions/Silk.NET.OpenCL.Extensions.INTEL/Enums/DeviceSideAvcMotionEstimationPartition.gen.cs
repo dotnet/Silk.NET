@@ -13,20 +13,20 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     public enum DeviceSideAvcMotionEstimationPartition : int
     {
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_ALL_INTEL")]
-        All = 0x0,
+        MaskAll = 0x0,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_16x16_INTEL")]
-        Cl16x16 = 0x7E,
+        Mask16x16 = 0x7E,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_16x8_INTEL")]
-        Cl16x8 = 0x7D,
+        Mask16x8 = 0x7D,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_8x16_INTEL")]
-        Cl8x16 = 0x7B,
+        Mask8x16 = 0x7B,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_8x8_INTEL")]
-        Cl8x8 = 0x77,
+        Mask8x8 = 0x77,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_8x4_INTEL")]
-        Cl8x4 = 0x6F,
+        Mask8x4 = 0x6F,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_4x8_INTEL")]
-        Cl4x8 = 0x5F,
+        Mask4x8 = 0x5F,
         [NativeName("Name", "CL_AVC_ME_PARTITION_MASK_4x4_INTEL")]
-        Cl4x4 = 0x3F,
+        Mask4x4 = 0x3F,
     }
 }
