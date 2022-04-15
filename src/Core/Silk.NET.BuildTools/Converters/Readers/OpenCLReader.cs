@@ -860,7 +860,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 _ => typeStr
                             };
 
-                            if (typeStr == "Error codes" || typeStr.StartsWith("Error type")) typeStr = "ErrorCodes";
+                            if (typeStr == "Error codes" || typeStr?.StartsWith("Error type") == true) typeStr = "ErrorCodes";
                             if (typeStr?.StartsWith("OpenCL ") == true && typeStr.Contains("deprecated"))
                             {
                                 var typeNameStart = typeStr.IndexOf(' ', "OpenCL ".Length) + 1;
