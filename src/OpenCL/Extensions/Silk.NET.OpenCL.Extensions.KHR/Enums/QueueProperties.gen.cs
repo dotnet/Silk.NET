@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_queue_properties_khr")]
-    public enum QueuePropertiesKhr : ulong
+    public enum QueueProperties : ulong
     {
     }
 }
