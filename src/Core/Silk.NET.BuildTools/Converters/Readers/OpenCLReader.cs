@@ -1076,14 +1076,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
                     var groupNoTag = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
-                    if(!enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
-                    {
-                        rawName = groupNoTag;
-                    }
-                    else
-                    {
-                        rawName = group.Key.Renamed;
-                    }
+                    rawName = groupNoTag;
                 }
                 else
                 {
