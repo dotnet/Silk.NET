@@ -7,15 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR
+namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_queue_properties")]
     public enum QueueProperties : ulong
     {
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        Priority = 0x1096,
+        PriorityKhr = 0x1096,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        Throttle = 0x1097,
+        ThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         KernelBatchingArm = 0x41E7,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]

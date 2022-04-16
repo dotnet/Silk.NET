@@ -7,15 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.ARM
+namespace Silk.NET.OpenCL
 {
     [System.Flags]
-    [NativeName("Name", "cl_svm_mem_flags_arm")]
+    [NativeName("Name", "cl_svm_mem_flags")]
     public enum SvmMemFlags : ulong
     {
-        [NativeName("Name", "CL_MEM_SVM_FINE_GRAIN_BUFFER_ARM")]
-        FineGrainBuffer = 0x400,
-        [NativeName("Name", "CL_MEM_SVM_ATOMICS_ARM")]
-        Atomics = 0x800,
     }
 }

@@ -7,16 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR
+namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_sampler_properties")]
     public enum SamplerProperties : ulong
     {
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
-        MipFilterMode = 0x1155,
+        MipFilterModeKhr = 0x1155,
         [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
-        LodMin = 0x1156,
+        LodMinKhr = 0x1156,
         [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
-        LodMax = 0x1157,
+        LodMaxKhr = 0x1157,
     }
 }
