@@ -262,6 +262,16 @@
             },
             "prefix": "cl",
             "clang": {},
+            "rename": {
+                "cl_kernel_arg_type_qualifer": "cl_kernel_arg_type_qualifier",
+                "ck_khr_mipmap_image": "cl_khr_mipmap_image",
+                
+                "CL_DRIVER_VERSION": "CL_DEVICE_DRIVER_VERSION",
+                "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
+                
+                "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
+                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM",
+            },
             "bakery": {
                 "profileNames": [
                     "opencl"

@@ -39,6 +39,6 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "name")]
-        public fixed byte Name[100];
+        public fixed byte Name[64];
     }
 }

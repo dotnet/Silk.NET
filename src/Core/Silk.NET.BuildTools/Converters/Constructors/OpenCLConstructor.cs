@@ -112,7 +112,46 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     Tokens = new List<Token>(), NativeName = "GLenum",
                 }
             );
-            
+            profile.Projects["Core"].Enums.Add(mergedEnums.Values.Single());
+
+            void CheckPrefix(string prefix)
+            {
+                if (mergedEnums.ContainsKey(prefix))
+                {
+                    return;
+                }
+
+                var @enum = new Enum
+                {
+                    Name = prefix.CheckMemberName(task.FunctionPrefix), ExtensionName = prefix,
+                    NativeName = "GLenum"
+                };
+
+                mergedEnums.Add
+                (
+                    prefix,
+                    @enum
+                );
+
+                if (!profile.Projects.ContainsKey(@enum.ExtensionName))
+                {
+                    profile.Projects.Add
+                    (
+                        @enum.ExtensionName,
+                        new Project
+                        {
+                            IsRoot = @enum.ExtensionName == "Core",
+                            Namespace = @enum.ExtensionName == "Core"
+                                ? string.Empty
+                                : $".{@enum.ExtensionName.CheckMemberName(task.FunctionPrefix)}",
+                            Classes = new List<Class> { new Class { ClassName = task.ConverterOpts.ClassName } }
+                        }
+                    );
+                }
+
+                profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
+            }
+
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
             foreach (var @enum in enums)
             {
@@ -133,44 +172,18 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     default:
                     {
                         var prefix = FormatCategory(@enum.ExtensionName);
-                        if (!mergedEnums.ContainsKey(prefix))
+                        CheckPrefix(prefix);
+                        if(@enum.Name == "Globals")
                         {
-                            mergedEnums.Add
-                            (
-                                prefix,
-                                new Enum
-                                {
-                                    Name = prefix.CheckMemberName(task.FunctionPrefix), ExtensionName = prefix,
-                                    NativeName = "GLenum"
-                                }
-                            );
+                            mergedEnums[prefix].Tokens.AddRange(@enum.Tokens);
                         }
-                        mergedEnums[prefix].Tokens.AddRange(@enum.Tokens);
+                        else
+                        {
+                            profile.Projects[prefix].Enums.Add(@enum);
+                        }
                         break;
                     }
                 }
-            }
-            
-            // now that we've categorised them, lets add them into their appropriate projects.
-            foreach (var (_, @enum) in mergedEnums)
-            {
-                if (!profile.Projects.ContainsKey(@enum.ExtensionName))
-                {
-                    profile.Projects.Add
-                    (
-                        @enum.ExtensionName,
-                        new Project
-                        {
-                            IsRoot = @enum.ExtensionName == "Core",
-                            Namespace = @enum.ExtensionName == "Core"
-                                ? string.Empty
-                                : $".{@enum.ExtensionName.CheckMemberName(task.FunctionPrefix)}",
-                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
-                        }
-                    );
-                }
-
-                profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
             }
         }
         

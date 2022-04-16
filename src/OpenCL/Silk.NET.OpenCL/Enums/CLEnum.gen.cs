@@ -15,97 +15,97 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_SUCCESS")]
         Success = 0x0,
         [NativeName("Name", "CL_DEVICE_NOT_FOUND")]
-        DeviceNotFound = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        DeviceNotFound = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "CL_DEVICE_NOT_AVAILABLE")]
-        DeviceNotAvailable = unchecked((int)0xFFFFFFFFFFFFFFFE),
+        DeviceNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "CL_COMPILER_NOT_AVAILABLE")]
-        CompilerNotAvailable = unchecked((int)0xFFFFFFFFFFFFFFFD),
+        CompilerNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFFD),
         [NativeName("Name", "CL_MEM_OBJECT_ALLOCATION_FAILURE")]
-        MemObjectAllocationFailure = unchecked((int)0xFFFFFFFFFFFFFFFC),
+        MemObjectAllocationFailure = unchecked((int) 0xFFFFFFFFFFFFFFFC),
         [NativeName("Name", "CL_OUT_OF_RESOURCES")]
-        OutOfResources = unchecked((int)0xFFFFFFFFFFFFFFFB),
+        OutOfResources = unchecked((int) 0xFFFFFFFFFFFFFFFB),
         [NativeName("Name", "CL_OUT_OF_HOST_MEMORY")]
-        OutOfHostMemory = unchecked((int)0xFFFFFFFFFFFFFFFA),
+        OutOfHostMemory = unchecked((int) 0xFFFFFFFFFFFFFFFA),
         [NativeName("Name", "CL_PROFILING_INFO_NOT_AVAILABLE")]
-        ProfilingInfoNotAvailable = unchecked((int)0xFFFFFFFFFFFFFFF9),
+        ProfilingInfoNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFF9),
         [NativeName("Name", "CL_MEM_COPY_OVERLAP")]
-        MemCopyOverlap = unchecked((int)0xFFFFFFFFFFFFFFF8),
+        MemCopyOverlap = unchecked((int) 0xFFFFFFFFFFFFFFF8),
         [NativeName("Name", "CL_IMAGE_FORMAT_MISMATCH")]
-        ImageFormatMismatch = unchecked((int)0xFFFFFFFFFFFFFFF7),
+        ImageFormatMismatch = unchecked((int) 0xFFFFFFFFFFFFFFF7),
         [NativeName("Name", "CL_IMAGE_FORMAT_NOT_SUPPORTED")]
-        ImageFormatNotSupported = unchecked((int)0xFFFFFFFFFFFFFFF6),
+        ImageFormatNotSupported = unchecked((int) 0xFFFFFFFFFFFFFFF6),
         [NativeName("Name", "CL_BUILD_PROGRAM_FAILURE")]
-        BuildProgramFailure = unchecked((int)0xFFFFFFFFFFFFFFF5),
+        BuildProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFF5),
         [NativeName("Name", "CL_MAP_FAILURE")]
-        MapFailure = unchecked((int)0xFFFFFFFFFFFFFFF4),
+        MapFailure = unchecked((int) 0xFFFFFFFFFFFFFFF4),
         [NativeName("Name", "CL_INVALID_VALUE")]
-        InvalidValue = unchecked((int)0xFFFFFFFFFFFFFFE2),
+        InvalidValue = unchecked((int) 0xFFFFFFFFFFFFFFE2),
         [NativeName("Name", "CL_INVALID_DEVICE_TYPE")]
-        InvalidDeviceType = unchecked((int)0xFFFFFFFFFFFFFFE1),
+        InvalidDeviceType = unchecked((int) 0xFFFFFFFFFFFFFFE1),
         [NativeName("Name", "CL_INVALID_PLATFORM")]
-        InvalidPlatform = unchecked((int)0xFFFFFFFFFFFFFFE0),
+        InvalidPlatform = unchecked((int) 0xFFFFFFFFFFFFFFE0),
         [NativeName("Name", "CL_INVALID_DEVICE")]
-        InvalidDevice = unchecked((int)0xFFFFFFFFFFFFFFDF),
+        InvalidDevice = unchecked((int) 0xFFFFFFFFFFFFFFDF),
         [NativeName("Name", "CL_INVALID_CONTEXT")]
-        InvalidContext = unchecked((int)0xFFFFFFFFFFFFFFDE),
+        InvalidContext = unchecked((int) 0xFFFFFFFFFFFFFFDE),
         [NativeName("Name", "CL_INVALID_QUEUE_PROPERTIES")]
-        InvalidQueueProperties = unchecked((int)0xFFFFFFFFFFFFFFDD),
+        InvalidQueueProperties = unchecked((int) 0xFFFFFFFFFFFFFFDD),
         [NativeName("Name", "CL_INVALID_COMMAND_QUEUE")]
-        InvalidCommandQueue = unchecked((int)0xFFFFFFFFFFFFFFDC),
+        InvalidCommandQueue = unchecked((int) 0xFFFFFFFFFFFFFFDC),
         [NativeName("Name", "CL_INVALID_HOST_PTR")]
-        InvalidHostPtr = unchecked((int)0xFFFFFFFFFFFFFFDB),
+        InvalidHostPtr = unchecked((int) 0xFFFFFFFFFFFFFFDB),
         [NativeName("Name", "CL_INVALID_MEM_OBJECT")]
-        InvalidMemObject = unchecked((int)0xFFFFFFFFFFFFFFDA),
+        InvalidMemObject = unchecked((int) 0xFFFFFFFFFFFFFFDA),
         [NativeName("Name", "CL_INVALID_IMAGE_FORMAT_DESCRIPTOR")]
-        InvalidImageFormatDescriptor = unchecked((int)0xFFFFFFFFFFFFFFD9),
+        InvalidImageFormatDescriptor = unchecked((int) 0xFFFFFFFFFFFFFFD9),
         [NativeName("Name", "CL_INVALID_IMAGE_SIZE")]
-        InvalidImageSize = unchecked((int)0xFFFFFFFFFFFFFFD8),
+        InvalidImageSize = unchecked((int) 0xFFFFFFFFFFFFFFD8),
         [NativeName("Name", "CL_INVALID_SAMPLER")]
-        InvalidSampler = unchecked((int)0xFFFFFFFFFFFFFFD7),
+        InvalidSampler = unchecked((int) 0xFFFFFFFFFFFFFFD7),
         [NativeName("Name", "CL_INVALID_BINARY")]
-        InvalidBinary = unchecked((int)0xFFFFFFFFFFFFFFD6),
+        InvalidBinary = unchecked((int) 0xFFFFFFFFFFFFFFD6),
         [NativeName("Name", "CL_INVALID_BUILD_OPTIONS")]
-        InvalidBuildOptions = unchecked((int)0xFFFFFFFFFFFFFFD5),
+        InvalidBuildOptions = unchecked((int) 0xFFFFFFFFFFFFFFD5),
         [NativeName("Name", "CL_INVALID_PROGRAM")]
-        InvalidProgram = unchecked((int)0xFFFFFFFFFFFFFFD4),
+        InvalidProgram = unchecked((int) 0xFFFFFFFFFFFFFFD4),
         [NativeName("Name", "CL_INVALID_PROGRAM_EXECUTABLE")]
-        InvalidProgramExecutable = unchecked((int)0xFFFFFFFFFFFFFFD3),
+        InvalidProgramExecutable = unchecked((int) 0xFFFFFFFFFFFFFFD3),
         [NativeName("Name", "CL_INVALID_KERNEL_NAME")]
-        InvalidKernelName = unchecked((int)0xFFFFFFFFFFFFFFD2),
+        InvalidKernelName = unchecked((int) 0xFFFFFFFFFFFFFFD2),
         [NativeName("Name", "CL_INVALID_KERNEL_DEFINITION")]
-        InvalidKernelDefinition = unchecked((int)0xFFFFFFFFFFFFFFD1),
+        InvalidKernelDefinition = unchecked((int) 0xFFFFFFFFFFFFFFD1),
         [NativeName("Name", "CL_INVALID_KERNEL")]
-        InvalidKernel = unchecked((int)0xFFFFFFFFFFFFFFD0),
+        InvalidKernel = unchecked((int) 0xFFFFFFFFFFFFFFD0),
         [NativeName("Name", "CL_INVALID_ARG_INDEX")]
-        InvalidArgIndex = unchecked((int)0xFFFFFFFFFFFFFFCF),
+        InvalidArgIndex = unchecked((int) 0xFFFFFFFFFFFFFFCF),
         [NativeName("Name", "CL_INVALID_ARG_VALUE")]
-        InvalidArgValue = unchecked((int)0xFFFFFFFFFFFFFFCE),
+        InvalidArgValue = unchecked((int) 0xFFFFFFFFFFFFFFCE),
         [NativeName("Name", "CL_INVALID_ARG_SIZE")]
-        InvalidArgSize = unchecked((int)0xFFFFFFFFFFFFFFCD),
+        InvalidArgSize = unchecked((int) 0xFFFFFFFFFFFFFFCD),
         [NativeName("Name", "CL_INVALID_KERNEL_ARGS")]
-        InvalidKernelArgs = unchecked((int)0xFFFFFFFFFFFFFFCC),
+        InvalidKernelArgs = unchecked((int) 0xFFFFFFFFFFFFFFCC),
         [NativeName("Name", "CL_INVALID_WORK_DIMENSION")]
-        InvalidWorkDimension = unchecked((int)0xFFFFFFFFFFFFFFCB),
+        InvalidWorkDimension = unchecked((int) 0xFFFFFFFFFFFFFFCB),
         [NativeName("Name", "CL_INVALID_WORK_GROUP_SIZE")]
-        InvalidWorkGroupSize = unchecked((int)0xFFFFFFFFFFFFFFCA),
+        InvalidWorkGroupSize = unchecked((int) 0xFFFFFFFFFFFFFFCA),
         [NativeName("Name", "CL_INVALID_WORK_ITEM_SIZE")]
-        InvalidWorkItemSize = unchecked((int)0xFFFFFFFFFFFFFFC9),
+        InvalidWorkItemSize = unchecked((int) 0xFFFFFFFFFFFFFFC9),
         [NativeName("Name", "CL_INVALID_GLOBAL_OFFSET")]
-        InvalidGlobalOffset = unchecked((int)0xFFFFFFFFFFFFFFC8),
+        InvalidGlobalOffset = unchecked((int) 0xFFFFFFFFFFFFFFC8),
         [NativeName("Name", "CL_INVALID_EVENT_WAIT_LIST")]
-        InvalidEventWaitList = unchecked((int)0xFFFFFFFFFFFFFFC7),
+        InvalidEventWaitList = unchecked((int) 0xFFFFFFFFFFFFFFC7),
         [NativeName("Name", "CL_INVALID_EVENT")]
-        InvalidEvent = unchecked((int)0xFFFFFFFFFFFFFFC6),
+        InvalidEvent = unchecked((int) 0xFFFFFFFFFFFFFFC6),
         [NativeName("Name", "CL_INVALID_OPERATION")]
-        InvalidOperation = unchecked((int)0xFFFFFFFFFFFFFFC5),
+        InvalidOperation = unchecked((int) 0xFFFFFFFFFFFFFFC5),
         [NativeName("Name", "CL_INVALID_GL_OBJECT")]
-        InvalidGLObject = unchecked((int)0xFFFFFFFFFFFFFFC4),
+        InvalidGLObject = unchecked((int) 0xFFFFFFFFFFFFFFC4),
         [NativeName("Name", "CL_INVALID_BUFFER_SIZE")]
-        InvalidBufferSize = unchecked((int)0xFFFFFFFFFFFFFFC3),
+        InvalidBufferSize = unchecked((int) 0xFFFFFFFFFFFFFFC3),
         [NativeName("Name", "CL_INVALID_MIP_LEVEL")]
-        InvalidMipLevel = unchecked((int)0xFFFFFFFFFFFFFFC2),
+        InvalidMipLevel = unchecked((int) 0xFFFFFFFFFFFFFFC2),
         [NativeName("Name", "CL_INVALID_GLOBAL_WORK_SIZE")]
-        InvalidGlobalWorkSize = unchecked((int)0xFFFFFFFFFFFFFFC1),
+        InvalidGlobalWorkSize = unchecked((int) 0xFFFFFFFFFFFFFFC1),
         [NativeName("Name", "CL_FALSE")]
         False = 0x0,
         [NativeName("Name", "CL_TRUE")]
@@ -129,7 +129,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_TYPE_ACCELERATOR")]
         DeviceTypeAccelerator = 0x8,
         [NativeName("Name", "CL_DEVICE_TYPE_ALL")]
-        DeviceTypeAll = unchecked((int)0xFFFFFFFF),
+        DeviceTypeAll = unchecked((int) 0xFFFFFFFF),
         [NativeName("Name", "CL_DEVICE_TYPE")]
         DeviceType = 0x1000,
         [NativeName("Name", "CL_DEVICE_VENDOR_ID")]
@@ -217,7 +217,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_VENDOR")]
         DeviceVendor = 0x102C,
         [NativeName("Name", "CL_DRIVER_VERSION")]
-        DriverVersion = 0x102D,
+        DeviceDriverVersion = 0x102D,
         [NativeName("Name", "CL_DEVICE_PROFILE")]
         DeviceProfile = 0x102E,
         [NativeName("Name", "CL_DEVICE_VERSION")]
@@ -425,11 +425,11 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_BUILD_SUCCESS")]
         BuildSuccess = 0x0,
         [NativeName("Name", "CL_BUILD_NONE")]
-        BuildNone = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        BuildNone = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "CL_BUILD_ERROR")]
-        BuildError = unchecked((int)0xFFFFFFFFFFFFFFFE),
+        BuildError = unchecked((int) 0xFFFFFFFFFFFFFFFE),
         [NativeName("Name", "CL_BUILD_IN_PROGRESS")]
-        BuildInProgress = unchecked((int)0xFFFFFFFFFFFFFFFD),
+        BuildInProgress = unchecked((int) 0xFFFFFFFFFFFFFFFD),
         [NativeName("Name", "CL_KERNEL_FUNCTION_NAME")]
         KernelFunctionName = 0x1190,
         [NativeName("Name", "CL_KERNEL_NUM_ARGS")]
@@ -500,16 +500,18 @@ namespace Silk.NET.OpenCL
         Submitted = 0x2,
         [NativeName("Name", "CL_QUEUED")]
         Queued = 0x3,
+        [System.Obsolete("Deprecated in version 1.2")]
         [NativeName("Name", "CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE")]
         DeviceMinDataTypeAlignSize = 0x101A,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_QUEUE_PROPERTIES")]
         DeviceQueueProperties = 0x102A,
         [NativeName("Name", "CL_MISALIGNED_SUB_BUFFER_OFFSET")]
-        MisalignedSubBufferOffset = unchecked((int)0xFFFFFFFFFFFFFFF3),
+        MisalignedSubBufferOffset = unchecked((int) 0xFFFFFFFFFFFFFFF3),
         [NativeName("Name", "CL_EXEC_STATUS_ERROR_FOR_EVENTS_IN_WAIT_LIST")]
-        ExecStatusErrorForEventsInWaitList = unchecked((int)0xFFFFFFFFFFFFFFF2),
+        ExecStatusErrorForEventsInWaitList = unchecked((int) 0xFFFFFFFFFFFFFFF2),
         [NativeName("Name", "CL_INVALID_PROPERTY")]
-        InvalidProperty = unchecked((int)0xFFFFFFFFFFFFFFC0),
+        InvalidProperty = unchecked((int) 0xFFFFFFFFFFFFFFC0),
         [NativeName("Name", "CL_DEVICE_PREFERRED_VECTOR_WIDTH_HALF")]
         DevicePreferredVectorWidthHalf = 0x1034,
         [NativeName("Name", "CL_DEVICE_NATIVE_VECTOR_WIDTH_CHAR")]
@@ -554,28 +556,30 @@ namespace Silk.NET.OpenCL
         CommandUser = 0x1204,
         [NativeName("Name", "CL_BUFFER_CREATE_TYPE_REGION")]
         BufferCreateTypeRegion = 0x1220,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_DEVICE_HOST_UNIFIED_MEMORY")]
         DeviceHostUnifiedMemory = 0x1035,
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_DEVICE_OPENCL_C_VERSION")]
         DeviceOpenclCVersion = 0x103D,
         [NativeName("Name", "CL_COMPILE_PROGRAM_FAILURE")]
-        CompileProgramFailure = unchecked((int)0xFFFFFFFFFFFFFFF1),
+        CompileProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFF1),
         [NativeName("Name", "CL_LINKER_NOT_AVAILABLE")]
-        LinkerNotAvailable = unchecked((int)0xFFFFFFFFFFFFFFF0),
+        LinkerNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFF0),
         [NativeName("Name", "CL_LINK_PROGRAM_FAILURE")]
-        LinkProgramFailure = unchecked((int)0xFFFFFFFFFFFFFFEF),
+        LinkProgramFailure = unchecked((int) 0xFFFFFFFFFFFFFFEF),
         [NativeName("Name", "CL_DEVICE_PARTITION_FAILED")]
-        DevicePartitionFailed = unchecked((int)0xFFFFFFFFFFFFFFEE),
+        DevicePartitionFailed = unchecked((int) 0xFFFFFFFFFFFFFFEE),
         [NativeName("Name", "CL_KERNEL_ARG_INFO_NOT_AVAILABLE")]
-        KernelArgInfoNotAvailable = unchecked((int)0xFFFFFFFFFFFFFFED),
+        KernelArgInfoNotAvailable = unchecked((int) 0xFFFFFFFFFFFFFFED),
         [NativeName("Name", "CL_INVALID_IMAGE_DESCRIPTOR")]
-        InvalidImageDescriptor = unchecked((int)0xFFFFFFFFFFFFFFBF),
+        InvalidImageDescriptor = unchecked((int) 0xFFFFFFFFFFFFFFBF),
         [NativeName("Name", "CL_INVALID_COMPILER_OPTIONS")]
-        InvalidCompilerOptions = unchecked((int)0xFFFFFFFFFFFFFFBE),
+        InvalidCompilerOptions = unchecked((int) 0xFFFFFFFFFFFFFFBE),
         [NativeName("Name", "CL_INVALID_LINKER_OPTIONS")]
-        InvalidLinkerOptions = unchecked((int)0xFFFFFFFFFFFFFFBD),
+        InvalidLinkerOptions = unchecked((int) 0xFFFFFFFFFFFFFFBD),
         [NativeName("Name", "CL_INVALID_DEVICE_PARTITION_COUNT")]
-        InvalidDevicePartitionCount = unchecked((int)0xFFFFFFFFFFFFFFBC),
+        InvalidDevicePartitionCount = unchecked((int) 0xFFFFFFFFFFFFFFBC),
         [NativeName("Name", "CL_COMMAND_BARRIER")]
         CommandBarrier = 0x1205,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECTS")]
@@ -585,9 +589,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_COMMAND_FILL_IMAGE")]
         CommandFillImage = 0x1208,
         [NativeName("Name", "CL_BLOCKING")]
-        Blocking = 1,
+        Blocking = 0x1,
         [NativeName("Name", "CL_NON_BLOCKING")]
-        NonBlocking = 0,
+        NonBlocking = 0x0,
         [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
         DeviceTypeCustom = 0x10,
         [NativeName("Name", "CL_DEVICE_DOUBLE_FP_CONFIG")]
@@ -716,12 +720,13 @@ namespace Silk.NET.OpenCL
         KernelArgTypeVolatile = 0x4,
         [NativeName("Name", "CL_KERNEL_GLOBAL_WORK_SIZE")]
         KernelGlobalWorkSize = 0x11B5,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "CL_IMAGE_BUFFER")]
         ImageBuffer = 0x1118,
         [NativeName("Name", "CL_INVALID_PIPE_SIZE")]
-        InvalidPipeSize = unchecked((int)0xFFFFFFFFFFFFFFBB),
+        InvalidPipeSize = unchecked((int) 0xFFFFFFFFFFFFFFBB),
         [NativeName("Name", "CL_INVALID_DEVICE_QUEUE")]
-        InvalidDeviceQueue = unchecked((int)0xFFFFFFFFFFFFFFBA),
+        InvalidDeviceQueue = unchecked((int) 0xFFFFFFFFFFFFFFBA),
         [NativeName("Name", "CL_DEVICE_QUEUE_ON_HOST_PROPERTIES")]
         DeviceQueueOnHostProperties = 0x102A,
         [NativeName("Name", "CL_DEVICE_IMAGE_PITCH_ALIGNMENT")]
@@ -849,11 +854,13 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_KERNEL_LOCAL_SIZE_FOR_SUB_GROUP_COUNT")]
         KernelLocalSizeForSubGroupCount = 0x11B8,
         [NativeName("Name", "CL_INVALID_SPEC_ID")]
-        InvalidSpecID = unchecked((int)0xFFFFFFFFFFFFFFB9),
+        InvalidSpecID = unchecked((int) 0xFFFFFFFFFFFFFFB9),
         [NativeName("Name", "CL_MAX_SIZE_RESTRICTION_EXCEEDED")]
-        MaxSizeRestrictionExceeded = unchecked((int)0xFFFFFFFFFFFFFFB8),
+        MaxSizeRestrictionExceeded = unchecked((int) 0xFFFFFFFFFFFFFFB8),
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_CTORS_PRESENT")]
         ProgramScopeGlobalCtorsPresent = 0x116A,
+        [System.Obsolete("Deprecated in version 3.0")]
         [NativeName("Name", "CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
         ProgramScopeGlobalDtorsPresent = 0x116B,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_RELAXED")]
@@ -918,13 +925,5 @@ namespace Silk.NET.OpenCL
         MemProperties = 0x110A,
         [NativeName("Name", "CL_COMMAND_SVM_MIGRATE_MEM")]
         CommandSvmMigrateMem = 0x120E,
-        [NativeName("Name", "CL_VERSION_MAJOR_BITS")]
-        VersionMajorBits = 0x10,
-        [NativeName("Name", "CL_VERSION_MINOR_BITS")]
-        VersionMinorBits = 0x10,
-        [NativeName("Name", "CL_VERSION_PATCH_BITS")]
-        VersionPatchBits = 0x12,
-        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE")]
-        NameVersionMaxNameSize = 0x64,
     }
 }
