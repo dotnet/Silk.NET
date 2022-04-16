@@ -139,7 +139,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     Name = Naming.Translate(TrimName(renamedField.Renamed, task), prefix),
                                     Doc = $"/// <summary>{x.Comment}</summary>",
                                     NativeName = renamedField.Original,
-                                    NativeType = fieldType.OriginalName,
+                                    NativeType = x.Type.ToString(),
                                     Type = fieldType
                                 }.WithFixedFieldFixup09072020();
                             })
