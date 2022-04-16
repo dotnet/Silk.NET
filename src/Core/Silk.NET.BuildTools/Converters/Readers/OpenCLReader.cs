@@ -804,6 +804,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Select(x => Rename(x.Attribute("name").Value, task))
                 .Concat(Constants.Keys.Select(c => Rename(c, task))));
 
+            // Mark enums based on "enums" tags
             var enumsPass1 = registry
                 .Elements("enums")
                 .Elements("enum")
@@ -841,6 +842,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 );
 
+            // Mark enums based on "require" tags
             apis.Elements("require")
                 .Elements("enum").ForEach(x =>
                 {
@@ -880,6 +882,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 });
 
+            // Add empty enums that are defined in spec but have no members (yet)
+            registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_properties"
+                      )
+                .Select(e => Rename(e.Element("name").Value, task))
+                .Where(x => !enumEntries.ContainsKey(x))
+                .ForEach(x => enumEntries.Add(x, new HashSet<RenamedEntry>()));
+
+            // Read actual enum values
             var enumValues = registry
                 .Elements("enums")
                 .Elements("enum")
@@ -994,7 +1008,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Attributes("name")
                 .Select(x => Rename(x.Value, task))
                 .Where(x => !constants.Contains(x))
-                .SelectMany(name => enumTypes[name]));
+                .SelectMany(name => enumTypes[name])
+                .Concat(registry
+                .Elements("feature")
+                .Elements("require")
+                .Elements("type")
+                .Attributes("name")
+                .Select(x => Rename(x.Value, task))
+                ));
 
             var enumExtensionsByType = registry
                 .Elements("extensions")
@@ -1099,6 +1120,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
         {
+            if (list.Count == 0) return;
+
             var prefix = "";
             if (list.Count == 1)
             {
