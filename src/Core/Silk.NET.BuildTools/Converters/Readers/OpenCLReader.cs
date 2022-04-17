@@ -795,7 +795,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Elements("type")
                 .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
                             e.Elements("type").SingleOrDefault()?.Value == "cl_properties" ||
-                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong")
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong"
+                      )
+                .Select(e => Rename(e.Element("name").Value, task).Renamed));
+
+            var nintEnums = new HashSet<string>(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "intptr_t")
                 .Select(e => Rename(e.Element("name").Value, task).Renamed));
 
             var flagEnums = new HashSet<string>(registry
@@ -1099,12 +1106,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }).ToList();
 
-                string extTag = "";
+                string baseName = "";
                 string rawName = "";
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
-                    extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
-                    var groupNoTag = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
+                    baseName = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
+                    var groupNoTag = group.Key.Renamed.Replace($"_{baseName}", "", StringComparison.OrdinalIgnoreCase);
                     rawName = groupNoTag;
 
                     if (tokens.Count == 0 && enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
@@ -1116,14 +1123,21 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     extName = new RenamedEntry("Core (Grouped)", "Core (Grouped)");
                     rawName = group.Key.Renamed;
+                    baseName = "CLEnum";
                 }
 
                 var groupName = Naming.Translate(TrimName(rawName, task), task.FunctionPrefix);
                 var is64bit = ulongEnums.Contains(group.Key.Renamed);
+                var isNint = nintEnums.Contains(group.Key.Renamed);
 
-                RenameTokens(tokens, group.Key.Renamed, extTag, task);
-                enumTypemap[group.Key.Original] = groupName;
-                enumTypemap[group.Key.Renamed] = groupName;
+                RenameTokens(tokens, group.Key.Renamed, baseName, task);
+
+                // Allow intptr_t based enums to fall through to the nint base type
+                if (!isNint)
+                {
+                    enumTypemap[group.Key.Original] = groupName;
+                    enumTypemap[group.Key.Renamed] = groupName;
+                }
 
                 foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
@@ -1139,7 +1153,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         ProfileName = apiName,
                         ProfileVersion = Version.Parse(apiVersion),
                         Tokens = tokens,
-                        EnumBaseType = is64bit ? new Type { Name = "ulong" } : new Type { Name = "int" }
+                        EnumBaseType = (is64bit || isNint) ? new Type { Name = "ulong" } : new Type { Name = "int" }
                     };
             
                     yield return ret;
