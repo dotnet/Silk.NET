@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [NativeName("Name", "cl_motion_estimation_desc_intel")]
     public unsafe partial struct MotionEstimationDescIntel

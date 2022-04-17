@@ -16,19 +16,19 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
 {
     public static class LoaderLayersOverloads
     {
-        public static unsafe int GetLayerInfo(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
+        public static unsafe int GetLayerInfo(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret)
         {
             // SpanOverloader
             return thisApi.GetLayerInfo(param_name, param_value_size, param_value, out param_value_size_ret.GetPinnableReference());
         }
 
-        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), param_value_size_ret);
         }
 
-        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
+        public static unsafe int GetLayerInfo<T0>(this LoaderLayers thisApi, [Flow(FlowDirection.In)] LayerInfo param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<nuint> param_value_size_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetLayerInfo(param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());

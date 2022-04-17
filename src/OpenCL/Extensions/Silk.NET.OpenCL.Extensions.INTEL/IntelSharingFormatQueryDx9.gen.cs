@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     {
         public const string ExtensionName = "INTEL_sharing_format_query_dx9";
         [NativeApi(EntryPoint = "clGetSupportedDX9MediaSurfaceFormatsINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* dx9_formats, [Flow(FlowDirection.Out)] uint* num_surface_formats);
+        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] MemObjectType image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* dx9_formats, [Flow(FlowDirection.Out)] uint* num_surface_formats);
 
         [NativeApi(EntryPoint = "clGetSupportedDX9MediaSurfaceFormatsINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* dx9_formats, [Flow(FlowDirection.Out)] out uint num_surface_formats);
+        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] MemObjectType image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* dx9_formats, [Flow(FlowDirection.Out)] out uint num_surface_formats);
 
         [NativeApi(EntryPoint = "clGetSupportedDX9MediaSurfaceFormatsINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint dx9_formats, [Flow(FlowDirection.Out)] uint* num_surface_formats);
+        public unsafe partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] MemObjectType image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint dx9_formats, [Flow(FlowDirection.Out)] uint* num_surface_formats);
 
         [NativeApi(EntryPoint = "clGetSupportedDX9MediaSurfaceFormatsINTEL", Convention = CallingConvention.Winapi)]
-        public partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint dx9_formats, [Flow(FlowDirection.Out)] out uint num_surface_formats);
+        public partial int GetSupportedDX9MediaSurfaceFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] MemObjectType image_type, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint dx9_formats, [Flow(FlowDirection.Out)] out uint num_surface_formats);
 
         public IntelSharingFormatQueryDx9(INativeContext ctx)
             : base(ctx)

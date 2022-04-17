@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_dx9_media_sharing";
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint CreateFromDX9MediaSurface([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public partial nint CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] out T0 surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueAcquireDX9MediaSurfacesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireDX9MediaSurfaces([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);

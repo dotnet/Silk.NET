@@ -16,19 +16,19 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrDx9MediaSharingOverloads
     {
-        public static unsafe nint CreateFromDX9MediaSurface(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe nint CreateFromDX9MediaSurface(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] void* surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, surface_info, plane, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, errcode_ret);
         }
 
-        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe nint CreateFromDX9MediaSurface<T0>(this KhrDx9MediaSharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] uint adapter_type, [Flow(FlowDirection.Out)] Span<T0> surface_info, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, adapter_type, out surface_info.GetPinnableReference(), plane, out errcode_ret.GetPinnableReference());

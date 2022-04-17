@@ -21,28 +21,28 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_device_fission";
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
-        public partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+        public partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
         [NativeApi(EntryPoint = "clReleaseDeviceEXT", Convention = CallingConvention.Winapi)]
         public partial int ReleaseDevice([Flow(FlowDirection.In)] nint device);

@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_device_pci_bus_info_khr")]
     public unsafe partial struct DevicePciBusInfoKhr

@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_device_partition_property")]
-    public enum DevicePartitionProperty : int
+    public enum DevicePartitionProperty : ulong
     {
         [NativeName("Name", "CL_DEVICE_PARTITION_EQUALLY")]
         Equally = 0x1086,

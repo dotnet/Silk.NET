@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_egl_image";
         [NativeApi(EntryPoint = "clCreateFromEGLImageKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromEGLImageKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromEGLImageKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromEGLImageKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public partial nint CreateFromEglimage([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint egldisplay, [Flow(FlowDirection.In)] nint eglimage, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueAcquireEGLObjectsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnqueueAcquireEglobjects([Flow(FlowDirection.In)] nint command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] nint* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] nint* event_wait_list, [Flow(FlowDirection.Out)] nint* @event);

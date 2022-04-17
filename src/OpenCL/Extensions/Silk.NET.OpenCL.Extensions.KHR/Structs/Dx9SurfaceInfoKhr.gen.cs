@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_dx9_surface_info_khr")]
     public unsafe partial struct Dx9SurfaceInfoKhr
