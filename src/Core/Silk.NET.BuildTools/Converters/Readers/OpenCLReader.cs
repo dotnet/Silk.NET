@@ -1074,14 +1074,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 string rawName = "";
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
-                    if (tokens.Count == 0)
-                    {
-                        break;
-                    }
-
                     extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
                     var groupNoTag = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
                     rawName = groupNoTag;
+
+                    if (tokens.Count == 0 && enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
+                    {
+                        continue;
+                    }
                 }
                 else
                 {
