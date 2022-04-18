@@ -19,7 +19,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
     <Content Include="runtimes\linux-x64\native\libglfw.so.3" PackagePath="runtimes\linux-x64\native\libglfw.so.3" />
     <Content Include="runtimes\osx-x64\native\libglfw.3.dylib" PackagePath="runtimes\osx-x64\native\libglfw.3.dylib" />
     <Content Include="runtimes\osx-arm64\native\libglfw.3.dylib" PackagePath="runtimes\osx-arm64\native\libglfw.3.dylib" />
