@@ -25,3 +25,4 @@ jobs:
               working-directory: ./website/cf-worker/
             - name: Publish
               run: wrangler publish
+              working-directory: ./website/cf-worker/
