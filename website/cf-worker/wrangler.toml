@@ -1,0 +1,5 @@
+name = "cf-30-docs"
+main = "index.js"
+compatibility_date = "2022-04-18"
+account_id = "9b4e8a5306252de7d3ebd878e5e80e27"
+site = { bucket = "../../docs" }
