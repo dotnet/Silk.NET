@@ -3,7 +3,6 @@ on:
     push:
         branches:
             - "develop/3.0"
-            - "dev/3/fix-ci"
 jobs:
     Build:
         environment: cf-kai-3.0-docs
