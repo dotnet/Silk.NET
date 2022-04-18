@@ -1,13 +1,13 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Moq;
 using Moq.Protected;
 using Xunit;
 
-namespace Silk.NET.SilkTouch.Symbols.Tests;
+namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
-public sealed class SymbolVisitorTests
+public class StructTests
 {
     [Fact]
     public void StructSymbolIsVisitedAsType()
@@ -21,7 +21,7 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
+            .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
     }
 
     [Fact]
@@ -36,7 +36,7 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
+            .Verify<StructSymbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
     }
 
     [Fact]
@@ -51,6 +51,6 @@ public sealed class SymbolVisitorTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
+            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
     }
 }
