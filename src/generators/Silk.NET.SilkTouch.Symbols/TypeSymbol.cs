@@ -7,10 +7,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// A generic <see cref="Symbol"/> representing a named type.
 /// </summary>
 /// <seealso cref="StructSymbol"/>
-public abstract class TypeSymbol : Symbol
-{
-    /// <summary>
-    /// The identifier of this type
-    /// </summary>
-    public abstract IdentifierSymbol Identifier { get; }
-}
+public abstract record TypeSymbol(IdentifierSymbol Identifier) : Symbol;
