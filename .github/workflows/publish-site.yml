@@ -5,6 +5,7 @@ on:
             - "develop/3.0"
 jobs:
     Build:
+        environment: cf-kai-3.0-docs
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
