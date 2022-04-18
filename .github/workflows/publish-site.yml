@@ -26,3 +26,6 @@ jobs:
             - name: Publish
               run: wrangler publish
               working-directory: ./website/cf-worker/
+              env:
+                  CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+                  CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
