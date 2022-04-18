@@ -61,7 +61,26 @@ public sealed class CSharpEmitter
                     List<TypeParameterConstraintClauseSyntax>(), members
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)));
-            return base.VisitStruct(structSymbol);
+            return structSymbol;
+        }
+
+        protected override FieldSymbol VisitField(FieldSymbol fieldSymbol)
+        {
+            _syntax = FieldDeclaration
+            (
+                List<AttributeListSyntax>(),
+                TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space))),
+                VariableDeclaration
+                (
+                    IdentifierName(fieldSymbol.Type.Identifier.Value),
+                    SingletonSeparatedList
+                    (
+                        VariableDeclarator
+                            (Identifier(TriviaList(Space), fieldSymbol.Identifier.Value, SyntaxTriviaList.Empty))
+                    )
+                )
+            );
+            return fieldSymbol;
         }
     }
 }
