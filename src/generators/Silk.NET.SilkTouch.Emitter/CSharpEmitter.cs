@@ -108,7 +108,7 @@ public sealed class CSharpEmitter
         {
             AssertClearState();
             
-            _syntaxToken = Identifier(identifierSymbol.Value);
+            _syntaxToken = Identifier(SyntaxTriviaList.Empty, identifierSymbol.Value, SyntaxTriviaList.Empty);
             _syntax = IdentifierName(_syntaxToken.Value);
             return identifierSymbol;
         }
