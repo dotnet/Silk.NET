@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -50,14 +51,22 @@ public sealed class CSharpEmitter
     {
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
+        private SyntaxToken? _syntaxToken = null;
 
         protected override StructSymbol VisitStruct(StructSymbol structSymbol)
         {
+            AssertClearState();
+            
+            VisitIdentifier(structSymbol.Identifier);
+            if (_syntaxToken is not { } identifierToken)
+                throw new InvalidOperationException("Field Identifier was not visited correctly");
+            ClearState();
+
             var members = List<MemberDeclarationSyntax>();
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
-                    List<AttributeListSyntax>(), modifiers, Identifier(structSymbol.Identifier.Value), null, null,
+                    List<AttributeListSyntax>(), modifiers, identifierToken, null, null,
                     List<TypeParameterConstraintClauseSyntax>(), members
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)));
@@ -66,21 +75,55 @@ public sealed class CSharpEmitter
 
         protected override FieldSymbol VisitField(FieldSymbol fieldSymbol)
         {
+            AssertClearState();
+            
+            VisitIdentifier(fieldSymbol.Type.Identifier);
+            if (_syntax is not IdentifierNameSyntax typeIdentifierSyntax)
+                throw new InvalidOperationException("Field type Identifier was not visited correctly");
+            ClearState();
+            
+            VisitIdentifier(fieldSymbol.Identifier);
+            if (_syntaxToken is not { } identifierToken)
+                throw new InvalidOperationException("Field Identifier was not visited correctly");
+            ClearState();
+
             _syntax = FieldDeclaration
             (
                 List<AttributeListSyntax>(),
                 TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space))),
                 VariableDeclaration
                 (
-                    IdentifierName(fieldSymbol.Type.Identifier.Value),
+                    typeIdentifierSyntax,
                     SingletonSeparatedList
                     (
                         VariableDeclarator
-                            (Identifier(TriviaList(Space), fieldSymbol.Identifier.Value, SyntaxTriviaList.Empty))
+                            (identifierToken.WithLeadingTrivia(TriviaList(Space)))
                     )
                 )
             );
             return fieldSymbol;
+        }
+
+        protected override IdentifierSymbol VisitIdentifier(IdentifierSymbol identifierSymbol)
+        {
+            AssertClearState();
+            
+            _syntaxToken = Identifier(identifierSymbol.Value);
+            _syntax = IdentifierName(_syntaxToken.Value);
+            return identifierSymbol;
+        }
+
+        [Conditional("DEBUG")]
+        private void AssertClearState()
+        {
+            Debug.Assert(_syntax is null);
+            Debug.Assert(!_syntaxToken.HasValue);
+        }
+
+        private void ClearState()
+        {
+            _syntax = null;
+            _syntaxToken = null;
         }
     }
 }
