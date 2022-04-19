@@ -31,7 +31,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             @"public struct Test
 {
-  public int F1;
+    public int F1;
 }", node.ToFullString()
         );
     }
