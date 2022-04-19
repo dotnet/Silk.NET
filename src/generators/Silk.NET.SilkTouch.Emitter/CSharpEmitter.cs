@@ -76,6 +76,7 @@ public sealed class CSharpEmitter
                 if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
                     throw new InvalidOperationException("Member was not visited correctly");
                 ClearState();
+                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
                 memberList.Add(memberDeclarationSyntax);
             }
             
