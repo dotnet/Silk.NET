@@ -2,6 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Immutable;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -20,5 +23,21 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
 
         var result = syntax.ToFullString();
         Assert.Equal("public int Test;", result);
+    }
+
+    [Fact]
+    public void FieldIsPublic()
+    {
+        var syntax = Transform
+        (
+            new FieldSymbol
+            (
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new IdentifierSymbol("Test")
+            )
+        ) as FieldDeclarationSyntax;
+
+        Assert.NotNull(syntax);
+        Assert.Single(syntax!.Modifiers, x => x.IsKind(SyntaxKind.PublicKeyword));
     }
 }
