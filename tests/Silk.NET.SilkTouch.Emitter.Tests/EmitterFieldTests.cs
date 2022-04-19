@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 public sealed class EmitterFieldIntegrationTests : EmitterTest
 {
     [Fact]
-    public void StructHasStructKeyword()
+    public void FieldIntegration()
     {
         var emitter = CreateEmitter();
 
