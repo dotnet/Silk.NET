@@ -1,6 +1,8 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
+
 namespace Silk.NET.SilkTouch.Symbols;
 
 /// <summary>
@@ -73,7 +75,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual StructSymbol VisitStruct(StructSymbol structSymbol)
     {
-        return new StructSymbol(VisitIdentifier(structSymbol.Identifier));
+        return new StructSymbol(VisitIdentifier(structSymbol.Identifier), structSymbol.Members.Select(VisitMember).ToImmutableArray());
     }
 
     /// <summary>
