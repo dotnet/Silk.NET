@@ -69,7 +69,9 @@ public sealed class CSharpEmitter
                     List<AttributeListSyntax>(), modifiers, identifierToken, null, null,
                     List<TypeParameterConstraintClauseSyntax>(), members
                 )
-                .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)));
+                .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
+                .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
+                .WithCloseBraceToken(Token(TriviaList(LineFeed), SyntaxKind.CloseBraceToken, SyntaxTriviaList.Empty));
             return structSymbol;
         }
 
