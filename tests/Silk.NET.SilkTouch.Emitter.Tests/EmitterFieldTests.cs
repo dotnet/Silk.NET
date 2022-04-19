@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Immutable;
+using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -39,5 +40,41 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
 
         Assert.NotNull(syntax);
         Assert.Single(syntax!.Modifiers, x => x.IsKind(SyntaxKind.PublicKeyword));
+    }
+
+    [Fact]
+    public void FieldHasCorrectTypeIdentifier()
+    {
+        var syntax = Transform
+        (
+            new FieldSymbol
+            (
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new IdentifierSymbol("Test")
+            )
+        ) as FieldDeclarationSyntax;
+
+        Assert.NotNull(syntax);
+        var type = syntax!.Declaration.Type as SimpleNameSyntax;
+        Assert.NotNull(type);
+        Assert.Equal("int", type!.Identifier.Text);
+    }
+
+    [Fact]
+    public void FieldHasCorrectIdentifier()
+    {
+        var syntax = Transform
+        (
+            new FieldSymbol
+            (
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new IdentifierSymbol("Test")
+            )
+        ) as FieldDeclarationSyntax;
+
+        Assert.NotNull(syntax);
+
+        var variableDeclaratorSyntax = Assert.Single(syntax!.Declaration.Variables);
+        Assert.Equal("Test", variableDeclaratorSyntax.Identifier.Text);
     }
 }
