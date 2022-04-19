@@ -70,7 +70,7 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("Visit", Times.Once(), ItExpr.Is<Symbol>(x => x == member));
+            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member));
     }
 
     [Fact]
@@ -91,9 +91,9 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<Symbol>("Visit", Times.Once(), ItExpr.Is<Symbol>(x => x == member1));
+            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member1));
         
         visitor.Protected()
-            .Verify<Symbol>("Visit", Times.Once(), ItExpr.Is<Symbol>(x => x == member2));
+            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member2));
     }
 }

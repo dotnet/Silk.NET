@@ -9,6 +9,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// A <see cref="TypeSymbol"/> representing a <c>struct</c>.
 /// </summary>
 /// <param name="Identifier">The Identifier of this struct</param>
+/// <param name="Members">The Members of this struct</param>
 /// <remarks>
 /// In this context, a Struct means a type that represents the layout of a continuous block of memory.
 /// </remarks>
