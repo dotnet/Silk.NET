@@ -43,6 +43,8 @@ public sealed class EmitterStructTests : EmitterTest
     public void IntegrationEmptyStruct()
     {
         // Note that this test also covers trivia, which is not checked otherwise.
-        Assert.Equal("public struct Test{}", Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<MemberSymbol>.Empty)).ToFullString());
+        Assert.Equal(@"public struct Test
+{
+}", Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<MemberSymbol>.Empty)).ToFullString());
     }
 }
