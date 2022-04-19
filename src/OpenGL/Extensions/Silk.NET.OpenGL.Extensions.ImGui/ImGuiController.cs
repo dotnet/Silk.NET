@@ -48,6 +48,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         private int _windowWidth;
         private int _windowHeight;
 
+        public IntPtr Context;
+
         /// <summary>
         /// Constructs a new ImGuiController.
         /// </summary>
@@ -94,6 +96,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             BeginFrame();
         }
 
+        public void MakeCurrent()
+        {
+            ImGuiNET.ImGui.SetCurrentContext(this.Context);
+        }
+
         private void Init(GL gl, IView view, IInputContext input)
         {
             _gl = gl;
@@ -102,8 +109,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _windowWidth = view.Size.X;
             _windowHeight = view.Size.Y;
 
-            IntPtr context = ImGuiNET.ImGui.CreateContext();
-            ImGuiNET.ImGui.SetCurrentContext(context);
+            Context = ImGuiNET.ImGui.CreateContext();
+            ImGuiNET.ImGui.SetCurrentContext(Context);
             ImGuiNET.ImGui.StyleColorsDark();
         }
 
@@ -137,9 +144,21 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             if (_frameBegun)
             {
+                var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
+
+                if (oldCtx != this.Context)
+                {
+                    ImGuiNET.ImGui.SetCurrentContext(this.Context);
+                }
+                
                 _frameBegun = false;
                 ImGuiNET.ImGui.Render();
                 RenderImDrawData(ImGuiNET.ImGui.GetDrawData());
+                
+                if (oldCtx != this.Context)
+                {
+                    ImGuiNET.ImGui.SetCurrentContext(oldCtx);
+                }
             }
         }
 
@@ -148,6 +167,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         /// </summary>
         public void Update(float deltaSeconds)
         {
+            var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
+
+            if (oldCtx != this.Context)
+            {
+                ImGuiNET.ImGui.SetCurrentContext(this.Context);
+            }
+            
             if (_frameBegun)
             {
                 ImGuiNET.ImGui.Render();
@@ -158,6 +184,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _frameBegun = true;
             ImGuiNET.ImGui.NewFrame();
+            
+            if (oldCtx != this.Context)
+            {
+                ImGuiNET.ImGui.SetCurrentContext(oldCtx);
+            }
         }
 
         /// <summary>
@@ -178,6 +209,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
+        private static Key[]  keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
         private void UpdateImGuiInput()
         {
             var io = ImGuiNET.ImGui.GetIO();
@@ -196,7 +228,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.MouseWheel = wheel.Y;
             io.MouseWheelH = wheel.X;
 
-            foreach (Key key in Enum.GetValues(typeof(Key)))
+            foreach (var key in keyEnumArr)
             {
                 if (key == Key.Unknown)
                 {
@@ -205,9 +237,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
                 io.KeysDown[(int) key] = keyboardState.IsKeyPressed(key);
             }
 
-            foreach (var c in _pressedChars)
+            foreach (var t in _pressedChars)
             {
-                io.AddInputCharacter(c);
+                io.AddInputCharacter(t);
             }
 
             _pressedChars.Clear();
@@ -629,6 +661,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _fontTexture.Dispose();
             _shader.Dispose();
+            
+            ImGuiNET.ImGui.DestroyContext(this.Context);
         }
     }
 }
