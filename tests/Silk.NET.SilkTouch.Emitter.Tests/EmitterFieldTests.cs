@@ -12,11 +12,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     [Fact]
     public void StructHasStructKeyword()
     {
-        var emitter = CreateEmitter();
-
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol("Test"));
-
-        var syntax = emitter.Transform(symbol);
+        var syntax = Transform(new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol("Test")));
 
         var result = syntax.ToFullString();
         Assert.Equal("public int Test;", result);
