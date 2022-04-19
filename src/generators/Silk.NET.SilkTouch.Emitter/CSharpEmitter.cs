@@ -39,7 +39,7 @@ public sealed class CSharpEmitter
     /// </remarks>
     public CSharpSyntaxNode Transform(Symbol symbol)
     {
-        var visitor = new Visitor();
+        var visitor = new Visitor(Whitespace("    "));
         visitor.Visit(symbol); // the result is ignored. This allows us to optimize the visitor in some cases.
         var syntax = visitor.Syntax;
         if (syntax is null)
@@ -50,9 +50,15 @@ public sealed class CSharpEmitter
     
     private class Visitor : Silk.NET.SilkTouch.Symbols.SymbolVisitor
     {
+        private readonly SyntaxTrivia _indentation;
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
         private SyntaxToken? _syntaxToken = null;
+
+        public Visitor(SyntaxTrivia indentation) : base()
+        {
+            _indentation = indentation;
+        }
 
         protected override StructSymbol VisitStruct(StructSymbol structSymbol)
         {
