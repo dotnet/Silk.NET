@@ -237,9 +237,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
                 io.KeysDown[(int) key] = keyboardState.IsKeyPressed(key);
             }
 
-            foreach (var t in _pressedChars)
+            foreach (var c in _pressedChars)
             {
-                io.AddInputCharacter(t);
+                io.AddInputCharacter(c);
             }
 
             _pressedChars.Clear();
