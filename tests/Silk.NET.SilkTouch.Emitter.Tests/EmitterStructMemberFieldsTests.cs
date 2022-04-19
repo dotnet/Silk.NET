@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -15,16 +16,23 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                new IdentifierSymbol("Test"), new[]
+                new IdentifierSymbol("Test"), (new[]
                 {
-                    new FieldSymbol(new StructSymbol(new IdentifierSymbol("int")), new IdentifierSymbol("F1"))
-                }
+                    (MemberSymbol) new FieldSymbol
+                    (
+                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                        new IdentifierSymbol("F1")
+                    )
+                }).ToImmutableArray()
             )
         );
-        
-        Assert.Equal(@"public struct Test
+
+        Assert.Equal
+        (
+            @"public struct Test
 {
   public int F1;
-}", node.ToFullString());
+}", node.ToFullString()
+        );
     }
 }
