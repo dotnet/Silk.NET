@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -62,7 +63,18 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Field Identifier was not visited correctly");
             ClearState();
 
-            var members = List<MemberDeclarationSyntax>();
+            var memberList = new List<MemberDeclarationSyntax>(structSymbol.Members.Length);
+            foreach (var member in structSymbol.Members)
+            {
+                VisitMember(member);
+                if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
+                    throw new InvalidOperationException("Member was not visited correctly");
+                ClearState();
+                memberList.Add(memberDeclarationSyntax);
+            }
+            
+            var members = List(memberList);
+            
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
