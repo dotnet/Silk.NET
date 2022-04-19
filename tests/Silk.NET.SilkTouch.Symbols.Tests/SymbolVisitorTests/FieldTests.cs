@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Moq;
 using Moq.Protected;
 using Xunit;
@@ -12,7 +13,7 @@ public class FieldTests
     [Fact]
     public void FieldIsVisitedAsField()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -27,7 +28,7 @@ public class FieldTests
     [Fact]
     public void FieldIsVisitedAsMember()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -42,7 +43,7 @@ public class FieldTests
     [Fact]
     public void FieldTypeIsVisited()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -57,7 +58,7 @@ public class FieldTests
     [Fact]
     public void FieldIdentifierIsVisited()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("")), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true

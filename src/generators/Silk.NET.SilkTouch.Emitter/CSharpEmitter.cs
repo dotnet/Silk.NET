@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -38,7 +39,7 @@ public sealed class CSharpEmitter
     /// </remarks>
     public CSharpSyntaxNode Transform(Symbol symbol)
     {
-        var visitor = new Visitor();
+        var visitor = new Visitor(Whitespace("    "));
         visitor.Visit(symbol); // the result is ignored. This allows us to optimize the visitor in some cases.
         var syntax = visitor.Syntax;
         if (syntax is null)
@@ -49,9 +50,15 @@ public sealed class CSharpEmitter
     
     private class Visitor : Silk.NET.SilkTouch.Symbols.SymbolVisitor
     {
+        private readonly SyntaxTrivia _indentation;
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
         private SyntaxToken? _syntaxToken = null;
+
+        public Visitor(SyntaxTrivia indentation) : base()
+        {
+            _indentation = indentation;
+        }
 
         protected override StructSymbol VisitStruct(StructSymbol structSymbol)
         {
@@ -62,14 +69,28 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Field Identifier was not visited correctly");
             ClearState();
 
-            var members = List<MemberDeclarationSyntax>();
+            var memberList = new List<MemberDeclarationSyntax>(structSymbol.Members.Length);
+            foreach (var member in structSymbol.Members)
+            {
+                VisitMember(member);
+                if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
+                    throw new InvalidOperationException("Member was not visited correctly");
+                ClearState();
+                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
+                memberList.Add(memberDeclarationSyntax);
+            }
+            
+            var members = List(memberList);
+            
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
                     List<AttributeListSyntax>(), modifiers, identifierToken, null, null,
                     List<TypeParameterConstraintClauseSyntax>(), members
                 )
-                .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)));
+                .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
+                .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
+                .WithCloseBraceToken(Token(TriviaList(LineFeed), SyntaxKind.CloseBraceToken, SyntaxTriviaList.Empty));
             return structSymbol;
         }
 

@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
@@ -13,7 +14,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     {
         var emitter = CreateEmitter();
 
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int")), new IdentifierSymbol("Test"));
+        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty), new IdentifierSymbol("Test"));
 
         var syntax = emitter.Transform(symbol);
 
