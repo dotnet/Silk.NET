@@ -6,5 +6,6 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// An Identifier. Generally used to identify another symbol
 /// </summary>
+/// <param name="Value">The String Value of this identifier</param>
 /// <seealso cref="TypeSymbol"/>
 public sealed record IdentifierSymbol(string Value) : Symbol;
