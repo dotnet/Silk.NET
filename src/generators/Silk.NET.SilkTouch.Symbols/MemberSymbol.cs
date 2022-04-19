@@ -7,6 +7,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// A <see cref="MemberSymbol"/>, representing a generic member of some <see cref="TypeSymbol"/>
 /// </summary>
 /// <seealso cref="FieldSymbol"/>
-public abstract class MemberSymbol : Symbol
-{
-}
+public abstract record MemberSymbol : Symbol;
