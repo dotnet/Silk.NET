@@ -16,14 +16,14 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                new IdentifierSymbol("Test"), (new[]
+                new IdentifierSymbol("Test"), new StructLayout((new[]
                 {
-                    (MemberSymbol) new FieldSymbol
+                    new LayoutEntry(new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
                         new IdentifierSymbol("F1")
-                    )
-                }).ToImmutableArray()
+                    ), 0)   
+                }).ToImmutableArray())
             )
         );
 

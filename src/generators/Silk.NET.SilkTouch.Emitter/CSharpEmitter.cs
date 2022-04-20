@@ -69,10 +69,10 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Field Identifier was not visited correctly");
             ClearState();
 
-            var memberList = new List<MemberDeclarationSyntax>(structSymbol.Members.Length);
-            foreach (var member in structSymbol.Members)
+            var memberList = new List<MemberDeclarationSyntax>(structSymbol.Layout.Entries.Length);
+            foreach (var entry in structSymbol.Layout.Entries)
             {
-                VisitMember(member);
+                VisitMember(entry.Member);
                 if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
                     throw new InvalidOperationException("Member was not visited correctly");
                 ClearState();

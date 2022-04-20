@@ -75,7 +75,16 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual StructSymbol VisitStruct(StructSymbol structSymbol)
     {
-        return new StructSymbol(VisitIdentifier(structSymbol.Identifier), structSymbol.Members.Select(VisitMember).ToImmutableArray());
+        return new StructSymbol
+        (
+            VisitIdentifier(structSymbol.Identifier),
+            new StructLayout
+            (
+                structSymbol.Layout.Entries.Select
+                        (x => new LayoutEntry(VisitMember(x.Member), x.ByteOffset))
+                    .ToImmutableArray()
+            )
+        );
     }
 
     /// <summary>
