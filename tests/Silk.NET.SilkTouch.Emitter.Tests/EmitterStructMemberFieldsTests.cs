@@ -16,22 +16,67 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                new IdentifierSymbol("Test"), (new[]
+                new IdentifierSymbol("Test"), new StructLayout((new[]
                 {
-                    (MemberSymbol) new FieldSymbol
+                    new LayoutEntry(new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
                         new IdentifierSymbol("F1")
-                    )
-                }).ToImmutableArray()
+                    ), 0)   
+                }).ToImmutableArray())
             )
         );
 
         Assert.Equal
         (
-            @"public struct Test
+            @"[StructLayout(LayoutKind.Explicit)]
+public struct Test
 {
+    [FieldOffset(0)]
     public int F1;
+}", node.ToFullString()
+        );
+    }
+    
+    [Fact]
+    public void StructWithMultipleFieldsIntegration()
+    {
+        var node = Transform
+        (
+            new StructSymbol
+            (
+                new IdentifierSymbol("Test"), new StructLayout((new[]
+                {
+                    new LayoutEntry(new FieldSymbol
+                    (
+                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new IdentifierSymbol("F1")
+                    ), 0),
+                    new LayoutEntry(new FieldSymbol
+                    (
+                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new IdentifierSymbol("F2")
+                    ), 20),
+                    new LayoutEntry(new FieldSymbol
+                    (
+                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new IdentifierSymbol("F3")
+                    ), 12)
+                }).ToImmutableArray())
+            )
+        );
+
+        Assert.Equal
+        (
+            @"[StructLayout(LayoutKind.Explicit)]
+public struct Test
+{
+    [FieldOffset(0)]
+    public int F1;
+    [FieldOffset(20)]
+    public int F2;
+    [FieldOffset(12)]
+    public int F3;
 }", node.ToFullString()
         );
     }
