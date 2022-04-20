@@ -77,6 +77,31 @@ public sealed class CSharpEmitter
                     throw new InvalidOperationException("Member was not visited correctly");
                 ClearState();
                 memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
+                memberDeclarationSyntax = memberDeclarationSyntax.WithAttributeLists
+                (
+                    SingletonList
+                    (
+                        AttributeList
+                        (
+                            SingletonSeparatedList
+                            (
+                                Attribute
+                                        (IdentifierName("FieldOffset"))
+                                    .WithArgumentList
+                                    (
+                                        AttributeArgumentList
+                                        (
+                                            SingletonSeparatedList
+                                            (
+                                                AttributeArgument
+                                                    (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(entry.ByteOffset)))
+                                            )
+                                        )
+                                    )
+                            )
+                        )
+                    )
+                ).WithLeadingTrivia(LineFeed, _indentation);
                 memberList.Add(memberDeclarationSyntax);
             }
             
@@ -85,8 +110,34 @@ public sealed class CSharpEmitter
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
-                    List<AttributeListSyntax>(), modifiers, identifierToken, null, null,
-                    List<TypeParameterConstraintClauseSyntax>(), members
+                    SingletonList
+                    (
+                        AttributeList
+                            (
+                                SingletonSeparatedList
+                                (
+                                    Attribute(IdentifierName("StructLayout"))
+                                        .WithArgumentList
+                                        (
+                                            AttributeArgumentList
+                                            (
+                                                SingletonSeparatedList
+                                                (
+                                                    AttributeArgument
+                                                    (
+                                                        MemberAccessExpression
+                                                        (
+                                                            SyntaxKind.SimpleMemberAccessExpression,
+                                                            IdentifierName("LayoutKind"), IdentifierName("Explicit")
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                )
+                            )
+                            .WithTrailingTrivia(LineFeed)
+                    ), modifiers, identifierToken, null, null, List<TypeParameterConstraintClauseSyntax>(), members
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
                 .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
