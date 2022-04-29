@@ -89,6 +89,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Symbols"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Symbols.Tests", "tests\Silk.NET.SilkTouch.Symbols.Tests\Silk.NET.SilkTouch.Symbols.Tests.csproj", "{795A93A6-9578-439F-BB08-07B148B1D4CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Scraper.Tests", "tests\Silk.NET.SilkTouch.Scraper.Tests\Silk.NET.SilkTouch.Scraper.Tests.csproj", "{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -387,6 +389,18 @@ Global
 		{795A93A6-9578-439F-BB08-07B148B1D4CE}.Release|x64.Build.0 = Release|Any CPU
 		{795A93A6-9578-439F-BB08-07B148B1D4CE}.Release|x86.ActiveCfg = Release|Any CPU
 		{795A93A6-9578-439F-BB08-07B148B1D4CE}.Release|x86.Build.0 = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|x64.Build.0 = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Debug|x86.Build.0 = Debug|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|x64.ActiveCfg = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|x64.Build.0 = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -422,6 +436,7 @@ Global
 		{2B1A2B37-649F-4F6E-90E9-EC3B28D0A3CC} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
 		{97AF0383-2665-446E-9FBD-218051422B13} = {8238D9F3-E158-4633-8017-B29AA3AD61F7}
 		{795A93A6-9578-439F-BB08-07B148B1D4CE} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
+		{5329AC43-7177-4953-AFAB-A9FA7B9A4C7C} = {94D5D1E1-B998-4CB1-9D04-DA138A2B0F3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
