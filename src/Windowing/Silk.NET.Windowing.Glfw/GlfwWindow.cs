@@ -369,14 +369,13 @@ namespace Silk.NET.Windowing.Glfw
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
+                CoreWindowState = opts.WindowState;
             }
             else
             {
                 _glfw.HideWindow(_glfwWindow);
             }
             
-            CoreWindowState = opts.WindowState;
-
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {
                 _glfw.MakeContextCurrent(_glfwWindow);
