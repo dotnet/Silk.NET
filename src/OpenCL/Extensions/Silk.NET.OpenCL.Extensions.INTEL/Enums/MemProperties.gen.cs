@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [NativeName("Name", "cl_mem_properties_intel")]
-    public enum MemPropertiesIntel : ulong
+    public enum MemProperties : ulong
     {
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_INTEL")]
         AllocFlags = 0x4195,

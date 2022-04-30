@@ -11,7 +11,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [System.Flags]
     [NativeName("Name", "cl_device_svm_capabilities_arm")]
-    public enum DeviceSvmCapabilitiesArm : ulong
+    public enum DeviceSvmCapabilities : ulong
     {
         [NativeName("Name", "CL_DEVICE_SVM_COARSE_GRAIN_BUFFER_ARM")]
         CoarseGrainBuffer = 0x1,

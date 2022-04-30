@@ -7,13 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.EXT
+namespace Silk.NET.OpenCL
 {
     [System.Flags]
-    [NativeName("Name", "cl_mem_migration_flags_ext")]
-    public enum MemMigrationFlagsExt : ulong
+    [NativeName("Name", "cl_svm_mem_flags")]
+    public enum SvmMemFlags : ulong
     {
-        [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-        MigrateMemObjectHost = 0x1,
     }
 }

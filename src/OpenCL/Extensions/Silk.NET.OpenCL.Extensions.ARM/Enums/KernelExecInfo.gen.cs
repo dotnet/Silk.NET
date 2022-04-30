@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [NativeName("Name", "cl_kernel_exec_info_arm")]
-    public enum KernelExecInfoArm : int
+    public enum KernelExecInfo : int
     {
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_PTRS_ARM")]
         Ptrs = 0x40B8,
