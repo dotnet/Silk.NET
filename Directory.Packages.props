@@ -41,5 +41,7 @@
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.1.0"/>
         <PackageVersion Include="Moq" Version="4.17.2"/>
         <PackageVersion Include="System.Collections.Immutable" Version="6.0.0"/>
+        <PackageVersion Include="libclang" Version="14.0.0"/>
+        <PackageVersion Include="libClangSharp" Version="14.0.0-beta1"/>
     </ItemGroup>
 </Project>
