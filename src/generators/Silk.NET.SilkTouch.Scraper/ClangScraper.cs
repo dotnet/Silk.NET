@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using ClangSharp;
 using ClangSharp.Interop;
 using Silk.NET.SilkTouch.Symbols;
@@ -18,26 +19,33 @@ namespace Silk.NET.SilkTouch.Scraper;
 public sealed class ClangScraper
 {
     /// <summary>
-    /// Scrape a given header file and inclusions for symbols
+    /// Placeholder used in place of library paths
+    /// </summary>
+    public static readonly string LibraryPathPlaceholder = "LIBRARY_PATH";
+    
+    /// <summary>
+    /// Placeholder used in place of library paths
+    /// </summary>
+    public static readonly string LibraryNamespacePlaceholder = "LIBRARY_NAMESPACE";
+    
+    /// <summary>
+    /// Calls into Clang to generate XML used to scrape symbols.
     /// </summary>
     /// <param name="headerFile">The root header file to scrape</param>
     /// <param name="includedNames">Names to traverse</param>
     /// <param name="excludedNames">Names to exclude</param>
     /// <param name="includeDirectories">Directories to include other files from</param>
     /// <param name="definedMacros">Macros to define during scraping. Do not include platform specific macros.</param>
-    /// <returns>The scraped symbols</returns>
+    /// <returns>The XMLDocument containing nodes representing code in the given header file. Null if generation failed for some reason.</returns>
     /// <exception cref="InvalidOperationException">Will be thrown when errors during parsing are encountered</exception>
-    public IEnumerable<Symbol> Scrape(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
+    public XmlDocument? GenerateXML(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
     {
-        Console.WriteLine(clang.getClangVersion().CString);
-        Console.WriteLine(Directory.GetCurrentDirectory());
-        
         var opts = PInvokeGeneratorConfigurationOptions.None;
         opts |= PInvokeGeneratorConfigurationOptions.NoDefaultRemappings;
 
         var config = new PInvokeGeneratorConfiguration
         (
-            "LIBRARY_PATH", "NAMESPACE_NAME", null, // TODO: "License Header File"?
+            LibraryNamespacePlaceholder, LibraryPathPlaceholder, null, // TODO: "License Header File"?
             PInvokeGeneratorOutputMode.Xml, opts
         );
 
@@ -74,23 +82,32 @@ public sealed class ClangScraper
         translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_IncludeAttributedTypes;
         translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_VisitImplicitAttributes;
         translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_DetailedPreprocessingRecord;
+        translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_KeepGoing;
         // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
 
         try
         {
-            using var pinvokeGenerator = new PInvokeGenerator(config, OutputStreamFactory);
-            GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs, translationFlags);
-        }
-        finally
-        {
+            using (var pinvokeGenerator = new PInvokeGenerator(config, OutputStreamFactory))
+                GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs, translationFlags);
+            
             foreach (var (name, stream) in files)
             {
                 Console.WriteLine(name);
+                var doc = new XmlDocument();
+                stream.Position = 0;
+                doc.Load(stream);
+                return doc;
+            }
+        }
+        finally
+        {
+            foreach (var (_, stream) in files)
+            {
                 stream.Dispose();
             }
         }
 
-        return Enumerable.Empty<Symbol>();
+        return null;
     }
 
     private static void GenerateBindings
@@ -109,23 +126,25 @@ public sealed class ClangScraper
 
         try
         {
-            if (handle.NumDiagnostics > 0)
-            {
-                for (uint i = 0; i < handle.NumDiagnostics; i++)
-                {
-                    var x = handle.GetDiagnostic(i);
-                    if (x.Severity > CXDiagnosticSeverity.CXDiagnostic_Warning)
-                    {
-                        throw new Exception("Diagnostic raised while parsing \"" + x.Format(0) + "\"");
-                    }
-                }
-            }
             
             if (result != CXErrorCode.CXError_Success)
             {
+                if (handle.NumDiagnostics > 0)
+                {
+                    for (uint i = 0; i < handle.NumDiagnostics; i++)
+                    {
+                        var x = handle.GetDiagnostic(i);
+                        if (x.Severity > CXDiagnosticSeverity.CXDiagnostic_Warning)
+                        {
+                            throw new Exception($"Diagnostic raised while parsing c: {x.Category} \"{x.Format(0)}\"");
+                        }
+                    }
+                }
+                
                 throw new Exception($"Could not parse translational unit. {Enum.GetName(result)}");
             }
-
+            
+            
             using var translationUnit = TranslationUnit.GetOrCreate(handle);
 
             pinvokeGenerator.GenerateBindings(translationUnit, headerFile, commandLineArgs, translationFlags);
@@ -134,7 +153,7 @@ public sealed class ClangScraper
             {
                 if (diagnostic.Level > DiagnosticLevel.Warning)
                 {
-                    throw new InvalidOperationException(diagnostic.Message);
+                    Console.WriteLine(diagnostic.Message);
                 }
             }
         }
