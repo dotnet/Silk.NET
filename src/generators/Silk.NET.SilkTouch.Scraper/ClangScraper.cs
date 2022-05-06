@@ -29,6 +29,9 @@ public sealed class ClangScraper
     /// <exception cref="InvalidOperationException">Will be thrown when errors during parsing are encountered</exception>
     public IEnumerable<Symbol> Scrape(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
     {
+        Console.WriteLine(clang.getClangVersion().CString);
+        Console.WriteLine(Directory.GetCurrentDirectory());
+        
         var opts = PInvokeGeneratorConfigurationOptions.None;
         opts |= PInvokeGeneratorConfigurationOptions.NoDefaultRemappings;
 

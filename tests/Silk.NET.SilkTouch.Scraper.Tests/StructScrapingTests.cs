@@ -1,6 +1,10 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Runtime.Loader;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Scraper.Tests;
@@ -21,7 +25,11 @@ struct Test
     int f1;
     int f2;
 };");
-        
+
+        var libclang = NativeLibrary.Load("libclang");
+        Debug.Assert(libclang != IntPtr.Zero);
+        NativeLibrary.Free(libclang);
+
         var scraper = new ClangScraper();
         var symbols = scraper.Scrape
             (tempFile, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
