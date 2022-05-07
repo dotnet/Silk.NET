@@ -176,6 +176,27 @@ public sealed class CSharpEmitter
             return fieldSymbol;
         }
 
+        protected override NamespaceSymbol VisitNamespace(NamespaceSymbol namespaceSymbol)
+        {
+            AssertClearState();
+
+            VisitIdentifier(namespaceSymbol.Identifier);
+            if (_syntax is not IdentifierNameSyntax namespaceIdentifierSyntax)
+                throw new InvalidOperationException("Namespace Identifier was not visited correctly");
+            ClearState();
+            
+            // TODO visit members
+
+            _syntax = NamespaceDeclaration
+                (
+                    List<AttributeListSyntax>(), TokenList(), namespaceIdentifierSyntax.WithTrailingTrivia(LineFeed),
+                    List<ExternAliasDirectiveSyntax>(), List<UsingDirectiveSyntax>(), List<MemberDeclarationSyntax>()
+                )
+                .WithNamespaceKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.NamespaceKeyword, TriviaList(Space)))
+                .WithOpenBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.OpenBraceToken, TriviaList(LineFeed)));
+            return namespaceSymbol;
+        }
+
         protected override IdentifierSymbol VisitIdentifier(IdentifierSymbol identifierSymbol)
         {
             AssertClearState();
