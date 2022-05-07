@@ -43,9 +43,7 @@ public sealed class ClangScraper
         }
 
         var visitor = new XmlVisitor();
-        visitor.Visit(bindings);
-
-        return visitor.Symbols;
+        return visitor.Visit(bindings);
     }
 
     /// <summary>

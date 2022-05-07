@@ -10,6 +10,6 @@ public class StructScrapingTests
     [Fact]
     public void StructXMLGeneratesStructSymbol()
     {
-        
+
     }
 }

@@ -3,7 +3,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Xml;
 using Silk.NET.SilkTouch.Symbols;
 
@@ -11,27 +13,45 @@ namespace Silk.NET.SilkTouch.Scraper;
 
 internal sealed class XmlVisitor
 {
-    private List<Symbol> _symbols = new();
-
-    public IEnumerable<Symbol> Symbols => _symbols;
-
-    public void Visit(XmlNode node)
+    public IEnumerable<Symbol> Visit(XmlNode node)
     {
         switch (node)
         {
             case XmlElement { Name: "bindings" } bindings:
-            {
-                foreach (var child in bindings.ChildNodes.Cast<XmlNode>())
-                {
-                    if (child is null) continue;
-                    Visit(child);
-                }
-                break;
-            }
+                return VisitBinding(bindings);
+            case XmlElement { Name: "namespace" } @namespace:
+                return VisitNamespace(@namespace);
             default:
             {
                 throw new NotImplementedException();
             }
         }
+    }
+
+    private IEnumerable<Symbol> VisitBinding(XmlElement bindings)
+    {
+        return bindings.ChildNodes.Cast<XmlNode>().Where(x => x is not null).SelectMany(Visit);
+    }
+
+    private IEnumerable<Symbol> VisitNamespace(XmlElement @namespace)
+    {
+        return new[]
+        {
+            new NamespaceSymbol
+            (
+                new IdentifierSymbol(@namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
+                @namespace.ChildNodes.Cast<XmlNode>()
+                    .Select(Visit)
+                    .Select
+                    (
+                        x =>
+                        {
+                            if (x is not TypeSymbol ts) throw new InvalidOperationException();
+                            return ts;
+                        }
+                    )
+                    .ToImmutableArray()
+            )
+        };
     }
 }
