@@ -1,127 +1,15 @@
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Runtime.Loader;
-using System.Xml;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Scraper.Tests;
 
 public class StructScrapingTests
 {
-    private const string TempFileHeader = @"/* This file is temporarily created for use by Silk.NET tests. If you don't intend to run such a test, feel free to delete this file. */";
-    
-    
     [Fact]
-    public void BasicStructScrapingTest()
+    public void StructXMLGeneratesStructSymbol()
     {
-        var tempFile = Path.GetTempFileName();
         
-        File.WriteAllText(tempFile, TempFileHeader + @"
-#include <stdint.h>
-
-typedef struct {
-    int32_t f1;
-    int32_t f2;
-} Test;");
-
-        var scraper = new ClangScraper();
-        var xml = scraper.GenerateXML
-            (tempFile, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
-
-        /*
-         Next, Assert the XML looks something like this:
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<bindings>
-    <namespace name="<PLACEHOLDER>">
-        <struct name="Test">
-            <field name="f1">
-                <type native="int32_t">int</type>
-            </field>
-            <field name="f2">
-                <type native="int32_t">int</type>
-            </field>
-        </struct>
-        </namespace>
-</bindings>
-         */
-        
-        Assert.NotNull(xml);
-        // Root
-        Assert.Collection(xml!.ChildNodes.Cast<XmlNode>(), 
-            static dec => Assert.IsType<XmlDeclaration>(dec), // Top Declaration 
-            static bindings => // Root Bindings Element
-            {
-                var e = Assert.IsType<XmlElement>(bindings);
-                Assert.Equal("bindings", e.LocalName);
-                Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // namespaces
-                    static @namespace =>
-                {
-                    var e = Assert.IsType<XmlElement>(@namespace);
-                    var nameAtt = e.Attributes["name"];
-                    Assert.NotNull(nameAtt);
-                    Assert.Equal(ClangScraper.LibraryNamespacePlaceholder, nameAtt!.Value);
-                    
-                    Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // namespace members 
-                        static @struct =>
-                    {
-                        var e = Assert.IsType<XmlElement>(@struct);
-                        var nameAtt = e.Attributes["name"];
-                        Assert.NotNull(nameAtt);
-                        Assert.Equal("Test", nameAtt!.Value);
-                        
-                        Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // struct members
-                            static field =>
-                        {
-                            var e = Assert.IsType<XmlElement>(field);
-                            var nameAtt = e.Attributes["name"];
-                            Assert.NotNull(nameAtt);
-                            Assert.Equal("f1", nameAtt!.Value);
-                            
-                            Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // field infos 
-                                static type =>
-                            {
-                                var e = Assert.IsType<XmlElement>(type);
-                                var nativeAtt = e.Attributes["native"];
-                                Assert.NotNull(nativeAtt);
-                                Assert.Equal("int32_t", nativeAtt!.Value);
-                                
-                                Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // unwrap converted type
-                                    static type =>
-                                {
-                                    var e = Assert.IsType<XmlText>(type);
-                                    Assert.Equal("int", e.Value);
-                                });
-                            });
-                        }, static field =>
-                        {
-                            var e = Assert.IsType<XmlElement>(field);
-                            var nameAtt = e.Attributes["name"];
-                            Assert.NotNull(nameAtt);
-                            Assert.Equal("f2", nameAtt!.Value);
-                            
-                            Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // field infos
-                                static type =>
-                            {
-                                var e = Assert.IsType<XmlElement>(type);
-                                var nativeAtt = e.Attributes["native"];
-                                Assert.NotNull(nativeAtt);
-                                Assert.Equal("int32_t", nativeAtt!.Value);
-                                
-                                Assert.Collection(e.ChildNodes.Cast<XmlNode>(), // unwrap converted type
-                                    static type =>
-                                {
-                                    var e = Assert.IsType<XmlText>(type);
-                                    Assert.Equal("int", e.Value);
-                                });
-                            });
-                        });
-                    });
-                });
-            });
     }
 }

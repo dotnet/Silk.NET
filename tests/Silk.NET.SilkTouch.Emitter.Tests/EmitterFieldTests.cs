@@ -29,7 +29,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -45,7 +45,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -63,7 +63,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<MemberSymbol>.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
