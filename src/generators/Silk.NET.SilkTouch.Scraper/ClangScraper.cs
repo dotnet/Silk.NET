@@ -27,7 +27,27 @@ public sealed class ClangScraper
     /// Placeholder used in place of library paths
     /// </summary>
     public static readonly string LibraryNamespacePlaceholder = "LIBRARY_NAMESPACE";
-    
+
+    /// <summary>
+    /// Scrapes the given XML document for symbols
+    /// </summary>
+    /// <param name="document">A XML Document, the format is assumed to be similar to what ClangSharp would output.</param>
+    /// <returns>Any number of symbols scraped from the given xml</returns>
+    public IEnumerable<Symbol> ScrapeXML(XmlDocument document)
+    {
+        var bindings = document.ChildNodes.Cast<XmlNode>().FirstOrDefault(x => x.LocalName == "bindings" && x is XmlElement) as XmlElement;
+
+        if (bindings is null)
+        {
+            return Enumerable.Empty<Symbol>();
+        }
+
+        var visitor = new XmlVisitor();
+        visitor.Visit(bindings);
+
+        return visitor.Symbols;
+    }
+
     /// <summary>
     /// Calls into Clang to generate XML used to scrape symbols.
     /// </summary>
