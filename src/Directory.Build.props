@@ -22,7 +22,7 @@
     </PropertyGroup>
     <!-- NuGet -->
     <PropertyGroup>
-        <PackageIcon>logo.png</PackageIcon>
+        <PackageIcon>$(MSBuildThisFileDirectory)..\documentation\readme\silkdotnet_v3.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
