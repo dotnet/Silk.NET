@@ -19,6 +19,7 @@ public abstract class SymbolVisitor
     {
         if (symbol is TypeSymbol ts) return VisitType(ts);
         if (symbol is MemberSymbol ms) return VisitMember(ms);
+        if (symbol is NamespaceSymbol ns) return VisitNamespace(ns);
 
         if (symbol is IdentifierSymbol @is) return VisitIdentifier(@is);
 
@@ -95,6 +96,20 @@ public abstract class SymbolVisitor
     protected virtual IdentifierSymbol VisitIdentifier(IdentifierSymbol identifierSymbol)
     {
         return identifierSymbol;
+    }
+
+    /// <summary>
+    /// Visit a <see cref="NamespaceSymbol"/>.
+    /// </summary>
+    /// <param name="namespaceSymbol">The Namespace to Visit.</param>
+    /// <returns>The rewritten symbol</returns>
+    protected virtual NamespaceSymbol VisitNamespace(NamespaceSymbol namespaceSymbol)
+    {
+        return namespaceSymbol with
+        {
+            Identifier = VisitIdentifier(namespaceSymbol.Identifier),
+            Types = namespaceSymbol.Types.Select(VisitType).ToImmutableArray()
+        };
     }
 
     private static T ThrowUnknownSymbol<T>(Symbol symbol)
