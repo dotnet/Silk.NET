@@ -11,8 +11,21 @@ using Xunit;
 
 namespace Silk.NET.SilkTouch.Scraper.Tests;
 
-public class StructScrapingTests
+public class BasicXMLTests
 {
+    /*
+     * NOTE:
+     * MOST OF THE FUNCTIONALITY TESTED HERE REALLY DEPENDS ON CLANG(SHARP).
+     * THEREFORE IT IS UNNECESSARY TO TEST IT AS DETAILED AS OTHER PARTS OF THIS SYSTEM.
+     * ONLY CREATE TESTS HERE IF THERE IS AN ISSUE IN OUR SYSTEM THAT YOU NEED TO TRACK DOWN
+     * DO NOT JUST CREATE TESTS TO TEST CLANGSHARP.
+     * IF THERE ARE ISSUES WITH THE XML NOT REFLECTING PART OF A HEADER:
+     * 1. CHECK OUR CONFIGURATION. ITS FAIRLY SIMPLE AND BAREBONES.
+     * 2. IF 1. DID NOT RESOLVE THE PROBLEM, RAISE WITH CLANGSHARP/CLANG INSTEAD.
+     * WE DO NOT WANT TO REWRITE THE XML IN ANY WAY.
+     */
+    
+    
     private const string TempFileHeader = @"/* This file is temporarily created for use by Silk.NET tests. If you don't intend to run such a test, feel free to delete this file. */";
     
     
