@@ -22,7 +22,7 @@
     </PropertyGroup>
     <!-- NuGet -->
     <PropertyGroup>
-        <PackageIcon>$(MSBuildThisFileDirectory)..\documentation\readme\silkdotnet_v3.png</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
@@ -40,6 +40,9 @@
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
         </Description>
     </PropertyGroup>
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)..\documentation\readme\silkdotnet_v3.png" Pack="true" Visible="false" PackagePath="icon.png" />
+	</ItemGroup>
     <!-- SourceLink -->
     <PropertyGroup Condition="'$(SilkEnableSourceLink)' != 'false' And '$(SilkSourceLinkExempt)' == ''">
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
