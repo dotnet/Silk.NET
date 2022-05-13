@@ -190,7 +190,11 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, BindTask task)
         {
-            profile.Projects["Core"].Structs.AddRange(structs);
+            foreach (var @struct in structs)
+            {
+                var prefix = FormatCategory(@struct.ExtensionName);
+                profile.Projects[prefix].Structs.Add(@struct);
+            }
         }
 
         /// <inheritdoc />

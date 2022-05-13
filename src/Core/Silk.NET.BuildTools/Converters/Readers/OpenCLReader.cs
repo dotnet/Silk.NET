@@ -56,67 +56,96 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Struct> ReadStructs(object obj, BindTask task)
         {
             var xd = (XDocument) obj;
-            
-            var rawStructs = xd.Element("registry")?.Element("types")?.Elements("type")
+
+            var registry = xd.Element("registry");
+
+            Debug.Assert(registry != null, nameof(registry) + " != null");
+
+            var rawStructs = registry.Elements("types")
+                .Elements("type")
                 .Where(type => type.HasCategoryAttribute("struct"))
                 .Select(StructureDefinition.CreateFromXml)
                 .ToArray();
-            
+
             var structs = ConvertStructs(rawStructs, task);
-            
-            foreach (var feature in xd.Element
-                    ("registry")
-                ?.Elements("feature")
-                .Attributes("api")
-                .Select(x => x.Value)
-                .RemoveDuplicates() ?? throw new InvalidDataException())
+
+            var apis = registry.Elements("feature").Concat
+            (
+                registry.Elements("extensions").Elements("extension")
+                ?? throw new InvalidDataException()
+            );
+            Debug.Assert(apis != null, nameof(apis) + " != null");
+
+            foreach (var api in apis)
             {
-                foreach (var (_, s) in structs)
+                foreach (var requirement in api.Elements("require"))
                 {
-                    yield return new Struct
+                    var apiName = requirement.Attribute("api")?.Value ??
+                                  api.Attribute("api")?.Value ??
+                                  api.Attribute("supported")?.Value ??
+                                  "opencl";
+                    var apiVersion = api.Attribute("number") != null
+                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
+                        : null;
+                    foreach (var s in requirement
+                        .Elements("type")
+                        .Attributes("name")
+                        .Select(x => Rename(x.Value, task))
+                        .Where(x => structs.ContainsKey(x))
+                        .Select(x => structs[x]))
                     {
-                        Attributes = s.Attributes,
-                        ExtensionName = "Core",
-                        Fields = s.Fields,
-                        Functions = s.Functions,
-                        Name = s.Name,
-                        NativeName = s.NativeName,
-                        ProfileName = feature,
-                        ProfileVersion = null
-                    };
+                        yield return new Struct
+                        {
+                            Attributes = s.Attributes,
+                            ExtensionName = api.Name == "feature"
+                                           ? "Core"
+                                           : ExtensionName(api.Attribute("name")?.Value, task),
+                            Fields = s.Fields,
+                            Functions = s.Functions,
+                            Name = s.Name,
+                            NativeName = s.NativeName,
+                            ProfileName = apiName,
+                            ProfileVersion = apiVersion,
+                        };
+                    }
                 }
             }
-            
-            task.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
+
+            task.TypeMaps.Add(structs.ToDictionary(x => x.Key.Renamed, x => x.Value.Name));
         }
 
-        private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
+        private static Dictionary<RenamedEntry, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
         {
             var prefix = task.FunctionPrefix;
-            var ret = new Dictionary<string, Struct>();
+            var ret = new Dictionary<RenamedEntry, Struct>();
             foreach (var s in spec)
             {
+                var renamedStruct = Rename(s.Name, task);
                 ret.Add
                 (
-                    s.Name, new Struct
+                    renamedStruct, new Struct
                     {
                         Fields = s.Members.Select
                         (
-                            x => new Field
+                            x =>
                             {
-                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
-                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                    : new Count(x.ElementCountSymbolic, false),
-                                Name = Naming.Translate(TrimName(x.Name, task), prefix),
-                                Doc = $"/// <summary>{x.Comment}</summary>",
-                                NativeName = x.Name,
-                                NativeType = x.Type.ToString(),
-                                Type = ConvertType(x.Type)
-                            }.WithFixedFieldFixup09072020()
-                        )
+                                var renamedField = Rename(x.Name, task);
+                                var fieldType = ConvertType(x.Type, task);
+                                return new Field
+                                {
+                                    Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                                                    : new Count(x.ElementCountSymbolic, false),
+                                    Name = Naming.Translate(TrimName(renamedField.Renamed, task), prefix),
+                                    Doc = $"/// <summary>{x.Comment}</summary>",
+                                    NativeName = renamedField.Original,
+                                    NativeType = x.Type.ToString(),
+                                    Type = fieldType
+                                }.WithFixedFieldFixup09072020();
+                            })
                         .ToList(),
-                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
-                        NativeName = s.Name
+                        Name = Naming.TranslateLite(TrimName(renamedStruct.Renamed, task), prefix),
+                        NativeName = renamedStruct.Original
                     }
                 );
             }
@@ -124,14 +153,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
-        private static Type ConvertType(TypeSpec type)
+        private static Type ConvertType(TypeSpec type, BindTask task)
         {
+            var renamed = Rename(type.Name, task);
             return new Type
             {
                 ArrayDimensions = type.ArrayDimensions,
                 IndirectionLevels = type.PointerIndirection,
-                Name = type.Name,
-                OriginalName = type.Name
+                Name = renamed.Renamed,
+                OriginalName = renamed.Original
             };
         }
 
@@ -756,6 +786,33 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
 
+            string ProcessTypedef(XElement element)
+            {
+                if (element.Value.Contains('*'))
+                {
+                    if (element.Value.StartsWith("typedef struct") || element.Element("type")?.Value == "void")
+                    {
+                        return "intptr_t";
+                    }
+
+                    throw new InvalidDataException("Unable to process a typedef");
+                }
+
+                return element.Element("type")?.Value;
+            }
+
+            var typemap = registry
+                .Elements("types")
+                .Elements("type")
+                .Where(x => x.Attribute("category")?.Value == "define" && x.Value.StartsWith("typedef"))
+                .Select(x => (x.Element("name").Value, ProcessTypedef(x)))
+                .Where(x => x.Item2 != null)
+                .ToDictionary(x => x.Item1, x => x.Item2);
+
+            var nulls = typemap.Where(x => x.Value == null).ToArray();
+
+            task.TypeMaps.Add(typemap);
+
             var apis = registry.Elements("feature").Concat
             (
                 registry.Elements("extensions").Elements("extension")
@@ -768,7 +825,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Elements("type")
                 .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
                             e.Elements("type").SingleOrDefault()?.Value == "cl_properties" ||
-                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong")
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong"
+                      )
+                .Select(e => Rename(e.Element("name").Value, task).Renamed));
+
+            var nintEnums = new HashSet<string>(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "intptr_t")
                 .Select(e => Rename(e.Element("name").Value, task).Renamed));
 
             var flagEnums = new HashSet<string>(registry
@@ -1055,6 +1119,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 enumExtensions.TryAdd(enumExt.Item1, Rename(enumExt.Item2, task));
             }
 
+            var enumTypemap = new Dictionary<string, string>();
+
             foreach (var group in enumEntries)
             {
                 var tokens = group.Value.Select(name =>
@@ -1070,12 +1136,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }).ToList();
 
-                string extTag = "";
+                string baseName = "";
                 string rawName = "";
                 if (enumExtensions.TryGetValue(group.Key, out var extName))
                 {
-                    extTag = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
-                    var groupNoTag = group.Key.Renamed.Replace($"_{extTag}", "", StringComparison.OrdinalIgnoreCase);
+                    baseName = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
+                    var groupNoTag = group.Key.Renamed.Replace($"_{baseName}", "", StringComparison.OrdinalIgnoreCase);
                     rawName = groupNoTag;
 
                     if (tokens.Count == 0 && enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
@@ -1087,12 +1153,21 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     extName = new RenamedEntry("Core (Grouped)", "Core (Grouped)");
                     rawName = group.Key.Renamed;
+                    baseName = "CLEnum";
                 }
 
                 var groupName = Naming.Translate(TrimName(rawName, task), task.FunctionPrefix);
                 var is64bit = ulongEnums.Contains(group.Key.Renamed);
+                var isNint = nintEnums.Contains(group.Key.Renamed);
 
-                RenameTokens(tokens, group.Key.Renamed, extTag, task);
+                RenameTokens(tokens, group.Key.Renamed, baseName, task);
+
+                // Allow intptr_t based enums to fall through to the nint base type
+                if (!isNint)
+                {
+                    enumTypemap[group.Key.Original] = groupName;
+                    enumTypemap[group.Key.Renamed] = groupName;
+                }
 
                 foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
@@ -1108,12 +1183,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         ProfileName = apiName,
                         ProfileVersion = Version.Parse(apiVersion),
                         Tokens = tokens,
-                        EnumBaseType = is64bit ? new Type { Name = "ulong" } : new Type { Name = "int" }
+                        EnumBaseType = (is64bit || isNint) ? new Type { Name = "ulong" } : new Type { Name = "int" }
                     };
             
                     yield return ret;
                 }
             }
+
+            task.TypeMaps.Add(enumTypemap);
         }
 
         private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)

@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_device_integer_dot_product_acceleration_properties_khr")]
     public unsafe partial struct DeviceIntegerDotProductAccelerationPropertiesKhr

@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_external_semaphore";
         [NativeApi(EntryPoint = "clGetSemaphoreHandleForTypeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSemaphoreHandleForType([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] void* handle_ptr, [Flow(FlowDirection.Out)] nuint* handle_size_ret);
+        public unsafe partial int GetSemaphoreHandleForType([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ExternalSemaphoreHandleType handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] void* handle_ptr, [Flow(FlowDirection.Out)] nuint* handle_size_ret);
 
         [NativeApi(EntryPoint = "clGetSemaphoreHandleForTypeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSemaphoreHandleForType([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] void* handle_ptr, [Flow(FlowDirection.Out)] out nuint handle_size_ret);
+        public unsafe partial int GetSemaphoreHandleForType([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ExternalSemaphoreHandleType handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] void* handle_ptr, [Flow(FlowDirection.Out)] out nuint handle_size_ret);
 
         [NativeApi(EntryPoint = "clGetSemaphoreHandleForTypeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial int GetSemaphoreHandleForType<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] out T0 handle_ptr, [Flow(FlowDirection.Out)] nuint* handle_size_ret) where T0 : unmanaged;
+        public unsafe partial int GetSemaphoreHandleForType<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ExternalSemaphoreHandleType handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] out T0 handle_ptr, [Flow(FlowDirection.Out)] nuint* handle_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetSemaphoreHandleForTypeKHR", Convention = CallingConvention.Winapi)]
-        public partial int GetSemaphoreHandleForType<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] uint handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] out T0 handle_ptr, [Flow(FlowDirection.Out)] out nuint handle_size_ret) where T0 : unmanaged;
+        public partial int GetSemaphoreHandleForType<T0>([Flow(FlowDirection.In)] nint sema_object, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ExternalSemaphoreHandleType handle_type, [Flow(FlowDirection.In)] nuint handle_size, [Flow(FlowDirection.Out)] out T0 handle_ptr, [Flow(FlowDirection.Out)] out nuint handle_size_ret) where T0 : unmanaged;
 
         public KhrExternalSemaphore(INativeContext ctx)
             : base(ctx)

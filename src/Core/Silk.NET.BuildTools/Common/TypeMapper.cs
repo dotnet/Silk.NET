@@ -78,6 +78,40 @@ namespace Silk.NET.BuildTools.Common
         }
 
         /// <summary>
+        /// Merges several typemaps into one, recursively
+        /// </summary>
+        /// <param name="typeMaps">Maps to merge</param>
+        /// <returns>Marged map</returns>
+        internal static Dictionary<string, string> MergeMaps(List<Dictionary<string, string>> typeMaps)
+        {
+            var result = new Dictionary<string, string>(typeMaps.Sum(t => t.Count));
+
+            foreach (var map in typeMaps)
+            {
+                foreach (var kv in map)
+                {
+                    result[kv.Key] = kv.Value;
+                }
+            }
+
+            foreach (var kv in result)
+            {
+                var value = kv.Value;
+                while (result.TryGetValue(value, out var value2))
+                {
+                    if(string.Equals(value, value2))
+                    {
+                        break;
+                    }
+                    value = value2;
+                }
+                result[kv.Key] = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Replaces the type names of parameters and return types in the given functions using the given typemap.
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>

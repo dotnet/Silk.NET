@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "cl_egl_image_properties_khr")]
-    public enum EglImageProperties : int
+    public enum EglImageProperties : ulong
     {
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         YuvPlaneIntel = 0x4107,

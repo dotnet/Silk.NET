@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [NativeName("Name", "cl_queue_family_properties_intel")]
     public unsafe partial struct QueueFamilyPropertiesIntel
     {
         public QueueFamilyPropertiesIntel
         (
-            ulong? properties = null,
-            ulong? capabilities = null,
+            CommandQueueProperties? properties = null,
+            CommandQueueCapabilities? capabilities = null,
             uint? count = null
         ) : this()
         {
@@ -46,12 +46,12 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "cl_command_queue_properties")]
         [NativeName("Type.Name", "cl_command_queue_properties")]
         [NativeName("Name", "properties")]
-        public ulong Properties;
+        public CommandQueueProperties Properties;
 /// <summary></summary>
         [NativeName("Type", "cl_command_queue_capabilities_intel")]
         [NativeName("Type.Name", "cl_command_queue_capabilities_intel")]
         [NativeName("Name", "capabilities")]
-        public ulong Capabilities;
+        public CommandQueueCapabilities Capabilities;
 /// <summary></summary>
         [NativeName("Type", "cl_uint")]
         [NativeName("Type.Name", "cl_uint")]

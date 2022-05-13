@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_context_properties")]
-    public enum ContextProperties : int
+    public enum ContextProperties : ulong
     {
         [NativeName("Name", "CL_CONTEXT_PLATFORM")]
         Platform = 0x1084,

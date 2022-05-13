@@ -10,7 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [NativeName("Name", "cl_import_properties_arm")]
-    public enum ImportProperties : int
+    public enum ImportProperties : ulong
     {
         [NativeName("Name", "CL_IMPORT_TYPE_ARM")]
         Type = 0x40B2,

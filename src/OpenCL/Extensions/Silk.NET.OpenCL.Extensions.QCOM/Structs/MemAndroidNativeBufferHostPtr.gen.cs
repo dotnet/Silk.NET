@@ -14,16 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.QCOM
 {
-    [NativeName("Name", "cl_mem_ion_host_ptr")]
-    public unsafe partial struct MemIonHostPtr
+    [NativeName("Name", "cl_mem_android_native_buffer_host_ptr")]
+    public unsafe partial struct MemAndroidNativeBufferHostPtr
     {
-        public MemIonHostPtr
+        public MemAndroidNativeBufferHostPtr
         (
             MemExtHostPtr? extHostPtr = null,
-            int? ionFiledesc = null,
-            void* ionHostptr = null
+            void* anbPtr = null
         ) : this()
         {
             if (extHostPtr is not null)
@@ -31,14 +30,9 @@ namespace Silk.NET.OpenCL
                 ExtHostPtr = extHostPtr.Value;
             }
 
-            if (ionFiledesc is not null)
+            if (anbPtr is not null)
             {
-                IonFiledesc = ionFiledesc.Value;
-            }
-
-            if (ionHostptr is not null)
-            {
-                IonHostptr = ionHostptr;
+                AnbPtr = anbPtr;
             }
         }
 
@@ -48,14 +42,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "ext_host_ptr")]
         public MemExtHostPtr ExtHostPtr;
 /// <summary></summary>
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "ion_filedesc")]
-        public int IonFiledesc;
-/// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]
-        [NativeName("Name", "ion_hostptr")]
-        public void* IonHostptr;
+        [NativeName("Name", "anb_ptr")]
+        public void* AnbPtr;
     }
 }

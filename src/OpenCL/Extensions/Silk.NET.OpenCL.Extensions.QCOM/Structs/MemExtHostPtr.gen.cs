@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL.Extensions.QCOM
 {
     [NativeName("Name", "cl_mem_ext_host_ptr")]
     public unsafe partial struct MemExtHostPtr
