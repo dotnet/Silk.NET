@@ -4,9 +4,6 @@
 [submodule "src/submodules/SwiftShader"]
 	path = src/submodules/SwiftShader
 	url = https://github.com/google/swiftshader.git
-[submodule "src/submodules/ANGLE"]
-	path = src/submodules/ANGLE
-	url = https://chromium.googlesource.com/angle/angle.git
 [submodule "src/submodules/Vulkan-Loader"]
 	path = src/submodules/Vulkan-Loader
 	url = https://github.com/KhronosGroup/Vulkan-Loader.git
