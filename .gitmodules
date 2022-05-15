@@ -10,6 +10,3 @@
 [submodule "src/submodules/GLFW"]
 	path = src/submodules/GLFW
 	url = https://github.com/glfw/glfw.git
-[submodule "src/submodules/Assimp"]
-	path = src/submodules/Assimp
-	url = https://github.com/assimp/assimp.git
