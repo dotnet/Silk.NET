@@ -7,6 +7,3 @@
 [submodule "src/submodules/Vulkan-Loader"]
 	path = src/submodules/Vulkan-Loader
 	url = https://github.com/KhronosGroup/Vulkan-Loader.git
-[submodule "src/submodules/GLFW"]
-	path = src/submodules/GLFW
-	url = https://github.com/glfw/glfw.git
