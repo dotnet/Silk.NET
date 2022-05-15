@@ -21,11 +21,25 @@ internal sealed class XmlVisitor
                 return VisitBinding(bindings);
             case XmlElement { Name: "namespace" } @namespace:
                 return VisitNamespace(@namespace);
+            case XmlElement { Name: "struct" } @struct:
+                return VisitStruct(@struct);
             default:
             {
                 throw new NotImplementedException();
             }
         }
+    }
+
+    private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
+    {
+        return new[]
+        {
+            new StructSymbol
+            (
+                new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
+                StructLayout.Empty
+            )
+        };
     }
 
     private IEnumerable<Symbol> VisitBinding(XmlElement bindings)

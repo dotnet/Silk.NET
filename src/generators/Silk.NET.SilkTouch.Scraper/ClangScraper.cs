@@ -35,7 +35,7 @@ public sealed class ClangScraper
     /// <returns>Any number of symbols scraped from the given xml</returns>
     public IEnumerable<Symbol> ScrapeXML(XmlDocument document)
     {
-        var bindings = document.ChildNodes.Cast<XmlNode>().FirstOrDefault(x => x.LocalName == "bindings" && x is XmlElement) as XmlElement;
+        var bindings = document.ChildNodes.Cast<XmlNode>().OfType<XmlElement>().FirstOrDefault();
 
         if (bindings is null)
         {
