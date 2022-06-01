@@ -55,7 +55,7 @@ internal sealed class XmlVisitor
             (
                 new IdentifierSymbol(@namespace.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
                 @namespace.ChildNodes.Cast<XmlNode>()
-                    .Select(Visit)
+                    .SelectMany(Visit)
                     .Select
                     (
                         x =>
