@@ -18,7 +18,7 @@ public class EmitterNamespaceTests : EmitterTest
         var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), ImmutableArray<TypeSymbol>.Empty));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\n}", result);
+        Assert.Equal("namespace Test\n{\n}\n", result);
     }
 
     [Fact]

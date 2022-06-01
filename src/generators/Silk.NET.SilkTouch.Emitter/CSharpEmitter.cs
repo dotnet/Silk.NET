@@ -142,7 +142,7 @@ public sealed class CSharpEmitter
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
                 .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
-                .WithCloseBraceToken(Token(TriviaList(LineFeed), SyntaxKind.CloseBraceToken, SyntaxTriviaList.Empty));
+                .WithCloseBraceToken(Token(TriviaList(LineFeed), SyntaxKind.CloseBraceToken, TriviaList(LineFeed)));
             return structSymbol;
         }
 
@@ -202,7 +202,8 @@ public sealed class CSharpEmitter
                     List<ExternAliasDirectiveSyntax>(), List<UsingDirectiveSyntax>(), List<MemberDeclarationSyntax>(types)
                 )
                 .WithNamespaceKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.NamespaceKeyword, TriviaList(Space)))
-                .WithOpenBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.OpenBraceToken, TriviaList(LineFeed)));
+                .WithOpenBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.OpenBraceToken, TriviaList(LineFeed)))
+                .WithCloseBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.CloseBraceToken, TriviaList(LineFeed)));
             return namespaceSymbol;
         }
 
