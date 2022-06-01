@@ -8,6 +8,8 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="Symbol"/> representing a <c>namespace</c>
 /// </summary>
+/// <param name="Identifier">The Identifier of this Namespace</param>
+/// <param name="Types">The types in this namespace</param>
 public sealed record NamespaceSymbol(IdentifierSymbol Identifier, ImmutableArray<TypeSymbol> Types) : Symbol
 {
 }
