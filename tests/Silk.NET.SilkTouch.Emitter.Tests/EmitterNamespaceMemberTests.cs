@@ -19,6 +19,6 @@ public class EmitterNamespaceMemberTests : EmitterTest
         }).ToImmutableArray()));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\n[StructLayout(LayoutKind.Explicit)]\npublic struct Test2\n{\n}}", result);
+        Assert.Equal("namespace Test\n{\n[StructLayout(LayoutKind.Explicit)]\npublic struct Test2\n{\n}\n}\n", result);
     }
 }

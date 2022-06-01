@@ -34,7 +34,8 @@ public struct Test
 {
     [FieldOffset(0)]
     public int F1;
-}", node.ToFullString()
+}
+", node.ToFullString()
         );
     }
     
@@ -77,7 +78,8 @@ public struct Test
     public int F2;
     [FieldOffset(12)]
     public int F3;
-}", node.ToFullString()
+}
+", node.ToFullString()
         );
     }
 }
