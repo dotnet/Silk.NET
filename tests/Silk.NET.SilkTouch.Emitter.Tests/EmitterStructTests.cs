@@ -46,6 +46,7 @@ public sealed class EmitterStructTests : EmitterTest
         Assert.Equal(@"[StructLayout(LayoutKind.Explicit)]
 public struct Test
 {
-}", Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty)).ToFullString());
+}
+", Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty)).ToFullString());
     }
 }
