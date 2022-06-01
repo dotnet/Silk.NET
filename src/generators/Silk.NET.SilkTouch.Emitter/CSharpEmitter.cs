@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -184,13 +185,21 @@ public sealed class CSharpEmitter
             if (_syntax is not IdentifierNameSyntax namespaceIdentifierSyntax)
                 throw new InvalidOperationException("Namespace Identifier was not visited correctly");
             ClearState();
-            
-            // TODO visit members
+
+            var types = namespaceSymbol.Types.Select(x =>
+            {
+                VisitType(x);
+                if (_syntax is not TypeDeclarationSyntax typeSyntax)
+                    throw new InvalidOperationException("Namespace Member was not visited correctly");
+                
+                ClearState();
+                return typeSyntax;
+            });
 
             _syntax = NamespaceDeclaration
                 (
                     List<AttributeListSyntax>(), TokenList(), namespaceIdentifierSyntax.WithTrailingTrivia(LineFeed),
-                    List<ExternAliasDirectiveSyntax>(), List<UsingDirectiveSyntax>(), List<MemberDeclarationSyntax>()
+                    List<ExternAliasDirectiveSyntax>(), List<UsingDirectiveSyntax>(), List<MemberDeclarationSyntax>(types)
                 )
                 .WithNamespaceKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.NamespaceKeyword, TriviaList(Space)))
                 .WithOpenBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.OpenBraceToken, TriviaList(LineFeed)));
