@@ -23,11 +23,35 @@ internal sealed class XmlVisitor
                 return VisitNamespace(@namespace);
             case XmlElement { Name: "struct" } @struct:
                 return VisitStruct(@struct);
+            case XmlElement { Name: "field" } field:
+                return VisitField(field);
             default:
             {
                 throw new NotImplementedException();
             }
         }
+    }
+
+    private IEnumerable<Symbol> VisitField(XmlElement field)
+    {
+        var name = field.Attributes["name"]?.Value;
+        if (name is null)
+        {
+            throw new InvalidOperationException("Field requires a name");
+        }
+
+        var type = new StructSymbol
+        (
+            new IdentifierSymbol(
+            field.ChildNodes.Cast<XmlNode>().SingleOrDefault(x => x.Name == "type")?.InnerText ??
+            throw new InvalidOperationException("Could not decode Field Type")),
+            StructLayout.Empty
+        );
+
+        return new[]
+        {
+            new FieldSymbol(type, new IdentifierSymbol(name))
+        };
     }
 
     private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
