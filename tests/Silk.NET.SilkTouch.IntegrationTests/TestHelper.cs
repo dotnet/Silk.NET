@@ -13,7 +13,7 @@ namespace Silk.NET.SilkTouch.IntegrationTests;
 
 public static class TestHelper
 {
-    public static string GetCSharpOutputFromCPP(string cpp)
+    public static string GetCSharpOutputFromCpp(string cpp)
     {
         var tempFile = Path.GetTempFileName();
         

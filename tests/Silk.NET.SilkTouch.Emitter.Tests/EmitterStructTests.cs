@@ -11,28 +11,28 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 public sealed class EmitterStructTests : EmitterTest
 {
     [Fact]
-    public void StructIsStructSyntax()
+    public void StructSyntax()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty));
         Assert.IsType<StructDeclarationSyntax>(syntax);
     }
 
     [Fact]
-    public void StructHasStructKeyword()
+    public void StructKeyword()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty)) as StructDeclarationSyntax;
         Assert.Equal("struct", syntax!.Keyword.Text);
     }
 
     [Fact]
-    public void StructHasCorrectIdentifier()
+    public void CorrectIdentifier()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty)) as StructDeclarationSyntax;
         Assert.Equal("Test", syntax!.Identifier.Text);
     }
 
     [Fact]
-    public void StructIsOnlyPublic()
+    public void IsOnlyPublic()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), StructLayout.Empty)) as StructDeclarationSyntax;
         var @public = Assert.Single(syntax!.Modifiers);

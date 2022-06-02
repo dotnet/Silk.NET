@@ -39,7 +39,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     }
 
     [Fact]
-    public void FieldHasCorrectTypeIdentifier()
+    public void CorrectTypeIdentifier()
     {
         var syntax = Transform
         (
@@ -57,7 +57,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     }
 
     [Fact]
-    public void FieldHasCorrectIdentifier()
+    public void CorrectIdentifier()
     {
         var syntax = Transform
         (
