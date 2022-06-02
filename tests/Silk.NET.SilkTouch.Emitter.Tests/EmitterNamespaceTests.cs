@@ -22,7 +22,7 @@ public class EmitterNamespaceTests : EmitterTest
     }
 
     [Fact]
-    public void NamespaceHasCorrectIdentifier()
+    public void CorrectIdentifier()
     {
         var syntax = Transform
                 (new NamespaceSymbol(new IdentifierSymbol("Test"), ImmutableArray<TypeSymbol>.Empty)) as

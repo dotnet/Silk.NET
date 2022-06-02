@@ -13,7 +13,7 @@ public class StructIntegrationTests
     [Fact]
     public Task Test1()
     {
-        var result = TestHelper.GetCSharpOutputFromCPP(@"
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
 #include <stdint.h>
 
 typedef struct {

@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 public class EmitterStructMemberFieldsTests : EmitterTest
 {
     [Fact]
-    public void StructWithSingleFieldIntegration()
+    public void SingleFieldIntegration()
     {
         var node = Transform
         (
@@ -40,7 +40,7 @@ public struct Test
     }
     
     [Fact]
-    public void StructWithMultipleFieldsIntegration()
+    public void MultipleFieldsIntegration()
     {
         var node = Transform
         (

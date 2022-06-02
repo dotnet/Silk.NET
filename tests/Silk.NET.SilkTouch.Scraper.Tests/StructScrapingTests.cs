@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 public class StructScrapingTests
 {
     [Fact]
-    public void StructXMLGeneratesStructSymbol()
+    public void StructSymbol()
     {
         var doc = new XmlDocument();
         doc.LoadXml(@"<struct name=""Test""></struct>");
@@ -22,7 +22,7 @@ public class StructScrapingTests
     }
     
     [Fact]
-    public void StructXMLGeneratesCorrectIdentifier()
+    public void CorrectIdentifier()
     {
         var doc = new XmlDocument();
         doc.LoadXml(@"<struct name=""Test""></struct>");

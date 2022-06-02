@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 public class IdentityScrapingTests
 {
     [Fact]
-    public void EmptyXmlGeneratesNoSymbols()
+    public void GeneratesNoSymbols()
     {
         var doc = new XmlDocument();
 
@@ -20,7 +20,7 @@ public class IdentityScrapingTests
     }
 
     [Fact]
-    public void EmptyBindingsXmlGeneratesNoSymbols()
+    public void BindingsGeneratesNoSymbols()
     {
         var doc = new XmlDocument();
         doc.LoadXml(@"<bindings>
