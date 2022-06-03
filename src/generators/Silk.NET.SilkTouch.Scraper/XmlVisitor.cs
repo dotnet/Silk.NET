@@ -74,7 +74,7 @@ internal sealed class XmlVisitor
             new StructSymbol
             (
                 new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
-                ImmutableArray<FieldSymbol>.Empty
+                fields.ToImmutableArray()
             )
         };
     }
