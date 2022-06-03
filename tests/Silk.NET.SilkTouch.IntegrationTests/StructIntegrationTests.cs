@@ -22,4 +22,14 @@ typedef struct {
 } Test;");
         return Verifier.Verify(result);
     }
+
+    [Fact]
+    public Task Test2()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+struct vec2 { float x, y; };
+struct vec3 : vec2 { float z; };
+struct vec4 : vec3 { float w; };");
+        return Verifier.Verify(result);
+    }
 }
