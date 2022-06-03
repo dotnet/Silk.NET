@@ -70,75 +70,25 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Field Identifier was not visited correctly");
             ClearState();
 
-            var memberList = new List<MemberDeclarationSyntax>(structSymbol.Layout.Entries.Length);
-            foreach (var entry in structSymbol.Layout.Entries)
+            var fields = new List<MemberDeclarationSyntax>(structSymbol.Fields.Length);
+            foreach (var field in structSymbol.Fields)
             {
-                VisitMember(entry.Member);
+                VisitField(field);
                 if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
                     throw new InvalidOperationException("Member was not visited correctly");
                 ClearState();
                 memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
-                memberDeclarationSyntax = memberDeclarationSyntax.WithAttributeLists
-                (
-                    SingletonList
-                    (
-                        AttributeList
-                        (
-                            SingletonSeparatedList
-                            (
-                                Attribute
-                                        (IdentifierName("FieldOffset"))
-                                    .WithArgumentList
-                                    (
-                                        AttributeArgumentList
-                                        (
-                                            SingletonSeparatedList
-                                            (
-                                                AttributeArgument
-                                                    (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(entry.ByteOffset)))
-                                            )
-                                        )
-                                    )
-                            )
-                        )
-                    )
-                ).WithLeadingTrivia(LineFeed, _indentation);
-                memberList.Add(memberDeclarationSyntax);
+                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
+                fields.Add(memberDeclarationSyntax);
             }
             
-            var members = List(memberList);
+            var members = List(fields);
             
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
                 (
-                    SingletonList
-                    (
-                        AttributeList
-                            (
-                                SingletonSeparatedList
-                                (
-                                    Attribute(IdentifierName("StructLayout"))
-                                        .WithArgumentList
-                                        (
-                                            AttributeArgumentList
-                                            (
-                                                SingletonSeparatedList
-                                                (
-                                                    AttributeArgument
-                                                    (
-                                                        MemberAccessExpression
-                                                        (
-                                                            SyntaxKind.SimpleMemberAccessExpression,
-                                                            IdentifierName("LayoutKind"), IdentifierName("Explicit")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                            .WithTrailingTrivia(LineFeed)
-                    ), modifiers, identifierToken, null, null, List<TypeParameterConstraintClauseSyntax>(), members
+                    default, modifiers, identifierToken, null, null, List<TypeParameterConstraintClauseSyntax>(),
+                    members
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
                 .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))

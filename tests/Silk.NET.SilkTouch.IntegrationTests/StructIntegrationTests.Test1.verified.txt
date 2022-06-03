@@ -4,7 +4,6 @@
 
 namespace LIBRARY_NAMESPACE
 {
-[StructLayout(LayoutKind.Explicit)]
 public struct Test
 {
 }

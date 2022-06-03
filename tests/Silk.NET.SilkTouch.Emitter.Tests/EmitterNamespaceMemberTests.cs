@@ -13,25 +13,25 @@ public class EmitterNamespaceMemberTests : EmitterTest
     [Fact]
     public void SingleMemberIntegration()
     {
-        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), (new []
+        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []
         {
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), StructLayout.Empty)
-        }).ToImmutableArray()));
+            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
+        }.ToImmutableArray()));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\n[StructLayout(LayoutKind.Explicit)]\npublic struct Test2\n{\n}\n}\n", result);
+        Assert.Equal("namespace Test\n{\npublic struct Test2\n{\n}\n}\n", result);
     }
     
     [Fact]
     public void MultipleMembersIntegration()
     {
-        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), (new []
+        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []
         {
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), StructLayout.Empty),
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test3"), StructLayout.Empty)
-        }).ToImmutableArray()));
+            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
+            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
+        }.ToImmutableArray()));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\n[StructLayout(LayoutKind.Explicit)]\npublic struct Test2\n{\n}\n[StructLayout(LayoutKind.Explicit)]\npublic struct Test3\n{\n}\n}\n", result);
+        Assert.Equal("namespace Test\n{\npublic struct Test2\n{\n}\npublic struct Test3\n{\n}\n}\n", result);
     }
 }

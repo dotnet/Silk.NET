@@ -79,12 +79,7 @@ public abstract class SymbolVisitor
         return new StructSymbol
         (
             VisitIdentifier(structSymbol.Identifier),
-            new StructLayout
-            (
-                structSymbol.Layout.Entries.Select
-                        (x => new LayoutEntry(VisitMember(x.Member), x.ByteOffset))
-                    .ToImmutableArray()
-            )
+            structSymbol.Fields.Select(VisitField).ToImmutableArray()
         );
     }
 

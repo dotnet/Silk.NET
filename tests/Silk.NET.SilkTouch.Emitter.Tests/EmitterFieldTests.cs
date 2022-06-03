@@ -16,7 +16,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     [Fact]
     public void FieldIntegration()
     {
-        var syntax = Transform(new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"),StructLayout.Empty), new IdentifierSymbol("Test")));
+        var syntax = Transform(new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"),ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test")));
 
         var result = syntax.ToFullString();
         Assert.Equal("public int Test;", result);
@@ -29,7 +29,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -45,7 +45,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -63,7 +63,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;

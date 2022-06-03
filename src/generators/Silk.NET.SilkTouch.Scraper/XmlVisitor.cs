@@ -45,7 +45,7 @@ internal sealed class XmlVisitor
             new IdentifierSymbol(
             field.ChildNodes.Cast<XmlNode>().SingleOrDefault(x => x.Name == "type")?.InnerText ??
             throw new InvalidOperationException("Could not decode Field Type")),
-            StructLayout.Empty
+            ImmutableArray<FieldSymbol>.Empty
         );
 
         return new[]
@@ -56,12 +56,25 @@ internal sealed class XmlVisitor
 
     private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
     {
+        var fields = new List<FieldSymbol>();
+        foreach (var node in @struct.ChildNodes.Cast<XmlNode>())
+        {
+            var symbols = Visit(node);
+            foreach (var v in symbols)
+            {
+                if (v is FieldSymbol fieldSymbol)
+                {
+                    fields.Add(fieldSymbol);
+                }
+            }
+        }
+        
         return new[]
         {
             new StructSymbol
             (
                 new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
-                StructLayout.Empty
+                ImmutableArray<FieldSymbol>.Empty
             )
         };
     }

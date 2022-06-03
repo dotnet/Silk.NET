@@ -13,7 +13,7 @@ public class StructTests
     [Fact]
     public void StructSymbolIsVisitedAsType()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -28,7 +28,7 @@ public class StructTests
     [Fact]
     public void StructSymbolIsVisitedAsStruct()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -43,7 +43,7 @@ public class StructTests
     [Fact]
     public void StructIdentifierIsVisitedAsIdentifier()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -58,11 +58,11 @@ public class StructTests
     [Fact]
     public void StructMemberIsVisited()
     {
-        MemberSymbol member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test1"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new StructLayout((new[]
+        var member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
+        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
-            new LayoutEntry(member, 0)
-        }).ToImmutableArray()));
+            member
+        }.ToImmutableArray());
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -77,13 +77,12 @@ public class StructTests
     [Fact]
     public void StructMembersAreVisited()
     {
-        MemberSymbol member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test1"));
-        MemberSymbol member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test2"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new StructLayout((new[]
+        var member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
+        var member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test2"));
+        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
-            new LayoutEntry(member1, 0),
-            new LayoutEntry(member2, 4)
-        }).ToImmutableArray()));
+            member1, member2
+        }.ToImmutableArray());
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true

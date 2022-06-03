@@ -16,21 +16,20 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                new IdentifierSymbol("Test"), new StructLayout((new[]
-                {
-                    new LayoutEntry(new FieldSymbol
+                new IdentifierSymbol("Test"), new[]
+                { 
+                    new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                         new IdentifierSymbol("F1")
-                    ), 0)   
-                }).ToImmutableArray())
+                    )  
+                }.ToImmutableArray()
             )
         );
 
         Assert.Equal
         (
-            @"[StructLayout(LayoutKind.Explicit)]
-public struct Test
+            @"public struct Test
 {
     [FieldOffset(0)]
     public int F1;
@@ -46,31 +45,30 @@ public struct Test
         (
             new StructSymbol
             (
-                new IdentifierSymbol("Test"), new StructLayout((new[]
+                new IdentifierSymbol("Test"), new[]
                 {
-                    new LayoutEntry(new FieldSymbol
+                    new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                         new IdentifierSymbol("F1")
-                    ), 0),
-                    new LayoutEntry(new FieldSymbol
+                    ),
+                    new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                         new IdentifierSymbol("F2")
-                    ), 20),
-                    new LayoutEntry(new FieldSymbol
+                    ),
+                    new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty),
+                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
                         new IdentifierSymbol("F3")
-                    ), 12)
-                }).ToImmutableArray())
+                    )
+                }.ToImmutableArray()
             )
         );
 
         Assert.Equal
         (
-            @"[StructLayout(LayoutKind.Explicit)]
-public struct Test
+            @"public struct Test
 {
     [FieldOffset(0)]
     public int F1;
