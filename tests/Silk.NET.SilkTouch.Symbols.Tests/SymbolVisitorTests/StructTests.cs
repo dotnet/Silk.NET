@@ -56,7 +56,7 @@ public class StructTests
     }
 
     [Fact]
-    public void StructMemberIsVisited()
+    public void StructFieldIsVisited()
     {
         var member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
         var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
@@ -71,11 +71,11 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member));
     }
 
     [Fact]
-    public void StructMembersAreVisited()
+    public void StructFieldsAreVisited()
     {
         var member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
         var member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test2"));
@@ -91,9 +91,9 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member1));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member1));
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member2));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member2));
     }
 }
