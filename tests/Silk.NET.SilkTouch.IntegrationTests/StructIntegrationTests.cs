@@ -10,7 +10,10 @@ namespace Silk.NET.SilkTouch.IntegrationTests;
 [UsesVerify]
 public class StructIntegrationTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Integration"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public Task Test1()
     {
         var result = TestHelper.GetCSharpOutputFromCpp(@"
@@ -23,7 +26,11 @@ typedef struct {
         return Verifier.Verify(result);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Integration"), 
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields"),
+     Trait("Feature", "Inheritance")]
     public Task Test2()
     {
         var result = TestHelper.GetCSharpOutputFromCpp(@"
@@ -33,7 +40,12 @@ struct vec4 : vec3 { float w; };");
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support")]
+    [Fact(Skip = "Union Support"),
+     Trait("Category", "Integration"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields"),
+     Trait("Feature", "Unions"),
+     Trait("Feature", "Nested Types")]
     public Task Test3()
     {
         // from https://en.cppreference.com/w/c/language/struct
@@ -48,7 +60,10 @@ struct v {
         return Verifier.Verify(result);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Integration"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public Task Test4()
     {
         // from https://en.cppreference.com/w/c/language/struct
@@ -59,7 +74,11 @@ struct y { struct x *q; /* ... */ };");
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support")]
+    [Fact(Skip = "Union Support"),
+     Trait("Category", "Integration"),
+     Trait("Feature", "Fields"),
+     Trait("Feature", "Unions"),
+     Trait("Feature", "Fixed-Size Arrays")]
     public Task Test5()
     {
         // from https://en.cppreference.com/w/cpp/language/union
@@ -75,7 +94,10 @@ union S
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support")]
+    [Fact(Skip = "Union Support"),
+     Trait("Category", "Integration"),
+     Trait("Feature", "Fields"),
+     Trait("Feature", "Unions")]
     public Task Test6()
     {
         // from https://en.cppreference.com/w/cpp/language/union
@@ -93,7 +115,12 @@ union S
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support, Enum Support")]
+
+    [Fact(Skip = "Union Support, Enum Support"),
+     Trait("Category", "Integration"),
+     Trait("Feature", "Fields"),
+     Trait("Feature", "Unions"),
+     Trait("Feature", "Enums")]
     public Task Test7()
     {
         // from https://en.cppreference.com/w/cpp/language/union
