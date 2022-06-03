@@ -10,7 +10,9 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class FieldTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Fields")]
     public void FieldIsVisitedAsField()
     {
         var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
@@ -25,7 +27,9 @@ public class FieldTests
             .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.IsAny<FieldSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Fields")]
     public void FieldIsVisitedAsMember()
     {
         var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
@@ -40,7 +44,9 @@ public class FieldTests
             .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.IsAny<MemberSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Fields")]
     public void FieldTypeIsVisited()
     {
         var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
@@ -55,7 +61,9 @@ public class FieldTests
             .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Fields")]
     public void FieldIdentifierIsVisited()
     {
         var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));

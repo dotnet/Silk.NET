@@ -9,7 +9,12 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public class EmitterStructMemberFieldsTests : EmitterTest
 {
-    [Fact]
+
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields"),
+     Trait("Target Language", "C#")]
     public void SingleFieldIntegration()
     {
         var node = Transform
@@ -37,7 +42,11 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         );
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields"),
+     Trait("Target Language", "C#")]
     public void MultipleFieldsIntegration()
     {
         var node = Transform

@@ -29,7 +29,9 @@ public class BasicXMLTests
     private const string TempFileHeader = @"/* This file is temporarily created for use by Silk.NET tests. If you don't intend to run such a test, feel free to delete this file. */";
     
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Source Language", "C++")]
     public void BasicStructScrapingTest()
     {
         var tempFile = Path.GetTempFileName();

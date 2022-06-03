@@ -9,7 +9,9 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 
 public class FieldScrapingTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Fields")]
     public void FieldSymbol()
     {
         var doc = new XmlDocument();
@@ -21,7 +23,9 @@ public class FieldScrapingTests
         var field = Assert.IsType<FieldSymbol>(symbol);
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Fields")]
     public void CorrectIdentifier()
     {
         var doc = new XmlDocument();
@@ -34,7 +38,9 @@ public class FieldScrapingTests
         Assert.Equal("f2", field.Identifier.Value);
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Fields")]
     public void CorrectType()
     {
         var doc = new XmlDocument();

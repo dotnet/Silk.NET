@@ -8,7 +8,9 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public sealed class IdentifierTests : EmitterTest
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Target Language", "C#")]
     public void IdentifierHasNoLeadingTrivia()
     {
         var node = Transform(new IdentifierSymbol("Test"));
@@ -17,7 +19,9 @@ public sealed class IdentifierTests : EmitterTest
         Assert.False(node.HasLeadingTrivia);
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Target Language", "C#")]
     public void IdentifierHasNoTrailingTrivia()
     {
         var node = Transform(new IdentifierSymbol("Test"));
@@ -26,7 +30,9 @@ public sealed class IdentifierTests : EmitterTest
         Assert.False(node.HasTrailingTrivia);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Target Language", "C#")]
     public void IdentifierIntegration()
     {
         var node = Transform(new IdentifierSymbol("Test"));

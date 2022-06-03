@@ -12,6 +12,8 @@ public class StructIntegrationTests
 {
     [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Structs"),
      Trait("Feature", "Fields")]
     public Task Test1()
@@ -27,7 +29,9 @@ typedef struct {
     }
 
     [Fact,
-     Trait("Category", "Integration"), 
+     Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Structs"),
      Trait("Feature", "Fields"),
      Trait("Feature", "Inheritance")]
@@ -40,8 +44,10 @@ struct vec4 : vec3 { float w; };");
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support"),
+    [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Structs"),
      Trait("Feature", "Fields"),
      Trait("Feature", "Unions"),
@@ -62,6 +68,8 @@ struct v {
 
     [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Structs"),
      Trait("Feature", "Fields")]
     public Task Test4()
@@ -74,8 +82,10 @@ struct y { struct x *q; /* ... */ };");
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support"),
+    [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Fields"),
      Trait("Feature", "Unions"),
      Trait("Feature", "Fixed-Size Arrays")]
@@ -94,8 +104,10 @@ union S
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "Union Support"),
+    [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Fields"),
      Trait("Feature", "Unions")]
     public Task Test6()
@@ -116,8 +128,10 @@ union S
     }
 
 
-    [Fact(Skip = "Union Support, Enum Support"),
+    [Fact,
      Trait("Category", "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
      Trait("Feature", "Fields"),
      Trait("Feature", "Unions"),
      Trait("Feature", "Enums")]

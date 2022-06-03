@@ -13,7 +13,10 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public sealed class EmitterFieldIntegrationTests : EmitterTest
 {
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Fields"),
+    Trait("Target Language", "C#")]
     public void FieldIntegration()
     {
         var syntax = Transform(new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"),ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test")));
@@ -22,7 +25,10 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         Assert.Equal("public int Test;", result);
     }
 
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Fields"),
+     Trait("Target Language", "C#")]
     public void FieldIsPublic()
     {
         var syntax = Transform
@@ -38,7 +44,10 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         Assert.Single(syntax!.Modifiers, x => x.IsKind(SyntaxKind.PublicKeyword));
     }
 
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Fields"),
+     Trait("Target Language", "C#")]
     public void CorrectTypeIdentifier()
     {
         var syntax = Transform
@@ -56,7 +65,10 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         Assert.Equal("int", type!.Identifier.Text);
     }
 
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Fields"),
+     Trait("Target Language", "C#")]
     public void CorrectIdentifier()
     {
         var syntax = Transform

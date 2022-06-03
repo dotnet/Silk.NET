@@ -10,7 +10,10 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public class EmitterNamespaceMemberTests : EmitterTest
 {
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Namespaces"),
+     Trait("Target Language", "C#")]
     public void SingleMemberIntegration()
     {
         var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []
@@ -22,7 +25,10 @@ public class EmitterNamespaceMemberTests : EmitterTest
         Assert.Equal("namespace Test\n{\npublic struct Test2\n{\n}\n}\n", result);
     }
     
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Namespaces"),
+     Trait("Target Language", "C#")]
     public void MultipleMembersIntegration()
     {
         var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []

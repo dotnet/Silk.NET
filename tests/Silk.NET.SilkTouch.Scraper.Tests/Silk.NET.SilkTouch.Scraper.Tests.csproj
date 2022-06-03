@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\generators\Silk.NET.SilkTouch.Scraper\Silk.NET.SilkTouch.Scraper.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.TestFramework\Silk.NET.SilkTouch.TestFramework.csproj" />
     </ItemGroup>
 
 </Project>
