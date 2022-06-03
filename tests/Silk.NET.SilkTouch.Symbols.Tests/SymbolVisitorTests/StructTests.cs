@@ -13,7 +13,7 @@ public class StructTests
     [Fact]
     public void StructSymbolIsVisitedAsType()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -28,7 +28,7 @@ public class StructTests
     [Fact]
     public void StructSymbolIsVisitedAsStruct()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -43,7 +43,7 @@ public class StructTests
     [Fact]
     public void StructIdentifierIsVisitedAsIdentifier()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), StructLayout.Empty);
+        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -56,13 +56,13 @@ public class StructTests
     }
 
     [Fact]
-    public void StructMemberIsVisited()
+    public void StructFieldIsVisited()
     {
-        MemberSymbol member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test1"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new StructLayout((new[]
+        var member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
+        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
-            new LayoutEntry(member, 0)
-        }).ToImmutableArray()));
+            member
+        }.ToImmutableArray());
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -71,19 +71,18 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member));
     }
 
     [Fact]
-    public void StructMembersAreVisited()
+    public void StructFieldsAreVisited()
     {
-        MemberSymbol member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test1"));
-        MemberSymbol member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), StructLayout.Empty), new IdentifierSymbol("Test2"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new StructLayout((new[]
+        var member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
+        var member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test2"));
+        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
-            new LayoutEntry(member1, 0),
-            new LayoutEntry(member2, 4)
-        }).ToImmutableArray()));
+            member1, member2
+        }.ToImmutableArray());
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -92,9 +91,9 @@ public class StructTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member1));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member1));
         
         visitor.Protected()
-            .Verify<MemberSymbol>("VisitMember", Times.Once(), ItExpr.Is<MemberSymbol>(x => x == member2));
+            .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member2));
     }
 }

@@ -4,8 +4,9 @@
 
 namespace LIBRARY_NAMESPACE
 {
-[StructLayout(LayoutKind.Explicit)]
 public struct Test
 {
+    public int f1;
+    public int f2;
 }
 }
