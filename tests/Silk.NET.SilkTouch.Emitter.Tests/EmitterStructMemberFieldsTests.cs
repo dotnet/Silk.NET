@@ -31,7 +31,6 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             @"public struct Test
 {
-    [FieldOffset(0)]
     public int F1;
 }
 ", node.ToFullString()
@@ -70,11 +69,8 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             @"public struct Test
 {
-    [FieldOffset(0)]
     public int F1;
-    [FieldOffset(20)]
     public int F2;
-    [FieldOffset(12)]
     public int F3;
 }
 ", node.ToFullString()
