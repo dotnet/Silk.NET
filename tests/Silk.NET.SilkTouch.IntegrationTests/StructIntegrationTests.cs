@@ -22,4 +22,96 @@ typedef struct {
 } Test;");
         return Verifier.Verify(result);
     }
+
+    [Fact]
+    public Task Test2()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+struct vec2 { float x, y; };
+struct vec3 : vec2 { float z; };
+struct vec4 : vec3 { float w; };");
+        return Verifier.Verify(result);
+    }
+
+    [Fact(Skip = "Union Support")]
+    public Task Test3()
+    {
+        // from https://en.cppreference.com/w/c/language/struct
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+struct v {
+   union { // anonymous union
+      struct { int i, j; }; // anonymous structure
+      struct { long k, l; } w;
+   };
+   int m;
+} v1;");
+        return Verifier.Verify(result);
+    }
+
+    [Fact]
+    public Task Test4()
+    {
+        // from https://en.cppreference.com/w/c/language/struct
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+struct y;
+struct x { struct y *p; /* ... */ };
+struct y { struct x *q; /* ... */ };");
+        return Verifier.Verify(result);
+    }
+
+    [Fact(Skip = "Union Support")]
+    public Task Test5()
+    {
+        // from https://en.cppreference.com/w/cpp/language/union
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#include <iostream>
+#include <cstdint>
+union S
+{
+    std::int32_t n;     // occupies 4 bytes
+    std::uint16_t s[2]; // occupies 4 bytes
+    std::uint8_t c;     // occupies 1 byte
+};   ");
+        return Verifier.Verify(result);
+    }
+
+    [Fact(Skip = "Union Support")]
+    public Task Test6()
+    {
+        // from https://en.cppreference.com/w/cpp/language/union
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#include <iostream>
+#include <string>
+#include <vector>
+ 
+union S
+{
+    std::string str;
+    std::vector<int> vec;
+    ~S() {} // needs to know which member is active, only possible in union-like class 
+};          // the whole union occupies max(sizeof(string), sizeof(vector<int>))");
+        return Verifier.Verify(result);
+    }
+
+    [Fact(Skip = "Union Support, Enum Support")]
+    public Task Test7()
+    {
+        // from https://en.cppreference.com/w/cpp/language/union
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+#include <iostream>
+ 
+// S has one non-static data member (tag), three enumerator members (CHAR, INT, DOUBLE), 
+// and three variant members (c, i, d)
+struct S
+{
+    enum{CHAR, INT, DOUBLE} tag;
+    union
+    {
+        char c;
+        int i;
+        double d;
+    };
+};");
+        return Verifier.Verify(result);
+    }
 }
