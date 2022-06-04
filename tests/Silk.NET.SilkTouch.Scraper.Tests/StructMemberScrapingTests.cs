@@ -9,7 +9,10 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 
 public class StructMemberScrapingTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public void SingleMember()
     {
         var doc = new XmlDocument();
@@ -28,7 +31,10 @@ public class StructMemberScrapingTests
         );
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public void MultipleMembers()
     {
         var doc = new XmlDocument();

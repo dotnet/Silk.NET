@@ -10,7 +10,9 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class NamespaceTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Namespaces")]
     public void NamespaceIdentifierIsVisited()
     {
         var symbol = new NamespaceSymbol(new IdentifierSymbol(""), ImmutableArray<TypeSymbol>.Empty);
@@ -26,7 +28,10 @@ public class NamespaceTests
             .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Namespaces"),
+     Trait("Feature", "Structs")]
     public void NamespaceMemberIsVisited()
     {
         var symbol = new NamespaceSymbol(new IdentifierSymbol(""), new []

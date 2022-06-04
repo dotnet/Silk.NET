@@ -10,7 +10,9 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class StructTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsType()
     {
         var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
@@ -25,7 +27,9 @@ public class StructTests
             .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsStruct()
     {
         var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
@@ -40,7 +44,9 @@ public class StructTests
             .Verify<StructSymbol>("VisitStruct", Times.Once(), ItExpr.IsAny<StructSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Structs")]
     public void StructIdentifierIsVisitedAsIdentifier()
     {
         var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
@@ -55,7 +61,10 @@ public class StructTests
             .Verify<IdentifierSymbol>("VisitIdentifier", Times.Once(), ItExpr.IsAny<IdentifierSymbol>());
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public void StructFieldIsVisited()
     {
         var member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
@@ -74,7 +83,11 @@ public class StructTests
             .Verify<FieldSymbol>("VisitField", Times.Once(), ItExpr.Is<FieldSymbol>(x => x == member));
     }
 
-    [Fact]
+
+    [Fact,
+     Trait("Category", "Symbols"),
+     Trait("Feature", "Structs"),
+     Trait("Feature", "Fields")]
     public void StructFieldsAreVisited()
     {
         var member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));

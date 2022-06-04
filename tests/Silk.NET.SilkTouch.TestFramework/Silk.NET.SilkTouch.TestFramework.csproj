@@ -14,11 +14,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\src\generators\Silk.NET.SilkTouch.Emitter\Silk.NET.SilkTouch.Emitter.csproj" />
-      <ProjectReference Include="..\Silk.NET.SilkTouch.TestFramework\Silk.NET.SilkTouch.TestFramework.csproj" />
+        <PackageReference Include="Moq" />
     </ItemGroup>
 
 </Project>

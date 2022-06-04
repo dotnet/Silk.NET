@@ -9,7 +9,9 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 
 public class NamespaceScrapingTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Namespaces")]
     public void NamespaceSymbol()
     {
         var doc = new XmlDocument();
@@ -26,7 +28,9 @@ public class NamespaceScrapingTests
         Assert.Equal(ClangScraper.LibraryNamespacePlaceholder, @namespace.Identifier.Value);
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Namespaces")]
     public void NamespaceMember()
     {
         var doc = new XmlDocument();
@@ -48,7 +52,9 @@ public class NamespaceScrapingTests
     }
     
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Namespaces")]
     public void MultipleNamespaceMembers()
     {
         var doc = new XmlDocument();

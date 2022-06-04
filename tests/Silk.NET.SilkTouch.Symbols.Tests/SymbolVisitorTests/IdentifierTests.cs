@@ -9,7 +9,9 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class IdentifierTests
 {
-    [Fact]
+
+    [Fact,
+     Trait("Category", "Symbols")]
     public void IdentifierIsVisitedAsIdentifier()
     {
         var symbol = new IdentifierSymbol("");

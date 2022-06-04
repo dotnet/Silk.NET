@@ -12,7 +12,10 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public class EmitterNamespaceTests : EmitterTest
 {
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Namespaces"),
+     Trait("Target Language", "C#")]
     public void NamespaceIntegration()
     {
         var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), ImmutableArray<TypeSymbol>.Empty));
@@ -21,7 +24,10 @@ public class EmitterNamespaceTests : EmitterTest
         Assert.Equal("namespace Test\n{\n}\n", result);
     }
 
-    [Fact]
+    [Fact, 
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Namespaces"),
+     Trait("Target Language", "C#")]
     public void CorrectIdentifier()
     {
         var syntax = Transform

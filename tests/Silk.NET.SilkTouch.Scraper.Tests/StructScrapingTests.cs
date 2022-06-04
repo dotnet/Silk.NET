@@ -9,7 +9,9 @@ namespace Silk.NET.SilkTouch.Scraper.Tests;
 
 public class StructScrapingTests
 {
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Structs")]
     public void StructSymbol()
     {
         var doc = new XmlDocument();
@@ -21,7 +23,9 @@ public class StructScrapingTests
         var @struct = Assert.IsType<StructSymbol>(symbol);
     }
     
-    [Fact]
+    [Fact,
+     Trait("Category", "Scraper"),
+     Trait("Feature", "Structs")]
     public void CorrectIdentifier()
     {
         var doc = new XmlDocument();

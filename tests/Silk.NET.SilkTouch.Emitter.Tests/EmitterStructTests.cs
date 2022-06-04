@@ -10,28 +10,41 @@ namespace Silk.NET.SilkTouch.Emitter.Tests;
 
 public sealed class EmitterStructTests : EmitterTest
 {
-    [Fact]
+
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Target Language", "C#")]
     public void StructSyntax()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty));
         Assert.IsType<StructDeclarationSyntax>(syntax);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Target Language", "C#")]
     public void StructKeyword()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
         Assert.Equal("struct", syntax!.Keyword.Text);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Target Language", "C#")]
     public void CorrectIdentifier()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
         Assert.Equal("Test", syntax!.Identifier.Text);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Target Language", "C#")]
     public void IsOnlyPublic()
     {
         var syntax = Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
@@ -39,7 +52,10 @@ public sealed class EmitterStructTests : EmitterTest
         Assert.Equal("public", @public.Text);
     }
 
-    [Fact]
+    [Fact,
+     Trait("Category", "Emitter"),
+     Trait("Feature", "Structs"),
+     Trait("Target Language", "C#")]
     public void IntegrationEmptyStruct()
     {
         // Note that this test also covers trivia, which is not checked otherwise.
