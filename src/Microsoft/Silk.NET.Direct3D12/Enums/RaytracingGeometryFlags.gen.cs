@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_FLAGS")]
     public enum RaytracingGeometryFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_FLAG_NONE")]
         RaytracingGeometryFlagNone = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_FLAG_OPAQUE")]

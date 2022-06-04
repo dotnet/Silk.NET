@@ -50,8 +50,8 @@ namespace Silk.NET.BuildTools.Converters
 
             foreach (var profile in profiles)
             {
-                ctor.WriteEnums(profile, enums, task);
                 ctor.WriteFunctions(profile, functions, task);
+                ctor.WriteEnums(profile, enums, task);
                 ctor.WriteStructs(profile, structs, task);
                 ctor.WriteConstants(profile, constants, task);
                 foreach (var typeMap in task.TypeMaps)

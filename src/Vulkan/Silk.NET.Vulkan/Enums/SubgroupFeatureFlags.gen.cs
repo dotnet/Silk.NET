@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSubgroupFeatureFlags")]
     public enum SubgroupFeatureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SUBGROUP_FEATURE_BASIC_BIT")]
         SubgroupFeatureBasicBit = 1,
         [NativeName("Name", "VK_SUBGROUP_FEATURE_VOTE_BIT")]

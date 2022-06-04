@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DTEXTUREADDRESS")]
     public enum Textureaddress : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DTADDRESS_WRAP")]
         TaddressWrap = 0x1,
         [NativeName("Name", "D3DTADDRESS_MIRROR")]

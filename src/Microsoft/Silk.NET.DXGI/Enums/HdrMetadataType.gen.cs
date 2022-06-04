@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_HDR_METADATA_TYPE")]
     public enum HdrMetadataType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_HDR_METADATA_TYPE_NONE")]
         HdrMetadataTypeNone = 0x0,
         [NativeName("Name", "DXGI_HDR_METADATA_TYPE_HDR10")]

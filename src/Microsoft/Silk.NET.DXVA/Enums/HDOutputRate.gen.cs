@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_OUTPUT_RATE")]
     public enum HDOutputRate : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_OUTPUT_RATE_NORMAL")]
         HDOutputRateNormal = 0x0,
         [NativeName("Name", "DXVAHD_OUTPUT_RATE_HALF")]

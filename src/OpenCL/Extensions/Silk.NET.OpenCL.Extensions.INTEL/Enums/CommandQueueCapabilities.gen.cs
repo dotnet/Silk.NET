@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_command_queue_capabilities_intel")]
     public enum CommandQueueCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
         CreateSingleQueueEvents = 0x1,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_CROSS_QUEUE_EVENTS_INTEL")]

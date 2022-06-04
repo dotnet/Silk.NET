@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS")]
     public enum MultisampleQualityLevelFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_NONE")]
         MultisampleQualityLevelsFlagNone = 0x0,
         [NativeName("Name", "D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_TILED_RESOURCE")]

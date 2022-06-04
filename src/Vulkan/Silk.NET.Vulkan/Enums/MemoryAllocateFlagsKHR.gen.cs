@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkMemoryAllocateFlagsKHR")]
     public enum MemoryAllocateFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
         MemoryAllocateDeviceMaskBit = 1,
     }

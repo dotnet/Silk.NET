@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GLprofile")]
     public enum GLprofile : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_CORE")]
         GLContextProfileCore = 0x1,
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_COMPATIBILITY")]

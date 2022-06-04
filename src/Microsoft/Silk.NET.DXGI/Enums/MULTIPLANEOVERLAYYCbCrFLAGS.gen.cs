@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS")]
     public enum MULTIPLANEOVERLAYYCbCrFLAGS : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE")]
         MultiplaneOverlayYCbCrFlagNominalRange = 0x1,
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709")]

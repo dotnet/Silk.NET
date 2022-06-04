@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
     public enum VideoScaleSupportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_NONE")]
         VideoScaleSupportFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_POW2_ONLY")]

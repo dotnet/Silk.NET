@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkGraphicsPipelineLibraryFlagsEXT")]
     public enum GraphicsPipelineLibraryFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_GRAPHICS_PIPELINE_LIBRARY_VERTEX_INPUT_INTERFACE_BIT_EXT")]
         GraphicsPipelineLibraryVertexInputInterfaceBitExt = 1,
         [NativeName("Name", "VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT")]

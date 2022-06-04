@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAGS")]
     public enum VideoEncoderCodecConfigurationSupportHevcFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_NONE")]
         VideoEncoderCodecConfigurationSupportHevcFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC_FLAG_BFRAME_LTR_COMBINED_SUPPORT")]

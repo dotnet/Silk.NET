@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_device_affinity_domain")]
     public enum DeviceAffinityDomain : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
         Numa = 0x1,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L4_CACHE")]

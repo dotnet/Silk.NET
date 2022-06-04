@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiPrimitiveType")]
     public enum PrimitiveType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiPrimitiveType_POINT")]
         PrimitiveTypePoint = 0x1,
         [NativeName("Name", "aiPrimitiveType_LINE")]

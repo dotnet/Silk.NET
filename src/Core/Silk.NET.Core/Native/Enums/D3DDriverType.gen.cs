@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "D3D_DRIVER_TYPE")]
     public enum D3DDriverType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D_DRIVER_TYPE_UNKNOWN")]
         D3DDriverTypeUnknown = 0x0,
         [NativeName("Name", "D3D_DRIVER_TYPE_HARDWARE")]

@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_VideoProcessCaps")]
     public enum VideoProcessCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_VideoProcess_None")]
         VideoProcessNone = 0x0,
         [NativeName("Name", "DXVA_VideoProcess_YUV2RGB")]

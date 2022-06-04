@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRenderingFlagsKHR")]
     public enum RenderingFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         RenderingContentsSecondaryCommandBuffersBit = 1,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]

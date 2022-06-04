@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_MODE")]
     public enum ConservativeRasterizationMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_MODE_OFF")]
         ConservativeRasterizationModeOff = 0x0,
         [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_MODE_ON")]

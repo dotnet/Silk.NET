@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeFlagsKHR")]
     public enum VideoEncodeFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_DEFAULT_KHR")]
         VideoEncodeDefaultKhr = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_RESERVED_0_BIT_KHR")]

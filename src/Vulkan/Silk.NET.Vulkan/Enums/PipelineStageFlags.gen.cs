@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineStageFlags")]
     public enum PipelineStageFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT")]
         PipelineStageTopOfPipeBit = 1,
         [NativeName("Name", "VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT")]

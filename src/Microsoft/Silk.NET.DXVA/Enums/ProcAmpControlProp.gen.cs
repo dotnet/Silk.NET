@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_ProcAmpControlProp")]
     public enum ProcAmpControlProp : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_ProcAmp_None")]
         ProcAmpNone = 0x0,
         [NativeName("Name", "DXVA_ProcAmp_Brightness")]

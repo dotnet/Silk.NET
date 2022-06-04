@@ -18,12 +18,14 @@ namespace Silk.NET.OpenGLES
         TextureHeight = 0x1001,
         [NativeName("Name", "GL_TEXTURE_INTERNAL_FORMAT")]
         TextureInternalFormat = 0x1003,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_COMPONENTS")]
         TextureComponents = 0x1003,
         [NativeName("Name", "GL_TEXTURE_BORDER_COLOR")]
         TextureBorderColor = 0x1004,
         [NativeName("Name", "GL_TEXTURE_BORDER_COLOR_NV")]
         TextureBorderColorNV = 0x1004,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_BORDER")]
         TextureBorder = 0x1005,
         [NativeName("Name", "GL_TEXTURE_MAG_FILTER")]
@@ -42,12 +44,16 @@ namespace Silk.NET.OpenGLES
         TextureBlueSize = 0x805E,
         [NativeName("Name", "GL_TEXTURE_ALPHA_SIZE")]
         TextureAlphaSize = 0x805F,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_LUMINANCE_SIZE")]
         TextureLuminanceSize = 0x8060,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_INTENSITY_SIZE")]
         TextureIntensitySize = 0x8061,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_PRIORITY")]
         TexturePriority = 0x8066,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_RESIDENT")]
         TextureResident = 0x8067,
         [NativeName("Name", "GL_TEXTURE_DEPTH_EXT")]

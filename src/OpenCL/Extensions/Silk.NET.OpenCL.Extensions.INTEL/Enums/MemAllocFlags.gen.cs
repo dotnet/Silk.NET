@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_mem_alloc_flags_intel")]
     public enum MemAllocFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_MEM_ALLOC_WRITE_COMBINED_INTEL")]
         WriteCombined = 0x1,
         [NativeName("Name", "CL_MEM_ALLOC_INITIAL_PLACEMENT_DEVICE_INTEL")]

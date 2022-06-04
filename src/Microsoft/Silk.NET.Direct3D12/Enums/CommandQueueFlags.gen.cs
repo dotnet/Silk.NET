@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAGS")]
     public enum CommandQueueFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_NONE")]
         CommandQueueFlagNone = 0x0,
         [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT")]

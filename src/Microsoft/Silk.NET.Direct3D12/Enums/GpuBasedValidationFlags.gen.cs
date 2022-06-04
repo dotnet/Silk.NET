@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_FLAGS")]
     public enum GpuBasedValidationFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_FLAGS_NONE")]
         GpuBasedValidationFlagsNone = 0x0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_FLAGS_DISABLE_STATE_TRACKING")]

@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_BlendOperation")]
     public enum BlendOperation : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_BLENDOPERATION_ADD")]
         BlendoperationAdd = 0x1,
         [NativeName("Name", "SDL_BLENDOPERATION_SUBTRACT")]

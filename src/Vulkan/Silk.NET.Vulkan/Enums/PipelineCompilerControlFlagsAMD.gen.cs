@@ -13,5 +13,7 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineCompilerControlFlagsAMD")]
     public enum PipelineCompilerControlFlagsAMD : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_READ_DIRECTORY_NOTIFY_INFORMATION_CLASS")]
     public enum ReadDirectoryNotifyInformationClass : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "ReadDirectoryNotifyInformation")]
         ReadDirectoryNotifyInformation = 0x1,
         [NativeName("Name", "ReadDirectoryNotifyExtendedInformation")]

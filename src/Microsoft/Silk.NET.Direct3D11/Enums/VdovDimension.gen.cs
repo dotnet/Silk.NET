@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VDOV_DIMENSION")]
     public enum VdovDimension : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VDOV_DIMENSION_UNKNOWN")]
         VdovDimensionUnknown = 0x0,
         [NativeName("Name", "D3D11_VDOV_DIMENSION_TEXTURE2D")]

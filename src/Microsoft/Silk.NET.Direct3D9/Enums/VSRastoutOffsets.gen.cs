@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DVS_RASTOUT_OFFSETS")]
     public enum VSRastoutOffsets : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DSRO_POSITION")]
         SroPosition = 0x0,
         [NativeName("Name", "D3DSRO_FOG")]

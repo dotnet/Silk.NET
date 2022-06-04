@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_device_atomic_capabilities")]
     public enum DeviceAtomicCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_RELAXED")]
         OrderRelaxed = 0x1,
         [NativeName("Name", "CL_DEVICE_ATOMIC_ORDER_ACQ_REL")]

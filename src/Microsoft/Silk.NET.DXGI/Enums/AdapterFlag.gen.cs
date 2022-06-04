@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_ADAPTER_FLAG")]
     public enum AdapterFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_ADAPTER_FLAG_NONE")]
         AdapterFlagNone = 0x0,
         [NativeName("Name", "DXGI_ADAPTER_FLAG_REMOTE")]

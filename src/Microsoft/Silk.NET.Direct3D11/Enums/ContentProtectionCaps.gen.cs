@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CONTENT_PROTECTION_CAPS")]
     public enum ContentProtectionCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_CONTENT_PROTECTION_CAPS_SOFTWARE")]
         ContentProtectionCapsSoftware = 0x1,
         [NativeName("Name", "D3D11_CONTENT_PROTECTION_CAPS_HARDWARE")]

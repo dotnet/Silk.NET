@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -155,18 +111,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void Present(ID3D12Resource* pResource, uint Subresource, nint window)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResource, Subresource, window);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResource, Subresource, window);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResource, Subresource, window);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResource, Subresource, window);
         }
 
         /// <summary>To be documented.</summary>
@@ -175,18 +120,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
             }
         }
 
@@ -194,18 +128,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SharedFenceSignal(ID3D12Fence* pFence, ulong FenceValue)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
         }
 
         /// <summary>To be documented.</summary>
@@ -214,18 +137,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Fence* pFencePtr = &pFence)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
             }
         }
 
@@ -233,18 +145,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginCapturableWork(Guid* guid)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
         }
 
         /// <summary>To be documented.</summary>
@@ -253,18 +154,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
             }
         }
 
@@ -272,18 +162,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void EndCapturableWork(Guid* guid)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
         }
 
         /// <summary>To be documented.</summary>
@@ -292,18 +171,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
             }
         }
 

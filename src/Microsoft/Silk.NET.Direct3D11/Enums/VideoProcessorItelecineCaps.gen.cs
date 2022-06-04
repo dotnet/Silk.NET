@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS")]
     public enum VideoProcessorItelecineCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_32")]
         VideoProcessorItelecineCaps32 = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_22")]

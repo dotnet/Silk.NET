@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, Name);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, Name);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, Name);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, Name);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, NamePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, NamePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, NamePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)LpVtbl[3])(@this, NamePtr);
             }
             return ret;
         }
@@ -200,18 +134,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3DUserDefinedAnnotation*, byte*, int>)LpVtbl[3])(@this, NamePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)LpVtbl[3])(@this, NamePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, byte*, int>)LpVtbl[3])(@this, NamePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)LpVtbl[3])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -229,18 +152,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void SetMarker(char* Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, Name);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, Name);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, Name);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, Name);
         }
 
         /// <summary>To be documented.</summary>
@@ -249,18 +161,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, NamePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, NamePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, NamePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)LpVtbl[5])(@this, NamePtr);
             }
         }
 
@@ -269,18 +170,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3DUserDefinedAnnotation*, byte*, void>)LpVtbl[5])(@this, NamePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)LpVtbl[5])(@this, NamePtr);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3DUserDefinedAnnotation*, byte*, void>)LpVtbl[5])(@this, NamePtr);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)LpVtbl[5])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
         }
 

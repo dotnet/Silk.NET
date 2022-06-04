@@ -355,7 +355,7 @@ partial class Build
                     var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
                     InheritedShell
                         (
-                            $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}{JobsArg}",
+                            $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
                             VulkanLoaderPath
                         )
                         .AssertZeroExitCode();

@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG")]
     public enum OverlaySupportFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
         OverlaySupportFlagDirect = 0x1,
         [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_SCALING")]

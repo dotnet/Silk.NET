@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS")]
     public enum VideoExtensionCommandParameterFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAG_NONE")]
         VideoExtensionCommandParameterFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAG_READ")]

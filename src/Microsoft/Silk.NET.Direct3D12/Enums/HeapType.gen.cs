@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_HEAP_TYPE")]
     public enum HeapType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_HEAP_TYPE_DEFAULT")]
         HeapTypeDefault = 0x1,
         [NativeName("Name", "D3D12_HEAP_TYPE_UPLOAD")]

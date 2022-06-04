@@ -12,10 +12,12 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "LightModelColorControl")]
     public enum LightModelColorControl : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_SINGLE_COLOR")]
         SingleColor = 0x81F9,
         [NativeName("Name", "GL_SINGLE_COLOR_EXT")]
         SingleColorExt = 0x81F9,
+        [System.Obsolete]
         [NativeName("Name", "GL_SEPARATE_SPECULAR_COLOR")]
         SeparateSpecularColor = 0x81FA,
         [NativeName("Name", "GL_SEPARATE_SPECULAR_COLOR_EXT")]

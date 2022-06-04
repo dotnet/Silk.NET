@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_TEXTURE_ADDRESS_MODE")]
     public enum TextureAddressMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_TEXTURE_ADDRESS_MODE_WRAP")]
         TextureAddressModeWrap = 0x1,
         [NativeName("Name", "D3D12_TEXTURE_ADDRESS_MODE_MIRROR")]

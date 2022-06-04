@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_CACHE_KIND_FLAGS")]
     public enum ShaderCacheKindFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_SHADER_CACHE_KIND_FLAG_IMPLICIT_D3D_CACHE_FOR_DRIVER")]
         ShaderCacheKindFlagImplicitD3DCacheForDriver = 0x1,
         [NativeName("Name", "D3D12_SHADER_CACHE_KIND_FLAG_IMPLICIT_D3D_CONVERSIONS")]

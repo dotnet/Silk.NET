@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS")]
     public enum GpuBasedValidationPipelineStateCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_NONE")]
         GpuBasedValidationPipelineStateCreateFlagNone = 0x0,
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_FRONT_LOAD_CREATE_TRACKING_ONLY_SHADERS")]

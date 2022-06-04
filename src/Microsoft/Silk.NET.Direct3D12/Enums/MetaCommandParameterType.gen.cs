@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_TYPE")]
     public enum MetaCommandParameterType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_TYPE_FLOAT")]
         MetaCommandParameterTypeFloat = 0x0,
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_TYPE_UINT64")]

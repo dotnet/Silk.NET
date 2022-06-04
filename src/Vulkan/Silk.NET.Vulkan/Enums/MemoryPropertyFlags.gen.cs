@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkMemoryPropertyFlags")]
     public enum MemoryPropertyFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT")]
         MemoryPropertyDeviceLocalBit = 1,
         [NativeName("Name", "VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT")]

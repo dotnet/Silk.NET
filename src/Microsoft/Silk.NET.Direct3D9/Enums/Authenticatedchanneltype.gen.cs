@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DAUTHENTICATEDCHANNELTYPE")]
     public enum Authenticatedchanneltype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DAUTHENTICATEDCHANNEL_D3D9")]
         AuthenticatedchannelD3D9 = 0x1,
         [NativeName("Name", "D3DAUTHENTICATEDCHANNEL_DRIVER_SOFTWARE")]

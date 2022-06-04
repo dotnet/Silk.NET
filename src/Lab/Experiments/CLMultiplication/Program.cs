@@ -57,14 +57,14 @@ namespace CLMultiplication
             /* Setup OpenCL environment. */
             err = cl.GetPlatformIDs(1, &platform, null);
             AssertZero(err);
-            err = cl.GetDeviceIDs(platform, CLEnum.DeviceTypeGpu, 1, &device, null);
+            err = cl.GetDeviceIDs(platform, DeviceType.Gpu, 1, &device, null);
             AssertZero(err);
 
             props[1] = platform;
             ctx = cl.CreateContext(props, 1, &device, NotifyFunc, null, &err);
             AssertZero(err);
 
-            queue = cl.CreateCommandQueue(ctx, device, 0, &err);
+            queue = cl.CreateCommandQueue(ctx, device, CommandQueueProperties.None, &err);
             AssertZero(err);
             program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
@@ -87,7 +87,7 @@ namespace CLMultiplication
             AssertZero(err);
 
             // initialize buffer with data
-            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (nuint) (n * sizeof(int)), null, &err);
+            dA = cl.CreateBuffer(ctx, MemFlags.ReadWrite, (nuint) (n * sizeof(int)), null, &err);
             AssertZero(err);
 
             err = cl.EnqueueWriteBuffer

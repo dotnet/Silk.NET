@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_WinRT_DeviceFamily")]
     public enum WinRTDeviceFamily : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_WINRT_DEVICEFAMILY_UNKNOWN")]
         WinrtDevicefamilyUnknown = 0x0,
         [NativeName("Name", "SDL_WINRT_DEVICEFAMILY_DESKTOP")]

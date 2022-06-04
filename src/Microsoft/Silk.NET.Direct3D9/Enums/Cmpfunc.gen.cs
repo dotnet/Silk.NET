@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DCMPFUNC")]
     public enum Cmpfunc : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DCMP_NEVER")]
         CmpNever = 0x1,
         [NativeName("Name", "D3DCMP_LESS")]

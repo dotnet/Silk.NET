@@ -46,18 +46,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandle);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandlePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandlePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandlePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfaces, pSharedHandlePtr);
             }
             return ret;
         }
@@ -201,18 +135,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacesPtr = &ppSurfaces)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandle);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandle);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandle);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandle);
             }
             return ret;
         }
@@ -226,18 +149,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandlePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandlePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandlePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, HDSurfaceType, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, Format, Pool, Usage, Type, NumSurfaces, ppSurfacesPtr, pSharedHandlePtr);
                 }
             }
             return ret;
@@ -248,18 +160,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCaps);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCaps);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCaps);
             return ret;
         }
 
@@ -270,18 +171,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (HDVpdevcaps* pCapsPtr = &pCaps)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCapsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCapsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDVpdevcaps*, int>)LpVtbl[4])(@this, pCapsPtr);
             }
             return ret;
         }
@@ -291,18 +181,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormats);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormats);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormats);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormats);
             return ret;
         }
 
@@ -313,18 +192,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.Format* pFormatsPtr = &pFormats)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormatsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormatsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormatsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[5])(@this, Count, pFormatsPtr);
             }
             return ret;
         }
@@ -334,18 +202,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormats);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormats);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormats);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormats);
             return ret;
         }
 
@@ -356,18 +213,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.Format* pFormatsPtr = &pFormats)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormatsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormatsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormatsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, Silk.NET.Direct3D9.Format*, int>)LpVtbl[6])(@this, Count, pFormatsPtr);
             }
             return ret;
         }
@@ -377,18 +223,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCaps);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCaps);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCaps);
             return ret;
         }
 
@@ -399,18 +234,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (HDVpcaps* pCapsPtr = &pCaps)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCapsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCapsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, uint, HDVpcaps*, int>)LpVtbl[7])(@this, Count, pCapsPtr);
             }
             return ret;
         }
@@ -420,18 +244,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRates);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRates);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRates);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRates);
             return ret;
         }
 
@@ -442,18 +255,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (HDCustomRateData* pRatesPtr = &pRates)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRatesPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRatesPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRatesPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuid, Count, pRatesPtr);
             }
             return ret;
         }
@@ -465,18 +267,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* pVPGuidPtr = &pVPGuid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRates);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRates);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRates);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRates);
             }
             return ret;
         }
@@ -490,18 +281,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (HDCustomRateData* pRatesPtr = &pRates)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRatesPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRatesPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRatesPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, uint, HDCustomRateData*, int>)LpVtbl[8])(@this, pVPGuidPtr, Count, pRatesPtr);
                 }
             }
             return ret;
@@ -512,18 +292,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRange);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRange);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRange);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRange);
             return ret;
         }
 
@@ -534,18 +303,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (HDFilterRangeData* pRangePtr = &pRange)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRangePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRangePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRangePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, HDFilter, HDFilterRangeData*, int>)LpVtbl[9])(@this, Filter, pRangePtr);
             }
             return ret;
         }
@@ -555,18 +313,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessor);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessor);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessor);
             return ret;
         }
 
@@ -577,18 +324,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (IDXVAHDVideoProcessor** ppVideoProcessorPtr = &ppVideoProcessor)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessorPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessorPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessorPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuid, ppVideoProcessorPtr);
             }
             return ret;
         }
@@ -600,18 +336,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* pVPGuidPtr = &pVPGuid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessor);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessor);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessor);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessor);
             }
             return ret;
         }
@@ -625,18 +350,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (IDXVAHDVideoProcessor** ppVideoProcessorPtr = &ppVideoProcessor)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessorPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessorPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessorPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDDevice*, Guid*, IDXVAHDVideoProcessor**, int>)LpVtbl[10])(@this, pVPGuidPtr, ppVideoProcessorPtr);
                 }
             }
             return ret;

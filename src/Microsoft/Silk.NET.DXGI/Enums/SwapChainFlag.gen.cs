@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG")]
     public enum SwapChainFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG_NONPREROTATED")]
         SwapChainFlagNonprerotated = 0x1,
         [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH")]

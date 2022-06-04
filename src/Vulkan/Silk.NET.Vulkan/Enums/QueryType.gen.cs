@@ -36,5 +36,9 @@ namespace Silk.NET.Vulkan
         VideoEncodeBitstreamBufferRangeKhr = 1000299000,
         [NativeName("Name", "VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
         PrimitivesGeneratedExt = 1000382000,
+        [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR")]
+        AccelerationStructureSerializationBottomLevelPointersKhr = 1000386000,
+        [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SIZE_KHR")]
+        AccelerationStructureSizeKhr = 1000386001,
     }
 }

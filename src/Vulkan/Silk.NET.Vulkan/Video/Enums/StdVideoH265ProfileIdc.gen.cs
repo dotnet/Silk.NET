@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH265ProfileIdc")]
     public enum StdVideoH265ProfileIdc : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "STD_VIDEO_H265_PROFILE_IDC_MAIN")]
         StdVideoH265ProfileIdcMain = 0x1,
         [NativeName("Name", "STD_VIDEO_H265_PROFILE_IDC_MAIN_10")]

@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrCompositionLayerFlags")]
     public enum CompositionLayerFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_COMPOSITION_LAYER_CORRECT_CHROMATIC_ABERRATION_BIT")]
         CompositionLayerCorrectChromaticAberrationBit = 1,
         [NativeName("Name", "XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT")]

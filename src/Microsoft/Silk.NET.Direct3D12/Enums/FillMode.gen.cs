@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_FILL_MODE")]
     public enum FillMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_FILL_MODE_WIREFRAME")]
         FillModeWireframe = 0x2,
         [NativeName("Name", "D3D12_FILL_MODE_SOLID")]

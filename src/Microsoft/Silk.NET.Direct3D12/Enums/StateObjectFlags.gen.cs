@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_STATE_OBJECT_FLAGS")]
     public enum StateObjectFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_STATE_OBJECT_FLAG_NONE")]
         StateObjectFlagNone = 0x0,
         [NativeName("Name", "D3D12_STATE_OBJECT_FLAG_ALLOW_LOCAL_DEPENDENCIES_ON_EXTERNAL_DEFINITIONS")]

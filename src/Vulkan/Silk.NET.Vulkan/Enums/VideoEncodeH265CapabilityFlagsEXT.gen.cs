@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265CapabilityFlagsEXT")]
     public enum VideoEncodeH265CapabilityFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_SEPARATE_COLOUR_PLANE_BIT_EXT")]
         VideoEncodeH265CapabilitySeparateColourPlaneBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_SCALING_LISTS_BIT_EXT")]
@@ -33,33 +35,37 @@ namespace Silk.NET.Vulkan
         VideoEncodeH265CapabilitySignDataHidingEnabledBitExt = 256,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSFORM_SKIP_ENABLED_BIT_EXT")]
         VideoEncodeH265CapabilityTransformSkipEnabledBitExt = 512,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSFORM_SKIP_DISABLED_BIT_EXT")]
+        VideoEncodeH265CapabilityTransformSkipDisabledBitExt = 1024,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_PPS_SLICE_CHROMA_QP_OFFSETS_PRESENT_BIT_EXT")]
-        VideoEncodeH265CapabilityPpsSliceChromaQPOffsetsPresentBitExt = 1024,
+        VideoEncodeH265CapabilityPpsSliceChromaQPOffsetsPresentBitExt = 2048,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_PRED_BIT_EXT")]
-        VideoEncodeH265CapabilityWeightedPredBitExt = 2048,
+        VideoEncodeH265CapabilityWeightedPredBitExt = 4096,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_BIPRED_BIT_EXT")]
-        VideoEncodeH265CapabilityWeightedBipredBitExt = 4096,
+        VideoEncodeH265CapabilityWeightedBipredBitExt = 8192,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_WEIGHTED_PRED_NO_TABLE_BIT_EXT")]
-        VideoEncodeH265CapabilityWeightedPredNoTableBitExt = 8192,
+        VideoEncodeH265CapabilityWeightedPredNoTableBitExt = 16384,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_TRANSQUANT_BYPASS_ENABLED_BIT_EXT")]
-        VideoEncodeH265CapabilityTransquantBypassEnabledBitExt = 16384,
+        VideoEncodeH265CapabilityTransquantBypassEnabledBitExt = 32768,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_ENTROPY_CODING_SYNC_ENABLED_BIT_EXT")]
-        VideoEncodeH265CapabilityEntropyCodingSyncEnabledBitExt = 32768,
+        VideoEncodeH265CapabilityEntropyCodingSyncEnabledBitExt = 65536,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_DEBLOCKING_FILTER_OVERRIDE_ENABLED_BIT_EXT")]
-        VideoEncodeH265CapabilityDeblockingFilterOverrideEnabledBitExt = 65536,
+        VideoEncodeH265CapabilityDeblockingFilterOverrideEnabledBitExt = 131072,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILE_PER_FRAME_BIT_EXT")]
-        VideoEncodeH265CapabilityMultipleTilePerFrameBitExt = 131072,
+        VideoEncodeH265CapabilityMultipleTilePerFrameBitExt = 262144,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_PER_TILE_BIT_EXT")]
-        VideoEncodeH265CapabilityMultipleSlicePerTileBitExt = 262144,
+        VideoEncodeH265CapabilityMultipleSlicePerTileBitExt = 524288,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILE_PER_SLICE_BIT_EXT")]
-        VideoEncodeH265CapabilityMultipleTilePerSliceBitExt = 524288,
+        VideoEncodeH265CapabilityMultipleTilePerSliceBitExt = 1048576,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_SLICE_SEGMENT_CTB_COUNT_BIT_EXT")]
-        VideoEncodeH265CapabilitySliceSegmentCtbCountBitExt = 1048576,
+        VideoEncodeH265CapabilitySliceSegmentCtbCountBitExt = 2097152,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_ROW_UNALIGNED_SLICE_SEGMENT_BIT_EXT")]
-        VideoEncodeH265CapabilityRowUnalignedSliceSegmentBitExt = 2097152,
+        VideoEncodeH265CapabilityRowUnalignedSliceSegmentBitExt = 4194304,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_DEPENDENT_SLICE_SEGMENT_BIT_EXT")]
-        VideoEncodeH265CapabilityDependentSliceSegmentBitExt = 4194304,
+        VideoEncodeH265CapabilityDependentSliceSegmentBitExt = 8388608,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_SLICE_TYPE_BIT_EXT")]
-        VideoEncodeH265CapabilityDifferentSliceTypeBitExt = 8388608,
+        VideoEncodeH265CapabilityDifferentSliceTypeBitExt = 16777216,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_EXT")]
+        VideoEncodeH265CapabilityBFrameInL1ListBitExt = 33554432,
     }
 }

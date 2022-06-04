@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_RESOURCE_MISC_FLAG")]
     public enum ResourceMiscFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_RESOURCE_MISC_GENERATE_MIPS")]
         ResourceMiscGenerateMips = 0x1,
         [NativeName("Name", "D3D11_RESOURCE_MISC_SHARED")]

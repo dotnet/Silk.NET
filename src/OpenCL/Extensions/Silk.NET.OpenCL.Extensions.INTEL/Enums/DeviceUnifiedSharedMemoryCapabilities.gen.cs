@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     [NativeName("Name", "cl_device_unified_shared_memory_capabilities_intel")]
     public enum DeviceUnifiedSharedMemoryCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_UNIFIED_SHARED_MEMORY_ACCESS_INTEL")]
         Access = 0x1,
         [NativeName("Name", "CL_UNIFIED_SHARED_MEMORY_ATOMIC_ACCESS_INTEL")]

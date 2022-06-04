@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Win32Extras
     [NativeName("Name", "_FINDEX_SEARCH_OPS")]
     public enum FindexSearchOps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "FindExSearchNameMatch")]
         FindExSearchNameMatch = 0x0,
         [NativeName("Name", "FindExSearchLimitToDirectories")]

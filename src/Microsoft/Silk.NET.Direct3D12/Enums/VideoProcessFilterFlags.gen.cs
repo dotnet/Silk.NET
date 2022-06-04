@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_PROCESS_FILTER_FLAGS")]
     public enum VideoProcessFilterFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_FILTER_FLAG_NONE")]
         VideoProcessFilterFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_FILTER_FLAG_BRIGHTNESS")]

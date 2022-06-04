@@ -34,6 +34,27 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.CreateFromD3D11Buffer(context, flags, out resource.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Buffer(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Buffer(context, flags, resource, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Buffer<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Buffer(context, flags, out resource.GetPinnableReference(), errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Buffer<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Buffer(context, flags, out resource.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
         public static unsafe nint CreateFromD3D11Texture2D(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
@@ -52,6 +73,27 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return thisApi.CreateFromD3D11Texture2D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
         }
 
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture2D(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture2D(context, flags, resource, subresource, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture2D<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture2D(context, flags, out resource.GetPinnableReference(), subresource, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture2D<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture2D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
+        }
+
         public static unsafe nint CreateFromD3D11Texture3D(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
@@ -65,6 +107,27 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         }
 
         public static unsafe nint CreateFromD3D11Texture3D<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] MemFlags flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture3D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture3D(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture3D(context, flags, resource, subresource, out errcode_ret.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture3D<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D11Texture3D(context, flags, out resource.GetPinnableReference(), subresource, errcode_ret);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (CLEnum) are deprecated in favour of the \"grouped\" enums (MemFlags). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        public static unsafe nint CreateFromD3D11Texture3D<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateFromD3D11Texture3D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
@@ -191,6 +254,153 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         }
 
         public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] D3d11DeviceSource d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] D3d11DeviceSet d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] void* d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices)
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, d3d_object, d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, devices, out num_devices.GetPinnableReference());
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] uint* num_devices) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), num_devices);
+        }
+
+        [Obsolete("The \"ungrouped\" enums (KHR) are deprecated in favour of the \"grouped\" enums (D3d11DeviceSource, D3d11DeviceSet). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", false)]
+        public static unsafe int GetDeviceIDsFromD3D11<T0>(this KhrD3d11Sharing thisApi, [Flow(FlowDirection.In)] nint platform, [Flow(FlowDirection.In)] uint d3d_device_source, [Flow(FlowDirection.Out)] Span<T0> d3d_object, [Flow(FlowDirection.In)] uint d3d_device_set, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetDeviceIDsFromD3D11(platform, d3d_device_source, out d3d_object.GetPinnableReference(), d3d_device_set, num_entries, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());

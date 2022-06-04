@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE")]
     public enum VideoEncoderRateControlMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_ABSOLUTE_QP_MAP")]
         VideoEncoderRateControlModeAbsoluteQPMap = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_CQP")]

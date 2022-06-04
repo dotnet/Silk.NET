@@ -24,8 +24,6 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoDecodeInfoKhr,
             void* pNext = null,
             VideoDecodeFlagsKHR? flags = null,
-            Offset2D? codedOffset = null,
-            Extent2D? codedExtent = null,
             Buffer? srcBuffer = null,
             ulong? srcBufferOffset = null,
             ulong? srcBufferRange = null,
@@ -48,16 +46,6 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
-            }
-
-            if (codedOffset is not null)
-            {
-                CodedOffset = codedOffset.Value;
-            }
-
-            if (codedExtent is not null)
-            {
-                CodedExtent = codedExtent.Value;
             }
 
             if (srcBuffer is not null)
@@ -111,16 +99,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoDecodeFlagsKHR")]
         [NativeName("Name", "flags")]
         public VideoDecodeFlagsKHR Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkOffset2D")]
-        [NativeName("Type.Name", "VkOffset2D")]
-        [NativeName("Name", "codedOffset")]
-        public Offset2D CodedOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "codedExtent")]
-        public Extent2D CodedExtent;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]

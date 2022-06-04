@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
             void* pNext = null,
-            uint? maxLevel = null
+            Video.StdVideoH265Level? maxLevel = null
         ) : this()
         {
             if (sType is not null)
@@ -53,10 +53,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "StdVideoH265Level")]
+        [NativeName("Type.Name", "StdVideoH265Level")]
         [NativeName("Name", "maxLevel")]
-        public uint MaxLevel;
+        public Video.StdVideoH265Level MaxLevel;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

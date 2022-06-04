@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_GPU_PREFERENCE")]
     public enum GpuPreference : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_GPU_PREFERENCE_UNSPECIFIED")]
         GpuPreferenceUnspecified = 0x0,
         [NativeName("Name", "DXGI_GPU_PREFERENCE_MINIMUM_POWER")]

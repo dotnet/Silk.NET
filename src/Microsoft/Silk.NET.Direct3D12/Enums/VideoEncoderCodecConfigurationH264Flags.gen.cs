@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAGS")]
     public enum VideoEncoderCodecConfigurationH264Flags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_NONE")]
         VideoEncoderCodecConfigurationH264FlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_H264_FLAG_USE_CONSTRAINED_INTRAPREDICTION")]

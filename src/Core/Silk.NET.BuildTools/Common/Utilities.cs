@@ -511,5 +511,13 @@ namespace Silk.NET.BuildTools.Common
             }
             return foundPrefix.Substring(0, foundPrefix.LastIndexOf('_') + 1);
         }
+
+        /// <summary>
+        /// Replaces any temporary folder names from the given string containing a file path with &gt;...&lt;
+        /// </summary>
+        /// <param name="s">The string.</param>
+        /// <returns>The edited string.</returns>
+        public static string RemoveTempNames(this string s)
+            => Generator.TempFolders.Aggregate(s, (now, tmp) => now.Replace(tmp, "<...>"));
     }
 }

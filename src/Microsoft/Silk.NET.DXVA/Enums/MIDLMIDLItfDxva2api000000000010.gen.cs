@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0010")]
     public enum MIDLMIDLItfDxva2api000000000010 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_SampleData_RFF")]
         DXVA2SampleDataRff = 0x1,
         [NativeName("Name", "DXVA2_SampleData_TFF")]

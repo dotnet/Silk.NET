@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSubpassDescriptionFlags")]
     public enum SubpassDescriptionFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX")]
         SubpassDescriptionPerViewAttributesBitNvx = 1,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_POSITION_X_ONLY_BIT_NVX")]
@@ -27,5 +29,7 @@ namespace Silk.NET.Vulkan
         SubpassDescriptionRasterizationOrderAttachmentDepthAccessBitArm = 32,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM")]
         SubpassDescriptionRasterizationOrderAttachmentStencilAccessBitArm = 64,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RESERVED_7_BIT_EXT")]
+        SubpassDescriptionReserved7BitExt = 128,
     }
 }

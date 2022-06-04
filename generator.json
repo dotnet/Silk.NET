@@ -3,7 +3,7 @@
         {
             "profileName": "OpenGL",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -85,7 +85,7 @@
         {
             "profileName": "OpenGL (Compatibility Profile)",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -167,7 +167,7 @@
         {
             "profileName": "OpenGLES",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -249,7 +249,7 @@
         {
             "profileName": "OpenCL",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/master/xml/cl.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -416,7 +416,9 @@
                     "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo",
                     "StdVideoEncodeH265SliceSegmentHeader": "Video.StdVideoEncodeH265SliceSegmentHeader",
                     "StdVideoEncodeH264RefMemMgmtCtrlOperations": "Video.StdVideoEncodeH264RefMemMgmtCtrlOperations",
-                    "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo"
+                    "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo",
+                    "StdVideoH264Level": "Video.StdVideoH264Level",
+                    "StdVideoH265Level": "Video.StdVideoH265Level"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -599,7 +601,7 @@
         {
             "profileName": "OpenXR",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/master/specification/registry/xr.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/main/specification/registry/xr.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -688,7 +690,9 @@
                     "VkComponentSwizzle": "uint",
                     "VkSamplerAddressMode": "uint",
                     "VkFilter": "uint",
-                    "XrVector4sFB": "Silk.NET.Maths.Vector4D<short>"
+                    "XrVector4sFB": "Silk.NET.Maths.Vector4D<short>",
+                    "VkImageCreateFlags": "uint",
+                    "VkImageUsageFlags": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -1533,10 +1537,12 @@
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
                     "-I$windowsSdkIncludes",
-                    "-I$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage"
+                    "-I$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage",
+                    "-I$nuget/Microsoft.Direct3D.DirectStorage/*/native/include"
                 ],
                 "traverse": [
-                    "$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage/*.h"
+                    "$nuget/Microsoft.Direct3D.DirectStorage/*/Include/DirectStorage/*.h",
+                    "$nuget/Microsoft.Direct3D.DirectStorage/*/native/include/*.h"
                 ],
                 "classes": {
                     "silk.net.directstorage.h": "[Core]DStorage"

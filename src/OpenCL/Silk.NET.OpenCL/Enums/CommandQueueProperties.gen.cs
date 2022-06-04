@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_command_queue_properties")]
     public enum CommandQueueProperties : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE")]
         OutOfOrderExecModeEnable = 0x1,
         [NativeName("Name", "CL_QUEUE_PROFILING_ENABLE")]

@@ -46,18 +46,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppv);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riid, ppvPtr);
             }
             return ret;
         }
@@ -201,18 +135,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppv);
             }
             return ret;
         }
@@ -226,18 +149,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, desc, riidPtr, ppvPtr);
                 }
             }
             return ret;
@@ -250,18 +162,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (QueueDesc* descPtr = &desc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppv);
             }
             return ret;
         }
@@ -275,18 +176,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riid, ppvPtr);
                 }
             }
             return ret;
@@ -301,18 +191,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppv);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppv);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppv);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppv);
                 }
             }
             return ret;
@@ -329,18 +208,7 @@ namespace Silk.NET.DirectStorage
                 {
                     fixed (void** ppvPtr = &ppv)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppvPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppvPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppvPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, QueueDesc*, Guid*, void**, int>)LpVtbl[3])(@this, descPtr, riidPtr, ppvPtr);
                     }
                 }
             }
@@ -352,18 +220,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppv);
             return ret;
         }
 
@@ -374,18 +231,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riid, ppvPtr);
             }
             return ret;
         }
@@ -397,18 +243,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppv);
             }
             return ret;
         }
@@ -422,18 +257,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, path, riidPtr, ppvPtr);
                 }
             }
             return ret;
@@ -446,18 +270,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (char* pathPtr = &path)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
             }
             return ret;
         }
@@ -471,18 +284,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
                 }
             }
             return ret;
@@ -497,18 +299,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
                 }
             }
             return ret;
@@ -525,18 +316,7 @@ namespace Silk.NET.DirectStorage
                 {
                     fixed (void** ppvPtr = &ppv)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, char*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
                     }
                 }
             }
@@ -549,18 +329,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pathPtr = (byte*) SilkMarshal.StringToPtr(path, NativeStringEncoding.UTF8);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppv);
             SilkMarshal.Free((nint)pathPtr);
             return ret;
         }
@@ -573,18 +342,7 @@ namespace Silk.NET.DirectStorage
             var pathPtr = (byte*) SilkMarshal.StringToPtr(path, NativeStringEncoding.UTF8);
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riid, ppvPtr);
             }
             SilkMarshal.Free((nint)pathPtr);
             return ret;
@@ -598,18 +356,7 @@ namespace Silk.NET.DirectStorage
             var pathPtr = (byte*) SilkMarshal.StringToPtr(path, NativeStringEncoding.UTF8);
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppv);
             }
             SilkMarshal.Free((nint)pathPtr);
             return ret;
@@ -625,18 +372,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, byte*, Guid*, void**, int>)LpVtbl[4])(@this, pathPtr, riidPtr, ppvPtr);
                 }
             }
             SilkMarshal.Free((nint)pathPtr);
@@ -648,18 +384,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppv);
             return ret;
         }
 
@@ -670,18 +395,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riid, ppvPtr);
             }
             return ret;
         }
@@ -693,18 +407,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppv);
             }
             return ret;
         }
@@ -718,18 +421,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, name, riidPtr, ppvPtr);
                 }
             }
             return ret;
@@ -742,18 +434,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (byte* namePtr = &name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
             }
             return ret;
         }
@@ -767,18 +448,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
                 }
             }
             return ret;
@@ -793,18 +463,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
                 }
             }
             return ret;
@@ -821,18 +480,7 @@ namespace Silk.NET.DirectStorage
                 {
                     fixed (void** ppvPtr = &ppv)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
                     }
                 }
             }
@@ -845,18 +493,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppv);
             SilkMarshal.Free((nint)namePtr);
             return ret;
         }
@@ -869,18 +506,7 @@ namespace Silk.NET.DirectStorage
             var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riid, ppvPtr);
             }
             SilkMarshal.Free((nint)namePtr);
             return ret;
@@ -894,18 +520,7 @@ namespace Silk.NET.DirectStorage
             var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppv);
             }
             SilkMarshal.Free((nint)namePtr);
             return ret;
@@ -921,18 +536,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, byte*, Guid*, void**, int>)LpVtbl[5])(@this, capacity, namePtr, riidPtr, ppvPtr);
                 }
             }
             SilkMarshal.Free((nint)namePtr);
@@ -943,18 +547,7 @@ namespace Silk.NET.DirectStorage
         public readonly void SetDebugFlags(uint flags)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageFactory*, uint, void>)LpVtbl[6])(@this, flags);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, void>)LpVtbl[6])(@this, flags);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, void>)LpVtbl[6])(@this, flags);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, void>)LpVtbl[6])(@this, flags);
         }
 
         /// <summary>To be documented.</summary>
@@ -962,18 +555,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageFactory*, uint, int>)LpVtbl[7])(@this, size);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, int>)LpVtbl[7])(@this, size);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageFactory*, uint, int>)LpVtbl[7])(@this, size);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageFactory*, uint, int>)LpVtbl[7])(@this, size);
             return ret;
         }
 

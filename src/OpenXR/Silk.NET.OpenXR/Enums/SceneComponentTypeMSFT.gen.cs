@@ -13,7 +13,7 @@ namespace Silk.NET.OpenXR
     public enum SceneComponentTypeMSFT : int
     {
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_INVALID_MSFT")]
-        SceneComponentTypeInvalidMsft = -1,
+        SceneComponentTypeInvalidMsft = unchecked((int) -1),
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_OBJECT_MSFT")]
         SceneComponentTypeObjectMsft = 1,
         [NativeName("Name", "XR_SCENE_COMPONENT_TYPE_PLANE_MSFT")]

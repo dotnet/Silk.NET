@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDebugUtilsMessageSeverityFlagsEXT")]
     public enum DebugUtilsMessageSeverityFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT")]
         DebugUtilsMessageSeverityVerboseBitExt = 1,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT")]

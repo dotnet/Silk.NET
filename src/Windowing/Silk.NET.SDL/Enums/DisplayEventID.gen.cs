@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_DisplayEventID")]
     public enum DisplayEventID : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_DISPLAYEVENT_NONE")]
         DisplayeventNone = 0x0,
         [NativeName("Name", "SDL_DISPLAYEVENT_ORIENTATION")]

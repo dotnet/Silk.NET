@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineStageFlags2")]
     public enum PipelineStageFlags2 : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_NONE")]
         PipelineStage2None = 0,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_NONE_KHR")]
@@ -149,8 +151,10 @@ namespace Silk.NET.Vulkan
         PipelineStage2SubpassShadingBitHuawei = 549755813888,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_INVOCATION_MASK_BIT_HUAWEI")]
         PipelineStage2InvocationMaskBitHuawei = 1099511627776,
-        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_387_BIT_KHR")]
-        PipelineStage2Reserved387BitKhr = 268435456,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_COPY_BIT_KHR")]
+        PipelineStage2AccelerationStructureCopyBitKhr = 268435456,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_30_BIT_NV")]
+        PipelineStage2Reserved30BitNV = 1073741824,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_29_BIT_NV")]
         PipelineStage2Reserved29BitNV = 536870912,
     }

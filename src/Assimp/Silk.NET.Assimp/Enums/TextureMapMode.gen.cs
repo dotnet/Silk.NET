@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiTextureMapMode")]
     public enum TextureMapMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiTextureMapMode_Wrap")]
         TextureMapModeWrap = 0x0,
         [NativeName("Name", "aiTextureMapMode_Clamp")]

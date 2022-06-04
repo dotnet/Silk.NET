@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_DECODE_STATUS")]
     public enum VideoDecodeStatus : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_STATUS_OK")]
         VideoDecodeStatusOK = 0x0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_STATUS_CONTINUE")]

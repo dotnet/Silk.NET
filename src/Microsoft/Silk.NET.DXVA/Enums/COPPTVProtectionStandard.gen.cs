@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_TVProtectionStandard")]
     public enum COPPTVProtectionStandard : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_ProtectionStandard_Unknown")]
         CoppProtectionStandardUnknown = unchecked((int) 0xFFFFFFFF80000000),
         [NativeName("Name", "COPP_ProtectionStandard_None")]

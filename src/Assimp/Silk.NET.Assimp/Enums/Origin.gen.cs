@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiOrigin")]
     public enum Origin : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiOrigin_SET")]
         OriginSet = 0x0,
         [NativeName("Name", "aiOrigin_CUR")]

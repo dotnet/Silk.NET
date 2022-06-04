@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkGeometryInstanceFlagsKHR")]
     public enum GeometryInstanceFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT_KHR")]
         GeometryInstanceTriangleFacingCullDisableBitKhr = 1,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
@@ -23,5 +25,9 @@ namespace Silk.NET.Vulkan
         GeometryInstanceForceNoOpaqueBitKhr = 8,
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
         GeometryInstanceTriangleFrontCounterclockwiseBitKhr = 2,
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_4_BIT_NV")]
+        GeometryInstanceReserved4BitNV = 16,
+        [NativeName("Name", "VK_GEOMETRY_INSTANCE_RESERVED_5_BIT_NV")]
+        GeometryInstanceReserved5BitNV = 32,
     }
 }

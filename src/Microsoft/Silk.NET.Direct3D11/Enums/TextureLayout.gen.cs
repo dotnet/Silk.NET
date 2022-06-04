@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_TEXTURE_LAYOUT")]
     public enum TextureLayout : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_TEXTURE_LAYOUT_UNDEFINED")]
         TextureLayoutUndefined = 0x0,
         [NativeName("Name", "D3D11_TEXTURE_LAYOUT_ROW_MAJOR")]

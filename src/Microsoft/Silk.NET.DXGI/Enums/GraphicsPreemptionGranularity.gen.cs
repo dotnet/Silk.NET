@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_GRANULARITY")]
     public enum GraphicsPreemptionGranularity : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_DMA_BUFFER_BOUNDARY")]
         GraphicsPreemptionDmaBufferBoundary = 0x0,
         [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_PRIMITIVE_BOUNDARY")]

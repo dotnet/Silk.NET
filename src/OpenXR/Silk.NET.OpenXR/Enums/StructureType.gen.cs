@@ -198,6 +198,12 @@ namespace Silk.NET.OpenXR
         TypeGraphicsBindingEglMndx = 1000048004,
         [NativeName("Name", "XR_TYPE_SPATIAL_GRAPH_NODE_SPACE_CREATE_INFO_MSFT")]
         TypeSpatialGraphNodeSpaceCreateInfoMsft = 1000049000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_GRAPH_STATIC_NODE_BINDING_CREATE_INFO_MSFT")]
+        TypeSpatialGraphStaticNodeBindingCreateInfoMsft = 1000049001,
+        [NativeName("Name", "XR_TYPE_SPATIAL_GRAPH_NODE_BINDING_PROPERTIES_GET_INFO_MSFT")]
+        TypeSpatialGraphNodeBindingPropertiesGetInfoMsft = 1000049002,
+        [NativeName("Name", "XR_TYPE_SPATIAL_GRAPH_NODE_BINDING_PROPERTIES_MSFT")]
+        TypeSpatialGraphNodeBindingPropertiesMsft = 1000049003,
         [NativeName("Name", "XR_TYPE_SYSTEM_HAND_TRACKING_PROPERTIES_EXT")]
         TypeSystemHandTrackingPropertiesExt = 1000051000,
         [NativeName("Name", "XR_TYPE_HAND_TRACKER_CREATE_INFO_EXT")]
@@ -252,6 +258,8 @@ namespace Silk.NET.OpenXR
         TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SECURE_CONTENT_FB")]
         TypeCompositionLayerSecureContentFB = 1000072000,
+        [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_DPAD_BINDING_EXT")]
+        TypeInteractionProfileDpadBindingExt = 1000078000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
         [NativeName("Name", "XR_TYPE_HAND_JOINTS_MOTION_RANGE_INFO_EXT")]
@@ -336,6 +344,18 @@ namespace Silk.NET.OpenXR
         TypeHandTrackingAimStateFB = 1000111001,
         [NativeName("Name", "XR_TYPE_HAND_TRACKING_CAPSULES_STATE_FB")]
         TypeHandTrackingCapsulesStateFB = 1000112000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_SPATIAL_ENTITY_PROPERTIES_FB")]
+        TypeSystemSpatialEntityPropertiesFB = 1000113004,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_FB")]
+        TypeSpatialAnchorCreateInfoFB = 1000113003,
+        [NativeName("Name", "XR_TYPE_SPACE_COMPONENT_STATUS_SET_INFO_FB")]
+        TypeSpaceComponentStatusSetInfoFB = 1000113007,
+        [NativeName("Name", "XR_TYPE_SPACE_COMPONENT_STATUS_FB")]
+        TypeSpaceComponentStatusFB = 1000113001,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPATIAL_ANCHOR_CREATE_COMPLETE_FB")]
+        TypeEventDataSpatialAnchorCreateCompleteFB = 1000113005,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPACE_SET_STATUS_COMPLETE_FB")]
+        TypeEventDataSpaceSetStatusCompleteFB = 1000113006,
         [NativeName("Name", "XR_TYPE_FOVEATION_PROFILE_CREATE_INFO_FB")]
         TypeFoveationProfileCreateInfoFB = 1000114000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_CREATE_INFO_FOVEATION_FB")]
@@ -370,6 +390,8 @@ namespace Silk.NET.OpenXR
         TypePassthroughColorMapMonoToRgbaFB = 1000118021,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_MONO_TO_MONO_FB")]
         TypePassthroughColorMapMonoToMonoFB = 1000118022,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_BRIGHTNESS_CONTRAST_SATURATION_FB")]
+        TypePassthroughBrightnessContrastSaturationFB = 1000118023,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_PASSTHROUGH_STATE_CHANGED_FB")]
         TypeEventDataPassthroughStateChangedFB = 1000118030,
         [NativeName("Name", "XR_TYPE_RENDER_MODEL_PATH_INFO_FB")]
@@ -382,6 +404,8 @@ namespace Silk.NET.OpenXR
         TypeRenderModelLoadInfoFB = 1000119003,
         [NativeName("Name", "XR_TYPE_SYSTEM_RENDER_MODEL_PROPERTIES_FB")]
         TypeSystemRenderModelPropertiesFB = 1000119004,
+        [NativeName("Name", "XR_TYPE_RENDER_MODEL_CAPABILITIES_REQUEST_FB")]
+        TypeRenderModelCapabilitiesRequestFB = 1000119005,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
         [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
@@ -402,6 +426,28 @@ namespace Silk.NET.OpenXR
         TypeSpatialAnchorPersistenceInfoMsft = 1000142000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]
         TypeSpatialAnchorFromPersistedAnchorCreateInfoMsft = 1000142001,
+        [NativeName("Name", "XR_TYPE_SPACE_QUERY_INFO_FB")]
+        TypeSpaceQueryInfoFB = 1000156001,
+        [NativeName("Name", "XR_TYPE_SPACE_QUERY_RESULTS_FB")]
+        TypeSpaceQueryResultsFB = 1000156002,
+        [NativeName("Name", "XR_TYPE_SPACE_STORAGE_LOCATION_FILTER_INFO_FB")]
+        TypeSpaceStorageLocationFilterInfoFB = 1000156003,
+        [NativeName("Name", "XR_TYPE_SPACE_UUID_FILTER_INFO_FB")]
+        TypeSpaceUuidFilterInfoFB = 1000156054,
+        [NativeName("Name", "XR_TYPE_SPACE_COMPONENT_FILTER_INFO_FB")]
+        TypeSpaceComponentFilterInfoFB = 1000156052,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPACE_QUERY_RESULTS_AVAILABLE_FB")]
+        TypeEventDataSpaceQueryResultsAvailableFB = 1000156103,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPACE_QUERY_COMPLETE_FB")]
+        TypeEventDataSpaceQueryCompleteFB = 1000156104,
+        [NativeName("Name", "XR_TYPE_SPACE_SAVE_INFO_FB")]
+        TypeSpaceSaveInfoFB = 1000158000,
+        [NativeName("Name", "XR_TYPE_SPACE_ERASE_INFO_FB")]
+        TypeSpaceEraseInfoFB = 1000158001,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPACE_SAVE_COMPLETE_FB")]
+        TypeEventDataSpaceSaveCompleteFB = 1000158106,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_SPACE_ERASE_COMPLETE_FB")]
+        TypeEventDataSpaceEraseCompleteFB = 1000158107,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_FOVEATION_VULKAN_FB")]
         TypeSwapchainImageFoveationVulkanFB = 1000160000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_ANDROID_SURFACE_DIMENSIONS_FB")]
@@ -416,7 +462,17 @@ namespace Silk.NET.OpenXR
         TypeSystemSpaceWarpPropertiesFB = 1000171001,
         [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
         TypeDigitalLensControlAlmalence = 1000196000,
+        [NativeName("Name", "XR_TYPE_SPACE_CONTAINER_FB")]
+        TypeSpaceContainerFB = 1000199000,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_KEYBOARD_HANDS_INTENSITY_FB")]
         TypePassthroughKeyboardHandsIntensityFB = 1000203002,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SETTINGS_FB")]
+        TypeCompositionLayerSettingsFB = 1000204000,
+        [NativeName("Name", "XR_TYPE_VULKAN_SWAPCHAIN_CREATE_INFO_META")]
+        TypeVulkanSwapchainCreateInfoMeta = 1000227000,
+        [NativeName("Name", "XR_TYPE_PERFORMANCE_METRICS_STATE_META")]
+        TypePerformanceMetricsStateMeta = 1000232001,
+        [NativeName("Name", "XR_TYPE_PERFORMANCE_METRICS_COUNTER_META")]
+        TypePerformanceMetricsCounterMeta = 1000232002,
     }
 }

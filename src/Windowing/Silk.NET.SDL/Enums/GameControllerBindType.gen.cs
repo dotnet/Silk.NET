@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GameControllerBindType")]
     public enum GameControllerBindType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_NONE")]
         ControllerBindtypeNone = 0x0,
         [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_BUTTON")]

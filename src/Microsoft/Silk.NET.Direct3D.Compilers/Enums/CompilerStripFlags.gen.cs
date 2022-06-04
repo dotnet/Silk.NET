@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "D3DCOMPILER_STRIP_FLAGS")]
     public enum CompilerStripFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DCOMPILER_STRIP_REFLECTION_DATA")]
         CompilerStripReflectionData = 0x1,
         [NativeName("Name", "D3DCOMPILER_STRIP_DEBUG_INFO")]

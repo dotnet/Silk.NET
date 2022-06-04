@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_MULTIPLE_FENCE_WAIT_FLAGS")]
     public enum MultipleFenceWaitFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_MULTIPLE_FENCE_WAIT_FLAG_NONE")]
         MultipleFenceWaitFlagNone = 0x0,
         [NativeName("Name", "D3D12_MULTIPLE_FENCE_WAIT_FLAG_ANY")]

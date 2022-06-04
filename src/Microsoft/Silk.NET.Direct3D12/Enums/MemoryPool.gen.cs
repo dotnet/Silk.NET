@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_MEMORY_POOL")]
     public enum MemoryPool : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_MEMORY_POOL_UNKNOWN")]
         MemoryPoolUnknown = 0x0,
         [NativeName("Name", "D3D12_MEMORY_POOL_L0")]

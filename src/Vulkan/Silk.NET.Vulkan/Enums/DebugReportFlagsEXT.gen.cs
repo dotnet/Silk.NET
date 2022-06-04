@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDebugReportFlagsEXT")]
     public enum DebugReportFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_DEBUG_REPORT_INFORMATION_BIT_EXT")]
         DebugReportInformationBitExt = 1,
         [NativeName("Name", "VK_DEBUG_REPORT_WARNING_BIT_EXT")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiAnimBehaviour")]
     public enum AnimBehaviour : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiAnimBehaviour_DEFAULT")]
         AnimBehaviourDefault = 0x0,
         [NativeName("Name", "aiAnimBehaviour_CONSTANT")]

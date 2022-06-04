@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_INPUT_FORMAT_CAPS")]
     public enum HDInputFormatCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_INPUT_FORMAT_CAPS_RGB_INTERLACED")]
         HDInputFormatCapsRgbInterlaced = 0x1,
         [NativeName("Name", "DXVAHD_INPUT_FORMAT_CAPS_RGB_PROCAMP")]

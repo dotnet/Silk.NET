@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRenderingFlags")]
     public enum RenderingFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         RenderingContentsSecondaryCommandBuffersBit = 1,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
@@ -25,5 +27,7 @@ namespace Silk.NET.Vulkan
         RenderingResumingBit = 4,
         [NativeName("Name", "VK_RENDERING_RESUMING_BIT_KHR")]
         RenderingResumingBitKhr = 4,
+        [NativeName("Name", "VK_RENDERING_RESERVED_3_BIT_EXT")]
+        RenderingReserved3BitExt = 8,
     }
 }

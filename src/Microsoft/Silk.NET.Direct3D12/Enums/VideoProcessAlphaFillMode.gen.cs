@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE")]
     public enum VideoProcessAlphaFillMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_OPAQUE")]
         VideoProcessAlphaFillModeOpaque = 0x0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_BACKGROUND")]

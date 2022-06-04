@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_RendererFlip")]
     public enum RendererFlip : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_FLIP_NONE")]
         FlipNone = 0x0,
         [NativeName("Name", "SDL_FLIP_HORIZONTAL")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSurfaceCounterFlagsEXT")]
     public enum SurfaceCounterFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_BIT_EXT")]
         SurfaceCounterVblankBitExt = 1,
         [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_EXT")]

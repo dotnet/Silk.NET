@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_device_fp_config")]
     public enum DeviceFpConfig : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_FP_DENORM")]
         Denorm = 0x1,
         [NativeName("Name", "CL_FP_INF_NAN")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAGS")]
     public enum RootSignatureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_NONE")]
         RootSignatureFlagNone = 0x0,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT")]

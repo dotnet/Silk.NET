@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_MEASUREMENTS_ACTION")]
     public enum MeasurementsAction : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_MEASUREMENTS_ACTION_KEEP_ALL")]
         MeasurementsActionKeepAll = 0x0,
         [NativeName("Name", "D3D12_MEASUREMENTS_ACTION_COMMIT_RESULTS")]

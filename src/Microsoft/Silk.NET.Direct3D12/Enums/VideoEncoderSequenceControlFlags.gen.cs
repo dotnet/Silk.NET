@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAGS")]
     public enum VideoEncoderSequenceControlFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAG_NONE")]
         VideoEncoderSequenceControlFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAG_RESOLUTION_CHANGE")]

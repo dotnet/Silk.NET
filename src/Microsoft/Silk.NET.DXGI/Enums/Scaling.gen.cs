@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_SCALING")]
     public enum Scaling : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_SCALING_STRETCH")]
         ScalingStretch = 0x0,
         [NativeName("Name", "DXGI_SCALING_NONE")]

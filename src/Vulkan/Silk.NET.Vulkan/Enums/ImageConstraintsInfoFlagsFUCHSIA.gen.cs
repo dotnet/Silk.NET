@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageConstraintsInfoFlagsFUCHSIA")]
     public enum ImageConstraintsInfoFlagsFUCHSIA : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_IMAGE_CONSTRAINTS_INFO_CPU_READ_RARELY_FUCHSIA")]
         ImageConstraintsInfoCpuReadRarelyFuchsia = 1,
         [NativeName("Name", "VK_IMAGE_CONSTRAINTS_INFO_CPU_READ_OFTEN_FUCHSIA")]

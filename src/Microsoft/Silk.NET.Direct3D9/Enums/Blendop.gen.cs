@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DBLENDOP")]
     public enum Blendop : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DBLENDOP_ADD")]
         BlendopAdd = 0x1,
         [NativeName("Name", "D3DBLENDOP_SUBTRACT")]

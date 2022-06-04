@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFenceImportFlagsKHR")]
     public enum FenceImportFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_FENCE_IMPORT_TEMPORARY_BIT")]
         FenceImportTemporaryBit = 1,
     }

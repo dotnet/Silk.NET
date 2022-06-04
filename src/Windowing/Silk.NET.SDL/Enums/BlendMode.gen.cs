@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_BlendMode")]
     public enum BlendMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_BLENDMODE_NONE")]
         BlendmodeNone = 0x0,
         [NativeName("Name", "SDL_BLENDMODE_BLEND")]

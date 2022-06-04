@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrPassthroughStateChangedFlagsFB")]
     public enum PassthroughStateChangedFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_PASSTHROUGH_STATE_CHANGED_REINIT_REQUIRED_BIT_FB")]
         PassthroughStateChangedReinitRequiredBitFB = 1,
         [NativeName("Name", "XR_PASSTHROUGH_STATE_CHANGED_NON_RECOVERABLE_ERROR_BIT_FB")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RESOURCE_BARRIER_FLAGS")]
     public enum ResourceBarrierFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RESOURCE_BARRIER_FLAG_NONE")]
         ResourceBarrierFlagNone = 0x0,
         [NativeName("Name", "D3D12_RESOURCE_BARRIER_FLAG_BEGIN_ONLY")]

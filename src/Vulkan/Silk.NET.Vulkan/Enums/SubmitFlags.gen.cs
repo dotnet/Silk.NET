@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSubmitFlags")]
     public enum SubmitFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT")]
         SubmitProtectedBit = 1,
         [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT_KHR")]

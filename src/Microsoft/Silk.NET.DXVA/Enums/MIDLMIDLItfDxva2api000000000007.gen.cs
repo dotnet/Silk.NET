@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0007")]
     public enum MIDLMIDLItfDxva2api000000000007 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_ProcAmp_None")]
         DXVA2ProcAmpNone = 0x0,
         [NativeName("Name", "DXVA2_ProcAmp_Brightness")]

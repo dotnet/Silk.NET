@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeRateControlModeFlagsKHR")]
     public enum VideoEncodeRateControlModeFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_RATE_CONTROL_MODE_NONE_BIT_KHR")]
         VideoEncodeRateControlModeNoneBitKhr = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_RATE_CONTROL_MODE_CBR_BIT_KHR")]

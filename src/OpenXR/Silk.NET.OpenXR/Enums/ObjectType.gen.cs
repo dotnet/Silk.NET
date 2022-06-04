@@ -30,6 +30,8 @@ namespace Silk.NET.OpenXR
         DebugUtilsMessengerExt = 1000019000,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_MSFT")]
         SpatialAnchorMsft = 1000039000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_GRAPH_NODE_BINDING_MSFT")]
+        SpatialGraphNodeBindingMsft = 1000049000,
         [NativeName("Name", "XR_OBJECT_TYPE_HAND_TRACKER_EXT")]
         HandTrackerExt = 1000051000,
         [NativeName("Name", "XR_OBJECT_TYPE_SCENE_OBSERVER_MSFT")]

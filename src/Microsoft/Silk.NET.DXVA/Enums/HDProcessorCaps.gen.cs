@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_PROCESSOR_CAPS")]
     public enum HDProcessorCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_PROCESSOR_CAPS_DEINTERLACE_BLEND")]
         HDProcessorCapsDeinterlaceBlend = 0x1,
         [NativeName("Name", "DXVAHD_PROCESSOR_CAPS_DEINTERLACE_BOB")]

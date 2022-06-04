@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAGS")]
     public enum VideoEncoderRateControlFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_NONE")]
         VideoEncoderRateControlFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_DELTA_QP")]

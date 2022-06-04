@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkBufferUsageFlags")]
     public enum BufferUsageFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFER_SRC_BIT")]
         BufferUsageTransferSrcBit = 1,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFER_DST_BIT")]
@@ -63,6 +65,10 @@ namespace Silk.NET.Vulkan
         BufferUsageReserved21BitAmd = 2097152,
         [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_22_BIT_AMD")]
         BufferUsageReserved22BitAmd = 4194304,
+        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_23_BIT_NV")]
+        BufferUsageReserved23BitNV = 8388608,
+        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_24_BIT_NV")]
+        BufferUsageReserved24BitNV = 16777216,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
         BufferUsageShaderDeviceAddressBit = 131072,
     }

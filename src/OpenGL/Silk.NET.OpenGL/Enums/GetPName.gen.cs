@@ -708,6 +708,8 @@ namespace Silk.NET.OpenGL
         FetchPerSampleArm = 0x8F65,
         [NativeName("Name", "GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
         FragmentShaderFramebufferFetchMrtArm = 0x8F66,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 0x8F6F,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_INDEX")]
         PrimitiveRestartIndex = 0x8F9E,
         [NativeName("Name", "GL_MIN_MAP_BUFFER_ALIGNMENT")]
@@ -810,5 +812,25 @@ namespace Silk.NET.OpenGL
         MaxTimelineSemaphoreValueDifferenceNV = 0x95B6,
         [NativeName("Name", "GL_SHADING_RATE_QCOM")]
         ShadingRateQCom = 0x96A4,
+        [NativeName("Name", "GL_SHADING_RATE_EXT")]
+        ShadingRateExt = 0x96D0,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MinFragmentShadingRateAttachmentTexelWidthExt = 0x96D7,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 0x96D8,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MinFragmentShadingRateAttachmentTexelHeightExt = 0x96D9,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 0x96DA,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 0x96DB,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+        MaxFragmentShadingRateAttachmentLayersExt = 0x96DC,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 0x96DD,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+        FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
     }
 }

@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_WinRT_Path")]
     public enum WinRTPath : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_WINRT_PATH_INSTALLED_LOCATION")]
         WinrtPathInstalledLocation = 0x0,
         [NativeName("Name", "SDL_WINRT_PATH_LOCAL_FOLDER")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_FLAGS")]
     public enum DescriptorHeapFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_FLAG_NONE")]
         DescriptorHeapFlagNone = 0x0,
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE")]

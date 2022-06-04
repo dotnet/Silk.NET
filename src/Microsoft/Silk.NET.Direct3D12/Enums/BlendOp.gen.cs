@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_BLEND_OP")]
     public enum BlendOp : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_BLEND_OP_ADD")]
         BlendOpAdd = 0x1,
         [NativeName("Name", "D3D12_BLEND_OP_SUBTRACT")]

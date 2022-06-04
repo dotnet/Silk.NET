@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_AssertState")]
     public enum AssertState : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_ASSERTION_RETRY")]
         AssertionRetry = 0x0,
         [NativeName("Name", "SDL_ASSERTION_BREAK")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_ROOT_PARAMETER_TYPE")]
     public enum RootParameterType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE")]
         RootParameterTypeDescriptorTable = 0x0,
         [NativeName("Name", "D3D12_ROOT_PARAMETER_TYPE_32BIT_CONSTANTS")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCommandPoolResetFlags")]
     public enum CommandPoolResetFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT")]
         CommandPoolResetReleaseResourcesBit = 1,
         [NativeName("Name", "VK_COMMAND_POOL_RESET_RESERVED_1_BIT_COREAVI")]

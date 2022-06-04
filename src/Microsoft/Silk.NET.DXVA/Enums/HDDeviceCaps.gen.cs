@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_DEVICE_CAPS")]
     public enum HDDeviceCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_DEVICE_CAPS_LINEAR_SPACE")]
         HDDeviceCapsLinearSpace = 0x1,
         [NativeName("Name", "DXVAHD_DEVICE_CAPS_xvYCC")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_HIT_GROUP_TYPE")]
     public enum HitGroupType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_HIT_GROUP_TYPE_TRIANGLES")]
         HitGroupTypeTriangles = 0x0,
         [NativeName("Name", "D3D12_HIT_GROUP_TYPE_PROCEDURAL_PRIMITIVE")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFramebufferCreateFlags")]
     public enum FramebufferCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT_KHR")]
         FramebufferCreateImagelessBitKhr = 1,
         [NativeName("Name", "VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT")]

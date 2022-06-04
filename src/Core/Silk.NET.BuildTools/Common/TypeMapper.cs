@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common.Functions;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
@@ -182,23 +181,21 @@ namespace Silk.NET.BuildTools.Common
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum" ||
-                                parameter.Type.Name == "EGLenum")
+                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "EGLenum")
                             {
                                 parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
 
                             foreach (var genericType in parameter.Type.GenericTypes)
                             {
-                                if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                                if (genericType.OriginalName == "GLenum")
                                 {
                                     genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                                 }
                             }
                         }
 
-                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum" ||
-                            function.ReturnType.Name == "EGLenum")
+                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "EGLenum")
                         {
                             function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                         }
@@ -223,7 +220,7 @@ namespace Silk.NET.BuildTools.Common
             => project.Structs.DistinctBy(x => x.NativeName)
                 .ToDictionary(x => x.NativeName, x => x.Name)
                 .Concat(project.Enums.ToDictionary(x => x.NativeName, x => x.Name))
-                .ToDictionary();
+                .ToDictionary(x => x.Key, x => x.Value);
 
         private static Type ParseTypeSignature(string type, string original = null, string group = null)
         {

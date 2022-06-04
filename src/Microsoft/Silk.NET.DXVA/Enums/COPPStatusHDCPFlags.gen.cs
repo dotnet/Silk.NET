@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_StatusHDCPFlags")]
     public enum COPPStatusHDCPFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_HDCPRepeater")]
         CoppHdcprepeater = 0x1,
         [NativeName("Name", "COPP_HDCPFlagsReserved")]

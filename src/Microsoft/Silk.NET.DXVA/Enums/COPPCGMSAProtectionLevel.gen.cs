@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_CGMSA_Protection_Level")]
     public enum COPPCGMSAProtectionLevel : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_CGMSA_Disabled")]
         CoppCgmsaDisabled = 0x0,
         [NativeName("Name", "COPP_CGMSA_LevelMin")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_FRAME_STEREO_FORMAT")]
     public enum VideoFrameStereoFormat : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_FRAME_STEREO_FORMAT_NONE")]
         VideoFrameStereoFormatNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_FRAME_STEREO_FORMAT_MONO")]

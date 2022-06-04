@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_COMPONENT_MAPPING")]
     public enum ShaderComponentMapping : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_0")]
         ShaderComponentMappingFromMemoryComponent0 = 0x0,
         [NativeName("Name", "D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_1")]

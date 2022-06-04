@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_DECODE_SUPPORT_FLAGS")]
     public enum VideoDecodeSupportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_SUPPORT_FLAG_NONE")]
         VideoDecodeSupportFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_SUPPORT_FLAG_SUPPORTED")]

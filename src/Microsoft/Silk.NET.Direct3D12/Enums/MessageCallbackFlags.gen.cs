@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_MESSAGE_CALLBACK_FLAGS")]
     public enum MessageCallbackFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_MESSAGE_CALLBACK_FLAG_NONE")]
         MessageCallbackFlagNone = 0x0,
         [NativeName("Name", "D3D12_MESSAGE_CALLBACK_IGNORE_FILTERS")]

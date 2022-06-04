@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DBASISTYPE")]
     public enum Basistype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DBASIS_BEZIER")]
         BasisBezier = 0x0,
         [NativeName("Name", "D3DBASIS_BSPLINE")]

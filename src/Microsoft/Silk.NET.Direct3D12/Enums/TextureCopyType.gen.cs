@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_TEXTURE_COPY_TYPE")]
     public enum TextureCopyType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX")]
         TextureCopyTypeSubresourceIndex = 0x0,
         [NativeName("Name", "D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT")]

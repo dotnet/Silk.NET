@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
     public enum SharedResourceCompatibilityTier : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_0")]
         SharedResourceCompatibilityTier0 = 0x0,
         [NativeName("Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER_1")]

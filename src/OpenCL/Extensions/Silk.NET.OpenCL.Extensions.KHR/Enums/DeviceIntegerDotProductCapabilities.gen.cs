@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "cl_device_integer_dot_product_capabilities_khr")]
     public enum DeviceIntegerDotProductCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
         Khr = 0x2,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]

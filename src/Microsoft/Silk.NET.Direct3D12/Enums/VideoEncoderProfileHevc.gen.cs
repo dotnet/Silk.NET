@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_PROFILE_HEVC")]
     public enum VideoEncoderProfileHevc : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN")]
         VideoEncoderProfileHevcMain = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10")]

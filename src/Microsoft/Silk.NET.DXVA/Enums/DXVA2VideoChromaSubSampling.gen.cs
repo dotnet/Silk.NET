@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA2_VideoChromaSubSampling")]
     public enum DXVA2VideoChromaSubSampling : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_VideoChromaSubsamplingMask")]
         DXVA2VideoChromaSubsamplingMask = 0xF,
         [NativeName("Name", "DXVA2_VideoChromaSubsampling_Unknown")]

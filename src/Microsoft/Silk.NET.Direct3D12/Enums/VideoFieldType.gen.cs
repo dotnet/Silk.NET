@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_FIELD_TYPE")]
     public enum VideoFieldType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_FIELD_TYPE_NONE")]
         VideoFieldTypeNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_FIELD_TYPE_INTERLACED_TOP_FIELD_FIRST")]

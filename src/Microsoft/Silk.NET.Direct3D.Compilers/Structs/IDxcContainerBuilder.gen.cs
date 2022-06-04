@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeader);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeader);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeader);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeader);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pDxilContainerHeaderPtr = &pDxilContainerHeader)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeaderPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeaderPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeaderPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcBlob*, int>)LpVtbl[3])(@this, pDxilContainerHeaderPtr);
             }
             return ret;
         }
@@ -199,18 +133,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSource);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSource);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSource);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSource);
             return ret;
         }
 
@@ -221,18 +144,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob* pSourcePtr = &pSource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSourcePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSourcePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSourcePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, IDxcBlob*, int>)LpVtbl[4])(@this, fourCC, pSourcePtr);
             }
             return ret;
         }
@@ -242,18 +154,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcContainerBuilder*, uint, int>)LpVtbl[5])(@this, fourCC);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, int>)LpVtbl[5])(@this, fourCC);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, uint, int>)LpVtbl[5])(@this, fourCC);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, uint, int>)LpVtbl[5])(@this, fourCC);
             return ret;
         }
 
@@ -262,18 +163,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcContainerBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResult);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResult);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResult);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResult);
             return ret;
         }
 
@@ -284,18 +174,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResultPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResultPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResultPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDxcContainerBuilder*, IDxcOperationResult**, int>)LpVtbl[6])(@this, ppResultPtr);
             }
             return ret;
         }

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DEBUG_FEATURE")]
     public enum DebugFeature : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DEBUG_FEATURE_NONE")]
         DebugFeatureNone = 0x0,
         [NativeName("Name", "D3D12_DEBUG_FEATURE_ALLOW_BEHAVIOR_CHANGING_DEBUG_AIDS")]

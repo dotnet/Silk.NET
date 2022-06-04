@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_COLOR_WRITE_ENABLE")]
     public enum ColorWriteEnable : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_COLOR_WRITE_ENABLE_RED")]
         ColorWriteEnableRed = 0x1,
         [NativeName("Name", "D3D12_COLOR_WRITE_ENABLE_GREEN")]

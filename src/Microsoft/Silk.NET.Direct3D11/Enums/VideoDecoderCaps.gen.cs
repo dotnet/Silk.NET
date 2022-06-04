@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_DECODER_CAPS")]
     public enum VideoDecoderCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_DECODER_CAPS_DOWNSAMPLE")]
         VideoDecoderCapsDownsample = 0x1,
         [NativeName("Name", "D3D11_VIDEO_DECODER_CAPS_NON_REAL_TIME")]

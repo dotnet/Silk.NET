@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoDecodeH264PictureLayoutFlagsEXT")]
     public enum VideoDecodeH264PictureLayoutFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_PROGRESSIVE_EXT")]
         VideoDecodeH264PictureLayoutProgressiveExt = 0,
         [NativeName("Name", "VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_INTERLEAVED_LINES_BIT_EXT")]

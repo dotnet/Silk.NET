@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_JoystickPowerLevel")]
     public enum JoystickPowerLevel : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_JOYSTICK_POWER_UNKNOWN")]
         JoystickPowerUnknown = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "SDL_JOYSTICK_POWER_EMPTY")]

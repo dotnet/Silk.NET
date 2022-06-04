@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_PowerState")]
     public enum PowerState : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_POWERSTATE_UNKNOWN")]
         PowerstateUnknown = 0x0,
         [NativeName("Name", "SDL_POWERSTATE_ON_BATTERY")]

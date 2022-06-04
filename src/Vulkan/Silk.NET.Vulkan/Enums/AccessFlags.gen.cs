@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccessFlags")]
     public enum AccessFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_ACCESS_INDIRECT_COMMAND_READ_BIT")]
         AccessIndirectCommandReadBit = 1,
         [NativeName("Name", "VK_ACCESS_INDEX_READ_BIT")]

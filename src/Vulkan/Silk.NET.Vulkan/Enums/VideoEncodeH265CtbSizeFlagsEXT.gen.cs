@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265CtbSizeFlagsEXT")]
     public enum VideoEncodeH265CtbSizeFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_16_BIT_EXT")]
         VideoEncodeH265CtbSize16BitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CTB_SIZE_32_BIT_EXT")]

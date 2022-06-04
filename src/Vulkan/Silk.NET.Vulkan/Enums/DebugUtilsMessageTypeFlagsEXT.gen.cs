@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDebugUtilsMessageTypeFlagsEXT")]
     public enum DebugUtilsMessageTypeFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
         DebugUtilsMessageTypeGeneralBitExt = 1,
         [NativeName("Name", "VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]

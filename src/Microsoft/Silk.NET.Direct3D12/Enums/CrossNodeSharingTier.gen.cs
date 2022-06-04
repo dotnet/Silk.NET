@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_CROSS_NODE_SHARING_TIER")]
     public enum CrossNodeSharingTier : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_CROSS_NODE_SHARING_TIER_NOT_SUPPORTED")]
         CrossNodeSharingTierNotSupported = 0x0,
         [NativeName("Name", "D3D12_CROSS_NODE_SHARING_TIER_1_EMULATED")]

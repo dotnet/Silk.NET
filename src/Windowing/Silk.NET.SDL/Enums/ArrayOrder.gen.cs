@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_ArrayOrder")]
     public enum ArrayOrder : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_ARRAYORDER_NONE")]
         ArrayorderNone = 0x0,
         [NativeName("Name", "SDL_ARRAYORDER_RGB")]

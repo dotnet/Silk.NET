@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_SensorType")]
     public enum SensorType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_SENSOR_INVALID")]
         SensorInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "SDL_SENSOR_UNKNOWN")]

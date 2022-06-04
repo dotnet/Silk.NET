@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DSV_FLAGS")]
     public enum DsvFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DSV_FLAG_NONE")]
         DsvFlagNone = 0x0,
         [NativeName("Name", "D3D12_DSV_FLAG_READ_ONLY_DEPTH")]

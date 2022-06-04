@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_SEVERITY")]
     public enum InfoQueueMessageSeverity : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_SEVERITY_CORRUPTION")]
         InfoQueueMessageSeverityCorruption = 0x0,
         [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_SEVERITY_ERROR")]

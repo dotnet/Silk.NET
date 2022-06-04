@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_CAPS")]
     public enum VideoProcessorFormatCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_INTERLACED")]
         VideoProcessorFormatCapsRgbInterlaced = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_PROCAMP")]

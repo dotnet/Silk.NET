@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiTextureFlags")]
     public enum TextureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiTextureFlags_Invert")]
         TextureFlagsInvert = 0x1,
         [NativeName("Name", "aiTextureFlags_UseAlpha")]

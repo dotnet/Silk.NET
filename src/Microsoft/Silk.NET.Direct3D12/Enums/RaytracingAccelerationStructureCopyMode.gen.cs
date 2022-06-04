@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE")]
     public enum RaytracingAccelerationStructureCopyMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE_CLONE")]
         RaytracingAccelerationStructureCopyModeClone = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE_COMPACT")]

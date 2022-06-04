@@ -13,6 +13,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "_D3D_PARAMETER_FLAGS")]
     public enum D3DParameterFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D_PF_NONE")]
         D3DPFNone = 0x0,
         [NativeName("Name", "D3D_PF_IN")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH264RateControlStructureFlagsEXT")]
     public enum VideoEncodeH264RateControlStructureFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_UNKNOWN_EXT")]
         VideoEncodeH264RateControlStructureUnknownExt = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_RATE_CONTROL_STRUCTURE_FLAT_BIT_EXT")]

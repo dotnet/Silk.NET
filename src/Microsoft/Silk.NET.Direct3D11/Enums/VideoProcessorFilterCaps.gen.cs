@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FILTER_CAPS")]
     public enum VideoProcessorFilterCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FILTER_CAPS_BRIGHTNESS")]
         VideoProcessorFilterCapsBrightness = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FILTER_CAPS_CONTRAST")]

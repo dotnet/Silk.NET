@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_MessageBoxFlags")]
     public enum MessageBoxFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_MESSAGEBOX_ERROR")]
         MessageboxError = 0x10,
         [NativeName("Name", "SDL_MESSAGEBOX_WARNING")]

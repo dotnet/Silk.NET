@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_errorcode")]
     public enum Errorcode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_ENOMEM")]
         Enomem = 0x0,
         [NativeName("Name", "SDL_EFREAD")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CLEAR_FLAG")]
     public enum ClearFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_CLEAR_DEPTH")]
         ClearDepth = 0x1,
         [NativeName("Name", "D3D11_CLEAR_STENCIL")]

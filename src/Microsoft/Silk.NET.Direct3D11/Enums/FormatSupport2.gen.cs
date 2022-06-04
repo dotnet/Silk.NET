@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_FORMAT_SUPPORT2")]
     public enum FormatSupport2 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_ADD")]
         FormatSupport2UavAtomicAdd = 0x1,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_BITWISE_OPS")]

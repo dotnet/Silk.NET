@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_FENCE_FLAG")]
     public enum FenceFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_FENCE_FLAG_NONE")]
         FenceFlagNone = 0x0,
         [NativeName("Name", "D3D11_FENCE_FLAG_SHARED")]

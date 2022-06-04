@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS")]
     public enum VideoProcessorAutoStreamCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DENOISE")]
         VideoProcessorAutoStreamCapsDenoise = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DERINGING")]

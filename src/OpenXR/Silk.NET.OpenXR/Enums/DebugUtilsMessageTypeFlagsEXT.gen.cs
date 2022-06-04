@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrDebugUtilsMessageTypeFlagsEXT")]
     public enum DebugUtilsMessageTypeFlagsEXT : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
         DebugUtilsMessageTypeGeneralBitExt = 1,
         [NativeName("Name", "XR_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]

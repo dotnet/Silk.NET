@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiPropertyTypeInfo")]
     public enum PropertyTypeInfo : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiPTI_Float")]
         PtiFloat = 0x1,
         [NativeName("Name", "aiPTI_Double")]

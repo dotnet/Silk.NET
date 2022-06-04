@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_PIPELINE_STATE_FLAGS")]
     public enum PipelineStateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_NONE")]
         PipelineStateFlagNone = 0x0,
         [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG")]

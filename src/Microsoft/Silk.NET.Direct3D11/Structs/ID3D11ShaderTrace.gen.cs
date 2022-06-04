@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCount);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCount);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCount);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCount);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ulong* pTestCountPtr = &pTestCount)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCountPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCountPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCountPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCountPtr);
             }
             return ret;
         }
@@ -206,18 +140,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStats);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStats);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStats);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStats);
             return ret;
         }
 
@@ -228,18 +151,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceStats* pTraceStatsPtr = &pTraceStats)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStatsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStatsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStatsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStatsPtr);
             }
             return ret;
         }
@@ -249,18 +161,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, int>)LpVtbl[6])(@this, stampIndex);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, int>)LpVtbl[6])(@this, stampIndex);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, int>)LpVtbl[6])(@this, stampIndex);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, int>)LpVtbl[6])(@this, stampIndex);
             return ret;
         }
 
@@ -269,18 +170,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValue);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValue);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValue);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValue);
             return ret;
         }
 
@@ -291,18 +181,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValuePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValuePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValuePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValuePtr);
             }
             return ret;
         }
@@ -314,18 +193,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValue);
             }
             return ret;
         }
@@ -339,18 +207,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (TraceValue* pValuePtr = &pValue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValuePtr);
                 }
             }
             return ret;
@@ -361,18 +218,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStep);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStep);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStep);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStep);
             return ret;
         }
 
@@ -383,18 +229,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceStep* pTraceStepPtr = &pTraceStep)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStepPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStepPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStepPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStepPtr);
             }
             return ret;
         }
@@ -404,18 +239,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValue);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValue);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValue);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValue);
             return ret;
         }
 
@@ -426,18 +250,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValuePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValuePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValuePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValuePtr);
             }
             return ret;
         }
@@ -449,18 +262,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValue);
             }
             return ret;
         }
@@ -474,18 +276,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (TraceValue* pValuePtr = &pValue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValuePtr);
                 }
             }
             return ret;
@@ -496,18 +287,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValue);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValue);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValue);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValue);
             return ret;
         }
 
@@ -518,18 +298,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValuePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValuePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValuePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValuePtr);
             }
             return ret;
         }
@@ -541,18 +310,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValue);
             }
             return ret;
         }
@@ -566,18 +324,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (TraceValue* pValuePtr = &pValue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValuePtr);
                 }
             }
             return ret;

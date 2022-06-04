@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_PackedOrder")]
     public enum PackedOrder : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_PACKEDORDER_NONE")]
         PackedorderNone = 0x0,
         [NativeName("Name", "SDL_PACKEDORDER_XRGB")]

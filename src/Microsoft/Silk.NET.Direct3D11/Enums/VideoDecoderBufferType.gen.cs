@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_DECODER_BUFFER_TYPE")]
     public enum VideoDecoderBufferType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_DECODER_BUFFER_PICTURE_PARAMETERS")]
         VideoDecoderBufferPictureParameters = 0x0,
         [NativeName("Name", "D3D11_VIDEO_DECODER_BUFFER_MACROBLOCK_CONTROL")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_STAGE")]
     public enum MetaCommandParameterStage : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_STAGE_CREATION")]
         MetaCommandParameterStageCreation = 0x0,
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_STAGE_INITIALIZATION")]

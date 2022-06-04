@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RENDER_PASS_FLAGS")]
     public enum RenderPassFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RENDER_PASS_FLAG_NONE")]
         RenderPassFlagNone = 0x0,
         [NativeName("Name", "D3D12_RENDER_PASS_FLAG_ALLOW_UAV_WRITES")]

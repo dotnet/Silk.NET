@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RESOURCE_BINDING_TIER")]
     public enum ResourceBindingTier : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RESOURCE_BINDING_TIER_1")]
         ResourceBindingTier1 = 0x1,
         [NativeName("Name", "D3D12_RESOURCE_BINDING_TIER_2")]

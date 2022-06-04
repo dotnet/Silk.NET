@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     [NativeName("Name", "cl_device_fp_atomic_capabilities_ext")]
     public enum DeviceFpAtomicCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_LOAD_STORE_EXT")]
         GlobalFPAtomicLoadStore = 0x1,
         [NativeName("Name", "CL_DEVICE_GLOBAL_FP_ATOMIC_ADD_EXT")]

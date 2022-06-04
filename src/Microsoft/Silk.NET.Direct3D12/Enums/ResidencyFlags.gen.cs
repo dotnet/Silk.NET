@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RESIDENCY_FLAGS")]
     public enum ResidencyFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RESIDENCY_FLAG_NONE")]
         ResidencyFlagNone = 0x0,
         [NativeName("Name", "D3D12_RESIDENCY_FLAG_DENY_OVERBUDGET")]

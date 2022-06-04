@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrViewStateFlags")]
     public enum ViewStateFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_VIEW_STATE_ORIENTATION_VALID_BIT")]
         ViewStateOrientationValidBit = 1,
         [NativeName("Name", "XR_VIEW_STATE_POSITION_VALID_BIT")]

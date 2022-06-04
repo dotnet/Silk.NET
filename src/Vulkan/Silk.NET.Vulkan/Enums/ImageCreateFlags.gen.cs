@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageCreateFlags")]
     public enum ImageCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_IMAGE_CREATE_SPARSE_BINDING_BIT")]
         ImageCreateSparseBindingBit = 1,
         [NativeName("Name", "VK_IMAGE_CREATE_SPARSE_RESIDENCY_BIT")]
@@ -45,8 +47,8 @@ namespace Silk.NET.Vulkan
         ImageCreateReserved16BitAmd = 65536,
         [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_18_BIT_EXT")]
         ImageCreateReserved18BitExt = 262144,
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_394_BIT_EXT")]
-        ImageCreateReserved394BitExt = 131072,
+        [NativeName("Name", "VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
+        ImageCreate2DViewCompatibleBitExt = 131072,
         [NativeName("Name", "VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
         ImageCreateFragmentDensityMapOffsetBitQCom = 32768,
         [NativeName("Name", "VK_IMAGE_CREATE_ALIAS_BIT")]

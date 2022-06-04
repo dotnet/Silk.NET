@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS")]
     public enum DriverMatchingIdentifierStatus : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_COMPATIBLE_WITH_DEVICE")]
         DriverMatchingIdentifierCompatibleWithDevice = 0x0,
         [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_UNSUPPORTED_TYPE")]

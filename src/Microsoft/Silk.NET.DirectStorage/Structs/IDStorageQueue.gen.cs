@@ -46,18 +46,7 @@ namespace Silk.NET.DirectStorage
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.DirectStorage
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.DirectStorage
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -155,18 +111,7 @@ namespace Silk.NET.DirectStorage
         public readonly unsafe void EnqueueRequest([Flow(FlowDirection.In)] Request* request)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, request);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, request);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, request);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, request);
         }
 
         /// <summary>To be documented.</summary>
@@ -175,18 +120,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Request* requestPtr = &request)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, requestPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, requestPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, requestPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Request*, void>)LpVtbl[3])(@this, requestPtr);
             }
         }
 
@@ -194,18 +128,7 @@ namespace Silk.NET.DirectStorage
         public readonly unsafe void EnqueueStatus(IDStorageStatusArray* statusArray, uint index)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArray, index);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArray, index);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArray, index);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArray, index);
         }
 
         /// <summary>To be documented.</summary>
@@ -214,18 +137,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IDStorageStatusArray* statusArrayPtr = &statusArray)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArrayPtr, index);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArrayPtr, index);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArrayPtr, index);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, IDStorageStatusArray*, uint, void>)LpVtbl[4])(@this, statusArrayPtr, index);
             }
         }
 
@@ -233,18 +145,7 @@ namespace Silk.NET.DirectStorage
         public readonly unsafe void EnqueueSignal(Silk.NET.Direct3D12.ID3D12Fence* fence, ulong value)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fence, value);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fence, value);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fence, value);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fence, value);
         }
 
         /// <summary>To be documented.</summary>
@@ -253,18 +154,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Direct3D12.ID3D12Fence* fencePtr = &fence)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fencePtr, value);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fencePtr, value);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fencePtr, value);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, Silk.NET.Direct3D12.ID3D12Fence*, ulong, void>)LpVtbl[5])(@this, fencePtr, value);
             }
         }
 
@@ -279,18 +169,7 @@ namespace Silk.NET.DirectStorage
         public readonly void CancelRequestsWithTag(ulong mask, ulong value)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, ulong, ulong, void>)LpVtbl[7])(@this, mask, value);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ulong, ulong, void>)LpVtbl[7])(@this, mask, value);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, ulong, ulong, void>)LpVtbl[7])(@this, mask, value);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ulong, ulong, void>)LpVtbl[7])(@this, mask, value);
         }
 
         /// <summary>To be documented.</summary>
@@ -313,18 +192,7 @@ namespace Silk.NET.DirectStorage
         public readonly unsafe void RetrieveErrorRecord(ErrorRecord* record)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, record);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, record);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, record);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, record);
         }
 
         /// <summary>To be documented.</summary>
@@ -333,18 +201,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ErrorRecord* recordPtr = &record)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, recordPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, recordPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, recordPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, ErrorRecord*, void>)LpVtbl[10])(@this, recordPtr);
             }
         }
 
@@ -352,18 +209,7 @@ namespace Silk.NET.DirectStorage
         public readonly unsafe void Query(QueueInfo* info)
         {
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, info);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, info);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, info);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, info);
         }
 
         /// <summary>To be documented.</summary>
@@ -372,18 +218,7 @@ namespace Silk.NET.DirectStorage
             var @this = (IDStorageQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (QueueInfo* infoPtr = &info)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, infoPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, infoPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, infoPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IDStorageQueue*, QueueInfo*, void>)LpVtbl[11])(@this, infoPtr);
             }
         }
 
