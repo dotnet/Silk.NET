@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Xml;
 using Xunit;
@@ -136,16 +137,54 @@ namespace Silk.NET.SilkTouch.TestFramework
                     {
                         return this.ReportDiscoveredTestCase
                         (
-                            (ITestCase) new ExecutionErrorTestCase
+                            (ITestCase) new DisabledTestCase
                             (
-                                this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod,
-                                TestMethodDisplayOptions.None, testMethod, "Feature Flag " + value + " is not enabled."
+                                "Flag " + value + " is not enabled", this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod,
+                                TestMethodDisplayOptions.None, testMethod
                             ), includeSourceInformation, messageBus
                         );
                     }
                 }
             }
             return base.FindTestsForMethod(testMethod, includeSourceInformation, messageBus, discoveryOptions);
+        }
+
+        private sealed class DisabledTestCase : XunitTestCase
+        {
+            private readonly string _skipReason;
+
+            /// <summary />
+            [EditorBrowsable(EditorBrowsableState.Never)]
+            [Obsolete
+            (
+                "Called by the de-serializer; should only be called by deriving classes for de-serialization purposes"
+            )]
+            public DisabledTestCase() : base()
+            {
+                _skipReason = "Generic Skip";
+            }
+
+            public DisabledTestCase
+            (
+                string skipReason,
+                IMessageSink diagnosticMessageSink,
+                TestMethodDisplay defaultMethodDisplay,
+                TestMethodDisplayOptions defaultMethodDisplayOptions,
+                ITestMethod testMethod,
+                object[]? testMethodArguments = null
+            ) : base
+            (
+                diagnosticMessageSink, defaultMethodDisplay, defaultMethodDisplayOptions, testMethod,
+                testMethodArguments
+            )
+            {
+                _skipReason = skipReason;
+            }
+
+            protected override string GetSkipReason(IAttributeInfo factAttribute)
+            {
+                return _skipReason;
+            }
         }
     }
 }
