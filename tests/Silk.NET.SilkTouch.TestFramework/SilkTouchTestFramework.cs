@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using Xunit;
 using Xunit.Abstractions;
 using Xunit.Sdk;
@@ -9,14 +10,18 @@ namespace Silk.NET.SilkTouch.TestFramework
 {
     public class SilkTouchTestFramework : XunitTestFramework
     {
-        public static readonly Dictionary<string, Func<string, bool>> TraitVerifiers = new()
+        public static readonly Dictionary<string, bool> Features = new()
         {
-            ["Category"] = s => s is "Integration" or "Scraper" or "Symbols" or "Emitter",
-            ["Feature"] = s => s is "Enums" or "Fields" or "Fixed-Size Arrays" or "Inheritance" or "Namespaces" or "Nested Types" or "Structs" or "Unions",
-            ["Source Language"] = s => s is "C++",
-            ["Target Language"] = s => s is "C#",
+            ["Enums"] = false,
+            ["Fields"] = true,
+            ["Fixed-Size Arrays"] = true,
+            ["Inheritance"] = true,
+            ["Namespaces"] = true,
+            ["Nested Types"] = true,
+            ["Structs"] = true,
+            ["Unions"] = false,
         };
-        
+
         public SilkTouchTestFramework(IMessageSink messageSink)
             : base(messageSink)
         {
@@ -53,9 +58,7 @@ namespace Silk.NET.SilkTouch.TestFramework
             ITestFrameworkDiscoveryOptions discoveryOptions
         )
         {
-            return base.FindTestsForMethod
-                (testMethod, includeSourceInformation, messageBus, discoveryOptions) && testMethod.Method
-                .GetCustomAttributes(typeof(TraitAttribute))
+            var traits = testMethod.Method.GetCustomAttributes(typeof(TraitAttribute))
                 .Select
                 (
                     x =>
@@ -65,17 +68,84 @@ namespace Silk.NET.SilkTouch.TestFramework
                         var value = (string) args[1];
                         return (name, value);
                     }
-                )
-                .ToLookup(x => x.name, x => x.value)
-                .All
-                (
-                    x =>
-                    {
-                        if (!SilkTouchTestFramework.TraitVerifiers.TryGetValue(x.Key, out var func)) return true;
-
-                        return x.All(func);
-                    }
                 );
+            foreach (var (name, value) in traits)
+            {
+                if (name is "Category" &&
+                    value is not "Integration" and not "Scraper" and not "Symbols" and not "Emitter")
+                {
+                    return this.ReportDiscoveredTestCase
+                    (
+                        (ITestCase) new ExecutionErrorTestCase
+                        (
+                            this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod, TestMethodDisplayOptions.None,
+                            testMethod,
+                            "Category " + value +
+                            " is not a valid category. Allowed values are \"Integration\", \"Scraper\", \"Symbols\", \"Emitter\"."
+                        ), includeSourceInformation, messageBus
+                    );
+                }
+                
+                if (name is "Source Language" &&
+                    value is not "C++")
+                {
+                    return this.ReportDiscoveredTestCase
+                    (
+                        (ITestCase) new ExecutionErrorTestCase
+                        (
+                            this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod, TestMethodDisplayOptions.None,
+                            testMethod,
+                            "Source Language " + value +
+                            " is not a valid language. Allowed values are \"C++\"."
+                        ), includeSourceInformation, messageBus
+                    );
+                }
+                
+                if (name is "Target Language" &&
+                    value is not "C#")
+                {
+                    return this.ReportDiscoveredTestCase
+                    (
+                        (ITestCase) new ExecutionErrorTestCase
+                        (
+                            this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod, TestMethodDisplayOptions.None,
+                            testMethod,
+                            "Target Language " + value +
+                            " is not a valid language. Allowed values are \"C#\"."
+                        ), includeSourceInformation, messageBus
+                    );
+                }
+
+                if (name is "Feature")
+                {
+                    if (!SilkTouchTestFramework.Features.TryGetValue(value, out var flag))
+                    {
+                        return this.ReportDiscoveredTestCase
+                        (
+                            (ITestCase) new ExecutionErrorTestCase
+                            (
+                                this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod,
+                                TestMethodDisplayOptions.None, testMethod,
+                                "Feature Flag " + value + " is not a valid flag. Allowed values are " + String.Join
+                                    (", ", SilkTouchTestFramework.Features.Keys.Select(x => "\"" + x + "\"")) + "."
+                            ), includeSourceInformation, messageBus
+                        );
+                    }
+
+                    if (!flag)
+                    {
+                        return this.ReportDiscoveredTestCase
+                        (
+                            (ITestCase) new ExecutionErrorTestCase
+                            (
+                                this.DiagnosticMessageSink, TestMethodDisplay.ClassAndMethod,
+                                TestMethodDisplayOptions.None, testMethod, "Feature Flag " + value + " is not enabled."
+                            ), includeSourceInformation, messageBus
+                        );
+                    }
+                }
+            }
+            return base.FindTestsForMethod(testMethod, includeSourceInformation, messageBus, discoveryOptions);
         }
     }
 }
