@@ -15,11 +15,20 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"AnyValueValidBitMeta\"")]
         [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_ANY_VALUE_VALID_BIT_META")]
         PerformanceMetricsCounterAnyValueValidBitMeta = 1,
+        [Obsolete("Deprecated in favour of \"UintValueValidBitMeta\"")]
         [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_UINT_VALUE_VALID_BIT_META")]
         PerformanceMetricsCounterUintValueValidBitMeta = 2,
+        [Obsolete("Deprecated in favour of \"FloatValueValidBitMeta\"")]
         [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_FLOAT_VALUE_VALID_BIT_META")]
         PerformanceMetricsCounterFloatValueValidBitMeta = 4,
+        [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_ANY_VALUE_VALID_BIT_META")]
+        AnyValueValidBitMeta = 1,
+        [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_UINT_VALUE_VALID_BIT_META")]
+        UintValueValidBitMeta = 2,
+        [NativeName("Name", "XR_PERFORMANCE_METRICS_COUNTER_FLOAT_VALUE_VALID_BIT_META")]
+        FloatValueValidBitMeta = 4,
     }
 }

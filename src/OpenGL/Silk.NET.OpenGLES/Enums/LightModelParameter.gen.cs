@@ -24,7 +24,22 @@ namespace Silk.NET.OpenGLES
         [System.Obsolete]
         [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL")]
         LightModelColorControl = 0x81F8,
+        [Obsolete("Deprecated in favour of \"ColorControlExt\"")]
         [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
         LightModelColorControlExt = 0x81F8,
+        [System.Obsolete]
+        [NativeName("Name", "GL_LIGHT_MODEL_LOCAL_VIEWER")]
+        LocalViewer = 0xB51,
+        [System.Obsolete]
+        [NativeName("Name", "GL_LIGHT_MODEL_TWO_SIDE")]
+        TwoSide = 0xB52,
+        [System.Obsolete]
+        [NativeName("Name", "GL_LIGHT_MODEL_AMBIENT")]
+        Ambient = 0xB53,
+        [System.Obsolete]
+        [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL")]
+        ColorControl = 0x81F8,
+        [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
+        ColorControlExt = 0x81F8,
     }
 }

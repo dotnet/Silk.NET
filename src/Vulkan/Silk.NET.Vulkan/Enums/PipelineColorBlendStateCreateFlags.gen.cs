@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"RasterizationOrderAttachmentAccessBitArm\"")]
         [NativeName("Name", "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_ARM")]
         PipelineColorBlendStateCreateRasterizationOrderAttachmentAccessBitArm = 1,
+        [NativeName("Name", "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_ARM")]
+        RasterizationOrderAttachmentAccessBitArm = 1,
     }
 }

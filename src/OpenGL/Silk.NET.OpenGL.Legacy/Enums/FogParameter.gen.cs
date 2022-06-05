@@ -30,7 +30,28 @@ namespace Silk.NET.OpenGL.Legacy
         [System.Obsolete]
         [NativeName("Name", "GL_FOG_COLOR")]
         FogColor = 0xB66,
+        [Obsolete("Deprecated in favour of \"OffsetValueSgix\"")]
         [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
         FogOffsetValueSgix = 0x8199,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_INDEX")]
+        Index = 0xB61,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_DENSITY")]
+        Density = 0xB62,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_START")]
+        Start = 0xB63,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_END")]
+        End = 0xB64,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_MODE")]
+        Mode = 0xB65,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FOG_COLOR")]
+        Color = 0xB66,
+        [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
+        OffsetValueSgix = 0x8199,
     }
 }

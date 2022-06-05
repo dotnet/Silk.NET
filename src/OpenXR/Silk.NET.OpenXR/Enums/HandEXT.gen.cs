@@ -12,9 +12,15 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrHandEXT")]
     public enum HandEXT : int
     {
+        [Obsolete("Deprecated in favour of \"LeftExt\"")]
         [NativeName("Name", "XR_HAND_LEFT_EXT")]
         HandLeftExt = 1,
+        [Obsolete("Deprecated in favour of \"RightExt\"")]
         [NativeName("Name", "XR_HAND_RIGHT_EXT")]
         HandRightExt = 2,
+        [NativeName("Name", "XR_HAND_LEFT_EXT")]
+        LeftExt = 1,
+        [NativeName("Name", "XR_HAND_RIGHT_EXT")]
+        RightExt = 2,
     }
 }

@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"MayAliasBit\"")]
         [NativeName("Name", "VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT")]
         AttachmentDescriptionMayAliasBit = 1,
+        [NativeName("Name", "VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT")]
+        MayAliasBit = 1,
     }
 }

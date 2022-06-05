@@ -15,9 +15,15 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"LocalBitFB\"")]
         [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_LOCAL_BIT_FB")]
         KeyboardTrackingQueryLocalBitFB = 2,
+        [Obsolete("Deprecated in favour of \"RemoteBitFB\"")]
         [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_REMOTE_BIT_FB")]
         KeyboardTrackingQueryRemoteBitFB = 4,
+        [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_LOCAL_BIT_FB")]
+        LocalBitFB = 2,
+        [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_REMOTE_BIT_FB")]
+        RemoteBitFB = 4,
     }
 }

@@ -15,9 +15,15 @@ namespace Silk.NET.Direct3D11
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Depth\"")]
         [NativeName("Name", "D3D11_CLEAR_DEPTH")]
         ClearDepth = 0x1,
+        [Obsolete("Deprecated in favour of \"Stencil\"")]
         [NativeName("Name", "D3D11_CLEAR_STENCIL")]
         ClearStencil = 0x2,
+        [NativeName("Name", "D3D11_CLEAR_DEPTH")]
+        Depth = 0x1,
+        [NativeName("Name", "D3D11_CLEAR_STENCIL")]
+        Stencil = 0x2,
     }
 }

@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"SharedBitAndroid\"")]
         [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
         SwapchainImageUsageSharedBitAndroid = 1,
+        [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
+        SharedBitAndroid = 1,
     }
 }

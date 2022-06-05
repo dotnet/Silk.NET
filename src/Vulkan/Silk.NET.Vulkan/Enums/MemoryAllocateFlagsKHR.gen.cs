@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"DeviceMaskBit\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
         MemoryAllocateDeviceMaskBit = 1,
+        [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
+        DeviceMaskBit = 1,
     }
 }

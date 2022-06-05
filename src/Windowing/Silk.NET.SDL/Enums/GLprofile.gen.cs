@@ -16,11 +16,20 @@ namespace Silk.NET.SDL
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Core\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_CORE")]
         GLContextProfileCore = 0x1,
+        [Obsolete("Deprecated in favour of \"Compatibility\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_COMPATIBILITY")]
         GLContextProfileCompatibility = 0x2,
+        [Obsolete("Deprecated in favour of \"ES\"")]
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_ES")]
         GLContextProfileES = 0x4,
+        [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_CORE")]
+        Core = 0x1,
+        [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_COMPATIBILITY")]
+        Compatibility = 0x2,
+        [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_ES")]
+        ES = 0x4,
     }
 }

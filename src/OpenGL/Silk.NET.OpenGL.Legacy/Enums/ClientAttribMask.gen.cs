@@ -21,5 +21,14 @@ namespace Silk.NET.OpenGL.Legacy
         [System.Obsolete]
         [NativeName("Name", "GL_CLIENT_ALL_ATTRIB_BITS")]
         ClientAllAttribBits = unchecked((int)0xFFFFFFFF),
+        [System.Obsolete]
+        [NativeName("Name", "GL_CLIENT_PIXEL_STORE_BIT")]
+        PixelStoreBit = 0x1,
+        [System.Obsolete]
+        [NativeName("Name", "GL_CLIENT_VERTEX_ARRAY_BIT")]
+        VertexArrayBit = 0x2,
+        [System.Obsolete]
+        [NativeName("Name", "GL_CLIENT_ALL_ATTRIB_BITS")]
+        AllAttribBits = unchecked((int)0xFFFFFFFF),
     }
 }

@@ -1,3 +1,6 @@
 #nullable enable
 Silk.NET.OpenGL.Legacy.Extensions.ImGui.ImGuiController.Context -> System.IntPtr
 Silk.NET.OpenGL.Legacy.Extensions.ImGui.ImGuiController.MakeCurrent() -> void
+Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate.R -> Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate
+Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate.S -> Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate
+Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate.T -> Silk.NET.OpenGL.Legacy.Extensions.ImGui.TextureCoordinate

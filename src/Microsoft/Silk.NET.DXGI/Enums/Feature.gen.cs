@@ -12,7 +12,10 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_FEATURE")]
     public enum Feature : int
     {
+        [Obsolete("Deprecated in favour of \"PresentAllowTearing\"")]
         [NativeName("Name", "DXGI_FEATURE_PRESENT_ALLOW_TEARING")]
         FeaturePresentAllowTearing = 0x0,
+        [NativeName("Name", "DXGI_FEATURE_PRESENT_ALLOW_TEARING")]
+        PresentAllowTearing = 0x0,
     }
 }

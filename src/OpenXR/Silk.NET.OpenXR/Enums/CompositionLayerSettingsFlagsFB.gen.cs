@@ -15,13 +15,25 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"NormalSuperSamplingBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_NORMAL_SUPER_SAMPLING_BIT_FB")]
         CompositionLayerSettingsNormalSuperSamplingBitFB = 1,
+        [Obsolete("Deprecated in favour of \"QualitySuperSamplingBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SUPER_SAMPLING_BIT_FB")]
         CompositionLayerSettingsQualitySuperSamplingBitFB = 2,
+        [Obsolete("Deprecated in favour of \"NormalSharpeningBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_NORMAL_SHARPENING_BIT_FB")]
         CompositionLayerSettingsNormalSharpeningBitFB = 4,
+        [Obsolete("Deprecated in favour of \"QualitySharpeningBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SHARPENING_BIT_FB")]
         CompositionLayerSettingsQualitySharpeningBitFB = 8,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_NORMAL_SUPER_SAMPLING_BIT_FB")]
+        NormalSuperSamplingBitFB = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SUPER_SAMPLING_BIT_FB")]
+        QualitySuperSamplingBitFB = 2,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_NORMAL_SHARPENING_BIT_FB")]
+        NormalSharpeningBitFB = 4,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SETTINGS_QUALITY_SHARPENING_BIT_FB")]
+        QualitySharpeningBitFB = 8,
     }
 }

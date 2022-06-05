@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"FrontfaceBitNV\"")]
         [NativeName("Name", "VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
         IndirectStateFlagFrontfaceBitNV = 1,
+        [NativeName("Name", "VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
+        FrontfaceBitNV = 1,
     }
 }

@@ -15,9 +15,15 @@ namespace Silk.NET.DXGI
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Direct\"")]
         [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
         OverlaySupportFlagDirect = 0x1,
+        [Obsolete("Deprecated in favour of \"Scaling\"")]
         [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_SCALING")]
         OverlaySupportFlagScaling = 0x2,
+        [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
+        Direct = 0x1,
+        [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_SCALING")]
+        Scaling = 0x2,
     }
 }
