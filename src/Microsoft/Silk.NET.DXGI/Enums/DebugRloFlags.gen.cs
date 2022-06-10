@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_DEBUG_RLO_FLAGS")]
     public enum DebugRloFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_DEBUG_RLO_SUMMARY")]
         DebugRloSummary = 0x1,
         [NativeName("Name", "DXGI_DEBUG_RLO_DETAIL")]

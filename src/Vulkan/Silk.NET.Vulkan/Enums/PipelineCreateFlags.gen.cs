@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineCreateFlags")]
     public enum PipelineCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISABLE_OPTIMIZATION_BIT")]
         PipelineCreateDisableOptimizationBit = 1,
         [NativeName("Name", "VK_PIPELINE_CREATE_ALLOW_DERIVATIVES_BIT")]
@@ -65,6 +67,14 @@ namespace Silk.NET.Vulkan
         PipelineCreateLinkTimeOptimizationBitExt = 1024,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
         PipelineCreateRayTracingAllowMotionBitNV = 1048576,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_25_BIT_EXT")]
+        PipelineCreateReserved25BitExt = 33554432,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_26_BIT_EXT")]
+        PipelineCreateReserved26BitExt = 67108864,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_24_BIT_NV")]
+        PipelineCreateReserved24BitNV = 16777216,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_27_BIT_EXT")]
+        PipelineCreateReserved27BitExt = 134217728,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

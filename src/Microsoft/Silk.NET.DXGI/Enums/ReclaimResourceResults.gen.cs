@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "_DXGI_RECLAIM_RESOURCE_RESULTS")]
     public enum ReclaimResourceResults : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_OK")]
         ReclaimResourceResultOK = 0x0,
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_DISCARDED")]

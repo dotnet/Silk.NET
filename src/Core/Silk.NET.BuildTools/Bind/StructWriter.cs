@@ -442,7 +442,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                         (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+                         (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
             {
                 using (var sr = new StringReader(function.Signature.Doc))
                 {

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_TYPE")]
     public enum DescriptorRangeType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_TYPE_SRV")]
         DescriptorRangeTypeSrv = 0x0,
         [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_TYPE_UAV")]

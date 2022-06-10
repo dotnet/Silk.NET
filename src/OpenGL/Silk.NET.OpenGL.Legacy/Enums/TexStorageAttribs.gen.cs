@@ -14,6 +14,8 @@ namespace Silk.NET.OpenGL.Legacy
     {
         [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]
         SurfaceCompressionExt = 0x96C0,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
+        SurfaceCompressionFixedRateNoneExt = 0x96C1,
         [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
         SurfaceCompressionFixedRateDefaultExt = 0x96C2,
         [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]

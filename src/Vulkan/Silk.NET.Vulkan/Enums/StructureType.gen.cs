@@ -1114,6 +1114,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceGraphicsPipelineLibraryPropertiesExt = 1000320001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_LIBRARY_CREATE_INFO_EXT")]
         GraphicsPipelineLibraryCreateInfoExt = 1000320002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EARLY_AND_LATE_FRAGMENT_TESTS_FEATURES_AMD")]
+        PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAmd = 1000321000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_KHR")]
+        PhysicalDeviceFragmentShaderBarycentricFeaturesKhr = 1000203000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_PROPERTIES_KHR")]
+        PhysicalDeviceFragmentShaderBarycentricPropertiesKhr = 1000322000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_FEATURES_KHR")]
         PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKhr = 1000323000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
@@ -1164,6 +1170,16 @@ namespace Silk.NET.Vulkan
         BufferImageCopy2Khr = 1000337009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR")]
         ImageResolve2Khr = 1000337010,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT")]
+        PhysicalDeviceImageCompressionControlFeaturesExt = 1000338000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_CONTROL_EXT")]
+        ImageCompressionControlExt = 1000338001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_EXT")]
+        SubresourceLayout2Ext = 1000338002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_EXT")]
+        ImageSubresource2Ext = 1000338003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT")]
+        ImageCompressionPropertiesExt = 1000338004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
         PhysicalDevice4444FormatsFeaturesExt = 1000340000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_ARM")]
@@ -1234,6 +1250,12 @@ namespace Silk.NET.Vulkan
         MemoryGetRemoteAddressInfoNV = 1000371000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_RDMA_FEATURES_NV")]
         PhysicalDeviceExternalMemoryRdmaFeaturesNV = 1000371001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_PROPERTIES_IDENTIFIER_EXT")]
+        PipelinePropertiesIdentifierExt = 1000372000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROPERTIES_FEATURES_EXT")]
+        PhysicalDevicePipelinePropertiesFeaturesExt = 1000372001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_INFO_EXT")]
+        PipelineInfoExt = 1000372001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicState2FeaturesExt = 1000377000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
@@ -1244,6 +1266,8 @@ namespace Silk.NET.Vulkan
         PipelineColorWriteCreateInfoExt = 1000381001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVES_GENERATED_QUERY_FEATURES_EXT")]
         PhysicalDevicePrimitivesGeneratedQueryFeaturesExt = 1000382000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_MAINTENANCE_1_FEATURES_KHR")]
+        PhysicalDeviceRayTracingMaintenance1FeaturesKhr = 1000386000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_EXT")]
         PhysicalDeviceGlobalPriorityQueryFeaturesExt = 1000388000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]
@@ -1256,6 +1280,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMultiDrawFeaturesExt = 1000392000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_PROPERTIES_EXT")]
         PhysicalDeviceMultiDrawPropertiesExt = 1000392001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_2D_VIEW_OF_3D_FEATURES_EXT")]
+        PhysicalDeviceImage2DViewOf3DFeaturesExt = 1000393000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BORDER_COLOR_SWIZZLE_FEATURES_EXT")]
         PhysicalDeviceBorderColorSwizzleFeaturesExt = 1000411000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SAMPLER_BORDER_COLOR_COMPONENT_MAPPING_CREATE_INFO_EXT")]
@@ -1284,6 +1310,16 @@ namespace Silk.NET.Vulkan
         SubpassFragmentDensityMapOffsetEndInfoQCom = 1000425002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV")]
         PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT")]
+        PhysicalDeviceImageCompressionControlSwapchainFeaturesExt = 1000437000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_MERGE_FEEDBACK_FEATURES_EXT")]
+        PhysicalDeviceSubpassMergeFeedbackFeaturesExt = 1000458000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_CONTROL_EXT")]
+        RenderPassCreationControlExt = 1000458001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_FEEDBACK_CREATE_INFO_EXT")]
+        RenderPassCreationFeedbackCreateInfoExt = 1000458002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_SUBPASS_FEEDBACK_CREATE_INFO_EXT")]
+        RenderPassSubpassFeedbackCreateInfoExt = 1000458003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

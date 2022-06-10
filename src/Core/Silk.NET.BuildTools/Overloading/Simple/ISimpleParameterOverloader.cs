@@ -16,10 +16,10 @@ namespace Silk.NET.BuildTools.Overloading
         /// </summary>
         /// <param name="parameter">The input parameter.</param>
         /// <param name="varied">The varied/overloaded parameter, or null if this overloader is not applicable.</param>
-        /// <param name="core">The core project for this profile, should the overloader need it.</param>
+        /// <param name="core">The profile, should the overloader need it.</param>
         /// <returns>
         /// True if this overloader is applicable and a parameter overload was successfully generated, false otherwise.
         /// </returns>
-        bool TryGetParameterVariant(Parameter parameter, out Parameter varied, Project core);
+        bool TryGetParameterVariant(Parameter parameter, out Parameter varied, Profile profile);
     }
 }

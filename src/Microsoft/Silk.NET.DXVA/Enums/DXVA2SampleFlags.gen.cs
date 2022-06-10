@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA2_SampleFlags")]
     public enum DXVA2SampleFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_SampleFlag_Palette_Changed")]
         DXVA2SampleFlagPaletteChanged = 0x1,
         [NativeName("Name", "DXVA2_SampleFlag_SrcRect_Changed")]

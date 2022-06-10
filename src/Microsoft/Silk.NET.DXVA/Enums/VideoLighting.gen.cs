@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_VideoLighting")]
     public enum VideoLighting : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_VideoLightingShift")]
         VideoLightingShift = 0x12,
         [NativeName("Name", "DXVA_VideoLightingMask")]

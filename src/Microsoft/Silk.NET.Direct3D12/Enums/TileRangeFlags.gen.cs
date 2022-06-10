@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_TILE_RANGE_FLAGS")]
     public enum TileRangeFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_TILE_RANGE_FLAG_NONE")]
         TileRangeFlagNone = 0x0,
         [NativeName("Name", "D3D12_TILE_RANGE_FLAG_NULL")]

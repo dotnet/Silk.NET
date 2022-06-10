@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RESOLVE_MODE")]
     public enum ResolveMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RESOLVE_MODE_DECOMPRESS")]
         ResolveModeDecompress = 0x0,
         [NativeName("Name", "D3D12_RESOLVE_MODE_MIN")]

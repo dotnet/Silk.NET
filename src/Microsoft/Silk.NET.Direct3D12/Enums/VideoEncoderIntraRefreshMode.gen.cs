@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE")]
     public enum VideoEncoderIntraRefreshMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE_NONE")]
         VideoEncoderIntraRefreshModeNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE_ROW_BASED")]

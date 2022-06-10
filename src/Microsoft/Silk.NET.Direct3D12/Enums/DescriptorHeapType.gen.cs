@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_TYPE")]
     public enum DescriptorHeapType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV")]
         DescriptorHeapTypeCbvSrvUav = 0x0,
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER")]

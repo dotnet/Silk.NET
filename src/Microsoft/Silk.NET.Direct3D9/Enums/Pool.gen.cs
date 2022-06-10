@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DPOOL")]
     public enum Pool : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DPOOL_DEFAULT")]
         PoolDefault = 0x0,
         [NativeName("Name", "D3DPOOL_MANAGED")]

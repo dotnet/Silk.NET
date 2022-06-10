@@ -61,6 +61,7 @@ namespace Silk.NET.BuildTools.Baking
             Console.WriteLine("Profile Bakery: Putting it in the oven until it turns a nice golden colour...");
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
+            EnumPostProcessor.Process(profile);
             Console.WriteLine($"Created profile \"{name}\".");
             return profile;
         }
@@ -96,7 +97,7 @@ namespace Silk.NET.BuildTools.Baking
                     foreach (var @interface in @class.NativeApis.Values)
                     {
                         @interface.Functions = Overloader.GetWithVariants
-                                (@interface.Functions, profile.Projects["Core"], overloaderExclusions)
+                                (@interface.Functions, profile, overloaderExclusions)
                             .ToList();
                     }
                 }

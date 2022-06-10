@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_CULL_MODE")]
     public enum CullMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_CULL_MODE_NONE")]
         CullModeNone = 0x1,
         [NativeName("Name", "D3D12_CULL_MODE_FRONT")]

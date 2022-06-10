@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_GRAPHICS_STATES")]
     public enum GraphicsStates : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_GRAPHICS_STATE_NONE")]
         GraphicsStateNone = 0x0,
         [NativeName("Name", "D3D12_GRAPHICS_STATE_IA_VERTEX_BUFFERS")]

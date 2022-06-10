@@ -13,6 +13,8 @@ namespace Silk.NET.DirectStorage
     [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_TYPE")]
     public enum RequestDestinationType : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_MEMORY")]
         RequestDestinationMemory = 0x0,
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_BUFFER")]

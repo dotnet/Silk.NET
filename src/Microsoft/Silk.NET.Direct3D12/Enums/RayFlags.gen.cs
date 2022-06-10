@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAY_FLAGS")]
     public enum RayFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RAY_FLAG_NONE")]
         RayFlagNone = 0x0,
         [NativeName("Name", "D3D12_RAY_FLAG_FORCE_OPAQUE")]

@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_Keymod")]
     public enum Keymod : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "KMOD_NONE")]
         KmodNone = 0x0,
         [NativeName("Name", "KMOD_LSHIFT")]

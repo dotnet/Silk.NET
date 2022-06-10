@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSparseMemoryBindFlags")]
     public enum SparseMemoryBindFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SPARSE_MEMORY_BIND_METADATA_BIT")]
         SparseMemoryBindMetadataBit = 1,
     }

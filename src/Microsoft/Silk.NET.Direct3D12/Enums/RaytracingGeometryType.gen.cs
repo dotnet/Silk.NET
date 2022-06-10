@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE")]
     public enum RaytracingGeometryType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_TRIANGLES")]
         RaytracingGeometryTypeTriangles = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_PROCEDURAL_PRIMITIVE_AABBS")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RESOURCE_HEAP_TIER")]
     public enum ResourceHeapTier : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RESOURCE_HEAP_TIER_1")]
         ResourceHeapTier1 = 0x1,
         [NativeName("Name", "D3D12_RESOURCE_HEAP_TIER_2")]

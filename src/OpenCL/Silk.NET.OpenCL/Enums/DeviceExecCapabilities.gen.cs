@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_device_exec_capabilities")]
     public enum DeviceExecCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_EXEC_KERNEL")]
         Kernel = 0x1,
         [NativeName("Name", "CL_EXEC_NATIVE_KERNEL")]

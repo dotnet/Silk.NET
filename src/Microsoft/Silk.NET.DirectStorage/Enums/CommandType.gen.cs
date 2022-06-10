@@ -13,6 +13,8 @@ namespace Silk.NET.DirectStorage
     [NativeName("Name", "DSTORAGE_COMMAND_TYPE")]
     public enum CommandType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DSTORAGE_COMMAND_TYPE_NONE")]
         CommandTypeNone = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DSTORAGE_COMMAND_TYPE_REQUEST")]

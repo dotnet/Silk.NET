@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "cl_command_buffer_flags_khr")]
     public enum CommandBufferFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
         SimultaneousUse = 0x1,
     }

@@ -300,10 +300,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "log2_max_pic_order_cnt_lsb_minus4")]
         public byte Log2MaxPicOrderCntLsbMinus4;
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
-        [NativeName("Name", "sps_max_dec_pic_buffering_minus1")]
-        public fixed byte SpsMaxDecPicBufferingMinus1[8];
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]

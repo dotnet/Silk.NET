@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_FLAGS")]
     public enum ShaderCacheSupportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_NONE")]
         ShaderCacheSupportNone = 0x0,
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_SINGLE_PSO")]

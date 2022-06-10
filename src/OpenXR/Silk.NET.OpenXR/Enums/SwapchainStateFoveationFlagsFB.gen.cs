@@ -13,5 +13,7 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSwapchainStateFoveationFlagsFB")]
     public enum SwapchainStateFoveationFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

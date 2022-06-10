@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_device_type")]
     public enum DeviceType : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_TYPE_DEFAULT")]
         Default = 0x1,
         [NativeName("Name", "CL_DEVICE_TYPE_CPU")]

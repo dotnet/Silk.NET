@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccessFlags2KHR")]
     public enum AccessFlags2KHR : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_ACCESS_2_NONE")]
         Access2None = 0,
         [NativeName("Name", "VK_ACCESS_2_NONE_KHR")]

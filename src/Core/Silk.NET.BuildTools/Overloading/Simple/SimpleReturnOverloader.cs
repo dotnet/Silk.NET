@@ -28,7 +28,7 @@ namespace Silk.NET.BuildTools.Overloading
         /// <param name="overloaders">The overloaders to use in getting function overloads.</param>
         /// <returns>An enumerable containing the original function signature and all overloads.</returns>
         public static IEnumerable<Function> GetWithOverloads(Function original,
-            Project core,
+            Profile profile,
             IEnumerable<ISimpleReturnOverloader> overloaders)
         {
             yield return original;
@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Overloading
                 var attrs = original.Attributes
                     .Select(x => new Attribute { Name = x.Name, Arguments = new(x.Arguments) })
                     .ToList();
-                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, attrs, core))
+                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, attrs, profile))
                 {
                     var ret = new FunctionSignatureBuilder(original)
                         .WithName(original.Name + ReturnOverloadSuffix)

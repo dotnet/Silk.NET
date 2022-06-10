@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkGeometryFlagsNV")]
     public enum GeometryFlagsNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_GEOMETRY_OPAQUE_BIT_KHR")]
         GeometryOpaqueBitKhr = 1,
         [NativeName("Name", "VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]

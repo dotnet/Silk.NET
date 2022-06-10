@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_DEVICE_CONTEXT_TYPE")]
     public enum DeviceContextType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_DEVICE_CONTEXT_IMMEDIATE")]
         DeviceContextImmediate = 0x0,
         [NativeName("Name", "D3D11_DEVICE_CONTEXT_DEFERRED")]

@@ -336,6 +336,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         EyeRadialNV = 0x855B,
         [NativeName("Name", "GL_EYE_PLANE_ABSOLUTE_NV")]
         EyePlaneAbsoluteNV = 0x855C,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_EYE_PLANE")]
         EyePlane = 0x2502,
         [NativeName("Name", "GL_FRAGMENT_COVERAGE_TO_COLOR_NV")]
@@ -992,6 +993,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         ConstantNV = 0x8576,
         [NativeName("Name", "GL_PATH_FOG_GEN_MODE_NV")]
         PathFogGenModeNV = 0x90AC,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_PRIMARY_COLOR")]
         PrimaryColor = 0x8577,
         [NativeName("Name", "GL_PRIMARY_COLOR_NV")]
@@ -1178,6 +1180,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         Texture1Arb = 0x84C1,
         [NativeName("Name", "GL_NONE")]
         None = 0x0,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_FOG")]
         Fog = 0xB60,
         [NativeName("Name", "GL_PER_STAGE_CONSTANTS_NV")]

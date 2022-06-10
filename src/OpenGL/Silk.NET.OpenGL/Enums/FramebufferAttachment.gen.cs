@@ -82,5 +82,7 @@ namespace Silk.NET.OpenGL
         DepthAttachment = 0x8D00,
         [NativeName("Name", "GL_STENCIL_ATTACHMENT")]
         StencilAttachment = 0x8D20,
+        [NativeName("Name", "GL_SHADING_RATE_ATTACHMENT_EXT")]
+        ShadingRateAttachmentExt = 0x96D1,
     }
 }

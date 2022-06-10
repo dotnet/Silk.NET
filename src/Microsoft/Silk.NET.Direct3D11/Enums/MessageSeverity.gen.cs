@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_MESSAGE_SEVERITY")]
     public enum MessageSeverity : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_MESSAGE_SEVERITY_CORRUPTION")]
         MessageSeverityCorruption = 0x0,
         [NativeName("Name", "D3D11_MESSAGE_SEVERITY_ERROR")]

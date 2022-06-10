@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_eventaction")]
     public enum Eventaction : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_ADDEVENT")]
         Addevent = 0x0,
         [NativeName("Name", "SDL_PEEKEVENT")]

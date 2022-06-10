@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS")]
     public enum VideoProcessInputStreamFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_NONE")]
         VideoProcessInputStreamFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_FRAME_DISCONTINUITY")]

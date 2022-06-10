@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_ITELECINE_CAPS")]
     public enum HDItelecineCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_ITELECINE_CAPS_32")]
         HDItelecineCaps32 = 0x1,
         [NativeName("Name", "DXVAHD_ITELECINE_CAPS_22")]

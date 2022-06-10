@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrPassthroughFlagsFB")]
     public enum PassthroughFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_PASSTHROUGH_IS_RUNNING_AT_CREATION_BIT_FB")]
         PassthroughIsRunningATCreationBitFB = 1,
     }

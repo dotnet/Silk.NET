@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_WindowFlags")]
     public enum WindowFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_WINDOW_FULLSCREEN")]
         WindowFullscreen = 0x1,
         [NativeName("Name", "SDL_WINDOW_OPENGL")]

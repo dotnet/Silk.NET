@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkIndirectCommandsLayoutUsageFlagsNV")]
     public enum IndirectCommandsLayoutUsageFlagsNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_NV")]
         IndirectCommandsLayoutUsageExplicitPreprocessBitNV = 1,
         [NativeName("Name", "VK_INDIRECT_COMMANDS_LAYOUT_USAGE_INDEXED_SEQUENCES_BIT_NV")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
     public enum ConservativeRasterizationTier : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER_NOT_SUPPORTED")]
         ConservativeRasterizationTierNotSupported = 0x0,
         [NativeName("Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER_1")]

@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     [NativeName("Name", "cl_device_scheduling_controls_capabilities_arm")]
     public enum DeviceSchedulingControlsCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
         KernelBatching = 0x1,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]

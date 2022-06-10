@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoCapabilityFlagsKHR")]
     public enum VideoCapabilityFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_CAPABILITY_PROTECTED_CONTENT_BIT_KHR")]
         VideoCapabilityProtectedContentBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_CAPABILITY_SEPARATE_REFERENCE_IMAGES_BIT_KHR")]

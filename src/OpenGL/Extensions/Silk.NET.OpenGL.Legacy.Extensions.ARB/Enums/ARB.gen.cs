@@ -672,6 +672,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         FramebufferIncompleteMultisample = 0x8D56,
         [NativeName("Name", "GL_MAX_SAMPLES")]
         MaxSamples = 0x8D57,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_INDEX")]
         Index = 0x8222,
         [NativeName("Name", "GL_FRAMEBUFFER_SRGB")]
@@ -1954,6 +1955,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         Triangles = 0x4,
         [NativeName("Name", "GL_ISOLINES")]
         Isolines = 0x8E7A,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_QUADS")]
         Quads = 0x7,
         [NativeName("Name", "GL_EQUAL")]

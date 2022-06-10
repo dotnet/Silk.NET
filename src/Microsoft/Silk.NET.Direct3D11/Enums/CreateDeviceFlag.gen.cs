@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_CREATE_DEVICE_FLAG")]
     public enum CreateDeviceFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_CREATE_DEVICE_SINGLETHREADED")]
         CreateDeviceSinglethreaded = 0x1,
         [NativeName("Name", "D3D11_CREATE_DEVICE_DEBUG")]

@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_FILTER_CAPS")]
     public enum HDFilterCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_FILTER_CAPS_BRIGHTNESS")]
         HDFilterCapsBrightness = 0x1,
         [NativeName("Name", "DXVAHD_FILTER_CAPS_CONTRAST")]

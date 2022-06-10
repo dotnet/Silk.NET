@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiDefaultLogStream")]
     public enum DefaultLogStream : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiDefaultLogStream_FILE")]
         DefaultLogStreamFile = 0x1,
         [NativeName("Name", "aiDefaultLogStream_STDOUT")]

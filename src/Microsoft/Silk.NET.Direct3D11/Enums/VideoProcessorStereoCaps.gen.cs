@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STEREO_CAPS")]
     public enum VideoProcessorStereoCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STEREO_CAPS_MONO_OFFSET")]
         VideoProcessorStereoCapsMonoOffset = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STEREO_CAPS_ROW_INTERLEAVED")]

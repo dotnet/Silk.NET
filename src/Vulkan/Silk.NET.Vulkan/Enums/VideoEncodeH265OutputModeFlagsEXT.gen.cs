@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265OutputModeFlagsEXT")]
     public enum VideoEncodeH265OutputModeFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_FRAME_BIT_EXT")]
         VideoEncodeH265OutputModeFrameBitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_OUTPUT_MODE_SLICE_SEGMENT_BIT_EXT")]

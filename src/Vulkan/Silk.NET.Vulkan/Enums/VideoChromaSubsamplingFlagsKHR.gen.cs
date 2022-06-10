@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoChromaSubsamplingFlagsKHR")]
     public enum VideoChromaSubsamplingFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_CHROMA_SUBSAMPLING_INVALID_BIT_KHR")]
         VideoChromaSubsamplingInvalidBitKhr = 0,
         [NativeName("Name", "VK_VIDEO_CHROMA_SUBSAMPLING_MONOCHROME_BIT_KHR")]

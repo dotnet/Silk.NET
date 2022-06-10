@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_BUFFER_SRV_FLAGS")]
     public enum BufferSrvFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_BUFFER_SRV_FLAG_NONE")]
         BufferSrvFlagNone = 0x0,
         [NativeName("Name", "D3D12_BUFFER_SRV_FLAG_RAW")]

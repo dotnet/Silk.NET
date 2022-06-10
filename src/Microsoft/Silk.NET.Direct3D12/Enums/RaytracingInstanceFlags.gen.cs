@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAGS")]
     public enum RaytracingInstanceFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_NONE")]
         RaytracingInstanceFlagNone = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_TRIANGLE_CULL_DISABLE")]

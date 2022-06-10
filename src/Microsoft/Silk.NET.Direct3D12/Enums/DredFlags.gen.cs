@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DRED_FLAGS")]
     public enum DredFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DRED_FLAG_NONE")]
         DredFlagNone = 0x0,
         [NativeName("Name", "D3D12_DRED_FLAG_FORCE_ENABLE")]

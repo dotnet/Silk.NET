@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrInputSourceLocalizedNameFlags")]
     public enum InputSourceLocalizedNameFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_USER_PATH_BIT")]
         InputSourceLocalizedNameUserPathBit = 1,
         [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_INTERACTION_PROFILE_BIT")]

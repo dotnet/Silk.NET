@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkExternalSemaphoreHandleTypeFlags")]
     public enum ExternalSemaphoreHandleTypeFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT")]
         ExternalSemaphoreHandleTypeOpaqueFDBit = 1,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_BIT")]
@@ -29,7 +31,5 @@ namespace Silk.NET.Vulkan
         ExternalSemaphoreHandleTypeZirconEventBitFuchsia = 128,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_RESERVED_5_BIT_NV")]
         ExternalSemaphoreHandleTypeReserved5BitNV = 32,
-        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_RESERVED_6_BIT_NV")]
-        ExternalSemaphoreHandleTypeReserved6BitNV = 64,
     }
 }

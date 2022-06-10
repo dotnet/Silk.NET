@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC")]
     public enum VideoEncoderFrameTypeHevc : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_I_FRAME")]
         VideoEncoderFrameTypeHevcIFrame = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_P_FRAME")]

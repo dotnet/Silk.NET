@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_FRAME_PRESENTATION_MODE")]
     public enum FramePresentationMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_FRAME_PRESENTATION_MODE_COMPOSED")]
         FramePresentationModeComposed = 0x0,
         [NativeName("Name", "DXGI_FRAME_PRESENTATION_MODE_OVERLAY")]

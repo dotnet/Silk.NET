@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_map_flags")]
     public enum MapFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_MAP_READ")]
         Read = 0x1,
         [NativeName("Name", "CL_MAP_WRITE")]

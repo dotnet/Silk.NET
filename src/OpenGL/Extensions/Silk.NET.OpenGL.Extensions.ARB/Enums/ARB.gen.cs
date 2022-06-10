@@ -1398,6 +1398,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         Triangles = 0x4,
         [NativeName("Name", "GL_ISOLINES")]
         Isolines = 0x8E7A,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_QUADS")]
         Quads = 0x7,
         [NativeName("Name", "GL_EQUAL")]

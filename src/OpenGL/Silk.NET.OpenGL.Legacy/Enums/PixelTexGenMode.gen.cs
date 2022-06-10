@@ -18,8 +18,10 @@ namespace Silk.NET.OpenGL.Legacy
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
         Rgba = 0x1908,
+        [System.Obsolete]
         [NativeName("Name", "GL_LUMINANCE")]
         Luminance = 0x1909,
+        [System.Obsolete]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
         [NativeName("Name", "GL_PIXEL_TEX_GEN_ALPHA_REPLACE_SGIX")]

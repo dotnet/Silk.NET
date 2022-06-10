@@ -13,11 +13,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDeviceDiagnosticsConfigFlagsNV")]
     public enum DeviceDiagnosticsConfigFlagsNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_DEBUG_INFO_BIT_NV")]
         DeviceDiagnosticsConfigEnableShaderDebugInfoBitNV = 1,
         [NativeName("Name", "VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_RESOURCE_TRACKING_BIT_NV")]
         DeviceDiagnosticsConfigEnableResourceTrackingBitNV = 2,
         [NativeName("Name", "VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_AUTOMATIC_CHECKPOINTS_BIT_NV")]
         DeviceDiagnosticsConfigEnableAutomaticCheckpointsBitNV = 4,
+        [NativeName("Name", "VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_ERROR_REPORTING_BIT_NV")]
+        DeviceDiagnosticsConfigEnableShaderErrorReportingBitNV = 8,
     }
 }

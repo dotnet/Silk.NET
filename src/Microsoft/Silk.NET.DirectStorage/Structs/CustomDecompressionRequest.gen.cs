@@ -23,6 +23,7 @@ namespace Silk.NET.DirectStorage
         (
             ulong? id = null,
             CompressionFormat? compressionFormat = null,
+            CustomDecompressionFlags? flags = null,
             ulong? srcSize = null,
             void* srcBuffer = null,
             ulong? dstSize = null,
@@ -37,6 +38,11 @@ namespace Silk.NET.DirectStorage
             if (compressionFormat is not null)
             {
                 CompressionFormat = compressionFormat.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
             }
 
             if (srcSize is not null)
@@ -70,6 +76,15 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type.Name", "DSTORAGE_COMPRESSION_FORMAT")]
         [NativeName("Name", "CompressionFormat")]
         public CompressionFormat CompressionFormat;
+        [NativeName("Type", "UINT8 [3]")]
+        [NativeName("Type.Name", "UINT8 [3]")]
+        [NativeName("Name", "Reserved")]
+        public fixed byte Reserved[3];
+
+        [NativeName("Type", "DSTORAGE_CUSTOM_DECOMPRESSION_FLAGS")]
+        [NativeName("Type.Name", "DSTORAGE_CUSTOM_DECOMPRESSION_FLAGS")]
+        [NativeName("Name", "Flags")]
+        public CustomDecompressionFlags Flags;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

@@ -6,6 +6,10 @@
     "build": {
       "type": "object",
       "properties": {
+        "All": {
+          "type": "boolean",
+          "description": "If specified, ignores any generated solution present and builds the entire project"
+        },
         "Configuration": {
           "type": "string",
           "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)"

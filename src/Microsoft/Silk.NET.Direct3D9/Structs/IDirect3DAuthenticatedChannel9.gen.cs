@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -156,18 +112,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
             return ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pCertificateSizePtr = &pCertificateSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
             }
             return ret;
         }
@@ -199,18 +133,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
             return ret;
         }
 
@@ -221,18 +144,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (byte* ppCertificatePtr = &ppCertificate)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
             }
             return ret;
         }
@@ -243,18 +155,7 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var ppCertificatePtr = (byte*) SilkMarshal.StringToPtr(ppCertificate, NativeStringEncoding.UTF8);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
             SilkMarshal.Free((nint)ppCertificatePtr);
             return ret;
         }
@@ -264,18 +165,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
             return ret;
         }
 
@@ -286,18 +176,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -307,18 +186,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutput);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutput);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutput);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutput);
             return ret;
         }
 
@@ -329,18 +197,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pOutputPtr = &pOutput)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutputPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutputPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutputPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInput, OutputSize, pOutputPtr);
             }
             return ret;
         }
@@ -352,18 +209,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pInputPtr = &pInput)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutput);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutput);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutput);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutput);
             }
             return ret;
         }
@@ -377,18 +223,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pOutputPtr = &pOutput)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutputPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutputPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutputPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, uint, void*, int>)LpVtbl[6])(@this, InputSize, pInputPtr, OutputSize, pOutputPtr);
                 }
             }
             return ret;
@@ -399,18 +234,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutput);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutput);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutput);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutput);
             return ret;
         }
 
@@ -421,18 +245,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (AuthenticatedchannelConfigureOutput* pOutputPtr = &pOutput)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutputPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutputPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutputPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInput, pOutputPtr);
             }
             return ret;
         }
@@ -444,18 +257,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pInputPtr = &pInput)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutput);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutput);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutput);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutput);
             }
             return ret;
         }
@@ -469,18 +271,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (AuthenticatedchannelConfigureOutput* pOutputPtr = &pOutput)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutputPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutputPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutputPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, void*, AuthenticatedchannelConfigureOutput*, int>)LpVtbl[7])(@this, InputSize, pInputPtr, pOutputPtr);
                 }
             }
             return ret;

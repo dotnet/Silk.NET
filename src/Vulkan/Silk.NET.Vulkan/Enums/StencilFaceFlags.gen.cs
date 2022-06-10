@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkStencilFaceFlags")]
     public enum StencilFaceFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_STENCIL_FACE_FRONT_BIT")]
         StencilFaceFrontBit = 1,
         [NativeName("Name", "VK_STENCIL_FACE_BACK_BIT")]

@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_HintPriority")]
     public enum HintPriority : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_HINT_DEFAULT")]
         HintDefault = 0x0,
         [NativeName("Name", "SDL_HINT_NORMAL")]

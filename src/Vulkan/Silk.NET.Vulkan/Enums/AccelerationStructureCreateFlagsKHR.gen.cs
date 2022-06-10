@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureCreateFlagsKHR")]
     public enum AccelerationStructureCreateFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
         AccelerationStructureCreateDeviceAddressCaptureReplayBitKhr = 1,
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_CREATE_MOTION_BIT_NV")]

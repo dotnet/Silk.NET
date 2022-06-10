@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "_DXGI_OFFER_RESOURCE_PRIORITY")]
     public enum OfferResourcePriority : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_OFFER_RESOURCE_PRIORITY_LOW")]
         OfferResourcePriorityLow = 0x1,
         [NativeName("Name", "DXGI_OFFER_RESOURCE_PRIORITY_NORMAL")]

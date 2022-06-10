@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiLightSourceType")]
     public enum LightSourceType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiLightSource_UNDEFINED")]
         LightSourceUndefined = 0x0,
         [NativeName("Name", "aiLightSource_DIRECTIONAL")]

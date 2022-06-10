@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiTextureMapping")]
     public enum TextureMapping : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiTextureMapping_UV")]
         TextureMappingUV = 0x0,
         [NativeName("Name", "aiTextureMapping_SPHERE")]

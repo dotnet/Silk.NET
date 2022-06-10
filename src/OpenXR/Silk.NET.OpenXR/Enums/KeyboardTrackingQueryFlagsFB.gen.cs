@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrKeyboardTrackingQueryFlagsFB")]
     public enum KeyboardTrackingQueryFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_LOCAL_BIT_FB")]
         KeyboardTrackingQueryLocalBitFB = 2,
         [NativeName("Name", "XR_KEYBOARD_TRACKING_QUERY_REMOTE_BIT_FB")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSurfaceTransformFlagsKHR")]
     public enum SurfaceTransformFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR")]
         SurfaceTransformIdentityBitKhr = 1,
         [NativeName("Name", "VK_SURFACE_TRANSFORM_ROTATE_90_BIT_KHR")]

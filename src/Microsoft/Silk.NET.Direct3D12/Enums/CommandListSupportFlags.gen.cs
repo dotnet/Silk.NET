@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
     public enum CommandListSupportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_COMMAND_LIST_SUPPORT_FLAG_NONE")]
         CommandListSupportFlagNone = 0x0,
         [NativeName("Name", "D3D12_COMMAND_LIST_SUPPORT_FLAG_DIRECT")]

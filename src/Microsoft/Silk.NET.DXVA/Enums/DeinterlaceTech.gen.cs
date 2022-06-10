@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_DeinterlaceTech")]
     public enum DeinterlaceTech : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_DeinterlaceTech_Unknown")]
         DeinterlaceTechUnknown = 0x0,
         [NativeName("Name", "DXVA_DeinterlaceTech_BOBLineReplicate")]

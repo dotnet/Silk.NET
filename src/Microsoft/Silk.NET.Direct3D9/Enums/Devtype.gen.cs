@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DDEVTYPE")]
     public enum Devtype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DDEVTYPE_HAL")]
         DevtypeHal = 0x1,
         [NativeName("Name", "D3DDEVTYPE_REF")]

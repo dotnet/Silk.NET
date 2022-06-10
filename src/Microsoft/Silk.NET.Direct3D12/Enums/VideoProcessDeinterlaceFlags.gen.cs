@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS")]
     public enum VideoProcessDeinterlaceFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_NONE")]
         VideoProcessDeinterlaceFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_BOB")]

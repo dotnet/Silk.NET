@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_DEVICE_CAPS")]
     public enum VideoProcessorDeviceCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_DEVICE_CAPS_LINEAR_SPACE")]
         VideoProcessorDeviceCapsLinearSpace = 0x1,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_DEVICE_CAPS_xvYCC")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkEventCreateFlags")]
     public enum EventCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
         EventCreateDeviceOnlyBitKhr = 1,
         [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT")]

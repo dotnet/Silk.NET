@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVAHD_FEATURE_CAPS")]
     public enum HDFeatureCaps : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVAHD_FEATURE_CAPS_ALPHA_FILL")]
         HDFeatureCapsAlphaFill = 0x1,
         [NativeName("Name", "DXVAHD_FEATURE_CAPS_CONSTRICTION")]

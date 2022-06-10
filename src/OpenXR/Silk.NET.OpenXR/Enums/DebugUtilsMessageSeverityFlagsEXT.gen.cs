@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrDebugUtilsMessageSeverityFlagsEXT")]
     public enum DebugUtilsMessageSeverityFlagsEXT : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT")]
         DebugUtilsMessageSeverityVerboseBitExt = 1,
         [NativeName("Name", "XR_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_CPU_PAGE_PROPERTY")]
     public enum CpuPageProperty : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_CPU_PAGE_PROPERTY_UNKNOWN")]
         CpuPagePropertyUnknown = 0x0,
         [NativeName("Name", "D3D12_CPU_PAGE_PROPERTY_NOT_AVAILABLE")]

@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_BusType")]
     public enum COPPBusType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_BusType_Unknown")]
         CoppBusTypeUnknown = 0x0,
         [NativeName("Name", "COPP_BusType_PCI")]

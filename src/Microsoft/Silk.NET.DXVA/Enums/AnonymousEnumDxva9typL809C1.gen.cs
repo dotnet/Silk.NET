@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "__AnonymousEnum_dxva9typ_L809_C1")]
     public enum AnonymousEnumDxva9typL809C1 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_ProtectionType_Unknown")]
         CoppProtectionTypeUnknown = unchecked((int) 0xFFFFFFFF80000000),
         [NativeName("Name", "COPP_ProtectionType_None")]

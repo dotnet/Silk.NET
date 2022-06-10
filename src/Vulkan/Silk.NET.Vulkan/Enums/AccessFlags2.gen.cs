@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccessFlags2")]
     public enum AccessFlags2 : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_ACCESS_2_NONE")]
         Access2None = 0,
         [NativeName("Name", "VK_ACCESS_2_NONE_KHR")]
@@ -137,8 +139,12 @@ namespace Silk.NET.Vulkan
         Access2Reserved41BitAmd = 2199023255552,
         [NativeName("Name", "VK_ACCESS_2_INVOCATION_MASK_READ_BIT_HUAWEI")]
         Access2InvocationMaskReadBitHuawei = 549755813888,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_387_BIT_KHR")]
-        Access2Reserved387BitKhr = 1099511627776,
+        [NativeName("Name", "VK_ACCESS_2_SHADER_BINDING_TABLE_READ_BIT_KHR")]
+        Access2ShaderBindingTableReadBitKhr = 1099511627776,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_44_BIT_NV")]
+        Access2Reserved44BitNV = 17592186044416,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_45_BIT_NV")]
+        Access2Reserved45BitNV = 35184372088832,
         [NativeName("Name", "VK_ACCESS_2_RESERVED_42_BIT_NV")]
         Access2Reserved42BitNV = 4398046511104,
         [NativeName("Name", "VK_ACCESS_2_RESERVED_43_BIT_NV")]

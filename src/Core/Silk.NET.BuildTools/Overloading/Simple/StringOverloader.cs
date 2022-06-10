@@ -10,7 +10,7 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class StringOverloader : ISimpleParameterOverloader, ISimpleReturnOverloader
     {
-        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Project core)
+        public bool TryGetParameterVariant(Parameter parameter, out Parameter variant, Profile _)
         {
             if (parameter.Type.ToString() == "char*" || parameter.Type.ToString() == "byte*" ||
                 parameter.Type.ToString() == "GLchar*" || parameter.Type.ToString() == "GLbyte*" ||
@@ -51,7 +51,7 @@ namespace Silk.NET.BuildTools.Overloading
             return false;
         }
 
-        public bool TryGetReturnTypeVariant(Type returnType, out Type varied, List<Attribute> attrs, Project core)
+        public bool TryGetReturnTypeVariant(Type returnType, out Type varied, List<Attribute> attrs, Profile _)
         {
             if (returnType.ToString() == "char*" || returnType.ToString() == "byte*" ||
                 returnType.ToString() == "GLchar*" || returnType.ToString() == "GLbyte*" ||

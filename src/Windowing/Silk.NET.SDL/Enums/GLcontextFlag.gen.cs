@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GLcontextFlag")]
     public enum GLcontextFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_GL_CONTEXT_DEBUG_FLAG")]
         GLContextDebugFlag = 0x1,
         [NativeName("Name", "SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG")]

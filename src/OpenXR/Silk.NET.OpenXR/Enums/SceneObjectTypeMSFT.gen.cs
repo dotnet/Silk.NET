@@ -13,7 +13,7 @@ namespace Silk.NET.OpenXR
     public enum SceneObjectTypeMSFT : int
     {
         [NativeName("Name", "XR_SCENE_OBJECT_TYPE_UNCATEGORIZED_MSFT")]
-        SceneObjectTypeUncategorizedMsft = -1,
+        SceneObjectTypeUncategorizedMsft = unchecked((int) -1),
         [NativeName("Name", "XR_SCENE_OBJECT_TYPE_BACKGROUND_MSFT")]
         SceneObjectTypeBackgroundMsft = 1,
         [NativeName("Name", "XR_SCENE_OBJECT_TYPE_WALL_MSFT")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiMorphingMethod")]
     public enum MorphingMethod : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
         MorphingMethodVertexBlend = 0x1,
         [NativeName("Name", "aiMorphingMethod_MORPH_NORMALIZED")]

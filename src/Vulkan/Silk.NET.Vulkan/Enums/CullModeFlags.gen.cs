@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCullModeFlags")]
     public enum CullModeFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_CULL_MODE_NONE")]
         CullModeNone = 0,
         [NativeName("Name", "VK_CULL_MODE_FRONT_BIT")]

@@ -13,11 +13,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageViewCreateFlags")]
     public enum ImageViewCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDynamicBitExt = 1,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_2_BIT_AMD")]
         ImageViewCreateReserved2BitAmd = 4,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDeferredBitExt = 2,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_3_BIT_EXT")]
+        ImageViewCreateReserved3BitExt = 8,
     }
 }

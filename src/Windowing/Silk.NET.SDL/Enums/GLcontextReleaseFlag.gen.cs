@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GLcontextReleaseFlag")]
     public enum GLcontextReleaseFlag : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_GL_CONTEXT_RELEASE_BEHAVIOR_NONE")]
         GLContextReleaseBehaviorNone = 0x0,
         [NativeName("Name", "SDL_GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH")]

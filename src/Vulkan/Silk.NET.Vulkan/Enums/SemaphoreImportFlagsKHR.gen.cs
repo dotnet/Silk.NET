@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSemaphoreImportFlagsKHR")]
     public enum SemaphoreImportFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_SEMAPHORE_IMPORT_TEMPORARY_BIT")]
         SemaphoreImportTemporaryBit = 1,
     }

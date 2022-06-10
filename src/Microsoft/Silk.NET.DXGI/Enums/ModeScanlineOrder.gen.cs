@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_MODE_SCANLINE_ORDER")]
     public enum ModeScanlineOrder : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED")]
         ModeScanlineOrderUnspecified = 0x0,
         [NativeName("Name", "DXGI_MODE_SCANLINE_ORDER_PROGRESSIVE")]

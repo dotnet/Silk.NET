@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_HDCP_Protection_Level")]
     public enum COPPHDCPProtectionLevel : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_HDCP_Level0")]
         CoppHdcpLevel0 = 0x0,
         [NativeName("Name", "COPP_HDCP_LevelMin")]

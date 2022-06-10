@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrHandTrackingAimFlagsFB")]
     public enum HandTrackingAimFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_HAND_TRACKING_AIM_COMPUTED_BIT_FB")]
         HandTrackingAimComputedBitFB = 1,
         [NativeName("Name", "XR_HAND_TRACKING_AIM_VALID_BIT_FB")]

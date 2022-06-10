@@ -13,5 +13,7 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageFormatConstraintsFlagsFUCHSIA")]
     public enum ImageFormatConstraintsFlagsFUCHSIA : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

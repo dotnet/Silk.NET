@@ -494,6 +494,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectStorage.Nati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectStorage", "src\Microsoft\Silk.NET.DirectStorage\Silk.NET.DirectStorage.csproj", "{950FCED7-5720-4855-ACA3-B0EAB246F669}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenXR.Extensions.QCOM", "src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.QCOM\Silk.NET.OpenXR.Extensions.QCOM.csproj", "{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2987,6 +2989,18 @@ Global
 		{950FCED7-5720-4855-ACA3-B0EAB246F669}.Release|x64.Build.0 = Release|Any CPU
 		{950FCED7-5720-4855-ACA3-B0EAB246F669}.Release|x86.ActiveCfg = Release|Any CPU
 		{950FCED7-5720-4855-ACA3-B0EAB246F669}.Release|x86.Build.0 = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|x64.Build.0 = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Debug|x86.Build.0 = Debug|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x64.ActiveCfg = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x64.Build.0 = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3226,6 +3240,7 @@ Global
 		{22FDAB62-4DE6-4896-BB6E-CC19BBBE5951} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{100C6D6A-F8B9-4E41-B82C-F665C3BD2160} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{950FCED7-5720-4855-ACA3-B0EAB246F669} = {F2CF5D32-4B41-425E-B229-8FFC48F88063}
+		{1F9D7264-DA42-4351-AE08-6ABB7597B8E5} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}

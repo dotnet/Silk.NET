@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     [NativeName("Name", "cl_mem_alloc_flags_img")]
     public enum MemAllocFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
         RelaxRequirements = 0x1,
     }

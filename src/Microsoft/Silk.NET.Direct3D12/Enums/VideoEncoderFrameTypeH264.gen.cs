@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_H264")]
     public enum VideoEncoderFrameTypeH264 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_H264_I_FRAME")]
         VideoEncoderFrameTypeH264IFrame = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_TYPE_H264_P_FRAME")]

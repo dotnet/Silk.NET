@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE")]
     public enum VideoExtensionCommandParameterStage : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CREATION")]
         VideoExtensionCommandParameterStageCreation = 0x0,
         [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_INITIALIZATION")]

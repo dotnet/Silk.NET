@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_VIDEO_DECODE_CONFIGURATION_FLAGS")]
     public enum VideoDecodeConfigurationFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_CONFIGURATION_FLAG_NONE")]
         VideoDecodeConfigurationFlagNone = 0x0,
         [NativeName("Name", "D3D12_VIDEO_DECODE_CONFIGURATION_FLAG_HEIGHT_ALIGNMENT_MULTIPLE_32_REQUIRED")]

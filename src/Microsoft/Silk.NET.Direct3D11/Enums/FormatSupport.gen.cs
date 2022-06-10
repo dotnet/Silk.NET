@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_FORMAT_SUPPORT")]
     public enum FormatSupport : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT_BUFFER")]
         FormatSupportBuffer = 0x1,
         [NativeName("Name", "D3D11_FORMAT_SUPPORT_IA_VERTEX_BUFFER")]

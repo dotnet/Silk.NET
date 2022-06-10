@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrSpaceLocationFlags")]
     public enum SpaceLocationFlags : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_SPACE_LOCATION_ORIENTATION_VALID_BIT")]
         SpaceLocationOrientationValidBit = 1,
         [NativeName("Name", "XR_SPACE_LOCATION_POSITION_VALID_BIT")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiMetadataType")]
     public enum MetadataType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "AI_BOOL")]
         Bool = 0x0,
         [NativeName("Name", "AI_INT32")]

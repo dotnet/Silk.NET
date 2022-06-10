@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     [NativeName("Name", "cl_device_controlled_termination_capabilities_arm")]
     public enum DeviceControlledTerminationCapabilities : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_SUCCESS_ARM")]
         Success = 0x1,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_FAILURE_ARM")]

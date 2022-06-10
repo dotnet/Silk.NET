@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineLayoutCreateFlags")]
     public enum PipelineLayoutCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_0_BIT_AMD")]
         PipelineLayoutCreateReserved0BitAmd = 1,
         [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT")]

@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkIndirectStateFlagsNV")]
     public enum IndirectStateFlagsNV : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
         IndirectStateFlagFrontfaceBitNV = 1,
     }

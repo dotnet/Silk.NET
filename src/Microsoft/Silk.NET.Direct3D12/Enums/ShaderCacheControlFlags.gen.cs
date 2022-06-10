@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_SHADER_CACHE_CONTROL_FLAGS")]
     public enum ShaderCacheControlFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_SHADER_CACHE_CONTROL_FLAG_DISABLE")]
         ShaderCacheControlFlagDisable = 0x1,
         [NativeName("Name", "D3D12_SHADER_CACHE_CONTROL_FLAG_ENABLE")]

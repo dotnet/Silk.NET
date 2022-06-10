@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkColorComponentFlags")]
     public enum ColorComponentFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_COLOR_COMPONENT_R_BIT")]
         ColorComponentRBit = 1,
         [NativeName("Name", "VK_COLOR_COMPONENT_G_BIT")]

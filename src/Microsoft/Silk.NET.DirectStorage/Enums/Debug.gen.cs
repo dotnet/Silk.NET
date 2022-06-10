@@ -13,6 +13,8 @@ namespace Silk.NET.DirectStorage
     [NativeName("Name", "DSTORAGE_DEBUG")]
     public enum Debug : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DSTORAGE_DEBUG_NONE")]
         DebugNone = 0x0,
         [NativeName("Name", "DSTORAGE_DEBUG_SHOW_ERRORS")]

@@ -35,6 +35,8 @@ namespace Silk.NET.BuildTools
         private static readonly ConcurrentDictionary<string, string> _downloaded = new();
         public const bool TestMode = false;
 
+        internal static readonly ConcurrentBag<string> TempFolders = new();
+
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
@@ -104,7 +106,7 @@ namespace Silk.NET.BuildTools
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine($"Unhandled exception: {ex}");
+                Console.Error.WriteLine($"Unhandled exception when running BuildTools for {task.Name}: {ex}");
                 if (sw is not null)
                 {
                     Program.ConsoleWriter.Instance.Timings.Value =
@@ -386,9 +388,10 @@ namespace Silk.NET.BuildTools
                     {
                         if (split[2].Trim() == "*")
                         {
+                            Console.WriteLine($"Getting {split[1]} versions from {VersionsUrl}", split[1].ToLower());
                             split[2] = JsonConvert.DeserializeObject<VersionsPayload>
                                 (
-                                    wb.GetStringAsync(string.Format(VersionsUrl, split[1]))
+                                    wb.GetStringAsync(string.Format(VersionsUrl, split[1].ToLower()))
                                         .GetAwaiter()
                                         .GetResult()
                                 )
@@ -396,7 +399,9 @@ namespace Silk.NET.BuildTools
                         }
 
                         var url = string.Format(DownloadUrl, split[1], split[2].Trim());
-                        var dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                        var tmp = Path.GetRandomFileName();
+                        TempFolders.Add(tmp);
+                        var dir = Path.Combine(Path.GetTempPath(), tmp);
                         Console.WriteLine($"Downloading & extracting {url} into {dir}");
                         new ZipArchive
                         (

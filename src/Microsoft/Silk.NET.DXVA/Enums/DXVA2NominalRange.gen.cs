@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA2_NominalRange")]
     public enum DXVA2NominalRange : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_NominalRangeMask")]
         DXVA2NominalRangeMask = 0x7,
         [NativeName("Name", "DXVA2_NominalRange_Unknown")]

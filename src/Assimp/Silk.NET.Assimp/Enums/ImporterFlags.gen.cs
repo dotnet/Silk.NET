@@ -13,6 +13,8 @@ namespace Silk.NET.Assimp
     [NativeName("Name", "aiImporterFlags")]
     public enum ImporterFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "aiImporterFlags_SupportTextFlavour")]
         ImporterFlagsSupportTextFlavour = 0x1,
         [NativeName("Name", "aiImporterFlags_SupportBinaryFlavour")]

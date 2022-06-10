@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_SWAP_EFFECT")]
     public enum SwapEffect : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_SWAP_EFFECT_DISCARD")]
         SwapEffectDiscard = 0x0,
         [NativeName("Name", "DXGI_SWAP_EFFECT_SEQUENTIAL")]

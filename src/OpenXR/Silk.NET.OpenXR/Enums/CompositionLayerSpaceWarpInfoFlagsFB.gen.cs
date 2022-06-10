@@ -13,5 +13,9 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrCompositionLayerSpaceWarpInfoFlagsFB")]
     public enum CompositionLayerSpaceWarpInfoFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SPACE_WARP_INFO_FRAME_SKIP_BIT_FB")]
+        CompositionLayerSpaceWarpInfoFrameSkipBitFB = 1,
     }
 }

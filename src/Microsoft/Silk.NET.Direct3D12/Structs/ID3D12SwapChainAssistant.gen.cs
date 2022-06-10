@@ -46,18 +46,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +57,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +69,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +83,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -158,18 +114,7 @@ namespace Silk.NET.Direct3D12
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Luid* ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Luid*, Luid*>)LpVtbl[3])(@this, pSilkDotNetReturnFixupResult);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Luid*, Luid*>)LpVtbl[3])(@this, pSilkDotNetReturnFixupResult);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Luid*, Luid*>)LpVtbl[3])(@this, pSilkDotNetReturnFixupResult);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Luid*, Luid*>)LpVtbl[3])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
@@ -178,18 +123,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppv);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppv);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppv);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppv);
             return ret;
         }
 
@@ -200,18 +134,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppvPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppvPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppvPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riid, ppvPtr);
             }
             return ret;
         }
@@ -223,18 +146,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppv);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppv);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppv);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppv);
             }
             return ret;
         }
@@ -248,18 +160,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppvPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppvPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppvPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, int>)LpVtbl[4])(@this, riidPtr, ppvPtr);
                 }
             }
             return ret;
@@ -270,18 +171,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12SwapChainAssistant*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueue);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueue);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueue);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueue);
             return ret;
         }
 
@@ -292,18 +182,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvQueuePtr = &ppvQueue)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueuePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueuePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueuePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueue, ppvQueuePtr);
             }
             return ret;
         }
@@ -315,18 +194,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidQueuePtr = &riidQueue)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueue);
             }
             return ret;
         }
@@ -340,18 +208,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvQueuePtr = &ppvQueue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResource, riidQueuePtr, ppvQueuePtr);
                 }
             }
             return ret;
@@ -364,18 +221,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvResourcePtr = &ppvResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueue);
             }
             return ret;
         }
@@ -389,18 +235,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvQueuePtr = &ppvQueue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueue, ppvQueuePtr);
                 }
             }
             return ret;
@@ -415,18 +250,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidQueuePtr = &riidQueue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueue);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueue);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueue);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueue);
                 }
             }
             return ret;
@@ -443,18 +267,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppvQueuePtr = &ppvQueue)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResource, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
                     }
                 }
             }
@@ -468,18 +281,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidResourcePtr = &riidResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueue);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueue);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueue);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueue);
             }
             return ret;
         }
@@ -493,18 +295,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvQueuePtr = &ppvQueue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueuePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueuePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueuePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueue, ppvQueuePtr);
                 }
             }
             return ret;
@@ -519,18 +310,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidQueuePtr = &riidQueue)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueue);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueue);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueue);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueue);
                 }
             }
             return ret;
@@ -547,18 +327,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppvQueuePtr = &ppvQueue)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueuePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueuePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueuePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResource, riidQueuePtr, ppvQueuePtr);
                     }
                 }
             }
@@ -574,18 +343,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueue);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueue);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueue);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueue);
                 }
             }
             return ret;
@@ -602,18 +360,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppvQueuePtr = &ppvQueue)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueuePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueuePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueuePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueue, ppvQueuePtr);
                     }
                 }
             }
@@ -631,18 +378,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Guid* riidQueuePtr = &riidQueue)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueue);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueue);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueue);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueue);
                     }
                 }
             }
@@ -662,18 +398,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (void** ppvQueuePtr = &ppvQueue)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int>)LpVtbl[5])(@this, riidResourcePtr, ppvResourcePtr, riidQueuePtr, ppvQueuePtr);
                         }
                     }
                 }

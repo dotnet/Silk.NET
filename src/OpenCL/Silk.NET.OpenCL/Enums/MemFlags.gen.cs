@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_mem_flags")]
     public enum MemFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_MEM_READ_WRITE")]
         ReadWrite = 0x1,
         [NativeName("Name", "CL_MEM_WRITE_ONLY")]

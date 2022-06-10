@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0008")]
     public enum MIDLMIDLItfDxva2api000000000008 : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA2_VideoProcess_None")]
         DXVA2VideoProcessNone = 0x0,
         [NativeName("Name", "DXVA2_VideoProcess_YUV2RGB")]

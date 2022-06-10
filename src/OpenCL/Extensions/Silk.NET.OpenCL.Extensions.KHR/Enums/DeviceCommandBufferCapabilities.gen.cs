@@ -13,6 +13,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "cl_device_command_buffer_capabilities_khr ")]
     public enum DeviceCommandBufferCapabilities : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_KERNEL_PRINTF_KHR")]
         KernelPrintf = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_DEVICE_SIDE_ENQUEUE_KHR")]

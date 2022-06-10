@@ -13,5 +13,7 @@ namespace Silk.NET.OpenCL
     [NativeName("Name", "cl_svm_mem_flags")]
     public enum SvmMemFlags : ulong
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

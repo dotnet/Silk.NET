@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE")]
     public enum OutduplPointerShapeType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE_MONOCHROME")]
         OutduplPointerShapeTypeMonochrome = 0x1,
         [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE_COLOR")]

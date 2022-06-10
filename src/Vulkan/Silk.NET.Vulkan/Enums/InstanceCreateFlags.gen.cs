@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkInstanceCreateFlags")]
     public enum InstanceCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR")]
         InstanceCreateEnumeratePortabilityBitKhr = 1,
     }

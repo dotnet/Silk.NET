@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_COPP_StatusFlags")]
     public enum COPPStatusFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "COPP_StatusNormal")]
         CoppStatusNormal = 0x0,
         [NativeName("Name", "COPP_LinkLost")]

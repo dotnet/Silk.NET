@@ -13,6 +13,8 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrCompositionLayerImageLayoutFlagsFB")]
     public enum CompositionLayerImageLayoutFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "XR_COMPOSITION_LAYER_IMAGE_LAYOUT_VERTICAL_FLIP_BIT_FB")]
         CompositionLayerImageLayoutVerticalFlipBitFB = 1,
     }

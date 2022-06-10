@@ -12,12 +12,15 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "TextureEnvMode")]
     public enum TextureEnvMode : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,
         [NativeName("Name", "GL_BLEND")]
         Blend = 0xBE2,
+        [System.Obsolete]
         [NativeName("Name", "GL_MODULATE")]
         Modulate = 0x2100,
+        [System.Obsolete]
         [NativeName("Name", "GL_DECAL")]
         Decal = 0x2101,
         [NativeName("Name", "GL_REPLACE_EXT")]

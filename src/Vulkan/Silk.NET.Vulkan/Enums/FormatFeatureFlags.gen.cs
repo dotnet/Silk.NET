@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFormatFeatureFlags")]
     public enum FormatFeatureFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT")]
         FormatFeatureSampledImageBit = 1,
         [NativeName("Name", "VK_FORMAT_FEATURE_STORAGE_IMAGE_BIT")]

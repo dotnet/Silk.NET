@@ -1368,7 +1368,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         Arguments = new List<string>
                                         {
                                             "\"Src\"",
-                                            $"\"{functionDecl.Location}\"".Replace("\\", "\\\\")
+                                            $"\"{functionDecl.Location}\"".Replace("\\", "\\\\").RemoveTempNames()
                                         }
                                     }
                                 }

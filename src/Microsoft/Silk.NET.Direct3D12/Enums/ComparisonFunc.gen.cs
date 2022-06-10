@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_COMPARISON_FUNC")]
     public enum ComparisonFunc : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_COMPARISON_FUNC_NEVER")]
         ComparisonFuncNever = 0x1,
         [NativeName("Name", "D3D12_COMPARISON_FUNC_LESS")]

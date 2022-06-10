@@ -13,6 +13,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_RESIDENCY")]
     public enum Residency : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXGI_RESIDENCY_FULLY_RESIDENT")]
         ResidencyFullyResident = 0x1,
         [NativeName("Name", "DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY")]

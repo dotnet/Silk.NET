@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DPRIMITIVETYPE")]
     public enum Primitivetype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DPT_POINTLIST")]
         PTPointlist = 0x1,
         [NativeName("Name", "D3DPT_LINELIST")]

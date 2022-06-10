@@ -116,9 +116,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "STD_VIDEO_H265_PREDICTOR_PALETTE_COMP_ENTRIES_LIST_SIZE")]
         public const int StdVideoH265PredictorPaletteCompEntriesListSize = unchecked((int) 0x80);
         [NativeName("Type", "int")]
-        [NativeName("Name", "STD_VIDEO_H265_SPS_MAX_SUB_LAYERS")]
-        public const int StdVideoH265SpsMaxSubLayers = unchecked((int) 0x8);
-        [NativeName("Type", "int")]
         [NativeName("Name", "STD_VIDEO_H265_CHROMA_QP_OFFSET_TILE_COLS_LIST_SIZE")]
         public const int StdVideoH265ChromaQPOffsetTileColsListSize = unchecked((int) 0x13);
         [NativeName("Type", "int")]

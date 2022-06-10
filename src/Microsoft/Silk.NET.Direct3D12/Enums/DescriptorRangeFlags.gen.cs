@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_FLAGS")]
     public enum DescriptorRangeFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_FLAG_NONE")]
         DescriptorRangeFlagNone = 0x0,
         [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_FLAG_DESCRIPTORS_VOLATILE")]

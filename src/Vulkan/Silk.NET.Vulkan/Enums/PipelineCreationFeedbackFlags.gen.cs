@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineCreationFeedbackFlags")]
     public enum PipelineCreationFeedbackFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT")]
         PipelineCreationFeedbackValidBit = 1,
         [NativeName("Name", "VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT")]

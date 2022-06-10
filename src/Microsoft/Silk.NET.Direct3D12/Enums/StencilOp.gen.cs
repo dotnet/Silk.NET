@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_STENCIL_OP")]
     public enum StencilOp : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_STENCIL_OP_KEEP")]
         StencilOpKeep = 0x1,
         [NativeName("Name", "D3D12_STENCIL_OP_ZERO")]

@@ -1,1 +1,13 @@
 #nullable enable
+Silk.NET.Core.Native.D3DCBufferType.None = 0 -> Silk.NET.Core.Native.D3DCBufferType
+Silk.NET.Core.Native.D3DDriverType.None = 0 -> Silk.NET.Core.Native.D3DDriverType
+Silk.NET.Core.Native.D3DIncludeType.None = 0 -> Silk.NET.Core.Native.D3DIncludeType
+Silk.NET.Core.Native.D3DParameterFlags.None = 0 -> Silk.NET.Core.Native.D3DParameterFlags
+Silk.NET.Core.Native.D3DRegisterComponentType.None = 0 -> Silk.NET.Core.Native.D3DRegisterComponentType
+Silk.NET.Core.Native.D3DResourceReturnType.None = 0 -> Silk.NET.Core.Native.D3DResourceReturnType
+Silk.NET.Core.Native.D3DShaderCBufferFlags.None = 0 -> Silk.NET.Core.Native.D3DShaderCBufferFlags
+Silk.NET.Core.Native.D3DShaderInputFlags.None = 0 -> Silk.NET.Core.Native.D3DShaderInputFlags
+Silk.NET.Core.Native.D3DShaderVariableFlags.None = 0 -> Silk.NET.Core.Native.D3DShaderVariableFlags
+Silk.NET.Core.Native.D3DTessellatorDomain.None = 0 -> Silk.NET.Core.Native.D3DTessellatorDomain
+Silk.NET.Core.Native.D3DTessellatorOutputPrimitive.None = 0 -> Silk.NET.Core.Native.D3DTessellatorOutputPrimitive
+Silk.NET.Core.Native.D3DTessellatorPartitioning.None = 0 -> Silk.NET.Core.Native.D3DTessellatorPartitioning

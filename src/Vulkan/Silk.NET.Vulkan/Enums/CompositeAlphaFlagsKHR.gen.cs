@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCompositeAlphaFlagsKHR")]
     public enum CompositeAlphaFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR")]
         CompositeAlphaOpaqueBitKhr = 1,
         [NativeName("Name", "VK_COMPOSITE_ALPHA_PRE_MULTIPLIED_BIT_KHR")]

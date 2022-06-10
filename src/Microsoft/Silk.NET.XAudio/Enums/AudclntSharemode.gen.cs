@@ -13,6 +13,8 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "_AUDCLNT_SHAREMODE")]
     public enum AudclntSharemode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "AUDCLNT_SHAREMODE_SHARED")]
         AudclntSharemodeShared = 0x0,
         [NativeName("Name", "AUDCLNT_SHAREMODE_EXCLUSIVE")]

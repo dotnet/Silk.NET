@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_TextureModulate")]
     public enum TextureModulate : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_TEXTUREMODULATE_NONE")]
         TexturemodulateNone = 0x0,
         [NativeName("Name", "SDL_TEXTUREMODULATE_COLOR")]

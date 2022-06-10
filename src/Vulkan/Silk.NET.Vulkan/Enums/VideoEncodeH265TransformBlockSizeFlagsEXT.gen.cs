@@ -13,6 +13,8 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoEncodeH265TransformBlockSizeFlagsEXT")]
     public enum VideoEncodeH265TransformBlockSizeFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_TRANSFORM_BLOCK_SIZE_4_BIT_EXT")]
         VideoEncodeH265TransformBlockSize4BitExt = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_TRANSFORM_BLOCK_SIZE_8_BIT_EXT")]

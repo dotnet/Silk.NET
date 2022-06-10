@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_TILE_COPY_FLAGS")]
     public enum TileCopyFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3D12_TILE_COPY_FLAG_NONE")]
         TileCopyFlagNone = 0x0,
         [NativeName("Name", "D3D12_TILE_COPY_FLAG_NO_HAZARD")]
