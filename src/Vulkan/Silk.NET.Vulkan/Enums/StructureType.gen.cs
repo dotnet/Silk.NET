@@ -1088,6 +1088,30 @@ namespace Silk.NET.Vulkan
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RESERVED_QCOM")]
         ReservedQCom = 1000309000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECT_CREATE_INFO_EXT")]
+        ExportMetalObjectCreateInfoExt = 1000311000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECTS_INFO_EXT")]
+        ExportMetalObjectsInfoExt = 1000311001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_DEVICE_INFO_EXT")]
+        ExportMetalDeviceInfoExt = 1000311002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_COMMAND_QUEUE_INFO_EXT")]
+        ExportMetalCommandQueueInfoExt = 1000311003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_BUFFER_INFO_EXT")]
+        ExportMetalBufferInfoExt = 1000311004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_METAL_BUFFER_INFO_EXT")]
+        ImportMetalBufferInfoExt = 1000311005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_TEXTURE_INFO_EXT")]
+        ExportMetalTextureInfoExt = 1000311006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_METAL_TEXTURE_INFO_EXT")]
+        ImportMetalTextureInfoExt = 1000311007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_IO_SURFACE_INFO_EXT")]
+        ExportMetalIOSurfaceInfoExt = 1000311008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_METAL_IO_SURFACE_INFO_EXT")]
+        ImportMetalIOSurfaceInfoExt = 1000311009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_EXPORT_METAL_SHARED_EVENT_INFO_EXT")]
+        ExportMetalSharedEventInfoExt = 1000311010,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_METAL_SHARED_EVENT_INFO_EXT")]
+        ImportMetalSharedEventInfoExt = 1000311011,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR")]
         MemoryBarrier2Khr = 1000314000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2_KHR")]
@@ -1302,6 +1326,8 @@ namespace Silk.NET.Vulkan
         DescriptorSetBindingReferenceValve = 1000420001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_HOST_MAPPING_INFO_VALVE")]
         DescriptorSetLayoutHostMappingInfoValve = 1000420002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NON_SEAMLESS_CUBE_MAP_FEATURES_EXT")]
+        PhysicalDeviceNonSeamlessCubeMapFeaturesExt = 1000422000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
         PhysicalDeviceFragmentDensityMapOffsetFeaturesQCom = 1000425000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
