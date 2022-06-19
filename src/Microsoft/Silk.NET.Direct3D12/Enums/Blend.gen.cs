@@ -63,6 +63,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"InvSrc1Alpha\"")]
         [NativeName("Name", "D3D12_BLEND_INV_SRC1_ALPHA")]
         BlendInvSrc1Alpha = 0x13,
+        [Obsolete("Deprecated in favour of \"AlphaFactor\"")]
+        [NativeName("Name", "D3D12_BLEND_ALPHA_FACTOR")]
+        BlendAlphaFactor = 0x14,
+        [Obsolete("Deprecated in favour of \"InvAlphaFactor\"")]
+        [NativeName("Name", "D3D12_BLEND_INV_ALPHA_FACTOR")]
+        BlendInvAlphaFactor = 0x15,
         [NativeName("Name", "D3D12_BLEND_ZERO")]
         Zero = 0x1,
         [NativeName("Name", "D3D12_BLEND_ONE")]
@@ -97,5 +103,9 @@ namespace Silk.NET.Direct3D12
         Src1Alpha = 0x12,
         [NativeName("Name", "D3D12_BLEND_INV_SRC1_ALPHA")]
         InvSrc1Alpha = 0x13,
+        [NativeName("Name", "D3D12_BLEND_ALPHA_FACTOR")]
+        AlphaFactor = 0x14,
+        [NativeName("Name", "D3D12_BLEND_INV_ALPHA_FACTOR")]
+        InvAlphaFactor = 0x15,
     }
 }

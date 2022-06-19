@@ -64,6 +64,18 @@ namespace Silk.NET.Vulkan
         ErrorValidationFailedExt = unchecked((int) -1000011001),
         [NativeName("Name", "VK_ERROR_INVALID_SHADER_NV")]
         ErrorInvalidShaderNV = unchecked((int) -1000012000),
+        [NativeName("Name", "VK_ERROR_IMAGE_USAGE_NOT_SUPPORTED_KHR")]
+        ErrorImageUsageNotSupportedKhr = unchecked((int) -1000023000),
+        [NativeName("Name", "VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR")]
+        ErrorVideoPictureLayoutNotSupportedKhr = unchecked((int) -1000023001),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileOperationNotSupportedKhr = unchecked((int) -1000023002),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileFormatNotSupportedKhr = unchecked((int) -1000023003),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileCodecNotSupportedKhr = unchecked((int) -1000023004),
+        [NativeName("Name", "VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR")]
+        ErrorVideoStdVersionNotSupportedKhr = unchecked((int) -1000023005),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY_KHR")]
         ErrorOutOfPoolMemoryKhr = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR")]

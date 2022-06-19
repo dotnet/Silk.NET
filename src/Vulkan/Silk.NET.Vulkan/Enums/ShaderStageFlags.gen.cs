@@ -84,6 +84,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"SubpassShadingBitHuawei\"")]
         [NativeName("Name", "VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
         ShaderStageSubpassShadingBitHuawei = 16384,
+        [Obsolete("Deprecated in favour of \"Ext483Reserve15\"")]
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_15")]
+        ShaderStageExt483Reserve15 = 32768,
+        [Obsolete("Deprecated in favour of \"Ext483Reserve16\"")]
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_16")]
+        ShaderStageExt483Reserve16 = 65536,
+        [Obsolete("Deprecated in favour of \"Ext483Reserve17\"")]
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_17")]
+        ShaderStageExt483Reserve17 = 131072,
         [NativeName("Name", "VK_SHADER_STAGE_VERTEX_BIT")]
         VertexBit = 1,
         [NativeName("Name", "VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT")]
@@ -130,5 +139,11 @@ namespace Silk.NET.Vulkan
         MeshBitNV = 128,
         [NativeName("Name", "VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
         SubpassShadingBitHuawei = 16384,
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_15")]
+        Ext483Reserve15 = 32768,
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_16")]
+        Ext483Reserve16 = 65536,
+        [NativeName("Name", "VK_SHADER_STAGE_EXT_483_RESERVE_17")]
+        Ext483Reserve17 = 131072,
     }
 }

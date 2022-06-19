@@ -105,6 +105,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"D3D12Options11\"")]
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS11")]
         FeatureD3D12Options11 = 0x28,
+        [Obsolete("Deprecated in favour of \"D3D12Options12\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS12")]
+        FeatureD3D12Options12 = 0x29,
+        [Obsolete("Deprecated in favour of \"D3D12Options13\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
+        FeatureD3D12Options13 = 0x2A,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS")]
         D3D12Options = 0x0,
         [NativeName("Name", "D3D12_FEATURE_ARCHITECTURE")]
@@ -167,5 +173,9 @@ namespace Silk.NET.Direct3D12
         D3D12Options10 = 0x27,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS11")]
         D3D12Options11 = 0x28,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS12")]
+        D3D12Options12 = 0x29,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS13")]
+        D3D12Options13 = 0x2A,
     }
 }

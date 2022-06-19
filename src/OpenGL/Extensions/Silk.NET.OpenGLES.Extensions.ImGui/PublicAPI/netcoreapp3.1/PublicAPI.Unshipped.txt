@@ -1,6 +1,3 @@
 #nullable enable
 Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.Context -> System.IntPtr
 Silk.NET.OpenGLES.Extensions.ImGui.ImGuiController.MakeCurrent() -> void
-Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate.R -> Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate
-Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate.S -> Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate
-Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate.T -> Silk.NET.OpenGLES.Extensions.ImGui.TextureCoordinate

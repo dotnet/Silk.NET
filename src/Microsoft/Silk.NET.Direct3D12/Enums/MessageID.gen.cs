@@ -2685,9 +2685,75 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ShadercachecontrolShadercacheclearNotsupported\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_SHADERCACHECLEAR_NOTSUPPORTED")]
         MessageIDShadercachecontrolShadercacheclearNotsupported = 0x52F,
+        [Obsolete("Deprecated in favour of \"CreateresourceStateIgnored\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCE_STATE_IGNORED")]
+        MessageIDCreateresourceStateIgnored = 0x530,
+        [Obsolete("Deprecated in favour of \"UnusedCrossExecuteSplitBarrier\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_UNUSED_CROSS_EXECUTE_SPLIT_BARRIER")]
+        MessageIDUnusedCrossExecuteSplitBarrier = 0x531,
+        [Obsolete("Deprecated in favour of \"DeviceOpenSharedHandleAccessDenied\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DEVICE_OPEN_SHARED_HANDLE_ACCESS_DENIED")]
+        MessageIDDeviceOpenSharedHandleAccessDenied = 0x532,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierValues\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_VALUES")]
+        MessageIDIncompatibleBarrierValues = 0x533,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierAccess\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_ACCESS")]
+        MessageIDIncompatibleBarrierAccess = 0x534,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierSync\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_SYNC")]
+        MessageIDIncompatibleBarrierSync = 0x535,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierLayout\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_LAYOUT")]
+        MessageIDIncompatibleBarrierLayout = 0x536,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierType\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_TYPE")]
+        MessageIDIncompatibleBarrierType = 0x537,
+        [Obsolete("Deprecated in favour of \"OutOfBoundsBarrierSubresourceRange\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_OUT_OF_BOUNDS_BARRIER_SUBRESOURCE_RANGE")]
+        MessageIDOutOfBoundsBarrierSubresourceRange = 0x538,
+        [Obsolete("Deprecated in favour of \"IncompatibleBarrierResourceDimension\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_RESOURCE_DIMENSION")]
+        MessageIDIncompatibleBarrierResourceDimension = 0x539,
+        [Obsolete("Deprecated in favour of \"SetScissorRectsInvalidRect\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_SET_SCISSOR_RECTS_INVALID_RECT")]
+        MessageIDSetScissorRectsInvalidRect = 0x53A,
+        [Obsolete("Deprecated in favour of \"ShadingRateSourceRequiresDimensionTexture2D\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADING_RATE_SOURCE_REQUIRES_DIMENSION_TEXTURE2D")]
+        MessageIDShadingRateSourceRequiresDimensionTexture2D = 0x53B,
+        [Obsolete("Deprecated in favour of \"BufferBarrierSubregionOutOfBounds\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_BUFFER_BARRIER_SUBREGION_OUT_OF_BOUNDS")]
+        MessageIDBufferBarrierSubregionOutOfBounds = 0x53C,
+        [Obsolete("Deprecated in favour of \"UnsupportedBarrierLayout\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_UNSUPPORTED_BARRIER_LAYOUT")]
+        MessageIDUnsupportedBarrierLayout = 0x53D,
+        [Obsolete("Deprecated in favour of \"CreateresourceandheapInvalidParameters\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCEANDHEAP_INVALID_PARAMETERS")]
+        MessageIDCreateresourceandheapInvalidParameters = 0x53E,
+        [Obsolete("Deprecated in favour of \"EnhancedBarriersNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_ENHANCED_BARRIERS_NOT_SUPPORTED")]
+        MessageIDEnhancedBarriersNotSupported = 0x53F,
+        [Obsolete("Deprecated in favour of \"CastTargetTexelSizeMismatch\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TARGET_TEXEL_SIZE_MISMATCH")]
+        MessageIDCastTargetTexelSizeMismatch = 0x540,
+        [Obsolete("Deprecated in favour of \"CastToPlanarNotSuported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TO_PLANAR_NOT_SUPORTED")]
+        MessageIDCastToPlanarNotSuported = 0x541,
+        [Obsolete("Deprecated in favour of \"LegacyBarrierValidationForcedOn\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_LEGACY_BARRIER_VALIDATION_FORCED_ON")]
+        MessageIDLegacyBarrierValidationForcedOn = 0x542,
+        [Obsolete("Deprecated in favour of \"EmptyRootDescriptorTable\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_EMPTY_ROOT_DESCRIPTOR_TABLE")]
+        MessageIDEmptyRootDescriptorTable = 0x543,
+        [Obsolete("Deprecated in favour of \"CommandListDrawElementOffsetUnaligned\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_DRAW_ELEMENT_OFFSET_UNALIGNED")]
+        MessageIDCommandListDrawElementOffsetUnaligned = 0x544,
+        [Obsolete("Deprecated in favour of \"AlphaBlendFactorNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_ALPHA_BLEND_FACTOR_NOT_SUPPORTED")]
+        MessageIDAlphaBlendFactorNotSupported = 0x545,
         [Obsolete("Deprecated in favour of \"D3D12MessagesEnd\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        MessageIDD3D12MessagesEnd = 0x530,
+        MessageIDD3D12MessagesEnd = 0x546,
         [NativeName("Name", "D3D12_MESSAGE_ID_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D3D12_MESSAGE_ID_STRING_FROM_APPLICATION")]
@@ -4470,7 +4536,51 @@ namespace Silk.NET.Direct3D12
         ShadercachesessionShadercachedeleteNotsupported = 0x52E,
         [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_SHADERCACHECLEAR_NOTSUPPORTED")]
         ShadercachecontrolShadercacheclearNotsupported = 0x52F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCE_STATE_IGNORED")]
+        CreateresourceStateIgnored = 0x530,
+        [NativeName("Name", "D3D12_MESSAGE_ID_UNUSED_CROSS_EXECUTE_SPLIT_BARRIER")]
+        UnusedCrossExecuteSplitBarrier = 0x531,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DEVICE_OPEN_SHARED_HANDLE_ACCESS_DENIED")]
+        DeviceOpenSharedHandleAccessDenied = 0x532,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_VALUES")]
+        IncompatibleBarrierValues = 0x533,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_ACCESS")]
+        IncompatibleBarrierAccess = 0x534,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_SYNC")]
+        IncompatibleBarrierSync = 0x535,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_LAYOUT")]
+        IncompatibleBarrierLayout = 0x536,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_TYPE")]
+        IncompatibleBarrierType = 0x537,
+        [NativeName("Name", "D3D12_MESSAGE_ID_OUT_OF_BOUNDS_BARRIER_SUBRESOURCE_RANGE")]
+        OutOfBoundsBarrierSubresourceRange = 0x538,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INCOMPATIBLE_BARRIER_RESOURCE_DIMENSION")]
+        IncompatibleBarrierResourceDimension = 0x539,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SET_SCISSOR_RECTS_INVALID_RECT")]
+        SetScissorRectsInvalidRect = 0x53A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADING_RATE_SOURCE_REQUIRES_DIMENSION_TEXTURE2D")]
+        ShadingRateSourceRequiresDimensionTexture2D = 0x53B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_BUFFER_BARRIER_SUBREGION_OUT_OF_BOUNDS")]
+        BufferBarrierSubregionOutOfBounds = 0x53C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_UNSUPPORTED_BARRIER_LAYOUT")]
+        UnsupportedBarrierLayout = 0x53D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATERESOURCEANDHEAP_INVALID_PARAMETERS")]
+        CreateresourceandheapInvalidParameters = 0x53E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_ENHANCED_BARRIERS_NOT_SUPPORTED")]
+        EnhancedBarriersNotSupported = 0x53F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TARGET_TEXEL_SIZE_MISMATCH")]
+        CastTargetTexelSizeMismatch = 0x540,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CAST_TO_PLANAR_NOT_SUPORTED")]
+        CastToPlanarNotSuported = 0x541,
+        [NativeName("Name", "D3D12_MESSAGE_ID_LEGACY_BARRIER_VALIDATION_FORCED_ON")]
+        LegacyBarrierValidationForcedOn = 0x542,
+        [NativeName("Name", "D3D12_MESSAGE_ID_EMPTY_ROOT_DESCRIPTOR_TABLE")]
+        EmptyRootDescriptorTable = 0x543,
+        [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_DRAW_ELEMENT_OFFSET_UNALIGNED")]
+        CommandListDrawElementOffsetUnaligned = 0x544,
+        [NativeName("Name", "D3D12_MESSAGE_ID_ALPHA_BLEND_FACTOR_NOT_SUPPORTED")]
+        AlphaBlendFactorNotSupported = 0x545,
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        D3D12MessagesEnd = 0x530,
+        D3D12MessagesEnd = 0x546,
     }
 }

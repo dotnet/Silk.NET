@@ -1,4 +1,5 @@
-﻿#nullable enable
+#nullable enable
+const Silk.NET.Core.Native.D3DCommon.RequiredRpcndrHVersion = 501 -> int
 Silk.NET.Core.Native.D3DCBufferType.None = 0 -> Silk.NET.Core.Native.D3DCBufferType
 Silk.NET.Core.Native.D3DDriverType.Hardware = 1 -> Silk.NET.Core.Native.D3DDriverType
 Silk.NET.Core.Native.D3DDriverType.None = 0 -> Silk.NET.Core.Native.D3DDriverType
