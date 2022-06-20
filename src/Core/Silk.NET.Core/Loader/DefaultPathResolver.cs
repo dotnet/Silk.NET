@@ -143,18 +143,25 @@ namespace Silk.NET.Core.Loader
             var candidates = new List<string>();
             foreach (var resolver in Resolvers)
             {
-                if (candidates.Count == 0 || resolver == PassthroughResolver)
+                try
                 {
-                    candidates.AddRange(resolver.Invoke(name));
-                }
-                else
-                {
-                    for (var i = 0; i < candidates.Count; i++)
+                    if (candidates.Count == 0 || resolver == PassthroughResolver)
                     {
-                        var oldCnt = candidates.Count;
-                        candidates.InsertRange(i + 1, resolver.Invoke(candidates[i]));
-                        i += candidates.Count - oldCnt;
+                        candidates.AddRange(resolver.Invoke(name));
                     }
+                    else
+                    {
+                        for (var i = 0; i < candidates.Count; i++)
+                        {
+                            var oldCnt = candidates.Count;
+                            candidates.InsertRange(i + 1, resolver.Invoke(candidates[i]));
+                            i += candidates.Count - oldCnt;
+                        }
+                    }
+                }
+                catch
+                {
+                    // Skip failed resolver, to account for unexpected environment. Like NativeAOT for example.
                 }
             }
 
