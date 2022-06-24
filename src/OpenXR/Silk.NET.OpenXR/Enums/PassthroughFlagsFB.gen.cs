@@ -15,7 +15,10 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"IsRunningATCreationBitFB\"")]
         [NativeName("Name", "XR_PASSTHROUGH_IS_RUNNING_AT_CREATION_BIT_FB")]
         PassthroughIsRunningATCreationBitFB = 1,
+        [NativeName("Name", "XR_PASSTHROUGH_IS_RUNNING_AT_CREATION_BIT_FB")]
+        IsRunningATCreationBitFB = 1,
     }
 }

@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "OcclusionQueryParameterNameNV")]
     public enum OcclusionQueryParameterNameNV : int
     {
+        [Obsolete("Deprecated in favour of \"NV\"")]
         [NativeName("Name", "GL_PIXEL_COUNT_NV")]
         PixelCountNV = 0x8866,
+        [Obsolete("Deprecated in favour of \"AvailableNV\"")]
         [NativeName("Name", "GL_PIXEL_COUNT_AVAILABLE_NV")]
         PixelCountAvailableNV = 0x8867,
+        [NativeName("Name", "GL_PIXEL_COUNT_NV")]
+        NV = 0x8866,
+        [NativeName("Name", "GL_PIXEL_COUNT_AVAILABLE_NV")]
+        AvailableNV = 0x8867,
     }
 }

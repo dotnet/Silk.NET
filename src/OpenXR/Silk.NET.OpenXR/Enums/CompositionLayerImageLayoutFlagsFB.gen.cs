@@ -15,7 +15,10 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"VerticalFlipBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_IMAGE_LAYOUT_VERTICAL_FLIP_BIT_FB")]
         CompositionLayerImageLayoutVerticalFlipBitFB = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_IMAGE_LAYOUT_VERTICAL_FLIP_BIT_FB")]
+        VerticalFlipBitFB = 1,
     }
 }

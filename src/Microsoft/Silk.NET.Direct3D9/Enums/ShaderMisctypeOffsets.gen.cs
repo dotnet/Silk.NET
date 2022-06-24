@@ -15,9 +15,15 @@ namespace Silk.NET.Direct3D9
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Position\"")]
         [NativeName("Name", "D3DSMO_POSITION")]
         SmoPosition = 0x0,
+        [Obsolete("Deprecated in favour of \"Face\"")]
         [NativeName("Name", "D3DSMO_FACE")]
         SmoFace = 0x1,
+        [NativeName("Name", "D3DSMO_POSITION")]
+        Position = 0x0,
+        [NativeName("Name", "D3DSMO_FACE")]
+        Face = 0x1,
     }
 }

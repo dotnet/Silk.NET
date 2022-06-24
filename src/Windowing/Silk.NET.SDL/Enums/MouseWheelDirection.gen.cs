@@ -16,9 +16,15 @@ namespace Silk.NET.SDL
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "SDL_MOUSEWHEEL_NORMAL")]
         MousewheelNormal = 0x0,
+        [Obsolete("Deprecated in favour of \"Flipped\"")]
         [NativeName("Name", "SDL_MOUSEWHEEL_FLIPPED")]
         MousewheelFlipped = 0x1,
+        [NativeName("Name", "SDL_MOUSEWHEEL_NORMAL")]
+        Normal = 0x0,
+        [NativeName("Name", "SDL_MOUSEWHEEL_FLIPPED")]
+        Flipped = 0x1,
     }
 }

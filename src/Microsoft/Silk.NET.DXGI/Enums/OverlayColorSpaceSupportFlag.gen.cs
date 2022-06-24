@@ -12,7 +12,10 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG")]
     public enum OverlayColorSpaceSupportFlag : int
     {
+        [Obsolete("Deprecated in favour of \"Present\"")]
         [NativeName("Name", "DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
         OverlayColorSpaceSupportFlagPresent = 0x1,
+        [NativeName("Name", "DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
+        Present = 0x1,
     }
 }

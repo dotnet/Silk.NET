@@ -15,17 +15,35 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"ByRegionBit\"")]
         [NativeName("Name", "VK_DEPENDENCY_BY_REGION_BIT")]
         DependencyByRegionBit = 1,
+        [Obsolete("Deprecated in favour of \"ViewLocalBitKhr\"")]
         [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
         DependencyViewLocalBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"DeviceGroupBitKhr\"")]
         [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
         DependencyDeviceGroupBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"Reserved3BitExt\"")]
         [NativeName("Name", "VK_DEPENDENCY_RESERVED_3_BIT_EXT")]
         DependencyReserved3BitExt = 8,
+        [Obsolete("Deprecated in favour of \"DeviceGroupBit\"")]
         [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
         DependencyDeviceGroupBit = 4,
+        [Obsolete("Deprecated in favour of \"ViewLocalBit\"")]
         [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT")]
         DependencyViewLocalBit = 2,
+        [NativeName("Name", "VK_DEPENDENCY_BY_REGION_BIT")]
+        ByRegionBit = 1,
+        [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
+        ViewLocalBitKhr = 2,
+        [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
+        DeviceGroupBitKhr = 4,
+        [NativeName("Name", "VK_DEPENDENCY_RESERVED_3_BIT_EXT")]
+        Reserved3BitExt = 8,
+        [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
+        DeviceGroupBit = 4,
+        [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT")]
+        ViewLocalBit = 2,
     }
 }

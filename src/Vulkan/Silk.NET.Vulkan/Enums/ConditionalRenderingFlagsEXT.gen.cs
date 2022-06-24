@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"InvertedBitExt\"")]
         [NativeName("Name", "VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT")]
         ConditionalRenderingInvertedBitExt = 1,
+        [NativeName("Name", "VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT")]
+        InvertedBitExt = 1,
     }
 }

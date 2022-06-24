@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDiscardRectangleModeEXT")]
     public enum DiscardRectangleModeEXT : int
     {
+        [Obsolete("Deprecated in favour of \"InclusiveExt\"")]
         [NativeName("Name", "VK_DISCARD_RECTANGLE_MODE_INCLUSIVE_EXT")]
         DiscardRectangleModeInclusiveExt = 0,
+        [Obsolete("Deprecated in favour of \"ExclusiveExt\"")]
         [NativeName("Name", "VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT")]
         DiscardRectangleModeExclusiveExt = 1,
+        [NativeName("Name", "VK_DISCARD_RECTANGLE_MODE_INCLUSIVE_EXT")]
+        InclusiveExt = 0,
+        [NativeName("Name", "VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT")]
+        ExclusiveExt = 1,
     }
 }

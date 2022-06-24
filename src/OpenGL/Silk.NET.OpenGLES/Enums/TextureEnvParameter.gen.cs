@@ -18,5 +18,11 @@ namespace Silk.NET.OpenGLES
         [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_ENV_COLOR")]
         TextureEnvColor = 0x2201,
+        [System.Obsolete]
+        [NativeName("Name", "GL_TEXTURE_ENV_MODE")]
+        Mode = 0x2200,
+        [System.Obsolete]
+        [NativeName("Name", "GL_TEXTURE_ENV_COLOR")]
+        Color = 0x2201,
     }
 }

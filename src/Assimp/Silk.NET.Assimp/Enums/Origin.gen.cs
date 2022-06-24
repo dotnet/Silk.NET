@@ -15,11 +15,20 @@ namespace Silk.NET.Assimp
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Set\"")]
         [NativeName("Name", "aiOrigin_SET")]
         OriginSet = 0x0,
+        [Obsolete("Deprecated in favour of \"Cur\"")]
         [NativeName("Name", "aiOrigin_CUR")]
         OriginCur = 0x1,
+        [Obsolete("Deprecated in favour of \"End\"")]
         [NativeName("Name", "aiOrigin_END")]
         OriginEnd = 0x2,
+        [NativeName("Name", "aiOrigin_SET")]
+        Set = 0x0,
+        [NativeName("Name", "aiOrigin_CUR")]
+        Cur = 0x1,
+        [NativeName("Name", "aiOrigin_END")]
+        End = 0x2,
     }
 }

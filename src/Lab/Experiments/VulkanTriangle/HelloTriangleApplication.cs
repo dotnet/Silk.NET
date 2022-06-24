@@ -167,7 +167,7 @@ namespace VulkanTriangle
             SubmitInfo submitInfo = new SubmitInfo { SType = StructureType.SubmitInfo };
 
             Semaphore[] waitSemaphores = { _imageAvailableSemaphores[_currentFrame] };
-            PipelineStageFlags[] waitStages = { PipelineStageFlags.PipelineStageColorAttachmentOutputBit };
+            PipelineStageFlags[] waitStages = { PipelineStageFlags.ColorAttachmentOutputBit };
             submitInfo.WaitSemaphoreCount = 1;
             var signalSemaphore = _renderFinishedSemaphores[_currentFrame];
             fixed (Semaphore* waitSemaphoresPtr = waitSemaphores)
@@ -396,12 +396,12 @@ namespace VulkanTriangle
         private unsafe void PopulateDebugMessengerCreateInfo(ref DebugUtilsMessengerCreateInfoEXT createInfo)
         {
             createInfo.SType = StructureType.DebugUtilsMessengerCreateInfoExt;
-            createInfo.MessageSeverity = DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt |
-                                         DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityWarningBitExt |
-                                         DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityErrorBitExt;
-            createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeGeneralBitExt |
-                                     DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypePerformanceBitExt |
-                                     DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeValidationBitExt;
+            createInfo.MessageSeverity = DebugUtilsMessageSeverityFlagsEXT.VerboseBitExt |
+                                         DebugUtilsMessageSeverityFlagsEXT.WarningBitExt |
+                                         DebugUtilsMessageSeverityFlagsEXT.ErrorBitExt;
+            createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.GeneralBitExt |
+                                     DebugUtilsMessageTypeFlagsEXT.PerformanceBitExt |
+                                     DebugUtilsMessageTypeFlagsEXT.ValidationBitExt;
             createInfo.PfnUserCallback = (DebugUtilsMessengerCallbackFunctionEXT) DebugCallback;
         }
 
@@ -413,7 +413,7 @@ namespace VulkanTriangle
             void* pUserData
         )
         {
-            if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt)
+            if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.VerboseBitExt)
             {
                 Console.WriteLine
                     ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
@@ -525,7 +525,7 @@ namespace VulkanTriangle
                 var queueFamily = queueFamilies[i];
                 // note: HasFlag is slow on .NET Core 2.1 and below.
                 // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
-                if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
+                if (queueFamily.QueueFlags.HasFlag(QueueFlags.GraphicsBit))
                 {
                     indices.GraphicsFamily = i;
                 }
@@ -666,7 +666,7 @@ namespace VulkanTriangle
                 ImageColorSpace = surfaceFormat.ColorSpace,
                 ImageExtent = extent,
                 ImageArrayLayers = 1,
-                ImageUsage = ImageUsageFlags.ImageUsageColorAttachmentBit
+                ImageUsage = ImageUsageFlags.ColorAttachmentBit
             };
 
             var indices = FindQueueFamilies(_physicalDevice);
@@ -686,7 +686,7 @@ namespace VulkanTriangle
                 }
 
                 createInfo.PreTransform = swapChainSupport.Capabilities.CurrentTransform;
-                createInfo.CompositeAlpha = CompositeAlphaFlagsKHR.CompositeAlphaOpaqueBitKhr;
+                createInfo.CompositeAlpha = CompositeAlphaFlagsKHR.OpaqueBitKhr;
                 createInfo.PresentMode = presentMode;
                 createInfo.Clipped = Vk.True;
 
@@ -776,13 +776,13 @@ namespace VulkanTriangle
         {
             foreach (var availablePresentMode in presentModes)
             {
-                if (availablePresentMode == PresentModeKHR.PresentModeMailboxKhr)
+                if (availablePresentMode == PresentModeKHR.MailboxKhr)
                 {
                     return availablePresentMode;
                 }
             }
 
-            return PresentModeKHR.PresentModeFifoKhr;
+            return PresentModeKHR.FifoKhr;
         }
 
         private SurfaceFormatKHR ChooseSwapSurfaceFormat(SurfaceFormatKHR[] formats)
@@ -808,7 +808,7 @@ namespace VulkanTriangle
                 {
                     SType = StructureType.ImageViewCreateInfo,
                     Image = _swapchainImages[i],
-                    ViewType = ImageViewType.ImageViewType2D,
+                    ViewType = ImageViewType.Type2D,
                     Format = _swapchainImageFormat,
                     Components =
                     {
@@ -819,7 +819,7 @@ namespace VulkanTriangle
                     },
                     SubresourceRange =
                     {
-                        AspectMask = ImageAspectFlags.ImageAspectColorBit,
+                        AspectMask = ImageAspectFlags.ColorBit,
                         BaseMipLevel = 0,
                         LevelCount = 1,
                         BaseArrayLayer = 0,
@@ -842,7 +842,7 @@ namespace VulkanTriangle
             var colorAttachment = new AttachmentDescription
             {
                 Format = _swapchainImageFormat,
-                Samples = SampleCountFlags.SampleCount1Bit,
+                Samples = SampleCountFlags.Count1Bit,
                 LoadOp = AttachmentLoadOp.Clear,
                 StoreOp = AttachmentStoreOp.Store,
                 StencilLoadOp = AttachmentLoadOp.DontCare,
@@ -868,10 +868,10 @@ namespace VulkanTriangle
             {
                 SrcSubpass = Vk.SubpassExternal,
                 DstSubpass = 0,
-                SrcStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit,
+                SrcStageMask = PipelineStageFlags.ColorAttachmentOutputBit,
                 SrcAccessMask = 0,
-                DstStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit,
-                DstAccessMask = AccessFlags.AccessColorAttachmentReadBit | AccessFlags.AccessColorAttachmentWriteBit
+                DstStageMask = PipelineStageFlags.ColorAttachmentOutputBit,
+                DstAccessMask = AccessFlags.ColorAttachmentReadBit | AccessFlags.ColorAttachmentWriteBit
             };
 
             var renderPassInfo = new RenderPassCreateInfo
@@ -905,7 +905,7 @@ namespace VulkanTriangle
             var vertShaderStageInfo = new PipelineShaderStageCreateInfo
             {
                 SType = StructureType.PipelineShaderStageCreateInfo,
-                Stage = ShaderStageFlags.ShaderStageVertexBit,
+                Stage = ShaderStageFlags.VertexBit,
                 Module = vertShaderModule,
                 PName = (byte*) SilkMarshal.StringToPtr("main")
             };
@@ -913,7 +913,7 @@ namespace VulkanTriangle
             var fragShaderStageInfo = new PipelineShaderStageCreateInfo
             {
                 SType = StructureType.PipelineShaderStageCreateInfo,
-                Stage = ShaderStageFlags.ShaderStageFragmentBit,
+                Stage = ShaderStageFlags.FragmentBit,
                 Module = fragShaderModule,
                 PName = (byte*) SilkMarshal.StringToPtr("main")
             };
@@ -964,7 +964,7 @@ namespace VulkanTriangle
                 RasterizerDiscardEnable = Vk.False,
                 PolygonMode = PolygonMode.Fill,
                 LineWidth = 1.0f,
-                CullMode = CullModeFlags.CullModeBackBit,
+                CullMode = CullModeFlags.BackBit,
                 FrontFace = FrontFace.Clockwise,
                 DepthBiasEnable = Vk.False
             };
@@ -973,15 +973,15 @@ namespace VulkanTriangle
             {
                 SType = StructureType.PipelineMultisampleStateCreateInfo,
                 SampleShadingEnable = Vk.False,
-                RasterizationSamples = SampleCountFlags.SampleCount1Bit
+                RasterizationSamples = SampleCountFlags.Count1Bit
             };
 
             var colorBlendAttachment = new PipelineColorBlendAttachmentState
             {
-                ColorWriteMask = ColorComponentFlags.ColorComponentRBit |
-                                 ColorComponentFlags.ColorComponentGBit |
-                                 ColorComponentFlags.ColorComponentBBit |
-                                 ColorComponentFlags.ColorComponentABit,
+                ColorWriteMask = ColorComponentFlags.RBit |
+                                 ColorComponentFlags.GBit |
+                                 ColorComponentFlags.BBit |
+                                 ColorComponentFlags.ABit,
                 BlendEnable = Vk.False
             };
 
@@ -1179,7 +1179,7 @@ namespace VulkanTriangle
 
             FenceCreateInfo fenceInfo = new FenceCreateInfo();
             fenceInfo.SType = StructureType.FenceCreateInfo;
-            fenceInfo.Flags = FenceCreateFlags.FenceCreateSignaledBit;
+            fenceInfo.Flags = FenceCreateFlags.SignaledBit;
 
             for (var i = 0; i < MaxFramesInFlight; i++)
             {

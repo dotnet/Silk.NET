@@ -12,13 +12,25 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFullScreenExclusiveEXT")]
     public enum FullScreenExclusiveEXT : int
     {
+        [Obsolete("Deprecated in favour of \"DefaultExt\"")]
         [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_DEFAULT_EXT")]
         FullScreenExclusiveDefaultExt = 0,
+        [Obsolete("Deprecated in favour of \"AllowedExt\"")]
         [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_ALLOWED_EXT")]
         FullScreenExclusiveAllowedExt = 1,
+        [Obsolete("Deprecated in favour of \"DisallowedExt\"")]
         [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_DISALLOWED_EXT")]
         FullScreenExclusiveDisallowedExt = 2,
+        [Obsolete("Deprecated in favour of \"ApplicationControlledExt\"")]
         [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT")]
         FullScreenExclusiveApplicationControlledExt = 3,
+        [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_DEFAULT_EXT")]
+        DefaultExt = 0,
+        [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_ALLOWED_EXT")]
+        AllowedExt = 1,
+        [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_DISALLOWED_EXT")]
+        DisallowedExt = 2,
+        [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT")]
+        ApplicationControlledExt = 3,
     }
 }

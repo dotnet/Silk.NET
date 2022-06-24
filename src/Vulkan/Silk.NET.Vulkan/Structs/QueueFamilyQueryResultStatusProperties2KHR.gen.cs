@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.QueueFamilyQueryResultStatusProperties2Khr,
             void* pNext = null,
-            Bool32? supported = null
+            Bool32? queryResultStatusSupport = null
         ) : this()
         {
             if (sType is not null)
@@ -36,9 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (supported is not null)
+            if (queryResultStatusSupport is not null)
             {
-                Supported = supported.Value;
+                QueryResultStatusSupport = queryResultStatusSupport.Value;
             }
         }
 
@@ -55,8 +55,8 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "supported")]
-        public Bool32 Supported;
+        [NativeName("Name", "queryResultStatusSupport")]
+        public Bool32 QueryResultStatusSupport;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

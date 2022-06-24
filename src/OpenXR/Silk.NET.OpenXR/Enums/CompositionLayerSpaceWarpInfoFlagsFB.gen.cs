@@ -15,7 +15,10 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"FrameSkipBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SPACE_WARP_INFO_FRAME_SKIP_BIT_FB")]
         CompositionLayerSpaceWarpInfoFrameSkipBitFB = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SPACE_WARP_INFO_FRAME_SKIP_BIT_FB")]
+        FrameSkipBitFB = 1,
     }
 }

@@ -15,11 +15,20 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"UserPathBit\"")]
         [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_USER_PATH_BIT")]
         InputSourceLocalizedNameUserPathBit = 1,
+        [Obsolete("Deprecated in favour of \"InteractionProfileBit\"")]
         [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_INTERACTION_PROFILE_BIT")]
         InputSourceLocalizedNameInteractionProfileBit = 2,
+        [Obsolete("Deprecated in favour of \"ComponentBit\"")]
         [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_COMPONENT_BIT")]
         InputSourceLocalizedNameComponentBit = 4,
+        [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_USER_PATH_BIT")]
+        UserPathBit = 1,
+        [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_INTERACTION_PROFILE_BIT")]
+        InteractionProfileBit = 2,
+        [NativeName("Name", "XR_INPUT_SOURCE_LOCALIZED_NAME_COMPONENT_BIT")]
+        ComponentBit = 4,
     }
 }

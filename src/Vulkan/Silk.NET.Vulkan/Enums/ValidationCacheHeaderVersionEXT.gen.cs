@@ -12,7 +12,10 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkValidationCacheHeaderVersionEXT")]
     public enum ValidationCacheHeaderVersionEXT : int
     {
+        [Obsolete("Deprecated in favour of \"OneExt\"")]
         [NativeName("Name", "VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT")]
         ValidationCacheHeaderVersionOneExt = 1,
+        [NativeName("Name", "VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT")]
+        OneExt = 1,
     }
 }

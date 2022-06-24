@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "CullParameterEXT")]
     public enum CullParameterEXT : int
     {
+        [Obsolete("Deprecated in favour of \"EyePositionExt\"")]
         [NativeName("Name", "GL_CULL_VERTEX_EYE_POSITION_EXT")]
         CullVertexEyePositionExt = 0x81AB,
+        [Obsolete("Deprecated in favour of \"ObjectPositionExt\"")]
         [NativeName("Name", "GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
         CullVertexObjectPositionExt = 0x81AC,
+        [NativeName("Name", "GL_CULL_VERTEX_EYE_POSITION_EXT")]
+        EyePositionExt = 0x81AB,
+        [NativeName("Name", "GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
+        ObjectPositionExt = 0x81AC,
     }
 }

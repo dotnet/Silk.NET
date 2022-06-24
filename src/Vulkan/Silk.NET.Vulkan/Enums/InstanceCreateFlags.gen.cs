@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"EnumeratePortabilityBitKhr\"")]
         [NativeName("Name", "VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR")]
         InstanceCreateEnumeratePortabilityBitKhr = 1,
+        [NativeName("Name", "VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR")]
+        EnumeratePortabilityBitKhr = 1,
     }
 }

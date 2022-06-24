@@ -15,9 +15,15 @@ namespace Silk.NET.Direct3D11
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"NoOverwrite\"")]
         [NativeName("Name", "D3D11_COPY_NO_OVERWRITE")]
         CopyNoOverwrite = 0x1,
+        [Obsolete("Deprecated in favour of \"Discard\"")]
         [NativeName("Name", "D3D11_COPY_DISCARD")]
         CopyDiscard = 0x2,
+        [NativeName("Name", "D3D11_COPY_NO_OVERWRITE")]
+        NoOverwrite = 0x1,
+        [NativeName("Name", "D3D11_COPY_DISCARD")]
+        Discard = 0x2,
     }
 }

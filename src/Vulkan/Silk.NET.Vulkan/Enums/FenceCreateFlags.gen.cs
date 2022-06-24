@@ -15,7 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"SignaledBit\"")]
         [NativeName("Name", "VK_FENCE_CREATE_SIGNALED_BIT")]
         FenceCreateSignaledBit = 1,
+        [NativeName("Name", "VK_FENCE_CREATE_SIGNALED_BIT")]
+        SignaledBit = 1,
     }
 }

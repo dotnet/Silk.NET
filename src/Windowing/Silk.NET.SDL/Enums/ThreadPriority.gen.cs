@@ -16,13 +16,25 @@ namespace Silk.NET.SDL
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"Low\"")]
         [NativeName("Name", "SDL_THREAD_PRIORITY_LOW")]
         ThreadPriorityLow = 0x0,
+        [Obsolete("Deprecated in favour of \"Normal\"")]
         [NativeName("Name", "SDL_THREAD_PRIORITY_NORMAL")]
         ThreadPriorityNormal = 0x1,
+        [Obsolete("Deprecated in favour of \"High\"")]
         [NativeName("Name", "SDL_THREAD_PRIORITY_HIGH")]
         ThreadPriorityHigh = 0x2,
+        [Obsolete("Deprecated in favour of \"TimeCritical\"")]
         [NativeName("Name", "SDL_THREAD_PRIORITY_TIME_CRITICAL")]
         ThreadPriorityTimeCritical = 0x3,
+        [NativeName("Name", "SDL_THREAD_PRIORITY_LOW")]
+        Low = 0x0,
+        [NativeName("Name", "SDL_THREAD_PRIORITY_NORMAL")]
+        Normal = 0x1,
+        [NativeName("Name", "SDL_THREAD_PRIORITY_HIGH")]
+        High = 0x2,
+        [NativeName("Name", "SDL_THREAD_PRIORITY_TIME_CRITICAL")]
+        TimeCritical = 0x3,
     }
 }

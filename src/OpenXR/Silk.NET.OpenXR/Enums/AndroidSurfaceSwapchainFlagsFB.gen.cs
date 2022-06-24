@@ -15,9 +15,15 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Name", "")]
         None = 0,
+        [Obsolete("Deprecated in favour of \"SynchronousBitFB\"")]
         [NativeName("Name", "XR_ANDROID_SURFACE_SWAPCHAIN_SYNCHRONOUS_BIT_FB")]
         AndroidSurfaceSwapchainSynchronousBitFB = 1,
+        [Obsolete("Deprecated in favour of \"UseTimestampsBitFB\"")]
         [NativeName("Name", "XR_ANDROID_SURFACE_SWAPCHAIN_USE_TIMESTAMPS_BIT_FB")]
         AndroidSurfaceSwapchainUseTimestampsBitFB = 2,
+        [NativeName("Name", "XR_ANDROID_SURFACE_SWAPCHAIN_SYNCHRONOUS_BIT_FB")]
+        SynchronousBitFB = 1,
+        [NativeName("Name", "XR_ANDROID_SURFACE_SWAPCHAIN_USE_TIMESTAMPS_BIT_FB")]
+        UseTimestampsBitFB = 2,
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.DXGI
         public const int FormatDefined = unchecked((int) 0x1);
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
-        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F4);
+        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F5);
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
         public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
@@ -182,6 +182,11 @@ namespace Silk.NET.DXGI
         [NativeName("Src", "Line 93, Column 16 in dxgi1_6.h")]
         [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport", Convention = CallingConvention.StdCall)]
         public partial int DeclareAdapterRemovalSupport();
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1614, Column 16 in dxgi1_6.h")]
+        [NativeApi(EntryPoint = "DXGIDisableVBlankVirtualization", Convention = CallingConvention.StdCall)]
+        public partial int DisableVBlankVirtualization();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]

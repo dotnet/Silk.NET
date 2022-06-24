@@ -149,7 +149,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             // Create the render pass
             var colorAttachment = new AttachmentDescription();
             colorAttachment.Format = swapChainFormat;
-            colorAttachment.Samples = SampleCountFlags.SampleCount1Bit;
+            colorAttachment.Samples = SampleCountFlags.Count1Bit;
             colorAttachment.LoadOp = AttachmentLoadOp.Load;
             colorAttachment.StoreOp = AttachmentStoreOp.Store;
             colorAttachment.StencilLoadOp = AttachmentLoadOp.DontCare;
@@ -172,7 +172,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             if (depthBufferFormat.HasValue)
             {
                 depthAttachment.Format = depthBufferFormat.Value;
-                depthAttachment.Samples = SampleCountFlags.SampleCount1Bit;
+                depthAttachment.Samples = SampleCountFlags.Count1Bit;
                 depthAttachment.LoadOp = AttachmentLoadOp.Load;
                 depthAttachment.StoreOp = AttachmentStoreOp.DontCare;
                 depthAttachment.StencilLoadOp = AttachmentLoadOp.DontCare;
@@ -191,10 +191,10 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var dependency = new SubpassDependency();
             dependency.SrcSubpass = Vk.SubpassExternal;
             dependency.DstSubpass = 0;
-            dependency.SrcStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit;
+            dependency.SrcStageMask = PipelineStageFlags.ColorAttachmentOutputBit;
             dependency.SrcAccessMask = 0;
-            dependency.DstStageMask = PipelineStageFlags.PipelineStageColorAttachmentOutputBit;
-            dependency.DstAccessMask = AccessFlags.AccessColorAttachmentReadBit | AccessFlags.AccessColorAttachmentWriteBit;
+            dependency.DstStageMask = PipelineStageFlags.ColorAttachmentOutputBit;
+            dependency.DstAccessMask = AccessFlags.ColorAttachmentReadBit | AccessFlags.ColorAttachmentWriteBit;
 
             var renderPassInfo = new RenderPassCreateInfo();
             renderPassInfo.SType = StructureType.RenderPassCreateInfo;
@@ -231,7 +231,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var binding = new DescriptorSetLayoutBinding();
             binding.DescriptorType = DescriptorType.CombinedImageSampler;
             binding.DescriptorCount = 1;
-            binding.StageFlags = ShaderStageFlags.ShaderStageFragmentBit;
+            binding.StageFlags = ShaderStageFlags.FragmentBit;
             binding.PImmutableSamplers = (Sampler*)Unsafe.AsPointer(ref sampler);
 
             var descriptorInfo = new DescriptorSetLayoutCreateInfo();
@@ -257,7 +257,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             }
 
             var vertPushConst = new PushConstantRange();
-            vertPushConst.StageFlags = ShaderStageFlags.ShaderStageVertexBit;
+            vertPushConst.StageFlags = ShaderStageFlags.VertexBit;
             vertPushConst.Offset = sizeof(float) * 0;
             vertPushConst.Size = sizeof(float) * 4;
 
@@ -306,11 +306,11 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             // Create the pipeline
             Span<PipelineShaderStageCreateInfo> stage = stackalloc PipelineShaderStageCreateInfo[2];
             stage[0].SType = StructureType.PipelineShaderStageCreateInfo;
-            stage[0].Stage = ShaderStageFlags.ShaderStageVertexBit;
+            stage[0].Stage = ShaderStageFlags.VertexBit;
             stage[0].Module = _shaderModuleVert;
             stage[0].PName = (byte*)SilkMarshal.StringToPtr("main");
             stage[1].SType = StructureType.PipelineShaderStageCreateInfo;
-            stage[1].Stage = ShaderStageFlags.ShaderStageFragmentBit;
+            stage[1].Stage = ShaderStageFlags.FragmentBit;
             stage[1].Module = _shaderModuleFrag;
             stage[1].PName = (byte*)SilkMarshal.StringToPtr("main");
 
@@ -351,13 +351,13 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var raster_info = new PipelineRasterizationStateCreateInfo();
             raster_info.SType = StructureType.PipelineRasterizationStateCreateInfo;
             raster_info.PolygonMode = PolygonMode.Fill;
-            raster_info.CullMode = CullModeFlags.CullModeNone;
+            raster_info.CullMode = CullModeFlags.None;
             raster_info.FrontFace = FrontFace.CounterClockwise;
             raster_info.LineWidth = 1.0f;
 
             var ms_info = new PipelineMultisampleStateCreateInfo();
             ms_info.SType = StructureType.PipelineMultisampleStateCreateInfo;
-            ms_info.RasterizationSamples = SampleCountFlags.SampleCount1Bit;
+            ms_info.RasterizationSamples = SampleCountFlags.Count1Bit;
 
             var color_attachment = new PipelineColorBlendAttachmentState();
             color_attachment.BlendEnable = new Silk.NET.Core.Bool32(true);
@@ -367,7 +367,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             color_attachment.SrcAlphaBlendFactor = BlendFactor.One;
             color_attachment.DstAlphaBlendFactor = BlendFactor.OneMinusSrcAlpha;
             color_attachment.AlphaBlendOp = BlendOp.Add;
-            color_attachment.ColorWriteMask = ColorComponentFlags.ColorComponentRBit | ColorComponentFlags.ColorComponentGBit | ColorComponentFlags.ColorComponentBBit | ColorComponentFlags.ColorComponentABit;
+            color_attachment.ColorWriteMask = ColorComponentFlags.RBit | ColorComponentFlags.GBit | ColorComponentFlags.BBit | ColorComponentFlags.ABit;
 
             var depth_info = new PipelineDepthStencilStateCreateInfo();
             depth_info.SType = StructureType.PipelineDepthStencilStateCreateInfo;
@@ -434,7 +434,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
 
             var beginInfo = new CommandBufferBeginInfo();
             beginInfo.SType = StructureType.CommandBufferBeginInfo;
-            beginInfo.Flags = CommandBufferUsageFlags.CommandBufferUsageOneTimeSubmitBit;
+            beginInfo.Flags = CommandBufferUsageFlags.OneTimeSubmitBit;
             if (_vk.BeginCommandBuffer(commandBuffer, beginInfo) != Result.Success)
             {
                 throw new Exception($"Failed to begin a command buffer");
@@ -442,16 +442,16 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
 
             var imageInfo = new ImageCreateInfo();
             imageInfo.SType = StructureType.ImageCreateInfo;
-            imageInfo.ImageType = ImageType.ImageType2D;
+            imageInfo.ImageType = ImageType.Type2D;
             imageInfo.Format = Format.R8G8B8A8Unorm;
             imageInfo.Extent.Width = (uint)width;
             imageInfo.Extent.Height = (uint)height;
             imageInfo.Extent.Depth = 1;
             imageInfo.MipLevels = 1;
             imageInfo.ArrayLayers = 1;
-            imageInfo.Samples = SampleCountFlags.SampleCount1Bit;
+            imageInfo.Samples = SampleCountFlags.Count1Bit;
             imageInfo.Tiling = ImageTiling.Optimal;
-            imageInfo.Usage = ImageUsageFlags.ImageUsageSampledBit | ImageUsageFlags.ImageUsageTransferDstBit;
+            imageInfo.Usage = ImageUsageFlags.SampledBit | ImageUsageFlags.TransferDstBit;
             imageInfo.SharingMode = SharingMode.Exclusive;
             imageInfo.InitialLayout = ImageLayout.Undefined;
             if (_vk.CreateImage(_device, imageInfo, default, out _fontImage) != Result.Success)
@@ -462,7 +462,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var fontAllocInfo = new MemoryAllocateInfo();
             fontAllocInfo.SType = StructureType.MemoryAllocateInfo;
             fontAllocInfo.AllocationSize = fontReq.Size;
-            fontAllocInfo.MemoryTypeIndex = GetMemoryTypeIndex(vk, MemoryPropertyFlags.MemoryPropertyDeviceLocalBit, fontReq.MemoryTypeBits);
+            fontAllocInfo.MemoryTypeIndex = GetMemoryTypeIndex(vk, MemoryPropertyFlags.DeviceLocalBit, fontReq.MemoryTypeBits);
             if (_vk.AllocateMemory(_device, &fontAllocInfo, default, out _fontMemory) != Result.Success)
             {
                 throw new Exception($"Failed to allocate device memory");
@@ -475,9 +475,9 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var imageViewInfo = new ImageViewCreateInfo();
             imageViewInfo.SType = StructureType.ImageViewCreateInfo;
             imageViewInfo.Image = _fontImage;
-            imageViewInfo.ViewType = ImageViewType.ImageViewType2D;
+            imageViewInfo.ViewType = ImageViewType.Type2D;
             imageViewInfo.Format = Format.R8G8B8A8Unorm;
-            imageViewInfo.SubresourceRange.AspectMask = ImageAspectFlags.ImageAspectColorBit;
+            imageViewInfo.SubresourceRange.AspectMask = ImageAspectFlags.ColorBit;
             imageViewInfo.SubresourceRange.LevelCount = 1;
             imageViewInfo.SubresourceRange.LayerCount = 1;
             if (_vk.CreateImageView(_device, &imageViewInfo, default, out _fontView) != Result.Success)
@@ -501,7 +501,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var bufferInfo = new BufferCreateInfo();
             bufferInfo.SType = StructureType.BufferCreateInfo;
             bufferInfo.Size = upload_size;
-            bufferInfo.Usage = BufferUsageFlags.BufferUsageTransferSrcBit;
+            bufferInfo.Usage = BufferUsageFlags.TransferSrcBit;
             bufferInfo.SharingMode = SharingMode.Exclusive;
             if (_vk.CreateBuffer(_device, bufferInfo, default, out var uploadBuffer) != Result.Success)
             {
@@ -514,7 +514,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             var uploadAllocInfo = new MemoryAllocateInfo();
             uploadAllocInfo.SType = StructureType.MemoryAllocateInfo;
             uploadAllocInfo.AllocationSize = uploadReq.Size;
-            uploadAllocInfo.MemoryTypeIndex = GetMemoryTypeIndex(vk, MemoryPropertyFlags.MemoryPropertyHostVisibleBit, uploadReq.MemoryTypeBits);
+            uploadAllocInfo.MemoryTypeIndex = GetMemoryTypeIndex(vk, MemoryPropertyFlags.HostVisibleBit, uploadReq.MemoryTypeBits);
             if (_vk.AllocateMemory(_device, uploadAllocInfo, default, out var uploadBufferMemory) != Result.Success)
             {
                 throw new Exception($"Failed to allocate device memory");
@@ -545,19 +545,19 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
 
             var copyBarrier = new ImageMemoryBarrier();
             copyBarrier.SType = StructureType.ImageMemoryBarrier;
-            copyBarrier.DstAccessMask = AccessFlags.AccessTransferWriteBit;
+            copyBarrier.DstAccessMask = AccessFlags.TransferWriteBit;
             copyBarrier.OldLayout = ImageLayout.Undefined;
             copyBarrier.NewLayout = ImageLayout.TransferDstOptimal;
             copyBarrier.SrcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             copyBarrier.DstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             copyBarrier.Image = _fontImage;
-            copyBarrier.SubresourceRange.AspectMask = ImageAspectFlags.ImageAspectColorBit;
+            copyBarrier.SubresourceRange.AspectMask = ImageAspectFlags.ColorBit;
             copyBarrier.SubresourceRange.LevelCount = 1;
             copyBarrier.SubresourceRange.LayerCount = 1;
-            _vk.CmdPipelineBarrier(commandBuffer, PipelineStageFlags.PipelineStageHostBit, PipelineStageFlags.PipelineStageTransferBit, 0, 0, default, 0, default, 1, copyBarrier);
+            _vk.CmdPipelineBarrier(commandBuffer, PipelineStageFlags.HostBit, PipelineStageFlags.TransferBit, 0, 0, default, 0, default, 1, copyBarrier);
 
             var region = new BufferImageCopy();
-            region.ImageSubresource.AspectMask = ImageAspectFlags.ImageAspectColorBit;
+            region.ImageSubresource.AspectMask = ImageAspectFlags.ColorBit;
             region.ImageSubresource.LayerCount = 1;
             region.ImageExtent.Width = (uint)width;
             region.ImageExtent.Height = (uint)height;
@@ -566,17 +566,17 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
 
             var use_barrier = new ImageMemoryBarrier();
             use_barrier.SType = StructureType.ImageMemoryBarrier;
-            use_barrier.SrcAccessMask = AccessFlags.AccessTransferWriteBit;
-            use_barrier.DstAccessMask = AccessFlags.AccessShaderReadBit;
+            use_barrier.SrcAccessMask = AccessFlags.TransferWriteBit;
+            use_barrier.DstAccessMask = AccessFlags.ShaderReadBit;
             use_barrier.OldLayout = ImageLayout.TransferDstOptimal;
             use_barrier.NewLayout = ImageLayout.ShaderReadOnlyOptimal;
             use_barrier.SrcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             use_barrier.DstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             use_barrier.Image = _fontImage;
-            use_barrier.SubresourceRange.AspectMask = ImageAspectFlags.ImageAspectColorBit;
+            use_barrier.SubresourceRange.AspectMask = ImageAspectFlags.ColorBit;
             use_barrier.SubresourceRange.LevelCount = 1;
             use_barrier.SubresourceRange.LayerCount = 1;
-            _vk.CmdPipelineBarrier(commandBuffer, PipelineStageFlags.PipelineStageTransferBit, PipelineStageFlags.PipelineStageFragmentShaderBit, 0, 0, default, 0, default, 1, use_barrier);
+            _vk.CmdPipelineBarrier(commandBuffer, PipelineStageFlags.TransferBit, PipelineStageFlags.FragmentShaderBit, 0, 0, default, 0, default, 1, use_barrier);
 
             // Store our identifier
             io.Fonts.SetTexID((IntPtr)_fontImage.Handle);
@@ -810,11 +810,11 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
                 ulong index_size = (ulong)drawData.TotalIdxCount * (ulong)sizeof(ushort);
                 if (frameRenderBuffer.VertexBuffer.Handle == default || frameRenderBuffer.VertexBufferSize < vertex_size)
                 {
-                    CreateOrResizeBuffer(ref frameRenderBuffer.VertexBuffer, ref frameRenderBuffer.VertexBufferMemory, ref frameRenderBuffer.VertexBufferSize, vertex_size, BufferUsageFlags.BufferUsageVertexBufferBit);
+                    CreateOrResizeBuffer(ref frameRenderBuffer.VertexBuffer, ref frameRenderBuffer.VertexBufferMemory, ref frameRenderBuffer.VertexBufferSize, vertex_size, BufferUsageFlags.VertexBufferBit);
                 }
                 if (frameRenderBuffer.IndexBuffer.Handle == default || frameRenderBuffer.IndexBufferSize < index_size)
                 {
-                    CreateOrResizeBuffer(ref frameRenderBuffer.IndexBuffer, ref frameRenderBuffer.IndexBufferMemory, ref frameRenderBuffer.IndexBufferSize, index_size, BufferUsageFlags.BufferUsageIndexBufferBit);
+                    CreateOrResizeBuffer(ref frameRenderBuffer.IndexBuffer, ref frameRenderBuffer.IndexBufferMemory, ref frameRenderBuffer.IndexBufferSize, index_size, BufferUsageFlags.IndexBufferBit);
                 }
 
                 // Upload vertex/index data into a single contiguous GPU buffer
@@ -883,8 +883,8 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             Span<float> translate = stackalloc float[2];
             translate[0] = -1.0f - drawData.DisplayPos.X * scale[0];
             translate[1] = -1.0f - drawData.DisplayPos.Y * scale[1];
-            _vk.CmdPushConstants(commandBuffer, _pipelineLayout, ShaderStageFlags.ShaderStageVertexBit, sizeof(float) * 0, sizeof(float) * 2, scale);
-            _vk.CmdPushConstants(commandBuffer, _pipelineLayout, ShaderStageFlags.ShaderStageVertexBit, sizeof(float) * 2, sizeof(float) * 2, translate);
+            _vk.CmdPushConstants(commandBuffer, _pipelineLayout, ShaderStageFlags.VertexBit, sizeof(float) * 0, sizeof(float) * 2, scale);
+            _vk.CmdPushConstants(commandBuffer, _pipelineLayout, ShaderStageFlags.VertexBit, sizeof(float) * 2, sizeof(float) * 2, translate);
 
             // Will project scissor/clipping rectangles into framebuffer space
             Vector2 clipOff = drawData.DisplayPos;         // (0,0) unless using multi-viewports
@@ -962,7 +962,7 @@ namespace Silk.NET.Vulkan.Extensions.ImGui
             MemoryAllocateInfo allocInfo = new MemoryAllocateInfo();
             allocInfo.SType = StructureType.MemoryAllocateInfo;
             allocInfo.AllocationSize = req.Size;
-            allocInfo.MemoryTypeIndex = GetMemoryTypeIndex(_vk, MemoryPropertyFlags.MemoryPropertyHostVisibleBit, req.MemoryTypeBits);
+            allocInfo.MemoryTypeIndex = GetMemoryTypeIndex(_vk, MemoryPropertyFlags.HostVisibleBit, req.MemoryTypeBits);
             if (_vk.AllocateMemory(_device, &allocInfo, default, out buffer_memory) != Result.Success)
             {
                 throw new Exception($"Unable to allocate device memory");
