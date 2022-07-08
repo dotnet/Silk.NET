@@ -67,7 +67,7 @@ public class StructTests
      Trait("Feature", "Fields")]
     public void StructFieldIsVisited()
     {
-        var member = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
+        var member = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
         var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
             member
@@ -90,8 +90,8 @@ public class StructTests
      Trait("Feature", "Fields")]
     public void StructFieldsAreVisited()
     {
-        var member1 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test1"));
-        var member2 = new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test2"));
+        var member1 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
+        var member2 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test2"));
         var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
         {
             member1, member2

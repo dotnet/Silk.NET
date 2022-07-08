@@ -8,4 +8,8 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// </summary>
 /// <param name="Value">The String Value of this identifier</param>
 /// <seealso cref="TypeSymbol"/>
-public sealed record IdentifierSymbol(string Value) : Symbol;
+public sealed record IdentifierSymbol(string Value) : Symbol
+{
+    /// <inheritdoc cref="object.ToString"/>
+    public override string ToString() => Value;
+}

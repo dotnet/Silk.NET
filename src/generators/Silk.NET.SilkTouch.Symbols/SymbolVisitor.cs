@@ -22,6 +22,7 @@ public abstract class SymbolVisitor
         if (symbol is NamespaceSymbol ns) return VisitNamespace(ns);
 
         if (symbol is IdentifierSymbol @is) return VisitIdentifier(@is);
+        if (symbol is ExternalTypeReference etr) return VisitExternalTypeReference(etr); 
 
         return ThrowUnknownSymbol<Symbol>(symbol);
     }
@@ -49,7 +50,24 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
     {
-        return new FieldSymbol(VisitType(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
+        return new FieldSymbol(VisitExternalTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
+    }
+    
+    /// <summary>
+    /// Visit an <see cref="ExternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the reference.
+    /// </summary>
+    /// <param name="typeReference">The type reference to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
+    {
+        return new ExternalTypeReference
+        (
+            typeReference.Namespace is null ? null : VisitIdentifier(typeReference.Namespace),
+            VisitIdentifier(typeReference.TypeIdentifier)
+        );
     }
 
     /// <summary>

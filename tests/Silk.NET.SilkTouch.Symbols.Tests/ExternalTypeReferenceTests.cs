@@ -13,6 +13,11 @@ public class ExternalTypeReferenceTests
     [Trait("Category", "Symbols")]
     public void ProducesCorrectFullType(string? @namespace, string type, string expected)
     {
-        Assert.Equal(expected, new ExternalTypeReference(@namespace, type).FullType);
+        Assert.Equal
+        (
+            expected,
+            new ExternalTypeReference
+                (@namespace is null ? null : new IdentifierSymbol(@namespace), new IdentifierSymbol(type)).FullType
+        );
     }
 }

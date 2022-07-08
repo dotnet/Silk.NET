@@ -6,7 +6,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="FieldSymbol"/>. A field is simply a named location that can hold some type.
 /// </summary>
-/// <param name="Type">The <see cref="TypeSymbol"/> of the data stored in this field</param>
+/// <param name="Type">The <see cref="ExternalTypeReference"/> of the data stored in this field</param>
 /// <param name="Identifier">The Identifier of this field</param>
 /// <seealso cref="MemberSymbol"/>
-public sealed record FieldSymbol(TypeSymbol Type, IdentifierSymbol Identifier) : MemberSymbol;
+public sealed record FieldSymbol(ExternalTypeReference Type, IdentifierSymbol Identifier) : MemberSymbol;

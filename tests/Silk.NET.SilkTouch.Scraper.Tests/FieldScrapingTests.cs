@@ -50,6 +50,6 @@ public class FieldScrapingTests
         
         var symbol = Assert.Single(symbols);
         var field = Assert.IsType<FieldSymbol>(symbol);
-        Assert.Equal("int", field.Type.Identifier.Value);
+        Assert.Equal("int", field.Type.FullType);
     }
 }
