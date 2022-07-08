@@ -25,7 +25,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                 { 
                     new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
                         new IdentifierSymbol("F1")
                     )  
                 }.ToImmutableArray()
@@ -57,17 +57,17 @@ public class EmitterStructMemberFieldsTests : EmitterTest
                 {
                     new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
                         new IdentifierSymbol("F1")
                     ),
                     new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
                         new IdentifierSymbol("F2")
                     ),
                     new FieldSymbol
                     (
-                        new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                        new ExternalTypeReference(null, new IdentifierSymbol("int")),
                         new IdentifierSymbol("F3")
                     )
                 }.ToImmutableArray()

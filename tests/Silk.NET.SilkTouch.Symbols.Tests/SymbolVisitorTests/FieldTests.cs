@@ -15,7 +15,7 @@ public class FieldTests
      Trait("Feature", "Fields")]
     public void FieldIsVisitedAsField()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -32,7 +32,7 @@ public class FieldTests
      Trait("Feature", "Fields")]
     public void FieldIsVisitedAsMember()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -49,7 +49,7 @@ public class FieldTests
      Trait("Feature", "Fields")]
     public void FieldTypeIsVisited()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -58,7 +58,7 @@ public class FieldTests
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
-            .Verify<TypeSymbol>("VisitType", Times.Once(), ItExpr.IsAny<TypeSymbol>());
+            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Exactly(2), ItExpr.IsAny<IdentifierSymbol>());
     }
 
     [Fact,
@@ -66,7 +66,7 @@ public class FieldTests
      Trait("Feature", "Fields")]
     public void FieldIdentifierIsVisited()
     {
-        var symbol = new FieldSymbol(new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol(""));
+        var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
@@ -76,6 +76,6 @@ public class FieldTests
         
         // note that this also tests whether the struct identifier is visited, there's just no good way of testing JUST the field identifier
         visitor.Protected()
-            .Verify<IdentifierSymbol>("VisitIdentifier", Times.Exactly(2), ItExpr.IsAny<IdentifierSymbol>());
+            .Verify<ExternalTypeReference>("VisitExternalTypeReference", Times.Exactly(1), ItExpr.IsAny<ExternalTypeReference>());
     }
 }

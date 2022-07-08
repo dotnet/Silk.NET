@@ -19,7 +19,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
     Trait("Target Language", "C#")]
     public void FieldIntegration()
     {
-        var syntax = Transform(new FieldSymbol(new StructSymbol(new IdentifierSymbol("int"),ImmutableArray<FieldSymbol>.Empty), new IdentifierSymbol("Test")));
+        var syntax = Transform(new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test")));
 
         var result = syntax.ToFullString();
         Assert.Equal("public int Test;", result);
@@ -35,7 +35,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                new ExternalTypeReference(null, new IdentifierSymbol("")),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -54,7 +54,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                new ExternalTypeReference(null, new IdentifierSymbol("int")),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;
@@ -75,7 +75,7 @@ public sealed class EmitterFieldIntegrationTests : EmitterTest
         (
             new FieldSymbol
             (
-                new StructSymbol(new IdentifierSymbol("int"), ImmutableArray<FieldSymbol>.Empty),
+                new ExternalTypeReference(null, new IdentifierSymbol("")),
                 new IdentifierSymbol("Test")
             )
         ) as FieldDeclarationSyntax;

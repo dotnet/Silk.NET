@@ -40,12 +40,14 @@ internal sealed class XmlVisitor
             throw new InvalidOperationException("Field requires a name");
         }
 
-        var type = new StructSymbol
+        var type = new ExternalTypeReference
         (
-            new IdentifierSymbol(
-            field.ChildNodes.Cast<XmlNode>().SingleOrDefault(x => x.Name == "type")?.InnerText ??
-            throw new InvalidOperationException("Could not decode Field Type")),
-            ImmutableArray<FieldSymbol>.Empty
+            null,
+            new IdentifierSymbol
+            (
+                field.ChildNodes.Cast<XmlNode>().SingleOrDefault(x => x.Name == "type")?.InnerText ??
+                throw new InvalidOperationException("Could not decode Field Type")
+            )
         );
 
         return new[]
