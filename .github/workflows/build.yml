@@ -20,7 +20,7 @@ jobs:
             - name: Build
               run: dotnet build -c Release --no-restore
             - name: Test
-              run: dotnet test --no-build
+              run: dotnet test -c Release --no-build
             - name: Pack
               run: dotnet pack -c Release -o ./packages-out/ --version-suffix build${{ github.run_number }}.0
             - name: Push to GitHub Packages
