@@ -24,7 +24,7 @@
         <ProjectReference Include="..\..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
         <ProjectReference Include="..\..\Silk.NET.OpenGL.Legacy\Silk.NET.OpenGL.Legacy.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
-        <PackageReference Include="ImGui.NET" Version="1.78.0" />
+        <PackageReference Include="ImGui.NET" Version="1.87.3" />
     </ItemGroup>
 
     <Import Project="..\..\..\..\build\props\common.props" />
