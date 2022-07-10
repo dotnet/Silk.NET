@@ -45,12 +45,12 @@ jobs:
               run: dotnet test -c Release --no-build --runtime ${{ matrix.rid }}
     Pack:
         needs: Test
+        if: github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request'
         runs-on: ubuntu-latest
         steps:
             - name: Pack
               run: dotnet pack -c Release -o ./packages-out/ --version-suffix build${{ github.run_number }}.0
             - name: Push to GitHub Packages
-              if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
               run: dotnet nuget push ./packages-out/*.nupkg --force-english-output -s https://nuget.pkg.github.com/dotnet/index.json -k ${{ secrets.GITHUB_TOKEN }}
             - uses: actions/upload-artifact@v3
               with:
