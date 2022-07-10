@@ -7,7 +7,7 @@ on:
     pull_request:
         # none
 jobs:
-    Build:
+    Test:
         strategy:
             matrix:
                 fail-fast: false
@@ -41,14 +41,14 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
-            - name: Restore
-              run: dotnet restore --runtime ${{ matrix.rid }}
-            - name: Build
-              run: dotnet build -c Release --no-restore --runtime ${{ matrix.rid }}
             - name: Test
               run: dotnet test -c Release --no-build --runtime ${{ matrix.rid }}
+    Pack:
+        needs: Test
+        runs-on: ubuntu-latest
+        steps:
             - name: Pack
-              run: dotnet pack -c Release -o ./packages-out/ --version-suffix build${{ github.run_number }}.0  --runtime ${{ matrix.rid }}
+              run: dotnet pack -c Release -o ./packages-out/ --version-suffix build${{ github.run_number }}.0
             - name: Push to GitHub Packages
               if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
               run: dotnet nuget push ./packages-out/*.nupkg --force-english-output -s https://nuget.pkg.github.com/dotnet/index.json -k ${{ secrets.GITHUB_TOKEN }}
