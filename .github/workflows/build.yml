@@ -10,15 +10,6 @@ jobs:
     Build:
         strategy:
             matrix:
-                os:
-                    [
-                        ubuntu-22.04,
-                        ubuntu-20.04,
-                        ubuntu-18.04,
-                        windows-latest,
-                        macos-12,
-                        macos-11,
-                    ]
                 # as of writing (10th July 2022) there are only x86_64 machines
                 include:
                     # windows version independent RIDs.
