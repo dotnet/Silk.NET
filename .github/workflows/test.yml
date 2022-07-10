@@ -1,0 +1,45 @@
+name: CI Test
+on:
+    push:
+        branches:
+            - "main"
+            - "release/*"
+    pull_request:
+        # any
+jobs:
+    Test:
+        strategy:
+            fail-fast: false
+            matrix:
+                # as of writing (10th July 2022) there are only x86_64 machines
+                include:
+                    # windows version independent RIDs.
+                    # testing version-specific RIDs seems unreasonable given no clear & obvious mapping
+                    # between datacenter versions and home versions
+                    - rid: win-x64
+                      os: windows-latest
+                    - rid: win-x86
+                      os: windows-latest
+                    # given there appear to be significant differences
+                    # we test all available ubuntu versions here
+                    # if this causes significant slow downs, remove
+                    - rid: linux-x64
+                      os: ubuntu-22.04
+                    - rid: linux-x64
+                      os: ubuntu-20.04
+                    - rid: linux-x64
+                      os: ubuntu-18.04
+                    # macos 10.15 is not tested as the runner image is deprecated.
+                    - rid: osx.12-x64
+                      os: macos-12
+                    - rid: osx.11.0-x64
+                      os: macos-11
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  submodules: "true"
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v2
+            - name: Test
+              run: dotnet test -c Release --no-build --runtime ${{ matrix.rid }}
