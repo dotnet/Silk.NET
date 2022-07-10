@@ -10,6 +10,7 @@ jobs:
     Build:
         strategy:
             matrix:
+                fail-fast: false
                 # as of writing (10th July 2022) there are only x86_64 machines
                 include:
                     # windows version independent RIDs.
