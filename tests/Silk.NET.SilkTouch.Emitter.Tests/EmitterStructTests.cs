@@ -61,7 +61,6 @@ public sealed class EmitterStructTests : EmitterTest
         // Note that this test also covers trivia, which is not checked otherwise.
         Assert.Equal(@"public struct Test
 {
-}
-", Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)).ToFullString());
+}", Transform(new StructSymbol(new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)).ToFullString());
     }
 }

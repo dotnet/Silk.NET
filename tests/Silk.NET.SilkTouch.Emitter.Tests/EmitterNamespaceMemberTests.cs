@@ -22,7 +22,12 @@ public class EmitterNamespaceMemberTests : EmitterTest
         }.ToImmutableArray()));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\npublic struct Test2\n{\n}\n}\n", result);
+        Assert.Equal(@"namespace Test
+{
+    public struct Test2
+    {
+    }
+}", result);
     }
     
     [Fact, 
@@ -38,6 +43,14 @@ public class EmitterNamespaceMemberTests : EmitterTest
         }.ToImmutableArray()));
 
         var result = syntax.ToFullString();
-        Assert.Equal("namespace Test\n{\npublic struct Test2\n{\n}\npublic struct Test3\n{\n}\n}\n", result);
+        Assert.Equal(@"namespace Test
+{
+    public struct Test2
+    {
+    }
+    public struct Test3
+    {
+    }
+}", result);
     }
 }
