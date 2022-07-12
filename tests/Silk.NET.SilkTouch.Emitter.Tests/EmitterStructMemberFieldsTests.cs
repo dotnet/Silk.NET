@@ -37,8 +37,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
             @"public struct Test
 {
     public int F1;
-}
-", node.ToFullString()
+}", node.ToFullString()
         );
     }
     
@@ -81,8 +80,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
     public int F1;
     public int F2;
     public int F3;
-}
-", node.ToFullString()
+}", node.ToFullString()
         );
     }
 }

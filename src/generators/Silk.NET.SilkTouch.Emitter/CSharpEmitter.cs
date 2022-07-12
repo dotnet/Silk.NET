@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -55,11 +56,18 @@ public sealed class CSharpEmitter
         public CSharpSyntaxNode? Syntax => _syntax;
         private CSharpSyntaxNode? _syntax = null;
         private SyntaxToken? _syntaxToken = null;
+        private int _indentationCount = 0;
+
+        private IEnumerable<SyntaxTrivia> Indentation => Enumerable.Repeat(_indentation, _indentationCount);
+        private IEnumerable<SyntaxTrivia> NewLine => Indentation.Prepend(LineFeed);
 
         public Visitor(SyntaxTrivia indentation) : base()
         {
             _indentation = indentation;
         }
+
+        private void Indent() => _indentationCount++;
+        private void Outdent() => _indentationCount--;
 
         protected override StructSymbol VisitStruct(StructSymbol structSymbol)
         {
@@ -70,6 +78,7 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Field Identifier was not visited correctly");
             ClearState();
 
+            Indent();
             var fields = new List<MemberDeclarationSyntax>(structSymbol.Fields.Length);
             foreach (var field in structSymbol.Fields)
             {
@@ -77,12 +86,12 @@ public sealed class CSharpEmitter
                 if (_syntax is not MemberDeclarationSyntax memberDeclarationSyntax)
                     throw new InvalidOperationException("Member was not visited correctly");
                 ClearState();
-                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
-                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(LineFeed, _indentation);
+                memberDeclarationSyntax = memberDeclarationSyntax.WithLeadingTrivia(NewLine);
                 fields.Add(memberDeclarationSyntax);
             }
             
             var members = List(fields);
+            Outdent();
             
             var modifiers = TokenList(Token(SyntaxTriviaList.Empty, SyntaxKind.PublicKeyword, TriviaList(Space)));
             _syntax = StructDeclaration
@@ -91,8 +100,8 @@ public sealed class CSharpEmitter
                     members
                 )
                 .WithKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.StructKeyword, TriviaList(Space)))
-                .WithOpenBraceToken(Token(TriviaList(LineFeed), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
-                .WithCloseBraceToken(Token(TriviaList(LineFeed), SyntaxKind.CloseBraceToken, TriviaList(LineFeed)));
+                .WithOpenBraceToken(Token(TriviaList(NewLine), SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
+                .WithCloseBraceToken(Token(TriviaList(NewLine), SyntaxKind.CloseBraceToken, SyntaxTriviaList.Empty));
             return structSymbol;
         }
 
@@ -136,6 +145,7 @@ public sealed class CSharpEmitter
                 throw new InvalidOperationException("Namespace Identifier was not visited correctly");
             ClearState();
 
+            Indent();
             var types = namespaceSymbol.Types.Select(x =>
             {
                 VisitType(x);
@@ -143,17 +153,17 @@ public sealed class CSharpEmitter
                     throw new InvalidOperationException("Namespace Member was not visited correctly");
                 
                 ClearState();
-                return typeSyntax;
-            });
+                return typeSyntax.WithLeadingTrivia(NewLine);
+            }).ToArray();
+            Outdent();
 
             _syntax = NamespaceDeclaration
                 (
-                    List<AttributeListSyntax>(), TokenList(), namespaceIdentifierSyntax.WithTrailingTrivia(LineFeed),
+                    List<AttributeListSyntax>(), TokenList(), namespaceIdentifierSyntax.WithLeadingTrivia(TriviaList(Space)),
                     List<ExternAliasDirectiveSyntax>(), List<UsingDirectiveSyntax>(), List<MemberDeclarationSyntax>(types)
                 )
-                .WithNamespaceKeyword(Token(SyntaxTriviaList.Empty, SyntaxKind.NamespaceKeyword, TriviaList(Space)))
-                .WithOpenBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.OpenBraceToken, TriviaList(LineFeed)))
-                .WithCloseBraceToken(Token(SyntaxTriviaList.Empty, SyntaxKind.CloseBraceToken, TriviaList(LineFeed)));
+                .WithOpenBraceToken(Token(TriviaList(NewLine),   SyntaxKind.OpenBraceToken, SyntaxTriviaList.Empty))
+                .WithCloseBraceToken(Token(TriviaList(NewLine),  SyntaxKind.CloseBraceToken, SyntaxTriviaList.Empty));
             return namespaceSymbol;
         }
 
