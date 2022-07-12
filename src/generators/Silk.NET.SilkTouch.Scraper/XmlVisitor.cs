@@ -27,7 +27,7 @@ internal sealed class XmlVisitor
                 return VisitField(field);
             default:
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException($"Tried to visit {node.Name}");
             }
         }
     }

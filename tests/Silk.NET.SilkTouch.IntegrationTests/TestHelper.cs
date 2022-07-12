@@ -13,7 +13,7 @@ namespace Silk.NET.SilkTouch.IntegrationTests;
 
 public static class TestHelper
 {
-    public static string GetCSharpOutputFromCpp(string cpp)
+    public static string GetCSharpOutputFromCpp(string cpp, string[]? definedMacros = null)
     {
         var tempFile = Path.GetTempFileName();
         
@@ -21,7 +21,13 @@ public static class TestHelper
 
         var scraper = new ClangScraper();
         var xml = scraper.GenerateXML
-            (tempFile, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+        (
+            tempFile,
+            Array.Empty<string>(),
+            Array.Empty<string>(),
+            Array.Empty<string>(),
+            definedMacros ?? Array.Empty<string>()
+        );
 
         Assert.NotNull(xml);
         
