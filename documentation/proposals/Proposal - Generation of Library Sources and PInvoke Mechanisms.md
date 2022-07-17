@@ -8,7 +8,7 @@ Proposal design for a platform invoke (P/Invoke) mechanism for Silk.NET 3.0.
 # Current Status
 - [x] Proposed
 - [x] Discussed with Working Group (WG)
-- [ ] Approved
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
@@ -196,20 +196,12 @@ Function-level attributes **MUST** be preferred over type-level ones, and follow
 For the most part, the resultant native signature used by the Emitter is matched 1:1 with the method signature. However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
 
 ```cs
-[NativeApi(Modifiers = CallModifiers.MemberFunction | CallModifiers.SuppressGCTransition | CallModifiers.WinapiConvention)]
+[NativeApi(Conventions = new[]{typeof(CallConvMemberFunction), typeof(CallConvSuppressGCTransition)}]
 public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType);
 ```
 
-- CallModifiers **MUST** be a bitmask with each modifier having its own unique bit.
-- **MemberFunction**: If this modifier is specified, the Emitter **MUST** modify the function pointer call to use the Windows C++ instance member function calling style. This modifier **MUST** only be used with the Procedure Address Method or Procedure Address Expression call styles.
-- **SuppressGCTransition**: If this modifier is specified, the Emitter **SHOULD** prevent the .NET garbage collector from transitioning between co-operative and pre-emptive mode during the call.
-- **WinapiConvention**: If this modifier is specified, the Emitter **MUST** use the platform default calling convention. This convention **MUST** also be used if no other calling convention bits are set.
-- **CdeclConvention**: If this modifier is specified, the Emitter **MUST** use the C `__cdecl` calling convention.
-- **StdcallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__stdcall` calling convention.
-- **FastcallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__fastcall` calling convention.
-- **ThiscallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__thiscall` calling convention.
 
-`CallModifiers` will be used as the primary bitmask for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
+`Conventions` will be used as the primary mechanism for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
 
 The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate that every parameter and return type of every function fits the `unmanaged` constraint. For the readers benefit, this can be done using a property on `ITypeSymbol` in Roslyn.
 
@@ -287,26 +279,7 @@ namespace Silk.NET.Core
     public class NativeApiAttribute : Attribute
     {
         public string EntryPoint { get; set; }
-        public CallModifiers Modifiers { get; set; }
-    }
-}
-```
-
-## `CallModifiers`
-```cs
-namespace Silk.NET.Core
-{
-    [Flags]
-    public enum CallModifiers
-    {
-        None = 0,
-        MemberFunction = 1 << 0,
-        SuppressGCTransition = 1 << 1,
-        WinapiConvention = 1 << 2,
-        CdeclConvention = 1 << 3,
-        StdcallConvention = 1 << 4,
-        FastcallConvention = 1 << 5,
-        ThiscallConvention = 1 << 6
+        public Type[] Conventions { get; set; }
     }
 }
 ```
@@ -363,7 +336,7 @@ namespace Silk.NET.Core
         - We should experiment with this and report back in a future community meeting. 
 
 **ACTIONS**
-- [ ] Change `Modifiers` to a CallConv\* `Type` array
+- [x] Change `Modifiers` to a CallConv\* `Type` array
 
 **FUTURE**
 - [ ] Report back to the Community our findings in experimenting with overloads
