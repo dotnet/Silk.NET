@@ -1,1 +1,2 @@
 #nullable enable
+static Silk.NET.Windowing.Window.DefaultWindowClass.get -> string
