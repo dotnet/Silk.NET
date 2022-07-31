@@ -11,6 +11,7 @@ namespace Silk.NET.Windowing
         {
             Resolution = resolution;
             RefreshRate = refreshRate;
+            AspectRatio = resolution != null ? resolution / GreatestCommonFactor(resolution.Value.X, resolution.Value.Y) : null;
         }
 
         public VideoMode(int refreshRate)
@@ -27,10 +28,51 @@ namespace Silk.NET.Windowing
         /// Refresh rate of the full screen window in Hz.
         /// </summary>
         public int? RefreshRate { get; }
+        
+        /// <summary>
+        /// Aspect ratio of the full screen window.
+        /// </summary>
+        public Vector2D<int>? AspectRatio { get; }
 
         /// <summary>
         /// The default video mode. This uses the window size for resolution and doesn't care about other values.
         /// </summary>
         public static VideoMode Default => new VideoMode();
+
+        private static int GreatestCommonFactor(int value1, int value2)
+        {
+            while (true)
+            {
+                if (value2 > value1)
+                {
+                    int val = value2 - value1;
+                    if (val <= 0)
+                        return value1;
+                    if (val > value1)
+                    {
+                        value2 = val;
+                        continue;
+                    }
+
+                    var value3 = value1;
+                    value1 = val;
+                    value2 = value3;
+                }
+                else
+                {
+                    int val = value1 - value2;
+                    if (val <= 0)
+                        return value2;
+                    if (val > value2)
+                    {
+                        value1 = value2;
+                        value2 = val;
+                        continue;
+                    }
+
+                    value1 = val;
+                }
+            }
+        }
     }
 }
