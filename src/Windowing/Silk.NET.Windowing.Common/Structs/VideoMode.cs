@@ -33,7 +33,7 @@ namespace Silk.NET.Windowing
         /// is more accurate to what a user may expect the ratio to be (for example a resolution of 1366x768 will appear
         /// as 16:9, even though it is not quite 16:9 in reality).
         /// </summary>
-        public Vector2D<int>? AspectRatio { get; }
+        public Vector2D<int>? AspectRatioEstimate { get; }
 
         /// <summary>
         /// The default video mode. This uses the window size for resolution and doesn't care about other values.
