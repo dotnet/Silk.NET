@@ -192,6 +192,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FormatFeature2FragmentShadingRateAttachmentBitKhr = 1073741824,
+        [Obsolete("Deprecated in favour of \"Reserved44BitExt\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_44_BIT_EXT")]
+        FormatFeature2Reserved44BitExt = 17592186044416,
+        [Obsolete("Deprecated in favour of \"Reserved45BitExt\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_45_BIT_EXT")]
+        FormatFeature2Reserved45BitExt = 35184372088832,
         [Obsolete("Deprecated in favour of \"VideoEncodeInputBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         FormatFeature2VideoEncodeInputBitKhr = 134217728,
@@ -201,18 +207,18 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"LinearColorAttachmentBitNV\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_LINEAR_COLOR_ATTACHMENT_BIT_NV")]
         FormatFeature2LinearColorAttachmentBitNV = 274877906944,
-        [Obsolete("Deprecated in favour of \"Reserved34BitQCom\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_34_BIT_QCOM")]
-        FormatFeature2Reserved34BitQCom = 17179869184,
-        [Obsolete("Deprecated in favour of \"Reserved35BitQCom\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_35_BIT_QCOM")]
-        FormatFeature2Reserved35BitQCom = 34359738368,
-        [Obsolete("Deprecated in favour of \"Reserved36BitQCom\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_36_BIT_QCOM")]
-        FormatFeature2Reserved36BitQCom = 68719476736,
-        [Obsolete("Deprecated in favour of \"Reserved37BitQCom\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_37_BIT_QCOM")]
-        FormatFeature2Reserved37BitQCom = 137438953472,
+        [Obsolete("Deprecated in favour of \"WeightImageBitQCom\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_WEIGHT_IMAGE_BIT_QCOM")]
+        FormatFeature2WeightImageBitQCom = 17179869184,
+        [Obsolete("Deprecated in favour of \"WeightSampledImageBitQCom\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_WEIGHT_SAMPLED_IMAGE_BIT_QCOM")]
+        FormatFeature2WeightSampledImageBitQCom = 34359738368,
+        [Obsolete("Deprecated in favour of \"BlockMatchingBitQCom\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_BLOCK_MATCHING_BIT_QCOM")]
+        FormatFeature2BlockMatchingBitQCom = 68719476736,
+        [Obsolete("Deprecated in favour of \"BoxFilterSampledBitQCom\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_BOX_FILTER_SAMPLED_BIT_QCOM")]
+        FormatFeature2BoxFilterSampledBitQCom = 137438953472,
         [Obsolete("Deprecated in favour of \"Reserved39BitExt\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
         FormatFeature2Reserved39BitExt = 549755813888,
@@ -346,20 +352,24 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapBitExt = 16777216,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FragmentShadingRateAttachmentBitKhr = 1073741824,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_44_BIT_EXT")]
+        Reserved44BitExt = 17592186044416,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_45_BIT_EXT")]
+        Reserved45BitExt = 35184372088832,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_INPUT_BIT_KHR")]
         VideoEncodeInputBitKhr = 134217728,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR")]
         VideoEncodeDpbBitKhr = 268435456,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_LINEAR_COLOR_ATTACHMENT_BIT_NV")]
         LinearColorAttachmentBitNV = 274877906944,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_34_BIT_QCOM")]
-        Reserved34BitQCom = 17179869184,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_35_BIT_QCOM")]
-        Reserved35BitQCom = 34359738368,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_36_BIT_QCOM")]
-        Reserved36BitQCom = 68719476736,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_37_BIT_QCOM")]
-        Reserved37BitQCom = 137438953472,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_WEIGHT_IMAGE_BIT_QCOM")]
+        WeightImageBitQCom = 17179869184,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_WEIGHT_SAMPLED_IMAGE_BIT_QCOM")]
+        WeightSampledImageBitQCom = 34359738368,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_BLOCK_MATCHING_BIT_QCOM")]
+        BlockMatchingBitQCom = 68719476736,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_BOX_FILTER_SAMPLED_BIT_QCOM")]
+        BoxFilterSampledBitQCom = 137438953472,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
         Reserved39BitExt = 549755813888,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_40_BIT_NV")]

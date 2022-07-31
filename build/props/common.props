@@ -12,17 +12,21 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET April 2022 Update
-            
-            - Add DirectStorage bindings
-            - Add legacy OpenGL 2.0 support for the ImGui extension (thank you @Beyley)
-            - Add the ability to customize the functionality/priorities of DefaultPathResolver
-            - Add more auto-generated constants to Assimp, DirectX, and SDL
-            - Update to Vulkan 1.3.210
-            - Update to latest OpenGL specifications
-            - Fix Assimp native package being out-of-sync with latest binding
-            - Fix SDL input backend producing different key mappings to the GLFW input backend
-            - Fix Android Activity restarts not being properly handled by Silk.NET Windowing
+            Silk.NET Summer 2022 Update 1
+
+            - Massive project-wide bindings overhaul, making our bindings easier to use and higher quality than before.
+            - Added grouped OpenCL enums. (thanks @Alexx999)
+            - Added support for creation of contexts with versions prior to OpenGL 3.2. (thanks @Beyley)
+            - Added support for multiple ImGuiControllers. (thanks @Beyley)
+            - Added support for single-file mode. (thanks @kant2002)
+            - Added shorter names in enums used in bindings.
+            - Added AspectRatioEstimate API to VideoMode. (thanks @ohtrobinson)
+            - Improved ImGuiController disposal. (thanks @Beyley)
+            - Fixed incorrect OpenCL functions. This is breaking, but if you were using these functions your code didn't work anyway. (thanks @Alexx999)
+            - Fixed IsVisible not being respected in some cases. (thanks @paralaxsd)
+            - Fixed window close events not being respected on the SDL backend. (thanks @paralaxsd)
+
+            This update may result in your projects have a lot of deprecation warnings. We believe this update contains much-needed improvements to both Silk.NET and code consuming it, but we appeciate migrating to this version may take time.
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>

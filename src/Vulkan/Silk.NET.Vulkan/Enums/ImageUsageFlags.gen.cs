@@ -81,12 +81,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"InvocationMaskBitHuawei\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
         ImageUsageInvocationMaskBitHuawei = 262144,
-        [Obsolete("Deprecated in favour of \"Reserved20BitQCom\"")]
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_20_BIT_QCOM")]
-        ImageUsageReserved20BitQCom = 1048576,
-        [Obsolete("Deprecated in favour of \"Reserved21BitQCom\"")]
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_21_BIT_QCOM")]
-        ImageUsageReserved21BitQCom = 2097152,
+        [Obsolete("Deprecated in favour of \"SampleWeightBitQCom\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]
+        ImageUsageSampleWeightBitQCom = 1048576,
+        [Obsolete("Deprecated in favour of \"SampleBlockMatchBitQCom\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
+        ImageUsageSampleBlockMatchBitQCom = 2097152,
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_SRC_BIT")]
         TransferSrcBit = 1,
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_DST_BIT")]
@@ -131,9 +131,9 @@ namespace Silk.NET.Vulkan
         Reserved19BitExt = 524288,
         [NativeName("Name", "VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
         InvocationMaskBitHuawei = 262144,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_20_BIT_QCOM")]
-        Reserved20BitQCom = 1048576,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_21_BIT_QCOM")]
-        Reserved21BitQCom = 2097152,
+        [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]
+        SampleWeightBitQCom = 1048576,
+        [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
+        SampleBlockMatchBitQCom = 2097152,
     }
 }

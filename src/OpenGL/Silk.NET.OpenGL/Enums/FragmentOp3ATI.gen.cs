@@ -7,23 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "FragmentOpATI")]
-    public enum FragmentOpATI : int
+    [NativeName("Name", "FragmentOp3ATI")]
+    public enum FragmentOp3ATI : int
     {
-        [NativeName("Name", "GL_MOV_ATI")]
-        MovAti = 0x8961,
-        [NativeName("Name", "GL_ADD_ATI")]
-        AddAti = 0x8963,
-        [NativeName("Name", "GL_MUL_ATI")]
-        MulAti = 0x8964,
-        [NativeName("Name", "GL_SUB_ATI")]
-        SubAti = 0x8965,
-        [NativeName("Name", "GL_DOT3_ATI")]
-        Dot3Ati = 0x8966,
-        [NativeName("Name", "GL_DOT4_ATI")]
-        Dot4Ati = 0x8967,
         [NativeName("Name", "GL_MAD_ATI")]
         MadAti = 0x8968,
         [NativeName("Name", "GL_LERP_ATI")]
