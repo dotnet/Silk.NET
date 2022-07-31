@@ -12,7 +12,7 @@ namespace Silk.NET.Windowing
         {
             Resolution = resolution;
             RefreshRate = refreshRate;
-            AspectRatio = resolution != null ? CalculateAspectRatio(resolution.Value) : null;
+            AspectRatioEstimate = resolution != null ? CalculateAspectRatio(resolution.Value) : null;
         }
 
         public VideoMode(int refreshRate)
