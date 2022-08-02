@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModuleValidationCacheCreateInfoEXT")]
-    public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT : IExtendsChain<ShaderModuleCreateInfo>
+    public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT : IExtendsChain<ShaderModuleCreateInfo>, IExtendsChain<PipelineShaderStageCreateInfo>
     {
         public ShaderModuleValidationCacheCreateInfoEXT
         (

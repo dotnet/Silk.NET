@@ -18,5 +18,7 @@ namespace Silk.NET.OpenGL.Legacy
         GreenBitAti = 0x2,
         [NativeName("Name", "GL_BLUE_BIT_ATI")]
         BlueBitAti = 0x4,
+        [NativeName("Name", "GL_NONE")]
+        None = 0x0,
     }
 }
