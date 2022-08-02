@@ -630,5 +630,10 @@ namespace Silk.NET.SDL
 
         public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
+        
+        /// <summary>To be documented.</summary>
+        //[NativeName("Src", "Line 991, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_SetWindowAlwaysOnTop")]
+        public partial void SetWindowAlwaysOnTop(Window* window, SdlBool onTop);
     }
 }

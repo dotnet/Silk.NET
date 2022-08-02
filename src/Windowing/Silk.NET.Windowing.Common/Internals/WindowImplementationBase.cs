@@ -31,6 +31,7 @@ namespace Silk.NET.Windowing.Internals
         protected abstract string CoreTitle { get; set; }
         protected abstract WindowState CoreWindowState { get; set; }
         protected abstract WindowBorder CoreWindowBorder { get; set; }
+        protected abstract bool CoreTopMost { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Vector2D<int> SizeSettable { set; }
         protected abstract Rectangle<int> CoreBorderSize { get; }
@@ -181,10 +182,18 @@ namespace Silk.NET.Windowing.Internals
 
         public bool TopMost
         {
-            get => ExtendedOptionsCache.TopMost;
-            set => ExtendedOptionsCache.TopMost = value;
+            get => IsInitialized ? ExtendedOptionsCache.TopMost = CoreTopMost : ExtendedOptionsCache.TopMost;
+            set
+            {
+                if (IsInitialized)
+                {
+                    CoreTopMost = value;
+                }
+
+                ExtendedOptionsCache.TopMost = value;
+            }
         }
-        
+
         public Rectangle<int> BorderSize             => IsInitialized ? CoreBorderSize : default;
     }
 }
