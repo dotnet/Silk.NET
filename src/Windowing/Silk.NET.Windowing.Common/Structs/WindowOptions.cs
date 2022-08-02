@@ -41,6 +41,7 @@ namespace Silk.NET.Windowing
             Samples = opts.Samples;
             WindowClass = null;
             IsContextControlDisabled = opts.IsContextControlDisabled;
+            TopMost = false;
         }
 
         /// <inheritdoc />
@@ -101,6 +102,9 @@ namespace Silk.NET.Windowing
         public bool TransparentFramebuffer { get; set; }
 
         /// <inheritdoc />
+        public bool TopMost { get; set; }
+
+        /// <inheritdoc />
         public IGLContext? SharedContext { get; set; }
 
         /// <inheritdoc />
@@ -127,6 +131,7 @@ namespace Silk.NET.Windowing
             int? preferredStencilBufferBits = null,
             Vector4D<int>? preferredBitDepth = null,
             bool transparentFramebuffer = false,
+            bool topMost = false,
             bool isEventDriven = false,
             IGLContext? sharedContext = null,
             int? samples = null,
@@ -147,6 +152,7 @@ namespace Silk.NET.Windowing
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
             TransparentFramebuffer = transparentFramebuffer;
+            TopMost = topMost;
             IsEventDriven = isEventDriven;
             VSync = isVSync;
             SharedContext = sharedContext;

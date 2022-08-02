@@ -177,7 +177,14 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Other property implementations
-        public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
-        public Rectangle<int> BorderSize => IsInitialized ? CoreBorderSize : default;
+        public bool           TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
+
+        public bool TopMost
+        {
+            get => ExtendedOptionsCache.TopMost;
+            set => ExtendedOptionsCache.TopMost = value;
+        }
+        
+        public Rectangle<int> BorderSize             => IsInitialized ? CoreBorderSize : default;
     }
 }
