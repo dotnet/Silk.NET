@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSpaceContainerFB,
             void* next = null,
             uint? uuidCapacityInput = null,
-            uint* uuidCountOutput = null,
+            uint? uuidCountOutput = null,
             UuidEXT* uuids = null
         ) : this()
         {
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenXR
 
             if (uuidCountOutput is not null)
             {
-                UuidCountOutput = uuidCountOutput;
+                UuidCountOutput = uuidCountOutput.Value;
             }
 
             if (uuids is not null)
@@ -70,10 +70,10 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "uuidCapacityInput")]
         public uint UuidCapacityInput;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
+        [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "uuidCountOutput")]
-        public uint* UuidCountOutput;
+        public uint UuidCountOutput;
 /// <summary></summary>
         [NativeName("Type", "XrUuidEXT*")]
         [NativeName("Type.Name", "XrUuidEXT")]

@@ -362,6 +362,12 @@ namespace Silk.NET.Vulkan
         ImageViewAstcDecodeModeExt = 1000067000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ASTC_DECODE_FEATURES_EXT")]
         PhysicalDeviceAstcDecodeFeaturesExt = 1000067001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO_EXT")]
+        PipelineRobustnessCreateInfoExt = 1000068000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES_EXT")]
+        PhysicalDevicePipelineRobustnessFeaturesExt = 1000068001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES_EXT")]
+        PhysicalDevicePipelineRobustnessPropertiesExt = 1000068002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES_KHR")]
         PhysicalDeviceGroupPropertiesKhr = 1000070000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO_KHR")]
@@ -1280,6 +1286,12 @@ namespace Silk.NET.Vulkan
         PhysicalDevicePipelinePropertiesFeaturesExt = 1000372001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_INFO_EXT")]
         PipelineInfoExt = 1000372001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_FEATURES_EXT")]
+        PhysicalDeviceMultisampledRenderToSingleSampledFeaturesExt = 1000376000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_RESOLVE_PERFORMANCE_QUERY_EXT")]
+        SubpassResolvePerformanceQueryExt = 1000376001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_INFO_EXT")]
+        MultisampledRenderToSingleSampledInfoExt = 1000376002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicState2FeaturesExt = 1000377000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
@@ -1338,6 +1350,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT")]
         PhysicalDeviceImageCompressionControlSwapchainFeaturesExt = 1000437000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_FEATURES_QCOM")]
+        PhysicalDeviceImageProcessingFeaturesQCom = 1000440000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_PROPERTIES_QCOM")]
+        PhysicalDeviceImageProcessingPropertiesQCom = 1000440001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_SAMPLE_WEIGHT_CREATE_INFO_QCOM")]
+        ImageViewSampleWeightCreateInfoQCom = 1000440002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_MERGE_FEEDBACK_FEATURES_EXT")]
         PhysicalDeviceSubpassMergeFeedbackFeaturesExt = 1000458000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_CONTROL_EXT")]
@@ -1346,6 +1364,18 @@ namespace Silk.NET.Vulkan
         RenderPassCreationFeedbackCreateInfoExt = 1000458002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_SUBPASS_FEEDBACK_CREATE_INFO_EXT")]
         RenderPassSubpassFeedbackCreateInfoExt = 1000458003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_FEATURES_EXT")]
+        PhysicalDeviceShaderModuleIdentifierFeaturesExt = 1000462000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_PROPERTIES_EXT")]
+        PhysicalDeviceShaderModuleIdentifierPropertiesExt = 1000462001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_MODULE_IDENTIFIER_CREATE_INFO_EXT")]
+        PipelineShaderStageModuleIdentifierCreateInfoExt = 1000462002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SHADER_MODULE_IDENTIFIER_EXT")]
+        ShaderModuleIdentifierExt = 1000462003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_PROPERTIES_FEATURES_QCOM")]
+        PhysicalDeviceTilePropertiesFeaturesQCom = 1000484000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM")]
+        TilePropertiesQCom = 1000484001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

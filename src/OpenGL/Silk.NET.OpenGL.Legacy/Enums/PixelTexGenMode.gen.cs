@@ -12,8 +12,6 @@ namespace Silk.NET.OpenGL.Legacy
     [NativeName("Name", "PixelTexGenMode")]
     public enum PixelTexGenMode : int
     {
-        [NativeName("Name", "GL_NONE")]
-        None = 0x0,
         [NativeName("Name", "GL_RGB")]
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
@@ -24,10 +22,6 @@ namespace Silk.NET.OpenGL.Legacy
         [System.Obsolete]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
-        [NativeName("Name", "GL_PIXEL_TEX_GEN_ALPHA_REPLACE_SGIX")]
-        PixelTexGenAlphaReplaceSgix = 0x8187,
-        [NativeName("Name", "GL_PIXEL_TEX_GEN_ALPHA_NO_REPLACE_SGIX")]
-        PixelTexGenAlphaNoReplaceSgix = 0x8188,
         [NativeName("Name", "GL_PIXEL_TEX_GEN_ALPHA_LS_SGIX")]
         PixelTexGenAlphaLSSgix = 0x8189,
         [NativeName("Name", "GL_PIXEL_TEX_GEN_ALPHA_MS_SGIX")]

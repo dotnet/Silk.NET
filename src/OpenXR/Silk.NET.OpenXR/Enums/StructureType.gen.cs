@@ -684,6 +684,15 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemSpaceWarpPropertiesFB\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_SPACE_WARP_PROPERTIES_FB")]
         TypeSystemSpaceWarpPropertiesFB = 1000171001,
+        [Obsolete("Deprecated in favour of \"SemanticLabelsFB\"")]
+        [NativeName("Name", "XR_TYPE_SEMANTIC_LABELS_FB")]
+        TypeSemanticLabelsFB = 1000175000,
+        [Obsolete("Deprecated in favour of \"RoomLayoutFB\"")]
+        [NativeName("Name", "XR_TYPE_ROOM_LAYOUT_FB")]
+        TypeRoomLayoutFB = 1000175001,
+        [Obsolete("Deprecated in favour of \"Boundary2DFB\"")]
+        [NativeName("Name", "XR_TYPE_BOUNDARY_2D_FB")]
+        TypeBoundary2DFB = 1000175002,
         [Obsolete("Deprecated in favour of \"DigitalLensControlAlmalence\"")]
         [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
         TypeDigitalLensControlAlmalence = 1000196000,
@@ -1153,6 +1162,12 @@ namespace Silk.NET.OpenXR
         CompositionLayerSpaceWarpInfoFB = 1000171000,
         [NativeName("Name", "XR_TYPE_SYSTEM_SPACE_WARP_PROPERTIES_FB")]
         SystemSpaceWarpPropertiesFB = 1000171001,
+        [NativeName("Name", "XR_TYPE_SEMANTIC_LABELS_FB")]
+        SemanticLabelsFB = 1000175000,
+        [NativeName("Name", "XR_TYPE_ROOM_LAYOUT_FB")]
+        RoomLayoutFB = 1000175001,
+        [NativeName("Name", "XR_TYPE_BOUNDARY_2D_FB")]
+        Boundary2DFB = 1000175002,
         [NativeName("Name", "XR_TYPE_DIGITAL_LENS_CONTROL_ALMALENCE")]
         DigitalLensControlAlmalence = 1000196000,
         [NativeName("Name", "XR_TYPE_SPACE_CONTAINER_FB")]

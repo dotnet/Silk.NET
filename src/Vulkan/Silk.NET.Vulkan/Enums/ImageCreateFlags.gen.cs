@@ -57,12 +57,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateSubsampledBitExt\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
         ImageCreateSubsampledBitExt = 16384,
+        [Obsolete("Deprecated in favour of \"CreateReserved19BitExt\"")]
+        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_19_BIT_EXT")]
+        ImageCreateReserved19BitExt = 524288,
         [Obsolete("Deprecated in favour of \"CreateReserved16BitAmd\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_16_BIT_AMD")]
         ImageCreateReserved16BitAmd = 65536,
-        [Obsolete("Deprecated in favour of \"CreateReserved18BitExt\"")]
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_18_BIT_EXT")]
-        ImageCreateReserved18BitExt = 262144,
+        [Obsolete("Deprecated in favour of \"CreateMultisampledRenderToSingleSampledBitExt\"")]
+        [NativeName("Name", "VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
+        ImageCreateMultisampledRenderToSingleSampledBitExt = 262144,
         [Obsolete("Deprecated in favour of \"Create2DViewCompatibleBitExt\"")]
         [NativeName("Name", "VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
         ImageCreate2DViewCompatibleBitExt = 131072,
@@ -118,10 +121,12 @@ namespace Silk.NET.Vulkan
         CreateAliasBitKhr = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
         CreateSubsampledBitExt = 16384,
+        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_19_BIT_EXT")]
+        CreateReserved19BitExt = 524288,
         [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_16_BIT_AMD")]
         CreateReserved16BitAmd = 65536,
-        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_18_BIT_EXT")]
-        CreateReserved18BitExt = 262144,
+        [NativeName("Name", "VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
+        CreateMultisampledRenderToSingleSampledBitExt = 262144,
         [NativeName("Name", "VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
         Create2DViewCompatibleBitExt = 131072,
         [NativeName("Name", "VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]

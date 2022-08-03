@@ -1113,6 +1113,8 @@ namespace Silk.NET.OpenGLES
         MaxProgramTexelOffset = 0x8905,
         [NativeName("Name", "GL_SAMPLER_BINDING")]
         SamplerBinding = 0x8919,
+        [NativeName("Name", "GL_FRAGMENT_SHADER_ATI")]
+        FragmentShaderAti = 0x8920,
         [NativeName("Name", "GL_UNIFORM_BUFFER_BINDING")]
         UniformBufferBinding = 0x8A28,
         [NativeName("Name", "GL_UNIFORM_BUFFER_START")]

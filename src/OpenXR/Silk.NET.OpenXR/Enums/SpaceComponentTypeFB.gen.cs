@@ -18,6 +18,18 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"StorableFB\"")]
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_STORABLE_FB")]
         SpaceComponentTypeStorableFB = 1,
+        [Obsolete("Deprecated in favour of \"Bounded2DFB\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_2D_FB")]
+        SpaceComponentTypeBounded2DFB = 3,
+        [Obsolete("Deprecated in favour of \"Bounded3DFB\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_3D_FB")]
+        SpaceComponentTypeBounded3DFB = 4,
+        [Obsolete("Deprecated in favour of \"SemanticLabelsFB\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SEMANTIC_LABELS_FB")]
+        SpaceComponentTypeSemanticLabelsFB = 5,
+        [Obsolete("Deprecated in favour of \"RoomLayoutFB\"")]
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_ROOM_LAYOUT_FB")]
+        SpaceComponentTypeRoomLayoutFB = 6,
         [Obsolete("Deprecated in favour of \"SpaceContainerFB\"")]
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SPACE_CONTAINER_FB")]
         SpaceComponentTypeSpaceContainerFB = 7,
@@ -25,6 +37,14 @@ namespace Silk.NET.OpenXR
         LocatableFB = 0,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_STORABLE_FB")]
         StorableFB = 1,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_2D_FB")]
+        Bounded2DFB = 3,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_BOUNDED_3D_FB")]
+        Bounded3DFB = 4,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SEMANTIC_LABELS_FB")]
+        SemanticLabelsFB = 5,
+        [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_ROOM_LAYOUT_FB")]
+        RoomLayoutFB = 6,
         [NativeName("Name", "XR_SPACE_COMPONENT_TYPE_SPACE_CONTAINER_FB")]
         SpaceContainerFB = 7,
     }

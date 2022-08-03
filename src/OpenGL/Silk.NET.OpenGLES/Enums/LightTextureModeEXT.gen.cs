@@ -21,6 +21,9 @@ namespace Silk.NET.OpenGLES
         [Obsolete("Deprecated in favour of \"ColorExt\"")]
         [NativeName("Name", "GL_FRAGMENT_COLOR_EXT")]
         FragmentColorExt = 0x834C,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FRAGMENT_DEPTH")]
+        FragmentDepth = 0x8452,
         [Obsolete("Deprecated in favour of \"DepthExt\"")]
         [NativeName("Name", "GL_FRAGMENT_DEPTH_EXT")]
         FragmentDepthExt = 0x8452,
@@ -30,6 +33,9 @@ namespace Silk.NET.OpenGLES
         NormalExt = 0x834A,
         [NativeName("Name", "GL_FRAGMENT_COLOR_EXT")]
         ColorExt = 0x834C,
+        [System.Obsolete]
+        [NativeName("Name", "GL_FRAGMENT_DEPTH")]
+        Depth = 0x8452,
         [NativeName("Name", "GL_FRAGMENT_DEPTH_EXT")]
         DepthExt = 0x8452,
     }
