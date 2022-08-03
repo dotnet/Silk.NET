@@ -1,2 +1,3 @@
 #nullable enable
+static Silk.NET.Windowing.Window.DefaultWindowClass.get -> string
 Silk.NET.Windowing.VideoMode.AspectRatioEstimate.get -> Silk.NET.Maths.Vector2D<int>?
