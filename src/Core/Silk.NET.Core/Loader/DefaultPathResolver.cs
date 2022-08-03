@@ -304,7 +304,7 @@ namespace Silk.NET.Core.Loader
 
             foreach (var rid in GetAllRuntimeIds(RuntimeEnvironment.GetRuntimeIdentifier(), DependencyContext.Default))
             {
-                if (Check(name, Path.Combine(baseFolder, "runtimes", rid, "native", name), out result))
+                if (Check(name, Path.Combine(baseFolder, "runtimes", rid, "native"), out result))
                 {
                     return true;
                 }
