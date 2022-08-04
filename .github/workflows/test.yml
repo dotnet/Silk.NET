@@ -42,7 +42,7 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
             - name: Restore
-              run: dotnet restore -c Release --runtime ${{ matrix.rid }}
+              run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Build
               run: dotnet build -c Release --no-restore --runtime ${{ matrix.rid }}
             - name: Test
