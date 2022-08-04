@@ -4,7 +4,7 @@
       For more information what this is see https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions
       -->
     <ItemGroup>
-        <PackageVersion Include="BenchmarkDotNet" Version="0.12.1"/>
+        <PackageVersion Include="BenchmarkDotNet" Version="0.13.1"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-2.final"/>
         <PackageVersion Include="System.Text.Json" Version="6.0.0-preview.6.21352.12"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="14.0.0-beta2"/>
