@@ -41,5 +41,9 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
+            - name: Restore
+              run: dotnet restore -c Release --runtime ${{ matrix.rid }}
+            - name: Build
+              run: dotnet build -c Release --no-restore --runtime ${{ matrix.rid }}
             - name: Test
-              run: dotnet test -c Release --runtime ${{ matrix.rid }}
+              run: dotnet test -c Release --no-build --runtime ${{ matrix.rid }}
