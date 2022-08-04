@@ -92,7 +92,7 @@ public sealed class ClangScraper
 
         for (int i = 0; i < includeDirectories.Length; i++)
         {
-            commandLineArgs.Add("--include-directory=" + definedMacros[i]);
+            commandLineArgs.Add("--include-directory=" + includeDirectories[i]);
         }
 
         var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;
