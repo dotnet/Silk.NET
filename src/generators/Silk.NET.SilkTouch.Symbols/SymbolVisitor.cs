@@ -22,7 +22,7 @@ public abstract class SymbolVisitor
         if (symbol is NamespaceSymbol ns) return VisitNamespace(ns);
 
         if (symbol is IdentifierSymbol @is) return VisitIdentifier(@is);
-        if (symbol is ExternalTypeReference etr) return VisitExternalTypeReference(etr); 
+        if (symbol is TypeReference etr) return VisitTypeReference(etr); 
 
         return ThrowUnknownSymbol<Symbol>(symbol);
     }
@@ -50,11 +50,39 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
     {
-        return new FieldSymbol(VisitExternalTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
+        return new FieldSymbol(VisitTypeReference(fieldSymbol.Type), VisitIdentifier(fieldSymbol.Identifier));
     }
     
     /// <summary>
-    /// Visit an <see cref="ExternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the reference.
+    /// Visit a <see cref="TypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="typeReference">The type reference to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual TypeReference VisitTypeReference(TypeReference typeReference)
+    {
+        if (typeReference is ExternalTypeReference etr) return VisitExternalTypeReference(etr);
+        if (typeReference is InternalTypeReference itr) return VisitInternalTypeReference(itr);
+        return ThrowUnknownSymbol<TypeReference>(typeReference);
+    }
+    
+    /// <summary>
+    /// Visit a <see cref="InternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="typeReference">The type reference to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
+    {
+        return new InternalTypeReference(VisitType(typeReference.Referenced));
+    }
+    
+    /// <summary>
+    /// Visit a <see cref="ExternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
     /// </summary>
     /// <param name="typeReference">The type reference to visit</param>
     /// <returns>The rewritten symbol</returns>
@@ -65,7 +93,7 @@ public abstract class SymbolVisitor
     {
         return new ExternalTypeReference
         (
-            typeReference.Namespace is null ? null : VisitIdentifier(typeReference.Namespace),
+            typeReference.Namespace is not null ? VisitIdentifier(typeReference.Namespace) : null,
             VisitIdentifier(typeReference.TypeIdentifier)
         );
     }

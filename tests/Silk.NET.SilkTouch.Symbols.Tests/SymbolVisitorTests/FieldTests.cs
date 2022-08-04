@@ -74,8 +74,8 @@ public class FieldTests
 
         visitor.Object.Visit(symbol);
         
-        // note that this also tests whether the struct identifier is visited, there's just no good way of testing JUST the field identifier
         visitor.Protected()
-            .Verify<ExternalTypeReference>("VisitExternalTypeReference", Times.Exactly(1), ItExpr.IsAny<ExternalTypeReference>());
+            .Verify<IdentifierSymbol>
+                ("VisitIdentifier", Times.Exactly(1), ItExpr.Is<IdentifierSymbol>(x => object.ReferenceEquals(x, symbol.Identifier)));
     }
 }
