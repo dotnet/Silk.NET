@@ -1798,6 +1798,90 @@
             }
         },
         {
+            "profileName": "DirectComposition",
+            "sources": [
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dcomp.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dcompanimation.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dcomp",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "DComposition",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+					"$windowsSdkDir/Include/$windowsSdkVersion/shared/dcomptypes.h"
+                ],
+                "classes": {
+                    "dcomp.h": "[Core]DComp",
+                    "dcompanimation.h": "[Core]DComp"
+                }
+            },
+            "exclude": [
+                "D2D_MATRIX_3X2_F",
+				"D2D_RECT_F",
+                "D2D1_COMPOSITE_MODE",
+				"_D3DCOLORVALUE",
+                "D3DMATRIX"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "dcomp",
+                    "dcompanimation",
+                    "dcomptypes"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DirectComposition",
+            "extensionsNamespace": "Silk.NET.DirectComposition.Extensions",
+            "nameContainer": {
+                "linux-x64": "libDComp.so",
+                "win-x64": "DComp.dll",
+                "win-x86": "DComp.dll",
+                "osx-x64": "libDComp.dylib",
+                "android": "libDComp.so",
+                "iOS": "__Internal",
+                "className": "DCompLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "D2D_MATRIX_3X2_F": "Silk.NET.Maths.Matrix3X2<float>",
+					"D2D_RECT_F": "Silk.NET.Maths.Rectangle<float>",
+                    "D3DMATRIX": "Silk.NET.Maths.Matrix4X4<float>",
+					"_D3DCOLORVALUE": "Silk.NET.DXGI.D3Dcolorvalue",
+                    "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
+                    "DXGI_ALPHA_MODE": "Silk.NET.DXGI.AlphaMode",
+                    "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "XAudio",
             "_commented_out_sources": [
                 "X3DAudio currently can't be parsed due to the same bug that Assimp has.",
