@@ -42,4 +42,4 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
             - name: Test
-              run: dotnet test -c Release --runtime ${{ matrix.rid }}
+              run: dotnet test --runtime ${{ matrix.rid }}
