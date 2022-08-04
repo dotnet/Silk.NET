@@ -14,7 +14,7 @@
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final"/>
         <PackageVersion Include="System.CommandLine" Version="2.0.0-beta1.21308.1"/>
-        <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+        <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
         <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0"/>
         <PackageVersion Include="NuGet.Protocol" Version="5.8.0"/>
         <PackageVersion Include="Nuke.Common" Version="6.0.1"/>
