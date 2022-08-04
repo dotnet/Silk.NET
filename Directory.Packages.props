@@ -11,7 +11,7 @@
         <PackageVersion Include="Microsoft.Build.Locator" Version="1.4.1"/>
         <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0-preview.6.21352.12"/>
         <PackageVersion Include="Microsoft.Build.Framework" Version="16.10.0"/>
-        <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final"/>
+        <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.2.0"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final"/>
         <PackageVersion Include="System.CommandLine" Version="2.0.0-beta1.21308.1"/>
         <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
