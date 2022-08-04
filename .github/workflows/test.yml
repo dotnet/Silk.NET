@@ -47,4 +47,4 @@ jobs:
             # https://github.com/dotnet/sdk/issues/14281
             # doing the same (building for a specific configuration and runtime is supported via dotnet test)
             - name: Test
-              run: dotnet test -c Release --runtime ${{ matrix.rid }}
+              run: dotnet test -c Release --no-restore
