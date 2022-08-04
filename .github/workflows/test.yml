@@ -20,15 +20,21 @@ jobs:
                       os: windows-latest
                     - rid: win-x86
                       os: windows-latest
+                    
                     # given there appear to be significant differences
                     # we test all available ubuntu versions here
                     # if this causes significant slow downs, remove
-                    - rid: linux-x64
-                      os: ubuntu-22.04
-                    - rid: linux-x64
+                    
+                    # no clangsharp support https://github.com/dotnet/ClangSharp/issues/364
+                    # - rid: linux-x64
+                    #  os: ubuntu-22.04
+                    
+                    - rid: ubuntu.20.04-x64
                       os: ubuntu-20.04
-                    - rid: linux-x64
+                    
+                    - rid: ubuntu.18.04-x64
                       os: ubuntu-18.04
+                    
                     # macos 10.15 is not tested as the runner image is deprecated.
                     - rid: osx.12-x64
                       os: macos-12
@@ -41,5 +47,10 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
+            - name: Restore
+              run: dotnet restore --runtime ${{ matrix.rid }}
+            # Build can't be done in a separate step as building for a specific runtime & configuration is unsupported for some reason...
+            # https://github.com/dotnet/sdk/issues/14281
+            # doing the same (building for a specific configuration and runtime is supported via dotnet test)
             - name: Test
-              run: dotnet test --runtime ${{ matrix.rid }}
+              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }}
