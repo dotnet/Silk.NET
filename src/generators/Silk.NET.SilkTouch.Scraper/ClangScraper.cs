@@ -83,7 +83,6 @@ public sealed class ClangScraper
         commandLineArgs.Add("--language=c++");
         commandLineArgs.Add("--std=c++17");
         commandLineArgs.Add("-Wno-pragma-once-outside-header");
-        commandLineArgs.Add("-ibuiltininc");
         
         for (int i = 0; i < definedMacros.Length; i++)
         {
