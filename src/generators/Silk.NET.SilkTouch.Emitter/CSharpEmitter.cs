@@ -109,7 +109,7 @@ public sealed class CSharpEmitter
         {
             AssertClearState();
             
-            VisitExternalTypeReference(fieldSymbol.Type);
+            VisitTypeReference(fieldSymbol.Type);
             if (_syntax is not IdentifierNameSyntax typeIdentifierSyntax)
                 throw new InvalidOperationException("Field type Identifier was not visited correctly");
             ClearState();

@@ -50,6 +50,8 @@ public class FieldScrapingTests
         
         var symbol = Assert.Single(symbols);
         var field = Assert.IsType<FieldSymbol>(symbol);
-        Assert.Equal("int", field.Type.FullType);
+        var type = Assert.IsType<ExternalTypeReference>(field.Type);
+        Assert.Equal("int", type.TypeIdentifier.Value);
+        Assert.Null(type.Namespace);
     }
 }

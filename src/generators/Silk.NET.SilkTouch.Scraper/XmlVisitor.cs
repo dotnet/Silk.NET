@@ -40,6 +40,7 @@ internal sealed class XmlVisitor
             throw new InvalidOperationException("Field requires a name");
         }
 
+        // TODO: Appropriately Visit Type.
         var type = new ExternalTypeReference
         (
             null,

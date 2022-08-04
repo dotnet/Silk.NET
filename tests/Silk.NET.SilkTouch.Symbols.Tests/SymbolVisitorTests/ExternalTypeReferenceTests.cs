@@ -27,6 +27,22 @@ public class ExternalTypeReferenceTests
     
     [Fact,
      Trait("Category", "Symbols")]
+    public void RefIsVisitedAsGenericRef()
+    {
+        var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
+        var visitor = new Mock<SymbolVisitor>
+        {
+            CallBase = true
+        };
+
+        visitor.Object.Visit(symbol);
+        
+        visitor.Protected()
+            .Verify<TypeReference>("VisitTypeReference", Times.Once(), ItExpr.IsAny<TypeReference>());
+    }
+    
+    [Fact,
+     Trait("Category", "Symbols")]
     public void RefTypeIdentifierIsVisitedAsIdentifier()
     {
         var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
