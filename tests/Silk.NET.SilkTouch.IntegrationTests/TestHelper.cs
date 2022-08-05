@@ -29,7 +29,7 @@ public static class TestHelper
                     builder.SetMinimumLevel(LogLevel.Trace);
                 }
             )
-            .Configure<ClangScraperConfiguration>("Scraper", configuration)
+            .Configure<ClangScraperConfiguration>(configuration.GetSection("Scraper"))
             .BuildServiceProvider();
         
         File.WriteAllText(tempFile, "/* THIS IS A GENERATED FILE, PIPED TO CLANG FOR TESTING BY SILK.NET */" + cpp);
