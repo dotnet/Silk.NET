@@ -11,6 +11,7 @@ using System.Xml;
 using ClangSharp;
 using ClangSharp.Interop;
 using Silk.NET.SilkTouch.Scraper.Subagent;
+using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.Scraper;
@@ -20,6 +21,7 @@ namespace Silk.NET.SilkTouch.Scraper;
 /// </summary>
 public sealed class ClangScraper
 {
+    private readonly ILoggerFactory _loggerFactory;
     /// <summary>
     /// Placeholder used in place of library paths
     /// </summary>
@@ -29,6 +31,15 @@ public sealed class ClangScraper
     /// Placeholder used in place of library paths
     /// </summary>
     public static readonly string LibraryNamespacePlaceholder = "LIBRARY_NAMESPACE";
+
+    /// <summary>
+    /// Creates a ClangScraper given it's dependencies
+    /// </summary>
+    /// <param name="loggerFactory">A logger factory to create loggers from</param>
+    public ClangScraper(ILoggerFactory loggerFactory)
+    {
+        _loggerFactory = loggerFactory;
+    }
 
     /// <summary>
     /// Scrapes the given XML document for symbols
@@ -44,7 +55,7 @@ public sealed class ClangScraper
             return Enumerable.Empty<Symbol>();
         }
 
-        var visitor = new XmlVisitor();
+        var visitor = new XmlVisitor(_loggerFactory.CreateLogger<XmlVisitor>());
         return visitor.Visit(bindings);
     }
 
@@ -105,6 +116,7 @@ public sealed class ClangScraper
     /// <exception cref="InvalidOperationException">Will be thrown when errors during parsing are encountered</exception>
     public XmlDocument? GenerateXML(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
     {
+        var logger = _loggerFactory.CreateLogger("ClangScraper.ScrapeXML");
         var opts = PInvokeGeneratorConfigurationOptions.None;
         opts |= PInvokeGeneratorConfigurationOptions.NoDefaultRemappings;
 
@@ -158,11 +170,11 @@ public sealed class ClangScraper
         try
         {
             using (var pinvokeGenerator = new PInvokeGenerator(config, OutputStreamFactory))
-                GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs.ToArray(), translationFlags);
+                GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs.ToArray(), translationFlags, logger);
             
             foreach (var (name, stream) in files)
             {
-                Console.WriteLine(name);
+                logger.LogTrace("Outputting File \"{name}\"", name);
                 var doc = new XmlDocument();
                 stream.Position = 0;
                 doc.Load(stream);
@@ -185,7 +197,8 @@ public sealed class ClangScraper
         PInvokeGenerator pinvokeGenerator,
         string headerFile,
         string[] commandLineArgs,
-        CXTranslationUnit_Flags translationFlags
+        CXTranslationUnit_Flags translationFlags,
+        ILogger logger
     )
     {
         var result = CXTranslationUnit.TryParse
@@ -221,10 +234,20 @@ public sealed class ClangScraper
 
             foreach (var diagnostic in pinvokeGenerator.Diagnostics)
             {
-                if (diagnostic.Level > DiagnosticLevel.Warning)
-                {
-                    Console.WriteLine(diagnostic.Message);
-                }
+                logger.Log
+                (
+                    diagnostic.Level switch
+                    {
+                        DiagnosticLevel.Info    => LogLevel.Debug,
+                        DiagnosticLevel.Warning => LogLevel.Information,
+                        DiagnosticLevel.Error   => LogLevel.Warning,
+                        _                       => LogLevel.Debug
+                    },
+                    "Clang Diagnostic: {level} at: {location} \"{message}\"",
+                    diagnostic.Level,
+                    diagnostic.Level,
+                    diagnostic.Message
+                );
             }
         }
         finally

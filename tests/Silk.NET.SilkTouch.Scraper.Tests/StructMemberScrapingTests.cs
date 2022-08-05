@@ -18,7 +18,7 @@ public class StructMemberScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<struct name=""Test""><field name=""f1""><type native=""int32_t"">int</type></field></struct>");
 
-        var symbols = new ClangScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
 
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);
@@ -43,7 +43,7 @@ public class StructMemberScrapingTests
             @"<struct name=""Test""><field name=""f1""><type native=""int32_t"">int</type></field><field name=""f2""><type native=""int32_t"">int</type></field></struct>"
         );
 
-        var symbols = new ClangScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
 
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);

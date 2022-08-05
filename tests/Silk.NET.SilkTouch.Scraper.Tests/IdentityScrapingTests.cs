@@ -15,7 +15,7 @@ public class IdentityScrapingTests
     {
         var doc = new XmlDocument();
 
-        var symbols = new ClangScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
         
         Assert.Empty(symbols);
     }
@@ -29,7 +29,7 @@ public class IdentityScrapingTests
 </bindings>
 ");
 
-        var symbols = new ClangScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
         
         Assert.Empty(symbols);
     }

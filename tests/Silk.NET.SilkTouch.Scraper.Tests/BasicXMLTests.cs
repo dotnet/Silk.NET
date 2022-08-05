@@ -44,7 +44,7 @@ typedef struct {
     int32_t f2;
 } Test;");
 
-        var scraper = new ClangScraper();
+        var scraper = Helpers.CreateScraper();
         var defaultIncludes = scraper.ResolveStandardIncludes().ToArray();
         var xml = scraper.GenerateXML
             (tempFile, defaultIncludes, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
