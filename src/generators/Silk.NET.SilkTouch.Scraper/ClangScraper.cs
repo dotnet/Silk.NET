@@ -66,7 +66,8 @@ public sealed class ClangScraper
     private string GetXCodeSdkPath()
     {
         var process = new Process();
-        process.StartInfo = new ProcessStartInfo("xcrun", $"--show-sdk-path --sdk {_options.Value.XcodeSdk}")
+        process.StartInfo = new ProcessStartInfo
+            ("xcrun", "--show-sdk-path" + (_options.Value.XcodeSdk is null ? "" : $" --sdk {_options.Value.XcodeSdk}"))
         {
             RedirectStandardOutput = true
         };
