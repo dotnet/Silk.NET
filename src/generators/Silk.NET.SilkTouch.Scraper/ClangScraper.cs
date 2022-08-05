@@ -48,6 +48,18 @@ public sealed class ClangScraper
         return visitor.Visit(bindings);
     }
 
+    private static string GetXCodeSDKPath()
+    {
+        var process = new Process();
+        process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
+        {
+            RedirectStandardOutput = true
+        };
+        process.Start();
+        process.WaitForExit();
+        return process.StandardOutput.ReadToEnd();
+    }
+    
     /// <summary>
     /// Resolves platform specific standard includes
     /// </summary>
@@ -77,58 +89,6 @@ public sealed class ClangScraper
                         yield return include;
                     }
                 }
-            }
-        }
-        else
-        {
-            // Primarily relevant for OSX stuff
-            string? osxSdkIncludePath = null;
-            try
-            {
-                var process = new Process();
-                process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
-                {
-                    RedirectStandardOutput = true
-                };
-                process.Start();
-                process.WaitForExit();
-                if (process.ExitCode == 0)
-                {
-                    var output = process.StandardOutput.ReadToEnd();
-                    if (Directory.Exists(output))
-                    {
-                        var p = Path.Combine(output, "/usr/include/");
-                        if (Directory.Exists(p))
-                        {
-                            osxSdkIncludePath = p;
-                        }
-                        else
-                        {
-                            throw new Exception($"No Sub {output}");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception($"Does not exist {output}");
-                    }
-                }
-                else
-                {
-                    throw new Exception
-                        ($"xcrun failed to start. {process.ExitCode} | \"{process.StandardOutput.ReadToEnd()}\"");
-                }
-            }
-            catch { throw; }
-            if (osxSdkIncludePath is not null)
-            {
-                yield return osxSdkIncludePath;
-                throw new Exception(osxSdkIncludePath);
-            }
-
-            // Generic UNIX Path
-            if (Directory.Exists("/usr/include/"))
-            {
-                yield return "/usr/include";
             }
         }
     }
@@ -179,6 +139,11 @@ public sealed class ClangScraper
         for (int i = 0; i < includeDirectories.Length; i++)
         {
             commandLineArgs.Add("--include-directory=" + includeDirectories[i]);
+        }
+
+        if (OperatingSystem.IsMacOS())
+        {
+            commandLineArgs.Add("-isysroot " + GetXCodeSDKPath());
         }
 
         var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;
