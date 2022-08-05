@@ -79,20 +79,19 @@ public sealed class ClangScraper
             return files[fileName] = new MemoryStream();
         }
 
-
-        var commandLineArgs = new string[3 + definedMacros.Length + includeDirectories.Length];
-        commandLineArgs[0] = "--language=c++";
-        commandLineArgs[1] = "--std=c++17";
-        commandLineArgs[2] = "-Wno-pragma-once-outside-header";
+        var commandLineArgs = new List<string>();
+        commandLineArgs.Add("--language=c++");
+        commandLineArgs.Add("--std=c++17");
+        commandLineArgs.Add("-Wno-pragma-once-outside-header");
         
         for (int i = 0; i < definedMacros.Length; i++)
         {
-            commandLineArgs[3 + i] = "--define-macro=" + definedMacros[i];
+            commandLineArgs.Add("--define-macro=" + definedMacros[i]);
         }
 
         for (int i = 0; i < includeDirectories.Length; i++)
         {
-            commandLineArgs[3 + definedMacros.Length] = "--include-directory=" + definedMacros[i];
+            commandLineArgs.Add("--include-directory=" + includeDirectories[i]);
         }
 
         var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;
@@ -106,7 +105,7 @@ public sealed class ClangScraper
         try
         {
             using (var pinvokeGenerator = new PInvokeGenerator(config, OutputStreamFactory))
-                GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs, translationFlags);
+                GenerateBindings(pinvokeGenerator, headerFile, commandLineArgs.ToArray(), translationFlags);
             
             foreach (var (name, stream) in files)
             {
