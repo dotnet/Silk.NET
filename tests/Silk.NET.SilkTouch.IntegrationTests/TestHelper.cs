@@ -37,7 +37,7 @@ public static class TestHelper
         var scraper = ActivatorUtilities.CreateInstance<ClangScraper>(serviceProvider);
         var defaultIncludes = scraper.ResolveStandardIncludes().ToArray();
         var xml = scraper.GenerateXML
-            (tempFile, defaultIncludes, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+            (tempFile, Array.Empty<string>(), Array.Empty<string>(), defaultIncludes, Array.Empty<string>());
         
         try
         {

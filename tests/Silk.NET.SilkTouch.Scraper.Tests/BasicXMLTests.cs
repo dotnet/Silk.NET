@@ -47,7 +47,7 @@ typedef struct {
         var scraper = Helpers.CreateScraper();
         var defaultIncludes = scraper.ResolveStandardIncludes().ToArray();
         var xml = scraper.GenerateXML
-            (tempFile, defaultIncludes, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+            (tempFile, Array.Empty<string>(), Array.Empty<string>(), defaultIncludes, Array.Empty<string>());
 
         /*
          Next, Assert the XML looks something like this:
