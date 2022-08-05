@@ -59,6 +59,7 @@ public sealed class ClangScraper
     /// </remarks>
     public IEnumerable<string> ResolveStandardIncludes()
     {
+        throw new Exception(Environment.OSVersion.Platform.ToString());/*
         switch (Environment.OSVersion.Platform)
         {
             case PlatformID.MacOSX:
@@ -125,7 +126,7 @@ public sealed class ClangScraper
                     "Consider submitting a pull request or raise an issue."
                 );
             }
-        }
+        }*/
     }
 
     /// <summary>
