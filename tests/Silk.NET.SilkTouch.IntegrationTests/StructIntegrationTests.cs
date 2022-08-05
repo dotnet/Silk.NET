@@ -155,4 +155,21 @@ struct S
 };");
         return Verifier.Verify(result);
     }
+
+    [Fact,
+     Trait("Category",        "Integration"),
+     Trait("Source Language", "C++"),
+     Trait("Target Language", "C#"),
+     Trait("Feature",         "Structs"),
+     Trait("Feature",         "Fields")]
+    public Task Test8()
+    {
+        var result = TestHelper.GetCSharpOutputFromCpp(@"
+struct a {
+    struct x { struct a *p; /* ... */ };
+
+    struct x *p;
+};");
+        return Verifier.Verify(result);
+    }
 }

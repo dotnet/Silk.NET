@@ -4,6 +4,7 @@
       For more information what this is see https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions
       -->
     <PropertyGroup>
+        <MsExtensionNugetVersion>6.0.0</MsExtensionNugetVersion>
         <RoslynPackageVersion>4.2.0</RoslynPackageVersion>
     </PropertyGroup>
     <ItemGroup>
@@ -12,7 +13,7 @@
         <PackageVersion Include="System.Text.Json" Version="6.0.5"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="14.0.0-beta2"/>
         <PackageVersion Include="Microsoft.Build.Locator" Version="1.4.1"/>
-        <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0-preview.6.21352.12"/>
+        <PackageVersion Include="Microsoft.Extensions.FileSystemGlobbing" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Build.Framework" Version="16.10.0"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="$(RoslynPackageVersion)"/>
@@ -25,10 +26,10 @@
         <PackageVersion Include="Microsoft.Bcl.HashCode" Version="1.1.0"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.1"/>
         <PackageVersion Include="Microsoft.Extensions.Hosting" Version="6.0.0"/>
-        <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0"/>
-        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0"/>
-        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0"/>
-        <PackageVersion Include="Microsoft.Extensions.Options" Version="6.0.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(MsExtensionNugetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsExtensionNugetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MsExtensionNugetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="16.8.0"/>
         <PackageVersion Include="xunit" Version="2.4.1"/>
         <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.3"/>
@@ -46,5 +47,8 @@
         <PackageVersion Include="libclang" Version="14.0.0"/>
         <PackageVersion Include="libClangSharp" Version="14.0.0-beta1"/>
         <PackageVersion Include="Verify.Xunit" Version="16.9.0" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(MsExtensionNugetVersion)" />
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsExtensionNugetVersion)" />
+        <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsExtensionNugetVersion)" />
     </ItemGroup>
 </Project>
