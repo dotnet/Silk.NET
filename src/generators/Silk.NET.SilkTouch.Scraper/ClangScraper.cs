@@ -63,19 +63,27 @@ public sealed class ClangScraper
         {
             case PlatformID.MacOSX:
             {
+                Console.WriteLine("---------- OSX RESOLVE ---------");
                 var process = new Process();
                 process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path");
                 process.Start();
                 process.WaitForExit();
                 var output = process.StandardOutput.ReadToEnd();
+                Console.WriteLine(output);
                 if (Directory.Exists(output))
                 {
                     var p = Path.Combine(output, "/usr/include/");
                     if (Directory.Exists(p))
                     {
+                        Console.WriteLine(p);
                         yield return p;
                     }
+                    else
+                    {
+                        Console.WriteLine("no /usr/include subdir");
+                    }
                 }
+                Console.WriteLine("---------- OSX RESOLVE ---------");
                 goto case PlatformID.Unix;
             }
             case PlatformID.Unix:
