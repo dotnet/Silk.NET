@@ -109,6 +109,7 @@ public sealed class ClangScraper
             if (osxSdkIncludePath is not null)
             {
                 yield return osxSdkIncludePath;
+                throw new Exception(osxSdkIncludePath);
             }
 
             // Generic UNIX Path
