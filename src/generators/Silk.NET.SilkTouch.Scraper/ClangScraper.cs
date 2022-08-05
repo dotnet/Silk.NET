@@ -59,74 +59,49 @@ public sealed class ClangScraper
     /// </remarks>
     public IEnumerable<string> ResolveStandardIncludes()
     {
-        throw new Exception(Environment.OSVersion.Platform.ToString());/*
-        switch (Environment.OSVersion.Platform)
+        if (OperatingSystem.IsWindows())
         {
-            case PlatformID.MacOSX:
+            if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
             {
-                var process = new Process();
-                process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path");
-                process.Start();
-                process.WaitForExit();
-                var output = process.StandardOutput.ReadToEnd();
-                if (Directory.Exists(output))
+                if (info.UcrtIncludes.Length > 0)
                 {
-                    var p = Path.Combine(output, "/usr/include/");
-                    if (Directory.Exists(p))
+                    foreach (var include in info.UcrtIncludes)
                     {
-                        throw new Exception($"DEBUG: EXISTS || {output} || {p}");
-                        // yield return p;
-                    }
-                    else
-                    {
-                        throw new Exception($"DEBUG: NOSUB || {output} || {p}");
+                        yield return include;
                     }
                 }
                 else
                 {
-                    throw new Exception($"DEBUG: NO DIR || {output}");
-                }
-                // goto case PlatformID.Unix;
-            }
-            case PlatformID.Unix:
-            {
-                if (Directory.Exists("/usr/include/"))
-                {
-                    yield return "/usr/include";
-                }
-                break;
-            }
-            case PlatformID.Win32NT:
-            {
-                if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
-                {
-                    if (info.UcrtIncludes.Length > 0)
+                    foreach (var include in info.MsvcToolsIncludes)
                     {
-                        foreach (var include in info.UcrtIncludes)
-                        {
-                            yield return include;
-                        }
-                    }
-                    else
-                    {
-                        foreach (var include in info.MsvcToolsIncludes)
-                        {
-                            yield return include;
-                        }
+                        yield return include;
                     }
                 }
-                break;
             }
-            default:
+        }
+        else
+        {
+            // Primarily relevant for OSX stuff
+            var process = new Process();
+            process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path");
+            process.Start();
+            process.WaitForExit();
+            var output = process.StandardOutput.ReadToEnd();
+            if (Directory.Exists(output))
             {
-                throw new PlatformNotSupportedException
-                (
-                    $"Cannot resolve default paths for {Environment.OSVersion.Platform}. " +
-                    "This indicates no testing has been done for this platform. " +
-                    "Consider submitting a pull request or raise an issue."
-                );
+                var p = Path.Combine(output, "/usr/include/");
+                if (Directory.Exists(p))
+                {
+                    yield return p;
+                }
             }
-        }*/
+            
+            // Generic UNIX Path
+            if (Directory.Exists("/usr/include/"))
+            {
+                yield return "/usr/include";
+            }
+        }
     }
 
     /// <summary>
