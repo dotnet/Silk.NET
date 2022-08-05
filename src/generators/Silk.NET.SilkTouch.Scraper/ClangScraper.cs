@@ -90,19 +90,13 @@ public sealed class ClangScraper
         {
             if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
             {
-                if (info.UcrtIncludes.Length > 0)
+                foreach (var include in info.MsvcToolsIncludes)
                 {
-                    foreach (var include in info.UcrtIncludes)
-                    {
-                        yield return include;
-                    }
+                    yield return include;
                 }
-                else
+                foreach (var include in info.UcrtIncludes)
                 {
-                    foreach (var include in info.MsvcToolsIncludes)
-                    {
-                        yield return include;
-                    }
+                    yield return include;
                 }
             }
         }
