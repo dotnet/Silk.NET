@@ -102,10 +102,23 @@ public sealed class ClangScraper
                         {
                             osxSdkIncludePath = p;
                         }
+                        else
+                        {
+                            throw new Exception($"No Sub {output}");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception($"Does not exist {output}");
                     }
                 }
+                else
+                {
+                    throw new Exception
+                        ($"xcrun failed to start. {process.ExitCode} | \"{process.StandardOutput.ReadToEnd()}\"");
+                }
             }
-            catch { /* */}
+            catch { throw; }
             if (osxSdkIncludePath is not null)
             {
                 yield return osxSdkIncludePath;
