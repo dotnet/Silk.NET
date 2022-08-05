@@ -25,7 +25,7 @@ public static class Helpers
                     builder.SetMinimumLevel(LogLevel.Trace);
                 }
             )
-            .Configure<ClangScraperConfiguration>(configuration)
+            .Configure<ClangScraperConfiguration>("Scraper", configuration)
             .BuildServiceProvider();
 
         return ActivatorUtilities.CreateInstance<ClangScraper>(serviceProvider);
