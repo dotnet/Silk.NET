@@ -129,6 +129,7 @@ public sealed class ClangScraper
         var commandLineArgs = new List<string>();
         commandLineArgs.Add("--language=c++");
         commandLineArgs.Add("--std=c++17");
+        commandLineArgs.Add("--stdlib=libc++");
         commandLineArgs.Add("-Wno-pragma-once-outside-header");
         
         for (int i = 0; i < definedMacros.Length; i++)
