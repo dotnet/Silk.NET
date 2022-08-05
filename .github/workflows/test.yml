@@ -54,7 +54,15 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
+          - name: Cache NuGet Dependencies
+            id: cache-nuget
+            uses: actions/cache@v3
+            with:
+              path: ~/.nuget/packages
+              key: ${{ runner.os }}-${{ runner.rid }}-packages--${{ hashFiles(**/packages.lock.json}) }}
+
             - name: Restore
+              if: steps.cache-nuget.outputs.cache-hit != 'true'
               run: dotnet restore --runtime ${{ matrix.rid }}
             # Build can't be done in a separate step as building for a specific runtime & configuration is unsupported for some reason...
             # https://github.com/dotnet/sdk/issues/14281
