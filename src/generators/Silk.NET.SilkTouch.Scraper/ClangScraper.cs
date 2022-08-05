@@ -65,15 +65,20 @@ public sealed class ClangScraper
 
     private string GetXCodeSdkPath()
     {
+        var logger = _loggerFactory.CreateLogger("XCode SDK Resolver");
+        var sdk = _options.Value.XcodeSdk;
+        logger.LogTrace("Resolving XCode SDK using SDK {sdk}", sdk);
         var process = new Process();
         process.StartInfo = new ProcessStartInfo
-            ("xcrun", "--show-sdk-path" + (_options.Value.XcodeSdk is null ? "" : $" --sdk {_options.Value.XcodeSdk}"))
+            ("xcrun", "--show-sdk-path" + (sdk is null ? "" : $" --sdk {sdk}"))
         {
             RedirectStandardOutput = true
         };
         process.Start();
         process.WaitForExit();
-        return process.StandardOutput.ReadToEnd();
+        var path = process.StandardOutput.ReadToEnd();
+        logger.LogInformation("Resolved XCode SDK to {path}", path);
+        return path;
     }
     
     /// <summary>
@@ -89,8 +94,10 @@ public sealed class ClangScraper
     {
         if (OperatingSystem.IsWindows())
         {
+            var logger = _loggerFactory.CreateLogger("VS Info Resolver");
             if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
             {
+                logger.LogInformation("Successfully resolved VS to {path}", info.InstallationBaseFolder);
                 foreach (var include in info.MsvcToolsIncludes)
                 {
                     yield return include;
@@ -99,6 +106,10 @@ public sealed class ClangScraper
                 {
                     yield return include;
                 }
+            }
+            else
+            {
+                logger.LogWarning("Failed to resolve VS, but OS is Windows!");
             }
         }
     }
