@@ -61,10 +61,14 @@ public abstract class SymbolVisitor
     /// <remarks>
     /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
+    /// <remarks>
+    /// By default visiting <see cref="UnresolvedTypeReference"/> will throw. Visitors involved in type resolution should override this method directly.
+    /// </remarks>
     protected virtual TypeReference VisitTypeReference(TypeReference typeReference)
     {
         if (typeReference is ExternalTypeReference etr) return VisitExternalTypeReference(etr);
         if (typeReference is InternalTypeReference itr) return VisitInternalTypeReference(itr);
+        if (typeReference is UnresolvedTypeReference utr) UnresolvedTypeReference.ThrowInvalidSymbol();
         return ThrowUnknownSymbol<TypeReference>(typeReference);
     }
     
