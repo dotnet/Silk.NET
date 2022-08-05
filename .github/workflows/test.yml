@@ -32,8 +32,9 @@ jobs:
                     - rid: ubuntu.20.04-x64
                       os: ubuntu-20.04
                     
-                    - rid: ubuntu.18.04-x64
-                      os: ubuntu-18.04
+                    # Ubuntu raises an SEH exception, see https://discord.com/channels/521092042781229087/1004867182787838043/1004887853500739684
+                    # - rid: ubuntu.18.04-x64
+                    #   os: ubuntu-18.04
                     
                     # macos 10.15 is not tested as the runner image is deprecated.
                     
