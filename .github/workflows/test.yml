@@ -42,7 +42,7 @@ jobs:
                       os: macos-12
                       xcode_sdk: macosx12.3 # macos-12 image is currently (5th August 2022) on MacOS 12.5 but the latest sdk is macosx12.3
                       
-                    - rid: osx.11-x64
+                    - rid: osx.11.0-x64
                       os: macos-11
                       xcode_sdk: macosx11.3
         runs-on: ${{ matrix.os }}

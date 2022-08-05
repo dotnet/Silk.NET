@@ -80,11 +80,19 @@ public sealed class ClangScraper
         logger.LogTrace("Got Response from xcrun: {response}", output);
         var lines = output.Split('\n');
         var path = lines.Length > 0 ? lines[0] : null;
-        logger.LogInformation("Resolved XCode SDK to {path}", path);
         if (string.IsNullOrWhiteSpace(path))
         {
-            throw new InvalidOperationException("xcrun didn't return correct lines to stdout");
+            try
+            {
+                logger.LogTrace
+                (
+                    "Available SDKs appear to be: {versions}",
+                    string.Join(", ", Directory.EnumerateDirectories("/Library/Developer/CommandLineTools/SDKs/"))
+                );
+            } catch { /* */ }
+            throw new InvalidOperationException("xcrun didn't return correct lines to stdout.");
         }
+        logger.LogInformation("Resolved XCode SDK to {path}", path);
         return path;
     }
     
