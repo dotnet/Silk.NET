@@ -112,6 +112,11 @@ public sealed class ClangScraper
                 logger.LogWarning("Failed to resolve VS, but OS is Windows!");
             }
         }
+        else
+        {
+            yield return "/usr/include";
+            yield return "/usr/local/include";
+        }
     }
 
     /// <summary>
