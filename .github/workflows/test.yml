@@ -60,7 +60,7 @@ jobs:
               uses: actions/cache@v3
               with:
                 path: ~/.nuget/packages
-                key: ${{ runner.os }}-${{ runner.rid }}-packages--${{ hashFiles(**/packages.lock.json}) }}
+                key: ${{ runner.os }}-${{ runner.rid }}-packages--${{ hashFiles('**/packages.lock.json'}) }}
 
             - name: Restore
               if: steps.cache-nuget.outputs.cache-hit != 'true'
