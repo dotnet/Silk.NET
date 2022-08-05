@@ -60,4 +60,4 @@ jobs:
             - name: Test
               run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }}
               env:
-                SILK_DOTNET_SCRAPER__XCODE_SDK: ${{ matrix.xcode-sdk }}
+                SILK_DOTNET_SCRAPER__XcodeSdk: ${{ matrix.xcode-sdk }}
