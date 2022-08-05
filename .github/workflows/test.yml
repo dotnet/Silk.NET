@@ -59,3 +59,5 @@ jobs:
             # doing the same (building for a specific configuration and runtime is supported via dotnet test)
             - name: Test
               run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }}
+              env:
+                DOTNET_SCRAPER__XCODE_SDK: ${{ matrix.xcode-sdk }}

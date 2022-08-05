@@ -12,6 +12,7 @@ using ClangSharp;
 using ClangSharp.Interop;
 using Silk.NET.SilkTouch.Scraper.Subagent;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.Scraper;
@@ -21,7 +22,8 @@ namespace Silk.NET.SilkTouch.Scraper;
 /// </summary>
 public sealed class ClangScraper
 {
-    private readonly ILoggerFactory _loggerFactory;
+    private readonly ILoggerFactory                      _loggerFactory;
+    private readonly IOptions<ClangScraperConfiguration> _options;
     /// <summary>
     /// Placeholder used in place of library paths
     /// </summary>
@@ -36,9 +38,11 @@ public sealed class ClangScraper
     /// Creates a ClangScraper given it's dependencies
     /// </summary>
     /// <param name="loggerFactory">A logger factory to create loggers from</param>
-    public ClangScraper(ILoggerFactory loggerFactory)
+    /// <param name="options">an <see cref="IOptions{TOptions}"/> instance used to retrieve configuration. See <see cref="ClangScraperConfiguration"/></param>
+    public ClangScraper(ILoggerFactory loggerFactory, IOptions<ClangScraperConfiguration> options)
     {
         _loggerFactory = loggerFactory;
+        _options  = options;
     }
 
     /// <summary>
@@ -59,10 +63,10 @@ public sealed class ClangScraper
         return visitor.Visit(bindings);
     }
 
-    private static string GetXCodeSDKPath()
+    private string GetXCodeSdkPath()
     {
         var process = new Process();
-        process.StartInfo = new ProcessStartInfo("xcrun", $"--show-sdk-path --sdk {MacOSXSdkVersion()}")
+        process.StartInfo = new ProcessStartInfo("xcrun", $"--show-sdk-path --sdk {_options.Value.XcodeSdk}")
         {
             RedirectStandardOutput = true
         };
@@ -156,7 +160,7 @@ public sealed class ClangScraper
 
         if (OperatingSystem.IsMacOS())
         {
-            commandLineArgs.Add("-isysroot " + GetXCodeSDKPath());
+            commandLineArgs.Add("-isysroot " + GetXCodeSdkPath());
         }
 
         var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;
