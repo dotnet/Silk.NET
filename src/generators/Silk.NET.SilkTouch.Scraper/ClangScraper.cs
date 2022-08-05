@@ -121,10 +121,11 @@ public sealed class ClangScraper
             {
                 var logger = _loggerFactory.CreateLogger("Mac OS additional includes");
                 var sdkPath = GetXCodeSdkPath();
-                var p1 = Path.Combine(sdkPath, "/usr/include");
+                logger.LogTrace("Using SDK {sdk} as base", sdkPath);
+                var p1 = Path.Combine(sdkPath, "usr/include");
                 logger.LogTrace("Suggesting additional path {path}", p1);
                 yield return p1;
-                var p2 = Path.Combine(sdkPath, "/usr/local/include");
+                var p2 = Path.Combine(sdkPath, "usr/local/include");
                 logger.LogTrace("Suggesting additional path {path}", p2);
                 yield return p2;
             }
