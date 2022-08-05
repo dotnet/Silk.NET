@@ -37,12 +37,11 @@ jobs:
                     #   os: ubuntu-18.04
                     
                     # macos 10.15 is not tested as the runner image is deprecated.
-                    
-                    # OSX is currently broken as standard headers (stdint.h) can't be found
-                    # - rid: osx.12-x64
-                    #   os: macos-12
-                    # - rid: osx.11.0-x64
-                    #   os: macos-11
+                    - rid: osx.12-x64
+                      os: macos-12
+                      
+                    - rid: osx.11.0-x64
+                      os: macos-11
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
