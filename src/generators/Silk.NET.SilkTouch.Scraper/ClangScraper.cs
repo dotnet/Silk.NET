@@ -244,6 +244,9 @@ public sealed class ClangScraper
 
             foreach (var diagnostic in pinvokeGenerator.Diagnostics)
             {
+                if (diagnostic.Message == "Unsupported cursor: 'macro definition'. Generated bindings may be incomplete.")
+                    continue;
+
                 logger.Log
                 (
                     diagnostic.Level switch
