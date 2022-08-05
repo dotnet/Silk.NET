@@ -83,7 +83,10 @@ public sealed class ClangScraper
         {
             // Primarily relevant for OSX stuff
             var process = new Process();
-            process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path");
+            process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
+            {
+                RedirectStandardOutput = true
+            };
             process.Start();
             process.WaitForExit();
             var output = process.StandardOutput.ReadToEnd();
