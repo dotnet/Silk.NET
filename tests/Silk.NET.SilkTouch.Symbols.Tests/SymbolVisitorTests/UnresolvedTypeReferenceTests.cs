@@ -13,7 +13,7 @@ public class UnresolvedTypeReferenceTests
     [Fact, Trait("Category", "Symbols")]
     public void VisitingUnresolvedRefThrows()
     {
-        var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
+        var symbol = new UnresolvedTypeReference("");
         var visitor = new Mock<SymbolVisitor>
         {
             CallBase = true
