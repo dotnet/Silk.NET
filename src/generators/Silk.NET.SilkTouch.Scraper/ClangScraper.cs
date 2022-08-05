@@ -3,12 +3,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using ClangSharp;
 using ClangSharp.Interop;
+using Silk.NET.SilkTouch.Scraper.Subagent;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.Scraper;
@@ -44,6 +46,77 @@ public sealed class ClangScraper
 
         var visitor = new XmlVisitor();
         return visitor.Visit(bindings);
+    }
+
+    /// <summary>
+    /// Resolves platform specific standard includes
+    /// </summary>
+    /// <returns>An enumerable of directories to include</returns>
+    /// <remarks>
+    /// On Windows, this attempts to use the Visual Studio Resolver
+    /// On OSX, this attempts to run `xcrun --show-sdk-path` to get the SDK path, to then include /sdk path>/usr/include
+    /// On other UNIX platforms, this simply defaults to /usr/include
+    /// </remarks>
+    public IEnumerable<string> ResolveStandardIncludes()
+    {
+        switch (Environment.OSVersion.Platform)
+        {
+            case PlatformID.MacOSX:
+            {
+                var process = new Process();
+                process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path");
+                process.Start();
+                process.WaitForExit();
+                var output = process.StandardOutput.ReadToEnd();
+                if (Directory.Exists(output))
+                {
+                    var p = Path.Combine(output, "/usr/include/");
+                    if (Directory.Exists(p))
+                    {
+                        yield return p;
+                    }
+                }
+                goto case PlatformID.Unix;
+            }
+            case PlatformID.Unix:
+            {
+                if (Directory.Exists("/usr/include/"))
+                {
+                    yield return "/usr/include";
+                }
+                break;
+            }
+            case PlatformID.Win32NT:
+            {
+                if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
+                {
+                    if (info.UcrtIncludes.Length > 0)
+                    {
+                        foreach (var include in info.UcrtIncludes)
+                        {
+                            yield return include;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var include in info.MsvcToolsIncludes)
+                        {
+                            yield return include;
+                        }
+                    }
+                }
+                break;
+            }
+            default:
+            {
+                throw new PlatformNotSupportedException
+                (
+                    $"Cannot resolve default paths for {Environment.OSVersion.Platform}. " +
+                    "This indicates no testing has been done for this platform. " +
+                    "Consider submitting a pull request or raise an issue."
+                );
+            }
+        }
     }
 
     /// <summary>
