@@ -245,6 +245,17 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         }
       }
+    },
+    ".NETStandard,Version=v2.0/ubuntu.20.04-x64": {
+      "System.Text.Encoding.CodePages": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      }
     }
   }
 }

@@ -22,6 +22,7 @@
         "resolved": "1.1.1",
         "contentHash": "WMcGpWKrmJmzrNeuaEb23bEMnbtR/vLmvZtkAP5qWu7vQsY59GqfRJd65sFpBszbd2k/bQ8cs8eWawQKAabkVg=="
       }
-    }
+    },
+    "net6.0/ubuntu.20.04-x64": {}
   }
 }

@@ -654,6 +654,96 @@
         }
       }
     },
+    "net6.0/ubuntu.20.04-x64": {
+      "libclang.runtime.ubuntu.20.04-x64": {
+        "type": "Transitive",
+        "resolved": "14.0.0",
+        "contentHash": "viSX3ll8bzFb/9xxaqZU3vYEQZh/k/w6i5b4lteNPZkhWp1KsXcfRqerHkwU4ocvZoA8KBGaT7B99N7gN0kF3g=="
+      },
+      "libClangSharp.runtime.ubuntu.20.04-x64": {
+        "type": "Transitive",
+        "resolved": "14.0.0-beta1",
+        "contentHash": "x4mlvuerR7UsOfs+U34IP5ayWBww8SMGSdH/eq+aPrh7Qqjea3V/AuSKdchHFFB78GhoiyuPkqxT5o4+uqX6TA=="
+      },
+      "Microsoft.Win32.SystemEvents": {
+        "type": "Transitive",
+        "resolved": "4.7.0",
+        "contentHash": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "System.Diagnostics.EventLog": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw=="
+      },
+      "System.Drawing.Common": {
+        "type": "Transitive",
+        "resolved": "4.7.0",
+        "contentHash": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.SystemEvents": "4.7.0"
+        }
+      },
+      "System.Security.AccessControl": {
+        "type": "Transitive",
+        "resolved": "4.7.0",
+        "contentHash": "JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Principal.Windows": {
+        "type": "Transitive",
+        "resolved": "4.7.0",
+        "contentHash": "ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ=="
+      },
+      "System.Text.Encoding.CodePages": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Text.Encodings.Web": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Windows.Extensions": {
+        "type": "Transitive",
+        "resolved": "4.7.0",
+        "contentHash": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0"
+        }
+      },
+      "libclang": {
+        "type": "CentralTransitive",
+        "requested": "[14.0.0, )",
+        "resolved": "14.0.0",
+        "contentHash": "GiB8UPbty7+VS8OEXLwrjUixRwPF7DTzC1qs9vTfuZLR+fsPQvawhiCHIp3A8+tbgibksSl0x+ut5Y3STFyiJA==",
+        "dependencies": {
+          "libclang.runtime.ubuntu.20.04-x64": "14.0.0"
+        }
+      },
+      "libClangSharp": {
+        "type": "CentralTransitive",
+        "requested": "[14.0.0-beta1, )",
+        "resolved": "14.0.0-beta1",
+        "contentHash": "fp7onTSIPvZbSzq6d+VXbcZGLp6x2ei2XFmQMfOVzDVMMa/+CMSdJLAcLWF2muHnwdAasz1QYUg+uoPDLsoD1g==",
+        "dependencies": {
+          "libClangSharp.runtime.ubuntu.20.04-x64": "14.0.0-beta1"
+        }
+      }
+    },
     "net6.0/win-x64": {
       "libclang.runtime.win-x64": {
         "type": "Transitive",
