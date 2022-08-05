@@ -131,7 +131,7 @@
         }
       }
     },
-    ".NETStandard,Version=v2.0/ubuntu.20.04-x64": {
+    ".NETStandard,Version=v2.0/win-x86": {
       "System.Text.Encoding.CodePages": {
         "type": "Transitive",
         "resolved": "6.0.0",

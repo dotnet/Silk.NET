@@ -237,16 +237,16 @@
         }
       }
     },
-    "net6.0/ubuntu.20.04-x64": {
-      "libclang.runtime.ubuntu.20.04-x64": {
+    "net6.0/win-x86": {
+      "libclang.runtime.win-x86": {
         "type": "Transitive",
         "resolved": "14.0.0",
-        "contentHash": "viSX3ll8bzFb/9xxaqZU3vYEQZh/k/w6i5b4lteNPZkhWp1KsXcfRqerHkwU4ocvZoA8KBGaT7B99N7gN0kF3g=="
+        "contentHash": "4Qes1EOlVVEiNUwFZZiRJyz2KALTArP1euHN20yLJtAVWcvfeZQVgSLdLoUrIHreXOXY5+r/Qc1RL6Mme8xlrA=="
       },
-      "libClangSharp.runtime.ubuntu.20.04-x64": {
+      "libClangSharp.runtime.win-x86": {
         "type": "Transitive",
         "resolved": "14.0.0-beta1",
-        "contentHash": "x4mlvuerR7UsOfs+U34IP5ayWBww8SMGSdH/eq+aPrh7Qqjea3V/AuSKdchHFFB78GhoiyuPkqxT5o4+uqX6TA=="
+        "contentHash": "LOPDHF6Eej5WnZYIVKMSufeJsN+9eT8X8F0ycECSX1lveXAus284msywPwim1DUqTVWfNUXfZYTnJZaN0jyGEg=="
       },
       "System.Text.Encoding.CodePages": {
         "type": "Transitive",
@@ -270,7 +270,7 @@
         "resolved": "14.0.0",
         "contentHash": "GiB8UPbty7+VS8OEXLwrjUixRwPF7DTzC1qs9vTfuZLR+fsPQvawhiCHIp3A8+tbgibksSl0x+ut5Y3STFyiJA==",
         "dependencies": {
-          "libclang.runtime.ubuntu.20.04-x64": "14.0.0"
+          "libclang.runtime.win-x86": "14.0.0"
         }
       },
       "libClangSharp": {
@@ -279,7 +279,7 @@
         "resolved": "14.0.0-beta1",
         "contentHash": "fp7onTSIPvZbSzq6d+VXbcZGLp6x2ei2XFmQMfOVzDVMMa/+CMSdJLAcLWF2muHnwdAasz1QYUg+uoPDLsoD1g==",
         "dependencies": {
-          "libClangSharp.runtime.ubuntu.20.04-x64": "14.0.0-beta1"
+          "libClangSharp.runtime.win-x86": "14.0.0-beta1"
         }
       }
     }
