@@ -50,5 +50,6 @@
         <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsExtensionNugetVersion)" />
+        <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="$(MsExtensionNugetVersion)" />
     </ItemGroup>
 </Project>
