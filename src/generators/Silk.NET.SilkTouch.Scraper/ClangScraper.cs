@@ -51,7 +51,7 @@ public sealed class ClangScraper
     private static string GetXCodeSDKPath()
     {
         var process = new Process();
-        process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
+        process.StartInfo = new ProcessStartInfo("xcrun", $"--show-sdk-path --sdk {MacOSXSdkVersion()}")
         {
             RedirectStandardOutput = true
         };

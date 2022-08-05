@@ -37,11 +37,14 @@ jobs:
                     #   os: ubuntu-18.04
                     
                     # macos 10.15 is not tested as the runner image is deprecated.
+                    # view https://github.com/actions/virtual-environments/blob/main/images/macos/ files for info on xcode sdk versions
                     - rid: osx.12-x64
                       os: macos-12
+                      xcode-sdk: macosx12.3 # macos-12 image is currently (5th August 2022) on MacOS 12.5 but the latest sdk is macosx12.3
                       
                     - rid: osx.11.0-x64
                       os: macos-11
+                      xcode-sdk: macosx11.3
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
