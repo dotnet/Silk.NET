@@ -82,26 +82,35 @@ public sealed class ClangScraper
         else
         {
             // Primarily relevant for OSX stuff
-            var process = new Process();
-            process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
+            string? osxSdkIncludePath = null;
+            try
             {
-                RedirectStandardOutput = true
-            };
-            process.Start();
-            process.WaitForExit();
-            if (process.ExitCode == 0)
-            {
-                var output = process.StandardOutput.ReadToEnd();
-                if (Directory.Exists(output))
+                var process = new Process();
+                process.StartInfo = new ProcessStartInfo("xcrun", "--show-sdk-path")
                 {
-                    var p = Path.Combine(output, "/usr/include/");
-                    if (Directory.Exists(p))
+                    RedirectStandardOutput = true
+                };
+                process.Start();
+                process.WaitForExit();
+                if (process.ExitCode == 0)
+                {
+                    var output = process.StandardOutput.ReadToEnd();
+                    if (Directory.Exists(output))
                     {
-                        yield return p;
+                        var p = Path.Combine(output, "/usr/include/");
+                        if (Directory.Exists(p))
+                        {
+                            osxSdkIncludePath = p;
+                        }
                     }
                 }
             }
-            
+            catch { /* */}
+            if (osxSdkIncludePath is not null)
+            {
+                yield return osxSdkIncludePath;
+            }
+
             // Generic UNIX Path
             if (Directory.Exists("/usr/include/"))
             {
