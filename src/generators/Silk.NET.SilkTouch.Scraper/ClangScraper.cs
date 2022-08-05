@@ -116,6 +116,18 @@ public sealed class ClangScraper
         {
             yield return "/usr/include";
             yield return "/usr/local/include";
+
+            if (OperatingSystem.IsMacOS())
+            {
+                var logger = _loggerFactory.CreateLogger("Mac OS additional includes");
+                var sdkPath = GetXCodeSdkPath();
+                var p1 = Path.Combine(sdkPath, "/usr/include");
+                logger.LogTrace("Suggesting additional path {path}", p1);
+                yield return p1;
+                var p2 = Path.Combine(sdkPath, "/usr/local/include");
+                logger.LogTrace("Suggesting additional path {path}", p2);
+                yield return p2;
+            }
         }
     }
 
@@ -167,11 +179,6 @@ public sealed class ClangScraper
         for (int i = 0; i < includeDirectories.Length; i++)
         {
             commandLineArgs.Add("--include-directory=" + includeDirectories[i]);
-        }
-
-        if (OperatingSystem.IsMacOS())
-        {
-            commandLineArgs.Add("-isysroot " + GetXCodeSdkPath());
         }
 
         var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;
