@@ -86,8 +86,18 @@ public sealed class ClangScraper
             {
                 logger.LogTrace
                 (
-                    "Available SDKs appear to be: {versions}",
+                    "Available CommandLineTools SDKs appear to be: {versions}",
                     string.Join(", ", Directory.EnumerateDirectories("/Library/Developer/CommandLineTools/SDKs/"))
+                );
+                logger.LogTrace
+                (
+                    "Available XCode SDK versions appear to be: {versions}",
+                    string.Join
+                    (
+                        ", ",
+                        Directory.EnumerateDirectories
+                            ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/")
+                    )
                 );
             } catch { /* */ }
             throw new InvalidOperationException("xcrun didn't return correct lines to stdout.");
