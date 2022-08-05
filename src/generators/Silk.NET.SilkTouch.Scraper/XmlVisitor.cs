@@ -114,10 +114,10 @@ internal sealed class XmlVisitor
     // NOTE: This does not visit types as in class/struct, but visits *references* to types. Like from methods or fields.
     private IEnumerable<Symbol> VisitType(XmlElement type)
     {
-        return
-            TryResolveTypeRef(type.InnerText, out var r)
-                ? new[] { r }
-                : Array.Empty<Symbol>();
+        return new[]
+        {
+            new UnresolvedTypeReference(type.InnerText)
+        };
     }
 
     private IEnumerable<Symbol> VisitStruct(XmlElement @struct)
