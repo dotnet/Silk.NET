@@ -76,8 +76,12 @@ public sealed class ClangScraper
         };
         process.Start();
         process.WaitForExit();
-        var path = process.StandardOutput.ReadToEnd();
+        var path = process.StandardOutput.ReadLine();
         logger.LogInformation("Resolved XCode SDK to {path}", path);
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            throw new InvalidOperationException("xcrun didn't return correct lines to stdout");
+        }
         return path;
     }
     
