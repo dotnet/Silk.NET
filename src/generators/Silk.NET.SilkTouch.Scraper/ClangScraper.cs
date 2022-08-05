@@ -77,7 +77,7 @@ public sealed class ClangScraper
         process.Start();
         process.WaitForExit();
         var output = process.StandardOutput.ReadToEnd();
-        logger.LogTrace("Got Response from xcrun: {response}", output.ReplaceLineEndings("\\n"));
+            logger.LogTrace("Got Response from xcrun: {response} {length}", output.ReplaceLineEndings("\\n"), output.Length);
         var lines = output.Split('\n');
         var path = lines.Length > 0 ? lines[0] : null;
         if (string.IsNullOrWhiteSpace(path))

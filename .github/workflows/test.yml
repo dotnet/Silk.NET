@@ -40,11 +40,11 @@ jobs:
                     # view https://github.com/actions/virtual-environments/blob/main/images/macos/ files for info on xcode sdk versions
                     - rid: osx.12-x64
                       os: macos-12
-                      xcode_sdk: macosx12.3 # macos-12 image is currently (5th August 2022) on MacOS 12.5 but the latest sdk is macosx12.3
+                      xcode_sdk: macosx12
                       
                     - rid: osx.11.0-x64
                       os: macos-11
-                      xcode_sdk: macosx11.3
+                      xcode_sdk: macosx11
         runs-on: ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v3
