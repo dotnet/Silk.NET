@@ -1,13 +1,15 @@
 <Project>
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
     <PropertyGroup>
 		<!-- See https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions -->
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 		
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <Nullable>enable</Nullable>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-	  <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+		<RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
 	</PropertyGroup>
 </Project>
