@@ -96,20 +96,15 @@ public sealed class ClangScraper
     /// </remarks>
     public IEnumerable<string> ResolveStandardIncludes()
     {
+        var logger = _loggerFactory.CreateLogger("Standard includes");
+        var list = new List<string>();
         if (OperatingSystem.IsWindows())
         {
-            var logger = _loggerFactory.CreateLogger("VS Info Resolver");
             if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
             {
                 logger.LogInformation("Successfully resolved VS to {path}", info.InstallationBaseFolder);
-                foreach (var include in info.MsvcToolsIncludes)
-                {
-                    yield return include;
-                }
-                foreach (var include in info.UcrtIncludes)
-                {
-                    yield return include;
-                }
+                list.AddRange(info.MsvcToolsIncludes);
+                list.AddRange(info.UcrtIncludes);
             }
             else
             {
@@ -118,22 +113,28 @@ public sealed class ClangScraper
         }
         else
         {
-            yield return "/usr/include";
-            yield return "/usr/local/include";
+            list.Add("/usr/include");
+            list.Add("/usr/local/include");
 
             if (OperatingSystem.IsMacOS())
             {
-                var logger = _loggerFactory.CreateLogger("Mac OS additional includes");
                 var sdkPath = GetXCodeSdkPath();
                 logger.LogTrace("Using SDK {sdk} as base", sdkPath);
                 var p1 = Path.Combine(sdkPath, "usr/include");
                 logger.LogTrace("Suggesting additional path {path}", p1);
-                yield return p1;
+                list.Add(p1);
                 var p2 = Path.Combine(sdkPath, "usr/local/include");
                 logger.LogTrace("Suggesting additional path {path}", p2);
-                yield return p2;
+                list.Add(p2);
             }
         }
+
+        foreach (var entry in list.Where(entry => !Directory.Exists(entry)))
+        {
+            logger.LogWarning("{entry} is a standard include, but does not exist!", entry);
+        }
+
+        return list;
     }
 
     /// <summary>
