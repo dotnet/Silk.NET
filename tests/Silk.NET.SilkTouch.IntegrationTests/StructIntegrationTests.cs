@@ -28,7 +28,7 @@ typedef struct {
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -44,7 +44,7 @@ struct vec4 : vec3 { float w; };");
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -66,7 +66,7 @@ struct v {
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -82,7 +82,7 @@ struct y { struct x *q; /* ... */ };");
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -104,7 +104,7 @@ union S
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -128,7 +128,7 @@ union S
     }
 
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -156,7 +156,7 @@ struct S
         return Verifier.Verify(result);
     }
 
-    [Fact,
+    [Fact(Skip = "TODO: Reenable after proper type support"),
      Trait("Category",        "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),

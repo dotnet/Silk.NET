@@ -3,13 +3,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using ClangSharp;
 using ClangSharp.Interop;
+using Silk.NET.SilkTouch.Scraper.Subagent;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Symbols;
 
 namespace Silk.NET.SilkTouch.Scraper;
@@ -19,7 +22,8 @@ namespace Silk.NET.SilkTouch.Scraper;
 /// </summary>
 public sealed class ClangScraper
 {
-    private readonly ILoggerFactory _loggerFactory;
+    private readonly ILoggerFactory                      _loggerFactory;
+    private readonly IOptions<ClangScraperConfiguration> _options;
     /// <summary>
     /// Placeholder used in place of library paths
     /// </summary>
@@ -34,9 +38,11 @@ public sealed class ClangScraper
     /// Creates a ClangScraper given it's dependencies
     /// </summary>
     /// <param name="loggerFactory">A logger factory to create loggers from</param>
-    public ClangScraper(ILoggerFactory loggerFactory)
+    /// <param name="options">an <see cref="IOptions{TOptions}"/> instance used to retrieve configuration. See <see cref="ClangScraperConfiguration"/></param>
+    public ClangScraper(ILoggerFactory loggerFactory, IOptions<ClangScraperConfiguration> options)
     {
         _loggerFactory = loggerFactory;
+        _options  = options;
     }
 
     /// <summary>
@@ -57,6 +63,101 @@ public sealed class ClangScraper
         return visitor.Visit(bindings);
     }
 
+    private string GetXCodeSdkPath()
+    {
+        var logger = _loggerFactory.CreateLogger("XCode SDK Resolver");
+        var sdk = _options.Value.XcodeSdk;
+        logger.LogTrace("Resolving XCode SDK using SDK {sdk}", sdk);
+        var process = new Process();
+        process.StartInfo = new ProcessStartInfo
+            ("xcrun", "--show-sdk-path" + (sdk is null ? "" : $" --sdk {sdk}"))
+        {
+            RedirectStandardOutput = true
+        };
+        process.Start();
+        process.WaitForExit();
+        var output = process.StandardOutput.ReadToEnd();
+            logger.LogTrace("Got Response from xcrun: {response} {length}", output.ReplaceLineEndings("\\n"), output.Length);
+        var lines = output.Split('\n');
+        var path = lines.Length > 0 ? lines[0] : null;
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            try
+            {
+                logger.LogTrace
+                (
+                    "Available CommandLineTools SDKs appear to be: {versions}",
+                    string.Join(", ", Directory.EnumerateDirectories("/Library/Developer/CommandLineTools/SDKs/"))
+                );
+                logger.LogTrace
+                (
+                    "Available XCode SDK versions appear to be: {versions}",
+                    string.Join
+                    (
+                        ", ",
+                        Directory.EnumerateDirectories
+                            ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/")
+                    )
+                );
+            } catch { /* */ }
+            throw new InvalidOperationException("xcrun didn't return correct lines to stdout.");
+        }
+        logger.LogInformation("Resolved XCode SDK to {path}", path);
+        return path;
+    }
+    
+    /// <summary>
+    /// Resolves platform specific standard includes
+    /// </summary>
+    /// <returns>An enumerable of directories to include</returns>
+    /// <remarks>
+    /// On Windows, this attempts to use the Visual Studio Resolver
+    /// On OSX, this attempts to run `xcrun --show-sdk-path` to get the SDK path, to then include /sdk path>/usr/include
+    /// On other UNIX platforms, this simply defaults to /usr/include
+    /// </remarks>
+    public IEnumerable<string> ResolveStandardIncludes()
+    {
+        var logger = _loggerFactory.CreateLogger("Standard includes");
+        var list = new List<string>();
+        if (OperatingSystem.IsWindows())
+        {
+            if (VisualStudioResolver.TryGetVisualStudioInfo(out var info))
+            {
+                logger.LogInformation("Successfully resolved VS to {path}", info.InstallationBaseFolder);
+                list.AddRange(info.MsvcToolsIncludes);
+                list.AddRange(info.UcrtIncludes);
+            }
+            else
+            {
+                logger.LogWarning("Failed to resolve VS, but OS is Windows!");
+            }
+        }
+        else
+        {
+            list.Add("/usr/include");
+            list.Add("/usr/local/include");
+
+            if (OperatingSystem.IsMacOS())
+            {
+                var sdkPath = GetXCodeSdkPath();
+                logger.LogTrace("Using SDK {sdk} as base", sdkPath);
+                var p1 = Path.Combine(sdkPath, "usr/include");
+                logger.LogTrace("Suggesting additional path {path}", p1);
+                list.Add(p1);
+                var p2 = Path.Combine(sdkPath, "usr/local/include");
+                logger.LogTrace("Suggesting additional path {path}", p2);
+                list.Add(p2);
+            }
+        }
+
+        foreach (var entry in list.Where(entry => !Directory.Exists(entry)))
+        {
+            logger.LogWarning("{entry} is a standard include, but does not exist!", entry);
+        }
+
+        return list;
+    }
+
     /// <summary>
     /// Calls into Clang to generate XML used to scrape symbols.
     /// </summary>
@@ -70,6 +171,7 @@ public sealed class ClangScraper
     public XmlDocument? GenerateXML(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
     {
         var logger = _loggerFactory.CreateLogger("ClangScraper.ScrapeXML");
+        
         var opts = PInvokeGeneratorConfigurationOptions.None;
         opts |= PInvokeGeneratorConfigurationOptions.NoDefaultRemappings;
 
@@ -94,6 +196,7 @@ public sealed class ClangScraper
         var commandLineArgs = new List<string>();
         commandLineArgs.Add("--language=c++");
         commandLineArgs.Add("--std=c++17");
+        commandLineArgs.Add("--stdlib=libc++");
         commandLineArgs.Add("-Wno-pragma-once-outside-header");
         
         for (int i = 0; i < definedMacros.Length; i++)
@@ -181,6 +284,9 @@ public sealed class ClangScraper
 
             foreach (var diagnostic in pinvokeGenerator.Diagnostics)
             {
+                if (diagnostic.Message.StartsWith("Unsupported cursor:"))
+                    continue;
+
                 logger.Log
                 (
                     diagnostic.Level switch

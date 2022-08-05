@@ -21,6 +21,7 @@
         <PackageReference Include="libClangSharp" />
         <PackageReference Include="Verify.Xunit" />
         <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
     </ItemGroup>
 
     <ItemGroup>
