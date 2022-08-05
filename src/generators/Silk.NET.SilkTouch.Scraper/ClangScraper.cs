@@ -150,13 +150,6 @@ public sealed class ClangScraper
     public XmlDocument? GenerateXML(string headerFile, string[] includedNames, string[] excludedNames, string[] includeDirectories, string[] definedMacros)
     {
         var logger = _loggerFactory.CreateLogger("ClangScraper.ScrapeXML");
-        foreach (var v in includeDirectories)
-        {
-            foreach (var file in Directory.EnumerateFiles(v, "*.h", SearchOption.AllDirectories))
-            {
-                logger.LogTrace("Header available: {file}", file);
-            }
-        }
         
         var opts = PInvokeGeneratorConfigurationOptions.None;
         opts |= PInvokeGeneratorConfigurationOptions.NoDefaultRemappings;
