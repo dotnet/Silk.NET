@@ -34,6 +34,9 @@ override Silk.NET.Maths.Matrix4X3<T>.ToString() -> string!
 override Silk.NET.Maths.Matrix4X4<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix4X4<T>.GetHashCode() -> int
 override Silk.NET.Maths.Matrix4X4<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix5X4<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix5X4<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix5X4<T>.ToString() -> string!
 override Silk.NET.Maths.Plane<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Plane<T>.GetHashCode() -> int
 override Silk.NET.Maths.Plane<T>.ToString() -> string!
@@ -493,6 +496,68 @@ Silk.NET.Maths.Matrix4X4<T>.Row3 -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X4<T>.Row4 -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X4<T>.this[int x, int y].get -> T
 Silk.NET.Maths.Matrix4X4<T>.this[int x].get -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4
+Silk.NET.Maths.Matrix5X4<T>
+Silk.NET.Maths.Matrix5X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix5X4<TOther>
+Silk.NET.Maths.Matrix5X4<T>.Equals(Silk.NET.Maths.Matrix5X4<T> other) -> bool
+Silk.NET.Maths.Matrix5X4<T>.IsIdentity.get -> bool
+Silk.NET.Maths.Matrix5X4<T>.M11.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M11.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M12.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M12.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M13.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M13.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M14.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M14.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M21.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M21.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M22.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M22.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M23.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M23.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M24.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M24.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M31.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M31.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M32.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M32.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M33.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M33.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M34.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M34.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M41.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M41.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M42.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M42.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M43.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M43.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M44.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M44.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M51.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M51.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M52.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M52.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M53.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M53.set -> void
+Silk.NET.Maths.Matrix5X4<T>.M54.get -> T
+Silk.NET.Maths.Matrix5X4<T>.M54.set -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4() -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix2X4<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix3X2<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix3X3<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix3X4<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix4X2<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix4X3<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Matrix4X4<T> value) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(Silk.NET.Maths.Vector4D<T> row1, Silk.NET.Maths.Vector4D<T> row2, Silk.NET.Maths.Vector4D<T> row3, Silk.NET.Maths.Vector4D<T> row4, Silk.NET.Maths.Vector4D<T> row5) -> void
+Silk.NET.Maths.Matrix5X4<T>.Matrix5X4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34, T m41, T m42, T m43, T m44, T m51, T m52, T m53, T m54) -> void
+Silk.NET.Maths.Matrix5X4<T>.Row1 -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4<T>.Row2 -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4<T>.Row3 -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4<T>.Row4 -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4<T>.Row5 -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Matrix5X4<T>.this[int x, int y].get -> T
+Silk.NET.Maths.Matrix5X4<T>.this[int x].get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Plane
 Silk.NET.Maths.Plane<T>
 Silk.NET.Maths.Plane<T>.As<TOther>() -> Silk.NET.Maths.Plane<TOther>
@@ -1014,6 +1079,32 @@ static Silk.NET.Maths.Matrix4X4<T>.operator +(Silk.NET.Maths.Matrix4X4<T> value1
 static Silk.NET.Maths.Matrix4X4<T>.operator -(Silk.NET.Maths.Matrix4X4<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4<T>.operator -(Silk.NET.Maths.Matrix4X4<T> value1, Silk.NET.Maths.Matrix4X4<T> value2) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4<T>.operator ==(Silk.NET.Maths.Matrix4X4<T> value1, Silk.NET.Maths.Matrix4X4<T> value2) -> bool
+static Silk.NET.Maths.Matrix5X4.Add<T>(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4.Lerp<T>(Silk.NET.Maths.Matrix5X4<T> matrix1, Silk.NET.Maths.Matrix5X4<T> matrix2, T amount) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Matrix5X4<T> value1, T value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Matrix5X4.Negate<T>(Silk.NET.Maths.Matrix5X4<T> value) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4.Subtract<T>(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<byte>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<byte>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<decimal>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<decimal>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<double>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<double>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<float>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<float>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<int>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<int>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<long>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<long>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<sbyte>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<sbyte>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<short>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<short>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<System.Half>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<System.Half>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<uint>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<uint>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<ulong>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<ulong>
+static Silk.NET.Maths.Matrix5X4<T>.explicit operator Silk.NET.Maths.Matrix5X4<ushort>(Silk.NET.Maths.Matrix5X4<T> from) -> Silk.NET.Maths.Matrix5X4<ushort>
+static Silk.NET.Maths.Matrix5X4<T>.Identity.get -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator !=(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> bool
+static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Matrix5X4<T> value1, T value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator +(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator -(Silk.NET.Maths.Matrix5X4<T> value) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator -(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Matrix5X4<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator ==(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> bool
 static Silk.NET.Maths.Plane.CreateFromVertices<T>(Silk.NET.Maths.Vector3D<T> point1, Silk.NET.Maths.Vector3D<T> point2, Silk.NET.Maths.Vector3D<T> point3) -> Silk.NET.Maths.Plane<T>
 static Silk.NET.Maths.Plane.Dot<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector4D<T> value) -> T
 static Silk.NET.Maths.Plane.DotCoordinate<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3D<T> value) -> T

@@ -1129,6 +1129,108 @@
                 }
             ]
         },
+		{
+            "profileName": "D2D",
+            "sources": [
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
+				"build/include/silk.net.direct2d.d2d1effects.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
+				"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d2d",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "D2D1",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
+                ],
+                "classes": {
+                    "d2d1.h": "[Core]D2D",
+                    "d2d1_1.h": "[Core]D2D",
+                    "d2d1_2.h": "[Core]D2D",
+					"silk.net.direct2d.d2d1effects.h": "[Core]D2D",
+                    "d2d1effectauthor.h": "[Core]D2D",
+                    "d2d1svg.h": "[Core]D2D"
+                }
+            },
+            "exclude": [
+				"D2D_MATRIX_3X2_F",
+				"D2D_MATRIX_4X3_F",
+				"D2D_MATRIX_4X4_F",
+				"D2D_MATRIX_5X4_F",
+				"D2D_RECT_F",
+            ],
+            "rename": {
+				
+            },
+            "bakery": {
+                "profileNames": [
+                    "d2d1",
+                    "d2d1_1",
+                    "d2d1_2",
+					"silk.net.direct2d.d2d1effects.h",
+                    "d2d1effectauthor",
+					"d2d1svg"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct2D",
+            "extensionsNamespace": "Silk.NET.Direct2D.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd2d1.so",
+                "win-x64": "d2d1.dll",
+                "win-x86": "d2d1.dll",
+                "osx-x64": "libd2d1.dylib",
+                "android": "libd2d1.so",
+                "iOS": "__Internal",
+                "className": "D2DLibraryNameContainer"
+            },
+            "typeMaps": [
+				{
+					"D2D_MATRIX_3X2_F": "Silk.NET.Maths.Matrix3X2<float>",
+					"D2D_MATRIX_4X3_F": "Silk.NET.Maths.Matrix4X3<float>",
+					"D2D_MATRIX_4X4_F": "Silk.NET.Maths.Matrix4X4<float>",
+					"D2D_MATRIX_5X4_F": "Silk.NET.Maths.Matrix5X4<float>",
+					"D2D_RECT_F": "Silk.NET.Maths.Rectangle<float>",
+				},
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
         {
             "profileName": "D3D11",
             "sources": [
