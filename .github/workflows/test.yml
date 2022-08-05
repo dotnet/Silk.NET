@@ -54,12 +54,13 @@ jobs:
                   submodules: "true"
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
-          - name: Cache NuGet Dependencies
-            id: cache-nuget
-            uses: actions/cache@v3
-            with:
-              path: ~/.nuget/packages
-              key: ${{ runner.os }}-${{ runner.rid }}-packages--${{ hashFiles(**/packages.lock.json}) }}
+              
+            - name: Cache NuGet Dependencies
+              id: cache-nuget
+              uses: actions/cache@v3
+              with:
+                path: ~/.nuget/packages
+                key: ${{ runner.os }}-${{ runner.rid }}-packages--${{ hashFiles(**/packages.lock.json}) }}
 
             - name: Restore
               if: steps.cache-nuget.outputs.cache-hit != 'true'
