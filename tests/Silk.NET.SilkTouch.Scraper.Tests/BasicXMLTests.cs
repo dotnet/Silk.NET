@@ -45,8 +45,9 @@ typedef struct {
 } Test;");
 
         var scraper = new ClangScraper();
+        var defaultIncludes = scraper.ResolveStandardIncludes().ToArray();
         var xml = scraper.GenerateXML
-            (tempFile, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+            (tempFile, defaultIncludes, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
 
         /*
          Next, Assert the XML looks something like this:

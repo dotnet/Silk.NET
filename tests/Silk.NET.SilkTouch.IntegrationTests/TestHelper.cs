@@ -20,8 +20,9 @@ public static class TestHelper
         File.WriteAllText(tempFile, "/* THIS IS A GENERATED FILE, PIPED TO CLANG FOR TESTING BY SILK.NET */" + cpp);
 
         var scraper = new ClangScraper();
+        var defaultIncludes = scraper.ResolveStandardIncludes().ToArray();
         var xml = scraper.GenerateXML
-            (tempFile, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+            (tempFile, defaultIncludes, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
 
         Assert.NotNull(xml);
         
