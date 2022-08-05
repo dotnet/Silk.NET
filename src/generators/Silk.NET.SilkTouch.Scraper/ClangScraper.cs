@@ -89,13 +89,16 @@ public sealed class ClangScraper
             };
             process.Start();
             process.WaitForExit();
-            var output = process.StandardOutput.ReadToEnd();
-            if (Directory.Exists(output))
+            if (process.ExitCode == 0)
             {
-                var p = Path.Combine(output, "/usr/include/");
-                if (Directory.Exists(p))
+                var output = process.StandardOutput.ReadToEnd();
+                if (Directory.Exists(output))
                 {
-                    yield return p;
+                    var p = Path.Combine(output, "/usr/include/");
+                    if (Directory.Exists(p))
+                    {
+                        yield return p;
+                    }
                 }
             }
             
