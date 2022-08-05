@@ -60,7 +60,7 @@ jobs:
             # https://github.com/dotnet/sdk/issues/14281
             # doing the same (building for a specific configuration and runtime is supported via dotnet test)
             - name: Switch XCode Version
-              if: ${{ matrix.xcode_version != null } }
+              if: matrix.xcode_version != 0
               run: sudo xcode-select -switch /Applications/${{ matrix.xcode_version }}.app
             - name: Test
               run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }}
