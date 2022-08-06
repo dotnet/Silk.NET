@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// </summary>
 public sealed class TypeStore
 {
-    private ConcurrentDictionary<Guid, TypeSymbol> _dictionary = new();
+    private ConcurrentDictionary<TypeId, TypeSymbol> _dictionary = new();
 
     /// <summary>
     /// Stores the given <see cref="TypeSymbol"/> for later resolution
@@ -27,7 +27,7 @@ public sealed class TypeStore
     /// <param name="id">The Id to use for resolution</param>
     /// <param name="typeSymbol">The <see cref="TypeSymbol"/> found or null</param>
     /// <returns>Whether a type could be resolved</returns>
-    public bool TryResolve(Guid id, out TypeSymbol? typeSymbol)
+    public bool TryResolve(TypeId id, out TypeSymbol? typeSymbol)
     {
         return _dictionary.TryGetValue(id, out typeSymbol);
     }

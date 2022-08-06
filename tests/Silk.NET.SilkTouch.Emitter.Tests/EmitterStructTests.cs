@@ -18,7 +18,7 @@ public sealed class EmitterStructTests : EmitterTest
      Trait("Target Language", "C#")]
     public void StructSyntax()
     {
-        var syntax = Transform(new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty));
+        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty));
         Assert.IsType<StructDeclarationSyntax>(syntax);
     }
 
@@ -28,7 +28,7 @@ public sealed class EmitterStructTests : EmitterTest
      Trait("Target Language", "C#")]
     public void StructKeyword()
     {
-        var syntax = Transform(new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
+        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
         Assert.Equal("struct", syntax!.Keyword.Text);
     }
 
@@ -38,7 +38,7 @@ public sealed class EmitterStructTests : EmitterTest
      Trait("Target Language", "C#")]
     public void CorrectIdentifier()
     {
-        var syntax = Transform(new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
+        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
         Assert.Equal("Test", syntax!.Identifier.Text);
     }
 
@@ -48,7 +48,7 @@ public sealed class EmitterStructTests : EmitterTest
      Trait("Target Language", "C#")]
     public void IsOnlyPublic()
     {
-        var syntax = Transform(new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
+        var syntax = Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)) as StructDeclarationSyntax;
         var @public = Assert.Single(syntax!.Modifiers);
         Assert.Equal("public", @public.Text);
     }
@@ -62,6 +62,6 @@ public sealed class EmitterStructTests : EmitterTest
         // Note that this test also covers trivia, which is not checked otherwise.
         Assert.Equal(@"public struct Test
 {
-}", Transform(new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)).ToFullString());
+}", Transform(new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), ImmutableArray<FieldSymbol>.Empty)).ToFullString());
     }
 }

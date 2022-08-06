@@ -122,7 +122,7 @@ public abstract class SymbolVisitor
     /// </summary>
     /// <param name="id">The Id of the type</param>
     /// <returns>The new Id that should be used to reference this type</returns>
-    protected virtual Guid VisitTypeId(Guid id)
+    protected virtual TypeId VisitTypeId(TypeId id)
     {
         return id;
     }

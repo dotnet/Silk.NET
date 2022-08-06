@@ -144,7 +144,7 @@ internal sealed class XmlVisitor
             (
                 new StructSymbol
                 (
-                    Guid.NewGuid(),
+                    TypeId.CreateNew(),
                     new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
                     fields.ToImmutableArray()
                 )

@@ -7,6 +7,6 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// Represents a reference to a type that is also defined as part of this symbol tree.
 /// </summary>
 /// <param name="ReferencedTypeId">The <see cref="TypeSymbol.Id"/> of the <see cref="TypeSymbol"/> referenced.</param>
-public sealed record InternalTypeReference(Guid ReferencedTypeId) : TypeReference()
+public sealed record InternalTypeReference(TypeId ReferencedTypeId) : TypeReference()
 {
 }

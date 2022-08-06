@@ -19,4 +19,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// For types that would require such behavior there are separate symbols that may be defined.
 /// </remarks>
 public sealed record StructSymbol
-    (Guid Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier);
+    (TypeId Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier);

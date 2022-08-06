@@ -22,7 +22,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                Guid.NewGuid(),
+                TypeId.CreateNew(),
                 new IdentifierSymbol("Test"), new[]
                 { 
                     new FieldSymbol
@@ -54,7 +54,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
-                Guid.NewGuid(),
+                TypeId.CreateNew(),
                 new IdentifierSymbol("Test"), new[]
                 {
                     new FieldSymbol

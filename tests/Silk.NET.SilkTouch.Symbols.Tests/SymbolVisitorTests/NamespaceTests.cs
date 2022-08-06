@@ -33,7 +33,7 @@ public class NamespaceTests
     {
         var symbol = new NamespaceSymbol(new IdentifierSymbol(""), new []
         {
-            (TypeSymbol)new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty)
+            (TypeSymbol)new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty)
         }.ToImmutableArray());
             
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };

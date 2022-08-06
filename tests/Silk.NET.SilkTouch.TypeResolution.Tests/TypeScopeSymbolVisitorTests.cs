@@ -13,7 +13,7 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact]
     public void RootScopeContainsSingleRootType()
     {
-        var testType = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(testType);
@@ -40,7 +40,7 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact]
     public void RootScopeContainsSingleNamespacedType()
     {
-        var testType = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var @namespace = new NamespaceSymbol
         (
             new IdentifierSymbol(""),
@@ -63,9 +63,9 @@ public sealed class TypeScopeSymbolVisitorTests
     [Fact]
     public void RootScopeContainsMultipleNamespacedTypes()
     {
-        var testType1 = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("T1"), ImmutableArray<FieldSymbol>.Empty);
-        var testType2 = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("T2"), ImmutableArray<FieldSymbol>.Empty);
-        var testType3 = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("T3"), ImmutableArray<FieldSymbol>.Empty);
+        var testType1 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T1"), ImmutableArray<FieldSymbol>.Empty);
+        var testType2 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T2"), ImmutableArray<FieldSymbol>.Empty);
+        var testType3 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T3"), ImmutableArray<FieldSymbol>.Empty);
         var @namespace = new NamespaceSymbol
         (
             new IdentifierSymbol(""),

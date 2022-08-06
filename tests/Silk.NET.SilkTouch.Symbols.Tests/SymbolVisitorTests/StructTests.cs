@@ -16,7 +16,7 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsType()
     {
-        var symbol = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -29,7 +29,7 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsStruct()
     {
-        var symbol = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -42,7 +42,7 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructIdentifierIsVisitedAsIdentifier()
     {
-        var symbol = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
         var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
@@ -57,7 +57,7 @@ public class StructTests
     public void StructFieldIsVisited()
     {
         var member = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
-        var symbol = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), new[]
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
         {
             member
         }.ToImmutableArray());
@@ -77,7 +77,7 @@ public class StructTests
     {
         var member1 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
         var member2 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test2"));
-        var symbol = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("Test"), new[]
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
         {
             member1, member2
         }.ToImmutableArray());

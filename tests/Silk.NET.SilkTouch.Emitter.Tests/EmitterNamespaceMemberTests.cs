@@ -25,7 +25,7 @@ public class EmitterNamespaceMemberTests : EmitterTest
                 new[]
                 {
                     (TypeSymbol) new StructSymbol
-                        (Guid.NewGuid(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
+                        (TypeId.CreateNew(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
                 }.ToImmutableArray()
             )
         );
@@ -53,9 +53,9 @@ public class EmitterNamespaceMemberTests : EmitterTest
                 new[]
                 {
                     (TypeSymbol) new StructSymbol
-                        (Guid.NewGuid(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
+                        (TypeId.CreateNew(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
                     (TypeSymbol) new StructSymbol
-                        (Guid.NewGuid(), new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
+                        (TypeId.CreateNew(), new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
                 }.ToImmutableArray()
             )
         );

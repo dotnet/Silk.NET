@@ -9,4 +9,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <param name="Id">An Identifier used for referencing types globally</param>
 /// <param name="Identifier">The identifier of this type</param>
 /// <seealso cref="StructSymbol"/>
-public abstract record TypeSymbol(Guid Id, IdentifierSymbol Identifier) : Symbol;
+public abstract record TypeSymbol(TypeId Id, IdentifierSymbol Identifier) : Symbol;

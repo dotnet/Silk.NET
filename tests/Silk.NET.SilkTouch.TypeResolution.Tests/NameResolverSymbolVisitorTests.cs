@@ -16,7 +16,7 @@ public class NameResolverSymbolVisitorTests
     [Fact]
     public void SelfTypeIsResolvedCorrectly()
     {
-        var testType = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol("a"), new FieldSymbol[]
+        var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("a"), new FieldSymbol[]
         {
             new(new UnresolvedTypeReference("a"), new IdentifierSymbol("someField"))
         }.ToImmutableArray());
