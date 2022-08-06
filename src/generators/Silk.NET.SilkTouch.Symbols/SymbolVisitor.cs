@@ -82,7 +82,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
     {
-        return new InternalTypeReference(VisitType(typeReference.Referenced));
+        return new InternalTypeReference(VisitTypeId(typeReference.ReferencedTypeId));
     }
     
     /// <summary>
@@ -100,6 +100,17 @@ public abstract class SymbolVisitor
             typeReference.Namespace is not null ? VisitIdentifier(typeReference.Namespace) : null,
             VisitIdentifier(typeReference.TypeIdentifier)
         );
+    }
+
+    /// <summary>
+    /// Called when a type is referenced by it's Id and should be visited. Implementers may resolve the Id if they to do so.
+    /// The default implementation does not resolve the Id or call any further into the tree.
+    /// </summary>
+    /// <param name="id">The Id of the type</param>
+    /// <returns>The new Id that should be used to reference this type</returns>
+    protected virtual Guid VisitTypeId(Guid id)
+    {
+        return id;
     }
 
     /// <summary>
@@ -128,6 +139,7 @@ public abstract class SymbolVisitor
     {
         return new StructSymbol
         (
+            structSymbol.Id,
             VisitIdentifier(structSymbol.Identifier),
             structSymbol.Fields.Select(VisitField).ToImmutableArray()
         );
