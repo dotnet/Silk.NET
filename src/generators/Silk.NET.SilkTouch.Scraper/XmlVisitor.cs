@@ -17,8 +17,11 @@ namespace Silk.NET.SilkTouch.Scraper;
 internal sealed class XmlVisitor
 {
     private readonly ILogger _logger;
-    public XmlVisitor(ILogger logger) {
+    private readonly TypeStore _typeStore;
+    public XmlVisitor(ILogger logger, TypeStore typeStore)
+    {
         _logger = logger;
+        _typeStore = typeStore;
     }
 
     public IEnumerable<Symbol> Visit(XmlNode node)
@@ -134,13 +137,17 @@ internal sealed class XmlVisitor
                 }
             }
         }
-        
+
         return new[]
         {
-            new StructSymbol
+            StoreType
             (
-                new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
-                fields.ToImmutableArray()
+                new StructSymbol
+                (
+                    Guid.NewGuid(),
+                    new IdentifierSymbol(@struct.Attributes?["name"]?.Value ?? throw new InvalidOperationException()),
+                    fields.ToImmutableArray()
+                )
             )
         };
     }
@@ -170,5 +177,11 @@ internal sealed class XmlVisitor
                     .ToImmutableArray()
             )
         };
+    }
+
+    private T StoreType<T>(T instance) where T : TypeSymbol
+    {
+        _typeStore.Store(instance);
+        return instance;
     }
 }

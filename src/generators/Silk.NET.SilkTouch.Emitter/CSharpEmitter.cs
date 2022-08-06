@@ -26,11 +26,12 @@ public sealed class CSharpEmitter
     {
         
     }
-    
+
     /// <summary>
     /// Transforms the given <see cref="Silk.NET.SilkTouch.Symbols.Symbol"/> into a <see cref="CSharpSyntaxNode"/>
     /// </summary>
     /// <param name="symbol">The symbol to transform</param>
+    /// <param name="typeStore">The <see cref="TypeStore"/> used</param>
     /// <returns>A syntax node, containing syntax depending on the symbol. The syntax node should produce valid C# code.</returns>
     /// <remarks>
     /// The returned syntax node may not be ideal and is not optimized for code size.
@@ -39,9 +40,9 @@ public sealed class CSharpEmitter
     /// The returned node will never contain line comments, but other C# language feature may still rely on whitespace and/or newlines.
     /// Note that (block) comments will never be used to replace such whitespace, even if this is valid to allow a potential comment stripping to be a simple as possible.
     /// </remarks>
-    public CSharpSyntaxNode Transform(Symbol symbol)
+    public CSharpSyntaxNode Transform(Symbol symbol, TypeStore typeStore)
     {
-        var visitor = new Visitor(Whitespace("    "));
+        var visitor = new Visitor(Whitespace("    "), typeStore);
         visitor.Visit(symbol); // the result is ignored. This allows us to optimize the visitor in some cases.
         var syntax = visitor.Syntax;
         if (syntax is null)
@@ -61,7 +62,7 @@ public sealed class CSharpEmitter
         private IEnumerable<SyntaxTrivia> Indentation => Enumerable.Repeat(_indentation, _indentationCount);
         private IEnumerable<SyntaxTrivia> NewLine => Indentation.Prepend(LineFeed);
 
-        public Visitor(SyntaxTrivia indentation) : base()
+        public Visitor(SyntaxTrivia indentation, TypeStore typeStore) : base(typeStore)
         {
             _indentation = indentation;
         }

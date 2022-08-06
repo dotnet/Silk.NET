@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Immutable;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Symbols;
@@ -16,10 +17,18 @@ public class EmitterNamespaceMemberTests : EmitterTest
      Trait("Target Language", "C#")]
     public void SingleMemberIntegration()
     {
-        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []
-        {
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
-        }.ToImmutableArray()));
+        var syntax = Transform
+        (
+            new NamespaceSymbol
+            (
+                new IdentifierSymbol("Test"),
+                new[]
+                {
+                    (TypeSymbol) new StructSymbol
+                        (Guid.NewGuid(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty)
+                }.ToImmutableArray()
+            )
+        );
 
         var result = syntax.ToFullString();
         Assert.Equal(@"namespace Test
@@ -36,11 +45,20 @@ public class EmitterNamespaceMemberTests : EmitterTest
      Trait("Target Language", "C#")]
     public void MultipleMembersIntegration()
     {
-        var syntax = Transform(new NamespaceSymbol(new IdentifierSymbol("Test"), new []
-        {
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
-        }.ToImmutableArray()));
+        var syntax = Transform
+        (
+            new NamespaceSymbol
+            (
+                new IdentifierSymbol("Test"),
+                new[]
+                {
+                    (TypeSymbol) new StructSymbol
+                        (Guid.NewGuid(), new IdentifierSymbol("Test2"), ImmutableArray<FieldSymbol>.Empty),
+                    (TypeSymbol) new StructSymbol
+                        (Guid.NewGuid(), new IdentifierSymbol("Test3"), ImmutableArray<FieldSymbol>.Empty)
+                }.ToImmutableArray()
+            )
+        );
 
         var result = syntax.ToFullString();
         Assert.Equal(@"namespace Test

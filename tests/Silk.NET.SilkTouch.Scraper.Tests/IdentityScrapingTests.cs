@@ -3,6 +3,7 @@
 
 using System.Linq;
 using System.Xml;
+using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Scraper.Tests;
@@ -15,7 +16,7 @@ public class IdentityScrapingTests
     {
         var doc = new XmlDocument();
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         Assert.Empty(symbols);
     }
@@ -29,7 +30,7 @@ public class IdentityScrapingTests
 </bindings>
 ");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         Assert.Empty(symbols);
     }

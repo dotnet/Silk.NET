@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Emitter;
 using Silk.NET.SilkTouch.Scraper;
+using Silk.NET.SilkTouch.Symbols;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.IntegrationTests;
@@ -46,9 +47,10 @@ public static class TestHelper
 
         Assert.NotNull(xml);
 
-        var symbols = scraper.ScrapeXML(xml!);
+        var typeStore = new TypeStore();
+        var symbols = scraper.ScrapeXML(xml!, typeStore);
         var emitter = new CSharpEmitter();
-        var outputs = symbols.Select(x => emitter.Transform(x));
+        var outputs = symbols.Select(x => emitter.Transform(x, typeStore));
         return outputs.Aggregate
         (
             "",

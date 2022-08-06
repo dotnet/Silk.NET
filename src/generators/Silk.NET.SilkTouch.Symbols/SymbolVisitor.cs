@@ -11,6 +11,20 @@ namespace Silk.NET.SilkTouch.Symbols;
 public abstract class SymbolVisitor
 {
     /// <summary>
+    /// The <see cref="Silk.NET.SilkTouch.Symbols.TypeStore"/> used by this <see cref="SymbolVisitor"/>
+    /// </summary>
+    protected TypeStore TypeStore { get; }
+    
+    /// <summary>
+    /// Creates a <see cref="SymbolVisitor"/> with it's dependencies.
+    /// </summary>
+    /// <param name="typeStore">The <see cref="Silk.NET.SilkTouch.Symbols.TypeStore"/> to use</param>
+    public SymbolVisitor(TypeStore typeStore)
+    {
+        TypeStore = typeStore;
+    }
+    
+    /// <summary>
     /// Visit a <see cref="Symbol"/>. This will call the appropriate method based on the actual type of the <paramref name="symbol"/>
     /// </summary>
     /// <param name="symbol">The symbol to visit</param>
@@ -114,14 +128,22 @@ public abstract class SymbolVisitor
     }
 
     /// <summary>
-    /// Visit a <see cref="TypeSymbol"/>. This will call the appropriate method based on the actual type of the <paramref name="typeSymbol"/>
+    /// Visit a <see cref="TypeSymbol"/>. This will call the appropriate method based on the actual type of the <paramref name="typeSymbol"/>.
+    /// This will update the <see cref="TypeStore"/> with it's return value by default. Implementors overriding this should update the store themselves.
     /// </summary>
     /// <param name="typeSymbol">The type symbol to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <seealso cref="VisitStruct"/>
     protected virtual TypeSymbol VisitType(TypeSymbol typeSymbol)
     {
-        if (typeSymbol is StructSymbol @struct) return VisitStruct(@struct);
+        TypeSymbol? result = null;
+        if (typeSymbol is StructSymbol @struct) result = VisitStruct(@struct);
+
+        if (result is not null)
+        {
+            TypeStore.Store(result);
+            return result;
+        }
 
         return ThrowUnknownSymbol<TypeSymbol>(typeSymbol);
     }

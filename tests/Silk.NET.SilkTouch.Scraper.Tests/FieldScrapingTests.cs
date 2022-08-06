@@ -17,7 +17,7 @@ public class FieldScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<field name=""f2""><type native=""int32_t"">int</type></field>");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var field = Assert.IsType<FieldSymbol>(symbol);
@@ -31,7 +31,7 @@ public class FieldScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<field name=""f2""><type native=""int32_t"">int</type></field>");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var field = Assert.IsType<FieldSymbol>(symbol);
@@ -46,7 +46,7 @@ public class FieldScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<field name=""f2""><type native=""int32_t"">int</type></field>");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var field = Assert.IsType<FieldSymbol>(symbol);

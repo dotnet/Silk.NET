@@ -49,8 +49,9 @@ public sealed class ClangScraper
     /// Scrapes the given XML document for symbols
     /// </summary>
     /// <param name="document">A XML Document, the format is assumed to be similar to what ClangSharp would output.</param>
+    /// <param name="typeStore">A <see cref="TypeStore"/> used when creating symbols</param>
     /// <returns>Any number of symbols scraped from the given xml</returns>
-    public IEnumerable<Symbol> ScrapeXML(XmlDocument document)
+    public IEnumerable<Symbol> ScrapeXML(XmlDocument document, TypeStore typeStore)
     {
         var bindings = document.ChildNodes.Cast<XmlNode>().OfType<XmlElement>().FirstOrDefault();
 
@@ -59,7 +60,7 @@ public sealed class ClangScraper
             return Enumerable.Empty<Symbol>();
         }
 
-        var visitor = new XmlVisitor(_loggerFactory.CreateLogger<XmlVisitor>());
+        var visitor = new XmlVisitor(_loggerFactory.CreateLogger<XmlVisitor>(), typeStore);
         return visitor.Visit(bindings);
     }
 

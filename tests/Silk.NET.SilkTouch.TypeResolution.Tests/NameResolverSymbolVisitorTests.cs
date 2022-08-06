@@ -31,7 +31,8 @@ public class NameResolverSymbolVisitorTests
         var visitor = new NameResolverSymbolVisitor
         (
             serviceProvider.GetRequiredService<ILoggerFactory>().CreateLogger<NameResolverSymbolVisitor>(),
-            resolutionScope
+            resolutionScope,
+            new TypeStore()
         );
 
         var resultType = visitor.Visit(testType);

@@ -14,7 +14,7 @@ public sealed class TypeScopeSymbolVisitorTests
     public void RootScopeContainsSingleRootType()
     {
         var testType = new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
-        var visitor = new TypeScopeSymbolVisitor();
+        var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(testType);
 
@@ -29,7 +29,7 @@ public sealed class TypeScopeSymbolVisitorTests
     public void RootScopeEmptyWithEmptyNamespace()
     {
         var @namespace = new NamespaceSymbol(new IdentifierSymbol(""), ImmutableArray<TypeSymbol>.Empty);
-        var visitor = new TypeScopeSymbolVisitor();
+        var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(@namespace);
 
@@ -49,7 +49,7 @@ public sealed class TypeScopeSymbolVisitorTests
                 (TypeSymbol) testType
             }.ToImmutableArray()
         );
-        var visitor = new TypeScopeSymbolVisitor();
+        var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(@namespace);
 
@@ -76,7 +76,7 @@ public sealed class TypeScopeSymbolVisitorTests
                 testType3
             }.ToImmutableArray()
         );
-        var visitor = new TypeScopeSymbolVisitor();
+        var visitor = new TypeScopeSymbolVisitor(new TypeStore());
 
         visitor.Visit(@namespace);
 

@@ -21,7 +21,7 @@ public class NamespaceScrapingTests
 </bindings>
 ");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var @namespace = Assert.IsType<NamespaceSymbol>(symbol);
@@ -42,7 +42,7 @@ public class NamespaceScrapingTests
 </bindings>
 ");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var @namespace = Assert.IsType<NamespaceSymbol>(symbol);
@@ -68,7 +68,7 @@ public class NamespaceScrapingTests
 </bindings>
 ");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var @namespace = Assert.IsType<NamespaceSymbol>(symbol);

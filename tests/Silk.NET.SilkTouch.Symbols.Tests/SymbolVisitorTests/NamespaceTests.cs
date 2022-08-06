@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Immutable;
 using Moq;
 using Moq.Protected;
@@ -16,12 +17,8 @@ public class NamespaceTests
     public void NamespaceIdentifierIsVisited()
     {
         var symbol = new NamespaceSymbol(new IdentifierSymbol(""), ImmutableArray<TypeSymbol>.Empty);
-            
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
 
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -36,14 +33,10 @@ public class NamespaceTests
     {
         var symbol = new NamespaceSymbol(new IdentifierSymbol(""), new []
         {
-            (TypeSymbol)new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty)
+            (TypeSymbol)new StructSymbol(Guid.NewGuid(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty)
         }.ToImmutableArray());
             
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()

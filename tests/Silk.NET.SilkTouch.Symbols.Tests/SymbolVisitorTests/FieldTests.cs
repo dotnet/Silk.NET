@@ -16,11 +16,7 @@ public class FieldTests
     public void FieldIsVisitedAsField()
     {
         var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -33,11 +29,7 @@ public class FieldTests
     public void FieldIsVisitedAsMember()
     {
         var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -50,11 +42,7 @@ public class FieldTests
     public void FieldTypeIsVisited()
     {
         var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -67,11 +55,7 @@ public class FieldTests
     public void FieldIdentifierIsVisited()
     {
         var symbol = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("")), new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()

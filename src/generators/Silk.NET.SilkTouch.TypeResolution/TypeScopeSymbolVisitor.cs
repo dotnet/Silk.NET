@@ -20,7 +20,8 @@ public sealed class TypeScopeSymbolVisitor : SymbolVisitor
     /// <summary>
     /// Creates a <see cref="TypeScopeSymbolVisitor"/>
     /// </summary>
-    public TypeScopeSymbolVisitor()
+    /// <param name="typeStore">The <see cref="TypeStore"/> used</param>
+    public TypeScopeSymbolVisitor(TypeStore typeStore) : base(typeStore)
     {
         RootScope = new(new());
         _currentScope = RootScope;

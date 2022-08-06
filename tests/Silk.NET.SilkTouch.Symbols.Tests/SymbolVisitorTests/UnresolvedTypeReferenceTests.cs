@@ -14,11 +14,7 @@ public class UnresolvedTypeReferenceTests
     public void VisitingUnresolvedRefThrows()
     {
         var symbol = new UnresolvedTypeReference("");
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         Assert.Throws<InvalidOperationException>(() => visitor.Object.Visit(symbol));
     }
 }

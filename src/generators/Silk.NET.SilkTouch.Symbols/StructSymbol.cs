@@ -19,11 +19,4 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// For types that would require such behavior there are separate symbols that may be defined.
 /// </remarks>
 public sealed record StructSymbol
-    (Guid Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier)
-{
-    /// <inheritdoc />
-    public bool Equals(StructSymbol? other) => other is not null && other.Id == Id;
-
-    /// <inheritdoc />
-    public override int GetHashCode() => Id.GetHashCode();
-}
+    (Guid Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier);

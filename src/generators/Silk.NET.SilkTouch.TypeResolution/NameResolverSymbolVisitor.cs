@@ -38,7 +38,8 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
     /// </summary>
     /// <param name="logger">A logger used for diagnostic purposes</param>
     /// <param name="rootScope">The <see cref="TypeResolutionScope"/> used as root</param>
-    public NameResolverSymbolVisitor(ILogger logger, TypeResolutionScope rootScope)
+    /// <param name="typeStore">The <see cref="TypeStore"/> used</param>
+    public NameResolverSymbolVisitor(ILogger logger, TypeResolutionScope rootScope, TypeStore typeStore) : base(typeStore)
     {
         _logger = logger;
         _rootScope = rootScope;

@@ -15,6 +15,6 @@ public abstract class EmitterTest
 
     protected CSharpSyntaxNode Transform(Symbol symbol)
     {
-        return CreateEmitter().Transform(symbol);
+        return CreateEmitter().Transform(symbol, new TypeStore());
     }
 }
