@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Silk.NET.SilkTouch.TypeResolution.Tests;
 
-public sealed class ScopeResolutionTests
+public sealed class TypeScopeSymbolVisitorTests
 {
     [Fact]
     public void RootScopeContainsSingleRootType()
