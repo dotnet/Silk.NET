@@ -13,7 +13,7 @@ namespace Silk.NET.SilkTouch.TypeResolution.Tests;
 
 public class NameResolverSymbolVisitorTests
 {
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void SelfTypeIsResolvedCorrectly()
     {
         var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("a"), new FieldSymbol[]

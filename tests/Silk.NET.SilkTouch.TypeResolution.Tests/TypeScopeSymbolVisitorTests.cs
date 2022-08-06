@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.TypeResolution.Tests;
 
 public sealed class TypeScopeSymbolVisitorTests
 {
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsSingleRootType()
     {
         var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
@@ -25,7 +25,7 @@ public sealed class TypeScopeSymbolVisitorTests
         Assert.Empty(associatedScope.ChildTypeScopes);
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeEmptyWithEmptyNamespace()
     {
         var @namespace = new NamespaceSymbol(new IdentifierSymbol(""), ImmutableArray<TypeSymbol>.Empty);
@@ -37,7 +37,7 @@ public sealed class TypeScopeSymbolVisitorTests
         Assert.Empty(rootScope.ChildTypeScopes);
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsSingleNamespacedType()
     {
         var testType = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
@@ -60,7 +60,7 @@ public sealed class TypeScopeSymbolVisitorTests
         Assert.Empty(associatedScope.ChildTypeScopes);
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RootScopeContainsMultipleNamespacedTypes()
     {
         var testType1 = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("T1"), ImmutableArray<FieldSymbol>.Empty);

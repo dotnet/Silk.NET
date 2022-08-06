@@ -2,13 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Immutable;
+using System.ComponentModel;
 using Xunit;
 
 namespace Silk.NET.SilkTouch.Symbols.Tests;
 
 public class TypeStoreTests
 {
-    [Fact]
+    [Fact, Trait("Category", "Symbols"), Trait("Category", "TypeStore")]
     public void EmptyStoreDoesNotResolve()
     {
         var store = new TypeStore();
@@ -19,7 +20,7 @@ public class TypeStoreTests
         Assert.Null(ts);
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Symbols"), Trait("Category", "TypeStore")]
     public void StoreResolvesSingleEntry()
     {
         var store = new TypeStore();
@@ -33,7 +34,7 @@ public class TypeStoreTests
         Assert.StrictEqual(typeSymbol, ts);
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Symbols"), Trait("Category", "TypeStore")]
     public void StoreResolvesMultipleEntries()
     {
         var store = new TypeStore();
