@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Immutable;
 using Moq;
 using Moq.Protected;
@@ -15,12 +16,8 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsType()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -32,12 +29,8 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructSymbolIsVisitedAsStruct()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -49,12 +42,8 @@ public class StructTests
      Trait("Feature", "Structs")]
     public void StructIdentifierIsVisitedAsIdentifier()
     {
-        var symbol = new StructSymbol(new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol(""), ImmutableArray<FieldSymbol>.Empty);
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -68,15 +57,11 @@ public class StructTests
     public void StructFieldIsVisited()
     {
         var member = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
         {
             member
         }.ToImmutableArray());
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -92,15 +77,11 @@ public class StructTests
     {
         var member1 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test1"));
         var member2 = new FieldSymbol(new ExternalTypeReference(null, new IdentifierSymbol("int")), new IdentifierSymbol("Test2"));
-        var symbol = new StructSymbol(new IdentifierSymbol("Test"), new[]
+        var symbol = new StructSymbol(TypeId.CreateNew(), new IdentifierSymbol("Test"), new[]
         {
             member1, member2
         }.ToImmutableArray());
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()

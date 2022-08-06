@@ -15,11 +15,7 @@ public class IdentifierTests
     public void IdentifierIsVisitedAsIdentifier()
     {
         var symbol = new IdentifierSymbol("");
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()

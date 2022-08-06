@@ -14,11 +14,7 @@ public class ExternalTypeReferenceTests
     public void RefIsVisitedAsRef()
     {
         var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -30,11 +26,7 @@ public class ExternalTypeReferenceTests
     public void RefIsVisitedAsGenericRef()
     {
         var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -46,11 +38,7 @@ public class ExternalTypeReferenceTests
     public void RefTypeIdentifierIsVisitedAsIdentifier()
     {
         var symbol = new ExternalTypeReference(null, new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()
@@ -62,11 +50,7 @@ public class ExternalTypeReferenceTests
     public void RefNamespaceIsVisitedAsIdentifier()
     {
         var symbol = new ExternalTypeReference(new IdentifierSymbol(""), new IdentifierSymbol(""));
-        var visitor = new Mock<SymbolVisitor>
-        {
-            CallBase = true
-        };
-
+        var visitor = new Mock<MockSymbolVisitor> { CallBase = true };
         visitor.Object.Visit(symbol);
         
         visitor.Protected()

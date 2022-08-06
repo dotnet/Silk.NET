@@ -17,7 +17,7 @@ public class StructScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<struct name=""Test""></struct>");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);
@@ -31,7 +31,7 @@ public class StructScrapingTests
         var doc = new XmlDocument();
         doc.LoadXml(@"<struct name=""Test""></struct>");
 
-        var symbols = Helpers.CreateScraper().ScrapeXML(doc);
+        var symbols = Helpers.CreateScraper().ScrapeXML(doc, new TypeStore());
         
         var symbol = Assert.Single(symbols);
         var @struct = Assert.IsType<StructSymbol>(symbol);

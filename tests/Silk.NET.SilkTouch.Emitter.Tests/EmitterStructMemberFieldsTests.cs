@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Immutable;
 using Silk.NET.SilkTouch.Symbols;
 using Xunit;
@@ -21,6 +22,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
+                TypeId.CreateNew(),
                 new IdentifierSymbol("Test"), new[]
                 { 
                     new FieldSymbol
@@ -52,6 +54,7 @@ public class EmitterStructMemberFieldsTests : EmitterTest
         (
             new StructSymbol
             (
+                TypeId.CreateNew(),
                 new IdentifierSymbol("Test"), new[]
                 {
                     new FieldSymbol

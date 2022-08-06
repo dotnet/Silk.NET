@@ -8,6 +8,7 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// <summary>
 /// A <see cref="TypeSymbol"/> representing a <c>struct</c>.
 /// </summary>
+/// <param name="Id">An Identifier used for referencing types globally</param>
 /// <param name="Identifier">The Identifier of this struct</param>
 /// <param name="Fields">The fields of this struct</param>
 /// <remarks>
@@ -17,4 +18,5 @@ namespace Silk.NET.SilkTouch.Symbols;
 /// Structs are implicitly sequential in layout. There is no way to provide an offset at which to place a struct.
 /// For types that would require such behavior there are separate symbols that may be defined.
 /// </remarks>
-public sealed record StructSymbol(IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Identifier);
+public sealed record StructSymbol
+    (TypeId Id, IdentifierSymbol Identifier, ImmutableArray<FieldSymbol> Fields) : TypeSymbol(Id, Identifier);

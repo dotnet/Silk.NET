@@ -11,6 +11,20 @@ namespace Silk.NET.SilkTouch.Symbols;
 public abstract class SymbolVisitor
 {
     /// <summary>
+    /// The <see cref="Silk.NET.SilkTouch.Symbols.TypeStore"/> used by this <see cref="SymbolVisitor"/>
+    /// </summary>
+    protected TypeStore TypeStore { get; }
+    
+    /// <summary>
+    /// Creates a <see cref="SymbolVisitor"/> with it's dependencies.
+    /// </summary>
+    /// <param name="typeStore">The <see cref="Silk.NET.SilkTouch.Symbols.TypeStore"/> to use</param>
+    public SymbolVisitor(TypeStore typeStore)
+    {
+        TypeStore = typeStore;
+    }
+    
+    /// <summary>
     /// Visit a <see cref="Symbol"/>. This will call the appropriate method based on the actual type of the <paramref name="symbol"/>
     /// </summary>
     /// <param name="symbol">The symbol to visit</param>
@@ -82,7 +96,7 @@ public abstract class SymbolVisitor
     /// </remarks>
     protected virtual InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
     {
-        return new InternalTypeReference(VisitType(typeReference.Referenced));
+        return new InternalTypeReference(VisitTypeId(typeReference.ReferencedTypeId));
     }
     
     /// <summary>
@@ -103,14 +117,33 @@ public abstract class SymbolVisitor
     }
 
     /// <summary>
-    /// Visit a <see cref="TypeSymbol"/>. This will call the appropriate method based on the actual type of the <paramref name="typeSymbol"/>
+    /// Called when a type is referenced by it's Id and should be visited. Implementers may resolve the Id if they to do so.
+    /// The default implementation does not resolve the Id or call any further into the tree.
+    /// </summary>
+    /// <param name="id">The Id of the type</param>
+    /// <returns>The new Id that should be used to reference this type</returns>
+    protected virtual TypeId VisitTypeId(TypeId id)
+    {
+        return id;
+    }
+
+    /// <summary>
+    /// Visit a <see cref="TypeSymbol"/>. This will call the appropriate method based on the actual type of the <paramref name="typeSymbol"/>.
+    /// This will update the <see cref="TypeStore"/> with it's return value by default. Implementors overriding this should update the store themselves.
     /// </summary>
     /// <param name="typeSymbol">The type symbol to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <seealso cref="VisitStruct"/>
     protected virtual TypeSymbol VisitType(TypeSymbol typeSymbol)
     {
-        if (typeSymbol is StructSymbol @struct) return VisitStruct(@struct);
+        TypeSymbol? result = null;
+        if (typeSymbol is StructSymbol @struct) result = VisitStruct(@struct);
+
+        if (result is not null)
+        {
+            TypeStore.Store(result);
+            return result;
+        }
 
         return ThrowUnknownSymbol<TypeSymbol>(typeSymbol);
     }
@@ -128,6 +161,7 @@ public abstract class SymbolVisitor
     {
         return new StructSymbol
         (
+            structSymbol.Id,
             VisitIdentifier(structSymbol.Identifier),
             structSymbol.Fields.Select(VisitField).ToImmutableArray()
         );
