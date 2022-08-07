@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+        <PackageReference Include="Microsoft.Extensions.Options" />
         <ProjectReference Include="..\Silk.NET.SilkTouch.Symbols\Silk.NET.SilkTouch.Symbols.csproj" />
     </ItemGroup>
 </Project>
