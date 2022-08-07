@@ -1,7 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-using System;
-using Silk.NET.Core;
+﻿using Silk.NET.Core;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
@@ -14,7 +11,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Start the default event loop on this surface.
         /// </summary>
-        /// <param name="surface">The surface to begin the loop on.</param>
+        /// <param name="view">The surface to begin the loop on.</param>
         public static void Run(this ISurface surface)
         {
             throw new NotImplementedException();
@@ -54,7 +51,7 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
-        public static void SetWindowIcon(this IDesktopSurface window, RawImage icon)
+        public static void SetWindowIcon(this IDesktopSurface window, ref RawImage icon)
         {
             throw new NotImplementedException();   
         }

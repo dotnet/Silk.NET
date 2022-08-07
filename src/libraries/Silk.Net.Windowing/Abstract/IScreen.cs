@@ -1,12 +1,9 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-using System.Collections.Generic;
-using Silk.NET.Maths;
+﻿using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
     /// <summary>
-    /// An interface representing a screen
+    /// An interface representing a screen.
     /// </summary>
     public interface IScreen
     {
@@ -39,6 +36,9 @@ namespace Silk.NET.Windowing
         /// Get all video modes that this screen supports.
         /// </summary>
         /// <returns>An array of all video modes.</returns>
-        IEnumerable<VideoMode> GetAllVideoModes();
+        IEnumerable<VideoMode> GetAllVideoModes()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

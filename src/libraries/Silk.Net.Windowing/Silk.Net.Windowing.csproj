@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFrameworks>$(SilkTargetFramework)</TargetFrameworks>
-        <!--<TargetFramework>net6.0</TargetFramework>-->
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -11,9 +10,4 @@
 
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Silk.NET.Core\Silk.NET.Core.csproj" />
-      <ProjectReference Include="..\Silk.NET.Maths\Silk.NET.Maths.csproj" />
-    </ItemGroup>
 </Project>

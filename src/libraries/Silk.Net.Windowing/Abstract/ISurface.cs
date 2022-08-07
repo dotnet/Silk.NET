@@ -1,14 +1,8 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-using System;
-using Silk.NET.Core;
+﻿using Silk.NET.Core;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
-    /// <summary>
-    /// Represents a surface with a framebuffer on which to draw on.
-    /// </summary>
     public interface ISurface : IWindowHandlesSource, IDisposable
     {
         /// <summary>
@@ -100,32 +94,50 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Creates the surface on the underlying platform.
         /// </summary>
-        void Initialize();
+        void Initialize()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Calls the Render event.
         /// </summary>
-        void DoRender();
+        void DoRender()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Calls the Update event.
         /// </summary>
-        void DoUpdate();
+        void DoUpdate()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Polls the underlying platform for events.
         /// </summary>
-        void DoEvents();
+        void DoEvents()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Unloads the surface on the underlying platform.
         /// </summary>
-        void Reset();
+        void Reset()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Terminates this surface.
         /// </summary>
-        void Terminate();
+        void Terminate()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Converts this point to framebuffer coordinates.
@@ -133,12 +145,18 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Vector2D<int> PointToFramebuffer(Vector2D<int> point);
+        Vector2D<int> PointToFramebuffer(Vector2D<int> point)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Initiates a render loop in which the given callback is called as fast as the underlying platform can manage.
         /// </summary>
         /// <param name="onFrame">The callback to run each frame.</param>
-        void Run(Action onFrame);
+        void Run(Action onFrame)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
