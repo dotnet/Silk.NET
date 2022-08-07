@@ -39,21 +39,21 @@ namespace Silk.NET.XAudio
         public readonly void OnProcessingPassStart()
         {
             var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[0])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)@this->LpVtbl[0])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnProcessingPassEnd()
         {
             var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[1])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)@this->LpVtbl[1])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnCriticalError(int Error)
         {
             var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, int, void>)@this->LpVtbl[2])(@this, Error);
         }
 
     }

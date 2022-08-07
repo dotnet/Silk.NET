@@ -1,6 +1,8 @@
 #nullable enable
 const Silk.NET.Core.Native.D3DCommon.RequiredRpcndrHVersion = 501 -> int
+Silk.NET.Core.Native.D3D10BlobVtblExtensions
 Silk.NET.Core.Native.D3DCBufferType.None = 0 -> Silk.NET.Core.Native.D3DCBufferType
+Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions
 Silk.NET.Core.Native.D3DDriverType.Hardware = 1 -> Silk.NET.Core.Native.D3DDriverType
 Silk.NET.Core.Native.D3DDriverType.None = 0 -> Silk.NET.Core.Native.D3DDriverType
 Silk.NET.Core.Native.D3DDriverType.Null = Silk.NET.Core.Native.D3DDriverType.D3DDriverTypeHardware | Silk.NET.Core.Native.D3DDriverType.D3DDriverTypeReference -> Silk.NET.Core.Native.D3DDriverType
@@ -48,3 +50,25 @@ Silk.NET.Core.Native.D3DShaderVariableFlags.None = 0 -> Silk.NET.Core.Native.D3D
 Silk.NET.Core.Native.D3DTessellatorDomain.None = 0 -> Silk.NET.Core.Native.D3DTessellatorDomain
 Silk.NET.Core.Native.D3DTessellatorOutputPrimitive.None = 0 -> Silk.NET.Core.Native.D3DTessellatorOutputPrimitive
 Silk.NET.Core.Native.D3DTessellatorPartitioning.None = 0 -> Silk.NET.Core.Native.D3DTessellatorPartitioning
+Silk.NET.Core.Native.IComVtbl
+Silk.NET.Core.Native.IComVtbl.AsVtblPtr() -> void***
+~Silk.NET.Core.Native.IComVtbl<T>
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.AddRef<TThis>(this TThis thisVtbl) -> uint
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.GetBufferPointer<TThis>(this TThis thisVtbl) -> void*
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.GetBufferSize<TThis>(this TThis thisVtbl) -> nuint
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.Release<TThis>(this TThis thisVtbl) -> uint
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.AddRef<TThis>(this TThis thisVtbl) -> uint
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, ref T0 pData, ref uint pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, ref T0 pData, uint* pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, void* pData, ref uint pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, void* pData, uint* pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.Release<TThis>(this TThis thisVtbl) -> uint
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.UnregisterDestructionCallback<TThis>(this TThis thisVtbl, uint callbackID) -> int

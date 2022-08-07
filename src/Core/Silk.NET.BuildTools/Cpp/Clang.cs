@@ -1245,11 +1245,6 @@ namespace Silk.NET.BuildTools.Cpp
                             );
                         }
 
-                        if (TryGetUuid(recordDecl, out var uuid))
-                        {
-                            attrs.Add(new Attribute { Name = "Guid", Arguments = new List<string> { $"\"{uuid}\"" } });
-                        }
-
                         Struct @struct;
                         structs.Add
                         (
@@ -1260,7 +1255,8 @@ namespace Silk.NET.BuildTools.Cpp
                                 NativeName = nativeName,
                                 ClangMetadata = new[] { recordDecl.Location.ToString() },
                                 Fields = ConvertAll(recordDecl, name).ToList(),
-                                Attributes = attrs
+                                Attributes = attrs,
+                                Uuid = TryGetUuid(recordDecl, out var uuid) ? uuid : null
                             }
                         );
 

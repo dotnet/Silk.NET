@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Core.Native
 {
     public unsafe struct ComPtr<T> : IDisposable
-        where T:unmanaged
+        where T:unmanaged, IComVtbl<T>
     {
         public ComPtr(T* other)
         {
@@ -24,18 +24,21 @@ namespace Silk.NET.Core.Native
         public ComObject AsComObject() => ComObject.FromPtr((IUnknown*)Handle);
         private readonly void AddRef()
         {
-            if (Handle != null)
+            if (Handle != null && *Handle is IComVtbl<IUnknown>)
             {
-                ((IUnknown*) Handle)->AddRef();
+                ((IUnknown*) Handle->AsVtblPtr())->AddRef();
             }
         }
 
         public uint Release()
         {
             uint ret = 0;
-            if (Handle != null)
+
+            // NOTE: This type check is free https://bit.ly/3d73dwV
+            if (Handle != null && *Handle is IComVtbl<IUnknown>)
             {
-                ret = ((IUnknown*) Handle)->Release();
+                // We can't cast Handle directly just in case some crazy user decides to have a ComPtr<ComPtr<T>>
+                ret = ((IUnknown*) Handle->AsVtblPtr())->Release();
             }
 
             return ret;

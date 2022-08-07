@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D.Compilers
 {
     [Guid("58346cda-dde7-4497-9461-6f87af5e0659")]
     [NativeName("Name", "IDxcResult")]
-    public unsafe partial struct IDxcResult
+    public unsafe partial struct IDxcResult : IComVtbl<IDxcResult>, IComVtbl<IDxcOperationResult>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("58346cda-dde7-4497-9461-6f87af5e0659");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IDxcOperationResult(IDxcResult val)
             => Unsafe.As<IDxcResult, IDxcOperationResult>(ref val);
@@ -49,7 +52,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +63,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +75,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +89,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +100,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +109,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +118,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, int*, int>)LpVtbl[3])(@this, pStatus);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, int*, int>)@this->LpVtbl[3])(@this, pStatus);
             return ret;
         }
 
@@ -126,7 +129,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (int* pStatusPtr = &pStatus)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, int*, int>)@this->LpVtbl[3])(@this, pStatusPtr);
             }
             return ret;
         }
@@ -136,7 +139,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResult);
             return ret;
         }
 
@@ -147,7 +150,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlob**, int>)@this->LpVtbl[4])(@this, ppResultPtr);
             }
             return ret;
         }
@@ -157,7 +160,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrors);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrors);
             return ret;
         }
 
@@ -168,7 +171,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobEncoding** ppErrorsPtr = &ppErrors)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrorsPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, IDxcBlobEncoding**, int>)@this->LpVtbl[5])(@this, ppErrorsPtr);
             }
             return ret;
         }
@@ -178,7 +181,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, int>)LpVtbl[6])(@this, dxcOutKind);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, int>)@this->LpVtbl[6])(@this, dxcOutKind);
             return ret;
         }
 
@@ -187,7 +190,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputName);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputName);
             return ret;
         }
 
@@ -198,7 +201,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObject, ppOutputNamePtr);
             }
             return ret;
         }
@@ -210,7 +213,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputName);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputName);
             }
             return ret;
         }
@@ -224,7 +227,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputNamePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iid, ppvObjectPtr, ppOutputNamePtr);
                 }
             }
             return ret;
@@ -237,7 +240,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* iidPtr = &iid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputName);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputName);
             }
             return ret;
         }
@@ -251,7 +254,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputNamePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObject, ppOutputNamePtr);
                 }
             }
             return ret;
@@ -266,7 +269,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputName);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputName);
                 }
             }
             return ret;
@@ -283,7 +286,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcBlobUtf16** ppOutputNamePtr = &ppOutputName)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputNamePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Guid*, void**, IDxcBlobUtf16**, int>)@this->LpVtbl[7])(@this, dxcOutKind, iidPtr, ppvObjectPtr, ppOutputNamePtr);
                     }
                 }
             }
@@ -295,7 +298,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, uint>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, uint>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -304,7 +307,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             OutKind ret = default;
-            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, uint, OutKind>)LpVtbl[9])(@this, Index);
+            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, uint, OutKind>)@this->LpVtbl[9])(@this, Index);
             return ret;
         }
 
@@ -313,7 +316,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             OutKind ret = default;
-            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, OutKind>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Thiscall]<IDxcResult*, OutKind>)@this->LpVtbl[10])(@this);
             return ret;
         }
 

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D.Compilers
 {
     [Guid("228b4687-5a6a-4730-900c-9702b2203f54")]
     [NativeName("Name", "IDxcCompiler3")]
-    public unsafe partial struct IDxcCompiler3
+    public unsafe partial struct IDxcCompiler3 : IComVtbl<IDxcCompiler3>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("228b4687-5a6a-4730-900c-9702b2203f54");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcCompiler3 val)
             => Unsafe.As<IDxcCompiler3, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
             return ret;
         }
 
@@ -123,7 +126,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riid, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riid, ppResultPtr);
             }
             return ret;
         }
@@ -135,7 +138,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riidPtr, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riidPtr, ppResult);
             }
             return ret;
         }
@@ -149,7 +152,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riidPtr, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandler, riidPtr, ppResultPtr);
                 }
             }
             return ret;
@@ -162,7 +165,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (IDxcIncludeHandler* pIncludeHandlerPtr = &pIncludeHandler)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riid, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riid, ppResult);
             }
             return ret;
         }
@@ -176,7 +179,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
                 }
             }
             return ret;
@@ -191,7 +194,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
                 }
             }
             return ret;
@@ -208,7 +211,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
                     }
                 }
             }
@@ -222,7 +225,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (char** pArgumentsPtr = &pArguments)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResult);
             }
             return ret;
         }
@@ -236,7 +239,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResultPtr);
                 }
             }
             return ret;
@@ -251,7 +254,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResult);
                 }
             }
             return ret;
@@ -268,7 +271,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResultPtr);
                     }
                 }
             }
@@ -284,7 +287,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcIncludeHandler* pIncludeHandlerPtr = &pIncludeHandler)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResult);
                 }
             }
             return ret;
@@ -301,7 +304,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
                     }
                 }
             }
@@ -319,7 +322,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
                     }
                 }
             }
@@ -339,7 +342,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (void** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSource, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
                         }
                     }
                 }
@@ -354,7 +357,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Buffer* pSourcePtr = &pSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riid, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riid, ppResult);
             }
             return ret;
         }
@@ -368,7 +371,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riid, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riid, ppResultPtr);
                 }
             }
             return ret;
@@ -383,7 +386,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riidPtr, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riidPtr, ppResult);
                 }
             }
             return ret;
@@ -400,7 +403,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riidPtr, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandler, riidPtr, ppResultPtr);
                     }
                 }
             }
@@ -416,7 +419,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (IDxcIncludeHandler* pIncludeHandlerPtr = &pIncludeHandler)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riid, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riid, ppResult);
                 }
             }
             return ret;
@@ -433,7 +436,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
                     }
                 }
             }
@@ -451,7 +454,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
                     }
                 }
             }
@@ -471,7 +474,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (void** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArguments, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
                         }
                     }
                 }
@@ -488,7 +491,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (char** pArgumentsPtr = &pArguments)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResult);
                 }
             }
             return ret;
@@ -505,7 +508,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riid, ppResultPtr);
                     }
                 }
             }
@@ -523,7 +526,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResult);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResult);
                     }
                 }
             }
@@ -543,7 +546,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (void** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResultPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandler, riidPtr, ppResultPtr);
                         }
                     }
                 }
@@ -562,7 +565,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (IDxcIncludeHandler* pIncludeHandlerPtr = &pIncludeHandler)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResult);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResult);
                     }
                 }
             }
@@ -582,7 +585,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (void** ppResultPtr = &ppResult)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riid, ppResultPtr);
                         }
                     }
                 }
@@ -603,7 +606,7 @@ namespace Silk.NET.Direct3D.Compilers
                     {
                         fixed (Guid* riidPtr = &riid)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResult);
                         }
                     }
                 }
@@ -626,7 +629,7 @@ namespace Silk.NET.Direct3D.Compilers
                         {
                             fixed (void** ppResultPtr = &ppResult)
                             {
-                                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
+                                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, char**, uint, IDxcIncludeHandler*, Guid*, void**, int>)@this->LpVtbl[3])(@this, pSourcePtr, pArgumentsPtr, argCount, pIncludeHandlerPtr, riidPtr, ppResultPtr);
                             }
                         }
                     }
@@ -640,7 +643,7 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObject, riid, ppResult);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObject, riid, ppResult);
             return ret;
         }
 
@@ -651,7 +654,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (void** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObject, riid, ppResultPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObject, riid, ppResultPtr);
             }
             return ret;
         }
@@ -663,7 +666,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObject, riidPtr, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObject, riidPtr, ppResult);
             }
             return ret;
         }
@@ -677,7 +680,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObject, riidPtr, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObject, riidPtr, ppResultPtr);
                 }
             }
             return ret;
@@ -690,7 +693,7 @@ namespace Silk.NET.Direct3D.Compilers
             int ret = default;
             fixed (Buffer* pObjectPtr = &pObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObjectPtr, riid, ppResult);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObjectPtr, riid, ppResult);
             }
             return ret;
         }
@@ -704,7 +707,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (void** ppResultPtr = &ppResult)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObjectPtr, riid, ppResultPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObjectPtr, riid, ppResultPtr);
                 }
             }
             return ret;
@@ -719,7 +722,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObjectPtr, riidPtr, ppResult);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObjectPtr, riidPtr, ppResult);
                 }
             }
             return ret;
@@ -736,7 +739,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     fixed (void** ppResultPtr = &ppResult)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)LpVtbl[4])(@this, pObjectPtr, riidPtr, ppResultPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcCompiler3*, Buffer*, Guid*, void**, int>)@this->LpVtbl[4])(@this, pObjectPtr, riidPtr, ppResultPtr);
                     }
                 }
             }

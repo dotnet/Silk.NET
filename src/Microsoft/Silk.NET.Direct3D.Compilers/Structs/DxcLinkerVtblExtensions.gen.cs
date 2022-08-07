@@ -1,0 +1,1372 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Text;
+using Silk.NET.Core;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.Direct3D.Compilers;
+
+public unsafe static class DxcLinkerVtblExtensions
+{
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, void** ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Guid* riid, ref void* ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (void** ppvObjectPtr = &ppvObject)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, void** ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, ref Guid riid, ref void* ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static uint AddRef<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, uint>)@this->LpVtbl[1])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static uint Release<TThis>(this TThis thisVtbl) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, uint>)@this->LpVtbl[2])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, char* pLibName, IDxcBlob* pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, char*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibName, pLib);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, char* pLibName, ref IDxcBlob pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (IDxcBlob* pLibPtr = &pLib)
+        {
+            ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, char*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibName, pLibPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, ref char pLibName, IDxcBlob* pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pLibNamePtr = &pLibName)
+        {
+            ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, char*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibNamePtr, pLib);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TThis>(this TThis thisVtbl, ref char pLibName, ref IDxcBlob pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pLibNamePtr = &pLibName)
+        {
+            fixed (IDxcBlob* pLibPtr = &pLib)
+            {
+                ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, char*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, IDxcBlob* pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pLibNamePtr = (byte*) SilkMarshal.StringToPtr(pLibName, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, byte*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibNamePtr, pLib);
+        SilkMarshal.Free((nint)pLibNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, ref IDxcBlob pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pLibNamePtr = (byte*) SilkMarshal.StringToPtr(pLibName, NativeStringEncoding.LPWStr);
+        fixed (IDxcBlob* pLibPtr = &pLib)
+        {
+            ret = ((delegate* unmanaged[Thiscall]<IDxcLinker*, byte*, IDxcBlob*, int>)@this->LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
+        }
+        SilkMarshal.Free((nint)pLibNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pLibNamesPtr = &pLibNames)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pLibNamesPtr = &pLibNames)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pLibNamesPtr = &pLibNames)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+            fixed (char* pTargetProfilePtr = &pTargetProfile)
+            {
+                fixed (char** pLibNamesPtr = &pLibNames)
+                {
+                    fixed (char** pArgumentsPtr = &pArguments)
+                    {
+                        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                        {
+                            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                }
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        fixed (char* pEntryNamePtr = &pEntryName)
+        {
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                }
+            }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        fixed (char* pTargetProfilePtr = &pTargetProfile)
+        {
+            fixed (char** pLibNamesPtr = &pLibNames)
+            {
+                fixed (char** pArgumentsPtr = &pArguments)
+                {
+                    fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                    {
+                        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                    }
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pArgumentsPtr = &pArguments)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        int ret = default;
+        var pEntryNamePtr = (byte*) SilkMarshal.StringToPtr(pEntryName, NativeStringEncoding.LPWStr);
+        var pTargetProfilePtr = (byte*) SilkMarshal.StringToPtr(pTargetProfile, NativeStringEncoding.LPWStr);
+        fixed (char** pLibNamesPtr = &pLibNames)
+        {
+            fixed (char** pArgumentsPtr = &pArguments)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)@this->LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResultPtr);
+                }
+            }
+        }
+        SilkMarshal.Free((nint)pTargetProfilePtr);
+        SilkMarshal.Free((nint)pEntryNamePtr);
+        return ret;
+    }
+
+}
