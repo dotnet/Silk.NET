@@ -1,4 +1,8 @@
-﻿using Silk.NET.Core;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+using System;
+using System.Collections.Generic;
+using Silk.NET.Core;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
@@ -54,7 +58,7 @@ namespace Silk.NET.Windowing
         IEnumerable<IScreen>? AvailableScreens { get; }
 
         /// <summary>
-        /// Gets or sets whether the window waits for an event to be posted before existing <see cref="DoEvents" />.
+        /// Gets or sets whether the window waits for an event to be posted before existing <see cref="IDesktopSurface.DoEvents" />.
         /// </summary>
         bool IsEventDriven { get; set; }
 
@@ -75,7 +79,7 @@ namespace Silk.NET.Windowing
         /// <remarks>
         /// Because these are distances and not coordinates, they are always zero or positive.
         /// </remarks>
-        /// <seealso cref="WindowExtensions.GetFullSize"/>
+        /// <seealso cref="IDesktopSurface.Size"/>
         Rectangle<int> BorderSize { get; }
         
         /// <summary>
@@ -107,19 +111,13 @@ namespace Silk.NET.Windowing
         /// Sets the window icons.
         /// </summary>
         /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
-        void SetWindowIcon(ReadOnlySpan<RawImage> icons)
-        {
-            throw new NotImplementedException();
-        }
+        void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 
         /// <summary>
-        /// When using <see cref="WindowOptions.IsEventDriven"/> = true, wakes the main thread from
+        /// When using <see cref="IDesktopSurface.IsEventDriven"/> = true, wakes the main thread from
         /// its blocking wait on incoming events.  Can be called from any thread.
         /// </summary>
-        void ContinueEvents()
-        {
-            throw new NotImplementedException();
-        }
+        void ContinueEvents();
 
         /// <summary>
         /// Converts this point to client coordinates.
@@ -127,10 +125,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects screen coordinates as input.</remarks>
-        Vector2D<int> PointToClient(Vector2D<int> point)
-        {
-            return new Vector2D<int>(point.X - Position.X, point.Y - Position.Y);
-        }
+        Vector2D<int> PointToClient(Vector2D<int> point);
 
         /// <summary>
         /// Converts this point to screen coordinates.
@@ -138,13 +133,6 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Vector2D<int> PointToScreen(Vector2D<int> point)
-        {
-            return new Vector2D<int>(point.X + Position.X, point.Y + Position.Y);
-        }
-        public Vector2D<int> PointToFramebuffer(Vector2D<int> point)
-        {
-            throw new NotImplementedException();
-        }
+        Vector2D<int> PointToScreen(Vector2D<int> point);
     }
 }
