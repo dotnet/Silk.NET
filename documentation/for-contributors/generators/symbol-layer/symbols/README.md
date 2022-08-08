@@ -4,8 +4,27 @@ This document / folder is for tracking all the available symbols, and documentin
 
 ## List
 
-| Name | Symbol Layer File | Symbol Layer Tests | Emitter Tests |
-| ---- | ----------------- | ------------------ | ------------- |
+(Order alphabetically please!)
+
+Parent Symbols (Unlisted, abstract):
+| Name |
+| ---- |
+| MemberSymbol |
+| Symbol |
+| TypeReference |
+| TypeSymbol |
+|
+
+| Name                    | Symbol Layer File                                                                         | Symbol Layer Tests                                                                                             | Emitter Tests                                                                          |
+| ----------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| ExternalTypeReference   | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/ExternalTypeReference.cs) | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/ExternalTypeReferenceTests.cs) | TODO!!!                                                                                |
+| FieldSymbol             | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/FieldSymbol.cs)           | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/FieldTests.cs)                 | [here](../../../../../tests/Silk.NET.SilkTouch.Emitter.Tests/EmitterFieldTests.cs)     |
+| IdentifierSymbol        | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/IdentifierSymbol.cs)      | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/IdentifierTests.cs)            | TODO!!!                                                                                |
+| InternalTypeReference   | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/InternalTypeReference.cs) | TODO!!!                                                                                                        | TODO!!!                                                                                |
+| NamespaceSymbol         | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/NamespaceSymbol.cs)       | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/NamespaceTests.cs)             | [here](../../../../../tests/Silk.NET.SilkTouch.Emitter.Tests/EmitterNamespaceTests.cs) |
+| PointerTypeReference    | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/PointerTypeReference.cs)  | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/PointerTypeReferenceTests.cs)  | TODO!!!                                                                                |
+| StructSymbol            | [here](../../../../../src/generators/Silk.NET.SilkTouch.Symbols/StructSymbol.cs)          | [here](../../../../../tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/StructTests.cs)                | [here](../../../../../tests/Silk.NET.SilkTouch.Emitter.Tests/EmitterStructTests.cs)    |
+| UnresolvedTypeReference | [here](src/generators/Silk.NET.SilkTouch.Symbols/UnresolvedTypeReference.cs)              | [here](tests/Silk.NET.SilkTouch.Symbols.Tests/SymbolVisitorTests/UnresolvedTypeReferenceTests.cs)              | -                                                                                      |
 
 ## How to create a symbol
 
