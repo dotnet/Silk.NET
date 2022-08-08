@@ -4,6 +4,8 @@ SilkTouch Generators should be extensively Tested.
 
 ## Unit Tests
 
+See also [symbol creation instructions](./symbol-layer/symbols/README.md) for details on symbol unit tests.
+
 ### Traits
 
 All Unit & Integration tests should be flagged with the appropriate Category (Emitter, Scraper, Symbols, Integration) using `Trait("Category", "MyCategory")`.
