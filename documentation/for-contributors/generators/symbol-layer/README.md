@@ -7,3 +7,5 @@ The symbol layer is intended as a way to represent data passed between component
 The symbol layer is entirely immutable, with the only exception being the [Type Store](./type-store.md).
 
 The way to update & iterate symbols is using a [Symbol Visitor](./symbol-visitor.md).
+
+See [symbols](./symbols/README.md) for a list of all symbols, their visitor method, test details, etc.
