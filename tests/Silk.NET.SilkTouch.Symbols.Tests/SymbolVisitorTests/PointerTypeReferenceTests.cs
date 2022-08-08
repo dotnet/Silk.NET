@@ -9,7 +9,7 @@ namespace Silk.NET.SilkTouch.Symbols.Tests.SymbolVisitorTests;
 
 public class PointerTypeReferenceTests
 {
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RefIsVisitedAsSelf()
     {
         var symbol = new PointerTypeReference(new InternalTypeReference(TypeId.CreateNew()));
@@ -23,7 +23,7 @@ public class PointerTypeReferenceTests
                 ("VisitPointerTypeReference", Times.Once(), ItExpr.IsAny<PointerTypeReference>());
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RefIsVisitedAsRef()
     {
         var symbol = new PointerTypeReference(new InternalTypeReference(TypeId.CreateNew()));
@@ -37,7 +37,7 @@ public class PointerTypeReferenceTests
                 ("VisitTypeReference", Times.Once(), ItExpr.Is<TypeReference>(x => ReferenceEquals(x, symbol)));
     }
     
-    [Fact]
+    [Fact, Trait("Category", "Type Resolution")]
     public void RefUnderlyingIsVisitedAsRef()
     {
         var underlying = new InternalTypeReference(TypeId.CreateNew());
