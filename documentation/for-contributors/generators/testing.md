@@ -25,6 +25,6 @@ Tests should be written covering XML -> Symbol conversion. No C(++) -> XML tests
 
 Tests should be written covering Symbol -> C# conversion.
 
-### Integration
+## Integration Tests
 
 Integration Tests should exist to cover most if not all areas of the generator. These are simply a sanity check & samples of what the generator can do. Unit Tests are still required.

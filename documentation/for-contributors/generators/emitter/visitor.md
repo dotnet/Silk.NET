@@ -1,5 +1,7 @@
 # Visitor
 
+See [here](../symbol-layer/symbol-visitor.md) for details on how the base symbol visitor works.
+
 To Transform our internal symbol layer to C# code a visitor (`CSharpEmitter.Visitor`) is used.
 
 ## State
