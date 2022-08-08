@@ -60,7 +60,7 @@ public abstract class SymbolVisitor
     /// <param name="fieldSymbol">The field symbol to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <remarks>
-    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
     protected virtual FieldSymbol VisitField(FieldSymbol fieldSymbol)
     {
@@ -73,7 +73,7 @@ public abstract class SymbolVisitor
     /// <param name="typeReference">The type reference to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <remarks>
-    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
     /// <remarks>
     /// By default visiting <see cref="UnresolvedTypeReference"/> will throw. Visitors involved in type resolution should override this method directly.
@@ -83,16 +83,30 @@ public abstract class SymbolVisitor
         if (typeReference is ExternalTypeReference etr) return VisitExternalTypeReference(etr);
         if (typeReference is InternalTypeReference itr) return VisitInternalTypeReference(itr);
         if (typeReference is UnresolvedTypeReference utr) UnresolvedTypeReference.ThrowInvalidSymbol();
+        if (typeReference is PointerTypeReference ptr) return VisitPointerTypeReference(ptr);
         return ThrowUnknownSymbol<TypeReference>(typeReference);
     }
     
+    /// <summary>
+    /// Visit a <see cref="PointerTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
+    /// </summary>
+    /// <param name="pointerTypeReference">The pointer type reference to visit</param>
+    /// <returns>The rewritten symbol</returns>
+    /// <remarks>
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
+    /// </remarks>
+    protected virtual PointerTypeReference VisitPointerTypeReference(PointerTypeReference pointerTypeReference)
+    {
+        return new PointerTypeReference(VisitTypeReference(pointerTypeReference.Underlying));
+    }
+
     /// <summary>
     /// Visit a <see cref="InternalTypeReference"/>. Will call the appropriate methods to visit the different parts of the symbol.
     /// </summary>
     /// <param name="typeReference">The type reference to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <remarks>
-    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
     protected virtual InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
     {
@@ -105,7 +119,7 @@ public abstract class SymbolVisitor
     /// <param name="typeReference">The type reference to visit</param>
     /// <returns>The rewritten symbol</returns>
     /// <remarks>
-    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
     protected virtual ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
     {
@@ -155,7 +169,7 @@ public abstract class SymbolVisitor
     /// <returns>The rewritten symbol</returns>
     /// <seealso cref="VisitType"/>
     /// <remarks>
-    /// The order in which the parts of the struct are visited is kept as an implementation detail. Do not rely on this order.
+    /// The order in which the parts are visited is kept as an implementation detail. Do not rely on this order.
     /// </remarks>
     protected virtual StructSymbol VisitStruct(StructSymbol structSymbol)
     {
