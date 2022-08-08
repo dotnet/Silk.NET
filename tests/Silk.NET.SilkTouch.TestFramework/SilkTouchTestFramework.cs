@@ -73,7 +73,7 @@ namespace Silk.NET.SilkTouch.TestFramework
             foreach (var (name, value) in traits)
             {
                 if (name is "Category" &&
-                    value is not "Integration" and not "Scraper" and not "Symbols" and not "Emitter" and not "TypeStore")
+                    value is not "Integration" and not "Scraper" and not "Symbols" and not "Emitter" and not "TypeStore" and not "Type Resolution")
                 {
                     return this.ReportDiscoveredTestCase
                     (
