@@ -2,6 +2,10 @@
 
 This document / folder is for tracking all the available symbols, and documenting what creation of one entails.
 
+## Relation to SymbolVisitor
+
+In general each symbol listed below should have a corresponding method `VisitMySymbol` the only exception being `UnresolvedTypeReference` as only few visitors should ever interact with it.
+
 ## List
 
 (Order alphabetically please!)
@@ -13,7 +17,6 @@ Parent Symbols (Unlisted, abstract):
 | Symbol |
 | TypeReference |
 | TypeSymbol |
-|
 
 | Name                    | Symbol Layer File                                                                         | Symbol Layer Tests                                                                                             | Emitter Tests                                                                          |
 | ----------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
