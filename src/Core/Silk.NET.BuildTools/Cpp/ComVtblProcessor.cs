@@ -32,6 +32,11 @@ namespace Silk.NET.BuildTools.Cpp
                 Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex, false, thisInScope);
                 vtblFunction.New.IsReadOnly = true;
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
+                //foreach (var complex in ComplexFunctionOverloader.GetOverloads
+                //             (vtblFunction.New, profile.Projects["Core"], Overloader.FunctionOverloaders))
+                //{
+                //    
+                //}
             }
         }
 

@@ -455,6 +455,12 @@ namespace Silk.NET.BuildTools.Bind
             foreach (var function in @struct.Functions.Concat
                          (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
             {
+                if (function.Signature.Kind == SignatureKind.PotentiallyConflictingOverload)
+                {
+                    // implement it as an extension method, which is done later.
+                    continue;
+                }
+                
                 using (var sr = new StringReader(function.Signature.Doc))
                 {
                     string line;
