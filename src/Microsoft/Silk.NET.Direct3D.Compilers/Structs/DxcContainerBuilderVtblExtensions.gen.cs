@@ -156,4 +156,36 @@ public unsafe static class DxcContainerBuilderVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Load<TThis>(this TThis thisVtbl, Span<IDxcBlob> pDxilContainerHeader) where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Load(ref pDxilContainerHeader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddPart<TThis>(this TThis thisVtbl, uint fourCC, Span<IDxcBlob> pSource) where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddPart(fourCC, ref pSource.GetPinnableReference());
+    }
+
 }

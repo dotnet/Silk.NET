@@ -252,4 +252,76 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetSourceRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetSourceRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetTargetRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetTargetRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSourceRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSourceRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTargetRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetTargetRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDestSize<TThis>(this TThis thisVtbl, uint* pWidth, Span<uint> pHeight) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDestSize(pWidth, ref pHeight.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDestSize<TThis>(this TThis thisVtbl, Span<uint> pWidth, uint* pHeight) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDestSize(ref pWidth.GetPinnableReference(), pHeight);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDestSize<TThis>(this TThis thisVtbl, Span<uint> pWidth, Span<uint> pHeight) where TThis : IComVtbl<IDXGIDecodeSwapChain>
+    {
+        var @this = (IDXGIDecodeSwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDestSize(ref pWidth.GetPinnableReference(), ref pHeight.GetPinnableReference());
+    }
+
 }

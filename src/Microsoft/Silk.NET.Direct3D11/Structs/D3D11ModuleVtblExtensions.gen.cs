@@ -157,4 +157,36 @@ public unsafe static class D3D11ModuleVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInstance<TThis>(this TThis thisVtbl, Span<byte> pNamespace, ID3D11ModuleInstance** ppModuleInstance) where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateInstance(ref pNamespace.GetPinnableReference(), ppModuleInstance);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateInstance<TThis>(this TThis thisVtbl, Span<byte> pNamespace, ref ID3D11ModuleInstance* ppModuleInstance) where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateInstance(ref pNamespace.GetPinnableReference(), ref ppModuleInstance);
+    }
+
 }

@@ -624,4 +624,228 @@ public unsafe static class DXGISwapChainVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppDevice) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ppDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppDevice) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ref ppDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBuffer<TThis>(this TThis thisVtbl, uint Buffer, Span<Guid> riid, void** ppSurface) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBuffer(Buffer, ref riid.GetPinnableReference(), ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBuffer<TThis>(this TThis thisVtbl, uint Buffer, Span<Guid> riid, ref void* ppSurface) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBuffer(Buffer, ref riid.GetPinnableReference(), ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetFullscreenState<TThis>(this TThis thisVtbl, int Fullscreen, Span<IDXGIOutput> pTarget) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetFullscreenState(Fullscreen, ref pTarget.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFullscreenState<TThis>(this TThis thisVtbl, Span<int> pFullscreen, IDXGIOutput** ppTarget) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFullscreenState(ref pFullscreen.GetPinnableReference(), ppTarget);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFullscreenState<TThis>(this TThis thisVtbl, Span<int> pFullscreen, ref IDXGIOutput* ppTarget) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFullscreenState(ref pFullscreen.GetPinnableReference(), ref ppTarget);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<SwapChainDesc> pDesc) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ResizeTarget<TThis>(this TThis thisVtbl, Span<ModeDesc> pNewTargetParameters) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ResizeTarget(ref pNewTargetParameters.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFrameStatistics<TThis>(this TThis thisVtbl, Span<FrameStatistics> pStats) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFrameStatistics(ref pStats.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetLastPresentCount<TThis>(this TThis thisVtbl, Span<uint> pLastPresentCount) where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetLastPresentCount(ref pLastPresentCount.GetPinnableReference());
+    }
+
 }

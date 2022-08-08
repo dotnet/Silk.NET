@@ -4082,4 +4082,1308 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDeviceCaps<TThis>(this TThis thisVtbl, Span<Caps9> pCaps) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDeviceCaps(ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDisplayMode<TThis>(this TThis thisVtbl, uint iSwapChain, Span<Displaymode> pMode) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDisplayMode(iSwapChain, ref pMode.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCreationParameters<TThis>(this TThis thisVtbl, Span<DeviceCreationParameters> pParameters) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pParameters.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetCursorProperties<TThis>(this TThis thisVtbl, uint XHotSpot, uint YHotSpot, Span<IDirect3DSurface9> pCursorBitmap) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetCursorProperties(XHotSpot, YHotSpot, ref pCursorBitmap.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateAdditionalSwapChain<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, IDirect3DSwapChain9** pSwapChain) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateAdditionalSwapChain(ref pPresentationParameters.GetPinnableReference(), pSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateAdditionalSwapChain<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, ref IDirect3DSwapChain9* pSwapChain) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateAdditionalSwapChain(ref pPresentationParameters.GetPinnableReference(), ref pSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Reset<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Reset(ref pPresentationParameters.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRasterStatus<TThis>(this TThis thisVtbl, uint iSwapChain, Span<RasterStatus> pRasterStatus) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRasterStatus(iSwapChain, ref pRasterStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetGammaRamp<TThis>(this TThis thisVtbl, uint iSwapChain, uint Flags, Span<Gammaramp> pRamp) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SetGammaRamp(iSwapChain, Flags, ref pRamp.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetGammaRamp<TThis>(this TThis thisVtbl, uint iSwapChain, Span<Gammaramp> pRamp) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetGammaRamp(iSwapChain, ref pRamp.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, pSourceRect, pDestinationSurface, ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, pSourceRect, ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, pSourceRect, ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestinationSurface, ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestinationSurface, pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestinationSurface, ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestinationSurface, ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UpdateSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTexture<TThis>(this TThis thisVtbl, IDirect3DBaseTexture9* pSourceTexture, Span<IDirect3DBaseTexture9> pDestinationTexture) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateTexture(pSourceTexture, ref pDestinationTexture.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int UpdateTexture<TThis>(this TThis thisVtbl, Span<IDirect3DBaseTexture9> pSourceTexture, IDirect3DBaseTexture9* pDestinationTexture) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateTexture(ref pSourceTexture.GetPinnableReference(), pDestinationTexture);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UpdateTexture<TThis>(this TThis thisVtbl, Span<IDirect3DBaseTexture9> pSourceTexture, Span<IDirect3DBaseTexture9> pDestinationTexture) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UpdateTexture(ref pSourceTexture.GetPinnableReference(), ref pDestinationTexture.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRenderTargetData<TThis>(this TThis thisVtbl, IDirect3DSurface9* pRenderTarget, Span<IDirect3DSurface9> pDestSurface) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRenderTargetData(pRenderTarget, ref pDestSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRenderTargetData<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pRenderTarget, IDirect3DSurface9* pDestSurface) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRenderTargetData(ref pRenderTarget.GetPinnableReference(), pDestSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRenderTargetData<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pRenderTarget, Span<IDirect3DSurface9> pDestSurface) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRenderTargetData(ref pRenderTarget.GetPinnableReference(), ref pDestSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFrontBufferData<TThis>(this TThis thisVtbl, uint iSwapChain, Span<IDirect3DSurface9> pDestSurface) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFrontBufferData(iSwapChain, ref pDestSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, pSourceRect, pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, pSourceRect, ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, pSourceRect, ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestSurface, pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Rectangle<int>* pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int StretchRect<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, Texturefiltertype Filter) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ColorFill<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSurface, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint color) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ColorFill(pSurface, ref pRect.GetPinnableReference(), color);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ColorFill<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSurface, Silk.NET.Maths.Rectangle<int>* pRect, uint color) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ColorFill(ref pSurface.GetPinnableReference(), pRect, color);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ColorFill<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSurface, Span<Silk.NET.Maths.Rectangle<int>> pRect, uint color) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ColorFill(ref pSurface.GetPinnableReference(), ref pRect.GetPinnableReference(), color);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetRenderTarget<TThis>(this TThis thisVtbl, uint RenderTargetIndex, Span<IDirect3DSurface9> pRenderTarget) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetRenderTarget(RenderTargetIndex, ref pRenderTarget.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetDepthStencilSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pNewZStencil) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetDepthStencilSurface(ref pNewZStencil.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Clear<TThis>(this TThis thisVtbl, uint Count, Span<Rect> pRects, uint Flags, uint Color, float Z, uint Stencil) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Clear(Count, ref pRects.GetPinnableReference(), Flags, Color, Z, Stencil);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetTransform<TThis>(this TThis thisVtbl, Transformstatetype State, Span<System.Numerics.Matrix4x4> pMatrix) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetTransform(State, ref pMatrix.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTransform<TThis>(this TThis thisVtbl, Transformstatetype State, Span<System.Numerics.Matrix4x4> pMatrix) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetTransform(State, ref pMatrix.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int MultiplyTransform<TThis>(this TThis thisVtbl, Transformstatetype arg0, Span<System.Numerics.Matrix4x4> arg1) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->MultiplyTransform(arg0, ref arg1.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetViewport<TThis>(this TThis thisVtbl, Span<Viewport9> pViewport) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetViewport(ref pViewport.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetViewport<TThis>(this TThis thisVtbl, Span<Viewport9> pViewport) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetViewport(ref pViewport.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetMaterial<TThis>(this TThis thisVtbl, Span<Material9> pMaterial) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetMaterial(ref pMaterial.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMaterial<TThis>(this TThis thisVtbl, Span<Material9> pMaterial) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMaterial(ref pMaterial.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetLight<TThis>(this TThis thisVtbl, uint Index, Span<Light9> arg1) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetLight(Index, ref arg1.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetLight<TThis>(this TThis thisVtbl, uint Index, Span<Light9> arg1) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetLight(Index, ref arg1.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetLightEnable<TThis>(this TThis thisVtbl, uint Index, Span<int> pEnable) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetLightEnable(Index, ref pEnable.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetClipPlane<TThis>(this TThis thisVtbl, uint Index, Span<float> pPlane) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetClipPlane(Index, ref pPlane.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetClipPlane<TThis>(this TThis thisVtbl, uint Index, Span<float> pPlane) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetClipPlane(Index, ref pPlane.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRenderState<TThis>(this TThis thisVtbl, Renderstatetype State, Span<uint> pValue) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRenderState(State, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetClipStatus<TThis>(this TThis thisVtbl, Span<Clipstatus9> pClipStatus) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetClipStatus(ref pClipStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetClipStatus<TThis>(this TThis thisVtbl, Span<Clipstatus9> pClipStatus) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetClipStatus(ref pClipStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetTexture<TThis>(this TThis thisVtbl, uint Stage, Span<IDirect3DBaseTexture9> pTexture) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetTexture(Stage, ref pTexture.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTextureStageState<TThis>(this TThis thisVtbl, uint Stage, Texturestagestatetype Type, Span<uint> pValue) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetTextureStageState(Stage, Type, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSamplerState<TThis>(this TThis thisVtbl, uint Sampler, Samplerstatetype Type, Span<uint> pValue) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSamplerState(Sampler, Type, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ValidateDevice<TThis>(this TThis thisVtbl, Span<uint> pNumPasses) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateDevice(ref pNumPasses.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPaletteEntries<TThis>(this TThis thisVtbl, uint PaletteNumber, Span<Silk.NET.Maths.Vector4D<byte>> pEntries) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPaletteEntries(PaletteNumber, ref pEntries.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPaletteEntries<TThis>(this TThis thisVtbl, uint PaletteNumber, Span<Silk.NET.Maths.Vector4D<byte>> pEntries) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPaletteEntries(PaletteNumber, ref pEntries.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCurrentTexturePalette<TThis>(this TThis thisVtbl, Span<uint> PaletteNumber) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentTexturePalette(ref PaletteNumber.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetScissorRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetScissorRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetScissorRect<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pRect) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetScissorRect(ref pRect.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawPrimitiveUP<T0, TThis>(this TThis thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, Span<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawPrimitiveUP(PrimitiveType, PrimitiveCount, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0, TThis>(this TThis thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, void* pIndexData, Format IndexDataFormat, Span<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawIndexedPrimitiveUP<T0, TThis>(this TThis thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, Span<T0> pIndexData, Format IndexDataFormat, void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, ref pIndexData.GetPinnableReference(), IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawIndexedPrimitiveUP<T0, T1, TThis>(this TThis thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, Span<T0> pIndexData, Format IndexDataFormat, Span<T1> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, ref pIndexData.GetPinnableReference(), IndexDataFormat, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ProcessVertices<TThis>(this TThis thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, uint Flags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, pDestBuffer, ref pVertexDecl.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ProcessVertices<TThis>(this TThis thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, uint Flags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, ref pDestBuffer.GetPinnableReference(), pVertexDecl, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ProcessVertices<TThis>(this TThis thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, uint Flags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ProcessVertices(SrcStartIndex, DestIndex, VertexCount, ref pDestBuffer.GetPinnableReference(), ref pVertexDecl.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexDeclaration<TThis>(this TThis thisVtbl, Span<Vertexelement9> pVertexElements, IDirect3DVertexDeclaration9** ppDecl) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVertexDeclaration(ref pVertexElements.GetPinnableReference(), ppDecl);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexDeclaration<TThis>(this TThis thisVtbl, Span<Vertexelement9> pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVertexDeclaration(ref pVertexElements.GetPinnableReference(), ref ppDecl);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVertexDeclaration<TThis>(this TThis thisVtbl, Span<IDirect3DVertexDeclaration9> pDecl) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVertexDeclaration(ref pDecl.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFVF<TThis>(this TThis thisVtbl, Span<uint> pFVF) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFVF(ref pFVF.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, IDirect3DVertexShader9** ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVertexShader(ref pFunction.GetPinnableReference(), ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, ref IDirect3DVertexShader9* ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVertexShader(ref pFunction.GetPinnableReference(), ref ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVertexShader<TThis>(this TThis thisVtbl, Span<IDirect3DVertexShader9> pShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVertexShader(ref pShader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVertexShaderConstantF<TThis>(this TThis thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVertexShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVertexShaderConstantF<TThis>(this TThis thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVertexShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVertexShaderConstantI<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVertexShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVertexShaderConstantI<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVertexShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVertexShaderConstantB<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVertexShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVertexShaderConstantB<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVertexShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, Span<IDirect3DVertexBuffer9> pStreamData, uint OffsetInBytes, uint Stride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetStreamSource(StreamNumber, ref pStreamData.GetPinnableReference(), OffsetInBytes, Stride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ppStreamData, pOffsetInBytes, ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, Span<uint> pOffsetInBytes, uint* pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ppStreamData, ref pOffsetInBytes.GetPinnableReference(), pStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, Span<uint> pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ppStreamData, ref pOffsetInBytes.GetPinnableReference(), ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, uint* pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ref ppStreamData, pOffsetInBytes, ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, Span<uint> pOffsetInBytes, uint* pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ref ppStreamData, ref pOffsetInBytes.GetPinnableReference(), pStride);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, Span<uint> pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSource(StreamNumber, ref ppStreamData, ref pOffsetInBytes.GetPinnableReference(), ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStreamSourceFreq<TThis>(this TThis thisVtbl, uint StreamNumber, Span<uint> pSetting) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStreamSourceFreq(StreamNumber, ref pSetting.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetIndices<TThis>(this TThis thisVtbl, Span<IDirect3DIndexBuffer9> pIndexData) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetIndices(ref pIndexData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, IDirect3DPixelShader9** ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePixelShader(ref pFunction.GetPinnableReference(), ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, ref IDirect3DPixelShader9* ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePixelShader(ref pFunction.GetPinnableReference(), ref ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPixelShader<TThis>(this TThis thisVtbl, Span<IDirect3DPixelShader9> pShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPixelShader(ref pShader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPixelShaderConstantF<TThis>(this TThis thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPixelShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPixelShaderConstantF<TThis>(this TThis thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPixelShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPixelShaderConstantI<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPixelShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPixelShaderConstantI<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPixelShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPixelShaderConstantB<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPixelShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPixelShaderConstantB<TThis>(this TThis thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPixelShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawRectPatch<TThis>(this TThis thisVtbl, uint Handle, float* pNumSegs, Span<RectpatchInfo> pRectPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawRectPatch(Handle, pNumSegs, ref pRectPatchInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawRectPatch<TThis>(this TThis thisVtbl, uint Handle, Span<float> pNumSegs, RectpatchInfo* pRectPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawRectPatch(Handle, ref pNumSegs.GetPinnableReference(), pRectPatchInfo);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawRectPatch<TThis>(this TThis thisVtbl, uint Handle, Span<float> pNumSegs, Span<RectpatchInfo> pRectPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawRectPatch(Handle, ref pNumSegs.GetPinnableReference(), ref pRectPatchInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawTriPatch<TThis>(this TThis thisVtbl, uint Handle, float* pNumSegs, Span<TripatchInfo> pTriPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawTriPatch(Handle, pNumSegs, ref pTriPatchInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DrawTriPatch<TThis>(this TThis thisVtbl, uint Handle, Span<float> pNumSegs, TripatchInfo* pTriPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawTriPatch(Handle, ref pNumSegs.GetPinnableReference(), pTriPatchInfo);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DrawTriPatch<TThis>(this TThis thisVtbl, uint Handle, Span<float> pNumSegs, Span<TripatchInfo> pTriPatchInfo) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DrawTriPatch(Handle, ref pNumSegs.GetPinnableReference(), ref pTriPatchInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetConvolutionMonoKernel<TThis>(this TThis thisVtbl, uint width, uint height, float* rows, Span<float> columns) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetConvolutionMonoKernel(width, height, rows, ref columns.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetConvolutionMonoKernel<TThis>(this TThis thisVtbl, uint width, uint height, Span<float> rows, float* columns) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetConvolutionMonoKernel(width, height, ref rows.GetPinnableReference(), columns);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetConvolutionMonoKernel<TThis>(this TThis thisVtbl, uint width, uint height, Span<float> rows, Span<float> columns) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetConvolutionMonoKernel(width, height, ref rows.GetPinnableReference(), ref columns.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, IDirect3DSurface9* pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, pDst, pSrcRectDescs, NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, IDirect3DSurface9* pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, pDst, ref pSrcRectDescs.GetPinnableReference(), NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, IDirect3DSurface9* pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, pDst, ref pSrcRectDescs.GetPinnableReference(), NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, Span<IDirect3DSurface9> pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, ref pDst.GetPinnableReference(), pSrcRectDescs, NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, Span<IDirect3DSurface9> pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, ref pDst.GetPinnableReference(), pSrcRectDescs, NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, Span<IDirect3DSurface9> pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, ref pDst.GetPinnableReference(), ref pSrcRectDescs.GetPinnableReference(), NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrc, Span<IDirect3DSurface9> pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(pSrc, ref pDst.GetPinnableReference(), ref pSrcRectDescs.GetPinnableReference(), NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, IDirect3DSurface9* pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), pDst, pSrcRectDescs, NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, IDirect3DSurface9* pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), pDst, pSrcRectDescs, NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, IDirect3DSurface9* pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), pDst, ref pSrcRectDescs.GetPinnableReference(), NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, IDirect3DSurface9* pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), pDst, ref pSrcRectDescs.GetPinnableReference(), NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, Span<IDirect3DSurface9> pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), ref pDst.GetPinnableReference(), pSrcRectDescs, NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, Span<IDirect3DSurface9> pDst, IDirect3DVertexBuffer9* pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), ref pDst.GetPinnableReference(), pSrcRectDescs, NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, Span<IDirect3DSurface9> pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, IDirect3DVertexBuffer9* pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), ref pDst.GetPinnableReference(), ref pSrcRectDescs.GetPinnableReference(), NumRects, pDstRectDescs, Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ComposeRects<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrc, Span<IDirect3DSurface9> pDst, Span<IDirect3DVertexBuffer9> pSrcRectDescs, uint NumRects, Span<IDirect3DVertexBuffer9> pDstRectDescs, Composerectsop Operation, int Xoffset, int Yoffset) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ComposeRects(ref pSrc.GetPinnableReference(), ref pDst.GetPinnableReference(), ref pSrcRectDescs.GetPinnableReference(), NumRects, ref pDstRectDescs.GetPinnableReference(), Operation, Xoffset, Yoffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int PresentEx<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PresentEx<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetGPUThreadPriority<TThis>(this TThis thisVtbl, Span<int> pPriority) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetGPUThreadPriority(ref pPriority.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMaximumFrameLatency<TThis>(this TThis thisVtbl, Span<uint> pMaxLatency) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMaximumFrameLatency(ref pMaxLatency.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ResetEx<TThis>(this TThis thisVtbl, PresentParameters* pPresentationParameters, Span<Displaymodeex> pFullscreenDisplayMode) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ResetEx(pPresentationParameters, ref pFullscreenDisplayMode.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ResetEx<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, Displaymodeex* pFullscreenDisplayMode) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ResetEx(ref pPresentationParameters.GetPinnableReference(), pFullscreenDisplayMode);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ResetEx<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, Span<Displaymodeex> pFullscreenDisplayMode) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ResetEx(ref pPresentationParameters.GetPinnableReference(), ref pFullscreenDisplayMode.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDisplayModeEx<TThis>(this TThis thisVtbl, uint iSwapChain, Displaymodeex* pMode, Span<Displayrotation> pRotation) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDisplayModeEx(iSwapChain, pMode, ref pRotation.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDisplayModeEx<TThis>(this TThis thisVtbl, uint iSwapChain, Span<Displaymodeex> pMode, Displayrotation* pRotation) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDisplayModeEx(iSwapChain, ref pMode.GetPinnableReference(), pRotation);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDisplayModeEx<TThis>(this TThis thisVtbl, uint iSwapChain, Span<Displaymodeex> pMode, Span<Displayrotation> pRotation) where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDisplayModeEx(iSwapChain, ref pMode.GetPinnableReference(), ref pRotation.GetPinnableReference());
+    }
+
 }

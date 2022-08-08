@@ -216,4 +216,76 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVideoProcessBltState<T0, TThis>(this TThis thisVtbl, HDBltState State, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVideoProcessBltState(State, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessBltState<T0, TThis>(this TThis thisVtbl, HDBltState State, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessBltState(State, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetVideoProcessStreamState<T0, TThis>(this TThis thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetVideoProcessStreamState(StreamNumber, State, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessStreamState<T0, TThis>(this TThis thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessStreamState(StreamNumber, State, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int VideoProcessBltHD<TThis>(this TThis thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, Span<HDStreamData> pStreams) where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->VideoProcessBltHD(pOutputSurface, OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int VideoProcessBltHD<TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams) where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->VideoProcessBltHD(ref pOutputSurface.GetPinnableReference(), OutputFrame, StreamCount, pStreams);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int VideoProcessBltHD<TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, Span<HDStreamData> pStreams) where TThis : IComVtbl<IDXVAHDVideoProcessor>
+    {
+        var @this = (IDXVAHDVideoProcessor*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->VideoProcessBltHD(ref pOutputSurface.GetPinnableReference(), OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+    }
+
 }

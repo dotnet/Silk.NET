@@ -640,5 +640,140 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int GetSourceName(uint uIndex, string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetSourceName(uIndex, pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFlag(uint uIndex, string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetFlag(uIndex, pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetArg(uint uIndex, string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetArg(uIndex, pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetArgPair(uint uIndex, string[] pNameSa, string[] pValueSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pName = (char**) SilkMarshal.StringArrayToPtr(pNameSa);
+            var pValue = (char**) SilkMarshal.StringArrayToPtr(pValueSa);
+            var ret = @this->GetArgPair(uIndex, pName, pValue);
+            SilkMarshal.CopyPtrToStringArray((nint) pName, pNameSa);
+            SilkMarshal.Free((nint) pName);
+            SilkMarshal.CopyPtrToStringArray((nint) pValue, pValueSa);
+            SilkMarshal.Free((nint) pValue);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetArgPair(uint uIndex, string[] pNameSa, ref char* pValue)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pName = (char**) SilkMarshal.StringArrayToPtr(pNameSa);
+            var ret = @this->GetArgPair(uIndex, pName, ref pValue);
+            SilkMarshal.CopyPtrToStringArray((nint) pName, pNameSa);
+            SilkMarshal.Free((nint) pName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetArgPair(uint uIndex, ref char* pName, string[] pValueSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pValue = (char**) SilkMarshal.StringArrayToPtr(pValueSa);
+            var ret = @this->GetArgPair(uIndex, ref pName, pValue);
+            SilkMarshal.CopyPtrToStringArray((nint) pValue, pValueSa);
+            SilkMarshal.Free((nint) pValue);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDefine(uint uIndex, string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetDefine(uIndex, pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetTargetProfile(string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetTargetProfile(pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetEntryPoint(string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetEntryPoint(pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetMainFileName(string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetMainFileName(pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetName(string[] pResultSa)
+        {
+            var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+            var ret = @this->GetName(pResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+            SilkMarshal.Free((nint) pResult);
+            return ret;
+        }
+
     }
 }

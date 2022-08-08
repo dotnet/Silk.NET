@@ -198,4 +198,44 @@ public unsafe static class D3D12ShaderReflectionTypeVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderTypeDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflectionType>
+    {
+        var @this = (ID3D12ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionType* GetMemberTypeByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12ShaderReflectionType>
+    {
+        var @this = (ID3D12ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMemberTypeByName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int IsEqual<TThis>(this TThis thisVtbl, Span<ID3D12ShaderReflectionType> pType) where TThis : IComVtbl<ID3D12ShaderReflectionType>
+    {
+        var @this = (ID3D12ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->IsEqual(ref pType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int IsOfType<TThis>(this TThis thisVtbl, Span<ID3D12ShaderReflectionType> pType) where TThis : IComVtbl<ID3D12ShaderReflectionType>
+    {
+        var @this = (ID3D12ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->IsOfType(ref pType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ImplementsInterface<TThis>(this TThis thisVtbl, Span<ID3D12ShaderReflectionType> pBase) where TThis : IComVtbl<ID3D12ShaderReflectionType>
+    {
+        var @this = (ID3D12ShaderReflectionType*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ImplementsInterface(ref pBase.GetPinnableReference());
+    }
+
 }

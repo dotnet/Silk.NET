@@ -608,4 +608,244 @@ public unsafe static class DXGIAdapter3VtblExtensions
         ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, uint, void>)@this->LpVtbl[17])(@this, dwCookie);
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<AdapterDesc> pDesc) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckInterfaceSupport<TThis>(this TThis thisVtbl, Guid* InterfaceName, Span<long> pUMDVersion) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckInterfaceSupport(InterfaceName, ref pUMDVersion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckInterfaceSupport<TThis>(this TThis thisVtbl, Span<Guid> InterfaceName, long* pUMDVersion) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckInterfaceSupport(ref InterfaceName.GetPinnableReference(), pUMDVersion);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckInterfaceSupport<TThis>(this TThis thisVtbl, Span<Guid> InterfaceName, Span<long> pUMDVersion) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckInterfaceSupport(ref InterfaceName.GetPinnableReference(), ref pUMDVersion.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc1<TThis>(this TThis thisVtbl, Span<AdapterDesc1> pDesc) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc1(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc2<TThis>(this TThis thisVtbl, Span<AdapterDesc2> pDesc) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc2(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<TThis>(this TThis thisVtbl, void* hEvent, Span<uint> pdwCookie) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterHardwareContentProtectionTeardownStatusEvent(hEvent, ref pdwCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0, TThis>(this TThis thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterHardwareContentProtectionTeardownStatusEvent(ref hEvent.GetPinnableReference(), pdwCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterHardwareContentProtectionTeardownStatusEvent<T0, TThis>(this TThis thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterHardwareContentProtectionTeardownStatusEvent(ref hEvent.GetPinnableReference(), ref pdwCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int QueryVideoMemoryInfo<TThis>(this TThis thisVtbl, uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, Span<QueryVideoMemoryInfo> pVideoMemoryInfo) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryVideoMemoryInfo(NodeIndex, MemorySegmentGroup, ref pVideoMemoryInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<TThis>(this TThis thisVtbl, void* hEvent, Span<uint> pdwCookie) where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterVideoMemoryBudgetChangeNotificationEvent(hEvent, ref pdwCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0, TThis>(this TThis thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterVideoMemoryBudgetChangeNotificationEvent(ref hEvent.GetPinnableReference(), pdwCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterVideoMemoryBudgetChangeNotificationEvent<T0, TThis>(this TThis thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged where TThis : IComVtbl<IDXGIAdapter3>
+    {
+        var @this = (IDXGIAdapter3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterVideoMemoryBudgetChangeNotificationEvent(ref hEvent.GetPinnableReference(), ref pdwCookie.GetPinnableReference());
+    }
+
 }

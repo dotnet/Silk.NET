@@ -289,4 +289,60 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BindConstantBufferByName<TThis>(this TThis thisVtbl, Span<byte> pName, uint uDstSlot, uint cbDstOffset) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BindConstantBufferByName(ref pName.GetPinnableReference(), uDstSlot, cbDstOffset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BindResourceByName<TThis>(this TThis thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BindResourceByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BindSamplerByName<TThis>(this TThis thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BindSamplerByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BindUnorderedAccessViewByName<TThis>(this TThis thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BindUnorderedAccessViewByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BindResourceAsUnorderedAccessViewByName<TThis>(this TThis thisVtbl, Span<byte> pSrvName, uint uDstUavSlot, uint uCount) where TThis : IComVtbl<ID3D11ModuleInstance>
+    {
+        var @this = (ID3D11ModuleInstance*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BindResourceAsUnorderedAccessViewByName(ref pSrvName.GetPinnableReference(), uDstUavSlot, uCount);
+    }
+
 }

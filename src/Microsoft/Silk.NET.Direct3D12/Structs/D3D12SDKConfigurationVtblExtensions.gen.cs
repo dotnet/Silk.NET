@@ -116,4 +116,28 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12SDKConfiguration>
+    {
+        var @this = (ID3D12SDKConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SDKConfiguration>
+    {
+        var @this = (ID3D12SDKConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetSDKVersion<TThis>(this TThis thisVtbl, uint SDKVersion, Span<byte> SDKPath) where TThis : IComVtbl<ID3D12SDKConfiguration>
+    {
+        var @this = (ID3D12SDKConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetSDKVersion(SDKVersion, ref SDKPath.GetPinnableReference());
+    }
+
 }

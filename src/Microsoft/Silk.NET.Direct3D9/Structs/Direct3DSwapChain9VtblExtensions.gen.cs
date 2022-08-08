@@ -318,4 +318,108 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Present<TThis>(this TThis thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFrontBufferData<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pDestSurface) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFrontBufferData(ref pDestSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRasterStatus<TThis>(this TThis thisVtbl, Span<RasterStatus> pRasterStatus) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRasterStatus(ref pRasterStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDisplayMode<TThis>(this TThis thisVtbl, Span<Displaymode> pMode) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDisplayMode(ref pMode.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPresentParameters<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters) where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPresentParameters(ref pPresentationParameters.GetPinnableReference());
+    }
+
 }

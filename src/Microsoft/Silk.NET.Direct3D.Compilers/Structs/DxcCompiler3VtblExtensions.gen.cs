@@ -720,4 +720,484 @@ public unsafe static class DxcCompiler3VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, pIncludeHandler, riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, ref riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, ref riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, char** pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, pIncludeHandler, riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, pIncludeHandler, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Compile<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pSource, ref char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Compile(in pSource.GetPinnableReference(), ref pArguments, argCount, ref pIncludeHandler.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pObject, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(pObject, ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pObject, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(pObject, ref riid.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pObject, Guid* riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(in pObject.GetPinnableReference(), riid, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pObject, Guid* riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(in pObject.GetPinnableReference(), riid, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pObject, Span<Guid> riid, void** ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(in pObject.GetPinnableReference(), ref riid.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Disassemble<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pObject, Span<Guid> riid, ref void* ppResult) where TThis : IComVtbl<IDxcCompiler3>
+    {
+        var @this = (IDxcCompiler3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Disassemble(in pObject.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppResult);
+    }
+
 }

@@ -132,4 +132,36 @@ public unsafe static class DxcAssemblerVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int AssembleToContainer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AssembleToContainer(ref pShader.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int AssembleToContainer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AssembleToContainer(ref pShader.GetPinnableReference(), ref ppResult);
+    }
+
 }

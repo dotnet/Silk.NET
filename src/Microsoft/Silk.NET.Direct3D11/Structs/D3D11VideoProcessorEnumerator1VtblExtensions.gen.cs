@@ -452,4 +452,180 @@ public unsafe static class D3D11VideoProcessorEnumerator1VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorContentDesc<TThis>(this TThis thisVtbl, Span<VideoProcessorContentDesc> pContentDesc) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorContentDesc(ref pContentDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckVideoProcessorFormat<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format Format, Span<uint> pFlags) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckVideoProcessorFormat(Format, ref pFlags.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorCaps<TThis>(this TThis thisVtbl, Span<VideoProcessorCaps> pCaps) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCaps(ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorRateConversionCaps<TThis>(this TThis thisVtbl, uint TypeIndex, Span<VideoProcessorRateConversionCaps> pCaps) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorRateConversionCaps(TypeIndex, ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorCustomRate<TThis>(this TThis thisVtbl, uint TypeIndex, uint CustomRateIndex, Span<VideoProcessorCustomRate> pRate) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCustomRate(TypeIndex, CustomRateIndex, ref pRate.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorFilterRange<TThis>(this TThis thisVtbl, VideoProcessorFilter Filter, Span<VideoProcessorFilterRange> pRange) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorFilterRange(Filter, ref pRange.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckVideoProcessorFormatConversion<TThis>(this TThis thisVtbl, Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, Span<int> pSupported) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator1>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckVideoProcessorFormatConversion(InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, ref pSupported.GetPinnableReference());
+    }
+
 }

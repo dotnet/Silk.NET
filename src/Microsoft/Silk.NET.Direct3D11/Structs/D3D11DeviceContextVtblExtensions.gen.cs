@@ -3754,4 +3754,1308 @@ public unsafe static class D3D11DeviceContextVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11PixelShader> pPixelShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSSetShader(ref pPixelShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11PixelShader> pPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSSetShader(ref pPixelShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11VertexShader> pVertexShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSSetShader(ref pVertexShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11VertexShader> pVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSSetShader(ref pVertexShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Map<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, Span<MappedSubresource> pMappedResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Map(pResource, Subresource, MapType, MapFlags, ref pMappedResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Map<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Map(ref pResource.GetPinnableReference(), Subresource, MapType, MapFlags, pMappedResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Map<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, uint Subresource, Map MapType, uint MapFlags, Span<MappedSubresource> pMappedResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Map(ref pResource.GetPinnableReference(), Subresource, MapType, MapFlags, ref pMappedResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Unmap<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, uint Subresource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->Unmap(ref pResource.GetPinnableReference(), Subresource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void IASetInputLayout<TThis>(this TThis thisVtbl, Span<ID3D11InputLayout> pInputLayout) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetInputLayout(ref pInputLayout.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, pStrides, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, Span<uint> pStrides, uint* pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, ref pStrides.GetPinnableReference(), pOffsets);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, Span<uint> pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, ref pStrides.GetPinnableReference(), ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, pStrides, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, Span<uint> pStrides, uint* pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, ref pStrides.GetPinnableReference(), pOffsets);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IASetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, Span<uint> pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, ref pStrides.GetPinnableReference(), ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void IASetIndexBuffer<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pIndexBuffer, Silk.NET.DXGI.Format Format, uint Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IASetIndexBuffer(ref pIndexBuffer.GetPinnableReference(), Format, Offset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11GeometryShader> pShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSSetShader(ref pShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11GeometryShader> pShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSSetShader(ref pShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Begin<TThis>(this TThis thisVtbl, Span<ID3D11Asynchronous> pAsync) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->Begin(ref pAsync.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void End<TThis>(this TThis thisVtbl, Span<ID3D11Asynchronous> pAsync) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->End(ref pAsync.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetData<T0, TThis>(this TThis thisVtbl, ID3D11Asynchronous* pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetData(pAsync, ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetData<TThis>(this TThis thisVtbl, Span<ID3D11Asynchronous> pAsync, void* pData, uint DataSize, uint GetDataFlags) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetData(ref pAsync.GetPinnableReference(), pData, DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0, TThis>(this TThis thisVtbl, Span<ID3D11Asynchronous> pAsync, Span<T0> pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetData(ref pAsync.GetPinnableReference(), ref pData.GetPinnableReference(), DataSize, GetDataFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetPredication<TThis>(this TThis thisVtbl, Span<ID3D11Predicate> pPredicate, int PredicateValue) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SetPredication(ref pPredicate.GetPinnableReference(), PredicateValue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargets<TThis>(this TThis thisVtbl, uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargets(NumViews, ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargets<TThis>(this TThis thisVtbl, uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargets(NumViews, ref ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, pUAVInitialCounts);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, pUAVInitialCounts);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TThis>(this TThis thisVtbl, uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetRenderTargetsAndUnorderedAccessViews(NumRTVs, ref ppRenderTargetViews, ref pDepthStencilView.GetPinnableReference(), UAVStartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetBlendState<TThis>(this TThis thisVtbl, ID3D11BlendState* pBlendState, [Count(Count = 4)] Span<float> BlendFactor, uint SampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetBlendState(pBlendState, ref BlendFactor.GetPinnableReference(), SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMSetBlendState<TThis>(this TThis thisVtbl, Span<ID3D11BlendState> pBlendState, [Count(Count = 4)] float* BlendFactor, uint SampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetBlendState(ref pBlendState.GetPinnableReference(), BlendFactor, SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OMSetBlendState<TThis>(this TThis thisVtbl, Span<ID3D11BlendState> pBlendState, [Count(Count = 4)] Span<float> BlendFactor, uint SampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetBlendState(ref pBlendState.GetPinnableReference(), ref BlendFactor.GetPinnableReference(), SampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void OMSetDepthStencilState<TThis>(this TThis thisVtbl, Span<ID3D11DepthStencilState> pDepthStencilState, uint StencilRef) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMSetDepthStencilState(ref pDepthStencilState.GetPinnableReference(), StencilRef);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void SOSetTargets<TThis>(this TThis thisVtbl, uint NumBuffers, ID3D11Buffer** ppSOTargets, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SOSetTargets(NumBuffers, ppSOTargets, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void SOSetTargets<TThis>(this TThis thisVtbl, uint NumBuffers, ref ID3D11Buffer* ppSOTargets, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SOSetTargets(NumBuffers, ref ppSOTargets, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DrawIndexedInstancedIndirect<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pBufferForArgs, uint AlignedByteOffsetForArgs) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DrawIndexedInstancedIndirect(ref pBufferForArgs.GetPinnableReference(), AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DrawInstancedIndirect<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pBufferForArgs, uint AlignedByteOffsetForArgs) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DrawInstancedIndirect(ref pBufferForArgs.GetPinnableReference(), AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void DispatchIndirect<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pBufferForArgs, uint AlignedByteOffsetForArgs) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DispatchIndirect(ref pBufferForArgs.GetPinnableReference(), AlignedByteOffsetForArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSSetState<TThis>(this TThis thisVtbl, Span<ID3D11RasterizerState> pRasterizerState) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSSetState(ref pRasterizerState.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSSetViewports<TThis>(this TThis thisVtbl, uint NumViewports, Span<Viewport> pViewports) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSSetViewports(NumViewports, ref pViewports.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSSetScissorRects<TThis>(this TThis thisVtbl, uint NumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSSetScissorRects(NumRects, ref pRects.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Box* pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopySubresourceRegion<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Box* pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopySubresourceRegion<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopySubresourceRegion(ref pDstResource.GetPinnableReference(), DstSubresource, DstX, DstY, DstZ, ref pSrcResource.GetPinnableReference(), SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyResource<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, Span<ID3D11Resource> pSrcResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyResource(pDstResource, ref pSrcResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyResource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, ID3D11Resource* pSrcResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyResource(ref pDstResource.GetPinnableReference(), pSrcResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopyResource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, Span<ID3D11Resource> pSrcResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyResource(ref pDstResource.GetPinnableReference(), ref pSrcResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0, TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(pDstResource, DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(pDstResource, DstSubresource, ref pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0, TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(pDstResource, DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<T0, TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void UpdateSubresource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, ref pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void UpdateSubresource<T0, TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->UpdateSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyStructureCount<TThis>(this TThis thisVtbl, ID3D11Buffer* pDstBuffer, uint DstAlignedByteOffset, Span<ID3D11UnorderedAccessView> pSrcView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyStructureCount(pDstBuffer, DstAlignedByteOffset, ref pSrcView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyStructureCount<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pDstBuffer, uint DstAlignedByteOffset, ID3D11UnorderedAccessView* pSrcView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyStructureCount(ref pDstBuffer.GetPinnableReference(), DstAlignedByteOffset, pSrcView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopyStructureCount<TThis>(this TThis thisVtbl, Span<ID3D11Buffer> pDstBuffer, uint DstAlignedByteOffset, Span<ID3D11UnorderedAccessView> pSrcView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyStructureCount(ref pDstBuffer.GetPinnableReference(), DstAlignedByteOffset, ref pSrcView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearRenderTargetView<TThis>(this TThis thisVtbl, ID3D11RenderTargetView* pRenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearRenderTargetView(pRenderTargetView, ref ColorRGBA.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearRenderTargetView<TThis>(this TThis thisVtbl, Span<ID3D11RenderTargetView> pRenderTargetView, [Count(Count = 4)] float* ColorRGBA) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearRenderTargetView(ref pRenderTargetView.GetPinnableReference(), ColorRGBA);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearRenderTargetView<TThis>(this TThis thisVtbl, Span<ID3D11RenderTargetView> pRenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearRenderTargetView(ref pRenderTargetView.GetPinnableReference(), ref ColorRGBA.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewUint<TThis>(this TThis thisVtbl, ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] Span<uint> Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewUint(pUnorderedAccessView, ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewUint<TThis>(this TThis thisVtbl, Span<ID3D11UnorderedAccessView> pUnorderedAccessView, [Count(Count = 4)] uint* Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewUint(ref pUnorderedAccessView.GetPinnableReference(), Values);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearUnorderedAccessViewUint<TThis>(this TThis thisVtbl, Span<ID3D11UnorderedAccessView> pUnorderedAccessView, [Count(Count = 4)] Span<uint> Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewUint(ref pUnorderedAccessView.GetPinnableReference(), ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewFloat<TThis>(this TThis thisVtbl, ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] Span<float> Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewFloat(pUnorderedAccessView, ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ClearUnorderedAccessViewFloat<TThis>(this TThis thisVtbl, Span<ID3D11UnorderedAccessView> pUnorderedAccessView, [Count(Count = 4)] float* Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewFloat(ref pUnorderedAccessView.GetPinnableReference(), Values);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearUnorderedAccessViewFloat<TThis>(this TThis thisVtbl, Span<ID3D11UnorderedAccessView> pUnorderedAccessView, [Count(Count = 4)] Span<float> Values) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearUnorderedAccessViewFloat(ref pUnorderedAccessView.GetPinnableReference(), ref Values.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ClearDepthStencilView<TThis>(this TThis thisVtbl, Span<ID3D11DepthStencilView> pDepthStencilView, uint ClearFlags, float Depth, byte Stencil) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ClearDepthStencilView(ref pDepthStencilView.GetPinnableReference(), ClearFlags, Depth, Stencil);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GenerateMips<TThis>(this TThis thisVtbl, Span<ID3D11ShaderResourceView> pShaderResourceView) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GenerateMips(ref pShaderResourceView.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetResourceMinLOD<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, float MinLOD) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SetResourceMinLOD(ref pResource.GetPinnableReference(), MinLOD);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static float GetResourceMinLOD<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceMinLOD(ref pResource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ResolveSubresource<TThis>(this TThis thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ResolveSubresource(pDstResource, DstSubresource, ref pSrcResource.GetPinnableReference(), SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void ResolveSubresource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, ID3D11Resource* pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ResolveSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, pSrcResource, SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ResolveSubresource<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pDstResource, uint DstSubresource, Span<ID3D11Resource> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ResolveSubresource(ref pDstResource.GetPinnableReference(), DstSubresource, ref pSrcResource.GetPinnableReference(), SrcSubresource, Format);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteCommandList<TThis>(this TThis thisVtbl, Span<ID3D11CommandList> pCommandList, int RestoreContextState) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->ExecuteCommandList(ref pCommandList.GetPinnableReference(), RestoreContextState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11HullShader> pHullShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSSetShader(ref pHullShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11HullShader> pHullShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSSetShader(ref pHullShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11DomainShader> pDomainShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSSetShader(ref pDomainShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11DomainShader> pDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSSetShader(ref pDomainShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSSetUnorderedAccessViews<TThis>(this TThis thisVtbl, uint StartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSSetUnorderedAccessViews(StartSlot, NumUAVs, ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSSetUnorderedAccessViews<TThis>(this TThis thisVtbl, uint StartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, Span<uint> pUAVInitialCounts) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSSetUnorderedAccessViews(StartSlot, NumUAVs, ref ppUnorderedAccessViews, ref pUAVInitialCounts.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11ComputeShader> pComputeShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSSetShader(ref pComputeShader.GetPinnableReference(), ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSSetShader<TThis>(this TThis thisVtbl, Span<ID3D11ComputeShader> pComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSSetShader(ref pComputeShader.GetPinnableReference(), ref ppClassInstances, NumClassInstances);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSGetShader<TThis>(this TThis thisVtbl, ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSGetShader(ppPixelShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSGetShader<TThis>(this TThis thisVtbl, ID3D11PixelShader** ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSGetShader(ppPixelShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSGetShader<TThis>(this TThis thisVtbl, ref ID3D11PixelShader* ppPixelShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSGetShader(ref ppPixelShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void PSGetShader<TThis>(this TThis thisVtbl, ref ID3D11PixelShader* ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->PSGetShader(ref ppPixelShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSGetShader<TThis>(this TThis thisVtbl, ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSGetShader(ppVertexShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSGetShader<TThis>(this TThis thisVtbl, ID3D11VertexShader** ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSGetShader(ppVertexShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSGetShader<TThis>(this TThis thisVtbl, ref ID3D11VertexShader* ppVertexShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSGetShader(ref ppVertexShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void VSGetShader<TThis>(this TThis thisVtbl, ref ID3D11VertexShader* ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->VSGetShader(ref ppVertexShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, pStrides, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, Span<uint> pStrides, uint* pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, ref pStrides.GetPinnableReference(), pOffsets);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, Span<uint> pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, ref pStrides.GetPinnableReference(), ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, pStrides, ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, Span<uint> pStrides, uint* pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, ref pStrides.GetPinnableReference(), pOffsets);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetVertexBuffers<TThis>(this TThis thisVtbl, uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, Span<uint> pStrides, Span<uint> pOffsets) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetVertexBuffers(StartSlot, NumBuffers, ref ppVertexBuffers, ref pStrides.GetPinnableReference(), ref pOffsets.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ID3D11Buffer** pIndexBuffer, Silk.NET.DXGI.Format* Format, Span<uint> Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(pIndexBuffer, Format, ref Offset.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ID3D11Buffer** pIndexBuffer, Span<Silk.NET.DXGI.Format> Format, uint* Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(pIndexBuffer, ref Format.GetPinnableReference(), Offset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ID3D11Buffer** pIndexBuffer, Span<Silk.NET.DXGI.Format> Format, Span<uint> Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(pIndexBuffer, ref Format.GetPinnableReference(), ref Offset.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ref ID3D11Buffer* pIndexBuffer, Silk.NET.DXGI.Format* Format, Span<uint> Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(ref pIndexBuffer, Format, ref Offset.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ref ID3D11Buffer* pIndexBuffer, Span<Silk.NET.DXGI.Format> Format, uint* Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(ref pIndexBuffer, ref Format.GetPinnableReference(), Offset);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void IAGetIndexBuffer<TThis>(this TThis thisVtbl, ref ID3D11Buffer* pIndexBuffer, Span<Silk.NET.DXGI.Format> Format, Span<uint> Offset) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetIndexBuffer(ref pIndexBuffer, ref Format.GetPinnableReference(), ref Offset.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSGetShader<TThis>(this TThis thisVtbl, ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSGetShader(ppGeometryShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSGetShader<TThis>(this TThis thisVtbl, ID3D11GeometryShader** ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSGetShader(ppGeometryShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSGetShader<TThis>(this TThis thisVtbl, ref ID3D11GeometryShader* ppGeometryShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSGetShader(ref ppGeometryShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GSGetShader<TThis>(this TThis thisVtbl, ref ID3D11GeometryShader* ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GSGetShader(ref ppGeometryShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void IAGetPrimitiveTopology<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.D3DPrimitiveTopology> pTopology) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->IAGetPrimitiveTopology(ref pTopology.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetPredication<TThis>(this TThis thisVtbl, ID3D11Predicate** ppPredicate, Span<int> pPredicateValue) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetPredication(ppPredicate, ref pPredicateValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetPredication<TThis>(this TThis thisVtbl, ref ID3D11Predicate* ppPredicate, Span<int> pPredicateValue) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetPredication(ref ppPredicate, ref pPredicateValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ID3D11BlendState** ppBlendState, [Count(Count = 4)] float* BlendFactor, Span<uint> pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ppBlendState, BlendFactor, ref pSampleMask.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ID3D11BlendState** ppBlendState, [Count(Count = 4)] Span<float> BlendFactor, uint* pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ppBlendState, ref BlendFactor.GetPinnableReference(), pSampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ID3D11BlendState** ppBlendState, [Count(Count = 4)] Span<float> BlendFactor, Span<uint> pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ppBlendState, ref BlendFactor.GetPinnableReference(), ref pSampleMask.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] float* BlendFactor, Span<uint> pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ref ppBlendState, BlendFactor, ref pSampleMask.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] Span<float> BlendFactor, uint* pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ref ppBlendState, ref BlendFactor.GetPinnableReference(), pSampleMask);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetBlendState<TThis>(this TThis thisVtbl, ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] Span<float> BlendFactor, Span<uint> pSampleMask) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetBlendState(ref ppBlendState, ref BlendFactor.GetPinnableReference(), ref pSampleMask.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetDepthStencilState<TThis>(this TThis thisVtbl, ID3D11DepthStencilState** ppDepthStencilState, Span<uint> pStencilRef) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetDepthStencilState(ppDepthStencilState, ref pStencilRef.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void OMGetDepthStencilState<TThis>(this TThis thisVtbl, ref ID3D11DepthStencilState* ppDepthStencilState, Span<uint> pStencilRef) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->OMGetDepthStencilState(ref ppDepthStencilState, ref pStencilRef.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void RSGetViewports<TThis>(this TThis thisVtbl, uint* pNumViewports, Span<Viewport> pViewports) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetViewports(pNumViewports, ref pViewports.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void RSGetViewports<TThis>(this TThis thisVtbl, Span<uint> pNumViewports, Viewport* pViewports) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetViewports(ref pNumViewports.GetPinnableReference(), pViewports);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSGetViewports<TThis>(this TThis thisVtbl, Span<uint> pNumViewports, Span<Viewport> pViewports) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetViewports(ref pNumViewports.GetPinnableReference(), ref pViewports.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void RSGetScissorRects<TThis>(this TThis thisVtbl, uint* pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetScissorRects(pNumRects, ref pRects.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void RSGetScissorRects<TThis>(this TThis thisVtbl, Span<uint> pNumRects, Silk.NET.Maths.Rectangle<int>* pRects) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetScissorRects(ref pNumRects.GetPinnableReference(), pRects);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RSGetScissorRects<TThis>(this TThis thisVtbl, Span<uint> pNumRects, Span<Silk.NET.Maths.Rectangle<int>> pRects) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RSGetScissorRects(ref pNumRects.GetPinnableReference(), ref pRects.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSGetShader<TThis>(this TThis thisVtbl, ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSGetShader(ppHullShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSGetShader<TThis>(this TThis thisVtbl, ID3D11HullShader** ppHullShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSGetShader(ppHullShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSGetShader<TThis>(this TThis thisVtbl, ref ID3D11HullShader* ppHullShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSGetShader(ref ppHullShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void HSGetShader<TThis>(this TThis thisVtbl, ref ID3D11HullShader* ppHullShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->HSGetShader(ref ppHullShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSGetShader<TThis>(this TThis thisVtbl, ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSGetShader(ppDomainShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSGetShader<TThis>(this TThis thisVtbl, ID3D11DomainShader** ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSGetShader(ppDomainShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSGetShader<TThis>(this TThis thisVtbl, ref ID3D11DomainShader* ppDomainShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSGetShader(ref ppDomainShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void DSGetShader<TThis>(this TThis thisVtbl, ref ID3D11DomainShader* ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->DSGetShader(ref ppDomainShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSGetShader<TThis>(this TThis thisVtbl, ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSGetShader(ppComputeShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSGetShader<TThis>(this TThis thisVtbl, ID3D11ComputeShader** ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSGetShader(ppComputeShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSGetShader<TThis>(this TThis thisVtbl, ref ID3D11ComputeShader* ppComputeShader, ID3D11ClassInstance** ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSGetShader(ref ppComputeShader, ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CSGetShader<TThis>(this TThis thisVtbl, ref ID3D11ComputeShader* ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, Span<uint> pNumClassInstances) where TThis : IComVtbl<ID3D11DeviceContext>
+    {
+        var @this = (ID3D11DeviceContext*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CSGetShader(ref ppComputeShader, ref ppClassInstances, ref pNumClassInstances.GetPinnableReference());
+    }
+
 }

@@ -132,4 +132,36 @@ public unsafe static class DxcValidatorVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Validate<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Validate(ref pShader.GetPinnableReference(), Flags, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Validate<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Validate(ref pShader.GetPinnableReference(), Flags, ref ppResult);
+    }
+
 }

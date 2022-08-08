@@ -240,4 +240,84 @@ public unsafe static class DxcValidator2VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Validate<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Validate(ref pShader.GetPinnableReference(), Flags, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Validate<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Validate(ref pShader.GetPinnableReference(), Flags, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, IDxcBlob* pShader, uint Flags, Span<Buffer> pOptDebugBitcode, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(pShader, Flags, ref pOptDebugBitcode.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, IDxcBlob* pShader, uint Flags, Span<Buffer> pOptDebugBitcode, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(pShader, Flags, ref pOptDebugBitcode.GetPinnableReference(), ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, Buffer* pOptDebugBitcode, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(ref pShader.GetPinnableReference(), Flags, pOptDebugBitcode, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, Buffer* pOptDebugBitcode, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(ref pShader.GetPinnableReference(), Flags, pOptDebugBitcode, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, Span<Buffer> pOptDebugBitcode, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(ref pShader.GetPinnableReference(), Flags, ref pOptDebugBitcode.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ValidateWithDebug<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, Span<Buffer> pOptDebugBitcode, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcValidator2>
+    {
+        var @this = (IDxcValidator2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateWithDebug(ref pShader.GetPinnableReference(), Flags, ref pOptDebugBitcode.GetPinnableReference(), ref ppResult);
+    }
+
 }

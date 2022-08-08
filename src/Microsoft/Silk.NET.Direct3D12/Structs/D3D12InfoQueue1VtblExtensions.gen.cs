@@ -655,4 +655,164 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, ulong MessageIndex, Message* pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(MessageIndex, pMessage, ref pMessageByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, ulong MessageIndex, Span<Message> pMessage, nuint* pMessageByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(MessageIndex, ref pMessage.GetPinnableReference(), pMessageByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMessageA<TThis>(this TThis thisVtbl, ulong MessageIndex, Span<Message> pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(MessageIndex, ref pMessage.GetPinnableReference(), ref pMessageByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddStorageFilterEntries<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddStorageFilterEntries(ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(pFilter, ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(ref pFilter.GetPinnableReference(), pFilterByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStorageFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PushStorageFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PushStorageFilter(ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddRetrievalFilterEntries<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddRetrievalFilterEntries(ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(pFilter, ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(ref pFilter.GetPinnableReference(), pFilterByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRetrievalFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PushRetrievalFilter<TThis>(this TThis thisVtbl, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PushRetrievalFilter(ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddMessage<TThis>(this TThis thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, Span<byte> pDescription) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddMessage(Category, Severity, ID, ref pDescription.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddApplicationMessage<TThis>(this TThis thisVtbl, MessageSeverity Severity, Span<byte> pDescription) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterMessageCallback<TThis>(this TThis thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, void* pContext, Span<uint> pCallbackCookie) where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, pContext, ref pCallbackCookie.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterMessageCallback<T0, TThis>(this TThis thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, Span<T0> pContext, uint* pCallbackCookie) where T0 : unmanaged where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, ref pContext.GetPinnableReference(), pCallbackCookie);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterMessageCallback<T0, TThis>(this TThis thisVtbl, PfnMessageFunc CallbackFunc, MessageCallbackFlags CallbackFilterFlags, Span<T0> pContext, Span<uint> pCallbackCookie) where T0 : unmanaged where TThis : IComVtbl<ID3D12InfoQueue1>
+    {
+        var @this = (ID3D12InfoQueue1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterMessageCallback(CallbackFunc, CallbackFilterFlags, ref pContext.GetPinnableReference(), ref pCallbackCookie.GetPinnableReference());
+    }
+
 }

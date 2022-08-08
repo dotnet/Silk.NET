@@ -392,5 +392,101 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+            var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+            SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+            SilkMarshal.Free((nint) ppOptions);
+            return ret;
+        }
+
     }
 }

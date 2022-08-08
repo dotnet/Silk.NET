@@ -254,4 +254,92 @@ public unsafe static class Direct3DAuthenticatedChannel9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificateSize<TThis>(this TThis thisVtbl, Span<uint> pCertificateSize) where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificateSize(ref pCertificateSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificate<TThis>(this TThis thisVtbl, uint CertifacteSize, Span<byte> ppCertificate) where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificate(CertifacteSize, ref ppCertificate.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int NegotiateKeyExchange<T0, TThis>(this TThis thisVtbl, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->NegotiateKeyExchange(DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Query<T0, TThis>(this TThis thisVtbl, uint InputSize, void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Query(InputSize, pInput, OutputSize, ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Query<T0, TThis>(this TThis thisVtbl, uint InputSize, Span<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Query(InputSize, ref pInput.GetPinnableReference(), OutputSize, pOutput);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Query<T0, T1, TThis>(this TThis thisVtbl, uint InputSize, Span<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Query(InputSize, ref pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Configure<TThis>(this TThis thisVtbl, uint InputSize, void* pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Configure(InputSize, pInput, ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Configure<T0, TThis>(this TThis thisVtbl, uint InputSize, Span<T0> pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Configure(InputSize, ref pInput.GetPinnableReference(), pOutput);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Configure<T0, TThis>(this TThis thisVtbl, uint InputSize, Span<T0> pInput, Span<AuthenticatedchannelConfigureOutput> pOutput) where T0 : unmanaged where TThis : IComVtbl<IDirect3DAuthenticatedChannel9>
+    {
+        var @this = (IDirect3DAuthenticatedChannel9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Configure(InputSize, ref pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
+    }
+
 }

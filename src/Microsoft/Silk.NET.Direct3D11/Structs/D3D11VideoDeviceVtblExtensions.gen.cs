@@ -1623,4 +1623,724 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pVideoDesc, Span<VideoDecoderConfig> pConfig, ID3D11VideoDecoder** ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(pVideoDesc, ref pConfig.GetPinnableReference(), ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, VideoDecoderDesc* pVideoDesc, Span<VideoDecoderConfig> pConfig, ref ID3D11VideoDecoder* ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(pVideoDesc, ref pConfig.GetPinnableReference(), ref ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pVideoDesc, VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(ref pVideoDesc.GetPinnableReference(), pConfig, ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pVideoDesc, VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(ref pVideoDesc.GetPinnableReference(), pConfig, ref ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pVideoDesc, Span<VideoDecoderConfig> pConfig, ID3D11VideoDecoder** ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoder<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pVideoDesc, Span<VideoDecoderConfig> pConfig, ref ID3D11VideoDecoder* ppDecoder) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoder(ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref ppDecoder);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<ID3D11VideoProcessorEnumerator> pEnum, uint RateConversionIndex, ID3D11VideoProcessor** ppVideoProcessor) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessor(ref pEnum.GetPinnableReference(), RateConversionIndex, ppVideoProcessor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<ID3D11VideoProcessorEnumerator> pEnum, uint RateConversionIndex, ref ID3D11VideoProcessor* ppVideoProcessor) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessor(ref pEnum.GetPinnableReference(), RateConversionIndex, ref ppVideoProcessor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecoderProfile, Span<Guid> pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, pDecoderProfile, ref pKeyExchangeType.GetPinnableReference(), ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecoderProfile, Span<Guid> pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, pDecoderProfile, ref pKeyExchangeType.GetPinnableReference(), ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, ref pDecoderProfile.GetPinnableReference(), pKeyExchangeType, ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, ref pDecoderProfile.GetPinnableReference(), pKeyExchangeType, ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, Span<Guid> pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, ref pDecoderProfile.GetPinnableReference(), ref pKeyExchangeType.GetPinnableReference(), ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, Span<Guid> pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(pCryptoType, ref pDecoderProfile.GetPinnableReference(), ref pKeyExchangeType.GetPinnableReference(), ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecoderProfile, pKeyExchangeType, ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecoderProfile, pKeyExchangeType, ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, Span<Guid> pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecoderProfile, ref pKeyExchangeType.GetPinnableReference(), ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, Span<Guid> pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), pDecoderProfile, ref pKeyExchangeType.GetPinnableReference(), ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), pKeyExchangeType, ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), pKeyExchangeType, ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, Span<Guid> pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), ref pKeyExchangeType.GetPinnableReference(), ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCryptoSession<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, Span<Guid> pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCryptoSession(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), ref pKeyExchangeType.GetPinnableReference(), ref ppCryptoSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<VideoDecoderOutputViewDesc> pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(pResource, ref pDesc.GetPinnableReference(), ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<VideoDecoderOutputViewDesc> pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(pResource, ref pDesc.GetPinnableReference(), ref ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, VideoDecoderOutputViewDesc* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(ref pResource.GetPinnableReference(), pDesc, ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(ref pResource.GetPinnableReference(), pDesc, ref ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<VideoDecoderOutputViewDesc> pDesc, ID3D11VideoDecoderOutputView** ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(ref pResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoDecoderOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<VideoDecoderOutputViewDesc> pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoDecoderOutputView(ref pResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppVDOVView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorInputViewDesc> pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, pEnum, ref pDesc.GetPinnableReference(), ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorInputViewDesc> pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, pEnum, ref pDesc.GetPinnableReference(), ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, ref pEnum.GetPinnableReference(), pDesc, ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, ref pEnum.GetPinnableReference(), pDesc, ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorInputViewDesc> pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorInputViewDesc> pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(pResource, ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), pEnum, pDesc, ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), pEnum, pDesc, ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorInputViewDesc> pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), pEnum, ref pDesc.GetPinnableReference(), ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorInputViewDesc> pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), pEnum, ref pDesc.GetPinnableReference(), ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), pDesc, ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), pDesc, ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorInputViewDesc> pDesc, ID3D11VideoProcessorInputView** ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorInputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorInputViewDesc> pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorInputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppVPIView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, pEnum, ref pDesc.GetPinnableReference(), ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, pEnum, ref pDesc.GetPinnableReference(), ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, ref pEnum.GetPinnableReference(), pDesc, ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, ref pEnum.GetPinnableReference(), pDesc, ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, ID3D11Resource* pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(pResource, ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), pEnum, pDesc, ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), pEnum, pDesc, ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), pEnum, ref pDesc.GetPinnableReference(), ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, ID3D11VideoProcessorEnumerator* pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), pEnum, ref pDesc.GetPinnableReference(), ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), pDesc, ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), pDesc, ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ID3D11VideoProcessorOutputView** ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorOutputView<TThis>(this TThis thisVtbl, Span<ID3D11Resource> pResource, Span<ID3D11VideoProcessorEnumerator> pEnum, Span<VideoProcessorOutputViewDesc> pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorOutputView(ref pResource.GetPinnableReference(), ref pEnum.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppVPOView);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorEnumerator<TThis>(this TThis thisVtbl, Span<VideoProcessorContentDesc> pDesc, ID3D11VideoProcessorEnumerator** ppEnum) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorEnumerator(ref pDesc.GetPinnableReference(), ppEnum);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessorEnumerator<TThis>(this TThis thisVtbl, Span<VideoProcessorContentDesc> pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessorEnumerator(ref pDesc.GetPinnableReference(), ref ppEnum);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoDecoderProfile<TThis>(this TThis thisVtbl, uint Index, Span<Guid> pDecoderProfile) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderProfile(Index, ref pDecoderProfile.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckVideoDecoderFormat<TThis>(this TThis thisVtbl, Guid* pDecoderProfile, Silk.NET.DXGI.Format Format, Span<int> pSupported) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckVideoDecoderFormat(pDecoderProfile, Format, ref pSupported.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckVideoDecoderFormat<TThis>(this TThis thisVtbl, Span<Guid> pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckVideoDecoderFormat(ref pDecoderProfile.GetPinnableReference(), Format, pSupported);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckVideoDecoderFormat<TThis>(this TThis thisVtbl, Span<Guid> pDecoderProfile, Silk.NET.DXGI.Format Format, Span<int> pSupported) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckVideoDecoderFormat(ref pDecoderProfile.GetPinnableReference(), Format, ref pSupported.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoDecoderConfigCount<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, Span<uint> pCount) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfigCount(pDesc, ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoDecoderConfigCount<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, uint* pCount) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfigCount(ref pDesc.GetPinnableReference(), pCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoDecoderConfigCount<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, Span<uint> pCount) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfigCount(ref pDesc.GetPinnableReference(), ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoDecoderConfig<TThis>(this TThis thisVtbl, VideoDecoderDesc* pDesc, uint Index, Span<VideoDecoderConfig> pConfig) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfig(pDesc, Index, ref pConfig.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoDecoderConfig<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, uint Index, VideoDecoderConfig* pConfig) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfig(ref pDesc.GetPinnableReference(), Index, pConfig);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoDecoderConfig<TThis>(this TThis thisVtbl, Span<VideoDecoderDesc> pDesc, uint Index, Span<VideoDecoderConfig> pConfig) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoDecoderConfig(ref pDesc.GetPinnableReference(), Index, ref pConfig.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecoderProfile, Span<VideoContentProtectionCaps> pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(pCryptoType, pDecoderProfile, ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, VideoContentProtectionCaps* pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(pCryptoType, ref pDecoderProfile.GetPinnableReference(), pCaps);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, Span<VideoContentProtectionCaps> pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(pCryptoType, ref pDecoderProfile.GetPinnableReference(), ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), pDecoderProfile, pCaps);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, Span<VideoContentProtectionCaps> pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), pDecoderProfile, ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, VideoContentProtectionCaps* pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), pCaps);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetContentProtectionCaps<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, Span<VideoContentProtectionCaps> pCaps) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetContentProtectionCaps(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Guid* pCryptoType, Guid* pDecoderProfile, uint Index, Span<Guid> pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(pCryptoType, pDecoderProfile, Index, ref pKeyExchangeType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, uint Index, Guid* pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(pCryptoType, ref pDecoderProfile.GetPinnableReference(), Index, pKeyExchangeType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Guid* pCryptoType, Span<Guid> pDecoderProfile, uint Index, Span<Guid> pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(pCryptoType, ref pDecoderProfile.GetPinnableReference(), Index, ref pKeyExchangeType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(ref pCryptoType.GetPinnableReference(), pDecoderProfile, Index, pKeyExchangeType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Guid* pDecoderProfile, uint Index, Span<Guid> pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(ref pCryptoType.GetPinnableReference(), pDecoderProfile, Index, ref pKeyExchangeType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, uint Index, Guid* pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), Index, pKeyExchangeType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckCryptoKeyExchange<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType, Span<Guid> pDecoderProfile, uint Index, Span<Guid> pKeyExchangeType) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckCryptoKeyExchange(ref pCryptoType.GetPinnableReference(), ref pDecoderProfile.GetPinnableReference(), Index, ref pKeyExchangeType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11VideoDevice>
+    {
+        var @this = (ID3D11VideoDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
 }

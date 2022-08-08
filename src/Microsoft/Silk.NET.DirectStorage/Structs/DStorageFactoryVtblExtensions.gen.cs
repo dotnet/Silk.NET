@@ -536,4 +536,196 @@ public unsafe static class DStorageFactoryVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(desc, ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(desc, ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(in desc.GetPinnableReference(), riid, ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(in desc.GetPinnableReference(), riid, ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(in desc.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueue(in desc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, char* path, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(path, ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, char* path, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(path, ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, Span<char> path, Guid* riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(ref path.GetPinnableReference(), riid, ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, Span<char> path, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(ref path.GetPinnableReference(), riid, ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, Span<char> path, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(ref path.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, Span<char> path, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(ref path.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(path, ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenFile(path, ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, byte* name, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, name, ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, byte* name, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, name, ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, Span<byte> name, Guid* riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, ref name.GetPinnableReference(), riid, ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, Span<byte> name, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, ref name.GetPinnableReference(), riid, ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, Span<byte> name, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, ref name.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, Span<byte> name, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, ref name.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, name, ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStatusArray(capacity, name, ref riid.GetPinnableReference(), ref ppv);
+    }
+
 }

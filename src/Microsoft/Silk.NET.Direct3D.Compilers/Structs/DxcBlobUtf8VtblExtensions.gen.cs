@@ -178,4 +178,44 @@ public unsafe static class DxcBlobUtf8VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcBlobUtf8>
+    {
+        var @this = (IDxcBlobUtf8*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcBlobUtf8>
+    {
+        var @this = (IDxcBlobUtf8*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetEncoding<TThis>(this TThis thisVtbl, int* pKnown, Span<uint> pCodePage) where TThis : IComVtbl<IDxcBlobUtf8>
+    {
+        var @this = (IDxcBlobUtf8*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetEncoding(pKnown, ref pCodePage.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetEncoding<TThis>(this TThis thisVtbl, Span<int> pKnown, uint* pCodePage) where TThis : IComVtbl<IDxcBlobUtf8>
+    {
+        var @this = (IDxcBlobUtf8*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetEncoding(ref pKnown.GetPinnableReference(), pCodePage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetEncoding<TThis>(this TThis thisVtbl, Span<int> pKnown, Span<uint> pCodePage) where TThis : IComVtbl<IDxcBlobUtf8>
+    {
+        var @this = (IDxcBlobUtf8*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetEncoding(ref pKnown.GetPinnableReference(), ref pCodePage.GetPinnableReference());
+    }
+
 }

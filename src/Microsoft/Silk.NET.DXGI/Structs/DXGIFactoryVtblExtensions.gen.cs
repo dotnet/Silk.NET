@@ -516,4 +516,196 @@ public unsafe static class DXGIFactoryVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetWindowAssociation<TThis>(this TThis thisVtbl, Span<nint> pWindowHandle) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetWindowAssociation(ref pWindowHandle.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<SwapChainDesc> pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(pDevice, ref pDesc.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<SwapChainDesc> pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(pDevice, ref pDesc.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(ref pDevice.GetPinnableReference(), pDesc, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(ref pDevice.GetPinnableReference(), pDesc, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<SwapChainDesc> pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(ref pDevice.GetPinnableReference(), ref pDesc.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<SwapChainDesc> pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactory>
+    {
+        var @this = (IDXGIFactory*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChain(ref pDevice.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppSwapChain);
+    }
+
 }

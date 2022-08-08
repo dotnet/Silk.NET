@@ -199,4 +199,60 @@ public unsafe static class DStorageQueueVtblExtensions
         }
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EnqueueRequest<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Request> request) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->EnqueueRequest(in request.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EnqueueStatus<TThis>(this TThis thisVtbl, Span<IDStorageStatusArray> statusArray, uint index) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->EnqueueStatus(ref statusArray.GetPinnableReference(), index);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EnqueueSignal<TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D12.ID3D12Fence> fence, ulong value) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->EnqueueSignal(ref fence.GetPinnableReference(), value);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void RetrieveErrorRecord<TThis>(this TThis thisVtbl, Span<ErrorRecord> record) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->RetrieveErrorRecord(ref record.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Query<TThis>(this TThis thisVtbl, Span<QueueInfo> info) where TThis : IComVtbl<IDStorageQueue>
+    {
+        var @this = (IDStorageQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->Query(ref info.GetPinnableReference());
+    }
+
 }

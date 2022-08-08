@@ -543,4 +543,212 @@ public unsafe static class DXGIDeviceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, void* pData) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(Name, in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), pUnknown);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> Name, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pUnknown) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref Name.GetPinnableReference(), in pUnknown.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(Name, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> Name, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppParent) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSurface<TThis>(this TThis thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Span<Residency> pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryResourceResidency(ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryResourceResidency<TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Span<Residency> pResidencyStatus, uint NumResources) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryResourceResidency(ref ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetGPUThreadPriority<TThis>(this TThis thisVtbl, Span<int> pPriority) where TThis : IComVtbl<IDXGIDevice>
+    {
+        var @this = (IDXGIDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetGPUThreadPriority(ref pPriority.GetPinnableReference());
+    }
+
 }

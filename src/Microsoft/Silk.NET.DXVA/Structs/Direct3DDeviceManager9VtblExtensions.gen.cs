@@ -345,4 +345,116 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ResetDevice<TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DDevice9> pDevice, uint resetToken) where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ResetDevice(ref pDevice.GetPinnableReference(), resetToken);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CloseDeviceHandle<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CloseDeviceHandle(ref hDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int TestDevice<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->TestDevice(ref hDevice.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LockDevice(ref hDevice.GetPinnableReference(), ppDevice, fBlock);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LockDevice<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LockDevice(ref hDevice.GetPinnableReference(), ref ppDevice, fBlock);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int UnlockDevice<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, int fSaveState) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->UnlockDevice(ref hDevice.GetPinnableReference(), fSaveState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<TThis>(this TThis thisVtbl, void* hDevice, Span<Guid> riid, void** ppService) where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(hDevice, ref riid.GetPinnableReference(), ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<TThis>(this TThis thisVtbl, void* hDevice, Span<Guid> riid, ref void* ppService) where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(hDevice, ref riid.GetPinnableReference(), ref ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, Guid* riid, void** ppService) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), riid, ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, Guid* riid, ref void* ppService) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), riid, ref ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, Span<Guid> riid, void** ppService) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), ref riid.GetPinnableReference(), ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<T0, TThis>(this TThis thisVtbl, Span<T0> hDevice, Span<Guid> riid, ref void* ppService) where T0 : unmanaged where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoService(ref hDevice.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppService);
+    }
+
 }

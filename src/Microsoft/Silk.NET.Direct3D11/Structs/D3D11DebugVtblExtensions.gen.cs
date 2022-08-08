@@ -213,4 +213,44 @@ public unsafe static class D3D11DebugVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    {
+        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11Debug>
+    {
+        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetSwapChain<TThis>(this TThis thisVtbl, Span<Silk.NET.DXGI.IDXGISwapChain> pSwapChain) where TThis : IComVtbl<ID3D11Debug>
+    {
+        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetSwapChain(ref pSwapChain.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ValidateContext<TThis>(this TThis thisVtbl, Span<ID3D11DeviceContext> pContext) where TThis : IComVtbl<ID3D11Debug>
+    {
+        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateContext(ref pContext.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ValidateContextForDispatch<TThis>(this TThis thisVtbl, Span<ID3D11DeviceContext> pContext) where TThis : IComVtbl<ID3D11Debug>
+    {
+        var @this = (ID3D11Debug*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ValidateContextForDispatch(ref pContext.GetPinnableReference());
+    }
+
 }

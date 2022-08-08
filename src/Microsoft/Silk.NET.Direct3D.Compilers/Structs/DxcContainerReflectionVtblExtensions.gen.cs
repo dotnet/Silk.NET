@@ -237,4 +237,68 @@ public unsafe static class DxcContainerReflectionVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Load<TThis>(this TThis thisVtbl, Span<IDxcBlob> pContainer) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Load(ref pContainer.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPartCount<TThis>(this TThis thisVtbl, Span<uint> pResult) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPartCount(ref pResult.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPartKind<TThis>(this TThis thisVtbl, uint idx, Span<uint> pResult) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPartKind(idx, ref pResult.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int FindFirstPartKind<TThis>(this TThis thisVtbl, uint kind, Span<uint> pResult) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->FindFirstPartKind(kind, ref pResult.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPartReflection<TThis>(this TThis thisVtbl, uint idx, Span<Guid> iid, void** ppvObject) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPartReflection(idx, ref iid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPartReflection<TThis>(this TThis thisVtbl, uint idx, Span<Guid> iid, ref void* ppvObject) where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPartReflection(idx, ref iid.GetPinnableReference(), ref ppvObject);
+    }
+
 }

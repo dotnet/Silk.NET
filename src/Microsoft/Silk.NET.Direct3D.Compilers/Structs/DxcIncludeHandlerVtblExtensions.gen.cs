@@ -157,4 +157,36 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadSource<TThis>(this TThis thisVtbl, Span<char> pFilename, IDxcBlob** ppIncludeSource) where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadSource(ref pFilename.GetPinnableReference(), ppIncludeSource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadSource<TThis>(this TThis thisVtbl, Span<char> pFilename, ref IDxcBlob* ppIncludeSource) where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadSource(ref pFilename.GetPinnableReference(), ref ppIncludeSource);
+    }
+
 }

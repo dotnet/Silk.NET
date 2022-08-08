@@ -152,4 +152,52 @@ public unsafe static class D3D12SharingContractVtblExtensions
         }
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Present<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, nint window) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->Present(ref pResource.GetPinnableReference(), Subresource, window);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SharedFenceSignal<TThis>(this TThis thisVtbl, Span<ID3D12Fence> pFence, ulong FenceValue) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SharedFenceSignal(ref pFence.GetPinnableReference(), FenceValue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void BeginCapturableWork<TThis>(this TThis thisVtbl, Span<Guid> guid) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->BeginCapturableWork(ref guid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void EndCapturableWork<TThis>(this TThis thisVtbl, Span<Guid> guid) where TThis : IComVtbl<ID3D12SharingContract>
+    {
+        var @this = (ID3D12SharingContract*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->EndCapturableWork(ref guid.GetPinnableReference());
+    }
+
 }

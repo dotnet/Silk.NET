@@ -536,4 +536,172 @@ public unsafe static class D3D12ShaderReflectionVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetConstantBufferByName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDesc<TThis>(this TThis thisVtbl, uint ResourceIndex, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDesc(ResourceIndex, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetInputParameterDesc<TThis>(this TThis thisVtbl, uint ParameterIndex, Span<SignatureParameterDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetInputParameterDesc(ParameterIndex, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOutputParameterDesc<TThis>(this TThis thisVtbl, uint ParameterIndex, Span<SignatureParameterDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOutputParameterDesc(ParameterIndex, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPatchConstantParameterDesc<TThis>(this TThis thisVtbl, uint ParameterIndex, Span<SignatureParameterDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPatchConstantParameterDesc(ParameterIndex, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVariableByName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, byte* Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(Name, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, Span<byte> Name, ShaderInputBindDesc* pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), pDesc);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, Span<byte> Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(Name, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMinFeatureLevel<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.D3DFeatureLevel> pLevel) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMinFeatureLevel(ref pLevel.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, uint* pSizeX, uint* pSizeY, Span<uint> pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(pSizeX, pSizeY, ref pSizeZ.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, uint* pSizeX, Span<uint> pSizeY, uint* pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(pSizeX, ref pSizeY.GetPinnableReference(), pSizeZ);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, uint* pSizeX, Span<uint> pSizeY, Span<uint> pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(pSizeX, ref pSizeY.GetPinnableReference(), ref pSizeZ.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, Span<uint> pSizeX, uint* pSizeY, uint* pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(ref pSizeX.GetPinnableReference(), pSizeY, pSizeZ);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, Span<uint> pSizeX, uint* pSizeY, Span<uint> pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(ref pSizeX.GetPinnableReference(), pSizeY, ref pSizeZ.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe uint GetThreadGroupSize<TThis>(this TThis thisVtbl, Span<uint> pSizeX, Span<uint> pSizeY, uint* pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(ref pSizeX.GetPinnableReference(), ref pSizeY.GetPinnableReference(), pSizeZ);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static uint GetThreadGroupSize<TThis>(this TThis thisVtbl, Span<uint> pSizeX, Span<uint> pSizeY, Span<uint> pSizeZ) where TThis : IComVtbl<ID3D12ShaderReflection>
+    {
+        var @this = (ID3D12ShaderReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetThreadGroupSize(ref pSizeX.GetPinnableReference(), ref pSizeY.GetPinnableReference(), ref pSizeZ.GetPinnableReference());
+    }
+
 }

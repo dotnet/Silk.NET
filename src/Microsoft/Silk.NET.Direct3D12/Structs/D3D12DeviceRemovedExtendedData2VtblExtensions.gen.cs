@@ -198,4 +198,60 @@ public unsafe static class D3D12DeviceRemovedExtendedData2VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAutoBreadcrumbsOutput<TThis>(this TThis thisVtbl, Span<DredAutoBreadcrumbsOutput> pOutput) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetAutoBreadcrumbsOutput(ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPageFaultAllocationOutput<TThis>(this TThis thisVtbl, Span<DredPageFaultOutput> pOutput) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPageFaultAllocationOutput(ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAutoBreadcrumbsOutput1<TThis>(this TThis thisVtbl, Span<DredAutoBreadcrumbsOutput1> pOutput) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetAutoBreadcrumbsOutput1(ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPageFaultAllocationOutput1<TThis>(this TThis thisVtbl, Span<DredPageFaultOutput1> pOutput) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPageFaultAllocationOutput1(ref pOutput.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPageFaultAllocationOutput2<TThis>(this TThis thisVtbl, Span<DredPageFaultOutput2> pOutput) where TThis : IComVtbl<ID3D12DeviceRemovedExtendedData2>
+    {
+        var @this = (ID3D12DeviceRemovedExtendedData2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPageFaultAllocationOutput2(ref pOutput.GetPinnableReference());
+    }
+
 }

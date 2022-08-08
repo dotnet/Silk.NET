@@ -686,4 +686,236 @@ public unsafe static class DxcLibraryVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetMalloc<TThis>(this TThis thisVtbl, Span<IMalloc> pMalloc) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetMalloc(ref pMalloc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromBlob<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, uint offset, uint length, IDxcBlob** ppResult) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromBlob(ref pBlob.GetPinnableReference(), offset, length, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromBlob<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, uint offset, uint length, ref IDxcBlob* ppResult) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromBlob(ref pBlob.GetPinnableReference(), offset, length, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, char* pFileName, Span<uint> codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(pFileName, ref codePage.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, char* pFileName, Span<uint> codePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(pFileName, ref codePage.GetPinnableReference(), ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, Span<char> pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(ref pFileName.GetPinnableReference(), codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, Span<char> pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(ref pFileName.GetPinnableReference(), codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, Span<char> pFileName, Span<uint> codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(ref pFileName.GetPinnableReference(), ref codePage.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, Span<char> pFileName, Span<uint> codePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(ref pFileName.GetPinnableReference(), ref codePage.GetPinnableReference(), ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, Span<uint> codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(pFileName, ref codePage.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, Span<uint> codePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobFromFile(pFileName, ref codePage.GetPinnableReference(), ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingFromPinned<T0, TThis>(this TThis thisVtbl, Span<T0> pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingFromPinned(ref pText.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingFromPinned<T0, TThis>(this TThis thisVtbl, Span<T0> pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingFromPinned(ref pText.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0, TThis>(this TThis thisVtbl, Span<T0> pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnHeapCopy(ref pText.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0, TThis>(this TThis thisVtbl, Span<T0> pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnHeapCopy(ref pText.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<TThis>(this TThis thisVtbl, void* pText, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(pText, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<TThis>(this TThis thisVtbl, void* pText, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(pText, ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TThis>(this TThis thisVtbl, Span<T0> pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText.GetPinnableReference(), pIMalloc, size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TThis>(this TThis thisVtbl, Span<T0> pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText.GetPinnableReference(), pIMalloc, size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TThis>(this TThis thisVtbl, Span<T0> pText, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText.GetPinnableReference(), ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TThis>(this TThis thisVtbl, Span<T0> pText, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateBlobWithEncodingOnMalloc(ref pText.GetPinnableReference(), ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStreamFromBlobReadOnly<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, void** ppStream) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStreamFromBlobReadOnly(ref pBlob.GetPinnableReference(), ppStream);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStreamFromBlobReadOnly<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref void* ppStream) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateStreamFromBlobReadOnly(ref pBlob.GetPinnableReference(), ref ppStream);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf8<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBlobAsUtf8(ref pBlob.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf8<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBlobAsUtf8(ref pBlob.GetPinnableReference(), ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf16<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBlobAsUtf16(ref pBlob.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf16<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcLibrary>
+    {
+        var @this = (IDxcLibrary*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBlobAsUtf16(ref pBlob.GetPinnableReference(), ref pBlobEncoding);
+    }
+
 }

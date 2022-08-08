@@ -153,4 +153,44 @@ public unsafe static class Direct3DPixelShader9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFunction<TThis>(this TThis thisVtbl, void* arg0, Span<uint> pSizeOfData) where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFunction(arg0, ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetFunction<T0, TThis>(this TThis thisVtbl, Span<T0> arg0, uint* pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFunction(ref arg0.GetPinnableReference(), pSizeOfData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFunction<T0, TThis>(this TThis thisVtbl, Span<T0> arg0, Span<uint> pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DPixelShader9>
+    {
+        var @this = (IDirect3DPixelShader9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFunction(ref arg0.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
+    }
+
 }

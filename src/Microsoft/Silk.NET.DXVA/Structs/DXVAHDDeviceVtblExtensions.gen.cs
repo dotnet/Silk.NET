@@ -333,4 +333,100 @@ public unsafe static class DXVAHDDeviceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorDeviceCaps<TThis>(this TThis thisVtbl, Span<HDVpdevcaps> pCaps) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorDeviceCaps(ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorOutputFormats<TThis>(this TThis thisVtbl, uint Count, Span<Silk.NET.Direct3D9.Format> pFormats) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorOutputFormats(Count, ref pFormats.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorInputFormats<TThis>(this TThis thisVtbl, uint Count, Span<Silk.NET.Direct3D9.Format> pFormats) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorInputFormats(Count, ref pFormats.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorCaps<TThis>(this TThis thisVtbl, uint Count, Span<HDVpcaps> pCaps) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCaps(Count, ref pCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoProcessorCustomRates<TThis>(this TThis thisVtbl, Guid* pVPGuid, uint Count, Span<HDCustomRateData> pRates) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCustomRates(pVPGuid, Count, ref pRates.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoProcessorCustomRates<TThis>(this TThis thisVtbl, Span<Guid> pVPGuid, uint Count, HDCustomRateData* pRates) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCustomRates(ref pVPGuid.GetPinnableReference(), Count, pRates);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorCustomRates<TThis>(this TThis thisVtbl, Span<Guid> pVPGuid, uint Count, Span<HDCustomRateData> pRates) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorCustomRates(ref pVPGuid.GetPinnableReference(), Count, ref pRates.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoProcessorFilterRange<TThis>(this TThis thisVtbl, HDFilter Filter, Span<HDFilterRangeData> pRange) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVideoProcessorFilterRange(Filter, ref pRange.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<Guid> pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ppVideoProcessor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<Guid> pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor) where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ref ppVideoProcessor);
+    }
+
 }

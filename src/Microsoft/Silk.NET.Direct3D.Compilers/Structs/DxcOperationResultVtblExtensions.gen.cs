@@ -147,4 +147,28 @@ public unsafe static class DxcOperationResultVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStatus<TThis>(this TThis thisVtbl, Span<int> pStatus) where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStatus(ref pStatus.GetPinnableReference());
+    }
+
 }

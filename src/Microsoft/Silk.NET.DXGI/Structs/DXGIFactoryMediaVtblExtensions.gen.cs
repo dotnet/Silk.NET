@@ -1764,4 +1764,756 @@ public unsafe static class DXGIFactoryMediaVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(pDevice, ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, void* hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), hSurface, ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, DecodeSwapChainDesc* pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), pDesc, ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, IDXGIResource* pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), pYuvDecodeBuffers, ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), pRestrictToOutput, ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<T0> hSurface, Span<DecodeSwapChainDesc> pDesc, Span<IDXGIResource> pYuvDecodeBuffers, Span<IDXGIOutput> pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged where TThis : IComVtbl<IDXGIFactoryMedia>
+    {
+        var @this = (IDXGIFactoryMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDecodeSwapChainForCompositionSurfaceHandle(ref pDevice.GetPinnableReference(), ref hSurface.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pYuvDecodeBuffers.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
 }

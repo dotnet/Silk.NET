@@ -614,4 +614,227 @@ public unsafe static class DxcPdbUtilsVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Load<TThis>(this TThis thisVtbl, Span<IDxcBlob> pPdbOrDxil) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Load(ref pPdbOrDxil.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSourceCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSourceCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSourceName<TThis>(this TThis thisVtbl, uint uIndex, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetSourceName(uIndex, pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFlagCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFlagCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFlag<TThis>(this TThis thisVtbl, uint uIndex, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetFlag(uIndex, pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetArgCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetArgCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetArg<TThis>(this TThis thisVtbl, uint uIndex, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetArg(uIndex, pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetArgPairCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetArgPairCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetArgPair<TThis>(this TThis thisVtbl, uint uIndex, string[] pNameSa, string[] pValueSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pName = (char**) SilkMarshal.StringArrayToPtr(pNameSa);
+        var pValue = (char**) SilkMarshal.StringArrayToPtr(pValueSa);
+        var ret = @this->GetArgPair(uIndex, pName, pValue);
+        SilkMarshal.CopyPtrToStringArray((nint) pName, pNameSa);
+        SilkMarshal.Free((nint) pName);
+        SilkMarshal.CopyPtrToStringArray((nint) pValue, pValueSa);
+        SilkMarshal.Free((nint) pValue);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetArgPair<TThis>(this TThis thisVtbl, uint uIndex, string[] pNameSa, ref char* pValue) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pName = (char**) SilkMarshal.StringArrayToPtr(pNameSa);
+        var ret = @this->GetArgPair(uIndex, pName, ref pValue);
+        SilkMarshal.CopyPtrToStringArray((nint) pName, pNameSa);
+        SilkMarshal.Free((nint) pName);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetArgPair<TThis>(this TThis thisVtbl, uint uIndex, ref char* pName, string[] pValueSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pValue = (char**) SilkMarshal.StringArrayToPtr(pValueSa);
+        var ret = @this->GetArgPair(uIndex, ref pName, pValue);
+        SilkMarshal.CopyPtrToStringArray((nint) pValue, pValueSa);
+        SilkMarshal.Free((nint) pValue);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDefineCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDefineCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDefine<TThis>(this TThis thisVtbl, uint uIndex, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetDefine(uIndex, pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTargetProfile<TThis>(this TThis thisVtbl, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetTargetProfile(pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetEntryPoint<TThis>(this TThis thisVtbl, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetEntryPoint(pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMainFileName<TThis>(this TThis thisVtbl, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetMainFileName(pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetName<TThis>(this TThis thisVtbl, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pResult = (char**) SilkMarshal.StringArrayToPtr(pResultSa);
+        var ret = @this->GetName(pResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pResult, pResultSa);
+        SilkMarshal.Free((nint) pResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetCompiler<TThis>(this TThis thisVtbl, Span<IDxcCompiler3> pCompiler) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetCompiler(ref pCompiler.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OverrideArgs<TThis>(this TThis thisVtbl, Span<ArgPair> pArgPairs, uint uNumArgPairs) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OverrideArgs(ref pArgPairs.GetPinnableReference(), uNumArgPairs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OverrideRootSignature<TThis>(this TThis thisVtbl, Span<char> pRootSignature) where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OverrideRootSignature(ref pRootSignature.GetPinnableReference());
+    }
+
 }

@@ -164,4 +164,36 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
         ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong, void>)@this->LpVtbl[6])(@this, PipelineStackSizeInBytes);
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    {
+        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    {
+        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void* GetShaderIdentifier<TThis>(this TThis thisVtbl, Span<char> pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    {
+        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetShaderIdentifier(ref pExportName.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ulong GetShaderStackSize<TThis>(this TThis thisVtbl, Span<char> pExportName) where TThis : IComVtbl<ID3D12StateObjectProperties>
+    {
+        var @this = (ID3D12StateObjectProperties*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetShaderStackSize(ref pExportName.GetPinnableReference());
+    }
+
 }

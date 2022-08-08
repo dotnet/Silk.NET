@@ -153,4 +153,44 @@ public unsafe static class Direct3DVertexDeclaration9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DVertexDeclaration9>
+    {
+        var @this = (IDirect3DVertexDeclaration9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DVertexDeclaration9>
+    {
+        var @this = (IDirect3DVertexDeclaration9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDeclaration<TThis>(this TThis thisVtbl, Vertexelement9* pElement, Span<uint> pNumElements) where TThis : IComVtbl<IDirect3DVertexDeclaration9>
+    {
+        var @this = (IDirect3DVertexDeclaration9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDeclaration(pElement, ref pNumElements.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDeclaration<TThis>(this TThis thisVtbl, Span<Vertexelement9> pElement, uint* pNumElements) where TThis : IComVtbl<IDirect3DVertexDeclaration9>
+    {
+        var @this = (IDirect3DVertexDeclaration9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDeclaration(ref pElement.GetPinnableReference(), pNumElements);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDeclaration<TThis>(this TThis thisVtbl, Span<Vertexelement9> pElement, Span<uint> pNumElements) where TThis : IComVtbl<IDirect3DVertexDeclaration9>
+    {
+        var @this = (IDirect3DVertexDeclaration9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDeclaration(ref pElement.GetPinnableReference(), ref pNumElements.GetPinnableReference());
+    }
+
 }

@@ -1369,4 +1369,1074 @@ public unsafe static class DxcLinkerVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, char* pLibName, Span<IDxcBlob> pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterLibrary(pLibName, ref pLib.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterLibrary<TThis>(this TThis thisVtbl, Span<char> pLibName, IDxcBlob* pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterLibrary(ref pLibName.GetPinnableReference(), pLib);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TThis>(this TThis thisVtbl, Span<char> pLibName, Span<IDxcBlob> pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterLibrary(ref pLibName.GetPinnableReference(), ref pLib.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterLibrary<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLibName, Span<IDxcBlob> pLib) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterLibrary(pLibName, ref pLib.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, Span<char> pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(ref pEntryName.GetPinnableReference(), pTargetProfile, ref pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, Span<char> pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Link(pEntryName, ref pTargetProfile.GetPinnableReference(), ref pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+        SilkMarshal.Free((nint) pLibNames);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Link<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult) where TThis : IComVtbl<IDxcLinker>
+    {
+        var @this = (IDxcLinker*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
 }

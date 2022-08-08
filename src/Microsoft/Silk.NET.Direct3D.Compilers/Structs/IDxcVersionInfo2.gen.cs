@@ -230,5 +230,29 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCommitInfo(uint* pCommitCount, string[] pCommitHashSa)
+        {
+            var @this = (IDxcVersionInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pCommitHash = (byte**) SilkMarshal.StringArrayToPtr(pCommitHashSa);
+            var ret = @this->GetCommitInfo(pCommitCount, pCommitHash);
+            SilkMarshal.CopyPtrToStringArray((nint) pCommitHash, pCommitHashSa);
+            SilkMarshal.Free((nint) pCommitHash);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCommitInfo(ref uint pCommitCount, string[] pCommitHashSa)
+        {
+            var @this = (IDxcVersionInfo2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pCommitHash = (byte**) SilkMarshal.StringArrayToPtr(pCommitHashSa);
+            var ret = @this->GetCommitInfo(ref pCommitCount, pCommitHash);
+            SilkMarshal.CopyPtrToStringArray((nint) pCommitHash, pCommitHashSa);
+            SilkMarshal.Free((nint) pCommitHash);
+            return ret;
+        }
+
     }
 }

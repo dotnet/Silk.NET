@@ -39,4 +39,12 @@ public unsafe static class D3D11FunctionParameterReflectionVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ParameterDesc> pDesc) where TThis : IComVtbl<ID3D11FunctionParameterReflection>
+    {
+        var @this = (ID3D11FunctionParameterReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
 }

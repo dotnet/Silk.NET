@@ -1395,5 +1395,707 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(char* pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link(ref char pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(ref pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, ref pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pLibNamesSa, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pLibNames = (char**) SilkMarshal.StringArrayToPtr(pLibNamesSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, pLibNames, libCount, ref pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pLibNames, pLibNamesSa);
+            SilkMarshal.Free((nint) pLibNames);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Link([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pLibNames, uint libCount, string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Link(pEntryName, pTargetProfile, ref pLibNames, libCount, pArguments, argCount, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
     }
 }

@@ -780,4 +780,308 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, pConfig, pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, pConfig, ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, ref pConfig.GetPinnableReference(), pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, ref pConfig.GetPinnableReference(), pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, pVideoDesc, ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), pConfig, pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), pConfig, pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), pConfig, ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), pConfig, ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Guid* pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(pDeviceGuid, ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, pConfig, pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, pConfig, pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, pConfig, ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, pConfig, ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, DXVA2VideoDesc* pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), pVideoDesc, ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), pConfig, ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, Silk.NET.Direct3D9.IDirect3DSurface9*** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, uint* pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, pNumSurfaces);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCreationParameters<TThis>(this TThis thisVtbl, Span<Guid> pDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Span<DXVA2ConfigPictureDecode> pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9** pDecoderRenderTargets, Span<uint> pNumSurfaces) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCreationParameters(ref pDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), ref pConfig.GetPinnableReference(), ref pDecoderRenderTargets, ref pNumSurfaces.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBuffer<TThis>(this TThis thisVtbl, uint BufferType, void** ppBuffer, Span<uint> pBufferSize) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBuffer(BufferType, ppBuffer, ref pBufferSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBuffer<TThis>(this TThis thisVtbl, uint BufferType, ref void* ppBuffer, Span<uint> pBufferSize) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetBuffer(BufferType, ref ppBuffer, ref pBufferSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BeginFrame<T0, TThis>(this TThis thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<T0> pvPVPData) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BeginFrame(pRenderTarget, ref pvPVPData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BeginFrame<TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, void* pvPVPData) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BeginFrame(ref pRenderTarget.GetPinnableReference(), pvPVPData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BeginFrame<T0, TThis>(this TThis thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<T0> pvPVPData) where T0 : unmanaged where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BeginFrame(ref pRenderTarget.GetPinnableReference(), ref pvPVPData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Execute<TThis>(this TThis thisVtbl, Span<DXVA2DecodeExecuteParams> pExecuteParams) where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Execute(ref pExecuteParams.GetPinnableReference());
+    }
+
 }

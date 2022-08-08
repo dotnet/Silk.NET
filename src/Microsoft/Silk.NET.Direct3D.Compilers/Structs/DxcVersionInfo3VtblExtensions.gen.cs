@@ -105,4 +105,32 @@ public unsafe static class DxcVersionInfo3VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcVersionInfo3>
+    {
+        var @this = (IDxcVersionInfo3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcVersionInfo3>
+    {
+        var @this = (IDxcVersionInfo3*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCustomVersionString<TThis>(this TThis thisVtbl, string[] pVersionStringSa) where TThis : IComVtbl<IDxcVersionInfo3>
+    {
+        var @this = (IDxcVersionInfo3*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pVersionString = (byte**) SilkMarshal.StringArrayToPtr(pVersionStringSa);
+        var ret = @this->GetCustomVersionString(pVersionString);
+        SilkMarshal.CopyPtrToStringArray((nint) pVersionString, pVersionStringSa);
+        SilkMarshal.Free((nint) pVersionString);
+        return ret;
+    }
+
 }

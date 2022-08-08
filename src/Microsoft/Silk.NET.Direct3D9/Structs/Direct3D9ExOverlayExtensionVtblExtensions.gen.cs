@@ -132,4 +132,44 @@ public unsafe static class Direct3D9ExOverlayExtensionVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Displaymodeex* pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, pDisplayMode, DisplayRotation, ref pOverlayCaps.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Overlaycaps* pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, ref pDisplayMode.GetPinnableReference(), DisplayRotation, pOverlayCaps);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckDeviceOverlayType<TThis>(this TThis thisVtbl, uint Adapter, Devtype DevType, uint OverlayWidth, uint OverlayHeight, Format OverlayFormat, Span<Displaymodeex> pDisplayMode, Displayrotation DisplayRotation, Span<Overlaycaps> pOverlayCaps) where TThis : IComVtbl<IDirect3D9ExOverlayExtension>
+    {
+        var @this = (IDirect3D9ExOverlayExtension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckDeviceOverlayType(Adapter, DevType, OverlayWidth, OverlayHeight, OverlayFormat, ref pDisplayMode.GetPinnableReference(), DisplayRotation, ref pOverlayCaps.GetPinnableReference());
+    }
+
 }

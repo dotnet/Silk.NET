@@ -165,4 +165,52 @@ public unsafe static class DxcCompilerArgsVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddArguments<TThis>(this TThis thisVtbl, string[] pArgumentsSa, uint argCount) where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->AddArguments(pArguments, argCount);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddArgumentsUTF8<TThis>(this TThis thisVtbl, string[] pArgumentsSa, uint argCount) where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var pArguments = (byte**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+        var ret = @this->AddArgumentsUTF8(pArguments, argCount);
+        SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+        SilkMarshal.Free((nint) pArguments);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddDefines<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount) where TThis : IComVtbl<IDxcCompilerArgs>
+    {
+        var @this = (IDxcCompilerArgs*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddDefines(in pDefines.GetPinnableReference(), defineCount);
+    }
+
 }

@@ -66,4 +66,12 @@ public unsafe static class D3D12ShaderReflectionVariableVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderVariableDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflectionVariable>
+    {
+        var @this = (ID3D12ShaderReflectionVariable*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
 }

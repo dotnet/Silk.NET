@@ -367,4 +367,116 @@ public unsafe static class Direct3DVertexBuffer9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(refguid, ref pData.GetPinnableReference(), SizeOfData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> refguid, void* pData, uint SizeOfData, uint Flags) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref refguid.GetPinnableReference(), pData, SizeOfData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), SizeOfData, Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* refguid, void* pData, Span<uint> pSizeOfData) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(refguid, pData, ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* refguid, Span<T0> pData, uint* pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(refguid, ref pData.GetPinnableReference(), pSizeOfData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* refguid, Span<T0> pData, Span<uint> pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(refguid, ref pData.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> refguid, void* pData, uint* pSizeOfData) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref refguid.GetPinnableReference(), pData, pSizeOfData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> refguid, void* pData, Span<uint> pSizeOfData) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref refguid.GetPinnableReference(), pData, ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> refguid, Span<T0> pData, uint* pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), pSizeOfData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> refguid, Span<T0> pData, Span<uint> pSizeOfData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), ref pSizeOfData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int FreePrivateData<TThis>(this TThis thisVtbl, Span<Guid> refguid) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->FreePrivateData(ref refguid.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<VertexbufferDesc> pDesc) where TThis : IComVtbl<IDirect3DVertexBuffer9>
+    {
+        var @this = (IDirect3DVertexBuffer9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
 }

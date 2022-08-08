@@ -26,17 +26,30 @@ namespace Silk.NET.BuildTools.Cpp
         )
         {
             var sb = new StringBuilder();
-            foreach (var vtblFunction in GetWithVariants(@struct.Vtbl, profile))
+            var all = GetWithVariants(@struct.Vtbl, profile).ToList();
+            foreach (var vtblFunction in all)
             {
                 sb.Clear();
                 Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex, false, thisInScope);
                 vtblFunction.New.IsReadOnly = true;
+                vtblFunction.New.InvocationPrefix = "@this->";
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
-                //foreach (var complex in ComplexFunctionOverloader.GetOverloads
-                //             (vtblFunction.New, profile.Projects["Core"], Overloader.FunctionOverloaders))
-                //{
-                //    
-                //}
+            }
+
+            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], null))
+            {
+                if (!thisInScope)
+                {
+                    complex.Body = Enumerable.Repeat
+                    (
+                        $"var @this = ({@struct.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));",
+                        1
+                    )
+                    .Concat(complex.Body)
+                    .ToArray();
+                }
+            
+                yield return complex;
             }
         }
 

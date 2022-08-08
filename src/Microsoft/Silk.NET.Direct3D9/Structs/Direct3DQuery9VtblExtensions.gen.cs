@@ -153,4 +153,28 @@ public unsafe static class Direct3DQuery9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DQuery9>
+    {
+        var @this = (IDirect3DQuery9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DQuery9>
+    {
+        var @this = (IDirect3DQuery9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetData<T0, TThis>(this TThis thisVtbl, Span<T0> pData, uint dwSize, uint dwGetDataFlags) where T0 : unmanaged where TThis : IComVtbl<IDirect3DQuery9>
+    {
+        var @this = (IDirect3DQuery9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetData(ref pData.GetPinnableReference(), dwSize, dwGetDataFlags);
+    }
+
 }

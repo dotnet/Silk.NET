@@ -291,4 +291,60 @@ public unsafe static class DxcResultVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStatus<TThis>(this TThis thisVtbl, Span<int> pStatus) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStatus(ref pStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TThis>(this TThis thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, IDxcBlobUtf16** ppOutputName) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ppvObject, ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TThis>(this TThis thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, ref IDxcBlobUtf16* ppOutputName) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ppvObject, ref ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TThis>(this TThis thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, IDxcBlobUtf16** ppOutputName) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ref ppvObject, ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TThis>(this TThis thisVtbl, OutKind dxcOutKind, Span<Guid> iid, ref void* ppvObject, ref IDxcBlobUtf16* ppOutputName) where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ref ppvObject, ref ppOutputName);
+    }
+
 }

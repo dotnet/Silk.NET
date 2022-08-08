@@ -114,4 +114,28 @@ public unsafe static class DirectXVideoMemoryConfigurationVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoMemoryConfiguration>
+    {
+        var @this = (IDirectXVideoMemoryConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirectXVideoMemoryConfiguration>
+    {
+        var @this = (IDirectXVideoMemoryConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAvailableSurfaceTypeByIndex<TThis>(this TThis thisVtbl, uint dwTypeIndex, Span<MIDLMIDLItfDxva2api000000060001> pdwType) where TThis : IComVtbl<IDirectXVideoMemoryConfiguration>
+    {
+        var @this = (IDirectXVideoMemoryConfiguration*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetAvailableSurfaceTypeByIndex(dwTypeIndex, ref pdwType.GetPinnableReference());
+    }
+
 }

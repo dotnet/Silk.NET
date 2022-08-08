@@ -1563,4 +1563,668 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetName<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ppvDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ref ppvDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StorePipeline<TThis>(this TThis thisVtbl, char* pName, Span<ID3D12PipelineState> pPipeline) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StorePipeline(pName, ref pPipeline.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int StorePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ID3D12PipelineState* pPipeline) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StorePipeline(ref pName.GetPinnableReference(), pPipeline);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int StorePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ID3D12PipelineState> pPipeline) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StorePipeline(ref pName.GetPinnableReference(), ref pPipeline.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int StorePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ID3D12PipelineState> pPipeline) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StorePipeline(pName, ref pPipeline.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Serialize<T0, TThis>(this TThis thisVtbl, Span<T0> pData, nuint DataSizeInBytes) where T0 : unmanaged where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Serialize(ref pData.GetPinnableReference(), DataSizeInBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, char* pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary1>
+    {
+        var @this = (ID3D12PipelineLibrary1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->LoadPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
 }

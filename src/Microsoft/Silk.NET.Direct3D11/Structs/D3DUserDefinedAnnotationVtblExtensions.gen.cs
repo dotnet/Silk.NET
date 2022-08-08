@@ -160,4 +160,36 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3DUserDefinedAnnotation>
+    {
+        var @this = (ID3DUserDefinedAnnotation*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3DUserDefinedAnnotation>
+    {
+        var @this = (ID3DUserDefinedAnnotation*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int BeginEvent<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3DUserDefinedAnnotation>
+    {
+        var @this = (ID3DUserDefinedAnnotation*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->BeginEvent(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetMarker<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3DUserDefinedAnnotation>
+    {
+        var @this = (ID3DUserDefinedAnnotation*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->SetMarker(ref Name.GetPinnableReference());
+    }
+
 }

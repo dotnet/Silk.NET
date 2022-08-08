@@ -60,15 +60,22 @@ Silk.NET.Core.Native.IComVtbl.AsVtblPtr() -> void***
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Span<System.Guid> riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Span<System.Guid> riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.Release<TThis>(this TThis thisVtbl) -> uint
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.AddRef<TThis>(this TThis thisVtbl) -> uint
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, ref void* ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, void** ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Span<System.Guid> riid, ref void* ppvObject) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Span<System.Guid> riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, ref T0 pData, ref uint pCallbackID) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, ref T0 pData, uint* pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, System.Span<T0> pData, System.Span<uint> pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, System.Span<T0> pData, uint* pCallbackID) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, void* pData, ref uint pCallbackID) -> int
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, void* pData, System.Span<uint> pCallbackID) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.RegisterDestructionCallback<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.PfnDestructionCallback callbackFn, void* pData, uint* pCallbackID) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.Release<TThis>(this TThis thisVtbl) -> uint
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.UnregisterDestructionCallback<TThis>(this TThis thisVtbl, uint callbackID) -> int

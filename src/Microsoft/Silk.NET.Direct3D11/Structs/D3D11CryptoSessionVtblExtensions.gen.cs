@@ -409,4 +409,156 @@ public unsafe static class D3D11CryptoSessionVtblExtensions
         }
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetCryptoType<TThis>(this TThis thisVtbl, Span<Guid> pCryptoType) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCryptoType(ref pCryptoType.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetDecoderProfile<TThis>(this TThis thisVtbl, Span<Guid> pDecoderProfile) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetDecoderProfile(ref pDecoderProfile.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificateSize<TThis>(this TThis thisVtbl, Span<uint> pCertificateSize) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificateSize(ref pCertificateSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificate<TThis>(this TThis thisVtbl, uint CertificateSize, Span<byte> pCertificate) where TThis : IComVtbl<ID3D11CryptoSession>
+    {
+        var @this = (ID3D11CryptoSession*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificate(CertificateSize, ref pCertificate.GetPinnableReference());
+    }
+
 }

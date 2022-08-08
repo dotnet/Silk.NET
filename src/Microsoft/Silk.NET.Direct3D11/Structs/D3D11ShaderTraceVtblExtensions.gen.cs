@@ -307,4 +307,116 @@ public unsafe static class D3D11ShaderTraceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int TraceReady<TThis>(this TThis thisVtbl, Span<ulong> pTestCount) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->TraceReady(ref pTestCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTraceStats<TThis>(this TThis thisVtbl, Span<TraceStats> pTraceStats) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetTraceStats(ref pTraceStats.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetInitialRegisterContents<TThis>(this TThis thisVtbl, TraceRegister* pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetInitialRegisterContents(pRegister, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetInitialRegisterContents<TThis>(this TThis thisVtbl, Span<TraceRegister> pRegister, TraceValue* pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetInitialRegisterContents(ref pRegister.GetPinnableReference(), pValue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetInitialRegisterContents<TThis>(this TThis thisVtbl, Span<TraceRegister> pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetInitialRegisterContents(ref pRegister.GetPinnableReference(), ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStep<TThis>(this TThis thisVtbl, uint stepIndex, Span<TraceStep> pTraceStep) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStep(stepIndex, ref pTraceStep.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetWrittenRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint writtenRegisterIndex, TraceRegister* pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetWrittenRegister(stepIndex, writtenRegisterIndex, pRegister, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetWrittenRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint writtenRegisterIndex, Span<TraceRegister> pRegister, TraceValue* pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetWrittenRegister(stepIndex, writtenRegisterIndex, ref pRegister.GetPinnableReference(), pValue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetWrittenRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint writtenRegisterIndex, Span<TraceRegister> pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetWrittenRegister(stepIndex, writtenRegisterIndex, ref pRegister.GetPinnableReference(), ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetReadRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint readRegisterIndex, TraceRegister* pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetReadRegister(stepIndex, readRegisterIndex, pRegister, ref pValue.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetReadRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint readRegisterIndex, Span<TraceRegister> pRegister, TraceValue* pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetReadRegister(stepIndex, readRegisterIndex, ref pRegister.GetPinnableReference(), pValue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetReadRegister<TThis>(this TThis thisVtbl, uint stepIndex, uint readRegisterIndex, Span<TraceRegister> pRegister, Span<TraceValue> pValue) where TThis : IComVtbl<ID3D11ShaderTrace>
+    {
+        var @this = (ID3D11ShaderTrace*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetReadRegister(stepIndex, readRegisterIndex, ref pRegister.GetPinnableReference(), ref pValue.GetPinnableReference());
+    }
+
 }

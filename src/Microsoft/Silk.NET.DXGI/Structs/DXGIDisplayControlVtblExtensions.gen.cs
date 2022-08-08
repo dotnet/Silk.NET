@@ -100,4 +100,20 @@ public unsafe static class DXGIDisplayControlVtblExtensions
         ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)@this->LpVtbl[4])(@this, enabled);
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIDisplayControl>
+    {
+        var @this = (IDXGIDisplayControl*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIDisplayControl>
+    {
+        var @this = (IDXGIDisplayControl*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
 }

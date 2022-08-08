@@ -153,4 +153,52 @@ public unsafe static class DxcVersionInfoVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVersion<TThis>(this TThis thisVtbl, uint* pMajor, Span<uint> pMinor) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVersion(pMajor, ref pMinor.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetVersion<TThis>(this TThis thisVtbl, Span<uint> pMajor, uint* pMinor) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVersion(ref pMajor.GetPinnableReference(), pMinor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVersion<TThis>(this TThis thisVtbl, Span<uint> pMajor, Span<uint> pMinor) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVersion(ref pMajor.GetPinnableReference(), ref pMinor.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFlags<TThis>(this TThis thisVtbl, Span<uint> pFlags) where TThis : IComVtbl<IDxcVersionInfo>
+    {
+        var @this = (IDxcVersionInfo*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFlags(ref pFlags.GetPinnableReference());
+    }
+
 }

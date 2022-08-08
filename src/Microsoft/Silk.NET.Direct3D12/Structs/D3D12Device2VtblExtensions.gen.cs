@@ -5958,4 +5958,2732 @@ public unsafe static class D3D12Device2VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetName<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Span<Guid> riid, void** ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(pDesc, ref riid.GetPinnableReference(), ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Span<Guid> riid, ref void* ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(pDesc, ref riid.GetPinnableReference(), ref ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Guid* riid, void** ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(ref pDesc.GetPinnableReference(), riid, ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Guid* riid, ref void* ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(ref pDesc.GetPinnableReference(), riid, ref ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Span<Guid> riid, void** ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Span<Guid> riid, ref void* ppCommandQueue) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandQueue(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandAllocator<TThis>(this TThis thisVtbl, CommandListType type, Span<Guid> riid, void** ppCommandAllocator) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandAllocator(type, ref riid.GetPinnableReference(), ppCommandAllocator);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandAllocator<TThis>(this TThis thisVtbl, CommandListType type, Span<Guid> riid, ref void* ppCommandAllocator) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandAllocator(type, ref riid.GetPinnableReference(), ref ppCommandAllocator);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateGraphicsPipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateComputePipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Span<Guid> riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, pInitialState, ref riid.GetPinnableReference(), ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Span<Guid> riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, pInitialState, ref riid.GetPinnableReference(), ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Guid* riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState.GetPinnableReference(), riid, ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Guid* riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState.GetPinnableReference(), riid, ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Span<Guid> riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState.GetPinnableReference(), ref riid.GetPinnableReference(), ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Span<Guid> riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), pInitialState, riid, ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), pInitialState, riid, ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, ID3D12PipelineState* pInitialState, Span<Guid> riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), pInitialState, ref riid.GetPinnableReference(), ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, ID3D12PipelineState* pInitialState, Span<Guid> riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), pInitialState, ref riid.GetPinnableReference(), ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Guid* riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), ref pInitialState.GetPinnableReference(), riid, ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Guid* riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), ref pInitialState.GetPinnableReference(), riid, ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Span<Guid> riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), ref pInitialState.GetPinnableReference(), ref riid.GetPinnableReference(), ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, Span<ID3D12PipelineState> pInitialState, Span<Guid> riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), ref pInitialState.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckFeatureSupport<T0, TThis>(this TThis thisVtbl, Feature Feature, Span<T0> pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(pDescriptorHeapDesc, ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(pDescriptorHeapDesc, ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, Span<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, Span<DescriptorHeapDesc> pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc.GetPinnableReference(), riid, ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, Span<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, Span<DescriptorHeapDesc> pDescriptorHeapDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<TThis>(this TThis thisVtbl, uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, ref riid.GetPinnableReference(), ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<TThis>(this TThis thisVtbl, uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, ref riid.GetPinnableReference(), ref ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0, TThis>(this TThis thisVtbl, uint nodeMask, Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, riid, ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0, TThis>(this TThis thisVtbl, uint nodeMask, Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, riid, ref ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0, TThis>(this TThis thisVtbl, uint nodeMask, Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, ref riid.GetPinnableReference(), ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<T0, TThis>(this TThis thisVtbl, uint nodeMask, Span<T0> pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, ref void* ppvRootSignature) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, ref riid.GetPinnableReference(), ref ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateConstantBufferView<TThis>(this TThis thisVtbl, Span<ConstantBufferViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateConstantBufferView(ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateShaderResourceView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateShaderResourceView(pResource, ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateShaderResourceView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, ShaderResourceViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateShaderResourceView(ref pResource.GetPinnableReference(), pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateShaderResourceView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<ShaderResourceViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateShaderResourceView(ref pResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, ID3D12Resource* pCounterResource, Span<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(pResource, pCounterResource, ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(pResource, ref pCounterResource.GetPinnableReference(), pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<ID3D12Resource> pCounterResource, Span<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(pResource, ref pCounterResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(ref pResource.GetPinnableReference(), pCounterResource, pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, ID3D12Resource* pCounterResource, Span<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(ref pResource.GetPinnableReference(), pCounterResource, ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, UnorderedAccessViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(ref pResource.GetPinnableReference(), ref pCounterResource.GetPinnableReference(), pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateUnorderedAccessView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<ID3D12Resource> pCounterResource, Span<UnorderedAccessViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateUnorderedAccessView(ref pResource.GetPinnableReference(), ref pCounterResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateRenderTargetView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateRenderTargetView(pResource, ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateRenderTargetView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, RenderTargetViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateRenderTargetView(ref pResource.GetPinnableReference(), pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateRenderTargetView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<RenderTargetViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateRenderTargetView(ref pResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateDepthStencilView<TThis>(this TThis thisVtbl, ID3D12Resource* pResource, Span<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateDepthStencilView(pResource, ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CreateDepthStencilView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, DepthStencilViewDesc* pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateDepthStencilView(ref pResource.GetPinnableReference(), pDesc, DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateDepthStencilView<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, Span<DepthStencilViewDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateDepthStencilView(ref pResource.GetPinnableReference(), ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CreateSampler<TThis>(this TThis thisVtbl, Span<SamplerDesc> pDesc, CpuDescriptorHandle DestDescriptor) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CreateSampler(ref pDesc.GetPinnableReference(), DestDescriptor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, pDestDescriptorRangeSizes, NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, CpuDescriptorHandle* pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, pDestDescriptorRangeStarts, ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), pDestDescriptorRangeSizes, NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), pDestDescriptorRangeSizes, NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, uint* pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), pDestDescriptorRangeSizes, NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, CpuDescriptorHandle* pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, pSrcDescriptorRangeStarts, ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, uint* pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), pSrcDescriptorRangeSizes, DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void CopyDescriptors<TThis>(this TThis thisVtbl, uint NumDestDescriptorRanges, Span<CpuDescriptorHandle> pDestDescriptorRangeStarts, Span<uint> pDestDescriptorRangeSizes, uint NumSrcDescriptorRanges, Span<CpuDescriptorHandle> pSrcDescriptorRangeStarts, Span<uint> pSrcDescriptorRangeSizes, DescriptorHeapType DescriptorHeapsType) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->CopyDescriptors(NumDestDescriptorRanges, ref pDestDescriptorRangeStarts.GetPinnableReference(), ref pDestDescriptorRangeSizes.GetPinnableReference(), NumSrcDescriptorRanges, ref pSrcDescriptorRangeStarts.GetPinnableReference(), ref pSrcDescriptorRangeSizes.GetPinnableReference(), DescriptorHeapsType);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static ResourceAllocationInfo GetResourceAllocationInfo<TThis>(this TThis thisVtbl, uint visibleMask, uint numResourceDescs, Span<ResourceDesc> pResourceDescs) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceAllocationInfo(visibleMask, numResourceDescs, ref pResourceDescs.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, HeapDesc* pDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(pDesc, ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, HeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(pDesc, ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Guid* riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(ref pDesc.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(ref pDesc.GetPinnableReference(), riid, ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateHeap(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Span<Guid> riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, Span<char> Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, pAttributes, Access, ref Name.GetPinnableReference(), pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, Span<char> Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, pAttributes, Access, ref Name.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, char* Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, char* Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, Span<char> Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, ref Name.GetPinnableReference(), pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, Span<char> Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, ref Name.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, ID3D12DeviceChild* pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(pObject, ref pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, Span<char> Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, ref Name.GetPinnableReference(), pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, Span<char> Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, ref Name.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), pAttributes, Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, char* Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, char* Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, Span<char> Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, ref Name.GetPinnableReference(), pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, Span<char> Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, ref Name.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, Name, pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSharedHandle<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateSharedHandle(ref pObject.GetPinnableReference(), ref pAttributes.GetPinnableReference(), Access, Name, ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<TThis>(this TThis thisVtbl, void* NTHandle, Span<Guid> riid, void** ppvObj) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(NTHandle, ref riid.GetPinnableReference(), ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<TThis>(this TThis thisVtbl, void* NTHandle, Span<Guid> riid, ref void* ppvObj) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(NTHandle, ref riid.GetPinnableReference(), ref ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0, TThis>(this TThis thisVtbl, Span<T0> NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), riid, ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0, TThis>(this TThis thisVtbl, Span<T0> NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), riid, ref ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0, TThis>(this TThis thisVtbl, Span<T0> NTHandle, Span<Guid> riid, void** ppvObj) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), ref riid.GetPinnableReference(), ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<T0, TThis>(this TThis thisVtbl, Span<T0> NTHandle, Span<Guid> riid, ref void* ppvObj) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandleByName<TThis>(this TThis thisVtbl, Span<char> Name, uint Access, void** pNTHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandleByName(ref Name.GetPinnableReference(), Access, pNTHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandleByName<TThis>(this TThis thisVtbl, Span<char> Name, uint Access, ref void* pNTHandle) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->OpenSharedHandleByName(ref Name.GetPinnableReference(), Access, ref pNTHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateFence<TThis>(this TThis thisVtbl, ulong InitialValue, FenceFlags Flags, Span<Guid> riid, void** ppFence) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateFence(InitialValue, Flags, ref riid.GetPinnableReference(), ppFence);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateFence<TThis>(this TThis thisVtbl, ulong InitialValue, FenceFlags Flags, Span<Guid> riid, ref void* ppFence) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateFence(InitialValue, Flags, ref riid.GetPinnableReference(), ref ppFence);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, ResourceDesc* pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(pResourceDesc, FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, PlacedSubresourceFootprint* pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, pLayouts, ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, uint* pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), pNumRows, ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, ulong* pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), pRowSizeInBytes, ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, ulong* pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), pTotalBytes);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetCopyableFootprints<TThis>(this TThis thisVtbl, Span<ResourceDesc> pResourceDesc, uint FirstSubresource, uint NumSubresources, ulong BaseOffset, Span<PlacedSubresourceFootprint> pLayouts, Span<uint> pNumRows, Span<ulong> pRowSizeInBytes, Span<ulong> pTotalBytes) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetCopyableFootprints(ref pResourceDesc.GetPinnableReference(), FirstSubresource, NumSubresources, BaseOffset, ref pLayouts.GetPinnableReference(), ref pNumRows.GetPinnableReference(), ref pRowSizeInBytes.GetPinnableReference(), ref pTotalBytes.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, QueryHeapDesc* pDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(pDesc, ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, QueryHeapDesc* pDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(pDesc, ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, Span<QueryHeapDesc> pDesc, Guid* riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(ref pDesc.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, Span<QueryHeapDesc> pDesc, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(ref pDesc.GetPinnableReference(), riid, ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, Span<QueryHeapDesc> pDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, Span<QueryHeapDesc> pDesc, Span<Guid> riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateQueryHeap(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, pRootSignature, ref riid.GetPinnableReference(), ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, pRootSignature, ref riid.GetPinnableReference(), ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, ref pRootSignature.GetPinnableReference(), riid, ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, ref pRootSignature.GetPinnableReference(), riid, ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, ref pRootSignature.GetPinnableReference(), ref riid.GetPinnableReference(), ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(pDesc, ref pRootSignature.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), pRootSignature, riid, ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), pRootSignature, riid, ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), pRootSignature, ref riid.GetPinnableReference(), ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), pRootSignature, ref riid.GetPinnableReference(), ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), ref pRootSignature.GetPinnableReference(), riid, ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), ref pRootSignature.GetPinnableReference(), riid, ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), ref pRootSignature.GetPinnableReference(), ref riid.GetPinnableReference(), ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, Span<ID3D12RootSignature> pRootSignature, Span<Guid> riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), ref pRootSignature.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, ID3D12Resource* pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(pTiledResource, ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, uint* pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), pNumTilesForEntireResource, ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, PackedMipInfo* pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), pPackedMipDesc, ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), pStandardTileShapeForNonPackedMips, ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), pNumSubresourceTilings, FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetResourceTiling<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pTiledResource, Span<uint> pNumTilesForEntireResource, Span<PackedMipInfo> pPackedMipDesc, Span<TileShape> pStandardTileShapeForNonPackedMips, Span<uint> pNumSubresourceTilings, uint FirstSubresourceTilingToGet, Span<SubresourceTiling> pSubresourceTilingsForNonPackedMips) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetResourceTiling(ref pTiledResource.GetPinnableReference(), ref pNumTilesForEntireResource.GetPinnableReference(), ref pPackedMipDesc.GetPinnableReference(), ref pStandardTileShapeForNonPackedMips.GetPinnableReference(), ref pNumSubresourceTilings.GetPinnableReference(), FirstSubresourceTilingToGet, ref pSubresourceTilingsForNonPackedMips.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<TThis>(this TThis thisVtbl, void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(pLibraryBlob, BlobLength, ref riid.GetPinnableReference(), ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<TThis>(this TThis thisVtbl, void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(pLibraryBlob, BlobLength, ref riid.GetPinnableReference(), ref ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<T0, TThis>(this TThis thisVtbl, Span<T0> pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(ref pLibraryBlob.GetPinnableReference(), BlobLength, riid, ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<T0, TThis>(this TThis thisVtbl, Span<T0> pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(ref pLibraryBlob.GetPinnableReference(), BlobLength, riid, ref ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<T0, TThis>(this TThis thisVtbl, Span<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(ref pLibraryBlob.GetPinnableReference(), BlobLength, ref riid.GetPinnableReference(), ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<T0, TThis>(this TThis thisVtbl, Span<T0> pLibraryBlob, nuint BlobLength, Span<Guid> riid, ref void* ppPipelineLibrary) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineLibrary(ref pLibraryBlob.GetPinnableReference(), BlobLength, ref riid.GetPinnableReference(), ref ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ppFences, pFenceValues, NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TThis>(this TThis thisVtbl, ID3D12Fence** ppFences, Span<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ppFences, ref pFenceValues.GetPinnableReference(), NumFences, Flags, hEvent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ID3D12Fence** ppFences, Span<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ppFences, ref pFenceValues.GetPinnableReference(), NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ref ID3D12Fence* ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ref ppFences, pFenceValues, NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TThis>(this TThis thisVtbl, ref ID3D12Fence* ppFences, Span<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ref ppFences, ref pFenceValues.GetPinnableReference(), NumFences, Flags, hEvent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ref ID3D12Fence* ppFences, Span<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetEventOnMultipleFenceCompletion(ref ppFences, ref pFenceValues.GetPinnableReference(), NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetResidencyPriority<TThis>(this TThis thisVtbl, uint NumObjects, ID3D12Pageable** ppObjects, Span<ResidencyPriority> pPriorities) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetResidencyPriority(NumObjects, ppObjects, ref pPriorities.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetResidencyPriority<TThis>(this TThis thisVtbl, uint NumObjects, ref ID3D12Pageable* ppObjects, Span<ResidencyPriority> pPriorities) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetResidencyPriority(NumObjects, ref ppObjects, ref pPriorities.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, PipelineStateStreamDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, PipelineStateStreamDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, Span<PipelineStateStreamDesc> pDesc, Guid* riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, Span<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, Span<PipelineStateStreamDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device2>
+    {
+        var @this = (ID3D12Device2*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreatePipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
 }

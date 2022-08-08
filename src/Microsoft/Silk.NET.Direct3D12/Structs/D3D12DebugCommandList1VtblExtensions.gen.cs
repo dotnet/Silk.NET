@@ -147,4 +147,44 @@ public unsafe static class D3D12DebugCommandList1VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList1>
+    {
+        var @this = (ID3D12DebugCommandList1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12DebugCommandList1>
+    {
+        var @this = (ID3D12DebugCommandList1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AssertResourceState<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State) where TThis : IComVtbl<ID3D12DebugCommandList1>
+    {
+        var @this = (ID3D12DebugCommandList1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AssertResourceState(ref pResource.GetPinnableReference(), Subresource, State);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList1>
+    {
+        var @this = (ID3D12DebugCommandList1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDebugParameter<T0, TThis>(this TThis thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged where TThis : IComVtbl<ID3D12DebugCommandList1>
+    {
+        var @this = (ID3D12DebugCommandList1*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
+    }
+
 }

@@ -162,4 +162,52 @@ public unsafe static class DStorageCustomDecompressionQueueVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRequests<TThis>(this TThis thisVtbl, uint maxRequests, CustomDecompressionRequest* requests, Span<uint> numRequests) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRequests(maxRequests, requests, ref numRequests.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRequests<TThis>(this TThis thisVtbl, uint maxRequests, Span<CustomDecompressionRequest> requests, uint* numRequests) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRequests(maxRequests, ref requests.GetPinnableReference(), numRequests);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRequests<TThis>(this TThis thisVtbl, uint maxRequests, Span<CustomDecompressionRequest> requests, Span<uint> numRequests) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRequests(maxRequests, ref requests.GetPinnableReference(), ref numRequests.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetRequestResults<TThis>(this TThis thisVtbl, uint numResults, Span<CustomDecompressionResult> results) where TThis : IComVtbl<IDStorageCustomDecompressionQueue>
+    {
+        var @this = (IDStorageCustomDecompressionQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetRequestResults(numResults, ref results.GetPinnableReference());
+    }
+
 }

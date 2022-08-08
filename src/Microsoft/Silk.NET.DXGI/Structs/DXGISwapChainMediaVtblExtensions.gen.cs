@@ -162,4 +162,52 @@ public unsafe static class DXGISwapChainMediaVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFrameStatisticsMedia<TThis>(this TThis thisVtbl, Span<FrameStatisticsMedia> pStats) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFrameStatisticsMedia(ref pStats.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckPresentDurationSupport<TThis>(this TThis thisVtbl, uint DesiredPresentDuration, uint* pClosestSmallerPresentDuration, Span<uint> pClosestLargerPresentDuration) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckPresentDurationSupport(DesiredPresentDuration, pClosestSmallerPresentDuration, ref pClosestLargerPresentDuration.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CheckPresentDurationSupport<TThis>(this TThis thisVtbl, uint DesiredPresentDuration, Span<uint> pClosestSmallerPresentDuration, uint* pClosestLargerPresentDuration) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckPresentDurationSupport(DesiredPresentDuration, ref pClosestSmallerPresentDuration.GetPinnableReference(), pClosestLargerPresentDuration);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CheckPresentDurationSupport<TThis>(this TThis thisVtbl, uint DesiredPresentDuration, Span<uint> pClosestSmallerPresentDuration, Span<uint> pClosestLargerPresentDuration) where TThis : IComVtbl<IDXGISwapChainMedia>
+    {
+        var @this = (IDXGISwapChainMedia*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CheckPresentDurationSupport(DesiredPresentDuration, ref pClosestSmallerPresentDuration.GetPinnableReference(), ref pClosestLargerPresentDuration.GetPinnableReference());
+    }
+
 }

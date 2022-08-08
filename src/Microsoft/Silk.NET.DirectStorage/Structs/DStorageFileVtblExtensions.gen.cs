@@ -112,4 +112,28 @@ public unsafe static class DStorageFileVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDStorageFile>
+    {
+        var @this = (IDStorageFile*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDStorageFile>
+    {
+        var @this = (IDStorageFile*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFileInformation<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Win32Extras.ByHandleFileInformation> info) where TThis : IComVtbl<IDStorageFile>
+    {
+        var @this = (IDStorageFile*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetFileInformation(ref info.GetPinnableReference());
+    }
+
 }

@@ -215,5 +215,53 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int GetOptionName(string[] ppResultSa)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+            var ret = @this->GetOptionName(ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+            SilkMarshal.Free((nint) ppResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDescription(string[] ppResultSa)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+            var ret = @this->GetDescription(ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+            SilkMarshal.Free((nint) ppResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetOptionArgName(uint argIndex, string[] ppResultSa)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+            var ret = @this->GetOptionArgName(argIndex, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+            SilkMarshal.Free((nint) ppResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetOptionArgDescription(uint argIndex, string[] ppResultSa)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+            var ret = @this->GetOptionArgDescription(argIndex, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+            SilkMarshal.Free((nint) ppResult);
+            return ret;
+        }
+
     }
 }

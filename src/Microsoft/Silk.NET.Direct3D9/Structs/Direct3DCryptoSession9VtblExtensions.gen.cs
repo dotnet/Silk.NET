@@ -893,4 +893,388 @@ public unsafe static class Direct3DCryptoSession9VtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificateSize<TThis>(this TThis thisVtbl, Span<uint> pCertificateSize) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificateSize(ref pCertificateSize.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetCertificate<TThis>(this TThis thisVtbl, uint CertifacteSize, Span<byte> ppCertificate) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCertificate(CertifacteSize, ref ppCertificate.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int NegotiateKeyExchange<T0, TThis>(this TThis thisVtbl, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->NegotiateKeyExchange(DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint DstSurfaceSize, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(pSrcSurface, pDstSurface, DstSurfaceSize, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint DstSurfaceSize, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), DstSurfaceSize, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint DstSurfaceSize, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), DstSurfaceSize, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint DstSurfaceSize, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, DstSurfaceSize, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint DstSurfaceSize, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, DstSurfaceSize, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int EncryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint DstSurfaceSize, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), DstSurfaceSize, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EncryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint DstSurfaceSize, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->EncryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), DstSurfaceSize, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(pSrcSurface, ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, IDirect3DSurface9* pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, void* pIV) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, void* pContentKey, Span<T0> pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), pContentKey, ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int DecryptionBlt<T0, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, void* pIV) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), pIV);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DecryptionBlt<T0, T1, TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<IDirect3DSurface9> pDstSurface, uint SrcSurfaceSize, Span<EncryptedBlockInfo> pEncryptedBlockInfo, Span<T0> pContentKey, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->DecryptionBlt(ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), SrcSurfaceSize, ref pEncryptedBlockInfo.GetPinnableReference(), ref pContentKey.GetPinnableReference(), ref pIV.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetSurfacePitch<TThis>(this TThis thisVtbl, IDirect3DSurface9* pSrcSurface, Span<uint> pSurfacePitch) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSurfacePitch(pSrcSurface, ref pSurfacePitch.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetSurfacePitch<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, uint* pSurfacePitch) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSurfacePitch(ref pSrcSurface.GetPinnableReference(), pSurfacePitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSurfacePitch<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pSrcSurface, Span<uint> pSurfacePitch) where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSurfacePitch(ref pSrcSurface.GetPinnableReference(), ref pSurfacePitch.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int StartSessionKeyRefresh<T0, TThis>(this TThis thisVtbl, Span<T0> pRandomNumber, uint RandomNumberSize) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->StartSessionKeyRefresh(ref pRandomNumber.GetPinnableReference(), RandomNumberSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetEncryptionBltKey<T0, TThis>(this TThis thisVtbl, Span<T0> pReadbackKey, uint KeySize) where T0 : unmanaged where TThis : IComVtbl<IDirect3DCryptoSession9>
+    {
+        var @this = (IDirect3DCryptoSession9*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetEncryptionBltKey(ref pReadbackKey.GetPinnableReference(), KeySize);
+    }
+
 }

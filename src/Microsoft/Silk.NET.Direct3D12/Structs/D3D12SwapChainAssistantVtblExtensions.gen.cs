@@ -390,4 +390,132 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetSwapChainObject<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppv) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSwapChainObject(ref riid.GetPinnableReference(), ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetSwapChainObject<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppv) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetSwapChainObject(ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, void** ppvResource, Span<Guid> riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(riidResource, ppvResource, ref riidQueue.GetPinnableReference(), ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, void** ppvResource, Span<Guid> riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(riidResource, ppvResource, ref riidQueue.GetPinnableReference(), ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, ref void* ppvResource, Span<Guid> riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(riidResource, ref ppvResource, ref riidQueue.GetPinnableReference(), ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, ref void* ppvResource, Span<Guid> riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(riidResource, ref ppvResource, ref riidQueue.GetPinnableReference(), ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, void** ppvResource, Guid* riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ppvResource, riidQueue, ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, void** ppvResource, Guid* riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ppvResource, riidQueue, ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, void** ppvResource, Span<Guid> riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ppvResource, ref riidQueue.GetPinnableReference(), ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, void** ppvResource, Span<Guid> riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ppvResource, ref riidQueue.GetPinnableReference(), ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, ref void* ppvResource, Guid* riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ref ppvResource, riidQueue, ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, ref void* ppvResource, Guid* riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ref ppvResource, riidQueue, ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, ref void* ppvResource, Span<Guid> riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ref ppvResource, ref riidQueue.GetPinnableReference(), ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Span<Guid> riidResource, ref void* ppvResource, Span<Guid> riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ref ppvResource, ref riidQueue.GetPinnableReference(), ref ppvQueue);
+    }
+
 }

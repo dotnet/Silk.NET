@@ -5011,5 +5011,1301 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments(ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcCompilerArgs** ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int BuildArguments([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs)
+        {
+            var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, ref ppArgs);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
     }
 }

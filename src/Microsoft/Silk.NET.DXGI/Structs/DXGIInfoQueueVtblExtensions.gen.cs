@@ -616,4 +616,140 @@ public unsafe static class DXGIInfoQueueVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, InfoQueueMessage* pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(Producer, MessageIndex, pMessage, ref pMessageByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, nuint* pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(Producer, MessageIndex, ref pMessage.GetPinnableReference(), pMessageByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetMessageA<TThis>(this TThis thisVtbl, Guid Producer, ulong MessageIndex, Span<InfoQueueMessage> pMessage, Span<nuint> pMessageByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetMessageA(Producer, MessageIndex, ref pMessage.GetPinnableReference(), ref pMessageByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddStorageFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddStorageFilterEntries(Producer, ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(Producer, pFilter, ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(Producer, ref pFilter.GetPinnableReference(), pFilterByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetStorageFilter(Producer, ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PushStorageFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PushStorageFilter(Producer, ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddRetrievalFilterEntries<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddRetrievalFilterEntries(Producer, ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueFilter* pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(Producer, pFilter, ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, nuint* pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(Producer, ref pFilter.GetPinnableReference(), pFilterByteLength);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter, Span<nuint> pFilterByteLength) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetRetrievalFilter(Producer, ref pFilter.GetPinnableReference(), ref pFilterByteLength.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int PushRetrievalFilter<TThis>(this TThis thisVtbl, Guid Producer, Span<InfoQueueFilter> pFilter) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->PushRetrievalFilter(Producer, ref pFilter.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddMessage<TThis>(this TThis thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, Span<byte> pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddMessage(Producer, Category, Severity, ID, ref pDescription.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AddApplicationMessage<TThis>(this TThis thisVtbl, InfoQueueMessageSeverity Severity, Span<byte> pDescription) where TThis : IComVtbl<IDXGIInfoQueue>
+    {
+        var @this = (IDXGIInfoQueue*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
+    }
+
 }

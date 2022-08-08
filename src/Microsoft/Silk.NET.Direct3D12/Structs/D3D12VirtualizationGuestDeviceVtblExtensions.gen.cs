@@ -180,4 +180,60 @@ public unsafe static class D3D12VirtualizationGuestDeviceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ShareWithHost<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, void** pHandle) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ShareWithHost(ref pObject.GetPinnableReference(), pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ShareWithHost<TThis>(this TThis thisVtbl, Span<ID3D12DeviceChild> pObject, ref void* pHandle) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ShareWithHost(ref pObject.GetPinnableReference(), ref pHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateFenceFd<TThis>(this TThis thisVtbl, ID3D12Fence* pFence, ulong FenceValue, Span<int> pFenceFd) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateFenceFd(pFence, FenceValue, ref pFenceFd.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateFenceFd<TThis>(this TThis thisVtbl, Span<ID3D12Fence> pFence, ulong FenceValue, int* pFenceFd) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateFenceFd(ref pFence.GetPinnableReference(), FenceValue, pFenceFd);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateFenceFd<TThis>(this TThis thisVtbl, Span<ID3D12Fence> pFence, ulong FenceValue, Span<int> pFenceFd) where TThis : IComVtbl<ID3D12VirtualizationGuestDevice>
+    {
+        var @this = (ID3D12VirtualizationGuestDevice*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->CreateFenceFd(ref pFence.GetPinnableReference(), FenceValue, ref pFenceFd.GetPinnableReference());
+    }
+
 }

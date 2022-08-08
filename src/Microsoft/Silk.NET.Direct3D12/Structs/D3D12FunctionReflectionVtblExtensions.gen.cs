@@ -215,4 +215,68 @@ public unsafe static class D3D12FunctionReflectionVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<FunctionDesc> pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetConstantBufferByName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDesc<TThis>(this TThis thisVtbl, uint ResourceIndex, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDesc(ResourceIndex, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVariableByName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, byte* Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(Name, ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, Span<byte> Name, ShaderInputBindDesc* pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), pDesc);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, Span<byte> Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResourceBindingDescByName<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, Span<ShaderInputBindDesc> pDesc) where TThis : IComVtbl<ID3D12FunctionReflection>
+    {
+        var @this = (ID3D12FunctionReflection*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetResourceBindingDescByName(Name, ref pDesc.GetPinnableReference());
+    }
+
 }

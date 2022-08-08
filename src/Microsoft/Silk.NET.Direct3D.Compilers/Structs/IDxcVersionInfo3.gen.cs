@@ -131,5 +131,17 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int GetCustomVersionString(string[] pVersionStringSa)
+        {
+            var @this = (IDxcVersionInfo3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pVersionString = (byte**) SilkMarshal.StringArrayToPtr(pVersionStringSa);
+            var ret = @this->GetCustomVersionString(pVersionString);
+            SilkMarshal.CopyPtrToStringArray((nint) pVersionString, pVersionStringSa);
+            SilkMarshal.Free((nint) pVersionString);
+            return ret;
+        }
+
     }
 }

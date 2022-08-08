@@ -141,4 +141,44 @@ public unsafe static class D3DDestructionNotifierVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3DDestructionNotifier>
+    {
+        var @this = (ID3DDestructionNotifier*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3DDestructionNotifier>
+    {
+        var @this = (ID3DDestructionNotifier*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterDestructionCallback<TThis>(this TThis thisVtbl, PfnDestructionCallback callbackFn, void* pData, Span<uint> pCallbackID) where TThis : IComVtbl<ID3DDestructionNotifier>
+    {
+        var @this = (ID3DDestructionNotifier*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterDestructionCallback(callbackFn, pData, ref pCallbackID.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, PfnDestructionCallback callbackFn, Span<T0> pData, uint* pCallbackID) where T0 : unmanaged where TThis : IComVtbl<ID3DDestructionNotifier>
+    {
+        var @this = (ID3DDestructionNotifier*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterDestructionCallback(callbackFn, ref pData.GetPinnableReference(), pCallbackID);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int RegisterDestructionCallback<T0, TThis>(this TThis thisVtbl, PfnDestructionCallback callbackFn, Span<T0> pData, Span<uint> pCallbackID) where T0 : unmanaged where TThis : IComVtbl<ID3DDestructionNotifier>
+    {
+        var @this = (ID3DDestructionNotifier*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RegisterDestructionCallback(callbackFn, ref pData.GetPinnableReference(), ref pCallbackID.GetPinnableReference());
+    }
+
 }

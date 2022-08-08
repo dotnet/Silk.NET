@@ -366,4 +366,188 @@ public unsafe static class DxcOptimizerVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAvailablePassCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetAvailablePassCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, IDxcBlob* pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, pOutputModule, ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, pOutputModule, ref ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, pOutputModule, ref ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, ref pOutputModule, ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, string[] ppOptionsSa, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppOptions = (char**) SilkMarshal.StringArrayToPtr(ppOptionsSa);
+        var ret = @this->RunOptimizer(ref pBlob, ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+        SilkMarshal.CopyPtrToStringArray((nint) ppOptions, ppOptionsSa);
+        SilkMarshal.Free((nint) ppOptions);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, pOutputModule, ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, pOutputModule, ref ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, ref pOutputModule, ppOutputText);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int RunOptimizer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TThis : IComVtbl<IDxcOptimizer>
+    {
+        var @this = (IDxcOptimizer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->RunOptimizer(ref pBlob.GetPinnableReference(), ref ppOptions, optionCount, ref pOutputModule, ref ppOutputText);
+    }
+
 }

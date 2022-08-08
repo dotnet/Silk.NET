@@ -189,4 +189,76 @@ public unsafe static class DxcOptimizerPassVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOptionName<TThis>(this TThis thisVtbl, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+        var ret = @this->GetOptionName(ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+        SilkMarshal.Free((nint) ppResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDescription<TThis>(this TThis thisVtbl, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+        var ret = @this->GetDescription(ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+        SilkMarshal.Free((nint) ppResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOptionArgCount<TThis>(this TThis thisVtbl, Span<uint> pCount) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetOptionArgCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOptionArgName<TThis>(this TThis thisVtbl, uint argIndex, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+        var ret = @this->GetOptionArgName(argIndex, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+        SilkMarshal.Free((nint) ppResult);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOptionArgDescription<TThis>(this TThis thisVtbl, uint argIndex, string[] ppResultSa) where TThis : IComVtbl<IDxcOptimizerPass>
+    {
+        var @this = (IDxcOptimizerPass*) thisVtbl.AsVtblPtr();
+        // StringArrayOverloader
+        var ppResult = (char**) SilkMarshal.StringArrayToPtr(ppResultSa);
+        var ret = @this->GetOptionArgDescription(argIndex, ppResult);
+        SilkMarshal.CopyPtrToStringArray((nint) ppResult, ppResultSa);
+        SilkMarshal.Free((nint) ppResult);
+        return ret;
+    }
+
 }

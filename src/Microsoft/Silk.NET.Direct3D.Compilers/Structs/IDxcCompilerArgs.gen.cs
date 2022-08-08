@@ -191,5 +191,29 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int AddArguments(string[] pArgumentsSa, uint argCount)
+        {
+            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->AddArguments(pArguments, argCount);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddArgumentsUTF8(string[] pArgumentsSa, uint argCount)
+        {
+            var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (byte**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->AddArgumentsUTF8(pArguments, argCount);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
     }
 }

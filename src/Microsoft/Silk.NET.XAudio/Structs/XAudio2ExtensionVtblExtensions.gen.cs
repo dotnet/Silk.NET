@@ -141,4 +141,52 @@ public unsafe static class XAudio2ExtensionVtblExtensions
         }
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetProcessingQuantum<TThis>(this TThis thisVtbl, uint* quantumNumerator, Span<uint> quantumDenominator) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetProcessingQuantum(quantumNumerator, ref quantumDenominator.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetProcessingQuantum<TThis>(this TThis thisVtbl, Span<uint> quantumNumerator, uint* quantumDenominator) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetProcessingQuantum(ref quantumNumerator.GetPinnableReference(), quantumDenominator);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetProcessingQuantum<TThis>(this TThis thisVtbl, Span<uint> quantumNumerator, Span<uint> quantumDenominator) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetProcessingQuantum(ref quantumNumerator.GetPinnableReference(), ref quantumDenominator.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetProcessor<TThis>(this TThis thisVtbl, Span<uint> processor) where TThis : IComVtbl<IXAudio2Extension>
+    {
+        var @this = (IXAudio2Extension*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->GetProcessor(ref processor.GetPinnableReference());
+    }
+
 }

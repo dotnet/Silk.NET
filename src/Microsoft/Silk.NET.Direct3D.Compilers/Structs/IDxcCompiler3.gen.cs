@@ -746,5 +746,197 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, pIncludeHandler, ref riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, ref riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, ref riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // StringArrayOverloader
+            var pArguments = (char**) SilkMarshal.StringArrayToPtr(pArgumentsSa);
+            var ret = @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, ref riid, ref ppResult);
+            SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
+            SilkMarshal.Free((nint) pArguments);
+            return ret;
+        }
+
     }
 }

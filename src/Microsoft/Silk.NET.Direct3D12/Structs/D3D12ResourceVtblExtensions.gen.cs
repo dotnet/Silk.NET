@@ -595,4 +595,244 @@ public unsafe static class D3D12ResourceVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvObject) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(guid, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint* pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), pDataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, void* pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, Span<uint> pDataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetPrivateData(ref guid.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<T0, TThis>(this TThis thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateData<TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, void* pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateData<T0, TThis>(this TThis thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Guid* guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(guid, in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), pData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetPrivateDataInterface<TThis>(this TThis thisVtbl, Span<Guid> guid, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.IUnknown> pData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetName<TThis>(this TThis thisVtbl, Span<char> Name) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ppvDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, ref void* ppvDevice) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDevice(ref riid.GetPinnableReference(), ref ppvDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pReadRange, void** ppData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ppData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Map<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pReadRange, ref void* ppData) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ref ppData);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void Unmap<TThis>(this TThis thisVtbl, uint Subresource, Span<Range> pWrittenRange) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        @this->Unmap(Subresource, ref pWrittenRange.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->WriteToSubresource(DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int WriteToSubresource<TThis>(this TThis thisVtbl, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int WriteToSubresource<T0, TThis>(this TThis thisVtbl, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ReadFromSubresource<TThis>(this TThis thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int ReadFromSubresource<T0, TThis>(this TThis thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where T0 : unmanaged where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, Span<HeapFlags> pHeapFlags) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetHeapProperties(pHeapProperties, ref pHeapFlags.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetHeapProperties<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags* pHeapFlags) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetHeapProperties(ref pHeapProperties.GetPinnableReference(), pHeapFlags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetHeapProperties<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, Span<HeapFlags> pHeapFlags) where TThis : IComVtbl<ID3D12Resource>
+    {
+        var @this = (ID3D12Resource*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetHeapProperties(ref pHeapProperties.GetPinnableReference(), ref pHeapFlags.GetPinnableReference());
+    }
+
 }

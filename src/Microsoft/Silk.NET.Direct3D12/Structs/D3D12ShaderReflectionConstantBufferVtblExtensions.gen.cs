@@ -80,4 +80,20 @@ public unsafe static class D3D12ShaderReflectionConstantBufferVtblExtensions
         return ret;
     }
 
+    /// <summary>To be documented.</summary>
+    public static int GetDesc<TThis>(this TThis thisVtbl, Span<ShaderBufferDesc> pDesc) where TThis : IComVtbl<ID3D12ShaderReflectionConstantBuffer>
+    {
+        var @this = (ID3D12ShaderReflectionConstantBuffer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetDesc(ref pDesc.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName<TThis>(this TThis thisVtbl, Span<byte> Name) where TThis : IComVtbl<ID3D12ShaderReflectionConstantBuffer>
+    {
+        var @this = (ID3D12ShaderReflectionConstantBuffer*) thisVtbl.AsVtblPtr();
+        // SpanOverloader
+        return @this->GetVariableByName(ref Name.GetPinnableReference());
+    }
+
 }
