@@ -170,6 +170,8 @@ public sealed class CSharpEmitter
 
         protected override InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
         {
+            AssertClearState();
+            
             if (!TypeStore.TryResolve(typeReference.ReferencedTypeId, out var type))
             {
                 throw new NotImplementedException("Cannot handle unresolvable type ID");
@@ -179,6 +181,21 @@ public sealed class CSharpEmitter
             VisitIdentifier(type!.Identifier);
 
             return typeReference;
+        }
+
+        protected override PointerTypeReference VisitPointerTypeReference(PointerTypeReference pointerTypeReference)
+        {
+            AssertClearState();
+
+            VisitTypeReference(pointerTypeReference.Underlying);
+            if (_syntaxToken is not {} innerToken)
+                throw new InvalidOperationException("Type Reference was not visited correctly");
+            ClearState();
+            
+            _syntaxToken = Identifier(innerToken.Text + "*");
+            _syntax = IdentifierName(_syntaxToken.Value);
+            
+            return pointerTypeReference;
         }
 
         protected override ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
