@@ -168,6 +168,66 @@ public sealed class CSharpEmitter
             return namespaceSymbol;
         }
 
+        protected override InternalTypeReference VisitInternalTypeReference(InternalTypeReference typeReference)
+        {
+            AssertClearState();
+            
+            if (!TypeStore.TryResolve(typeReference.ReferencedTypeId, out var type))
+            {
+                throw new NotImplementedException("Cannot handle unresolvable type ID");
+            }
+
+            // TODO: Fully resolve types
+            VisitIdentifier(type!.Identifier);
+
+            return typeReference;
+        }
+
+        protected override PointerTypeReference VisitPointerTypeReference(PointerTypeReference pointerTypeReference)
+        {
+            AssertClearState();
+
+            VisitTypeReference(pointerTypeReference.Underlying);
+            if (_syntaxToken is not {} innerToken)
+                throw new InvalidOperationException("Type Reference was not visited correctly");
+            ClearState();
+            
+            _syntaxToken = Identifier(innerToken.Text + "*");
+            _syntax = IdentifierName(_syntaxToken.Value);
+            
+            return pointerTypeReference;
+        }
+
+        protected override ExternalTypeReference VisitExternalTypeReference(ExternalTypeReference typeReference)
+        {
+            AssertClearState();
+
+            if (typeReference.Namespace is null)
+            {
+                // if namespace is null, the reference is just equivalent to the type identifier
+                VisitIdentifier(typeReference.TypeIdentifier);
+            }
+            else
+            {
+                VisitIdentifier(typeReference.Namespace);
+                if (_syntaxToken is not {} @namespace)
+                    throw new InvalidOperationException("Namespace Identifier was not visited correctly");
+                ClearState();
+                
+                VisitIdentifier(typeReference.TypeIdentifier);
+
+                if (_syntaxToken is not {} typeIdentifier)
+                    throw new InvalidOperationException("External Type Identifier was not visited correctly");
+                ClearState();
+
+                _syntaxToken = Identifier(@namespace.Text + "." + typeIdentifier.Text);
+                _syntax = IdentifierName(_syntaxToken.Value);
+                return typeReference;
+            }
+            
+            return typeReference;
+        }
+
         protected override IdentifierSymbol VisitIdentifier(IdentifierSymbol identifierSymbol)
         {
             AssertClearState();
