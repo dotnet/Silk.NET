@@ -13,8 +13,8 @@ public abstract class EmitterTest
         return new CSharpEmitter();
     }
 
-    protected CSharpSyntaxNode Transform(Symbol symbol)
+    protected CSharpSyntaxNode Transform(Symbol symbol, TypeStore? typeStore = null)
     {
-        return CreateEmitter().Transform(symbol, new TypeStore());
+        return CreateEmitter().Transform(symbol, typeStore ?? new TypeStore());
     }
 }
