@@ -806,5 +806,22 @@ namespace Silk.NET.DXVA
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoDecoderService<TI0>(ref ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoderService>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetVideoDecoderService((IDirectXVideoDecoderService**) ppService.GetAddressOf());
+        }
+
     }
 }

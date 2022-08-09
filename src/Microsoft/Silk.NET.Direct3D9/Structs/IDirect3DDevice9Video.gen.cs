@@ -506,5 +506,94 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateAuthenticatedChannel<TI0>(Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, void** pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), pChannelHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateAuthenticatedChannel<TI0>(Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, ref void* pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), ref pChannelHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(Guid* pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(ref pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(ref Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(ref pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(ref pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>(ref Guid pCryptoType, ref Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(ref pCryptoType, ref pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
     }
 }

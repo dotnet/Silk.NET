@@ -911,6 +911,15 @@ public unsafe static class DXGIOutput2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput2>
+    {
+        var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIOutput2>
     {
         var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
@@ -1028,6 +1037,15 @@ public unsafe static class DXGIOutput2VtblExtensions
         var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetPrivateData(ref Name.GetPinnableReference(), ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput2>
+    {
+        var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1279,11 +1297,27 @@ public unsafe static class DXGIOutput2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int DuplicateOutput<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput2>
+    {
+        var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->DuplicateOutput(pDevice, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int DuplicateOutput<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, IDXGIOutputDuplication** ppOutputDuplication) where TThis : IComVtbl<IDXGIOutput2>
     {
         var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->DuplicateOutput(ref pDevice.GetPinnableReference(), ppOutputDuplication);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int DuplicateOutput<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutput2>
+    {
+        var @this = (IDXGIOutput2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->DuplicateOutput(ref pDevice, (IDXGIOutputDuplication**) ppOutputDuplication.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

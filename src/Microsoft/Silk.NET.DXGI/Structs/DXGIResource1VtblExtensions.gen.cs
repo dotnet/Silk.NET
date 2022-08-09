@@ -642,6 +642,15 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIResource1>
+    {
+        var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIResource1>
     {
         var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
@@ -762,6 +771,15 @@ public unsafe static class DXGIResource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIResource1>
+    {
+        var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIResource1>
     {
         var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
@@ -775,6 +793,15 @@ public unsafe static class DXGIResource1VtblExtensions
         var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIResource1>
+    {
+        var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -807,6 +834,14 @@ public unsafe static class DXGIResource1VtblExtensions
         var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetEvictionPriority(ref pEvictionPriority.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateSubresourceSurface<TI0, TThis>(this TThis thisVtbl, uint index, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface2>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIResource1>
+    {
+        var @this = (IDXGIResource1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSubresourceSurface(index, (IDXGISurface2**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

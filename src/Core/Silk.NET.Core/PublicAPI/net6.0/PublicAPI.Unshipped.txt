@@ -53,9 +53,12 @@ Silk.NET.Core.Native.D3DTessellatorPartitioning.None = 0 -> Silk.NET.Core.Native
 Silk.NET.Core.Native.IComVtbl
 Silk.NET.Core.Native.IComVtbl.AsVtblPtr() -> void***
 ~Silk.NET.Core.Native.IComVtbl<T>
+~Silk.NET.Core.Native.ID3D10Blob.QueryInterface<TI0>(out Silk.NET.Core.Native.ComPtr<TI0> ppvObject) -> int
+~Silk.NET.Core.Native.ID3DDestructionNotifier.QueryInterface<TI0>(out Silk.NET.Core.Native.ComPtr<TI0> ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.AddRef<TThis>(this TThis thisVtbl) -> uint
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.GetBufferPointer<TThis>(this TThis thisVtbl) -> void*
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.GetBufferSize<TThis>(this TThis thisVtbl) -> nuint
+~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TI0, TThis>(this TThis thisVtbl, out Silk.NET.Core.Native.ComPtr<TI0> ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, ref void* ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int
@@ -64,6 +67,7 @@ Silk.NET.Core.Native.IComVtbl.AsVtblPtr() -> void***
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Span<System.Guid> riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3D10BlobVtblExtensions.Release<TThis>(this TThis thisVtbl) -> uint
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.AddRef<TThis>(this TThis thisVtbl) -> uint
+~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TI0, TThis>(this TThis thisVtbl, out Silk.NET.Core.Native.ComPtr<TI0> ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, ref void* ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, ref System.Guid riid, void** ppvObject) -> int
 ~static Silk.NET.Core.Native.D3DDestructionNotifierVtblExtensions.QueryInterface<TThis>(this TThis thisVtbl, System.Guid* riid, ref void* ppvObject) -> int

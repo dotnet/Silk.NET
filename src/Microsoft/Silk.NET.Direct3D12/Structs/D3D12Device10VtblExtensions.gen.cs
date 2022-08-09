@@ -16960,6 +16960,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17088,6 +17097,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandQueue<TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Span<Guid> riid, void** ppCommandQueue) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17109,6 +17127,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandQueue(ref pDesc.GetPinnableReference(), riid, ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateCommandQueue<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17136,6 +17163,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommandAllocator<TI0, TThis>(this TThis thisVtbl, CommandListType type, out ComPtr<TI0> ppCommandAllocator) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandAllocator = default;
+        return @this->CreateCommandAllocator(type, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandAllocator.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandAllocator<TThis>(this TThis thisVtbl, CommandListType type, Span<Guid> riid, void** ppCommandAllocator) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17149,6 +17185,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandAllocator(type, ref riid.GetPinnableReference(), ref ppCommandAllocator);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateGraphicsPipelineState<TI0, TThis>(this TThis thisVtbl, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreateGraphicsPipelineState(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17176,6 +17221,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateGraphicsPipelineState<TI0, TThis>(this TThis thisVtbl, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreateGraphicsPipelineState(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateGraphicsPipelineState<TThis>(this TThis thisVtbl, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17197,6 +17251,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateGraphicsPipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateComputePipelineState<TI0, TThis>(this TThis thisVtbl, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreateComputePipelineState(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17224,6 +17287,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateComputePipelineState<TI0, TThis>(this TThis thisVtbl, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreateComputePipelineState(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateComputePipelineState<TThis>(this TThis thisVtbl, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17248,6 +17320,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, out ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandList = default;
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, pInitialState, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandList.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Span<Guid> riid, void** ppCommandList) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17269,6 +17350,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState.GetPinnableReference(), riid, ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState, out ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandList = default;
+        return @this->CreateCommandList(nodeMask, type, pCommandAllocator, ref pInitialState, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandList.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17304,6 +17394,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState, out ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandList = default;
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator, pInitialState, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandList.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandList<TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, Span<ID3D12CommandAllocator> pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, ref void* ppCommandList) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17333,6 +17432,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator.GetPinnableReference(), ref pInitialState.GetPinnableReference(), riid, ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateCommandList<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState, out ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandList = default;
+        return @this->CreateCommandList(nodeMask, type, ref pCommandAllocator, ref pInitialState, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandList.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17368,6 +17476,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDescriptorHeap<TI0, TThis>(this TThis thisVtbl, DescriptorHeapDesc* pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateDescriptorHeap(pDescriptorHeapDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDescriptorHeap<TThis>(this TThis thisVtbl, DescriptorHeapDesc* pDescriptorHeapDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17389,6 +17506,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDescriptorHeap<TI0, TThis>(this TThis thisVtbl, ref DescriptorHeapDesc pDescriptorHeapDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateDescriptorHeap(ref pDescriptorHeapDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17416,6 +17542,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateRootSignature<TI0, TThis>(this TThis thisVtbl, uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvRootSignature = default;
+        return @this->CreateRootSignature(nodeMask, pBlobWithRootSignature, blobLengthInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvRootSignature.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateRootSignature<TThis>(this TThis thisVtbl, uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Span<Guid> riid, void** ppvRootSignature) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17437,6 +17572,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature.GetPinnableReference(), blobLengthInBytes, riid, ppvRootSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateRootSignature<T0, TI0, TThis>(this TThis thisVtbl, uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, out ComPtr<TI0> ppvRootSignature) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvRootSignature = default;
+        return @this->CreateRootSignature(nodeMask, ref pBlobWithRootSignature, blobLengthInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvRootSignature.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17736,6 +17880,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17757,6 +17910,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17792,6 +17954,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17821,6 +17992,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17856,6 +18036,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17885,6 +18074,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -17920,6 +18118,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17952,6 +18159,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommittedResource<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -17973,6 +18189,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref riidResource.GetPinnableReference(), ref ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18000,6 +18225,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateHeap<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateHeap<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18024,6 +18258,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18045,6 +18288,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18080,6 +18332,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18109,6 +18370,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18144,6 +18414,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(ref pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18173,6 +18452,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(ref pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18208,6 +18496,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(ref pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18240,6 +18537,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreatePlacedResource<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource(ref pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18264,6 +18570,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource(pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18285,6 +18600,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource(pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18320,6 +18644,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource(ref pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18349,6 +18682,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateReservedResource<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource(ref pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18536,6 +18878,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int OpenSharedHandle<TI0, TThis>(this TThis thisVtbl, void* NTHandle, out ComPtr<TI0> ppvObj) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObj = default;
+        return @this->OpenSharedHandle(NTHandle, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObj.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenSharedHandle<TThis>(this TThis thisVtbl, void* NTHandle, Span<Guid> riid, void** ppvObj) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18557,6 +18908,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->OpenSharedHandle(ref NTHandle.GetPinnableReference(), riid, ppvObj);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int OpenSharedHandle<T0, TI0, TThis>(this TThis thisVtbl, ref T0 NTHandle, out ComPtr<TI0> ppvObj) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObj = default;
+        return @this->OpenSharedHandle(ref NTHandle, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObj.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18597,6 +18957,31 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->OpenSharedHandleByName(ref Name.GetPinnableReference(), Access, ref pNTHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int MakeResident<TI0, TThis>(this TThis thisVtbl, uint NumObjects, ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->MakeResident(NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Evict<TI0, TThis>(this TThis thisVtbl, uint NumObjects, ref ComPtr<TI0> ppObjects) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->Evict(NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateFence<TI0, TThis>(this TThis thisVtbl, ulong InitialValue, FenceFlags Flags, out ComPtr<TI0> ppFence) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppFence = default;
+        return @this->CreateFence(InitialValue, Flags, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFence.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18864,6 +19249,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueryHeap<TI0, TThis>(this TThis thisVtbl, QueryHeapDesc* pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateQueryHeap(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateQueryHeap<TThis>(this TThis thisVtbl, QueryHeapDesc* pDesc, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18885,6 +19279,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateQueryHeap(ref pDesc.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateQueryHeap<TI0, TThis>(this TThis thisVtbl, ref QueryHeapDesc pDesc, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateQueryHeap(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18912,6 +19315,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvCommandSignature = default;
+        return @this->CreateCommandSignature(pDesc, pRootSignature, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvCommandSignature.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Span<Guid> riid, void** ppvCommandSignature) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18933,6 +19345,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandSignature(pDesc, ref pRootSignature.GetPinnableReference(), riid, ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvCommandSignature = default;
+        return @this->CreateCommandSignature(pDesc, ref pRootSignature, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvCommandSignature.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -18968,6 +19389,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvCommandSignature = default;
+        return @this->CreateCommandSignature(ref pDesc, pRootSignature, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvCommandSignature.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandSignature<TThis>(this TThis thisVtbl, Span<CommandSignatureDesc> pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -18997,6 +19427,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandSignature(ref pDesc.GetPinnableReference(), ref pRootSignature.GetPinnableReference(), riid, ppvCommandSignature);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateCommandSignature<TI0, TThis>(this TThis thisVtbl, ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, out ComPtr<TI0> ppvCommandSignature) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvCommandSignature = default;
+        return @this->CreateCommandSignature(ref pDesc, ref pRootSignature, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvCommandSignature.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19528,6 +19967,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineLibrary<TI0, TThis>(this TThis thisVtbl, void* pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineLibrary = default;
+        return @this->CreatePipelineLibrary(pLibraryBlob, BlobLength, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineLibrary.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePipelineLibrary<TThis>(this TThis thisVtbl, void* pLibraryBlob, nuint BlobLength, Span<Guid> riid, void** ppPipelineLibrary) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19549,6 +19997,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePipelineLibrary(ref pLibraryBlob.GetPinnableReference(), BlobLength, riid, ppPipelineLibrary);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreatePipelineLibrary<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pLibraryBlob, nuint BlobLength, out ComPtr<TI0> ppPipelineLibrary) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineLibrary = default;
+        return @this->CreatePipelineLibrary(ref pLibraryBlob, BlobLength, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineLibrary.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19576,11 +20033,27 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), pFenceValues, NumFences, Flags, hEvent);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetEventOnMultipleFenceCompletion(ppFences, pFenceValues, NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<T0, TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), pFenceValues, NumFences, Flags, ref hEvent);
     }
 
     /// <summary>To be documented.</summary>
@@ -19592,11 +20065,27 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetEventOnMultipleFenceCompletion<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent) where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), ref pFenceValues, NumFences, Flags, hEvent);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetEventOnMultipleFenceCompletion<T0, TThis>(this TThis thisVtbl, ID3D12Fence** ppFences, Span<ulong> pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, Span<T0> hEvent) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetEventOnMultipleFenceCompletion(ppFences, ref pFenceValues.GetPinnableReference(), NumFences, Flags, ref hEvent.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SetEventOnMultipleFenceCompletion<T0, TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12Fence>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetEventOnMultipleFenceCompletion((ID3D12Fence**) ppFences.GetAddressOf(), ref pFenceValues, NumFences, Flags, ref hEvent);
     }
 
     /// <summary>To be documented.</summary>
@@ -19624,6 +20113,14 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int SetResidencyPriority<TI0, TThis>(this TThis thisVtbl, uint NumObjects, ref ComPtr<TI0> ppObjects, ResidencyPriority* pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetResidencyPriority(NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf(), pPriorities);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetResidencyPriority<TThis>(this TThis thisVtbl, uint NumObjects, ID3D12Pageable** ppObjects, Span<ResidencyPriority> pPriorities) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19632,11 +20129,28 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int SetResidencyPriority<TI0, TThis>(this TThis thisVtbl, uint NumObjects, ref ComPtr<TI0> ppObjects, ref ResidencyPriority pPriorities) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SetResidencyPriority(NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf(), ref pPriorities);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int SetResidencyPriority<TThis>(this TThis thisVtbl, uint NumObjects, ref ID3D12Pageable* ppObjects, Span<ResidencyPriority> pPriorities) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetResidencyPriority(NumObjects, ref ppObjects, ref pPriorities.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePipelineState<TI0, TThis>(this TThis thisVtbl, PipelineStateStreamDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreatePipelineState(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19664,6 +20178,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreatePipelineState<TI0, TThis>(this TThis thisVtbl, ref PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->CreatePipelineState(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePipelineState<TThis>(this TThis thisVtbl, Span<PipelineStateStreamDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19685,6 +20208,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePipelineState(ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenExistingHeapFromAddress<TI0, TThis>(this TThis thisVtbl, void* pAddress, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->OpenExistingHeapFromAddress(pAddress, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19712,6 +20244,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int OpenExistingHeapFromAddress<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pAddress, out ComPtr<TI0> ppvHeap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->OpenExistingHeapFromAddress(ref pAddress, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenExistingHeapFromAddress<T0, TThis>(this TThis thisVtbl, Span<T0> pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19733,6 +20274,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->OpenExistingHeapFromAddress(ref pAddress.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenExistingHeapFromFileMapping<TI0, TThis>(this TThis thisVtbl, void* hFileMapping, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->OpenExistingHeapFromFileMapping(hFileMapping, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19760,6 +20310,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int OpenExistingHeapFromFileMapping<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hFileMapping, out ComPtr<TI0> ppvHeap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->OpenExistingHeapFromFileMapping(ref hFileMapping, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenExistingHeapFromFileMapping<T0, TThis>(this TThis thisVtbl, Span<T0> hFileMapping, Guid* riid, ref void* ppvHeap) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19784,6 +20343,14 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int EnqueueMakeResident<TI0, TThis>(this TThis thisVtbl, ResidencyFlags Flags, uint NumObjects, ref ComPtr<TI0> ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EnqueueMakeResident(Flags, NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf(), pFenceToSignal, FenceValueToSignal);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int EnqueueMakeResident<TThis>(this TThis thisVtbl, ResidencyFlags Flags, uint NumObjects, ID3D12Pageable** ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19792,11 +20359,28 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int EnqueueMakeResident<TI0, TThis>(this TThis thisVtbl, ResidencyFlags Flags, uint NumObjects, ref ComPtr<TI0> ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal) where TI0 : unmanaged, IComVtbl<ID3D12Pageable>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EnqueueMakeResident(Flags, NumObjects, (ID3D12Pageable**) ppObjects.GetAddressOf(), ref pFenceToSignal, FenceValueToSignal);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int EnqueueMakeResident<TThis>(this TThis thisVtbl, ResidencyFlags Flags, uint NumObjects, ref ID3D12Pageable* ppObjects, Span<ID3D12Fence> pFenceToSignal, ulong FenceValueToSignal) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->EnqueueMakeResident(Flags, NumObjects, ref ppObjects, ref pFenceToSignal.GetPinnableReference(), FenceValueToSignal);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateCommandList1<TI0, TThis>(this TThis thisVtbl, uint nodeMask, CommandListType type, CommandListFlags flags, out ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandList = default;
+        return @this->CreateCommandList1(nodeMask, type, flags, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandList.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19813,6 +20397,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandList1(nodeMask, type, flags, ref riid.GetPinnableReference(), ref ppCommandList);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateProtectedResourceSession<TI0, TThis>(this TThis thisVtbl, ProtectedResourceSessionDesc* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppSession = default;
+        return @this->CreateProtectedResourceSession(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppSession.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19840,6 +20433,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateProtectedResourceSession<TI0, TThis>(this TThis thisVtbl, ref ProtectedResourceSessionDesc pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppSession = default;
+        return @this->CreateProtectedResourceSession(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppSession.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateProtectedResourceSession<TThis>(this TThis thisVtbl, Span<ProtectedResourceSessionDesc> pDesc, Guid* riid, ref void* ppSession) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19864,6 +20466,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19885,6 +20496,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19920,6 +20540,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -19949,6 +20578,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -19984,6 +20622,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20013,6 +20660,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20048,6 +20704,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20077,6 +20742,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20112,6 +20786,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20141,6 +20824,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20176,6 +20868,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20205,6 +20906,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20240,6 +20950,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20269,6 +20988,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource1(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20304,6 +21032,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20336,6 +21073,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommittedResource1<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource1(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource1<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20360,6 +21106,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap1<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap1(pDesc, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateHeap1<TThis>(this TThis thisVtbl, HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20381,6 +21136,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateHeap1(pDesc, ref pProtectedSession.GetPinnableReference(), riid, ppvHeap);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap1<TI0, TThis>(this TThis thisVtbl, HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap1(pDesc, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20416,6 +21180,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateHeap1<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap1(ref pDesc, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateHeap1<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20448,6 +21221,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateHeap1<TI0, TThis>(this TThis thisVtbl, ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvHeap) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvHeap = default;
+        return @this->CreateHeap1(ref pDesc, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvHeap.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateHeap1<TThis>(this TThis thisVtbl, Span<HeapDesc> pDesc, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riid, ref void* ppvHeap) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20472,6 +21254,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(pDesc, InitialState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource1<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20493,6 +21284,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource1(pDesc, InitialState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(pDesc, InitialState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20528,6 +21328,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(pDesc, InitialState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource1<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20557,6 +21366,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource1(pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(pDesc, InitialState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20592,6 +21410,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(ref pDesc, InitialState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource1<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20621,6 +21448,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource1(ref pDesc.GetPinnableReference(), InitialState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(ref pDesc, InitialState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20656,6 +21492,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(ref pDesc, InitialState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource1<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, ResourceStates InitialState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20685,6 +21530,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource1(ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateReservedResource1<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource1(ref pDesc, InitialState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20736,6 +21590,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateLifetimeTracker<TI0, TThis>(this TThis thisVtbl, ID3D12LifetimeOwner* pOwner, out ComPtr<TI0> ppvTracker) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvTracker = default;
+        return @this->CreateLifetimeTracker(pOwner, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvTracker.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateLifetimeTracker<TThis>(this TThis thisVtbl, ID3D12LifetimeOwner* pOwner, Span<Guid> riid, void** ppvTracker) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20757,6 +21620,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateLifetimeTracker(ref pOwner.GetPinnableReference(), riid, ppvTracker);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateLifetimeTracker<TI0, TThis>(this TThis thisVtbl, ref ID3D12LifetimeOwner pOwner, out ComPtr<TI0> ppvTracker) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvTracker = default;
+        return @this->CreateLifetimeTracker(ref pOwner, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvTracker.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20928,6 +21800,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateMetaCommand<TI0, TThis>(this TThis thisVtbl, Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppMetaCommand = default;
+        return @this->CreateMetaCommand(CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppMetaCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateMetaCommand<TThis>(this TThis thisVtbl, Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Span<Guid> riid, void** ppMetaCommand) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -20949,6 +21830,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateMetaCommand(CommandId, NodeMask, ref pCreationParametersData.GetPinnableReference(), CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateMetaCommand<T0, TI0, TThis>(this TThis thisVtbl, Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppMetaCommand = default;
+        return @this->CreateMetaCommand(CommandId, NodeMask, ref pCreationParametersData, CreationParametersDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppMetaCommand.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -20984,6 +21874,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateMetaCommand<TI0, TThis>(this TThis thisVtbl, ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppMetaCommand = default;
+        return @this->CreateMetaCommand(ref CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppMetaCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateMetaCommand<TThis>(this TThis thisVtbl, Span<Guid> CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21016,6 +21915,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateMetaCommand<T0, TI0, TThis>(this TThis thisVtbl, ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, out ComPtr<TI0> ppMetaCommand) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppMetaCommand = default;
+        return @this->CreateMetaCommand(ref CommandId, NodeMask, ref pCreationParametersData, CreationParametersDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppMetaCommand.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateMetaCommand<T0, TThis>(this TThis thisVtbl, Span<Guid> CommandId, uint NodeMask, Span<T0> pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21040,6 +21948,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppStateObject = default;
+        return @this->CreateStateObject(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppStateObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateStateObject<TThis>(this TThis thisVtbl, StateObjectDesc* pDesc, Span<Guid> riid, void** ppStateObject) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21061,6 +21978,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateStateObject(ref pDesc.GetPinnableReference(), riid, ppStateObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pDesc, out ComPtr<TI0> ppStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppStateObject = default;
+        return @this->CreateStateObject(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppStateObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21144,6 +22070,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int AddToStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppNewStateObject = default;
+        return @this->AddToStateObject(pAddition, pStateObjectToGrowFrom, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppNewStateObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int AddToStateObject<TThis>(this TThis thisVtbl, StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Span<Guid> riid, void** ppNewStateObject) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21165,6 +22100,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->AddToStateObject(pAddition, ref pStateObjectToGrowFrom.GetPinnableReference(), riid, ppNewStateObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int AddToStateObject<TI0, TThis>(this TThis thisVtbl, StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppNewStateObject = default;
+        return @this->AddToStateObject(pAddition, ref pStateObjectToGrowFrom, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppNewStateObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21200,6 +22144,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int AddToStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppNewStateObject = default;
+        return @this->AddToStateObject(ref pAddition, pStateObjectToGrowFrom, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppNewStateObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int AddToStateObject<TThis>(this TThis thisVtbl, Span<StateObjectDesc> pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21232,6 +22185,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int AddToStateObject<TI0, TThis>(this TThis thisVtbl, ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, out ComPtr<TI0> ppNewStateObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppNewStateObject = default;
+        return @this->AddToStateObject(ref pAddition, ref pStateObjectToGrowFrom, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppNewStateObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int AddToStateObject<TThis>(this TThis thisVtbl, Span<StateObjectDesc> pAddition, Span<ID3D12StateObject> pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21256,6 +22218,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateProtectedResourceSession1<TI0, TThis>(this TThis thisVtbl, ProtectedResourceSessionDesc1* pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppSession = default;
+        return @this->CreateProtectedResourceSession1(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppSession.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateProtectedResourceSession1<TThis>(this TThis thisVtbl, ProtectedResourceSessionDesc1* pDesc, Span<Guid> riid, void** ppSession) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21277,6 +22248,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateProtectedResourceSession1(ref pDesc.GetPinnableReference(), riid, ppSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateProtectedResourceSession1<TI0, TThis>(this TThis thisVtbl, ref ProtectedResourceSessionDesc1 pDesc, out ComPtr<TI0> ppSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppSession = default;
+        return @this->CreateProtectedResourceSession1(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppSession.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21328,6 +22308,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21349,6 +22338,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21384,6 +22382,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21413,6 +22420,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21448,6 +22464,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21477,6 +22502,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21512,6 +22546,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21541,6 +22584,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21576,6 +22628,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21605,6 +22666,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21640,6 +22710,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21669,6 +22748,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21704,6 +22792,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21733,6 +22830,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource2(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialResourceState, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21768,6 +22874,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21800,6 +22915,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommittedResource2<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource2(ref pHeapProperties, HeapFlags, ref pDesc, InitialResourceState, ref pOptimizedClearValue, ref pProtectedSession, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource2<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, ResourceStates InitialResourceState, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21824,6 +22948,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource1<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21845,6 +22978,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource1(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21880,6 +23022,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource1<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21909,6 +23060,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource1(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -21944,6 +23104,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(ref pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource1<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -21973,6 +23142,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource1(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(ref pHeap, HeapOffset, pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22008,6 +23186,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(ref pHeap, HeapOffset, ref pDesc, InitialState, pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource1<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22037,6 +23224,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource1(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialState, ref pOptimizedClearValue.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreatePlacedResource1<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource1(ref pHeap, HeapOffset, ref pDesc, InitialState, ref pOptimizedClearValue, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22336,6 +23532,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateShaderCacheSession<TI0, TThis>(this TThis thisVtbl, ShaderCacheSessionDesc* pDesc, out ComPtr<TI0> ppvSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvSession = default;
+        return @this->CreateShaderCacheSession(pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvSession.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateShaderCacheSession<TThis>(this TThis thisVtbl, ShaderCacheSessionDesc* pDesc, Span<Guid> riid, void** ppvSession) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22357,6 +23562,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateShaderCacheSession(ref pDesc.GetPinnableReference(), riid, ppvSession);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateShaderCacheSession<TI0, TThis>(this TThis thisVtbl, ref ShaderCacheSessionDesc pDesc, out ComPtr<TI0> ppvSession) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvSession = default;
+        return @this->CreateShaderCacheSession(ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvSession.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22384,6 +23598,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Guid* CreatorID, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue1(pDesc, CreatorID, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandQueue1<TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, Guid* CreatorID, Span<Guid> riid, void** ppCommandQueue) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22405,6 +23628,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommandQueue1(pDesc, ref CreatorID.GetPinnableReference(), riid, ppCommandQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, CommandQueueDesc* pDesc, ref Guid CreatorID, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue1(pDesc, ref CreatorID, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22440,6 +23672,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc, Guid* CreatorID, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue1(ref pDesc, CreatorID, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandQueue1<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Guid* CreatorID, Guid* riid, ref void* ppCommandQueue) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22472,6 +23713,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommandQueue1<TI0, TThis>(this TThis thisVtbl, ref CommandQueueDesc pDesc, ref Guid CreatorID, out ComPtr<TI0> ppCommandQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppCommandQueue = default;
+        return @this->CreateCommandQueue1(ref pDesc, ref CreatorID, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppCommandQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommandQueue1<TThis>(this TThis thisVtbl, Span<CommandQueueDesc> pDesc, Span<Guid> CreatorID, Guid* riid, ref void* ppCommandQueue) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22496,6 +23746,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Span<Guid> riidResource, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22517,6 +23776,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22552,6 +23820,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22581,6 +23858,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22616,6 +23902,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22645,6 +23940,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22680,6 +23984,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22709,6 +24022,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22744,6 +24066,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22773,6 +24104,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22808,6 +24148,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22837,6 +24186,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22872,6 +24230,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22901,6 +24268,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -22936,6 +24312,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -22965,6 +24350,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23000,6 +24394,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23029,6 +24432,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23064,6 +24476,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23093,6 +24514,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23128,6 +24558,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23157,6 +24596,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23192,6 +24640,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23221,6 +24678,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23256,6 +24722,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23285,6 +24760,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23320,6 +24804,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23349,6 +24842,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23384,6 +24886,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23413,6 +24924,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateCommittedResource3(ref pHeapProperties.GetPinnableReference(), HeapFlags, ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riidResource, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23448,6 +24968,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23480,6 +25009,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateCommittedResource3<TI0, TThis>(this TThis thisVtbl, ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateCommittedResource3(ref pHeapProperties, HeapFlags, ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateCommittedResource3<TThis>(this TThis thisVtbl, Span<HeapProperties> pHeapProperties, HeapFlags HeapFlags, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Span<Silk.NET.DXGI.Format> pCastableFormats, Guid* riidResource, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23504,6 +25042,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23525,6 +25072,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23560,6 +25116,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23589,6 +25154,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23624,6 +25198,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23653,6 +25236,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23688,6 +25280,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23717,6 +25318,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(pHeap, HeapOffset, ref pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23752,6 +25362,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23781,6 +25400,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23816,6 +25444,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23845,6 +25482,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(ref pHeap.GetPinnableReference(), HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc1* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23880,6 +25526,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, ref pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23909,6 +25564,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePlacedResource2(ref pHeap.GetPinnableReference(), HeapOffset, ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, ref pDesc, InitialLayout, pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -23944,6 +25608,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, ref pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -23976,6 +25649,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreatePlacedResource2<TI0, TThis>(this TThis thisVtbl, ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc1 pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreatePlacedResource2(ref pHeap, HeapOffset, ref pDesc, InitialLayout, ref pOptimizedClearValue, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePlacedResource2<TThis>(this TThis thisVtbl, Span<ID3D12Heap> pHeap, ulong HeapOffset, Span<ResourceDesc1> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, uint NumCastableFormats, Span<Silk.NET.DXGI.Format> pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24000,6 +25682,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Span<Guid> riid, void** ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24021,6 +25712,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24056,6 +25756,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24085,6 +25794,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24120,6 +25838,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24149,6 +25876,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24184,6 +25920,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24213,6 +25958,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ResourceDesc* pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24248,6 +26002,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24277,6 +26040,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24312,6 +26084,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24341,6 +26122,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(ref pDesc.GetPinnableReference(), InitialLayout, pOptimizedClearValue, ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24376,6 +26166,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24405,6 +26204,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), pProtectedSession, NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, ref pOptimizedClearValue, pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -24440,6 +26248,15 @@ public unsafe static class D3D12Device10VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReservedResource2<TThis>(this TThis thisVtbl, Span<ResourceDesc> pDesc, BarrierLayout InitialLayout, Span<ClearValue> pOptimizedClearValue, Span<ID3D12ProtectedResourceSession> pProtectedSession, uint NumCastableFormats, Silk.NET.DXGI.Format* pCastableFormats, Guid* riid, ref void* ppvResource) where TThis : IComVtbl<ID3D12Device10>
     {
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
@@ -24469,6 +26286,15 @@ public unsafe static class D3D12Device10VtblExtensions
         var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReservedResource2(ref pDesc.GetPinnableReference(), InitialLayout, ref pOptimizedClearValue.GetPinnableReference(), ref pProtectedSession.GetPinnableReference(), NumCastableFormats, ref pCastableFormats.GetPinnableReference(), riid, ppvResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateReservedResource2<TI0, TThis>(this TThis thisVtbl, ref ResourceDesc pDesc, BarrierLayout InitialLayout, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, uint NumCastableFormats, ref Silk.NET.DXGI.Format pCastableFormats, out ComPtr<TI0> ppvResource) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12Device10>
+    {
+        var @this = (ID3D12Device10*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvResource = default;
+        return @this->CreateReservedResource2(ref pDesc, InitialLayout, ref pOptimizedClearValue, ref pProtectedSession, NumCastableFormats, ref pCastableFormats, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

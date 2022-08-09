@@ -673,5 +673,39 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetParent<TI0>(out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppParent = default;
+            return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AcquireNextFrame<TI0>(uint TimeoutInMilliseconds, OutduplFrameInfo* pFrameInfo, ref ComPtr<TI0> ppDesktopResource) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AcquireNextFrame(TimeoutInMilliseconds, pFrameInfo, (IDXGIResource**) ppDesktopResource.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AcquireNextFrame<TI0>(uint TimeoutInMilliseconds, ref OutduplFrameInfo pFrameInfo, ref ComPtr<TI0> ppDesktopResource) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0>
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AcquireNextFrame(TimeoutInMilliseconds, ref pFrameInfo, (IDXGIResource**) ppDesktopResource.GetAddressOf());
+        }
+
     }
 }

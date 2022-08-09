@@ -462,6 +462,15 @@ public unsafe static class D3D11ClassInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassInstance>
+    {
+        var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11ClassInstance>
     {
         var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
@@ -475,6 +484,14 @@ public unsafe static class D3D11ClassInstanceVtblExtensions
         var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetDevice<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassInstance>
+    {
+        var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->GetDevice((ID3D11Device**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -579,6 +596,14 @@ public unsafe static class D3D11ClassInstanceVtblExtensions
         var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetPrivateDataInterface(ref guid.GetPinnableReference(), in pData.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetClassLinkage<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppLinkage) where TI0 : unmanaged, IComVtbl<ID3D11ClassLinkage>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassInstance>
+    {
+        var @this = (ID3D11ClassInstance*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->GetClassLinkage((ID3D11ClassLinkage**) ppLinkage.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

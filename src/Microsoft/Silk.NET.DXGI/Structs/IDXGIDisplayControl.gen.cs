@@ -126,5 +126,14 @@ namespace Silk.NET.DXGI
             ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)@this->LpVtbl[4])(@this, enabled);
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
     }
 }

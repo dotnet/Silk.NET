@@ -334,6 +334,15 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXVAHDDevice>
     {
         var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
@@ -414,11 +423,28 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppVideoProcessor = default;
+        return @this->CreateVideoProcessor(SilkMarshal.GuidPtrOf<TI0>(), (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<Guid> pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor) where TThis : IComVtbl<IDXVAHDDevice>
     {
         var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ppVideoProcessor);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, ref Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDXVAHDDevice>
+    {
+        var @this = (IDXVAHDDevice*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVideoProcessor(ref pVPGuid, (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

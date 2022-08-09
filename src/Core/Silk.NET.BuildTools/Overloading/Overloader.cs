@@ -40,12 +40,9 @@ namespace Silk.NET.BuildTools.Overloading
                 new ArrayParameterOverloader(),
                 new StringArrayOverloader(),
                 new SpanOverloader(),
-                new ImplicitCountSpanOverloader()
-            },
-            //new IComplexFunctionOverloader[]
-            //{
-            //    new ComPtrOverloader()
-            //},
+                new ImplicitCountSpanOverloader(),
+                new ComPtrOverloader()
+            }
             //new IComplexFunctionOverloader[]
             //{
             //    new NonKhrReturnTypeOverloader()

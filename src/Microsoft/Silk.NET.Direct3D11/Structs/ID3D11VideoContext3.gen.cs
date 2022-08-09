@@ -9044,5 +9044,150 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDevice<TI0>(ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetDevice((ID3D11Device**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, pView, ContentKeySize, ref pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, pView, ContentKeySize, ref pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, ref pView, ContentKeySize, ref pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(pDecoder, ref pView, ContentKeySize, ref pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, pView, ContentKeySize, ref pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, pView, ContentKeySize, ref pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<TI0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, ref pView, ContentKeySize, pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, ref pView, ContentKeySize, ref pContentKey, NumComponentHistograms, pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderBeginFrame1<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ComPtr<TI0> ppHistogramBuffers) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecoderBeginFrame1(ref pDecoder, ref pView, ContentKeySize, ref pContentKey, NumComponentHistograms, ref pHistogramOffsets, (ID3D11Buffer**) ppHistogramBuffers.GetAddressOf());
+        }
+
     }
 }

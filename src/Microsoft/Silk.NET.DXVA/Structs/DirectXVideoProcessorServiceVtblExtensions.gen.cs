@@ -1174,6 +1174,15 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessorService>
+    {
+        var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoProcessorService>
     {
         var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
@@ -1638,11 +1647,27 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, Guid* VideoProcDeviceGuid, DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessorService>
+    {
+        var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVideoProcessor(VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, MaxNumSubStreams, (IDirectXVideoProcessor**) ppVidProcess.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Guid* VideoProcDeviceGuid, Span<DXVA2VideoDesc> pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess) where TThis : IComVtbl<IDirectXVideoProcessorService>
     {
         var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateVideoProcessor(VideoProcDeviceGuid, ref pVideoDesc.GetPinnableReference(), RenderTargetFormat, MaxNumSubStreams, ppVidProcess);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, Guid* VideoProcDeviceGuid, ref DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessorService>
+    {
+        var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVideoProcessor(VideoProcDeviceGuid, ref pVideoDesc, RenderTargetFormat, MaxNumSubStreams, (IDirectXVideoProcessor**) ppVidProcess.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1662,6 +1687,14 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, ref Guid VideoProcDeviceGuid, DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessorService>
+    {
+        var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVideoProcessor(ref VideoProcDeviceGuid, pVideoDesc, RenderTargetFormat, MaxNumSubStreams, (IDirectXVideoProcessor**) ppVidProcess.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVideoProcessor<TThis>(this TThis thisVtbl, Span<Guid> VideoProcDeviceGuid, DXVA2VideoDesc* pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess) where TThis : IComVtbl<IDirectXVideoProcessorService>
     {
         var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
@@ -1675,6 +1708,14 @@ public unsafe static class DirectXVideoProcessorServiceVtblExtensions
         var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateVideoProcessor(ref VideoProcDeviceGuid.GetPinnableReference(), ref pVideoDesc.GetPinnableReference(), RenderTargetFormat, MaxNumSubStreams, ppVidProcess);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVideoProcessor<TI0, TThis>(this TThis thisVtbl, ref Guid VideoProcDeviceGuid, ref DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoProcessorService>
+    {
+        var @this = (IDirectXVideoProcessorService*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVideoProcessor(ref VideoProcDeviceGuid, ref pVideoDesc, RenderTargetFormat, MaxNumSubStreams, (IDirectXVideoProcessor**) ppVidProcess.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

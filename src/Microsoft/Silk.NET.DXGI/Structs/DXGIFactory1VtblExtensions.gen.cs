@@ -547,6 +547,15 @@ public unsafe static class DXGIFactory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory1>
+    {
+        var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIFactory1>
     {
         var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
@@ -667,6 +676,15 @@ public unsafe static class DXGIFactory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory1>
+    {
+        var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIFactory1>
     {
         var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
@@ -736,6 +754,14 @@ public unsafe static class DXGIFactory1VtblExtensions
         var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChain(ref pDevice.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EnumAdapters1<TI0, TThis>(this TThis thisVtbl, uint Adapter, ref ComPtr<TI0> ppAdapter) where TI0 : unmanaged, IComVtbl<IDXGIAdapter1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory1>
+    {
+        var @this = (IDXGIFactory1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EnumAdapters1(Adapter, (IDXGIAdapter1**) ppAdapter.GetAddressOf());
     }
 
 }

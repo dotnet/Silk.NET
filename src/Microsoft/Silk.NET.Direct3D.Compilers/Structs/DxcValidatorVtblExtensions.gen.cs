@@ -133,6 +133,15 @@ public unsafe static class DxcValidatorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcValidator>
     {
         var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
@@ -149,11 +158,27 @@ public unsafe static class DxcValidatorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int Validate<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pShader, uint Flags, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->Validate(pShader, Flags, (IDxcOperationResult**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int Validate<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, uint Flags, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcValidator>
     {
         var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->Validate(ref pShader.GetPinnableReference(), Flags, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Validate<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pShader, uint Flags, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcValidator>
+    {
+        var @this = (IDxcValidator*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->Validate(ref pShader, Flags, (IDxcOperationResult**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

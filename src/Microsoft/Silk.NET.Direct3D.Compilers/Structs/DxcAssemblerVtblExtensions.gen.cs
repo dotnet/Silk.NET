@@ -133,6 +133,15 @@ public unsafe static class DxcAssemblerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcAssembler>
     {
         var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
@@ -149,11 +158,27 @@ public unsafe static class DxcAssemblerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int AssembleToContainer<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pShader, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->AssembleToContainer(pShader, (IDxcOperationResult**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int AssembleToContainer<TThis>(this TThis thisVtbl, Span<IDxcBlob> pShader, IDxcOperationResult** ppResult) where TThis : IComVtbl<IDxcAssembler>
     {
         var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->AssembleToContainer(ref pShader.GetPinnableReference(), ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AssembleToContainer<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pShader, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcAssembler>
+    {
+        var @this = (IDxcAssembler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->AssembleToContainer(ref pShader, (IDxcOperationResult**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

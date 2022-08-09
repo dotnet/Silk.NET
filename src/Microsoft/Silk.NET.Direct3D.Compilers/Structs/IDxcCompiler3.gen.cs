@@ -747,6 +747,15 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -756,6 +765,15 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(pSource, pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -807,6 +825,15 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] Buffer* pSource, char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(pSource, pArguments, argCount, ref pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile([Flow(FlowDirection.In)] Buffer* pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -843,6 +870,24 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(pSource, ref pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] Buffer* pSource, ref char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(pSource, ref pArguments, argCount, ref pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -852,6 +897,15 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(in pSource, pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -903,6 +957,15 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] in Buffer pSource, char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(in pSource, pArguments, argCount, ref pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Compile([Flow(FlowDirection.In)] in Buffer pSource, string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -936,6 +999,42 @@ namespace Silk.NET.Direct3D.Compilers
             SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
             SilkMarshal.Free((nint) pArguments);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(in pSource, ref pArguments, argCount, pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Compile<TI0>([Flow(FlowDirection.In)] in Buffer pSource, ref char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Compile(in pSource, ref pArguments, argCount, ref pIncludeHandler, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Disassemble<TI0>([Flow(FlowDirection.In)] Buffer* pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Disassemble(pObject, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Disassemble<TI0>([Flow(FlowDirection.In)] in Buffer pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppResult = default;
+            return @this->Disassemble(in pObject, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppResult.GetAddressOf());
         }
 
     }

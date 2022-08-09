@@ -448,6 +448,15 @@ public unsafe static class DXGIAdapter1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIAdapter1>
+    {
+        var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIAdapter1>
     {
         var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
@@ -568,6 +577,15 @@ public unsafe static class DXGIAdapter1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIAdapter1>
+    {
+        var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIAdapter1>
     {
         var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
@@ -581,6 +599,14 @@ public unsafe static class DXGIAdapter1VtblExtensions
         var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetParent(ref riid.GetPinnableReference(), ref ppParent);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EnumOutputs<TI0, TThis>(this TThis thisVtbl, uint Output, ref ComPtr<TI0> ppOutput) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIAdapter1>
+    {
+        var @this = (IDXGIAdapter1*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EnumOutputs(Output, (IDXGIOutput**) ppOutput.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

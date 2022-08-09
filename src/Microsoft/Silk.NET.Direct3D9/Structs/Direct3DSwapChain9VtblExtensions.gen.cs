@@ -319,6 +319,15 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DSwapChain9>
     {
         var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
@@ -399,6 +408,14 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetBackBuffer<TI0, TThis>(this TThis thisVtbl, uint iBackBuffer, BackbufferType Type, ref ComPtr<TI0> ppBackBuffer) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBackBuffer(iBackBuffer, Type, (IDirect3DSurface9**) ppBackBuffer.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetRasterStatus<TThis>(this TThis thisVtbl, Span<RasterStatus> pRasterStatus) where TThis : IComVtbl<IDirect3DSwapChain9>
     {
         var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
@@ -412,6 +429,14 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
         var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetDisplayMode(ref pMode.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DSwapChain9>
+    {
+        var @this = (IDirect3DSwapChain9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetDevice((IDirect3DDevice9**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

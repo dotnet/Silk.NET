@@ -781,6 +781,15 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoDecoder>
     {
         var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
@@ -794,6 +803,14 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
         var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoDecoderService<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoderService>, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoDecoder>
+    {
+        var @this = (IDirectXVideoDecoder*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetVideoDecoderService((IDirectXVideoDecoderService**) ppService.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

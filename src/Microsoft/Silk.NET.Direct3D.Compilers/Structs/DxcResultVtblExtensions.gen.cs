@@ -292,6 +292,15 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcResult>
     {
         var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
@@ -316,11 +325,59 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetResult<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetResult((IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetErrorBuffer<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetErrorBuffer((IDxcBlobEncoding**) ppErrors.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetOutput<TI0, TI1, TThis>(this TThis thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref ComPtr<TI1> ppOutputName) where TI0 : unmanaged, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI1> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetOutput(dxcOutKind, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf(), (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TI0, TThis>(this TThis thisVtbl, OutKind dxcOutKind, ref ComPtr<TI0> ppvObject, ref IDxcBlobUtf16* ppOutputName) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetOutput(dxcOutKind, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf(), ref ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TI0, TThis>(this TThis thisVtbl, OutKind dxcOutKind, Guid* iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetOutput(dxcOutKind, iid, ref ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetOutput<TThis>(this TThis thisVtbl, OutKind dxcOutKind, Span<Guid> iid, void** ppvObject, IDxcBlobUtf16** ppOutputName) where TThis : IComVtbl<IDxcResult>
     {
         var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ppvObject, ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TI0, TThis>(this TThis thisVtbl, OutKind dxcOutKind, ref Guid iid, void** ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetOutput(dxcOutKind, ref iid, ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -337,6 +394,14 @@ public unsafe static class DxcResultVtblExtensions
         var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetOutput(dxcOutKind, ref iid.GetPinnableReference(), ref ppvObject, ppOutputName);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetOutput<TI0, TThis>(this TThis thisVtbl, OutKind dxcOutKind, ref Guid iid, ref void* ppvObject, ref ComPtr<TI0> ppOutputName) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0> where TThis : IComVtbl<IDxcResult>
+    {
+        var @this = (IDxcResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetOutput(dxcOutKind, ref iid, ref ppvObject, (IDxcBlobUtf16**) ppOutputName.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -645,6 +645,15 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutputDuplication>
+    {
+        var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIOutputDuplication>
     {
         var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
@@ -765,6 +774,15 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutputDuplication>
+    {
+        var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIOutputDuplication>
     {
         var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
@@ -789,11 +807,27 @@ public unsafe static class DXGIOutputDuplicationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int AcquireNextFrame<TI0, TThis>(this TThis thisVtbl, uint TimeoutInMilliseconds, OutduplFrameInfo* pFrameInfo, ref ComPtr<TI0> ppDesktopResource) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutputDuplication>
+    {
+        var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->AcquireNextFrame(TimeoutInMilliseconds, pFrameInfo, (IDXGIResource**) ppDesktopResource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int AcquireNextFrame<TThis>(this TThis thisVtbl, uint TimeoutInMilliseconds, Span<OutduplFrameInfo> pFrameInfo, IDXGIResource** ppDesktopResource) where TThis : IComVtbl<IDXGIOutputDuplication>
     {
         var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->AcquireNextFrame(TimeoutInMilliseconds, ref pFrameInfo.GetPinnableReference(), ppDesktopResource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int AcquireNextFrame<TI0, TThis>(this TThis thisVtbl, uint TimeoutInMilliseconds, ref OutduplFrameInfo pFrameInfo, ref ComPtr<TI0> ppDesktopResource) where TI0 : unmanaged, IComVtbl<IDXGIResource>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIOutputDuplication>
+    {
+        var @this = (IDXGIOutputDuplication*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->AcquireNextFrame(TimeoutInMilliseconds, ref pFrameInfo, (IDXGIResource**) ppDesktopResource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

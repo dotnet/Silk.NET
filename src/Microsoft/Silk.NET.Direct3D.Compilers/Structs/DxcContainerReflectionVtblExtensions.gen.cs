@@ -238,6 +238,15 @@ public unsafe static class DxcContainerReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerReflection>
     {
         var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
@@ -278,11 +287,28 @@ public unsafe static class DxcContainerReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetPartContent<TI0, TThis>(this TThis thisVtbl, uint idx, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPartContent(idx, (IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int FindFirstPartKind<TThis>(this TThis thisVtbl, uint kind, Span<uint> pResult) where TThis : IComVtbl<IDxcContainerReflection>
     {
         var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->FindFirstPartKind(kind, ref pResult.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPartReflection<TI0, TThis>(this TThis thisVtbl, uint idx, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerReflection>
+    {
+        var @this = (IDxcContainerReflection*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->GetPartReflection(idx, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

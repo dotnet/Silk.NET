@@ -537,6 +537,15 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDStorageFactory>
     {
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
@@ -550,6 +559,15 @@ public unsafe static class DStorageFactoryVtblExtensions
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateQueue<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] QueueDesc* desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->CreateQueue(desc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -577,6 +595,15 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateQueue<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in QueueDesc desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->CreateQueue(in desc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateQueue<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<QueueDesc> desc, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
     {
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
@@ -598,6 +625,15 @@ public unsafe static class DStorageFactoryVtblExtensions
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateQueue(in desc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int OpenFile<TI0, TThis>(this TThis thisVtbl, char* path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->OpenFile(path, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -625,6 +661,15 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int OpenFile<TI0, TThis>(this TThis thisVtbl, ref char path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->OpenFile(ref path, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenFile<TThis>(this TThis thisVtbl, Span<char> path, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
     {
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
@@ -649,6 +694,15 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int OpenFile<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->OpenFile(path, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int OpenFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, Span<Guid> riid, void** ppv) where TThis : IComVtbl<IDStorageFactory>
     {
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
@@ -662,6 +716,15 @@ public unsafe static class DStorageFactoryVtblExtensions
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->OpenFile(path, ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, byte* name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->CreateStatusArray(capacity, name, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -689,6 +752,15 @@ public unsafe static class DStorageFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, ref byte name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->CreateStatusArray(capacity, ref name, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateStatusArray<TThis>(this TThis thisVtbl, uint capacity, Span<byte> name, Guid* riid, ref void* ppv) where TThis : IComVtbl<IDStorageFactory>
     {
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
@@ -710,6 +782,15 @@ public unsafe static class DStorageFactoryVtblExtensions
         var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateStatusArray(capacity, ref name.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateStatusArray<TI0, TThis>(this TThis thisVtbl, uint capacity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDStorageFactory>
+    {
+        var @this = (IDStorageFactory*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->CreateStatusArray(capacity, name, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -432,6 +432,15 @@ public unsafe static class D3D11VideoProcessorEnumeratorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoProcessorEnumerator>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11VideoProcessorEnumerator>
     {
         var @this = (ID3D11VideoProcessorEnumerator*) thisVtbl.AsVtblPtr();
@@ -445,6 +454,14 @@ public unsafe static class D3D11VideoProcessorEnumeratorVtblExtensions
         var @this = (ID3D11VideoProcessorEnumerator*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetDevice<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11VideoProcessorEnumerator>
+    {
+        var @this = (ID3D11VideoProcessorEnumerator*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->GetDevice((ID3D11Device**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

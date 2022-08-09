@@ -4111,5 +4111,398 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDirect3D<TI0>(ref ComPtr<TI0> ppD3D9) where TI0 : unmanaged, IComVtbl<IDirect3D9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDirect3D((IDirect3D9**) ppD3D9.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateAdditionalSwapChain<TI0>(PresentParameters* pPresentationParameters, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAdditionalSwapChain(pPresentationParameters, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateAdditionalSwapChain<TI0>(ref PresentParameters pPresentationParameters, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAdditionalSwapChain(ref pPresentationParameters, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSwapChain<TI0>(uint iSwapChain, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSwapChain(iSwapChain, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBackBuffer<TI0>(uint iSwapChain, uint iBackBuffer, BackbufferType Type, ref ComPtr<TI0> ppBackBuffer) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetBackBuffer(iSwapChain, iBackBuffer, Type, (IDirect3DSurface9**) ppBackBuffer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture<TI0>(uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateTexture(Width, Height, Levels, Usage, Format, Pool, (IDirect3DTexture9**) ppTexture.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture<TI0>(uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateTexture(Width, Height, Levels, Usage, Format, Pool, (IDirect3DTexture9**) ppTexture.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVolumeTexture<TI0>(uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVolumeTexture(Width, Height, Depth, Levels, Usage, Format, Pool, (IDirect3DVolumeTexture9**) ppVolumeTexture.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVolumeTexture<TI0>(uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVolumeTexture(Width, Height, Depth, Levels, Usage, Format, Pool, (IDirect3DVolumeTexture9**) ppVolumeTexture.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCubeTexture<TI0>(uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCubeTexture(EdgeLength, Levels, Usage, Format, Pool, (IDirect3DCubeTexture9**) ppCubeTexture.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCubeTexture<TI0>(uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCubeTexture(EdgeLength, Levels, Usage, Format, Pool, (IDirect3DCubeTexture9**) ppCubeTexture.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexBuffer<TI0>(uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexBuffer(Length, Usage, FVF, Pool, (IDirect3DVertexBuffer9**) ppVertexBuffer.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexBuffer<TI0>(uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexBuffer(Length, Usage, FVF, Pool, (IDirect3DVertexBuffer9**) ppVertexBuffer.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateIndexBuffer<TI0>(uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateIndexBuffer(Length, Usage, Format, Pool, (IDirect3DIndexBuffer9**) ppIndexBuffer.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateIndexBuffer<TI0>(uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateIndexBuffer(Length, Usage, Format, Pool, (IDirect3DIndexBuffer9**) ppIndexBuffer.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateRenderTarget(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateRenderTarget(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDepthStencilSurface(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDepthStencilSurface(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateOffscreenPlainSurface<TI0>(uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateOffscreenPlainSurface(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateOffscreenPlainSurface<TI0>(uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateOffscreenPlainSurface(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetRenderTarget<TI0>(uint RenderTargetIndex, ref ComPtr<TI0> ppRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetRenderTarget(RenderTargetIndex, (IDirect3DSurface9**) ppRenderTarget.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDepthStencilSurface<TI0>(ref ComPtr<TI0> ppZStencilSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDepthStencilSurface((IDirect3DSurface9**) ppZStencilSurface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateStateBlock<TI0>(Stateblocktype Type, ref ComPtr<TI0> ppSB) where TI0 : unmanaged, IComVtbl<IDirect3DStateBlock9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateStateBlock(Type, (IDirect3DStateBlock9**) ppSB.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EndStateBlock<TI0>(ref ComPtr<TI0> ppSB) where TI0 : unmanaged, IComVtbl<IDirect3DStateBlock9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EndStateBlock((IDirect3DStateBlock9**) ppSB.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetTexture<TI0>(uint Stage, ref ComPtr<TI0> ppTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetTexture(Stage, (IDirect3DBaseTexture9**) ppTexture.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexDeclaration<TI0>(Vertexelement9* pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexDeclaration(pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVertexDeclaration<TI0>(ref Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexDeclaration(ref pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVertexDeclaration<TI0>(ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetVertexDeclaration((IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVertexShader<TI0>(uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexShader(pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVertexShader<TI0>(ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVertexShader(ref pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVertexShader<TI0>(ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetVertexShader((IDirect3DVertexShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStreamSource<TI0>(uint StreamNumber, ref ComPtr<TI0> ppStreamData, uint* pOffsetInBytes, uint* pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), pOffsetInBytes, pStride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStreamSource<TI0>(uint StreamNumber, ref ComPtr<TI0> ppStreamData, uint* pOffsetInBytes, ref uint pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), pOffsetInBytes, ref pStride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStreamSource<TI0>(uint StreamNumber, ref ComPtr<TI0> ppStreamData, ref uint pOffsetInBytes, uint* pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), ref pOffsetInBytes, pStride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetStreamSource<TI0>(uint StreamNumber, ref ComPtr<TI0> ppStreamData, ref uint pOffsetInBytes, ref uint pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), ref pOffsetInBytes, ref pStride);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetIndices<TI0>(ref ComPtr<TI0> ppIndexData) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetIndices((IDirect3DIndexBuffer9**) ppIndexData.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePixelShader<TI0>(uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePixelShader(pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreatePixelShader<TI0>(ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreatePixelShader(ref pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetPixelShader<TI0>(ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetPixelShader((IDirect3DPixelShader9**) ppShader.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateQuery<TI0>(Querytype Type, ref ComPtr<TI0> ppQuery) where TI0 : unmanaged, IComVtbl<IDirect3DQuery9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateQuery(Type, (IDirect3DQuery9**) ppQuery.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckResourceResidency<TI0>(ref ComPtr<TI0> pResourceArray, uint NumResources) where TI0 : unmanaged, IComVtbl<IDirect3DResource9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CheckResourceResidency((IDirect3DResource9**) pResourceArray.GetAddressOf(), NumResources);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateRenderTargetEx(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateRenderTargetEx(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateOffscreenPlainSurfaceEx<TI0>(uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateOffscreenPlainSurfaceEx(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateOffscreenPlainSurfaceEx<TI0>(uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateOffscreenPlainSurfaceEx(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDepthStencilSurfaceEx(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDepthStencilSurfaceEx(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
+        }
+
     }
 }

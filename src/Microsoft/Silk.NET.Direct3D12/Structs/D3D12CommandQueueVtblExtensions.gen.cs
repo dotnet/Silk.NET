@@ -3251,6 +3251,15 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12CommandQueue>
+    {
+        var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12CommandQueue>
     {
         var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
@@ -3376,6 +3385,15 @@ public unsafe static class D3D12CommandQueueVtblExtensions
         var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12CommandQueue>
+    {
+        var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4656,6 +4674,14 @@ public unsafe static class D3D12CommandQueueVtblExtensions
         var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->CopyTileMappings(ref pDstResource.GetPinnableReference(), ref pDstRegionStartCoordinate.GetPinnableReference(), ref pSrcResource.GetPinnableReference(), ref pSrcRegionStartCoordinate.GetPinnableReference(), ref pRegionSize.GetPinnableReference(), Flags);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void ExecuteCommandLists<TI0, TThis>(this TThis thisVtbl, uint NumCommandLists, ref ComPtr<TI0> ppCommandLists) where TI0 : unmanaged, IComVtbl<ID3D12CommandList>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12CommandQueue>
+    {
+        var @this = (ID3D12CommandQueue*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->ExecuteCommandLists(NumCommandLists, (ID3D12CommandList**) ppCommandLists.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -1565,6 +1565,87 @@ namespace Silk.NET.Direct3D12
         [NativeApi(EntryPoint = "D3D12GetInterface", Convention = CallingConvention.StdCall)]
         public unsafe partial int GetInterface(ref Guid rclsid, ref Guid riid, ref void* ppvDebug);
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
+        public unsafe int CreateRootSignatureDeserializer<TI0>(void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppRootSignatureDeserializer = default;
+            return CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppRootSignatureDeserializer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3956, Column 16 in d3d12.h")]
+        public unsafe int CreateRootSignatureDeserializer<T0, TI0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppRootSignatureDeserializer = default;
+            return CreateRootSignatureDeserializer(ref pSrcData, SrcDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppRootSignatureDeserializer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
+        public unsafe int CreateVersionedRootSignatureDeserializer<TI0>(void* pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppRootSignatureDeserializer = default;
+            return CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppRootSignatureDeserializer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3978, Column 16 in d3d12.h")]
+        public unsafe int CreateVersionedRootSignatureDeserializer<T0, TI0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, out ComPtr<TI0> ppRootSignatureDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppRootSignatureDeserializer = default;
+            return CreateVersionedRootSignatureDeserializer(ref pSrcData, SrcDataSizeInBytes, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppRootSignatureDeserializer.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe int CreateDevice<TI0>(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppDevice = default;
+            return CreateDevice(pAdapter, MinimumFeatureLevel, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22472, Column 16 in d3d12.h")]
+        public unsafe int CreateDevice<TI0>(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppDevice = default;
+            return CreateDevice(ref pAdapter, MinimumFeatureLevel, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22481, Column 16 in d3d12.h")]
+        public unsafe int GetDebugInterface<TI0>(out ComPtr<TI0> ppvDebug) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppvDebug = default;
+            return GetDebugInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDebug.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22570, Column 16 in d3d12.h")]
+        public unsafe int GetInterface<TI0>(Guid* rclsid, out ComPtr<TI0> ppvDebug) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppvDebug = default;
+            return GetInterface(rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDebug.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 22570, Column 16 in d3d12.h")]
+        public unsafe int GetInterface<TI0>(ref Guid rclsid, out ComPtr<TI0> ppvDebug) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppvDebug = default;
+            return GetInterface(ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDebug.GetAddressOf());
+        }
+
 
         public D3D12(INativeContext ctx)
             : base(ctx)

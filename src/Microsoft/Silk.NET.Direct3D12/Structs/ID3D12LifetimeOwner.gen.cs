@@ -117,5 +117,14 @@ namespace Silk.NET.Direct3D12
             ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, LifetimeState, void>)@this->LpVtbl[3])(@this, NewState);
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
     }
 }

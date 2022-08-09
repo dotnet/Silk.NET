@@ -2339,6 +2339,15 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
@@ -2464,6 +2473,15 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2808,6 +2826,14 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->ExecuteBundle(ref pCommandList.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetDescriptorHeaps<TI0, TThis>(this TThis thisVtbl, uint NumDescriptorHeaps, ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->SetDescriptorHeaps(NumDescriptorHeaps, (ID3D12DescriptorHeap**) ppDescriptorHeaps.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3179,11 +3205,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT<TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3203,11 +3245,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT<TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, ref pSrcBuffer.GetPinnableReference(), SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3235,11 +3293,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT(ref pDstBuffer.GetPinnableReference(), DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3267,11 +3341,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT(ref pDstBuffer.GetPinnableReference(), DstOffset, ref pSrcBuffer.GetPinnableReference(), SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void AtomicCopyBufferUINT<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3291,11 +3381,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT64<TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3315,11 +3421,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT64<TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, ref pSrcBuffer.GetPinnableReference(), SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3347,11 +3469,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT64<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT64(ref pDstBuffer.GetPinnableReference(), DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>
@@ -3379,11 +3517,27 @@ public unsafe static class D3D12GraphicsCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), pDependentSubresourceRanges);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe void AtomicCopyBufferUINT64<TThis>(this TThis thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, Span<SubresourceRangeUint64> pDependentSubresourceRanges) where TThis : IComVtbl<ID3D12GraphicsCommandList2>
     {
         var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->AtomicCopyBufferUINT64(ref pDstBuffer.GetPinnableReference(), DstOffset, ref pSrcBuffer.GetPinnableReference(), SrcOffset, Dependencies, ppDependentResources, ref pDependentSubresourceRanges.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void AtomicCopyBufferUINT64<TI0, TThis>(this TThis thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ComPtr<TI0> ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList2>
+    {
+        var @this = (ID3D12GraphicsCommandList2*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->AtomicCopyBufferUINT64(ref pDstBuffer, DstOffset, ref pSrcBuffer, SrcOffset, Dependencies, (ID3D12Resource**) ppDependentResources.GetAddressOf(), ref pDependentSubresourceRanges);
     }
 
     /// <summary>To be documented.</summary>

@@ -4083,6 +4083,15 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4096,6 +4105,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDirect3D<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppD3D9) where TI0 : unmanaged, IComVtbl<IDirect3D9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetDirect3D((IDirect3D9**) ppD3D9.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4131,6 +4148,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateAdditionalSwapChain<TI0, TThis>(this TThis thisVtbl, PresentParameters* pPresentationParameters, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateAdditionalSwapChain(pPresentationParameters, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateAdditionalSwapChain<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, IDirect3DSwapChain9** pSwapChain) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4139,11 +4164,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateAdditionalSwapChain<TI0, TThis>(this TThis thisVtbl, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateAdditionalSwapChain(ref pPresentationParameters, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateAdditionalSwapChain<TThis>(this TThis thisVtbl, Span<PresentParameters> pPresentationParameters, ref IDirect3DSwapChain9* pSwapChain) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateAdditionalSwapChain(ref pPresentationParameters.GetPinnableReference(), ref pSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSwapChain<TI0, TThis>(this TThis thisVtbl, uint iSwapChain, ref ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<IDirect3DSwapChain9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetSwapChain(iSwapChain, (IDirect3DSwapChain9**) pSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4211,6 +4252,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetBackBuffer<TI0, TThis>(this TThis thisVtbl, uint iSwapChain, uint iBackBuffer, BackbufferType Type, ref ComPtr<TI0> ppBackBuffer) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBackBuffer(iSwapChain, iBackBuffer, Type, (IDirect3DSurface9**) ppBackBuffer.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetRasterStatus<TThis>(this TThis thisVtbl, uint iSwapChain, Span<RasterStatus> pRasterStatus) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4232,6 +4281,118 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->GetGammaRamp(iSwapChain, ref pRamp.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateTexture<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateTexture(Width, Height, Levels, Usage, Format, Pool, (IDirect3DTexture9**) ppTexture.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateTexture<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateTexture(Width, Height, Levels, Usage, Format, Pool, (IDirect3DTexture9**) ppTexture.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVolumeTexture<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVolumeTexture(Width, Height, Depth, Levels, Usage, Format, Pool, (IDirect3DVolumeTexture9**) ppVolumeTexture.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVolumeTexture<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVolumeTexture(Width, Height, Depth, Levels, Usage, Format, Pool, (IDirect3DVolumeTexture9**) ppVolumeTexture.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCubeTexture<TI0, TThis>(this TThis thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateCubeTexture(EdgeLength, Levels, Usage, Format, Pool, (IDirect3DCubeTexture9**) ppCubeTexture.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateCubeTexture<TI0, TThis>(this TThis thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateCubeTexture(EdgeLength, Levels, Usage, Format, Pool, (IDirect3DCubeTexture9**) ppCubeTexture.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexBuffer<TI0, TThis>(this TThis thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexBuffer(Length, Usage, FVF, Pool, (IDirect3DVertexBuffer9**) ppVertexBuffer.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexBuffer<TI0, TThis>(this TThis thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexBuffer(Length, Usage, FVF, Pool, (IDirect3DVertexBuffer9**) ppVertexBuffer.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateIndexBuffer<TI0, TThis>(this TThis thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateIndexBuffer(Length, Usage, Format, Pool, (IDirect3DIndexBuffer9**) ppIndexBuffer.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateIndexBuffer<TI0, TThis>(this TThis thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateIndexBuffer(Length, Usage, Format, Pool, (IDirect3DIndexBuffer9**) ppIndexBuffer.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTarget<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateRenderTarget(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTarget<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateRenderTarget(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilSurface<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDepthStencilSurface(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilSurface<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDepthStencilSurface(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
     }
 
     /// <summary>To be documented.</summary>
@@ -4555,6 +4716,22 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateOffscreenPlainSurface<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateOffscreenPlainSurface(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateOffscreenPlainSurface<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateOffscreenPlainSurface(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetRenderTarget<TThis>(this TThis thisVtbl, uint RenderTargetIndex, Span<IDirect3DSurface9> pRenderTarget) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4563,11 +4740,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetRenderTarget<TI0, TThis>(this TThis thisVtbl, uint RenderTargetIndex, ref ComPtr<TI0> ppRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetRenderTarget(RenderTargetIndex, (IDirect3DSurface9**) ppRenderTarget.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetDepthStencilSurface<TThis>(this TThis thisVtbl, Span<IDirect3DSurface9> pNewZStencil) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetDepthStencilSurface(ref pNewZStencil.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDepthStencilSurface<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppZStencilSurface) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetDepthStencilSurface((IDirect3DSurface9**) ppZStencilSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4683,6 +4876,22 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateStateBlock<TI0, TThis>(this TThis thisVtbl, Stateblocktype Type, ref ComPtr<TI0> ppSB) where TI0 : unmanaged, IComVtbl<IDirect3DStateBlock9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateStateBlock(Type, (IDirect3DStateBlock9**) ppSB.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EndStateBlock<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppSB) where TI0 : unmanaged, IComVtbl<IDirect3DStateBlock9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EndStateBlock((IDirect3DStateBlock9**) ppSB.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetClipStatus<TThis>(this TThis thisVtbl, Span<Clipstatus9> pClipStatus) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4696,6 +4905,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetClipStatus(ref pClipStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetTexture<TI0, TThis>(this TThis thisVtbl, uint Stage, ref ComPtr<TI0> ppTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetTexture(Stage, (IDirect3DBaseTexture9**) ppTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4827,11 +5044,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexDeclaration<TI0, TThis>(this TThis thisVtbl, Vertexelement9* pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexDeclaration(pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVertexDeclaration<TThis>(this TThis thisVtbl, Span<Vertexelement9> pVertexElements, IDirect3DVertexDeclaration9** ppDecl) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateVertexDeclaration(ref pVertexElements.GetPinnableReference(), ppDecl);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVertexDeclaration<TI0, TThis>(this TThis thisVtbl, ref Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexDeclaration(ref pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4851,6 +5084,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetVertexDeclaration<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetVertexDeclaration((IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetFVF<TThis>(this TThis thisVtbl, Span<uint> pFVF) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
@@ -4859,11 +5100,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateVertexShader<TI0, TThis>(this TThis thisVtbl, uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexShader(pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateVertexShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, IDirect3DVertexShader9** ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateVertexShader(ref pFunction.GetPinnableReference(), ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateVertexShader<TI0, TThis>(this TThis thisVtbl, ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateVertexShader(ref pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4880,6 +5137,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetVertexShader(ref pShader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVertexShader<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetVertexShader((IDirect3DVertexShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -4939,11 +5204,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TI0, TThis>(this TThis thisVtbl, uint StreamNumber, ref ComPtr<TI0> ppStreamData, uint* pOffsetInBytes, uint* pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), pOffsetInBytes, pStride);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetStreamSource(StreamNumber, ppStreamData, pOffsetInBytes, ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TI0, TThis>(this TThis thisVtbl, uint StreamNumber, ref ComPtr<TI0> ppStreamData, uint* pOffsetInBytes, ref uint pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), pOffsetInBytes, ref pStride);
     }
 
     /// <summary>To be documented.</summary>
@@ -4955,11 +5236,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetStreamSource<TI0, TThis>(this TThis thisVtbl, uint StreamNumber, ref ComPtr<TI0> ppStreamData, ref uint pOffsetInBytes, uint* pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), ref pOffsetInBytes, pStride);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetStreamSource<TThis>(this TThis thisVtbl, uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, Span<uint> pOffsetInBytes, Span<uint> pStride) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetStreamSource(StreamNumber, ppStreamData, ref pOffsetInBytes.GetPinnableReference(), ref pStride.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStreamSource<TI0, TThis>(this TThis thisVtbl, uint StreamNumber, ref ComPtr<TI0> ppStreamData, ref uint pOffsetInBytes, ref uint pStride) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetStreamSource(StreamNumber, (IDirect3DVertexBuffer9**) ppStreamData.GetAddressOf(), ref pOffsetInBytes, ref pStride);
     }
 
     /// <summary>To be documented.</summary>
@@ -5003,11 +5300,35 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetIndices<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppIndexData) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetIndices((IDirect3DIndexBuffer9**) ppIndexData.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreatePixelShader<TI0, TThis>(this TThis thisVtbl, uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreatePixelShader(pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreatePixelShader<TThis>(this TThis thisVtbl, Span<uint> pFunction, IDirect3DPixelShader9** ppShader) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreatePixelShader(ref pFunction.GetPinnableReference(), ppShader);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreatePixelShader<TI0, TThis>(this TThis thisVtbl, ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreatePixelShader(ref pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5024,6 +5345,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetPixelShader(ref pShader.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPixelShader<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPixelShader((IDirect3DPixelShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5120,6 +5449,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->DrawTriPatch(Handle, ref pNumSegs.GetPinnableReference(), ref pTriPatchInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateQuery<TI0, TThis>(this TThis thisVtbl, Querytype Type, ref ComPtr<TI0> ppQuery) where TI0 : unmanaged, IComVtbl<IDirect3DQuery9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateQuery(Type, (IDirect3DQuery9**) ppQuery.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5331,11 +5668,67 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CheckResourceResidency<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> pResourceArray, uint NumResources) where TI0 : unmanaged, IComVtbl<IDirect3DResource9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CheckResourceResidency((IDirect3DResource9**) pResourceArray.GetAddressOf(), NumResources);
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetMaximumFrameLatency<TThis>(this TThis thisVtbl, Span<uint> pMaxLatency) where TThis : IComVtbl<IDirect3DDevice9Ex>
     {
         var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetMaximumFrameLatency(ref pMaxLatency.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateRenderTargetEx(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateRenderTargetEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateRenderTargetEx(Width, Height, Format, MultiSample, MultisampleQuality, Lockable, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateOffscreenPlainSurfaceEx(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateOffscreenPlainSurfaceEx(Width, Height, Format, Pool, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilSurfaceEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDepthStencilSurfaceEx(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), pSharedHandle, Usage);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDepthStencilSurfaceEx<TI0, TThis>(this TThis thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDevice9Ex>
+    {
+        var @this = (IDirect3DDevice9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDepthStencilSurfaceEx(Width, Height, Format, MultiSample, MultisampleQuality, Discard, (IDirect3DSurface9**) ppSurface.GetAddressOf(), ref pSharedHandle, Usage);
     }
 
     /// <summary>To be documented.</summary>

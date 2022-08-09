@@ -317,6 +317,15 @@ public unsafe static class Direct3DResource9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DResource9>
+    {
+        var @this = (IDirect3DResource9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DResource9>
     {
         var @this = (IDirect3DResource9*) thisVtbl.AsVtblPtr();
@@ -330,6 +339,14 @@ public unsafe static class Direct3DResource9VtblExtensions
         var @this = (IDirect3DResource9*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DResource9>
+    {
+        var @this = (IDirect3DResource9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetDevice((IDirect3DDevice9**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

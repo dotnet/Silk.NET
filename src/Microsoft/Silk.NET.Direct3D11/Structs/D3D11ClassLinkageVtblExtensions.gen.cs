@@ -452,6 +452,15 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11ClassLinkage>
     {
         var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
@@ -465,6 +474,14 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
         var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void GetDevice<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->GetDevice((ID3D11Device**) ppDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -572,11 +589,27 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetClassInstance<TI0, TThis>(this TThis thisVtbl, byte* pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetClassInstance(pClassInstanceName, InstanceIndex, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetClassInstance<TThis>(this TThis thisVtbl, Span<byte> pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance) where TThis : IComVtbl<ID3D11ClassLinkage>
     {
         var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetClassInstance(ref pClassInstanceName.GetPinnableReference(), InstanceIndex, ppInstance);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetClassInstance<TI0, TThis>(this TThis thisVtbl, ref byte pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetClassInstance(ref pClassInstanceName, InstanceIndex, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -588,6 +621,22 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetClassInstance<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetClassInstance(pClassInstanceName, InstanceIndex, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateClassInstance<TI0, TThis>(this TThis thisVtbl, byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateClassInstance(pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateClassInstance<TThis>(this TThis thisVtbl, Span<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance) where TThis : IComVtbl<ID3D11ClassLinkage>
     {
         var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
@@ -596,11 +645,27 @@ public unsafe static class D3D11ClassLinkageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateClassInstance<TI0, TThis>(this TThis thisVtbl, ref byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateClassInstance(ref pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateClassInstance<TThis>(this TThis thisVtbl, Span<byte> pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance) where TThis : IComVtbl<ID3D11ClassLinkage>
     {
         var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateClassInstance(ref pClassTypeName.GetPinnableReference(), ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ref ppInstance);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateClassInstance<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ComPtr<TI0> ppInstance) where TI0 : unmanaged, IComVtbl<ID3D11ClassInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11ClassLinkage>
+    {
+        var @this = (ID3D11ClassLinkage*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateClassInstance(pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, (ID3D11ClassInstance**) ppInstance.GetAddressOf());
     }
 
 }

@@ -346,6 +346,15 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3DDeviceManager9>
     {
         var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
@@ -410,6 +419,15 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetVideoService<TI0, TThis>(this TThis thisVtbl, void* hDevice, out ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppService = default;
+        return @this->GetVideoService(hDevice, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppService.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetVideoService<TThis>(this TThis thisVtbl, void* hDevice, Span<Guid> riid, void** ppService) where TThis : IComVtbl<IDirect3DDeviceManager9>
     {
         var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
@@ -431,6 +449,15 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
         var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetVideoService(ref hDevice.GetPinnableReference(), riid, ppService);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVideoService<T0, TI0, TThis>(this TThis thisVtbl, ref T0 hDevice, out ComPtr<TI0> ppService) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3DDeviceManager9>
+    {
+        var @this = (IDirect3DDeviceManager9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppService = default;
+        return @this->GetVideoService(ref hDevice, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppService.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

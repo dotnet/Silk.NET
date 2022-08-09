@@ -568,6 +568,15 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9Ex>
     {
         var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
@@ -632,11 +641,27 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDevice<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDevice<TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, Span<PresentParameters> pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface) where TThis : IComVtbl<IDirect3D9Ex>
     {
         var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters.GetPinnableReference(), ppReturnedDeviceInterface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDevice<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -704,11 +729,27 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDeviceEx<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, Displaymodeex* pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDeviceEx<TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, Span<Displaymodeex> pFullscreenDisplayMode, IDirect3DDevice9Ex** ppReturnedDeviceInterface) where TThis : IComVtbl<IDirect3D9Ex>
     {
         var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ref pFullscreenDisplayMode.GetPinnableReference(), ppReturnedDeviceInterface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateDeviceEx<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref Displaymodeex pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ref pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -728,6 +769,14 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDeviceEx<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, Displaymodeex* pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDeviceEx<TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, Span<PresentParameters> pPresentationParameters, Displaymodeex* pFullscreenDisplayMode, ref IDirect3DDevice9Ex* ppReturnedDeviceInterface) where TThis : IComVtbl<IDirect3D9Ex>
     {
         var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
@@ -741,6 +790,14 @@ public unsafe static class Direct3D9ExVtblExtensions
         var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters.GetPinnableReference(), ref pFullscreenDisplayMode.GetPinnableReference(), ppReturnedDeviceInterface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDeviceEx<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref Displaymodeex pFullscreenDisplayMode, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9Ex>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9Ex>
+    {
+        var @this = (IDirect3D9Ex*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDeviceEx(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, ref pFullscreenDisplayMode, (IDirect3DDevice9Ex**) ppReturnedDeviceInterface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

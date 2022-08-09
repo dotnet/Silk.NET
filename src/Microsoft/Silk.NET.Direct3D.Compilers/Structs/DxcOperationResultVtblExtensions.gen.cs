@@ -148,6 +148,15 @@ public unsafe static class DxcOperationResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcOperationResult>
     {
         var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
@@ -169,6 +178,22 @@ public unsafe static class DxcOperationResultVtblExtensions
         var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetStatus(ref pStatus.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetResult<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetResult((IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetErrorBuffer<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppErrors) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcOperationResult>
+    {
+        var @this = (IDxcOperationResult*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetErrorBuffer((IDxcBlobEncoding**) ppErrors.GetAddressOf());
     }
 
 }

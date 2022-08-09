@@ -391,6 +391,15 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12SwapChainAssistant>
     {
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
@@ -404,6 +413,15 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSwapChainObject<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppv = default;
+        return @this->GetSwapChainObject(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -423,6 +441,23 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetCurrentResourceAndCommandQueue<TI0, TI1, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppvResource, out ComPtr<TI1> ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvQueue = default;
+        return @this->GetCurrentResourceAndCommandQueue(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf(), SilkMarshal.GuidPtrOf<TI1>(), (void**) ppvQueue.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppvResource, Guid* riidQueue, ref void* ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetCurrentResourceAndCommandQueue(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf(), riidQueue, ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, void** ppvResource, Span<Guid> riidQueue, void** ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
     {
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
@@ -431,11 +466,36 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppvResource, ref Guid riidQueue, void** ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetCurrentResourceAndCommandQueue(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf(), ref riidQueue, ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetCurrentResourceAndCommandQueue<TThis>(this TThis thisVtbl, Guid* riidResource, void** ppvResource, Span<Guid> riidQueue, ref void* ppvQueue) where TThis : IComVtbl<ID3D12SwapChainAssistant>
     {
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetCurrentResourceAndCommandQueue(riidResource, ppvResource, ref riidQueue.GetPinnableReference(), ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppvResource, ref Guid riidQueue, ref void* ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetCurrentResourceAndCommandQueue(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvResource.GetAddressOf(), ref riidQueue, ref ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, Guid* riidResource, ref void* ppvResource, out ComPtr<TI0> ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvQueue = default;
+        return @this->GetCurrentResourceAndCommandQueue(riidResource, ref ppvResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -460,6 +520,15 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ppvResource, riidQueue, ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, ref Guid riidResource, void** ppvResource, out ComPtr<TI0> ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvQueue = default;
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource, ppvResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -492,6 +561,15 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
         var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetCurrentResourceAndCommandQueue(ref riidResource.GetPinnableReference(), ref ppvResource, riidQueue, ppvQueue);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetCurrentResourceAndCommandQueue<TI0, TThis>(this TThis thisVtbl, ref Guid riidResource, ref void* ppvResource, out ComPtr<TI0> ppvQueue) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12SwapChainAssistant>
+    {
+        var @this = (ID3D12SwapChainAssistant*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvQueue = default;
+        return @this->GetCurrentResourceAndCommandQueue(ref riidResource, ref ppvResource, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -16364,6 +16364,42 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeApi(EntryPoint = "D3DDisassemble10Effect", Convention = CallingConvention.StdCall)]
         public unsafe partial int Disassemble10Effect(ref ID3D10Effect pEffect, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly);
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 311, Column 1 in d3dcompiler.h")]
+        public unsafe int Reflect<TI0>(void* pSrcData, nuint SrcDataSize, out ComPtr<TI0> ppReflector) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppReflector = default;
+            return Reflect(pSrcData, SrcDataSize, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppReflector.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 311, Column 1 in d3dcompiler.h")]
+        public unsafe int Reflect<T0, TI0>(ref T0 pSrcData, nuint SrcDataSize, out ComPtr<TI0> ppReflector) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppReflector = default;
+            return Reflect(ref pSrcData, SrcDataSize, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppReflector.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 324, Column 1 in d3dcompiler.h")]
+        public unsafe int ReflectLibrary<TI0>(void* pSrcData, nuint SrcDataSize, out ComPtr<TI0> ppReflector) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppReflector = default;
+            return ReflectLibrary(pSrcData, SrcDataSize, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppReflector.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 324, Column 1 in d3dcompiler.h")]
+        public unsafe int ReflectLibrary<T0, TI0>(ref T0 pSrcData, nuint SrcDataSize, out ComPtr<TI0> ppReflector) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppReflector = default;
+            return ReflectLibrary(ref pSrcData, SrcDataSize, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppReflector.GetAddressOf());
+        }
+
 
         public D3DCompiler(INativeContext ctx)
             : base(ctx)

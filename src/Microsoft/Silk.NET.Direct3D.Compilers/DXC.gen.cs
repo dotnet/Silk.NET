@@ -236,6 +236,60 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeApi(EntryPoint = "DxcCreateInstance2", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateInstance2(ref IMalloc pMalloc, ref Guid rclsid, ref Guid riid, ref void* ppv);
 
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance<TI0>(Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance(rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 76, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance<TI0>(ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance(ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(IMalloc* pMalloc, Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance2(pMalloc, rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(IMalloc* pMalloc, ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance2(pMalloc, ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ref IMalloc pMalloc, Guid* rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance2(ref pMalloc, rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 83, Column 34 in D:/Windows Kits/10/Include/10.0.22621.0/um\\dxcapi.h")]
+        public unsafe int CreateInstance2<TI0>(ref IMalloc pMalloc, ref Guid rclsid, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            ppv = default;
+            return CreateInstance2(ref pMalloc, ref rclsid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        }
+
 
         public DXC(INativeContext ctx)
             : base(ctx)

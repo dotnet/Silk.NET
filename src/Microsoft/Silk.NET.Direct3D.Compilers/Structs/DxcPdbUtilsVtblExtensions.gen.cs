@@ -615,6 +615,15 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcPdbUtils>
     {
         var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
@@ -644,6 +653,14 @@ public unsafe static class DxcPdbUtilsVtblExtensions
         var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetSourceCount(ref pCount.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetSource<TI0, TThis>(this TThis thisVtbl, uint uIndex, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetSource(uIndex, (IDxcBlobEncoding**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -802,6 +819,14 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetHash<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetHash((IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int GetName<TThis>(this TThis thisVtbl, string[] pResultSa) where TThis : IComVtbl<IDxcPdbUtils>
     {
         var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
@@ -814,11 +839,35 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetFullPDB<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppFullPDB) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetFullPDB((IDxcBlob**) ppFullPDB.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetVersionInfo<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppVersionInfo) where TI0 : unmanaged, IComVtbl<IDxcVersionInfo>, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetVersionInfo((IDxcVersionInfo**) ppVersionInfo.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static int SetCompiler<TThis>(this TThis thisVtbl, Span<IDxcCompiler3> pCompiler) where TThis : IComVtbl<IDxcPdbUtils>
     {
         var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetCompiler(ref pCompiler.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CompileForFullPDB<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcPdbUtils>
+    {
+        var @this = (IDxcPdbUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CompileForFullPDB((IDxcResult**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -625,6 +625,15 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGISwapChain>
     {
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
@@ -745,6 +754,15 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGISwapChain>
     {
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
@@ -761,6 +779,15 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppDevice) where TThis : IComVtbl<IDXGISwapChain>
     {
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
@@ -774,6 +801,15 @@ public unsafe static class DXGISwapChainVtblExtensions
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ref ppDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetBuffer<TI0, TThis>(this TThis thisVtbl, uint Buffer, out ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppSurface = default;
+        return @this->GetBuffer(Buffer, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -801,11 +837,27 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetFullscreenState<TI0, TThis>(this TThis thisVtbl, int* pFullscreen, ref ComPtr<TI0> ppTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetFullscreenState(pFullscreen, (IDXGIOutput**) ppTarget.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetFullscreenState<TThis>(this TThis thisVtbl, Span<int> pFullscreen, IDXGIOutput** ppTarget) where TThis : IComVtbl<IDXGISwapChain>
     {
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetFullscreenState(ref pFullscreen.GetPinnableReference(), ppTarget);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetFullscreenState<TI0, TThis>(this TThis thisVtbl, ref int pFullscreen, ref ComPtr<TI0> ppTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetFullscreenState(ref pFullscreen, (IDXGIOutput**) ppTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -830,6 +882,14 @@ public unsafe static class DXGISwapChainVtblExtensions
         var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->ResizeTarget(ref pNewTargetParameters.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetContainingOutput<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppOutput) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TThis : IComVtbl<IDXGISwapChain>
+    {
+        var @this = (IDXGISwapChain*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetContainingOutput((IDXGIOutput**) ppOutput.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

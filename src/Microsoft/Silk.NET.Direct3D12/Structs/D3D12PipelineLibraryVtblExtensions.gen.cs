@@ -1200,6 +1200,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1328,6 +1337,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1376,6 +1394,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1397,6 +1424,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1432,6 +1468,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(ref pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1464,6 +1509,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(ref pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1485,6 +1539,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1512,6 +1575,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int LoadGraphicsPipeline<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadGraphicsPipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadGraphicsPipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1536,6 +1608,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1557,6 +1638,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -1592,6 +1682,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(ref pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1624,6 +1723,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(ref pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1648,6 +1756,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadComputePipeline<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState) where TThis : IComVtbl<ID3D12PipelineLibrary>
     {
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
@@ -1669,6 +1786,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int LoadComputePipeline<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12PipelineLibrary>
+    {
+        var @this = (ID3D12PipelineLibrary*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppPipelineState = default;
+        return @this->LoadComputePipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

@@ -2226,6 +2226,15 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2346,6 +2355,15 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetParent<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppParent = default;
+        return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetParent<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppParent) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2418,11 +2436,35 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int EnumAdapters1<TI0, TThis>(this TThis thisVtbl, uint Adapter, ref ComPtr<TI0> ppAdapter) where TI0 : unmanaged, IComVtbl<IDXGIAdapter1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->EnumAdapters1(Adapter, (IDXGIAdapter1**) ppAdapter.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, pFullscreenDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2442,6 +2484,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, ref pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, Span<SwapChainFullscreenDesc> pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2455,6 +2505,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, ref pFullscreenDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, pDesc, ref pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2474,6 +2532,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc, pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, Span<SwapChainDesc1> pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2487,6 +2553,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc.GetPinnableReference(), pFullscreenDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc, pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2506,6 +2580,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc, ref pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, Span<SwapChainDesc1> pDesc, Span<SwapChainFullscreenDesc> pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2519,6 +2601,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc.GetPinnableReference(), ref pFullscreenDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(pDevice, hWnd, ref pDesc, ref pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2538,6 +2628,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2551,6 +2649,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(ref pDevice.GetPinnableReference(), hWnd, pDesc, pFullscreenDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, pDesc, pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2570,6 +2676,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, pDesc, ref pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, nint hWnd, SwapChainDesc1* pDesc, Span<SwapChainFullscreenDesc> pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2583,6 +2697,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(ref pDevice.GetPinnableReference(), hWnd, pDesc, ref pFullscreenDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, pDesc, ref pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2602,6 +2724,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, ref pDesc, pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, nint hWnd, Span<SwapChainDesc1> pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2615,6 +2745,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForHwnd(ref pDevice.GetPinnableReference(), hWnd, ref pDesc.GetPinnableReference(), pFullscreenDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, ref pDesc, pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2634,6 +2772,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, ref pDesc, ref pFullscreenDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, nint hWnd, Span<SwapChainDesc1> pDesc, Span<SwapChainFullscreenDesc> pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2650,6 +2796,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateSwapChainForHwnd<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForHwnd(ref pDevice, hWnd, ref pDesc, ref pFullscreenDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForHwnd<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, nint hWnd, Span<SwapChainDesc1> pDesc, Span<SwapChainFullscreenDesc> pFullscreenDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2658,11 +2812,27 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2682,6 +2852,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2695,6 +2873,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, pWindow, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2714,6 +2900,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<Silk.NET.Core.Native.IUnknown> pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2727,6 +2921,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2746,6 +2948,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<Silk.NET.Core.Native.IUnknown> pWindow, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2759,6 +2969,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(pDevice, ref pWindow, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2778,6 +2996,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, pWindow, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2791,6 +3017,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(ref pDevice.GetPinnableReference(), pWindow, pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, pWindow, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2810,6 +3044,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, pWindow, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Silk.NET.Core.Native.IUnknown* pWindow, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2823,6 +3065,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(ref pDevice.GetPinnableReference(), pWindow, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, pWindow, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2842,6 +3092,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, ref pWindow, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<Silk.NET.Core.Native.IUnknown> pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2855,6 +3113,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(ref pDevice.GetPinnableReference(), ref pWindow.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, ref pWindow, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2874,6 +3140,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, ref pWindow, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForCoreWindow<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<Silk.NET.Core.Native.IUnknown> pWindow, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -2887,6 +3161,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForCoreWindow(ref pDevice.GetPinnableReference(), ref pWindow.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateSwapChainForCoreWindow<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForCoreWindow(ref pDevice, ref pWindow, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2986,11 +3268,27 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(pDevice, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForComposition<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, Span<IDXGIOutput> pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForComposition(pDevice, pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(pDevice, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3010,6 +3308,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(pDevice, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForComposition<TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -3023,6 +3329,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForComposition(pDevice, ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(pDevice, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3042,6 +3356,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(ref pDevice, pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForComposition<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -3055,6 +3377,14 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForComposition(ref pDevice.GetPinnableReference(), pDesc, ref pRestrictToOutput.GetPinnableReference(), ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(ref pDevice, pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3074,6 +3404,14 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(ref pDevice, ref pDesc, pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForComposition<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<SwapChainDesc1> pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
@@ -3090,11 +3428,28 @@ public unsafe static class DXGIFactory6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateSwapChainForComposition<TI0, TThis>(this TThis thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateSwapChainForComposition(ref pDevice, ref pDesc, ref pRestrictToOutput, (IDXGISwapChain1**) ppSwapChain.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateSwapChainForComposition<TThis>(this TThis thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Span<SwapChainDesc1> pDesc, Span<IDXGIOutput> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TThis : IComVtbl<IDXGIFactory6>
     {
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateSwapChainForComposition(ref pDevice.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref pRestrictToOutput.GetPinnableReference(), ref ppSwapChain);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EnumAdapterByLuid<TI0, TThis>(this TThis thisVtbl, Luid AdapterLuid, out ComPtr<TI0> ppvAdapter) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvAdapter = default;
+        return @this->EnumAdapterByLuid(AdapterLuid, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvAdapter.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3111,6 +3466,15 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->EnumAdapterByLuid(AdapterLuid, ref riid.GetPinnableReference(), ref ppvAdapter);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EnumWarpAdapter<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvAdapter) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvAdapter = default;
+        return @this->EnumWarpAdapter(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvAdapter.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -3135,6 +3499,15 @@ public unsafe static class DXGIFactory6VtblExtensions
         var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CheckFeatureSupport(Feature, ref pFeatureSupportData.GetPinnableReference(), FeatureSupportDataSize);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int EnumAdapterByGpuPreference<TI0, TThis>(this TThis thisVtbl, uint Adapter, GpuPreference GpuPreference, out ComPtr<TI0> ppvAdapter) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDXGIFactory6>
+    {
+        var @this = (IDXGIFactory6*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvAdapter = default;
+        return @this->EnumAdapterByGpuPreference(Adapter, GpuPreference, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvAdapter.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

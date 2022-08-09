@@ -158,6 +158,15 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D11Module>
     {
         var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
@@ -174,6 +183,14 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateInstance<TI0, TThis>(this TThis thisVtbl, byte* pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateInstance(pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateInstance<TThis>(this TThis thisVtbl, Span<byte> pNamespace, ID3D11ModuleInstance** ppModuleInstance) where TThis : IComVtbl<ID3D11Module>
     {
         var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
@@ -182,11 +199,27 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateInstance<TI0, TThis>(this TThis thisVtbl, ref byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateInstance(ref pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateInstance<TThis>(this TThis thisVtbl, Span<byte> pNamespace, ref ID3D11ModuleInstance* ppModuleInstance) where TThis : IComVtbl<ID3D11Module>
     {
         var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateInstance(ref pNamespace.GetPinnableReference(), ref ppModuleInstance);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateInstance<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0> where TThis : IComVtbl<ID3D11Module>
+    {
+        var @this = (ID3D11Module*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateInstance(pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
     }
 
 }

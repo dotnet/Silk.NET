@@ -1760,6 +1760,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList>
+    {
+        var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12GraphicsCommandList>
     {
         var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
@@ -1885,6 +1894,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
         var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->SetName(ref Name.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList>
+    {
+        var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -2229,6 +2247,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
         var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         @this->ExecuteBundle(ref pCommandList.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static void SetDescriptorHeaps<TI0, TThis>(this TThis thisVtbl, uint NumDescriptorHeaps, ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0> where TThis : IComVtbl<ID3D12GraphicsCommandList>
+    {
+        var @this = (ID3D12GraphicsCommandList*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        @this->SetDescriptorHeaps(NumDescriptorHeaps, (ID3D12DescriptorHeap**) ppDescriptorHeaps.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

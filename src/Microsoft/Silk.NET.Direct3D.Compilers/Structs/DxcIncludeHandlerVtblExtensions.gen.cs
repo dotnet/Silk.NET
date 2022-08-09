@@ -158,6 +158,15 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcIncludeHandler>
     {
         var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
@@ -174,6 +183,14 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadSource<TI0, TThis>(this TThis thisVtbl, char* pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadSource(pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadSource<TThis>(this TThis thisVtbl, Span<char> pFilename, IDxcBlob** ppIncludeSource) where TThis : IComVtbl<IDxcIncludeHandler>
     {
         var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
@@ -182,11 +199,27 @@ public unsafe static class DxcIncludeHandlerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int LoadSource<TI0, TThis>(this TThis thisVtbl, ref char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadSource(ref pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadSource<TThis>(this TThis thisVtbl, Span<char> pFilename, ref IDxcBlob* ppIncludeSource) where TThis : IComVtbl<IDxcIncludeHandler>
     {
         var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadSource(ref pFilename.GetPinnableReference(), ref ppIncludeSource);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int LoadSource<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcIncludeHandler>
+    {
+        var @this = (IDxcIncludeHandler*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadSource(pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
     }
 
 }

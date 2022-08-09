@@ -157,6 +157,15 @@ public unsafe static class DxcContainerBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcContainerBuilder>
     {
         var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
@@ -186,6 +195,14 @@ public unsafe static class DxcContainerBuilderVtblExtensions
         var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->AddPart(fourCC, ref pSource.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int SerializeContainer<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0> where TThis : IComVtbl<IDxcContainerBuilder>
+    {
+        var @this = (IDxcContainerBuilder*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->SerializeContainer((IDxcOperationResult**) ppResult.GetAddressOf());
     }
 
 }

@@ -322,6 +322,15 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9>
+    {
+        var @this = (IDirect3D9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirect3D9>
     {
         var @this = (IDirect3D9*) thisVtbl.AsVtblPtr();
@@ -386,11 +395,27 @@ public unsafe static class Direct3D9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateDevice<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9>
+    {
+        var @this = (IDirect3D9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateDevice<TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, Span<PresentParameters> pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface) where TThis : IComVtbl<IDirect3D9>
     {
         var @this = (IDirect3D9*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters.GetPinnableReference(), ppReturnedDeviceInterface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateDevice<TI0, TThis>(this TThis thisVtbl, uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0> where TThis : IComVtbl<IDirect3D9>
+    {
+        var @this = (IDirect3D9*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

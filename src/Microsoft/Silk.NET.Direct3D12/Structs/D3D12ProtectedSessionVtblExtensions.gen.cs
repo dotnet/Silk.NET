@@ -426,6 +426,15 @@ public unsafe static class D3D12ProtectedSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12ProtectedSession>
+    {
+        var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<ID3D12ProtectedSession>
     {
         var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
@@ -554,6 +563,15 @@ public unsafe static class D3D12ProtectedSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int GetDevice<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12ProtectedSession>
+    {
+        var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvDevice = default;
+        return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetDevice<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvDevice) where TThis : IComVtbl<ID3D12ProtectedSession>
     {
         var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
@@ -567,6 +585,15 @@ public unsafe static class D3D12ProtectedSessionVtblExtensions
         var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetDevice(ref riid.GetPinnableReference(), ref ppvDevice);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetStatusFence<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppFence) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<ID3D12ProtectedSession>
+    {
+        var @this = (ID3D12ProtectedSession*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppFence = default;
+        return @this->GetStatusFence(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppFence.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>

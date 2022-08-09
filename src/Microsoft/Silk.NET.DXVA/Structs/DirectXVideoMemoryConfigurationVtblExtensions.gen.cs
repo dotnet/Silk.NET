@@ -115,6 +115,15 @@ public unsafe static class DirectXVideoMemoryConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDirectXVideoMemoryConfiguration>
+    {
+        var @this = (IDirectXVideoMemoryConfiguration*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDirectXVideoMemoryConfiguration>
     {
         var @this = (IDirectXVideoMemoryConfiguration*) thisVtbl.AsVtblPtr();

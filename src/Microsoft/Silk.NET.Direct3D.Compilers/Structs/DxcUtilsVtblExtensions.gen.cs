@@ -4986,6 +4986,15 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int QueryInterface<TI0, TThis>(this TThis thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvObject = default;
+        return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int QueryInterface<TThis>(this TThis thisVtbl, Span<Guid> riid, void** ppvObject) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5002,11 +5011,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromBlob<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, uint offset, uint length, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlobFromBlob(pBlob, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateBlobFromBlob<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, uint offset, uint length, IDxcBlob** ppResult) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateBlobFromBlob(ref pBlob.GetPinnableReference(), offset, length, ppResult);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateBlobFromBlob<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, uint offset, uint length, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlobFromBlob(ref pBlob, offset, length, (IDxcBlob**) ppResult.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5018,11 +5043,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlobFromPinned<TI0, TThis>(this TThis thisVtbl, void* pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlobFromPinned(pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateBlobFromPinned<T0, TThis>(this TThis thisVtbl, Span<T0> pData, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateBlobFromPinned(ref pData.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateBlobFromPinned<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlobFromPinned(ref pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5034,11 +5075,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int MoveToBlob<TI0, TThis>(this TThis thisVtbl, void* pData, IMalloc* pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->MoveToBlob(pData, pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MoveToBlob<TThis>(this TThis thisVtbl, void* pData, Span<IMalloc> pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->MoveToBlob(pData, ref pIMalloc.GetPinnableReference(), size, codePage, pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int MoveToBlob<TI0, TThis>(this TThis thisVtbl, void* pData, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->MoveToBlob(pData, ref pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5058,6 +5115,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int MoveToBlob<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pData, IMalloc* pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->MoveToBlob(ref pData, pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MoveToBlob<T0, TThis>(this TThis thisVtbl, Span<T0> pData, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5074,11 +5139,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int MoveToBlob<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pData, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->MoveToBlob(ref pData, ref pIMalloc, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int MoveToBlob<T0, TThis>(this TThis thisVtbl, Span<T0> pData, Span<IMalloc> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->MoveToBlob(ref pData.GetPinnableReference(), ref pIMalloc.GetPinnableReference(), size, codePage, ref pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateBlob<TI0, TThis>(this TThis thisVtbl, void* pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlob(pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5090,6 +5171,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateBlob<T0, TI0, TThis>(this TThis thisVtbl, ref T0 pData, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateBlob(ref pData, size, codePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateBlob<T0, TThis>(this TThis thisVtbl, Span<T0> pData, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5098,11 +5187,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadFile<TI0, TThis>(this TThis thisVtbl, char* pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(pFileName, pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadFile<TThis>(this TThis thisVtbl, char* pFileName, Span<uint> pCodePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadFile(pFileName, ref pCodePage.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadFile<TI0, TThis>(this TThis thisVtbl, char* pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(pFileName, ref pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5122,6 +5227,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadFile<TI0, TThis>(this TThis thisVtbl, ref char pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(ref pFileName, pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadFile<TThis>(this TThis thisVtbl, Span<char> pFileName, uint* pCodePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5138,6 +5251,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int LoadFile<TI0, TThis>(this TThis thisVtbl, ref char pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(ref pFileName, ref pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadFile<TThis>(this TThis thisVtbl, Span<char> pFileName, Span<uint> pCodePage, ref IDxcBlobEncoding* pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5146,11 +5267,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int LoadFile<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, uint* pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(pFileName, pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int LoadFile<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, Span<uint> pCodePage, IDxcBlobEncoding** pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->LoadFile(pFileName, ref pCodePage.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int LoadFile<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, ref uint pCodePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->LoadFile(pFileName, ref pCodePage, (IDxcBlobEncoding**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5178,11 +5315,35 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static int CreateDefaultIncludeHandler<TI0, TThis>(this TThis thisVtbl, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->CreateDefaultIncludeHandler((IDxcIncludeHandler**) ppResult.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf8<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf8>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf8(pBlob, (IDxcBlobUtf8**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetBlobAsUtf8<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, IDxcBlobUtf8** pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetBlobAsUtf8(ref pBlob.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetBlobAsUtf8<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf8>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf8(ref pBlob, (IDxcBlobUtf8**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5194,11 +5355,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetBlobAsUtf16<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf16(pBlob, (IDxcBlobUtf16**) pBlobEncoding.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetBlobAsUtf16<TThis>(this TThis thisVtbl, Span<IDxcBlob> pBlob, IDxcBlobUtf16** pBlobEncoding) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetBlobAsUtf16(ref pBlob.GetPinnableReference(), pBlobEncoding);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetBlobAsUtf16<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pBlob, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobUtf16>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetBlobAsUtf16(ref pBlob, (IDxcBlobUtf16**) pBlobEncoding.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5258,6 +5435,15 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int CreateReflection<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pData, out ComPtr<TI0> ppvReflection) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvReflection = default;
+        return @this->CreateReflection(pData, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvReflection.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int CreateReflection<TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] Buffer* pData, Span<Guid> iid, void** ppvReflection) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5279,6 +5465,15 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->CreateReflection(in pData.GetPinnableReference(), iid, ppvReflection);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateReflection<TI0, TThis>(this TThis thisVtbl, [Flow(FlowDirection.In)] in Buffer pData, out ComPtr<TI0> ppvReflection) where TI0 : unmanaged, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        ppvReflection = default;
+        return @this->CreateReflection(in pData, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvReflection.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5318,6 +5513,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5350,6 +5553,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5370,11 +5581,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5403,6 +5630,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5446,6 +5681,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5474,6 +5717,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5487,6 +5738,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5507,6 +5766,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5542,6 +5809,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5562,11 +5837,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5595,6 +5886,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5638,6 +5937,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5666,6 +5973,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, Span<char> pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5679,6 +5994,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5707,6 +6030,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5750,6 +6081,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5778,6 +6117,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, Span<char> pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5791,6 +6138,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5819,6 +6174,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5862,6 +6225,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5890,6 +6261,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, Span<char> pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5903,6 +6282,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5923,6 +6310,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -5958,6 +6353,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -5978,11 +6381,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6011,6 +6430,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6054,6 +6481,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6082,6 +6517,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6095,6 +6538,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6115,6 +6566,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6150,6 +6609,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6170,11 +6637,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6203,6 +6686,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6246,6 +6737,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6274,6 +6773,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6287,6 +6794,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6315,6 +6830,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6358,6 +6881,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6386,6 +6917,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, char* pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6399,6 +6938,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6427,6 +6974,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6470,6 +7025,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6498,6 +7061,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6511,6 +7082,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6539,6 +7118,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6582,6 +7169,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6610,6 +7205,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, Span<char> pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6623,6 +7226,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6651,6 +7262,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6694,6 +7313,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6722,6 +7349,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, Span<char> pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6735,6 +7370,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6763,6 +7406,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6806,6 +7457,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6834,6 +7493,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, Span<char> pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6847,6 +7514,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6875,6 +7550,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6918,6 +7601,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6946,6 +7637,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -6959,6 +7658,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -6987,6 +7694,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7030,6 +7745,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7058,6 +7781,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7071,6 +7802,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7099,6 +7838,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7142,6 +7889,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7170,6 +7925,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, Span<char> pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7183,6 +7946,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(ref pSourceName.GetPinnableReference(), pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(ref pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7203,6 +7974,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7238,6 +8017,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7258,11 +8045,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7291,6 +8094,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7334,6 +8145,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7362,6 +8181,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7375,6 +8202,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7395,6 +8230,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7430,6 +8273,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7450,11 +8301,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7483,6 +8350,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7526,6 +8401,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7554,6 +8437,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, Span<char> pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7567,6 +8458,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7595,6 +8494,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7638,6 +8545,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7666,6 +8581,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, Span<char> pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7679,6 +8602,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7707,6 +8638,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7750,6 +8689,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7778,6 +8725,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, Span<char> pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7791,6 +8746,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, ref pEntryPoint.GetPinnableReference(), pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, ref pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7811,6 +8774,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7846,6 +8817,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7866,11 +8845,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7899,6 +8894,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), pArguments, argCount, pDefines, defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -7942,6 +8945,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7970,6 +8981,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, Span<char> pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -7983,6 +9002,14 @@ public unsafe static class DxcUtilsVtblExtensions
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile.GetPinnableReference(), ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, ref pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -8003,6 +9030,14 @@ public unsafe static class DxcUtilsVtblExtensions
         SilkMarshal.CopyPtrToStringArray((nint) pArguments, pArgumentsSa);
         SilkMarshal.Free((nint) pArguments);
         return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -8038,6 +9073,14 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, string[] pArgumentsSa, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcCompilerArgs* ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
@@ -8058,11 +9101,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int BuildArguments<TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] ReadOnlySpan<Define> pDefines, uint defineCount, IDxcCompilerArgs** ppArgs) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines.GetPinnableReference(), defineCount, ppArgs);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int BuildArguments<TI0, TThis>(this TThis thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref ComPtr<TI0> ppArgs) where TI0 : unmanaged, IComVtbl<IDxcCompilerArgs>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->BuildArguments(pSourceName, pEntryPoint, pTargetProfile, ref pArguments, argCount, in pDefines, defineCount, (IDxcCompilerArgs**) ppArgs.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -8074,11 +9133,43 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPDBContents<TI0, TI1, TThis>(this TThis thisVtbl, IDxcBlob* pPDBBlob, ref ComPtr<TI0> ppHash, ref ComPtr<TI1> ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(pPDBBlob, (IDxcBlob**) ppHash.GetAddressOf(), (IDxcBlob**) ppContainer.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPDBContents<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pPDBBlob, ref ComPtr<TI0> ppHash, ref IDxcBlob* ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(pPDBBlob, (IDxcBlob**) ppHash.GetAddressOf(), ref ppContainer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPDBContents<TI0, TThis>(this TThis thisVtbl, IDxcBlob* pPDBBlob, ref IDxcBlob* ppHash, ref ComPtr<TI0> ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(pPDBBlob, ref ppHash, (IDxcBlob**) ppContainer.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPDBContents<TThis>(this TThis thisVtbl, Span<IDxcBlob> pPDBBlob, IDxcBlob** ppHash, IDxcBlob** ppContainer) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetPDBContents(ref pPDBBlob.GetPinnableReference(), ppHash, ppContainer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetPDBContents<TI0, TI1, TThis>(this TThis thisVtbl, ref IDxcBlob pPDBBlob, ref ComPtr<TI0> ppHash, ref ComPtr<TI1> ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(ref pPDBBlob, (IDxcBlob**) ppHash.GetAddressOf(), (IDxcBlob**) ppContainer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
@@ -8090,11 +9181,27 @@ public unsafe static class DxcUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static unsafe int GetPDBContents<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pPDBBlob, ref ComPtr<TI0> ppHash, ref IDxcBlob* ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(ref pPDBBlob, (IDxcBlob**) ppHash.GetAddressOf(), ref ppContainer);
+    }
+
+    /// <summary>To be documented.</summary>
     public static unsafe int GetPDBContents<TThis>(this TThis thisVtbl, Span<IDxcBlob> pPDBBlob, ref IDxcBlob* ppHash, IDxcBlob** ppContainer) where TThis : IComVtbl<IDxcUtils>
     {
         var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
         // SpanOverloader
         return @this->GetPDBContents(ref pPDBBlob.GetPinnableReference(), ref ppHash, ppContainer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetPDBContents<TI0, TThis>(this TThis thisVtbl, ref IDxcBlob pPDBBlob, ref IDxcBlob* ppHash, ref ComPtr<TI0> ppContainer) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TThis : IComVtbl<IDxcUtils>
+    {
+        var @this = (IDxcUtils*) thisVtbl.AsVtblPtr();
+        // ComPtrOverloader
+        return @this->GetPDBContents(ref pPDBBlob, ref ppHash, (IDxcBlob**) ppContainer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
