@@ -39,7 +39,7 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
     /// <param name="logger">A logger used for diagnostic purposes</param>
     /// <param name="rootScope">The <see cref="TypeResolutionScope"/> used as root</param>
     /// <param name="typeStore">The <see cref="TypeStore"/> used</param>
-    public NameResolverSymbolVisitor(ILogger logger, TypeResolutionScope rootScope, TypeStore typeStore) : base(typeStore)
+    public NameResolverSymbolVisitor(ILogger<NameResolverSymbolVisitor> logger, TypeResolutionScope rootScope, TypeStore typeStore) : base(typeStore)
     {
         _logger = logger;
         _rootScope = rootScope;
@@ -51,7 +51,7 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
     {
         var startLength = _seenScopes.Count;
         _seenScopes.Push(_currentScope);
-        _currentScope = _currentScope.ChildTypeScopes[typeSymbol];
+        _currentScope = _currentScope.ChildTypeScopes[typeSymbol.Id];
         var result = base.VisitType(typeSymbol);
         _currentScope = _seenScopes.Pop();
         Debug.Assert(_seenScopes.Count == startLength);
@@ -84,11 +84,13 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
                     return new InternalTypeReference(foundChild!.Id);
                 }
             }
+
+            return unresolvedTypeReference;
         }
         return base.VisitTypeReference(typeReference);
     }
 
-    private static bool TryFindMatchingType(TypeResolutionScope rootScope, string text, out TypeSymbol? foundChild)
+    private bool TryFindMatchingType(TypeResolutionScope rootScope, string text, out TypeSymbol? foundChild)
     {
         // this method "recursively" builds the candidate type names and see if anything matches.
         Stack<(string, TypeResolutionScope)> todo = new Stack<(string, TypeResolutionScope)>();
@@ -100,9 +102,15 @@ public sealed class NameResolverSymbolVisitor : SymbolVisitor
 
             foreach (var v in scope.ChildTypeScopes)
             {
-                var type = v.Key;
+                var typeId = v.Key;
+                if (!TypeStore.TryResolve(typeId, out var type))
+                {
+                    _logger.LogWarning("Failed to resolve Type ID {id}", typeId);
+                    continue;
+                }
+                Debug.Assert(type is not null);
 
-                var fullName = prefix + type.Identifier.Value;
+                var fullName = prefix + type!.Identifier.Value;
                 if (fullName == text)
                 {
                     foundChild = type;

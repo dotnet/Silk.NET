@@ -66,7 +66,7 @@ struct v {
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "TODO: Reenable after proper type support"),
+    [Fact,
      Trait("Category", "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
@@ -156,7 +156,7 @@ struct S
         return Verifier.Verify(result);
     }
 
-    [Fact(Skip = "TODO: Reenable after proper type support"),
+    [Fact(Skip = "Nested Types?!"),
      Trait("Category",        "Integration"),
      Trait("Source Language", "C++"),
      Trait("Target Language", "C#"),
